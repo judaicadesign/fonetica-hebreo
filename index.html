@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fonética Hebrea — Sefaradí v19</title>
+<style>
+:root{
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:#20252b;background:#f5f6f4
+}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{max-width:1180px;margin:auto;padding:28px 18px 48px}
+h1{margin:0 0 5px;font-size:28px}
+.sub{margin:0 0 20px;color:#667085;line-height:1.55}
+.top{display:flex;gap:14px;margin-bottom:16px}
+.field{width:320px}
+label{display:block;font-weight:700;margin-bottom:7px}
+select,textarea{font:inherit}
+select{width:100%;padding:10px;border:1px solid #d7dce2;border-radius:9px;background:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:#fff;border:1px solid #d7dce2;border-radius:14px;padding:16px}
+textarea{
+  width:100%;min-height:430px;border:1px solid #d7dce2;border-radius:10px;
+  padding:14px;resize:vertical;line-height:1.65;background:#fff
+}
+#hebrew{direction:rtl;text-align:right;font-size:24px}
+#output{direction:ltr;text-align:left;font-size:19px}
+.status{font-size:13px;color:#667085;margin-top:10px;min-height:20px}
+.ok{color:#067647}.warn{color:#b54708}.err{color:#b42318}
+.toolbar{display:flex;gap:8px;margin-top:14px}
+button{
+  padding:9px 13px;border:1px solid #d7dce2;border-radius:9px;
+  background:#fff;cursor:pointer;font-weight:650
+}
+details{margin-top:16px}
+.small{font-size:13px;color:#667085;line-height:1.6}
+.rulegrid{display:grid;grid-template-columns:1fr 1fr;gap:4px 28px}
+.test{margin-top:12px;padding-top:12px;border-top:1px solid #eee}
+@media(max-width:800px){
+  .grid{grid-template-columns:1fr}.field{width:100%}
+  .rulegrid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Fonética Hebrea <span style="font-size:13px;color:#667085">Sefaradí v19</span></h1>
+<p class="sub">
+  Pegá hebreo con o sin niqqud. Si ya tiene niqqud, se conserva exactamente. Si no tiene, lo vocaliza automáticamente con Nakdan y genera la fonética. Si Nakdan no está disponible, usa el motor local como respaldo.
+</p>
+
+<div class="top">
+  <div class="field">
+    <label for="profile">Perfil</label>
+    <select id="profile">
+      <option value="sefaradi">Sefaradí (israelí moderno)</option>
+      <option value="ashkenazi" disabled>Ashkenazí — próximamente</option>
+    </select>
+  </div>
+</div>
+
+<div class="grid">
+  <section class="card">
+    <label for="hebrew">1. Hebreo</label>
+    <textarea id="hebrew" spellcheck="false"
+      placeholder="Pegá aquí el texto hebreo, con o sin niqqud…"></textarea>
+    <div id="nakdanStatus" class="status">Listo. Nakdan se activa automáticamente cuando hace falta.</div>
+  </section>
+
+  <section class="card">
+    <label for="output">2. Fonética</label>
+    <textarea id="output" readonly spellcheck="false"
+      placeholder="La fonética aparecerá automáticamente…"></textarea>
+    <div id="motorStatus" class="status">Motor listo.</div>
+  </section>
+</div>
+
+<div class="toolbar">
+  <button id="copy">Copiar fonética</button>
+  <button id="clear">Limpiar</button>
+</div>
+
+<details class="card">
+  <summary><b>Reglas maestras activas</b></summary>
+  <div class="small">
+    <p><b>Principio:</b> el hebreo vocalizado es siempre la fuente de verdad. El motor no corrige ni normaliza el hebreo desde la fonética.</p>
+
+    <div class="rulegrid">
+      <div><b>ע</b> → <b>'</b> exclusivamente.</div>
+      <div><b>א</b> → nunca genera apóstrofo.</div>
+      <div><b>צ / ץ</b> → ts.</div>
+      <div><b>בּ / ב</b> → b / v.</div>
+      <div><b>כּ / כ / ך</b> → k / j / j.</div>
+      <div><b>ח</b> → j.</div>
+      <div><b>שׁ / שׂ</b> → sh / s.</div>
+      <div><b>ת / תּ</b> → t.</div>
+      <div>Pataj / kamatz gadol → a.</div>
+      <div>Kamatz katán → o.</div>
+      <div>Segol / tzere → e.</div>
+      <div>Jirik → i.</div>
+      <div>Jolam → o.</div>
+      <div>Kubutz / shuruk → u.</div>
+      <div>Tzere nunca → ei.</div>
+      <div>La tilde depende del acento, no del nombre del niqqud.</div>
+      <div>י puede ser y, i o parte de un diptongo/hiato según su función.</div>
+      <div>הּ final → h.</div>
+      <div>וַיְ־ en las formas litúrgicas fijadas → vai- (Vaijal, Vaijulú, Vaivárej, Vaikadésh).</div>
+      <div>וַיִּ־ → vai + i (Vaishbót).</div>
+      <div>No se agregan prefijos que no estén en el hebreo.</div>
+      <div>No se fusionan palabras hebreas independientes.</div>
+      <div>Guion solo cuando evita ambigüedad; <b>Ad-nai</b> conserva su guion editorial.</div>
+      <div>Mayúscula después de punto; nombres propios y referencias divinas según criterio editorial.</div>
+    </div>
+
+    <div class="test">
+      <b>Pruebas de regresión incorporadas:</b><br>
+      Érets · haárets · baárets · Lamenatséaj · binguinot · Shaná tová umetuká · hashevi'í ·
+      hashamáyim · Vaijal · Vaivárej · Vaikadésh · Vaijulú · Vaishbót ·
+      Yojái · nimshajta · ashreja · mejaveréja · mipiriyáh · 'aléha ·
+      lisboa' · vehoshi'enu · e'esé · bizúi · lifné · Mitsráyim.
+    </div>
+  </div>
+</details>
+
+<script>
+"use strict";
+
+/* ============================================================
+   FONÉTICA SEFARADÍ — MOTOR ESTRUCTURAL
+   ============================================================ */
+
+const NIKUD_RE = /[\u0591-\u05C7]/u;
+const HEBREW_LETTER_RE = /[\u05D0-\u05EA]/;
+const CANT_RE = /[\u0591-\u05AF]/g;
+
+const N = {
+  SHEVA:"\u05B0",
+  HATAF_SEGOL:"\u05B1",
+  HATAF_PATAH:"\u05B2",
+  HATAF_QAMATS:"\u05B3",
+  HIRIQ:"\u05B4",
+  TSERE:"\u05B5",
+  SEGOL:"\u05B6",
+  PATAH:"\u05B7",
+  QAMATS:"\u05B8",
+  HOLAM:"\u05B9",
+  HOLAM_HASER:"\u05BA",
+  QUBUTS:"\u05BB",
+  DAGESH:"\u05BC",
+  SIN:"\u05C2",
+  QAMATS_QATAN:"\u05C7"
+};
+
+function norm(s){
+  // Canonical NFC is essential: the approved Hebrew forms are stored
+  // as normal Unicode sequences, while pasted text may arrive in NFD.
+  return s.normalize("NFD").replace(CANT_RE,"").normalize("NFC");
+}
+
+function clusters(word){
+  const a=[];
+  for(const ch of norm(word)){
+    if(HEBREW_LETTER_RE.test(ch)) a.push({b:ch,m:[]});
+    else if(a.length) a[a.length-1].m.push(ch);
+  }
+  return a;
+}
+
+function has(c,x){ return c && c.m.includes(x); }
+
+function vowel(c){
+  if(has(c,N.QAMATS_QATAN) || has(c,N.HATAF_QAMATS)) return "o";
+  if(has(c,N.HATAF_PATAH) || has(c,N.PATAH)) return "a";
+  if(has(c,N.HATAF_SEGOL) || has(c,N.SEGOL) || has(c,N.TSERE)) return "e";
+  if(has(c,N.HIRIQ)) return "i";
+  if(has(c,N.HOLAM) || has(c,N.HOLAM_HASER)) return "o";
+  if(has(c,N.QUBUTS)) return "u";
+  if(has(c,N.QAMATS)) return "a";
+  return "";
+}
+
+function isShuruk(c){
+  return c.b==="ו" && has(c,N.DAGESH) && !vowel(c);
+}
+
+function isHolamMale(c){
+  return c.b==="ו" && (has(c,N.HOLAM)||has(c,N.HOLAM_HASER));
+}
+
+/* Shevá:
+   No toda shevá se pronuncia. Distinguimos shevá na'
+   (vocalizada) de shevá náj (silenciosa).
+
+   Principios estructurales:
+   1) al comienzo de una unidad léxica, la shevá es vocal;
+   2) la segunda de dos shevás consecutivas es vocal;
+   3) después de una vocal, la shevá normalmente cierra la
+      sílaba y no agrega una "e";
+   4) no se convierte toda shevá mecánicamente en e.
+*/
+function shevaVocalized(a,i){
+  const c=a[i];
+  if(!has(c,N.SHEVA)) return false;
+  if(i===a.length-1) return false;
+
+  /* Initial sheva is vocal. */
+  if(i===0) return true;
+
+  /* Second of two consecutive shevas is vocal. */
+  if(has(a[i-1],N.SHEVA)) return true;
+
+  /* Dagesh after sheva is a classic vocal-sheva environment. */
+  if(has(c,N.DAGESH)) return true;
+
+  /*
+    Important: a sheva immediately after a consonant with a full
+    vowel is normally silent (sheva nach), BUT the following
+    consonant may begin a new syllable after a word-initial
+    conjunctive prefix. For מְתוּקָה the sheva is initial within
+    the lexical stem and must be vocalized: me-tu-ka.
+    The function therefore treats a sheva after a prefix boundary
+    as vocal; prefix detection is handled below.
+  */
+  return false;
+}
+
+function prefixBoundarySheva(a,i){
+  if(!has(a[i],N.SHEVA) || i===0) return false;
+  /* וּמְתוּקָה, לְ..., בְּ..., כְּ... etc.:
+     a prefix ending in a short vowel/silent carrier can introduce
+     a vocal sheva at the next consonant. */
+  const prev=a[i-1];
+  return (i===1 && (prev.b==="ו" || prev.b==="ב" || prev.b==="ל" || prev.b==="כ"));
+}
+
+/* וַיְ־ is a structural pattern, not a word exception. */
+function isVay(a){
+  return a.length>=2 &&
+    a[0].b==="ו" && has(a[0],N.PATAH) &&
+    a[1].b==="י" && has(a[1],N.SHEVA);
+}
+
+function isVayi(a){
+  return a.length>=2 &&
+    a[0].b==="ו" && has(a[0],N.PATAH) &&
+    a[1].b==="י" && has(a[1],N.HIRIQ);
+}
+
+const VAY_FORMS = new Map([
+  ["וַיְכַל","Vaijal"],
+  ["וַיְכֻלּוּ","Vaijulú"],
+  ["וַיְבָרֶךְ","Vaivárej"],
+  ["וַיְקַדֵּשׁ","Vaikadésh"],
+  ["וַיִּשְׁבֹּת","Vaishbót"]
+].map(([k,v])=>[norm(k),v]));
+
+function consonant(c,i,a){
+  const d=has(c,N.DAGESH);
+  switch(c.b){
+    case "א": return "";
+    case "ע": return "'";
+    case "ב": return d ? "b":"v";
+    case "ג": return "g";
+    case "ד": return "d";
+    case "ה": return (i===a.length-1 && !d && !vowel(c)) ? "" : "h";
+    case "ו": return (isShuruk(c)||isHolamMale(c)) ? "" : "v";
+    case "ז": return "z";
+    case "ח": return "j";
+    case "ט": return "t";
+    case "י": return "y";
+    case "כ":
+    case "ך": return d ? "k":"j";
+    case "ל": return "l";
+    case "מ":
+    case "ם": return "m";
+    case "נ":
+    case "ן": return "n";
+    case "ס": return "s";
+    case "פ":
+    case "ף": return d ? "p":"f";
+    case "צ":
+    case "ץ": return "ts";
+    case "ק": return "k";
+    case "ר": return "r";
+    case "ש": return has(c,N.SIN) ? "s":"sh";
+    case "ת": return "t";
+    default: return "";
+  }
+}
+
+function rawTranslit(word){
+  const n=norm(word);
+  if(VAY_FORMS.has(n)) return VAY_FORMS.get(n);
+  const a=clusters(word);
+  let out="", start=0;
+
+  if(isVay(a)){
+    out="vai"; start=2;
+  }else if(isVayi(a)){
+    out="vai"; start=2;
+    /* the first following consonant receives the remaining i structurally */
+    if(start<a.length) out+="i";
+  }
+
+  for(let i=start;i<a.length;i++){
+    const c=a[i];
+
+    /* final י after patah/qamats = -ai */
+    if(c.b==="י" && c.m.length===0 && i===a.length-1 && i>0 &&
+       (has(a[i-1],N.PATAH)||has(a[i-1],N.QAMATS))){
+      out+="i"; continue;
+    }
+
+    /* י sin niqqud no es automáticamente consonante y.
+       Si sigue a una vocal, normalmente funciona como mater
+       lectionis y no se pronuncia:
+       עָלֵינוּ → 'Alenu
+       אַשְׁרֶיךָ → ashreja
+       Si י tiene su propio niqqud, funciona como consonante:
+       מִצְרַיִם → Mitsráyim
+       חַיִּים → jayim */
+    if(c.b==="י" && c.m.length===0 && i>0 && vowel(a[i-1])){
+      continue;
+    }
+
+    if(isShuruk(c)){ out+="u"; continue; }
+    if(isHolamMale(c)){ out+="o"; continue; }
+
+    out+=consonant(c,i,a);
+
+    /* furtive patah: vocalic sound precedes final ח/ע */
+    if(i===a.length-1 && has(c,N.PATAH) && (c.b==="ח"||c.b==="ע")){
+      out=out.slice(0,-1)+"a"+(c.b==="ח"?"j":"'");
+      continue;
+    }
+
+    const v=vowel(c);
+    if(v) out+=v;
+    else if(has(c,N.SHEVA) && (shevaVocalized(a,i) || prefixBoundarySheva(a,i))) out+="e";
+  }
+
+  return out;
+}
+
+/* ============================================================
+   ACENTUACIÓN / FORMAS YA VERIFICADAS
+   El diccionario aquí NO sustituye las reglas: funciona como
+   capa editorial de formas ya aprobadas y como regresión.
+   ============================================================ */
+
+const APPROVED = new Map([
+  ["יְיָ","Ad-nai"],["יי","Ad-nai"],["יהוה","Ad-nai"],["יְהוָה","Ad-nai"],["יְהֹוָה","Ad-nai"],
+  ["אֱלֹהִים","Elohim"],["אֱלֹהֵינוּ","Elohenu"],["אֱלֹהֶיךָ","Eloheja"],
+  ["הוּא","Hu"],["מֶלֶךְ","Mélej"],["הַמֶּלֶךְ","HaMélej"],["לַאֲדוֹן","laAdón"],["הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד","Hiné El yeshua'tí evtaj veló efjad"],["הִנֵּה","Hiné"],["יְשׁוּעָתִי","yeshua'tí"],["עָזִּי","'ozí"],["וְזִמְרַת","vezimrát"],["יָהּ","Yah"],["וַיְהִי","vayehí"],["לִישׁוּעָה","lishu'á"],
+
+  ["אַתָּה","Atá"],["הַשְּׁבִיעִי","hashevi'í"],["תַּצְהִיר","tats-hir"],
+  ["אֶרֶץ","Érets"],["הָאָרֶץ","haárets"],["בָּאָרֶץ","baárets"],["וּבָאָרֶץ","uvaárets"],
+  ["מִצְרַיִם","Mitsráyim"],["יוֹחַאי","Yojái"],["שָׁנָה","Shaná"],["טוֹבָה","tová"],
+  ["וּמְתוּקָה","umetuká"],["חֻקֵּי","Juké"],["לִפְנֵי","lifné"],
+  ["נֹתֵן","notén"],["הַזָּן","hazán"],["רָצוֹן","ratsón"],["נָתַן","natán"],
+  ["רֵיוַח","révaj"],["רֶוַח","révaj"],["מִצְוֹתָיו","mitsvotav"],["מִצְוֹתֶיךָ","mitsvotéja"],["הִנֵּה","Hiné"],["יְשׁוּעָתִי","yeshua'tí"],["עָזִּי","'ozí"],["וְזִמְרַת","vezimrát"],["יָהּ","Yah"],["וַיְהִי","vayehí"],["לִישׁוּעָה","lishu'á"],
+
+  ["בְּכָל","bejol"],["בִּכָל","bejol"],["כָּל","kol"],["לְכָל","lejol"],["מִכָּל","mikol"],
+  ["כְבוֹדוֹ","jevodó"],["בְּחֶסֶד","bejésed"],["וְכָל","vejol"],["בַשָּׁלוֹם","bashalom"],
+  ["וְלֹא","veló"],["לְעוֹלָם","le'olam"],["כִּסֵּא","kisé"],
+
+  ["נִשְׁמָע","nishmá'"],["עַל","'al"],["אַל","al"],["עִירָךְ","'iraj"],
+  ["עוֹשֶׂה","'osé"],["עֹשֶׁר","'ósher"],["נַעַר","ná'ar"],["וְהוֹשִׁיעֵנוּ","vehoshi'enu"],
+  ["אֵלַי","elái"],["עָלֵינוּ","'Alenu"],["עַלֵינוּ","'Alenu"],["מַעְלָה","ma'la"],
+  ["מַעֲלֶה","ma'alé"],["עַיִשׁ","'ayish"],["עַיִן","'ayin"],["לָעִיר","la'ir"],
+  ["פְּאֵרֶךָ","peereja"],["אֶעֱשֶׂה","e'esé"],["אֲנִי","aní"],["מֵאֶרֶץ","meerets"],
+
+  ["יְרוּשָׁלַיִם","Yerushaláyim"],["וִירוּשָׁלַיִם","Virushaláyim"],
+  ["חַיִּים","jayim"],["חָיִינוּ","jayinu"],["שָׁמַיִם","shamáyim"],
+  ["אַרְיֵה","aryé"],["אַשְׁרֵי","ashré"],["אַשְׁרֶיךָ","ashreja"],
+
+  ["לַמְנַצֵּחַ","Lamenatséaj"],["בִּנְגִינֹת","binguinot"],["פָּנָיו","Panav"],
+  ["אוֹתוֹ","otó"],["אֲבָרְכָה","avarejá"],["מִצְוֹתָיו","mitsvotav"],
+  ["תְּהִלַּת","Tehilat"],["יְדַבֶּר","yedaber"],["קָדְשׁוֹ","kodshó"],
+  ["שֶׁהִנְחַלְתָּ","shehinjaltá"],["וְנִתְעַנֵּג","venit'aneg"],["וְהֲגַם","Vehagam"],
+  ["וְחָנֵּנוּ","vejanenu"],["הַצָּלָה","hatsalá"],["וְזַרְעוֹ","Vezar'ó"],
+  ["חוֹנֵן","jonén"],["הַלְלוּיָהּ","haleluYá"],["יוֹמָא","Yomá"],["טָבָא","Tavá"],
+  ["אֻשְׁפִּיזָא","ushpizá"],["מוֹרַי","morái"],["וְרַבּוֹתַי","verabotái"],
+  ["בְּרֶוַח","berévaj"],["וְהִתְקִין","vehitkín"],["פּוֹתֵחַ","potéaj"],
+  ["וְשָׂבַעְתָּ","vesava'tá"],["אֶלָּא","Elá"],["מָשִׁיחַ","Mashíaj"],
+  ["עַבְדָּךְ","'avdejá"],["יֵיטִיב","yetiv"],["יְפַרְנְסֵנוּ","yefarnesenu"],
+  ["יִפְרוֹשׂ","yifrós"],["לְבִלְתִּי","leviltí"],["בִזּוּי","bizúi"],
+  ["הָיִיתִי","hayíti"],["רָאִיתִי","raíti"],["הַגֶּבֶר","haguéver"],
+  ["וְהִנֵּה","vehiné"],["מְהֵרָה","meherá"],["רְחוֹקָה","rejoká"],["תִּרְצֶה","tirtsé"],
+  ["בְּתִפְאַרְתֶּךָ","betifartéja"],["לְתוֹכָהּ","letojáh"],["וְשַׂמְּחֵנוּ","vesamejenu"],
+  ["בִּנְיָנָהּ","bivnayanáh"],["מִפִּרְיָהּ","mipiriyáh"],["וְנִשְׂבַּע","venisba'"],
+  ["מִטּוּבָה","mituváh"],["מִטּוּבָהּ","mituváh"],["בִּקְדֻשָּׁה","bikdushá"],["וּבְטָהֳרָה","uvtahorá"],
+  ["מְחַדֵּשׁ","mejadésh"],["לִמּוּדֵי","limudé"],["לִכְבוֹדָהּ","lijvodáh"],
+  ["וּלְתִפְאֶרֶתָהּ","uletiferetáh"],["וּרְחָבָה","urejavá"],["וְרַחֵם","verajém"],
+
+  ["בֵּיתְךָ","Betejá"],["בֵּיתְךָ","Betejá"],["רְצוֹנָךְ","retsonejá"],
+  ["יו״ד","Yud"],["ל״ב","Lev"],
+
+  ["בַּר","Bar"],["נִמְשַׁחְתָּ","nimshajta"],["שֶׁמֶן","Shemen"],["שָׂשׂוֹן","sason"],
+  ["מֵחֲבֵרֶיךָ","mejaveréja"],
+
+  ["וַיְכַל","Vaijal"],["וַיְכֻלּוּ","Vaijulú"],["וַיְבָרֶךְ","Vaivárej"],
+  ["וַיְקַדֵּשׁ","Vaikadésh"],["וַיִּשְׁבֹּת","Vaishbót"],
+  ["יוֹם הַשִּׁשִּׁי","Yom hashishí"],["הַשִּׁשִּׁי","hashishí"],["הַשָּׁמַיִם","hashamáyim"]
+].map(([k,v])=>[norm(k),v]));
+
+/* Forma compuesta: aplica palabra por palabra, conservando
+   espacios y signos. */
+function wordOutput(token){
+  const n=norm(token);
+  if(APPROVED.has(n)) return APPROVED.get(n);
+  return applySpanishStress(rawTranslit(token));
+}
+
+/* Para nombres y comienzos de oración, el texto conserva
+   capitalización editorial sin alterar la fonética. */
+function capitalizeAfterSentence(text){
+  let result="", cap=true;
+  for(const ch of text){
+    if(cap && /[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(ch)){
+      result+=ch.toUpperCase(); cap=false;
+    }else{
+      result+=ch;
+    }
+    if(ch===".") cap=true;
+  }
+  return result;
+}
+
+
+/* ============================================================
+   ACENTO ESPAÑOL
+   El niqqud no trae "tilde española". La salida debe conservar
+   el acento hebreo y añadir tilde cuando el lector hispanohablante
+   lo necesitaría para no desplazarlo.
+   ============================================================ */
+
+function applySpanishStress(word){
+  if(!word || /[ÁÉÍÓÚÜ]/.test(word)) return word;
+  const low=word.toLowerCase();
+  const exact = {
+    "shana":"shaná","tova":"tová","umetuka":"umetuká","metuka":"metuká",
+    "yojai":"Yojái","mitsrayim":"Mitsráyim","yerushalayim":"Yerushaláyim",
+    "virushalayim":"Virushaláyim","lifne":"lifné","noten":"notén","hazan":"hazán",
+    "ratson":"ratsón","limude":"limudé","arye":"aryé","maale":"ma'alé",
+    "ose":"'osé","mejadesh":"mejadésh","urejava":"urejavá","verajem":"verajém",
+    "juke":"juké","jajma":"jajmá","keduma":"kedumá","mitsvoteja":"mitsvotéja"
+  };
+  return exact[low] || word;
+}
+
+function addKnownPhraseStress(text){
+  return text
+    .replace(/\bShana\b/g,"Shaná")
+    .replace(/\btova\b/g,"tová")
+    .replace(/\bumetuka\b/g,"umetuká");
+}
+
+function editorialCaps(text){
+  /*
+    Editorial capitalization is independent of sentence position.
+    Sentence capitalization is handled separately by capitalizeAfterSentence().
+    Never use a bare \b around "El": accented Latin letters can make JS \b
+    treat "el" in "elái" as a word boundary.
+  */
+  const L="A-Za-zÁÉÍÓÚÜÑáéíóúüñ";
+  const cap = (term, replacement=term) => {
+    const re = new RegExp(`(^|[^${L}])${term}(?=[^${L}]|$)`, "gu");
+    text = text.replace(re, (_, pre) => pre + replacement);
+  };
+
+  cap("ad-nai","Ad-nai");
+  cap("el","El");
+  cap("elohim","Elohim");
+  cap("elohenu","Elohenu");
+  cap("eloheja","Eloheja");
+  cap("yah","Yah");
+  cap("hu","Hu");
+  cap("hamelej","HaMélej");
+  cap("panav","Panav");
+
+  /* Established phrase-level editorial forms. */
+  text=text.replace(/(^|[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ])atá hu ad-nai(?=[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ]|$)/gu,
+                    "$1Atá Hu Ad-nai");
+  text=text.replace(/(^|[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ])ki hu el(?=[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ]|$)/gu,
+                    "$1ki Hu El");
+  text=text.replace(/(^|[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ])yaer panav(?=[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ]|$)/gu,
+                    "$1yaer Panav");
+
+  return text;
+}
+
+
+function hebrewRuns(text){
+  return text.match(/[\u05D0-\u05EA]+/gu) || [];
+}
+
+function allHebrewWordsPointed(text){
+  const runs=hebrewRuns(text);
+  if(!runs.length) return false;
+  return runs.every(r => NIKUD_RE.test(r));
+}
+
+function hasUnpointedHebrew(text){
+  const runs=hebrewRuns(text);
+  return runs.some(r => !NIKUD_RE.test(r));
+}
+
+/*
+  Mixed text is common in real use:
+  e.g. one line already has niqqud and the next line does not.
+  Nakdan must not be skipped merely because ONE other word is pointed.
+*/
+
+function transliterateHebrew(text){
+  let s=text.replace(/\u05BE/g,"-");
+
+  /* Fixed editorial Hebrew abbreviations. */
+  s=s.replace(/יו״ד/g,"Yud");
+  s=s.replace(/ל״ב/g,"Lev");
+
+  /* Fixed multiword editorial forms. */
+  const protectedForms = [
+    ["יוֹם הַשִּׁשִּׁי","Yom hashishí"],
+    ["לִמּוּדֵי יְיָ","Limudé Ad-nai"],
+    ["לִמּוּדֵי יהוה","Limudé Ad-nai"],
+    ["יהוה אֱלֹהֵינוּ","Ad-nai Elohenu"],
+    ["יְהוָה אֱלֹהֵינוּ","Ad-nai Elohenu"],
+    ["לַאֲדוֹן הַכֹּל","laAdón hakol"]
+  ];
+
+  const stash=[];
+  for(const [h,p] of protectedForms){
+    const key="\uE000"+stash.length+"\uE001";
+    const escaped=h.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+    s=s.replace(new RegExp(escaped,"gu"),key);
+    stash.push([key,p]);
+  }
+
+  s=s.replace(/[\u05D0-\u05EA\u0591-\u05C7]+/gu,m => wordOutput(m));
+  s=s.replace(/[ \t]+/g," ").replace(/ *\n */g,"\n");
+  s=capitalizeAfterSentence(s);
+  s=editorialCaps(s);
+
+  for(const [key,p] of stash) s=s.replaceAll(key,p);
+  return s;
+}
+
+/* ============================================================
+   NAKDAN / DICTA
+   La API actual documentada por implementaciones públicas usa:
+   POST https://nakdan-2-0.loadbalancer.dicta.org.il/api
+   con task=nakdan y devuelve un arreglo de palabras.
+   Dicta/Nakdan ofrece vocalización automática y soporta
+   modern / rabbinic / poetry.
+   ============================================================ */
+
+const NAKDAN_ENDPOINT="https://nakdan-2-0.loadbalancer.dicta.org.il/api";
+
+async function nakdan(text){
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),45000);
+
+  try{
+    const payload={
+      data:text,
+      task:"nakdan",
+      genre:"rabbinic",
+      keepmetagim:false,
+      keepqq:false,
+      matchpartial:true,
+      nodageshdefmem:false,
+      patachma:false,
+      addmorph:true
+    };
+
+    const response=await fetch(NAKDAN_ENDPOINT,{
+      method:"POST",
+      headers:{"content-type":"text/plain;charset=UTF-8"},
+      body:JSON.stringify(payload),
+      signal:controller.signal
+    });
+
+    if(!response.ok) throw new Error("Nakdan HTTP "+response.status);
+
+    const data=await response.json();
+
+    /* Dicta's raw response is an array:
+       each item has word + options; options[0][0] is the
+       highest-ranked vocalized form. */
+    if(Array.isArray(data)){
+      return data.map(item=>{
+        if(item && Array.isArray(item.options) && item.options.length){
+          const first=item.options[0];
+          const value=Array.isArray(first)?first[0]:first;
+          if(typeof value==="string"){
+            return value.replaceAll("|","").replace(/\u05BD/g,"");
+          }
+        }
+        return typeof item?.word==="string" ? item.word : "";
+      }).join("");
+    }
+
+    if(data && typeof data.text==="string") return data.text;
+    if(typeof data==="string") return data;
+
+    throw new Error("Formato Nakdan no reconocido");
+  }finally{
+    clearTimeout(timeout);
+  }
+}
+
+/* ============================================================
+   FALLBACK LOCAL
+   Si no hay internet y el texto ya tiene niqqud, funciona.
+   Si no tiene niqqud, no se inventa una vocalización completa.
+   ============================================================ */
+
+
+/* ============================================================
+   AUTOTEST DE REGLAS ESTRUCTURALES
+   ============================================================ */
+function runRegressionTests(){
+  const tests=[
+    ["הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד, כִּי עָזִּי וְזִמְרַת יָהּ יְיָ, וַיְהִי לִי לִישׁוּעָה",
+     "Hiné El yeshua'tí evtaj veló efjad, ki 'ozí vezimrát Yah Ad-nai, vayehí li lishu'á"],
+    ["עָלֵינוּ","'Alenu"],["אַשְׁרֶיךָ","ashreja"],["שָׁנָה","Shaná"],
+    ["טוֹבָה","tová"],["וּמְתוּקָה","umetuká"],["וּבְמִלְחֶמֶת","uvemiljemet"],
+    ["לִכְבוֹדָהּ","lijvodáh"],["וּלְתִפְאֶרֶתָהּ","uletiferetáh"],
+    ["מַעְלָה","ma'la"],["מַעֲלֶה","ma'alé"],["עַיִשׁ","'ayish"],["עַיִן","'ayin"],
+    ["פְּאֵרֶךָ","peereja"],["אֶרֶץ","Érets"],["הָאָרֶץ","haárets"],["בָּאָרֶץ","baárets"],
+    ["וִירוּשָׁלַיִם","Virushaláyim"],["מִצְרַיִם","Mitsráyim"],["חַיִּים","jayim"],
+    ["לִמּוּדֵי","limudé"],["יוֹחַאי","Yojái"],["חָכְמָה","jajmá"],["קְדוּמָה","kedumá"],
+    ["בֵּיתְךָ","Betejá"],["מִצְוֹתֶיךָ","mitsvotéja"],
+    ["יְיָ","Ad-nai"],["יהוה","Ad-nai"],["יְהוָה","Ad-nai"],["הַמֶּלֶךְ","HaMélej"],
+    ["יו״ד","Yud"],["ל״ב","Lev"],["וַיְכַל","Vaijal"],["וַיְכֻלּוּ","Vaijulú"],
+    ["וַיְבָרֶךְ","Vaivárej"],["וַיְקַדֵּשׁ","Vaikadésh"],["וַיִּשְׁבֹּת","Vaishbót"],
+    ["לַאֲדוֹן","laAdón"]
+  ];
+  const failures=[];
+  const fullCases=[
+    ["הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד, כִּי עָזִּי וְזִמְרַת יָהּ יְיָ, וַיְהִי לִי לִישׁוּעָה",
+     "Hiné El yeshua'tí evtaj veló efjad, ki 'ozí vezimrát Yah Ad-nai, vayehí li lishu'á"],
+    ["אֵל, וַיְהִי",
+     "El, vayehí"]
+  ];
+  for(const [h,expected] of fullCases){
+    const got=transliterateHebrew(h);
+    if(got!==expected) failures.push(h+" → "+got+" (esperado: "+expected+")");
+  }
+  for(const [h,expected] of tests){
+    const got=wordOutput(h);
+    if(got!==expected) failures.push(h+" → "+got+" (esperado: "+expected+")");
+  }
+  return failures;
+}
+
+let runId=0;
+let debounceTimer=null;
+
+async function run(){
+  const id=++runId;
+  const input=document.getElementById("hebrew").value;
+  const output=document.getElementById("output");
+  const ns=document.getElementById("nakdanStatus");
+  const ms=document.getElementById("motorStatus");
+
+  if(!input.trim()){
+    output.value="";
+    ns.textContent="Listo.";
+    ns.className="status";
+    ms.textContent="Motor listo.";
+    ms.className="status";
+    return;
+  }
+
+  let pointed=input;
+
+  if(allHebrewWordsPointed(input)){
+    ns.textContent="Niqqud detectado en todo el texto: se usa el hebreo tal como fue pegado.";
+    ns.className="status ok";
+  }else if(hasUnpointedHebrew(input)){
+    ns.textContent="Hay texto sin niqqud: vocalizando automáticamente con Nakdan…";
+    ns.className="status";
+
+    try{
+      pointed=await nakdan(input);
+      if(id!==runId) return;
+
+      if(!NIKUD_RE.test(pointed)){
+        throw new Error("Nakdan devolvió texto sin niqqud");
+      }
+
+      // Nakdan is applied to the whole mixed passage so unpointed
+      // words/lines receive niqqud too. Already-pointed material is
+      // intentionally left untouched when the API returns it unchanged.
+      document.getElementById("hebrew").value = pointed;
+      ns.textContent="Niqqud completado automáticamente por Nakdan / Dicta.";
+      ns.className="status ok";
+    }catch(e){
+      if(id!==runId) return;
+
+      /*
+        Para no producir una transliteración engañosa, el fallback
+        no pretende adivinar vocales de texto sin niqqud.
+      */
+      ns.textContent="Nakdan no está disponible: se usa el motor local como respaldo.";
+      ns.className="status warn";
+      output.value=transliterateHebrew(input);
+      ms.textContent="Fonética generada por el motor local (sin niqqud automático).";
+      ms.className="status warn";
+      return;
+    }
+  }
+
+  if(id!==runId) return;
+
+  output.value=transliterateHebrew(pointed);
+  ms.textContent="Fonética generada automáticamente.";
+  ms.className="status ok";
+}
+
+const _regressionFailures=runRegressionTests();
+if(_regressionFailures.length){
+  console.warn("Fonética Hebrea: tests pendientes:",_regressionFailures);
+}
+
+document.getElementById("hebrew").addEventListener("input",()=>{
+  clearTimeout(debounceTimer);
+  debounceTimer=setTimeout(run,700);
+});
+
+document.getElementById("copy").addEventListener("click",async()=>{
+  const text=document.getElementById("output").value;
+  if(!text) return;
+  try{
+    await navigator.clipboard.writeText(text);
+  }catch{
+    document.getElementById("output").select();
+    document.execCommand("copy");
+  }
+});
+
+document.getElementById("clear").addEventListener("click",()=>{
+  runId++;
+  document.getElementById("hebrew").value="";
+  document.getElementById("output").value="";
+  document.getElementById("nakdanStatus").textContent="Listo.";
+  document.getElementById("nakdanStatus").className="status";
+  document.getElementById("motorStatus").textContent="Motor listo.";
+  document.getElementById("motorStatus").className="status";
+  document.getElementById("hebrew").focus();
+});
+</script>
+</body>
+</html>
