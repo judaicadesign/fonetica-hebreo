@@ -32,7 +32,7 @@ button,select{-webkit-tap-highlight-color:transparent}
 .header{display:flex;align-items:flex-start;justify-content:space-between;gap:36px;padding:8px 2px 28px;border-bottom:1px solid var(--line)}
 .brand-copy{min-width:0;padding-top:7px}
 .eyebrow{font-family:Aktiv,Arial,sans-serif;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-h1{font-family:Roslindale,Georgia,serif;font-weight:400;font-size:52px;line-height:.95;letter-spacing:.18em;color:#0f5b5d;margin:0 0 12px}
+h1{font-family:Roslindale,Georgia,serif;font-weight:400;font-size:52px;line-height:.95;letter-spacing:.055em;color:#0f5b5d;margin:0 0 12px}
 .sub{font-family:Aktiv,Arial,sans-serif;max-width:680px;margin:0;color:var(--muted);font-size:14px;line-height:1.65}
 .logo{width:174px;height:auto;display:block;flex:0 0 auto}
 .profile-row{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:24px 0 18px}
@@ -47,7 +47,7 @@ select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,154,75,.14)}
 textarea{width:100%;min-height:430px;border:1px solid var(--line);border-radius:11px;padding:16px;resize:vertical;line-height:1.7;background:#fff;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
 textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,91,93,.09)}
 #hebrew{direction:rtl;text-align:right;font-size:25px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;line-height:1.9}
-#output{direction:ltr;text-align:left;font-size:19px;font-family:Aktiv,Arial,sans-serif;line-height:1.75}
+#output{direction:ltr;text-align:left;font-size:22px;font-family:Aktiv,Arial,sans-serif;line-height:1.72}
 textarea::placeholder{color:#9AA7A8;opacity:1}
 .toolbar{display:flex;gap:9px;margin-top:13px;align-items:center}
 .toolbar.split{justify-content:space-between}
@@ -151,7 +151,7 @@ details.rules[open] summary::before{content:"–"}
 
     <h4>Shevá</h4>
     <p>La shevá no se transcribe automáticamente como e. Shevá vocal (shevá na) = e. Shevá muda (shevá naj) = no se representa. La decisión debe basarse en la pronunciación de la palabra y su estructura.</p>
-    <p><b>בִּגְבוּרָה = bigvurá · לִפְגָרִים = lifgarim · לִשְׁמָהּ = lishmah · כִּרְצוֹנוֹ = kirtsonó · תּוֹרָה = torá · תּוֹרָתְךָ = Torateja · תּוֹרָתֵנוּ = toratenu · לִבְנֵי = livné · בְרִנָּה = veriná</b></p>
+    <p><b>בִּגְבוּרָה = bigvurá · לִפְגָרִים = lifgarim · לִשְׁמָהּ = lishmah · כִּרְצוֹנוֹ = kirtsonó · תּוֹרָה = Torá · תּוֹרָתְךָ = Torateja · תּוֹרָתֵנוּ = Toratenu · לִבְנֵי = livné · בְרִנָּה = veriná</b></p>
 
     <h4>Qamats qatan</h4>
     <p>Kamats gadol = a. Kamats qatan = o. Cuando el texto utiliza explícitamente el carácter Unicode U+05C7, debe reconocerse como tal. No debe confundirse con el kamats gadol simplemente por su aspecto visual.</p>
@@ -707,9 +707,23 @@ function capitalizeFirst(s){
 /* Formas finales fijadas para la fonética sefardí del birkón.
    Tienen prioridad sobre las tablas heredadas de versiones anteriores. */
 const FINAL_FORMS = new Map([
-  ["תּוֹרָה", "torá"],
+  ["תּוֹרָה", "Torá"],
+  ["הַתּוֹרָה", "haTorá"],
+  ["בַּתּוֹרָה", "baTorá"],
+  ["בַּתּוֹרָה", "baTorá"],
+  ["בְּתוֹרַת", "beTorat"],
+  ["בְתוֹרַת", "beTorat"],
+  ["וּבְתוֹרָתוֹ", "uveTorató"],
+  ["וּבְּתוֹרָתוֹ", "uveTorató"],
   ["תּוֹרָתְךָ", "Torateja"],
-  ["תּוֹרָתֵנוּ", "toratenu"],
+  ["תּוֹרָתֵנוּ", "Toratenu"],
+  ["יֶהְגֶּה", "yehgué"],
+  ["יְהְגֶּה", "yehgué"],
+  ["יֶהְגֶה", "yehgué"],
+  ["פַּלְגֵי", "palgué"],
+  ["פַלְגֵי", "palgué"],
+  ["וְעָלֵהוּ", "ve'aléhu"],
+  ["וָלָיְלָה", "valayla"],
   ["לִבְנֵי", "livné"],
   ["הַיְסוֹד", "hayesod"],
   ["בַּנֶּגֶב", "baNéguev"],
