@@ -416,6 +416,7 @@ function stressAccent(a, out, nuclei, originalWord){
      última sílaba no furtiva. */
   let target = nuclei.length-1;
   while(target>0 && nuclei[target].furtive) target--;
+  let forceMark = false;
 
   const L=a.length;
 
@@ -424,17 +425,40 @@ function stressAccent(a, out, nuclei, originalWord){
     la terminación -ti no recibe el acento; éste queda en la vocal
     precedente del tema. Así שָׁכַבְתִּי → shajávti y
     הֱקִיצוֹתִי → hekitsoti. */
-  if(L>=2 && a[L-1].b==="י" && has(a[L-1],N.HIRIQ) &&
-     a[L-2].b==="ת"){
+  if(L>=2 && a[L-1].b==="י" && a[L-1].m.length===0 &&
+     a[L-2].b==="ת" && has(a[L-2],N.HIRIQ)){
     target = Math.max(0,nuclei.length-2);
+    forceMark = true;
   }
 
   /*
     Sufijo objeto -נִי ("me"): la i final es átona y el acento
     permanece en la vocal inmediatamente anterior:
     יִסְמְכֵנִי → yismejeni, הוֹשִׁיעֵנִי → hoshi'eni. */
-  if(L>=2 && a[L-1].b==="י" && has(a[L-1],N.HIRIQ) &&
-     a[L-2].b==="נ"){
+  if(L>=2 && a[L-1].b==="י" && a[L-1].m.length===0 &&
+     a[L-2].b==="נ" && has(a[L-2],N.HIRIQ)){
+    target = Math.max(0,nuclei.length-2);
+    forceMark = true;
+  }
+
+  /*
+    Perfecto 2ms en -תָ / -תָּ: la terminación -ta es átona y
+    el acento queda en la vocal precedente. Si antes de la tav hay
+    shevá (p. ej. שִׁבַּרְתָּ), se marca además la vocal tónica para
+    que la lectura española conserve inequívocamente el acento hebreo.
+  */
+  if(L>=1 && a[L-1].b==="ת" && has(a[L-1],N.QAMATS)){
+    target = Math.max(0,nuclei.length-2);
+    if(L>=2 && has(a[L-2],N.SHEVA)) forceMark = true;
+  }
+
+  /*
+    Formas plurales en -מוּ como יָקוּמוּ: la -u final es átona y
+    el acento queda en la vocal precedente. Así "yakumu" no requiere
+    tilde española.
+  */
+  if(L>=2 && a[L-1].b==="ו" && isShuruk(a[L-1]) &&
+     a[L-2].b==="מ" && !vowel(a[L-2])){
     target = Math.max(0,nuclei.length-2);
   }
 
@@ -501,9 +525,11 @@ function stressAccent(a, out, nuclei, originalWord){
     ? nuclei.length-2
     : nuclei.length-1;
 
-  if(target===spanishDefault) return out;
-
   const pos = nuclei[target].pos;
+  const hiatusAfterAyin = pos>0 && out[pos-1]==="'";
+
+  if(target===spanishDefault && !forceMark && !hiatusAfterAyin) return out;
+
   const map = {a:"á",e:"é",i:"í",o:"ó",u:"ú"};
   const ch = out[pos];
   if(!map[ch]) return out;
@@ -756,6 +782,8 @@ const FINAL_FORMS = new Map([
   ["יְרוּשָׁלַיִם", "Yerushaláyim"],
   ["צֶדֶק", "tsédek"],
   ["וְהוּא", "vehu"],
+  ["אַתָּה", "atá"],
+  ["וְאַתָּה", "ve\'atá"],
   ["בֵיתְךָ", "beteja"],
   ["לִשְׁמָהּ", "lishmah"],
   ["בִּגְבוּרָה", "bigvurá"],
@@ -1063,7 +1091,12 @@ function runRegressionTests(){
     ["תּוֹרָתְךָ","Torateja"],["בֵיתְךָ","beteja"],["לִשְׁמָהּ","lishmah"],
     ["בִּגְבוּרָה","bigvurá"],["כִּרְצוֹנוֹ","kirtsonó"],["לִפְגָרִים","lifgarim"],
     ["לָיְלָה","layla"],["צָרְכִּי","tsorkí"],["בְּחָכְמָה","bejojmá"],
-    ["בֵּין","ben"],["וּבֵין","uvén"],["אֵיתָן","Eitán"]
+    ["בֵּין","ben"],["וּבֵין","uvén"],["אֵיתָן","Eitán"],
+    ["אַבְשָׁלוֹם","Avshalom"],["שָׁכַבְתִּי","shajávti"],["וָאִישָׁנָה","vaishaná"],
+    ["הֱקִיצוֹתִי","hekitsóti"],["יִסְמְכֵנִי","yismejéni"],["הוֹשִׁיעֵנִי","hoshi'éni"],
+    ["הִכִּיתָ","hikita"],["שִׁבַּרְתָּ","shibárta"],["הַיְשׁוּעָה","hayeshu'á"],
+    ["הָרְשָׁעִים","haresha'ím"],["יָקוּמוּ","yakumu"],["יְלִדְתִּיךָ","yelidtija"],
+    ["אַתָּה","atá"],["וְאַתָּה","ve'atá"]
   ];
   const failures=[];
   for(const [h,expected] of tests){
@@ -1084,7 +1117,7 @@ function divine(token){
   let m=b.match(/^([ולבמהשכ]?)(יי|יהוה|אדני)$/);
   if(m) return (m[1]?PFX[m[1]]:"")+"Ad-nai";
   m=b.match(/^([ולבמהשכ]+)(אלהים|אלהינו|אלהי|אלהיך)$/);
-  if(m){ const r=rawTranslit(token); return r.replace(/e(?=lo)/,"E"); }
+  if(m){ const r=rawTranslit(token); return r.replace(/lo(?=h)/,"Elo"); }
   return null;
 }
 function phoneWord(token,prev,stop){
@@ -1117,11 +1150,26 @@ function phonetize(text){
   let s=text.replace(/\u05BE/g,"-");
   let st; [s,st]=stashLabels(s);
   let prev="", stop=true, out="";
+  let recentHebrew=[];
   for(const m of s.matchAll(/([\u05D0-\u05EA\u0591-\u05C7\u200d]+)|([^\u05D0-\u05EA\u0591-\u05C7\u200d]+)/gu)){
-    if(m[1]){ out+=phoneWord(m[1],prev,stop); prev=m[1]; stop=false; }
+    if(m[1]){
+      let piece=phoneWord(m[1],prev,stop);
+      const bare=bareLetters(m[1]);
+      const divineSpeech =
+        bare==="אני" &&
+        recentHebrew.some(w=>w==="יהוה" || w==="אדני" || w==="אלהים") &&
+        recentHebrew.some(w=>w==="אמר" || w==="ויאמר");
+      if(divineSpeech) piece=capitalizeFirst(piece);
+      out+=piece;
+      recentHebrew.push(bare);
+      if(recentHebrew.length>8) recentHebrew.shift();
+      prev=m[1];
+      stop=false;
+    }
     else{
       out+=m[2].replace(/\uE000(\d+)\uE001/g,(_,i)=>st[+i]);
       if(/[.\n\u2013]/.test(m[2])) stop=true;
+      if(/[.!?\n]/.test(m[2])) recentHebrew=[];
     }
   }
   out=out.replace(/[ \t]+/g," ").replace(/ *\n */g,"\n");
