@@ -1627,10 +1627,53 @@ async function vocalizeUnpointed(text){
 
 let runId=0, debounceTimer=null;
 let lastNakdanChoices=[];
+let lastRenderedHebrew="";
+let lastWordState=[];
+let isComposingHebrew=false;
+const NAKDAN_DEBOUNCE_MS=1800;
 const $=id=>document.getElementById(id);
 function hebrewWordRanges(text){
   const re=new RegExp(HRUN.source,"gu");
   return [...text.matchAll(re)].map((m,i)=>({index:i,start:m.index,end:m.index+m[0].length,text:m[0]}));
+}
+
+function initialWordState(word){
+  return {origin:NIKUD_RE.test(word)?"user":"raw",sourceWord:word,renderedWord:word};
+}
+function reconcileWordState(oldText,oldState,newText){
+  const oldW=hebrewWordRanges(oldText),newW=hebrewWordRanges(newText);
+  const state=newW.map(r=>initialWordState(r.text));
+  let i=0;
+  while(i<oldW.length&&i<newW.length&&norm(oldW[i].text)===norm(newW[i].text)){
+    if(oldState[i]) state[i]={...oldState[i],renderedWord:newW[i].text};
+    i++;
+  }
+  let oi=oldW.length-1,ni=newW.length-1;
+  while(oi>=i&&ni>=i&&norm(oldW[oi].text)===norm(newW[ni].text)){
+    if(oldState[oi]) state[ni]={...oldState[oi],renderedWord:newW[ni].text};
+    oi--;ni--;
+  }
+  return state;
+}
+function prepareNakdanSource(currentText,state){
+  let i=0;
+  return currentText.replace(HRUN,w=>{
+    const st=state[i++];
+    return st&&st.origin==="nakdan"&&norm(w)===norm(st.renderedWord)&&st.sourceWord
+      ? st.sourceWord : w;
+  });
+}
+function buildWordStateAfterRun(sourceText,resultText,priorState){
+  const src=sourceText.match(HRUN)||[],dst=resultText.match(HRUN)||[];
+  if(src.length!==dst.length) return dst.map(initialWordState);
+  return dst.map((renderedWord,i)=>{
+    const sourceWord=src[i],old=priorState[i];
+    const divine=/^(יי|יהוה|אדני)$/.test(bareLetters(sourceWord));
+    if(NIKUD_RE.test(sourceWord)||divine){
+      return {origin:old?.origin==="manual"?"manual":"user",sourceWord,renderedWord};
+    }
+    return {origin:"nakdan",sourceWord,renderedWord};
+  });
 }
 function hideNakdanChoices(){const b=$("nakdanChoices");if(!b)return;b.className="nakdan-choices";b.replaceChildren();}
 function renderNakdanChoice(choice,currentWord){
@@ -1648,7 +1691,12 @@ function renderNakdanChoice(choice,currentWord){
     b.addEventListener("click",()=>{
       const h=$("hebrew"),r=hebrewWordRanges(h.value)[choice.wordIndex];if(!r)return;
       h.value=h.value.slice(0,r.start)+opt.text+h.value.slice(r.end);
-      choice.chosen=opt.text;$("output").value=phonetize(h.value);
+      choice.chosen=opt.text;
+      if(lastWordState[choice.wordIndex]){
+        lastWordState[choice.wordIndex]={origin:"manual",sourceWord:opt.text,renderedWord:opt.text};
+      }
+      lastRenderedHebrew=h.value;
+      $("output").value=phonetize(h.value);
       $("motorStatus").textContent="Fonética actualizada con la opción elegida.";$("motorStatus").className="status ok";
       const u=hebrewWordRanges(h.value)[choice.wordIndex];if(u){h.focus();h.setSelectionRange(u.start,u.end);renderNakdanChoice(choice,opt.text);}
     });
@@ -1687,34 +1735,54 @@ window.addEventListener("DOMContentLoaded",()=>{
   if(h){h.addEventListener("click",showNakdanChoicesForCaret);h.addEventListener("keyup",showNakdanChoicesForCaret);h.addEventListener("select",showNakdanChoicesForCaret);}
 });
 async function run(){
-  const id=++runId, input=$("hebrew").value;
-  const ns=$("nakdanStatus"), ms=$("motorStatus");
-  if(!input.trim()){ $("output").value=""; ns.textContent="Listo."; ns.className="status"; ms.textContent="Motor listo."; ms.className="status"; return; }
-  let text=input, warn=false;
-  const [probe]=stashLabels(input);
-  const need=(probe.match(HRUN)||[]).some(w=>!NIKUD_RE.test(w)&&!/^(יי|יהוה|אדני)$/.test(w));
+  const id=++runId,h=$("hebrew"),input=h.value;
+  const ns=$("nakdanStatus"),ms=$("motorStatus");
+  if(!input.trim()){
+    $("output").value="";lastRenderedHebrew="";lastWordState=[];lastNakdanChoices=[];hideNakdanChoices();
+    ns.textContent="Listo.";ns.className="status";ms.textContent="Motor listo.";ms.className="status";return;
+  }
+
+  const currentState=reconcileWordState(lastRenderedHebrew,lastWordState,input);
+  const sourceForNakdan=prepareNakdanSource(input,currentState);
+  let text=input,warn=false;
+  const [probe]=stashLabels(sourceForNakdan);
+  const need=(probe.match(HRUN)||[]).some(w=>!NIKUD_RE.test(w)&&!/^(יי|יהוה|אדני)$/.test(bareLetters(w)));
+
   if(need){
-    const genreLabel={
-      modern:"Moderno",
-      rabbinic:"Rabínico",
-      poetry:"Zemirot / Piyutim"
-    }[selectedNakdanGenre()];
-    ns.textContent="Vocalizando con Nakdan ("+genreLabel+") solo las palabras sin niqqud…"; ns.className="status";
+    const genreLabel={modern:"Moderno",rabbinic:"Rabínico",poetry:"Zemirot / Piyutim"}[selectedNakdanGenre()];
+    ns.textContent="Vocalizando con Nakdan ("+genreLabel+") con el contexto actualizado…";ns.className="status";
     try{
-      const r=await vocalizeUnpointed(input); if(id!==runId) return;
-      text=r.text; $("hebrew").value=text;lastNakdanChoices=r.choices||[];hideNakdanChoices();
-      ns.textContent="Nakdan vocalizó "+r.count+" palabra(s) sin niqqud"+
+      const r=await vocalizeUnpointed(sourceForNakdan);
+      if(id!==runId) return;
+      text=r.text;h.value=text;lastNakdanChoices=r.choices||[];
+      lastWordState=buildWordStateAfterRun(sourceForNakdan,text,currentState);
+      lastRenderedHebrew=text;hideNakdanChoices();
+      ns.textContent="Nakdan vocalizó/revisó "+r.count+" palabra(s)"+
         (lastNakdanChoices.length?" · alternativas en "+lastNakdanChoices.length+" palabra(s): hacé clic en una para revisarlas.":"")+
-        "; el resto quedó intacto."; ns.className="status ok";
+        ". El niqqud automático queda provisional; el tuyo y tus elecciones quedan fijos.";
+      ns.className="status ok";
     }catch(e){
-      if(id!==runId) return; warn=true;
-      ns.textContent="Nakdan no está disponible ("+e.message+"): las palabras sin niqqud se transliteran sin vocales."; ns.className="status warn";
+      if(id!==runId) return;
+      warn=true;lastWordState=currentState;lastRenderedHebrew=input;
+      ns.textContent="Nakdan no está disponible ("+e.message+"): las palabras sin niqqud se transliteran sin vocales.";ns.className="status warn";
     }
-  }else{ lastNakdanChoices=[];hideNakdanChoices();ns.textContent="Todo el texto tiene niqqud: se usa tal cual, sin Nakdan."; ns.className="status ok"; }
+  }else{
+    lastWordState=currentState;lastRenderedHebrew=input;lastNakdanChoices=[];hideNakdanChoices();
+    ns.textContent="El niqqud existente es del usuario o fue fijado manualmente: se conserva.";ns.className="status ok";
+  }
   $("output").value=phonetize(text);
-  ms.textContent="Fonética generada (Sefaradí)."; ms.className="status "+(warn?"warn":"ok");
+  ms.textContent="Fonética generada (Sefaradí).";ms.className="status "+(warn?"warn":"ok");
 }
-$("hebrew").addEventListener("input",()=>{lastNakdanChoices=[];hideNakdanChoices();clearTimeout(debounceTimer);debounceTimer=setTimeout(run,700);});
+$("hebrew").addEventListener("compositionstart",()=>{isComposingHebrew=true;runId++;});
+$("hebrew").addEventListener("compositionend",()=>{
+  isComposingHebrew=false;runId++;clearTimeout(debounceTimer);
+  debounceTimer=setTimeout(run,NAKDAN_DEBOUNCE_MS);
+});
+$("hebrew").addEventListener("input",()=>{
+  runId++;
+  lastNakdanChoices=[];hideNakdanChoices();clearTimeout(debounceTimer);
+  if(!isComposingHebrew) debounceTimer=setTimeout(run,NAKDAN_DEBOUNCE_MS);
+});
 async function copyText(value, fallbackEl){
   if(!value) return;
   try{ await navigator.clipboard.writeText(value); }
@@ -1730,6 +1798,7 @@ $("pasteHebrew").addEventListener("click",async()=>{
     if(!text) return;
     runId++;
     $("hebrew").value=text;
+    lastRenderedHebrew="";lastWordState=[];lastNakdanChoices=[];hideNakdanChoices();
     clearTimeout(debounceTimer);
     await run();
     $("hebrew").focus();
@@ -1746,7 +1815,7 @@ $("nakdanGenre").addEventListener("change",()=>{
   $("nakdanStatus").className="status";
 });
 
-$("clear").addEventListener("click",()=>{runId++;lastNakdanChoices=[];hideNakdanChoices();$("hebrew").value="";$("output").value="";$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
+$("clear").addEventListener("click",()=>{runId++;lastNakdanChoices=[];lastWordState=[];lastRenderedHebrew="";hideNakdanChoices();$("hebrew").value="";$("output").value="";$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
 </script>
 </body>
 </html>
