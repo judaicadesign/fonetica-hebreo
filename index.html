@@ -515,19 +515,23 @@ function stressAccent(a, out, nuclei, originalWord){
   }
 
   /*
-    Sufijo pronominal -נוּ ("nosotros/nos/nuestro", 1ra persona
-    plural): sea sujeto verbal (yashavnu, bajinu), objeto verbal
-    (sheelunu "nos preguntaron") o posesivo nominal (kinorotenu,
-    shovenu, tolalenu), esta -נוּ final NUNCA es tónica en hebreo
-    -- el acento queda en la sílaba de la raíz, justo antes del
-    sufijo. Es una regla morfológica cerrada, no una lista de
-    palabras: cualquier palabra que termine en נ (sin vocal
-    propia) + ו-shuruk cae acá, sin necesidad de listarla.
+    -נוּ puede ser sufijo átono o נ radical + plural וּ.
+    Se considera sufijo átono en entornos morfológicos seguros:
+    נּוּ con dagesh; ...י+נוּ; consonante distinta de נ con
+    shevá + נוּ; shuruk previo + נוּ; o qamats+dagesh antes de נוּ
+    (אִתָּנוּ). Así כּוֹנְנוּ / יִבְחֲנוּ conservan u final tónica.
   */
   if(L>=2 &&
      a[L-1].b==="ו" && isShuruk(a[L-1]) &&
      a[L-2].b==="נ" && !vowel(a[L-2])){
-    target = Math.max(0,nuclei.length-2);
+    const n=a[L-2], prev=L>=3?a[L-3]:null;
+    const unstressedNu =
+      has(n,N.DAGESH) ||
+      (prev && prev.b==="י" && prev.m.length===0) ||
+      (prev && has(prev,N.SHEVA) && prev.b!=="נ") ||
+      (prev && isShuruk(prev)) ||
+      (prev && has(prev,N.QAMATS) && has(prev,N.DAGESH));
+    if(unstressedNu) target=Math.max(0,nuclei.length-2);
   }
 
   /*
@@ -574,13 +578,28 @@ function stressAccent(a, out, nuclei, originalWord){
     target = Math.max(0,nuclei.length-2);
   }
 
-  /* Hifil imperativo con ה paragógica: haazina / hakshiva. */
-  if(L>=4 &&
-     a[0].b==="ה" && has(a[0],N.PATAH) && a[1].b!=="י" &&
-     (has(a[1],N.SHEVA)||has(a[1],N.HATAF_PATAH)||
-      has(a[1],N.HATAF_SEGOL)||has(a[1],N.HATAF_QAMATS)) &&
-     a[L-1].b==="ה" && !vowel(a[L-1]) && has(a[L-2],N.QAMATS)){
-    target=Math.max(0,nuclei.length-2);
+  /*
+    Hifil imperativo + ה paragógica: la -a final es átona.
+    Cubre הַקְשִׁיבָה / הַאֲזִינָה, הַבִּיטָה,
+    הוֹשִׁיעָה y הָאִירָה por patrón vocálico.
+  */
+  if(L>=4 && a[L-1].b==="ה" && !vowel(a[L-1]) &&
+     has(a[L-2],N.QAMATS) && a[0].b==="ה"){
+    const second=a[1];
+    const reducedSecond=second && (
+      has(second,N.SHEVA)||has(second,N.HATAF_PATAH)||
+      has(second,N.HATAF_SEGOL)||has(second,N.HATAF_QAMATS)
+    );
+    const patahHifil =
+      has(a[0],N.PATAH) && second && second.b!=="י" &&
+      (reducedSecond || has(second,N.HIRIQ));
+    const holamHifil =
+      L>=5 && isHolamMale(a[1]) && a[2] && has(a[2],N.HIRIQ);
+    const alefHifil =
+      has(a[0],N.QAMATS) && second && second.b==="א" && has(second,N.HIRIQ);
+    if(patahHifil || holamHifil || alefHifil){
+      target=Math.max(0,nuclei.length-2);
+    }
   }
 
   /*
@@ -617,6 +636,42 @@ function stressAccent(a, out, nuclei, originalWord){
      a[L-3].b==="י" && has(a[L-3],N.SHEVA) && has(a[L-4],N.PATAH)){
     const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-4);
     if(idx>-1) target=idx;
+  }
+
+  /*
+    Familias verbales plurales en וּ que son mil'él:
+    Hifil perfecto הִ...וּ, Nifal perfecto נֶ/נִ...וּ,
+    Hifil imperfecto תָ...וּ y Piel imperfecto יְ...ְּ...וּ.
+  */
+  if(L>=3 && a[L-1].b==="ו" && isShuruk(a[L-1])){
+    const hifilPerfect=a[0].b==="ה" && has(a[0],N.HIRIQ);
+    const nifalPerfect=a[0].b==="נ" && (has(a[0],N.SEGOL)||has(a[0],N.HIRIQ));
+    const hifilImperfectT=a[0].b==="ת" && has(a[0],N.QAMATS);
+    const pielImperfectY=
+      a[0].b==="י" && has(a[0],N.SHEVA) &&
+      a.slice(1,L-1).some(c=>has(c,N.DAGESH)&&has(c,N.SHEVA));
+    if(hifilPerfect||nifalPerfect||hifilImperfectT||pielImperfectY){
+      target=Math.max(0,nuclei.length-2);
+    }
+  }
+
+  /* Sufijo poético ־ֵימוֹ: fanemo / mosrotemo / 'avotemo. */
+  if(L>=5 &&
+     a[L-1].b==="ו" && isHolamMale(a[L-1]) &&
+     a[L-2].b==="מ" && !vowel(a[L-2]) &&
+     a[L-3].b==="י" && a[L-3].m.length===0 &&
+     has(a[L-4],N.TSERE)){
+    target=Math.max(0,nuclei.length-2);
+  }
+
+  /*
+    Singular -ךָ tras dos shevaim consecutivos:
+    בְּחַסְדְּךָ → bejasdejá.
+  */
+  if(L>=4 &&
+     (a[L-1].b==="ך"||a[L-1].b==="כ") && has(a[L-1],N.QAMATS) &&
+     has(a[L-2],N.SHEVA) && has(a[L-3],N.SHEVA)){
+    target=nuclei.length-1;
   }
 
   /*
@@ -657,6 +712,10 @@ function stressAccent(a, out, nuclei, originalWord){
   if(isLexicalMilel(originalWord)){
     target=Math.max(0,nuclei.length-2);
   }
+  if(isLexicalMilra(originalWord)){
+    target=nuclei.length-1;
+    while(target>0 && nuclei[target].furtive) target--;
+  }
 
   /* Se marca la tónica SOLO cuando el español, por su propia
      regla de acentuación por defecto (según la última letra),
@@ -681,16 +740,15 @@ function stressAccent(a, out, nuclei, originalWord){
   const ch = out[pos];
 
   /*
-    En perfecto 2ms de ראה con ה paragógica (רָאִתָה), la hiriq de
-    א es una sílaba propia. En español "raita" tendería a diptongo;
-    se marca la i: raíta. La regla queda ligada a esta morfología,
-    no a cualquier secuencia ai del idioma.
+    Hiato español: una i/u tónica pegada a a/e/o necesita tilde
+    para conservar dos sílabas: raíta, haíra. Si hay apóstrofo,
+    como hoshi'a, el corte ya está marcado.
   */
-  const bare=bareLetters(originalWord);
-  const perfectRaahHiatus =
-    /^(?:[ולבמהשכ]*)ראתה$/.test(bare) && ch==="i";
+  const prevCh=out[pos-1]||"",nextCh=out[pos+1]||"";
+  const needsHiatusMark=(ch==="i"||ch==="u") &&
+    (/[aeo]/i.test(prevCh)||/[aeo]/i.test(nextCh));
 
-  if(target===spanishDefault && !perfectRaahHiatus) return out;
+  if(target===spanishDefault && !needsHiatusMark) return out;
 
   const map = {a:"á",e:"é",i:"í",o:"ó",u:"ú"};
   if(!map[ch]) return out;
@@ -814,7 +872,7 @@ const GOLDEN_EDITORIAL = new Map([
 const APPROVED = new Map([
   ["יְיָ","Ad-nai"],["יי","Ad-nai"],["יהוה","Ad-nai"],["אֵל","El"],["יְהוָה","Ad-nai"],["יְהֹוָה","Ad-nai"],
   ["אֱלֹהִים","Elohim"],["אֱלֹהֵינוּ","Elohenu"],["אֱלֹהֶיךָ","Eloheja"],
-  ["הוּא","hu"],["מֶלֶךְ","Mélej"],["הַמֶּלֶךְ","HaMélej"],["לַאֲדוֹן","laAdón"],["הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד","Hiné El yeshua'tí evtaj veló efjad"],["הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד, כִּי עָזִּי וְזִמְרָת יָהּ יְיָ, וַיְהִי לִי לִישׁוּעָה","Hiné El yeshua'tí evtaj veló efjad, ki 'ozí vezimrát Yah Ad-nai, vayehí li lishu'á"],["הִנֵּה","Hiné"],["יְשׁוּעָתִי","yeshua'tí"],["עָזִּי","'ozí"],["וְזִמְרָת","vezimrát"],["יָהּ","Yah"],["וַיְהִי","vayehí"],["לִישׁוּעָה","lishu'á"],
+  ["הוּא","hu"],["מֶלֶךְ","Mélej"],["הַמֶּלֶךְ","HaMélej"],["לַאֲדוֹן","laAdón"],["הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד","Hiné El yeshua'tí evtaj veló efjad"],["הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד, כִּי עָזִּי וְזִמְרָת יָהּ יְיָ, וַיְהִי לִי לִישׁוּעָה","Hiné El yeshua'tí evtaj veló efjad, ki 'ozí vezimrát Yah Ad-nai, vayehí li lishu'á"],["הִנֵּה","hiné"],["יְשׁוּעָתִי","yeshua'tí"],["עָזִּי","'ozí"],["וְזִמְרָת","vezimrát"],["יָהּ","Yah"],["וַיְהִי","vayehí"],["לִישׁוּעָה","lishu'á"],
 
   ["הַשְּׁבִיעִי","hashevi'í"],["הַשְּׁמִינִי","Hasheminí"],["הַשְּׁמִינִי","Hasheminí"],["תַּצְהִיר","tats-hir"],
   
@@ -832,7 +890,7 @@ const APPROVED = new Map([
   ["בָּרוּךְ שְׁמוֹ","Baruj Shemó"],["בָּרוּךְ שְׁמוֹ","Baruj Shemó"],
   ["וּבְמִלְחֶמֶת","uvemiljemet"],["מִלְחֶמֶת","miljemet"],["בְּזָכְרֵנוּ","bezojrenu"],["יְרוּשָׁלִם","Yerushaláyim"],["יְרוּשָׁלַ‍ִם","Yerushaláyim"],["חֻקֵּי","Juké"],["לִפְנֵי","lifné"],
   ["נֹתֵן","Notén"],["הַזָּן","hazán"],["רָצוֹן","ratsón"],["שָׁאַתָּה","shaAtá"],["שֶׁאַתָּה","sheAtá"],["נָתַן","natán"],
-  ["רֵיוַח","révaj"],["רֶוַח","révaj"],["מִצְוֹתָיו","mitsvotav"],["הִנֵּה","Hiné"],["יְשׁוּעָתִי","yeshua'tí"],["עָזִּי","'ozí"],["וְזִמְרָת","vezimrát"],["יָהּ","Yah"],["וַיְהִי","vayehí"],["לִישׁוּעָה","lishu'á"],
+  ["רֵיוַח","révaj"],["רֶוַח","révaj"],["מִצְוֹתָיו","mitsvotav"],["הִנֵּה","hiné"],["יְשׁוּעָתִי","yeshua'tí"],["עָזִּי","'ozí"],["וְזִמְרָת","vezimrát"],["יָהּ","Yah"],["וַיְהִי","vayehí"],["לִישׁוּעָה","lishu'á"],
 
   ["בְּכָל","bejol"],["בִּכָל","bejol"],["כָּל","kol"],["לְכָל","lejol"],["מִכָּל","mikol"],
   ["כְבוֹדוֹ","jevodó"],["בְּחֶסֶד","bejésed"],["וְכָל","vejol"],["בַשָּׁלוֹם","vashalom"],
@@ -894,7 +952,8 @@ function stressKey(s){ return norm(s).replace(/\u05BC/g,""); }
 const LEXICAL_MILEL = new Set([
   "סֶלָה","שֶׁמֶן","מֶלֶךְ","הַמֶּלֶךְ","פְּאֵרֶךָ",
   "יַחַד","יָחַד","תַּחַת","רָגַע","כַּעַס","חֵלֵכָה",
-  "מַעַן","פֹעַל"
+  "מַעַן","פֹעַל",
+  "נוּדִי","פַסּוּ","פָחַד","יֵשַׁע","שֹׁחַד"
 ].map(stressKey));
 
 function isLexicalMilel(word){
@@ -903,6 +962,17 @@ function isLexicalMilel(word){
   if(a.length>1 && "ולבמהשכ".includes(a[0].b)){
     const stem=clustersText(a.slice(1));
     if(LEXICAL_MILEL.has(stressKey(stem))) return true;
+  }
+  return false;
+}
+
+const LEXICAL_MILRA=new Set(["עַתָּה"].map(stressKey));
+function isLexicalMilra(word){
+  if(LEXICAL_MILRA.has(stressKey(word))) return true;
+  const a=clusters(word);
+  if(a.length>1 && "ולבמהשכ".includes(a[0].b)){
+    const stem=clustersText(a.slice(1));
+    if(LEXICAL_MILRA.has(stressKey(stem))) return true;
   }
   return false;
 }
@@ -1342,7 +1412,13 @@ function runRegressionTests(){
     ["רָגַע","raga'"],["מִכַּעַס","mika'as"],["וָכַעַס","vaja'as"],
     ["הֵמָּה","hema"],["אָגִילָה","aguila"],["בְּפֹעַל","befó'al"],
     ["יָשׁוּבוּ","yashuvu"],["יָחִילוּ","yajilu"],["לִשְׁאוֹלָה","lishola"],
-    ["חֵלֵכָה","jeleja"],["זְרוֹעַ","zroa'"],["וּדְגֵי","udgué"]
+    ["חֵלֵכָה","jeleja"],["זְרוֹעַ","zroa'"],["וּדְגֵי","udgué"],
+    ["נוּדִי","nudi"],["הִנֵּה","hiné"],["כּוֹנְנוּ","konenú"],["יִבְחֲנוּ","yivjanú"],
+    ["פָנֵימוֹ","fanemo"],["הוֹשִׁיעָה","hoshi'a"],["פַסּוּ","fasu"],["יְדַבְּרוּ","yedaberu"],
+    ["עַתָּה","'atá"],["וְעַתָּה","ve'atá"],["בְּיֵשַׁע","beyesha'"],
+    ["הַבִּיטָה","habita"],["הָאִירָה","haíra"],["בְּחַסְדְּךָ","bejasdejá"],
+    ["הִשְׁחִיתוּ","hishjitu"],["הִתְעִיבוּ","hit'ivu"],["נֶאֱלָחוּ","neelaju"],
+    ["פָחַד","fájad"],["תָבִישׁוּ","tavishu"],["וְשֹׁחַד","veshójad"]
   ];
   const failures=[];
   for(const [h,expected] of tests){
