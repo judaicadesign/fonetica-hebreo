@@ -352,7 +352,7 @@ function consonant(c,i,a){
     case "א": return "";
     case "ע": return "'";
     case "ב": return d ? "b":"v";
-    case "ג": return "g";
+    case "ג": { const v=vowel(c); return (v==="e" || v==="i") ? "gu" : "g"; }
     case "ד": return "d";
     case "ה": return (i===a.length-1 && !d && !vowel(c)) ? "" : "h";
     case "ו": return (isShuruk(c)|| (isHolamMale(c) && !(a && i>0 && isConsonantalVavHolam(a,i)))) ? "" : "v";
