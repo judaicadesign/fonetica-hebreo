@@ -454,7 +454,8 @@ function stressAccent(a, out, nuclei, originalWord){
     יִסְמְכֵנִי → yismejeni, הוֹשִׁיעֵנִי → hoshi'eni. */
   if(L>=4 && a[L-1].b==="י" && a[L-1].m.length===0 &&
      a[L-2].b==="נ" && has(a[L-2],N.HIRIQ) &&
-     !has(a[L-2],N.DAGESH)){
+     !has(a[L-2],N.DAGESH) &&
+     !/^(?:[ולבמהשכ]*)אני$/.test(bareLetters(originalWord))){
     target = Math.max(0,nuclei.length-2);
   }
 
@@ -533,7 +534,8 @@ function stressAccent(a, out, nuclei, originalWord){
   */
   if(L>=2 &&
      a[L-1].b==="ה" && !vowel(a[L-1]) &&
-     a[L-2].b==="ת" && has(a[L-2],N.QAMATS)){
+     a[L-2].b==="ת" && has(a[L-2],N.QAMATS) &&
+     !/^(?:[ולבמהשכ]*)אתה$/.test(bareLetters(originalWord))){
     target = Math.max(0,nuclei.length-2);
   }
 
@@ -545,7 +547,10 @@ function stressAccent(a, out, nuclei, originalWord){
   */
   if(L>=3){
     const s1=a[L-3], s2=a[L-2], s3=a[L-1];
+    const s1Consonantal=consonant(s1,L-3,a)!=="";
+    const s2Consonantal=consonant(s2,L-2,a)!=="";
     if(!vowel(s3) && vowel(s1) && vowel(s2) &&
+       s1Consonantal && s2Consonantal &&
        (has(s1,N.SEGOL)||has(s2,N.SEGOL))){
       const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-3);
       if(idx>-1) target=idx;
@@ -585,12 +590,18 @@ function stressAccent(a, out, nuclei, originalWord){
 
   const pos = nuclei[target].pos;
   const ch = out[pos];
-  const hiatusNeedsMark =
-    (ch==="i" || ch==="u") &&
-    ((pos>0 && /[aeo]/i.test(out[pos-1])) ||
-     (pos+1<out.length && /[aeo]/i.test(out[pos+1])));
 
-  if(target===spanishDefault && !hiatusNeedsMark) return out;
+  /*
+    En perfecto 2ms de ראה con ה paragógica (רָאִתָה), la hiriq de
+    א es una sílaba propia. En español "raita" tendería a diptongo;
+    se marca la i: raíta. La regla queda ligada a esta morfología,
+    no a cualquier secuencia ai del idioma.
+  */
+  const bare=bareLetters(originalWord);
+  const perfectRaahHiatus =
+    /^(?:[ולבמהשכ]*)ראתה$/.test(bare) && ch==="i";
+
+  if(target===spanishDefault && !perfectRaahHiatus) return out;
 
   const map = {a:"á",e:"é",i:"í",o:"ó",u:"ú"};
   if(!map[ch]) return out;
@@ -649,9 +660,9 @@ function rawTranslit(word){
        Si YOD tiene su propio niqqud, funciona como consonante. */
     if(c.b==="י" && c.m.length===0 && i>0 && vowel(a[i-1])){
       const next=a[i+1];
-      const consonantalBeforeNextVowel =
-        !!next && (!!vowel(next) || isHolamMale(next) || isShuruk(next));
-      if(!consonantalBeforeNextVowel) continue;
+      const consonantalBeforeHolamVav =
+        !!next && next.b==="ו" && isHolamMale(next);
+      if(!consonantalBeforeHolamVav) continue;
     }
 
     if(isShuruk(c) && !isConsonantalVavDagesh(a,i)){
@@ -737,7 +748,7 @@ const APPROVED = new Map([
   ["חַיִּים","jayim"],["חָיִינוּ","jayinu"],["שָׁמַיִם","shamáyim"],
 ["אַשְׁרֵי","ashré"],["אַשְׁרֶיךָ","ashreja"],
 
-  ["לַמְנַצֵּחַ","Lamenatséaj"],["בִּנְגִינֹת","binguinot"],["פָּנָיו","Panav"],
+  ["בִּנְגִינֹת","binguinot"],["פָּנָיו","Panav"],
   ["אוֹתוֹ","otó"],["אֲבָרְכָה","avarejá"],["מִצְוֹתָיו","mitsvotav"],
   ["תְּהִלַּת","Tehilat"],["יְדַבֶּר","yedaber"],["קָדְשׁוֹ","kodshó"],
   ["שֶׁהִנְחַלְתָּ","shehinjaltá"],["וְנִתְעַנֵּג","venit'aneg"],["וְהֲגַם","Vehagam"],
