@@ -303,6 +303,11 @@ function shevaVocalized(a,i){
   /* Dagesh after sheva is a classic vocal-sheva environment. */
   if(has(c,N.DAGESH)) return true;
 
+  /* Primera de dos consonantes idénticas consecutivas:
+     el shevá es móvil/vocal. Regla general: הַלְלוּ → halelu,
+     שׁוֹרְרָי → shorerai. */
+  if(i+1<a.length && a[i+1].b===c.b) return true;
+
   /*
     Important: a sheva immediately after a consonant with a full
     vowel is normally silent (sheva nach), BUT the following
@@ -1103,8 +1108,8 @@ function runRegressionTests(){
     ["אַבְשָׁלוֹם","Avshalom"],["שָׁכַבְתִּי","shajavti"],["וָאִישָׁנָה","vaishaná"],
     ["הֱקִיצוֹתִי","hekitsoti"],["יִסְמְכֵנִי","yismejeni"],["הוֹשִׁיעֵנִי","hoshi'eni"],
     ["הִכִּיתָ","hikita"],["שִׁבַּרְתָּ","shibarta"],["הַיְשׁוּעָה","hayeshu'á"],
-    ["הָרְשָׁעִים","haresha'im"],["יָקוּמוּ","yakumu"],["יְלִדְתִּיךָ","yelidtija"],["בְּנִי","bení"],
-    ["אַתָּה","atá"],["וְאַתָּה","ve'atá"]
+    ["הָרְשָׁעִים","haresha'im"],["יָקוּמוּ","yakumu"],["יְלִדְתִּיךָ","yelidtija"],["בְּנִי","bení"],["שׁוֹרְרָי","shorerái"],
+    ["אַתָּה","atá"],["וְאַתָּה","veatá"]
   ];
   const failures=[];
   for(const [h,expected] of tests){
@@ -1127,12 +1132,10 @@ function grammaticalPronoun(token){
      La mayúscula es contextual, nunca fija en la palabra. */
   if(b==="אני" || b==="אתה") return rawTranslit(token);
 
-  /* וְ + אַתָּה: conserva el corte vocálico editorial ve'atá;
-     la posición del acento sigue siendo calculada por regla. */
-  if(b==="ואתה"){
-    const r=rawTranslit(token);
-    return r.replace(/^vea/i,"ve'a");
-  }
+  /* א nunca se representa con apóstrofo en esta convención.
+     Por eso וְאַתָּה sale directamente de las reglas: veatá.
+     El apóstrofo transliterativo queda reservado exclusivamente a ע. */
+  if(b==="ואתה") return rawTranslit(token);
   return null;
 }
 
