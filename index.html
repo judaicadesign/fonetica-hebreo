@@ -547,10 +547,10 @@ function stressAccent(a, out, nuclei, originalWord){
   */
   if(L>=3){
     const s1=a[L-3], s2=a[L-2], s3=a[L-1];
-    const s1Consonantal=consonant(s1,L-3,a)!=="";
-    const s2Consonantal=consonant(s2,L-2,a)!=="";
+    const s1IsMaterVav=s1.b==="ו" && isHolamMale(s1);
+    const s2IsMaterVav=s2.b==="ו" && isHolamMale(s2);
     if(!vowel(s3) && vowel(s1) && vowel(s2) &&
-       s1Consonantal && s2Consonantal &&
+       !s1IsMaterVav && !s2IsMaterVav &&
        (has(s1,N.SEGOL)||has(s2,N.SEGOL))){
       const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-3);
       if(idx>-1) target=idx;
