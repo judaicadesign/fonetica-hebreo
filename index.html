@@ -111,6 +111,15 @@ details.rules[open] summary::before{content:"–"}
       <option disabled>Ashkenaz — próximamente</option>
     </select>
   </div>
+
+  <div class="profile-control">
+    <span class="profile-label">Nakdan</span>
+    <select id="nakdanGenre" aria-label="Tipo de texto para Nakdan">
+      <option value="rabbinic" selected>Rabínico · sidur / textos tradicionales</option>
+      <option value="modern">Moderno · canciones / hebreo actual</option>
+      <option value="poetry">Piyutim / zemirot</option>
+    </select>
+  </div>
 </div>
 
 <div class="grid">
@@ -119,6 +128,7 @@ details.rules[open] summary::before{content:"–"}
     <textarea id="hebrew" spellcheck="false" placeholder="Pegá aquí el texto hebreo, con o sin niqqud…"></textarea>
     <div class="toolbar split">
       <button id="clear" type="button">Limpiar</button>
+      <button id="pasteHebrew" type="button">Pegar texto</button>
       <button id="copyHebrew" type="button">Copiar hebreo con niqqud</button>
     </div>
     <div id="nakdanStatus" class="status">Listo. Nakdan se activa automáticamente cuando hace falta.</div>
@@ -1164,6 +1174,12 @@ const protectedForms = [
 
 const NAKDAN_ENDPOINT="https://nakdan-2-0.loadbalancer.dicta.org.il/api";
 
+function selectedNakdanGenre(){
+  const el=typeof document!=="undefined" ? document.getElementById("nakdanGenre") : null;
+  const value=el && typeof el.value==="string" ? el.value : "";
+  return ["modern","rabbinic","poetry"].includes(value) ? value : "rabbinic";
+}
+
 async function nakdan(text){
   const controller=new AbortController();
   const timeout=setTimeout(()=>controller.abort(),45000);
@@ -1172,7 +1188,7 @@ async function nakdan(text){
     const payload={
       data:text,
       task:"nakdan",
-      genre:"modern",
+      genre:selectedNakdanGenre(),
       keepmetagim:false,
       keepqq:false,
       matchpartial:true,
@@ -1564,7 +1580,12 @@ async function run(){
   const [probe]=stashLabels(input);
   const need=(probe.match(HRUN)||[]).some(w=>!NIKUD_RE.test(w)&&!/^(יי|יהוה|אדני)$/.test(w));
   if(need){
-    ns.textContent="Vocalizando con Nakdan solo las palabras sin niqqud…"; ns.className="status";
+    const genreLabel={
+      modern:"Moderno",
+      rabbinic:"Rabínico",
+      poetry:"Piyutim / zemirot"
+    }[selectedNakdanGenre()];
+    ns.textContent="Vocalizando con Nakdan ("+genreLabel+") solo las palabras sin niqqud…"; ns.className="status";
     try{
       const r=await vocalizeUnpointed(input); if(id!==runId) return;
       text=r.text; $("hebrew").value=text;
@@ -1585,6 +1606,30 @@ async function copyText(value, fallbackEl){
 }
 $("copyHebrew").addEventListener("click",()=>copyText($("hebrew").value,$("hebrew")));
 $("copy").addEventListener("click",()=>copyText($("output").value,$("output")));
+
+$("pasteHebrew").addEventListener("click",async()=>{
+  const ns=$("nakdanStatus");
+  try{
+    const text=await navigator.clipboard.readText();
+    if(!text) return;
+    runId++;
+    $("hebrew").value=text;
+    clearTimeout(debounceTimer);
+    await run();
+    $("hebrew").focus();
+  }catch(e){
+    ns.textContent="El navegador no permitió leer el portapapeles. Usá Ctrl+V dentro del recuadro.";
+    ns.className="status warn";
+    $("hebrew").focus();
+  }
+});
+
+$("nakdanGenre").addEventListener("change",()=>{
+  const labels={modern:"Moderno",rabbinic:"Rabínico",poetry:"Piyutim / zemirot"};
+  $("nakdanStatus").textContent="Nakdan: "+labels[selectedNakdanGenre()]+". Se aplicará a las palabras sin niqqud.";
+  $("nakdanStatus").className="status";
+});
+
 $("clear").addEventListener("click",()=>{runId++;$("hebrew").value="";$("output").value="";$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
 </script>
 </body>
