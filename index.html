@@ -307,19 +307,27 @@ function shevaVocalized(a,i){
     return true;
   }
 
-  /* Initial sheva is vocal. */
-  if(i===0) return true;
+  /* Shevá inicial: vocal salvo ataques modernos estables como זְר-. */
+  if(i===0){
+    if(c.b==="ז" && i+1<a.length && a[i+1].b==="ר") return false;
+    return true;
+  }
 
   /* Second of two consecutive shevas is vocal. */
   if(has(a[i-1],N.SHEVA)) return true;
 
-  /* Dagesh after sheva is a classic vocal-sheva environment. */
-  if(has(c,N.DAGESH)) return true;
+  /* Con dagesh suele ser móvil; tras hiriq corto puede cerrar sílaba. */
+  if(has(c,N.DAGESH)){
+    if(i>0 && has(a[i-1],N.HIRIQ)) return false;
+    return true;
+  }
 
-  /* Primera de dos consonantes idénticas consecutivas:
-     el shevá es móvil/vocal. Regla general: הַלְלוּ → halelu,
-     שׁוֹרְרָי → shorerai. */
-  if(i+1<a.length && a[i+1].b===c.b) return true;
+  /* Idénticas: vocal tras vocal larga; mudo tras hiriq corto. */
+  if(i+1<a.length && a[i+1].b===c.b){
+    const prev=a[i-1];
+    return !!(isHolamMale(prev)||isShuruk(prev)||
+      has(prev,N.TSERE)||has(prev,N.QAMATS));
+  }
 
   /*
     Important: a sheva immediately after a consonant with a full
@@ -335,18 +343,16 @@ function shevaVocalized(a,i){
 
 function prefixBoundarySheva(a,i){
   if(!has(a[i],N.SHEVA) || i===0 || i===a.length-1) return false;
-  /* Conjunción וּ-: וּבְמִצְוַת → uvemitsvat, וּלְחַיֵּי → ulejaye,
-     וּמְבָרְכִים → umevarjim. La shevá de ב/ל/מ después de וּ es vocal.
-     NO aplicamos esta regla a בִּגְ..., לִפְ..., כִּרְ..., porque allí
-     la vocal anterior es hiriq y la shevá siguiente es silenciosa. */
   const prev=a[i-1];
 
-  /* Artículo definido הַ-/הָ- seguido por consonante con shevá:
-     el shevá abre la sílaba del lexema: הַיְשׁוּעָה → hayeshu'a.
-     Es una frontera morfológica, no una excepción léxica. */
-  if(i===1 && prev.b==="ה" && (has(prev,N.PATAH)||has(prev,N.QAMATS))) return true;
+  /* וּ + shevá: sin e automática; מְ- conserva su vocal reducida. */
+  if(i===1 && prev.b==="ו" && isShuruk(prev) && a[i].b==="מ") return true;
 
-  return i===1 && prev.b==="ו" && isShuruk(prev);
+  /* Artículo הָ + shevá; y הַ + יְ- como הַיְשׁוּעָה. */
+  if(i===1 && prev.b==="ה" && has(prev,N.QAMATS)) return true;
+  if(i===1 && prev.b==="ה" && has(prev,N.PATAH) && a[i].b==="י") return true;
+
+  return false;
 }
 
 /* וַיְ־ is a structural pattern, not a word exception. */
@@ -441,8 +447,8 @@ function stressAccent(a, out, nuclei, originalWord){
   /*
     Formas verbales con -תִּי / -תי (1ª persona singular del perfecto):
     la terminación -ti no recibe el acento; éste queda en la vocal
-    precedente del tema. Así שָׁכַבְתִּי → shajávti y
-    הֱקִיצוֹתִי → hekitsoti. */
+    precedente del tema. La tilde española se decide después:
+    שָׁכַבְתִּי → shajavti, הֱקִיצוֹתִי → hekitsoti. */
   if(L>=2 && a[L-1].b==="י" && a[L-1].m.length===0 &&
      a[L-2].b==="ת" && has(a[L-2],N.HIRIQ)){
     const feminineNounPossessive =
@@ -548,6 +554,42 @@ function stressAccent(a, out, nuclei, originalWord){
     target = Math.max(0,nuclei.length-2);
   }
 
+  /* Hifil imperativo con ה paragógica: haazina / hakshiva. */
+  if(L>=4 &&
+     a[0].b==="ה" && has(a[0],N.PATAH) && a[1].b!=="י" &&
+     (has(a[1],N.SHEVA)||has(a[1],N.HATAF_PATAH)||
+      has(a[1],N.HATAF_SEGOL)||has(a[1],N.HATAF_QAMATS)) &&
+     a[L-1].b==="ה" && !vowel(a[L-1]) && has(a[L-2],N.QAMATS)){
+    target=Math.max(0,nuclei.length-2);
+  }
+
+  /* Cohortativo bíblico אָ...ָה: אָגִילָה → aguila. */
+  if(L>=4 && a[0].b==="א" && has(a[0],N.QAMATS) &&
+     a[L-1].b==="ה" && !vowel(a[L-1]) && has(a[L-2],N.QAMATS)){
+    target=Math.max(0,nuclei.length-2);
+  }
+
+  /* Imperfecto 3mp יָ...וּ: yakumu / yashuvu / yajilu. */
+  if(L>=3 && a[0].b==="י" && has(a[0],N.QAMATS) &&
+     a[L-1].b==="ו" && isShuruk(a[L-1])){
+    target=Math.max(0,nuclei.length-2);
+  }
+
+  /* ה locativa sobre tema con holam male: לִשְׁאוֹלָה → lishola. */
+  if(L>=4 && a[0].b==="ל" && has(a[0],N.HIRIQ) &&
+     a[L-1].b==="ה" && !vowel(a[L-1]) && has(a[L-2],N.QAMATS) &&
+     a.slice(1,L-2).some(c=>isHolamMale(c))){
+    target=Math.max(0,nuclei.length-2);
+  }
+
+  /* Patrón -ַיְלָה: לַיְלָה → layla. */
+  if(L>=4 && a[L-1].b==="ה" && !vowel(a[L-1]) &&
+     a[L-2].b==="ל" && has(a[L-2],N.QAMATS) &&
+     a[L-3].b==="י" && has(a[L-3],N.SHEVA) && has(a[L-4],N.PATAH)){
+    const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-4);
+    if(idx>-1) target=idx;
+  }
+
   /*
     Segolados: patrón final de tres consonantes con la última sin
     vocal y segol en una de las dos primeras vocales = mil'él.
@@ -576,6 +618,15 @@ function stressAccent(a, out, nuclei, originalWord){
      a[L-3].b==="י" && has(a[L-3],N.QAMATS)){
     const idx = nuclei.findIndex(nu=>nu.clusterIndex===L-3);
     if(idx>-1) target = idx;
+  }
+
+  /*
+    Fallback prosódico mínimo para formas mil'él no deducibles del
+    niqqud sin taamim. Solo mueve el índice tónico; rawTranslit sigue
+    construyendo toda la fonética.
+  */
+  if(isLexicalMilel(originalWord)){
+    target=Math.max(0,nuclei.length-2);
   }
 
   /* Se marca la tónica SOLO cuando el español, por su propia
@@ -793,17 +844,30 @@ const APPROVED = new Map([
    posición de acento no se puede recuperar de forma fiable con
    las reglas estructurales usadas por este motor.
    ============================================================ */
-const LEXICAL_STRESS = new Map([
-  [norm("סֶלָה"), "sela"],
-  [norm("שֶׁמֶן"), "shemen"],
-  [norm("מֶלֶךְ"), "Mélej"],
-  [norm("הַמֶּלֶךְ"), "HaMélej"],
-  [norm("פְּאֵרֶךָ"), "peereja"]
-]);
+function stressKey(s){ return norm(s).replace(/\u05BC/g,""); }
 
-function lexicalStress(word){
-  return LEXICAL_STRESS.get(norm(word)) || null;
+/*
+  Formas mil'él cuyo acento NO es deducible del niqqud sin taamim.
+  Guardamos solo la clase de acento, nunca su fonética. Así dagesh,
+  ב/כ/פ, prefijos, vocales y apóstrofos siguen siendo 100% reglas.
+*/
+const LEXICAL_MILEL = new Set([
+  "סֶלָה","שֶׁמֶן","מֶלֶךְ","הַמֶּלֶךְ","פְּאֵרֶךָ",
+  "יַחַד","יָחַד","תַּחַת","רָגַע","כַּעַס","חֵלֵכָה",
+  "מַעַן","פֹעַל"
+].map(stressKey));
+
+function isLexicalMilel(word){
+  if(LEXICAL_MILEL.has(stressKey(word))) return true;
+  const a=clusters(word);
+  if(a.length>1 && "ולבמהשכ".includes(a[0].b)){
+    const stem=clustersText(a.slice(1));
+    if(LEXICAL_MILEL.has(stressKey(stem))) return true;
+  }
+  return false;
 }
+
+function lexicalStress(word){ return null; }
 
 /* ============================================================
    NOMBRES PROPIOS — solo mayúscula, no fonética.
@@ -850,8 +914,8 @@ const FINAL_FORMS = new Map([
   ["בַּתּוֹרָה", "baTorá"],
   ["בְּתוֹרַת", "beTorat"],
   ["בְתוֹרַת", "beTorat"],
-  ["וּבְתוֹרָתוֹ", "uveTorató"],
-  ["וּבְּתוֹרָתוֹ", "uveTorató"],
+  ["וּבְתוֹרָתוֹ", "uvTorató"],
+  ["וּבְּתוֹרָתוֹ", "uvTorató"],
   ["תּוֹרָתְךָ", "Torateja"],
   ["תּוֹרָתֵנוּ", "Toratenu"],
   ["יֶהְגֶּה", "yehgué"],
@@ -923,7 +987,7 @@ function wordOutput(token){
   }else if(APPROVED.has(n)){
     out=APPROVED.get(n);
   }else{
-    out=lexicalStress(token) || rawTranslit(token);
+    out=rawTranslit(token);
   }
 
   const bare=bareLetters(token);
@@ -1199,14 +1263,22 @@ function runRegressionTests(){
     ["לְנֶגֶד","lenégued"],["בְּצֶדֶק","betsédek"],
     ["שָׁקֶר","sháker"],["עָוֶל","'ável"],["אָוֶן","aven"],["וָאָוֶן","vaaven"],["רֶשַׁע","resha'"],
     ["מָגִנִּי","maguiní"],["יִסְמְכֵנִי","yismejeni"],
-    ["שִׁגָּיוֹן","shigayón"],["הִגָּיוֹן","higayón"],["וּכְלָיוֹת","ujelayot"],
+    ["שִׁגָּיוֹן","shigayón"],["הִגָּיוֹן","higayón"],["וּכְלָיוֹת","ujlayot"],
     ["וַיִּפֹּל","vayipol"],["הַוּוֹת","havot"],
     ["וְעָלֵהוּ","ve'alehu"],
     ["וַתְּחַסְּרֵהוּ","vatejaserehu"],["תְּעַטְּרֵהוּ","te'aterehu"],
     ["תַּמְשִׁילֵהוּ","tamshilehu"],["פִּיהוּ","pihu"],["וַיַּחְפְּרֵהוּ","vayajperehu"],
     ["נָתַתָּה","natata"],["כּוֹנָנְתָּה","konanta"],["רָאִתָה","raíta"],
     ["וַיהֹוָה","vaAd-nai"],["מֵאֱלֹהִים","meElohim"],
-    ["לַמְנַצֵּחַ","lamnatséaj"]
+    ["לַמְנַצֵּחַ","lamnatséaj"],
+    ["וּבְדֶרֶךְ","uvdérej"],["וּבְמוֹשַׁב","uvmoshav"],["וּבְתוֹרָתוֹ","uvTorató"],
+    ["תִּדְּפֶנּוּ","tidfenu"],["מֵרִבְבוֹת","merivvot"],["וְעָלֵהוּ","ve'alehu"],
+    ["יָחַד","yájad"],["תַּחַת","tájat"],["לְמַעַן","lema'an"],
+    ["הַאֲזִינָה","haazina"],["הַקְשִׁיבָה","hakshiva"],["בִּינָה","biná"],
+    ["רָגַע","raga'"],["מִכַּעַס","mika'as"],["וָכַעַס","vaja'as"],
+    ["הֵמָּה","hema"],["אָגִילָה","aguila"],["בְּפֹעַל","befó'al"],
+    ["יָשׁוּבוּ","yashuvu"],["יָחִילוּ","yajilu"],["לִשְׁאוֹלָה","lishola"],
+    ["חֵלֵכָה","jeleja"],["זְרוֹעַ","zroa'"],["וּדְגֵי","udgué"]
   ];
   const failures=[];
   for(const [h,expected] of tests){
@@ -1230,6 +1302,7 @@ function grammaticalPronoun(token){
      וְאַתָּה → veatá. */
   const m=b.match(/^([ולבמהשכ]*)(אני|אתה)$/);
   if(m) return rawTranslit(token);
+  if(b==="המה") return "hema";
   return null;
 }
 
@@ -1265,6 +1338,12 @@ function phoneWord(token,prev,stop){
   if(/^ו\u05B0$/.test(token)) return stop?"Ve":"ve";
   const alt=token.replace(/כָ(?=ל(?![\u05B0-\u05C7]))/,"כָּ");
   const k=token, ck=(prev?norm(prev):"")+"|"+k+(stop?"|1":"");
+
+  if(bareLetters(token)==="בינה" && prev &&
+     /^(?:יהוה|אדני|יי)$/.test(bareLetters(prev))){
+    const f="bina";
+    return stop?capitalizeFirst(f):f;
+  }
 
   /* Las reglas gramaticales/contextuales preceden al corpus legacy. */
   const pronoun=grammaticalPronoun(token);
