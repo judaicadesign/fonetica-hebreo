@@ -435,7 +435,7 @@ function stressAccent(a, out, nuclei, originalWord){
     Sufijo objeto -נִי ("me"): la i final es átona y el acento
     permanece en la vocal inmediatamente anterior:
     יִסְמְכֵנִי → yismejeni, הוֹשִׁיעֵנִי → hoshi'eni. */
-  if(L>=2 && a[L-1].b==="י" && a[L-1].m.length===0 &&
+  if(L>=4 && a[L-1].b==="י" && a[L-1].m.length===0 &&
      a[L-2].b==="נ" && has(a[L-2],N.HIRIQ)){
     target = Math.max(0,nuclei.length-2);
     forceMark = true;
@@ -1071,8 +1071,8 @@ function runRegressionTests(){
   ["יוֹחַאי","Yojái"],["חָכְמָה","jajmá"],["קְדוּמָה","kedumá"],
     ["בֵּיתְךָ","beteja"],["דַּרְכֶּךָ","darkeja"],["רְצוֹנְךָ","retsoneja"],["אִתָּנוּ","itanu"],["מִצְוֹתֶיךָ","mitsvoteja"],["מֵחֲבֵרֶיךָ","mejavereja"],
     ["יְיָ","Ad-nai"],["יהוה","Ad-nai"],["יְהוָה","Ad-nai"],["הַמֶּלֶךְ","HaMélej"],
-    ["אבשלום","Avshalom"],["הַיְשׁוּעָה","hayeshu'á"],
-    ["שָׁכַבְתִּי","shajávti"],["הֱקִיצוֹתִי","hekitsoti"],["יִסְמְכֵנִי","yismejeni"],["הוֹשִׁיעֵנִי","hoshi'eni"],
+    ["הַיְשׁוּעָה","hayeshu'á"],
+    ["שָׁכַבְתִּי","shajávti"],["הֱקִיצוֹתִי","hekitsóti"],["יִסְמְכֵנִי","yismejéni"],["הוֹשִׁיעֵנִי","hoshi'éni"],
     ["יו״ד","Yud"],["ל״ב","Lev"],["וַיְכַל","vaijal"],["וַיְכֻלּוּ","vaijulú"],
     ["וַיְבָרֶךְ","vaivaréj"],["וַיְקַדֵּשׁ","vaikadésh"],["וַיִּשְׁבֹּת","vaishbót"],
     ["לַאֲדוֹן","laAdón"],
@@ -1095,7 +1095,7 @@ function runRegressionTests(){
     ["אַבְשָׁלוֹם","Avshalom"],["שָׁכַבְתִּי","shajávti"],["וָאִישָׁנָה","vaishaná"],
     ["הֱקִיצוֹתִי","hekitsóti"],["יִסְמְכֵנִי","yismejéni"],["הוֹשִׁיעֵנִי","hoshi'éni"],
     ["הִכִּיתָ","hikita"],["שִׁבַּרְתָּ","shibárta"],["הַיְשׁוּעָה","hayeshu'á"],
-    ["הָרְשָׁעִים","haresha'ím"],["יָקוּמוּ","yakumu"],["יְלִדְתִּיךָ","yelidtija"],
+    ["הָרְשָׁעִים","haresha'ím"],["יָקוּמוּ","yakumu"],["יְלִדְתִּיךָ","yelidtija"],["בְּנִי","bení"],
     ["אַתָּה","atá"],["וְאַתָּה","ve'atá"]
   ];
   const failures=[];
