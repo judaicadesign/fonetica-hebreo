@@ -445,7 +445,11 @@ function stressAccent(a, out, nuclei, originalWord){
     הֱקִיצוֹתִי → hekitsoti. */
   if(L>=2 && a[L-1].b==="י" && a[L-1].m.length===0 &&
      a[L-2].b==="ת" && has(a[L-2],N.HIRIQ)){
-    target = Math.max(0,nuclei.length-2);
+    const feminineNounPossessive =
+      L>=3 && has(a[L-3],N.QAMATS);
+    if(!feminineNounPossessive){
+      target = Math.max(0,nuclei.length-2);
+    }
   }
 
   /*
@@ -454,9 +458,14 @@ function stressAccent(a, out, nuclei, originalWord){
     יִסְמְכֵנִי → yismejeni, הוֹשִׁיעֵנִי → hoshi'eni. */
   if(L>=4 && a[L-1].b==="י" && a[L-1].m.length===0 &&
      a[L-2].b==="נ" && has(a[L-2],N.HIRIQ) &&
-     !has(a[L-2],N.DAGESH) &&
      !/^(?:[ולבמהשכ]*)אני$/.test(bareLetters(originalWord))){
-    target = Math.max(0,nuclei.length-2);
+    const nominalPossessiveNi =
+      has(a[L-2],N.DAGESH) ||
+      (L>=4 && a[L-3].b==="י" && a[L-3].m.length===0 &&
+       has(a[L-4],N.HIRIQ));
+    if(!nominalPossessiveNi){
+      target = Math.max(0,nuclei.length-2);
+    }
   }
 
   /*
@@ -1181,6 +1190,9 @@ function runRegressionTests(){
     ["הָרְשָׁעִים","haresha'im"],["יָקוּמוּ","yakumu"],["יְלִדְתִּיךָ","yelidtija"],["בְּנִי","bení"],["שׁוֹרְרָי","shorerái"],
     ["אַתָּה","atá"],["וְאַתָּה","veatá"],
     ["וַאֲנִי","vaaní"],
+    ["תְּפִלָּתִי","tefilatí"],["תְּחִנָּתִי","tejinatí"],["מִטָּתִי","mitatí"],
+    ["בְּדִמְעָתִי","bedim'atí"],["בְּאַנְחָתִי","beanjatí"],
+    ["וְדִינִי","vediní"],
     ["מָיִם","máyim"],
     ["דֶּרֶךְ","dérej"],["וְדֶרֶךְ","vedérej"],
     ["אֶרֶץ","erets"],["אָרֶץ","arets"],
