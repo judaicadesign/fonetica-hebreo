@@ -730,7 +730,18 @@ function rawTranslit(word){
     }
     if(isHolamMale(c) && !isConsonantalVavHolam(a,i)){ nuclei.push({clusterIndex:i,pos:out.length}); out+="o"; continue; }
 
-    out+=consonant(c,i,a);
+    /*
+      Ortografía española de ג = /g/:
+      delante de e/i debe escribirse gue/gui para que un lector
+      argentino no la convierta en /j/. consonant() ya cubre las
+      vocales explícitas e/i; acá cubrimos también la e creada por
+      un shevá vocal: גְּדוֹלָה → guedolá.
+    */
+    const shevaE=has(c,N.SHEVA) &&
+      (shevaVocalized(a,i) || prefixBoundarySheva(a,i));
+    let cons=consonant(c,i,a);
+    if(c.b==="ג" && shevaE) cons="gu";
+    out+=cons;
 
     /* furtive patah: vocalic sound precedes final het/ayin */
     if(i===a.length-1 && has(c,N.PATAH) && (c.b==="ח"||c.b==="ע")){
@@ -742,7 +753,7 @@ function rawTranslit(word){
 
     const v=isQamatzQatan(a,i,word) ? "o" : vowel(c);
     if(v){ nuclei.push({clusterIndex:i,pos:out.length}); out+=v; }
-    else if(has(c,N.SHEVA) && (shevaVocalized(a,i) || prefixBoundarySheva(a,i))){
+    else if(shevaE){
       nuclei.push({clusterIndex:i,pos:out.length}); out+="e";
     }
   }
@@ -1266,6 +1277,7 @@ function runRegressionTests(){
     ["יו״ד","Yud"],["ל״ב","Lev"],["וַיְכַל","vaijal"],["וַיְכֻלּוּ","vaijulú"],
     ["וַיְבָרֶךְ","vaivaréj"],["וַיְקַדֵּשׁ","vaikadésh"],["וַיִּשְׁבֹּת","vaishbót"],
     ["לַאֲדוֹן","laAdón"],
+    ["גְּדוֹלָה","guedolá"],["גְּדוֹלִים","guedolim"],["גֵּר","guer"],
     ["אִלֵּם","ilém"],["בְּמַעְגְּלֵי","bema'guelé"],["בְּמַעְגְּלֵי","bema'guelé"],["בַשָּׁלוֹם","vashalom"],["הַשְּׁמִינִי","Hasheminí"],
     ["בִּרְכַּת","birkat"],["בִּרְשׁוּת","Birshut"],
     ["בִּמְעוֹנוֹ","bim'onó"],["הוֹדוּ לַיְיָ","Hodú laAd-nai"],
