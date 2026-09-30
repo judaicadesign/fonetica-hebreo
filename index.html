@@ -1161,7 +1161,7 @@ async function nakdan(text){
     const payload={
       data:text,
       task:"nakdan",
-      genre:"rabbinic",
+      genre:"modern",
       keepmetagim:false,
       keepqq:false,
       matchpartial:true,
@@ -1216,6 +1216,40 @@ async function nakdan(text){
 /* ============================================================
    AUTOTEST DE REGLAS ESTRUCTURALES
    ============================================================ */
+function runNakdanMergeRegressionTests(){
+  const tests=[];
+
+  /*
+    Real case observed in Nakdan's UI:
+    unpointed modern spelling may be normalized while receiving niqqud.
+  */
+  const source=[
+    "יחד לב אל לב",
+    "נפתח ונראה ת'אור שבשמיים",
+    "יחד לב אל לב",
+    "נפתח בתקווה לאהבה"
+  ].join("\n");
+
+  const dicta=[
+    "יַחַד לֵב אֶל לֵב",
+    "נִפְתַּח וְנִרְאֶה תָּ'אוֹר שֶׁבַּשָּׁמַיִם",
+    "יַחַד לֵב אֶל לֵב",
+    "נִפְתַּח בְּתִקְוָה לְאַהֲבָה"
+  ].join("\n");
+
+  const merged=mergeContextualNiqqud(source,dicta);
+  if(merged!==dicta) tests.push("full-context merge failed");
+
+  /* Existing pointed words must remain byte-for-byte authoritative. */
+  const mixed="יַחַד לב אֶל לב";
+  const mixedDicta="יָחַד לֵב אֵל לֵב";
+  const mixedExpected="יַחַד לֵב אֶל לֵב";
+  const mixedMerged=mergeContextualNiqqud(mixed,mixedDicta);
+  if(mixedMerged!==mixedExpected) tests.push("existing niqqud was altered");
+
+  return tests;
+}
+
 function runRegressionTests(){
   const tests=[
     ["עָלֵינוּ","'Alenu"],["אַשְׁרֶיךָ","ashreja"],["שָׁנָה","Shaná"],
@@ -1401,40 +1435,91 @@ function phonetize(text){
   return editorialCaps(out);
 }
 /* Nakdan SOLO para palabras sin niqqud */
-async function vocalizeUnpointed(text){
-  const [s]=stashLabels(text);
-  const seen=new Set();
-  for(const w of s.match(HRUN)||[]){
-    if(NIKUD_RE.test(w)) continue;
-    if(/^(יי|יהוה|אדני)$/.test(w)) continue;
-    seen.add(w);
+/*
+  CONTEXTUAL NAKDAN
+  -----------------
+  Dicta's model must see the complete sentence/paragraph. Sending
+  each word separately destroys precisely the information needed
+  to choose לֵב vs. לַב, כָּלֵב vs. כֶּלֶב, etc.
+
+  We therefore:
+  1) send the whole text to Nakdan (genre=modern);
+  2) keep Dicta's context-selected vocalization for words that
+     arrived WITHOUT niqqud;
+  3) restore verbatim every Hebrew word that the user had already
+     supplied WITH niqqud.
+*/
+function mergeContextualNiqqud(original,vocalized){
+  const src=original.match(HRUN)||[];
+  const dst=vocalized.match(HRUN)||[];
+
+  /*
+    Nakdan may normalize full/defective spelling while adding niqqud
+    (שמיים → שָׁמַיִם, תקווה → תִּקְוָה). That is legitimate and is
+    also what the Nakdan website displays, so alignment is by token
+    position rather than exact consonantal spelling.
+  */
+  if(src.length!==dst.length){
+    throw new Error("Nakdan cambió la cantidad de palabras hebreas");
   }
-  const words=[...seen]; if(!words.length) return {text,count:0};
-  const res=await nakdan(words.join("\n"),true);
-  if(res.length!==words.length) throw new Error("Nakdan devolvió otra cantidad de palabras");
-  const map=new Map(words.map((w,i)=>[w,res[i]]));
-  const out=text.replace(HRUN,w=>(!NIKUD_RE.test(w)&&map.has(w))?map.get(w):w);
-  return {text:out,count:words.length};
+
+  let i=0;
+  return original.replace(HRUN,w=>{
+    const v=dst[i++];
+    const bare=bareLetters(w);
+
+    /* User-supplied niqqud is always the source of truth. */
+    if(NIKUD_RE.test(w)) return w;
+
+    /* Divine names are handled editorially by our own engine. */
+    if(/^(יי|יהוה|אדני)$/.test(bare)) return w;
+
+    return v;
+  });
 }
-async function nakdanWords(text){
-  const controller=new AbortController(); const t=setTimeout(()=>controller.abort(),45000);
-  try{
-    const r=await fetch(NAKDAN_ENDPOINT,{method:"POST",headers:{"content-type":"text/plain;charset=UTF-8"},
-      body:JSON.stringify({data:text,task:"nakdan",genre:"rabbinic",keepmetagim:false,keepqq:false,matchpartial:true,nodageshdefmem:false,patachma:false,addmorph:true}),signal:controller.signal});
-    if(!r.ok) throw new Error("HTTP "+r.status);
-    const d=await r.json(); if(!Array.isArray(d)) throw new Error("Formato no reconocido");
-    const out=[];
-    for(const it of d){
-      if(it.sep) continue;
-      const f=it.options&&it.options[0]; const v=Array.isArray(f)?f[0]:f;
-      const w=(typeof v==="string"?v:it.word||"").replaceAll("|","").replace(/\u05BD/g,"");
-      if(/[\u05D0-\u05EA]/.test(w)) out.push(w);
-    }
-    return out;
-  }finally{clearTimeout(t);}
+
+function protectNakdanLabels(text){
+  let s=text;
+  const stash=[];
+  for(const [h] of LABELS){
+    s=s.replaceAll(h,()=>{
+      const marker="JD_LABEL_"+stash.length+"_JD";
+      stash.push([marker,h]);
+      return marker;
+    });
+  }
+  return {text:s,stash};
 }
-const _nakdanOrig=nakdan;
-async function nakdan(text,words){ return words?nakdanWords(text):_nakdanOrig(text); }
+
+function restoreNakdanLabels(text,stash){
+  let s=text;
+  for(const [marker,h] of stash) s=s.replaceAll(marker,h);
+  return s;
+}
+
+async function vocalizeUnpointed(text){
+  const protectedData=protectNakdanLabels(text);
+  const srcWords=protectedData.text.match(HRUN)||[];
+
+  const count=srcWords.filter(w=>
+    !NIKUD_RE.test(w) &&
+    !/^(יי|יהוה|אדני)$/.test(bareLetters(w))
+  ).length;
+
+  if(!count) return {text,count:0};
+
+  /*
+    CRITICAL: one single request with the complete text.
+    This preserves syntax, neighboring words and proper-name context.
+  */
+  const contextual=await nakdan(protectedData.text);
+  const merged=mergeContextualNiqqud(protectedData.text,contextual);
+
+  return {
+    text:restoreNakdanLabels(merged,protectedData.stash),
+    count
+  };
+}
 
 let runId=0, debounceTimer=null;
 const $=id=>document.getElementById(id);
