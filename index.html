@@ -46,8 +46,8 @@ select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,154,75,.14)}
 .card-title::after{content:"";height:2px;width:34px;background:var(--gold);display:inline-block;border-radius:2px}
 textarea{width:100%;min-height:430px;border:1px solid var(--line);border-radius:11px;padding:16px;resize:vertical;line-height:1.7;background:#fff;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
 textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,91,93,.09)}
-#hebrew{direction:rtl;text-align:right;font-size:25px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;line-height:1.9}
-#output{direction:ltr;text-align:left;font-size:22px;font-family:Aktiv,Arial,sans-serif;line-height:1.72}
+#hebrew{direction:rtl;text-align:right;font-size:20px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;line-height:1.85}
+#output{direction:ltr;text-align:left;font-size:20px;font-family:"Segoe UI",Arial,sans-serif;line-height:1.85}
 textarea::placeholder{color:#9AA7A8;opacity:1}
 .toolbar{display:flex;gap:9px;margin-top:13px;align-items:center}
 .toolbar.split{justify-content:space-between}
@@ -322,6 +322,12 @@ function prefixBoundarySheva(a,i){
      NO aplicamos esta regla a בִּגְ..., לִפְ..., כִּרְ..., porque allí
      la vocal anterior es hiriq y la shevá siguiente es silenciosa. */
   const prev=a[i-1];
+
+  /* Artículo definido הַ-/הָ- seguido por consonante con shevá:
+     el shevá abre la sílaba del lexema: הַיְשׁוּעָה → hayeshu'a.
+     Es una frontera morfológica, no una excepción léxica. */
+  if(i===1 && prev.b==="ה" && (has(prev,N.PATAH)||has(prev,N.QAMATS))) return true;
+
   return i===1 && prev.b==="ו" && isShuruk(prev);
 }
 
@@ -412,6 +418,25 @@ function stressAccent(a, out, nuclei, originalWord){
   while(target>0 && nuclei[target].furtive) target--;
 
   const L=a.length;
+
+  /*
+    Formas verbales con -תִּי / -תי (1ª persona singular del perfecto):
+    la terminación -ti no recibe el acento; éste queda en la vocal
+    precedente del tema. Así שָׁכַבְתִּי → shajávti y
+    הֱקִיצוֹתִי → hekitsoti. */
+  if(L>=2 && a[L-1].b==="י" && has(a[L-1],N.HIRIQ) &&
+     a[L-2].b==="ת"){
+    target = Math.max(0,nuclei.length-2);
+  }
+
+  /*
+    Sufijo objeto -נִי ("me"): la i final es átona y el acento
+    permanece en la vocal inmediatamente anterior:
+    יִסְמְכֵנִי → yismejeni, הוֹשִׁיעֵנִי → hoshi'eni. */
+  if(L>=2 && a[L-1].b==="י" && has(a[L-1],N.HIRIQ) &&
+     a[L-2].b==="נ"){
+    target = Math.max(0,nuclei.length-2);
+  }
 
   /*
     Sufijo pronominal -נוּ ("nosotros/nos/nuestro", 1ra persona
@@ -694,7 +719,7 @@ const PROPER_NOUNS = new Set([
   "אסתר","מרדכי","רות","שמשון","יונה","יואל","עמוס","עובדיה","מיכה","נחום",
   "חבקוק","צפניה","חגי","זכריה","מלאכי","נתן","יונתן","מתתיהו","יוחנן",
   "אלחנן","חזקיהו","נתניהו","ירמיה","ישראל","ציון","בבל","ירושלים","מצרים",
-  "סיני","כנען"
+  "סיני","כנען","אבשלום"
 ,"אדום"].map(bareLetters));
 
 function capitalizeFirst(s){
@@ -840,6 +865,7 @@ function editorialCaps(text){
   text=text.replace(/\byaer panav\b/gi,"yaer Panav");
   text=text.replace(/\bElohim\b/g,"Elohim");
   text=text.replace(/\bElohenu\b/g,"Elohenu");
+  text=text.replace(/\bvElohim\b/g,"veElohim");
   return text;
 }
 
@@ -1017,6 +1043,8 @@ function runRegressionTests(){
   ["יוֹחַאי","Yojái"],["חָכְמָה","jajmá"],["קְדוּמָה","kedumá"],
     ["בֵּיתְךָ","beteja"],["דַּרְכֶּךָ","darkeja"],["רְצוֹנְךָ","retsoneja"],["אִתָּנוּ","itanu"],["מִצְוֹתֶיךָ","mitsvoteja"],["מֵחֲבֵרֶיךָ","mejavereja"],
     ["יְיָ","Ad-nai"],["יהוה","Ad-nai"],["יְהוָה","Ad-nai"],["הַמֶּלֶךְ","HaMélej"],
+    ["אבשלום","Avshalom"],["הַיְשׁוּעָה","hayeshu'á"],
+    ["שָׁכַבְתִּי","shajávti"],["הֱקִיצוֹתִי","hekitsoti"],["יִסְמְכֵנִי","yismejeni"],["הוֹשִׁיעֵנִי","hoshi'eni"],
     ["יו״ד","Yud"],["ל״ב","Lev"],["וַיְכַל","vaijal"],["וַיְכֻלּוּ","vaijulú"],
     ["וַיְבָרֶךְ","vaivaréj"],["וַיְקַדֵּשׁ","vaikadésh"],["וַיִּשְׁבֹּת","vaishbót"],
     ["לַאֲדוֹן","laAdón"],
@@ -1137,6 +1165,27 @@ async function nakdan(text,words){ return words?nakdanWords(text):_nakdanOrig(te
 
 let runId=0, debounceTimer=null;
 const $=id=>document.getElementById(id);
+
+/* Comparación hebreo ↔ fonética: scroll bidireccional sincronizado.
+   Se sincroniza por posición relativa para conservar juntos los
+   mismos pasajes aun cuando RTL/LTR envuelvan alguna línea distinto. */
+function syncScrollPair(a,b){
+  let lock=false;
+  const sync=(from,to)=>{
+    if(lock) return;
+    lock=true;
+    const fromMax=Math.max(1,from.scrollHeight-from.clientHeight);
+    const toMax=Math.max(0,to.scrollHeight-to.clientHeight);
+    to.scrollTop=(from.scrollTop/fromMax)*toMax;
+    requestAnimationFrame(()=>{lock=false;});
+  };
+  a.addEventListener("scroll",()=>sync(a,b),{passive:true});
+  b.addEventListener("scroll",()=>sync(b,a),{passive:true});
+}
+window.addEventListener("DOMContentLoaded",()=>{
+  const h=$("hebrew"), o=$("output");
+  if(h&&o) syncScrollPair(h,o);
+});
 async function run(){
   const id=++runId, input=$("hebrew").value;
   const ns=$("nakdanStatus"), ms=$("motorStatus");
