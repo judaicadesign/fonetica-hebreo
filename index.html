@@ -255,7 +255,14 @@ function norm(s){
   // Also strip zero-width joiner/non-joiner (U+200D/U+200C): invisible
   // formatting characters some sources insert (e.g. the double-pointed
   // Yerushalayim, pataj+jirik together) that shouldn't affect matching.
-  return s.normalize("NFD").replace(CANT_RE,"").replace(/[\u200C\u200D]/g,"").normalize("NFC");
+  /*
+    Meteg/Ga'ya (U+05BD) no es una vocal ni modifica la lectura
+    editorial sefardí. Si queda en la clave, una misma palabra con
+    y sin meteg esquiva el léxico validado y la morfología.
+    Los taamim U+0591–U+05AF tampoco se usan aquí para determinar
+    acento: se reservan para la auditoría masorética independiente.
+  */
+  return s.normalize("NFD").replace(CANT_RE,"").replace(/[\u05BD\u200C\u200D]/g,"").normalize("NFC");
 }
 
 function clusters(word){
@@ -1414,6 +1421,9 @@ function runRegressionTests(){
     ["יָשׁוּבוּ","yashuvu"],["יָחִילוּ","yajilu"],["לִשְׁאוֹלָה","lishola"],
     ["חֵלֵכָה","jeleja"],["זְרוֹעַ","zroa'"],["וּדְגֵי","udgué"],
     ["נוּדִי","nudi"],["הִנֵּה","hiné"],["כּוֹנְנוּ","konenú"],["יִבְחֲנוּ","yivjanú"],
+    /* El meteg no debe alterar la fonética de una misma palabra. */
+    ["כָּֽל","kol"],["וְֽכָל","vejol"],["וָלָֽיְלָה","valayla"],
+    ["וַֽיְהִי","vayehí"],["תַֽחַת","tájat"],["לְמַֽעַן","lema'an"],
     ["פָנֵימוֹ","fanemo"],["הוֹשִׁיעָה","hoshi'a"],["פַסּוּ","fasu"],["יְדַבְּרוּ","yedaberu"],
     ["עַתָּה","'atá"],["וְעַתָּה","ve'atá"],["בְּיֵשַׁע","beyesha'"],
     ["הַבִּיטָה","habita"],["הָאִירָה","haíra"],["בְּחַסְדְּךָ","bejasdejá"],
