@@ -541,6 +541,9 @@ function stressAccent(a, out, nuclei, originalWord){
       (prev && prev.b==="י" && prev.m.length===0) ||
       (prev && has(prev,N.SHEVA) && prev.b!=="נ") ||
       (prev && isShuruk(prev)) ||
+      /* Tsere ante sufijo -נוּ átono: conserva el acento en -e-
+         (זִכְרוֹנֵנוּ → zijronenu, sin tilde española). */
+      (prev && has(prev,N.TSERE)) ||
       (prev && has(prev,N.QAMATS) && has(prev,N.DAGESH));
     if(unstressedNu) target=Math.max(0,nuclei.length-2);
   }
