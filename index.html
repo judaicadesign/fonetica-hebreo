@@ -693,6 +693,14 @@ function stressAccent(a, out, nuclei, originalWord){
     const s2IsMaterVav=s2.b==="ו" && isHolamMale(s2);
     if(!vowel(s3) && vowel(s1) && vowel(s2) &&
        !s1IsMaterVav && !s2IsMaterVav &&
+       /*
+         Un hataf es vocal reducida y NO forma el patrón segolado.
+         אֲשֶׁר / כַאֲשֶׁר no son segolados: su sílaba final
+         lleva el acento. La heurística anterior los volvía ásher.
+       */
+       !has(s1,N.HATAF_PATAH) &&
+       !has(s1,N.HATAF_SEGOL) &&
+       !has(s1,N.HATAF_QAMATS) &&
        (has(s1,N.SEGOL)||has(s2,N.SEGOL))){
       const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-3);
       if(idx>-1) target=idx;
@@ -1420,6 +1428,7 @@ function runRegressionTests(){
     ["הֵמָּה","hema"],["אָגִילָה","aguila"],["בְּפֹעַל","befó'al"],
     ["יָשׁוּבוּ","yashuvu"],["יָחִילוּ","yajilu"],["לִשְׁאוֹלָה","lishola"],
     ["חֵלֵכָה","jeleja"],["זְרוֹעַ","zroa'"],["וּדְגֵי","udgué"],
+    ["אֲשֶׁר","asher"],["כַּאֲשֶׁר","kaasher"],["כַּאֲשֶׁר","kaasher"],
     ["נוּדִי","nudi"],["הִנֵּה","hiné"],["כּוֹנְנוּ","konenú"],["יִבְחֲנוּ","yivjanú"],
     /* El meteg no debe alterar la fonética de una misma palabra. */
     ["כָּֽל","kol"],["וְֽכָל","vejol"],["וָלָֽיְלָה","valayla"],
