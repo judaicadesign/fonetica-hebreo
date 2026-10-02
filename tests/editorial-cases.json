@@ -268,6 +268,46 @@
       "category": "contraejemplo-nu-radical-con-pataj",
       "hebrew": "יִבְחֲנוּ",
       "expected": "Yivjanú"
+    },
+    {
+      "category": "aprobacion-editorial-2026-10-02",
+      "hebrew": "לְעוֹלָם",
+      "expected": "Le'olam"
+    },
+    {
+      "category": "aprobacion-editorial-2026-10-02",
+      "hebrew": "חַסְדּו",
+      "expected": "Jasdó"
+    },
+    {
+      "category": "aprobacion-editorial-2026-10-02",
+      "hebrew": "גְּבוּרוֹת",
+      "expected": "Guevurot"
+    },
+    {
+      "category": "aprobacion-editorial-2026-10-02",
+      "hebrew": "בְרִנָּה",
+      "expected": "Veriná"
+    },
+    {
+      "category": "aprobacion-editorial-2026-10-02",
+      "hebrew": "בִּרְכַּת",
+      "expected": "Birkat"
+    },
+    {
+      "category": "aprobacion-editorial-2026-10-02",
+      "hebrew": "וֵאלֹהֵי",
+      "expected": "VeElohé"
+    },
+    {
+      "category": "aprobacion-editorial-2026-10-02",
+      "hebrew": "עַמְּךָ",
+      "expected": "'Amjá"
+    },
+    {
+      "category": "aprobacion-editorial-2026-10-02",
+      "hebrew": "וּלְעַמְּךָ",
+      "expected": "Ule'amjá"
     }
   ]
 }
