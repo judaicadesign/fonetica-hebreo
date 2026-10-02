@@ -50,7 +50,7 @@ async function engine(){
     "const requestAnimationFrame=f=>f();"
   ].join("\n");
   return vm.runInNewContext(setup+s+
-    "\n;({rawTranslit,wordOutput,runRegressionTests,reset:()=>CAPTURE.length=0,last:()=>CAPTURE.at(-1)});",
+    "\n;({rawTranslit,wordOutput,phonetize,runRegressionTests,reset:()=>CAPTURE.length=0,last:()=>CAPTURE.at(-1)});",
     {},{timeout:20000,filename:"index.html"});
 }
 
