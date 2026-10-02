@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "profile": "sefaradi-israeli-es-AR",
+  "purpose": "Regression checks for rule consistency; NOT approval of complete liturgical texts",
+  "cases": [
+    {
+      "group": "birkat-hamazon-comun",
+      "category": "liturgico",
+      "nusaj": "ashkenaz",
+      "hebrew": "כָּאָמוּר פּוֹתֵחַ אֶת יָדֶךָ וּמַשְׂבִּיעַ",
+      "expected": "Kaamur potéaj et yadeja umasbía'"
+    },
+    {
+      "group": "birkat-hamazon-comun",
+      "category": "liturgico",
+      "nusaj": "sefaradi",
+      "hebrew": "כָּאָמוּר פּוֹתֵחַ אֶת יָדֶךָ וּמַשְׂבִּיעַ",
+      "expected": "Kaamur potéaj et yadeja umasbía'"
+    },
+    {
+      "group": "birkat-hamazon-comun",
+      "category": "liturgico",
+      "nusaj": "jabad",
+      "hebrew": "כָּאָמוּר פּוֹתֵחַ אֶת יָדֶךָ וּמַשְׂבִּיעַ",
+      "expected": "Kaamur potéaj et yadeja umasbía'"
+    },
+    {
+      "category": "cancion-israeli",
+      "hebrew": "יָחַד לֵב אֶל לֵב",
+      "expected": "Yájad lev el lev"
+    },
+    {
+      "category": "cancion-israeli",
+      "hebrew": "גְּדוֹלָה",
+      "expected": "Guedolá"
+    },
+    {
+      "category": "liturgico",
+      "hebrew": "וְנָשׁוּבָה",
+      "expected": "Venashuva"
+    },
+    {
+      "category": "liturgico",
+      "hebrew": "חַדֵּשׁ",
+      "expected": "Jadesh"
+    },
+    {
+      "category": "liturgico",
+      "hebrew": "חָדָשׁ",
+      "expected": "Jadash"
+    },
+    {
+      "category": "tanaj",
+      "hebrew": "עַתָּה",
+      "expected": "'Atá"
+    },
+    {
+      "category": "tanaj",
+      "hebrew": "וְעַתָּה",
+      "expected": "Ve'atá"
+    },
+    {
+      "category": "tanaj",
+      "hebrew": "וַיִּפֹּל",
+      "expected": "Vayipol"
+    },
+    {
+      "category": "nombre",
+      "hebrew": "אֵלִיָּהוּ כָּלֵב",
+      "expected": "Eliyahu Kalev"
+    },
+    {
+      "category": "tanaj",
+      "hebrew": "אֱלֹהַי",
+      "expected": "Elohái"
+    },
+    {
+      "category": "tanaj",
+      "hebrew": "פִּיהוּ",
+      "expected": "Pihu"
+    },
+    {
+      "category": "tanaj",
+      "hebrew": "וּדְגֵי",
+      "expected": "Udgué"
+    },
+    {
+      "category": "tanaj",
+      "hebrew": "שָׁכַבְתִּי",
+      "expected": "Shajavti"
+    },
+    {
+      "category": "tanaj",
+      "hebrew": "הַאֲזִינָה",
+      "expected": "Haazina"
+    },
+    {
+      "category": "liturgico",
+      "hebrew": "כָּאָמוּר",
+      "expected": "Kaamur"
+    },
+    {
+      "category": "liturgico",
+      "hebrew": "יָדֶךָ",
+      "expected": "Yadeja"
+    },
+    {
+      "category": "liturgico",
+      "hebrew": "וּמַשְׂבִּיעַ",
+      "expected": "Umasbía'"
+    }
+  ]
+}
