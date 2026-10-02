@@ -22,3 +22,19 @@ jobs:
           node-version: '20'
       - name: Check phonetics and cross-nusach consistency
         run: node tests/editorial-regression.mjs
+      - name: Auditar acentos de Tehilim 1–150 contra OSHB (solo desarrollo)
+        if: github.ref == 'refs/heads/desarrollo/auditoria-tehilim-150'
+        run: node tests/tehilim-taam-audit.mjs --out /tmp/judaica-tehilim-audit.json
+      - name: Comprobar accesibilidad pública de la URL habitual de Pages
+        if: github.ref == 'refs/heads/desarrollo/auditoria-tehilim-150'
+        shell: bash
+        run: |
+          http_code="$(curl -L -sS --max-time 25 -o /dev/null -w '%{http_code}' https://judaicadesign.github.io/fonetica-hebreo/ || true)"
+          echo "GitHub Pages HTTP: $http_code"
+          if [ "$http_code" = "200" ]; then
+            echo "::error::El conversor todavía es accesible públicamente por GitHub Pages."
+            exit 1
+          fi
+          if [ "$http_code" != "404" ] && [ "$http_code" != "410" ]; then
+            echo "::warning::Respuesta no concluyente; verificar Settings → Pages en GitHub."
+          fi
