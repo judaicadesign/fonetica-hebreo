@@ -7,9 +7,6 @@ on:
   push:
     branches:
       - main
-      - desarrollo/auditoria-tehilim-150
-    paths:
-      - '.github/workflows/editorial-regression.yml'
   pull_request:
     branches:
       - main
