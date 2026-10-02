@@ -1,0 +1,24 @@
+name: Judaica Design · Editorial regressions
+
+on:
+  push:
+    branches:
+      - main
+      - desarrollo/auditoria-tehilim-150
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  editorial-regression:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Check phonetics and cross-nusach consistency
+        run: node tests/editorial-regression.mjs
