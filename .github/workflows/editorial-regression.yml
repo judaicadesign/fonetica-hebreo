@@ -7,6 +7,9 @@ on:
   push:
     branches:
       - main
+      - desarrollo/auditoria-tehilim-150
+    paths:
+      - '.github/workflows/editorial-regression.yml'
   pull_request:
     branches:
       - main
@@ -31,6 +34,17 @@ jobs:
       - name: Auditar acentos de Tehilim 1–150 contra OSHB (solo desarrollo)
         if: github.ref == 'refs/heads/desarrollo/auditoria-tehilim-150'
         run: node tests/tehilim-taam-audit.mjs --out /tmp/judaica-tehilim-audit.json
+      - name: Clasificar alertas de Tehilim por familias
+        if: github.ref == 'refs/heads/desarrollo/auditoria-tehilim-150'
+        run: node tests/classify-tehilim-candidates.mjs /tmp/judaica-tehilim-audit.json /tmp/judaica-tehilim-classification.json
+      - name: Guardar informes de auditoría y clasificación
+        if: github.ref == 'refs/heads/desarrollo/auditoria-tehilim-150'
+        uses: actions/upload-artifact@v4
+        with:
+          name: tehilim-audit-classification
+          path: |
+            /tmp/judaica-tehilim-audit.json
+            /tmp/judaica-tehilim-classification.json
       - name: Comprobar accesibilidad pública de la URL habitual de Pages
         if: github.ref == 'refs/heads/desarrollo/auditoria-tehilim-150'
         shell: bash
