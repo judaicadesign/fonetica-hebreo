@@ -845,7 +845,15 @@ function rawTranslit(word){
     }
   }
 
-  return stressAccent(a, out, nuclei, word);
+  /*
+    Regla ORTOGRÁFICA FINAL del castellano argentino:
+    g dura + e/i se escribe gue/gui incluso cuando la vocal nace
+    después de una letra hebrea muda (p. ej. גְאֵ). Aplicarla
+    DESPUÉS de stressAccent mantiene válidas las posiciones de
+    los núcleos usadas para decidir las tildes.
+  */
+  return stressAccent(a, out, nuclei, word)
+    .replace(/g(?=[eéií])/gi,match=>match==="G"?"Gu":"gu");
 }
 
 /* ============================================================
@@ -1366,6 +1374,8 @@ function runRegressionTests(){
     ["לַאֲדוֹן","laAdón"],
     ["גְּדוֹלָה","guedolá"],["גְּדוֹלִים","guedolim"],["גֵּר","guer"],
     ["נָשׁוּבָה","nashuva"],["וְנָשׁוּבָה","venashuva"],["חַדֵּשׁ","jadesh"],["חָדָשׁ","jadash"],
+    /* Gimel must remain a hard /g/ even before silent alef plus tsere. */
+    ["לִגְאֵיוֹנִים","ligueyonim"],
     ["אִלֵּם","ilém"],["בְּמַעְגְּלֵי","bema'guelé"],["בְּמַעְגְּלֵי","bema'guelé"],["בַשָּׁלוֹם","vashalom"],["הַשְּׁמִינִי","Hasheminí"],
     ["בִּרְכַּת","birkat"],["בִּרְשׁוּת","Birshut"],
     ["בִּמְעוֹנוֹ","bim'onó"],["הוֹדוּ לַיְיָ","Hodú laAd-nai"],
