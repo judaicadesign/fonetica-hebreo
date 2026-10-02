@@ -37,3 +37,16 @@ Diagnóstico de integridad Unicode del bloque hebreo Ashkenaz: **2** clusters co
 4. Guardar v1.0 con edición, fecha, perfil fonético y commit; solo entonces marcar `approved` y usar en publicaciones.
 
 **Esta revisión no afecta a las publicaciones existentes, ni a la rama `main`, ni al proyecto del libro de Tehilim.**
+
+
+## RECTIFICACIÓN DE JERARQUÍA DE FUENTES (indicada por el editor)
+
+**Ashkenaz: ArtScroll impreso y sus fotografías proporcionadas por el usuario son la autoridad editorial primaria.** No sustituir niqqud de ArtScroll por Wikisource. El usuario confirma que ArtScroll usa **kamatz en la lamed de נוֹפָלֶת**: conservar `הַנּוֹפָלֶת` al normalizar duplicados Unicode; la anterior sugerencia `הַנּוֹפֶלֶת` queda **retirada para este maestro**.
+
+**Sefaradí: Bircat Shelomo impreso es la referencia primaria.** Sinchonim combinado y Sinchonim sefaradí individual son testigos secundarios con discrepancias y errores identificados por el editor, incluso entre ambos. No usarlos para sobreescribir Bircat Shelomo sin comprobación puntual.
+
+**`בַּמָּרוֹם`:** la alerta era de un daguesh duplicado a nivel Unicode en el TXT, no de una vocal diferente visible ni de pronunciación. Normalizar solo la marca duplicada tras comprobar el pasaje en ArtScroll; preservar el mismo niqqud y sonido.
+
+**`לְעולָם`:** completar el jolam de vav: `לְעוֹלָם`, pendiente de incorporar a una versión revisada del hebreo.
+
+**IMPORTANTE:** Las referencias externas citadas más arriba son auxiliares y no prevalecen sobre estas ediciones impresas. Las versiones TXT conservadas permanecen `EN REVISIÓN`, sin modificaciones silenciosas del hebreo. Para cerrar el cotejo, revisar las fotografías impresas previamente proporcionadas, sin afirmar que se ha realizado una comparación integral que todavía no se hizo.
