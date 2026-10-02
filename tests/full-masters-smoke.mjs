@@ -50,10 +50,10 @@ for(const [name,file] of specs){
  if(/[\u05d0-\u05ea]/u.test(output))errors.push("quedó hebreo en salida");
  if(/\b(?:undefined|null|NaN)\b/u.test(output))errors.push("valor inválido");
  if(output.length<hebrew.length*0.35)errors.push("salida demasiado corta");
- if(!/'amjá\b/iu.test(golden))errors.push("falta amjá aprobado en golden");
- if(!/ule'amjá\b/iu.test(golden))errors.push("falta ule'amjá aprobado en golden");
- if(!/'amjá\b/iu.test(output))errors.push("motor no emite amjá en contexto");
- if(!/ule'amjá\b/iu.test(output))errors.push("motor no emite ule'amjá en contexto");
+ if(!golden.includes("'amjá"))errors.push("falta amjá aprobado en golden");
+ if(!golden.includes("ule'amjá"))errors.push("falta ule'amjá aprobado en golden");
+ if(!output.includes("'amjá"))errors.push("motor no emite amjá en contexto");
+ if(!output.includes("ule'amjá"))errors.push("motor no emite ule'amjá en contexto");
  console.log(name+": "+lines.length+" líneas hebreas, "+words+" tokens; fonética "+output.length+" caracteres; "+(errors.length?"FAIL":"PASS"));
  for(const e of errors){console.error(name+": "+e);failed++;}
 }
