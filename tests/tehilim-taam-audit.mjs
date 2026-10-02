@@ -82,6 +82,10 @@ async function main(){
   const morphCounts=new Map(),formStress=new Map(),grouped=new Map();
   const chapterCounts=new Map(),accentDisagreements=new Map();
   totals.fullOutputOverrides=0; totals.overridesAmongFlagged=0;
+  totals.publishedComparable=0;totals.publishedAgreement=0;
+  totals.publishedFlagged=0;totals.publishedUnaligned=0;
+  // El texto publicado se deriva de phonetize(), NO de wordOutput().
+  const publishedFlags=new Map(),publishedMorphology=new Map();
 
   for(const v of verses){
     const chapter=+v[1],verse=+v[2];
@@ -101,6 +105,44 @@ async function main(){
       if(expected<0){totals.unmappedTaam++;continue;}
       totals.comparable++;chapterRow.comparable++;
       const full=api.wordOutput(p.word);
+      const published=api.phonetize(p.word);
+      // Solo alineamos la acentuación si la forma fonética conserva
+      // exactamente las letras del motor bruto (ignorando tildes
+      // y capitalización); una forma GOLD que cambia sílabas queda fuera.
+      const plain=t=>t.toLowerCase().normalize("NFD")
+        .replace(/[\u0300-\u036F]/g,"").normalize("NFC");
+      const aligned=plain(published)===plain(rawOutput) &&
+        result.nuclei.every(n=>!n.furtive);
+      let publishedTarget=-1;
+      if(aligned){
+        const pos=published.search(/[áéíóú]/iu);
+        if(pos>=0) publishedTarget=result.nuclei.findIndex(n=>n.pos===pos);
+        else{
+          const letters=published.replace(/['’\-]+$/g,"");
+          const last=letters.at(-1)||"";
+          publishedTarget= (/[aeiou]/i.test(last)||last==="n"||last==="s")
+            ?result.nuclei.length-2:result.nuclei.length-1;
+        }
+      }
+      if(!aligned || publishedTarget<0){
+        totals.publishedUnaligned++;
+      }else{
+        totals.publishedComparable++;
+        if(publishedTarget===expected){totals.publishedAgreement++;}
+        else{
+          totals.publishedFlagged++;
+          const k=morph.split("/").at(-1).replace(/^H/,"").slice(0,3)||"other";
+          publishedMorphology.set(k,(publishedMorphology.get(k)||0)+1);
+          let e=publishedFlags.get(p.clean+"|"+k);
+          if(!e){e={hebrew:p.clean,category:k,occurrences:0,examples:[]};publishedFlags.set(p.clean+"|"+k,e);}
+          e.occurrences++;
+          if(e.examples.length<3)e.examples.push({
+            ref:chapter+":"+verse,masoreticVowelIndex:expected,
+            finalVowelIndex:publishedTarget,finalPhonetic:published,
+            rawOutput,morph,taam:mark.code
+          });
+        }
+      }
       const overridden=full.toLowerCase()!==rawOutput.toLowerCase();
       if(overridden)totals.fullOutputOverrides++;
       let f=formStress.get(p.clean);if(!f){f=new Map();formStress.set(p.clean,f);}
@@ -134,7 +176,7 @@ async function main(){
     source:{uri:URL,blobSha:PIN,
       attribution:"Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb"},
     caveat:"Candidatos a revisión: NO son errores verificados ni una tasa de exactitud del conversor.",
-    method:"Compara el núcleo de un único taam local con el objetivo de acentuación de rawTranslit, no con toda la capa editorial de excepciones.",
+    method:"Dos mediciones parciales: rawTranslit frente a taam; y phonetize aislado frente a taam solo cuando la cadena fonética admite alineación uno a uno con el motor bruto (ignorando tilde/capitalización). Ninguna equivale a validación editorial completa.",
     excludedAccents:[...excluded],counts:totals,
     flagRateAmongComparable:Math.round(totals.flagged/Math.max(1,totals.comparable)*1000)/10,
     distinctFlaggedForms:grouped.size,
@@ -142,6 +184,8 @@ async function main(){
     perChapter:[...chapterCounts.values()].sort((a,b)=>a.chapter-b.chapter),
     accentDisagreements:[...accentDisagreements].sort((a,b)=>b[1]-a[1]),
     allFlaggedForms:[...grouped.values()].sort((a,b)=>b.occurrences-a.occurrences),
+    publishedCandidateMorphology:[...publishedMorphology].sort((a,b)=>b[1]-a[1]),
+    publishedCandidateForms:[...publishedFlags.values()].sort((a,b)=>b.occurrences-a.occurrences),
     mostFrequent:[...grouped.values()].sort((a,b)=>b.occurrences-a.occurrences).slice(0,100),
     repeatedPointedFormDifferingAccent:conflicts.slice(0,100),
     regressions:api.runRegressionTests()
@@ -156,6 +200,12 @@ async function main(){
     topMorphology:report.morphology.slice(0,12),
     topFlagged:report.mostFrequent.slice(0,18),
     mostFlaggedChapters:report.perChapter.filter(c=>c.flagged).sort((a,b)=>b.flagged-a.flagged).slice(0,12),
+    publishedComparable:totals.publishedComparable,
+    publishedAgreement:totals.publishedAgreement,
+    publishedFlagged:totals.publishedFlagged,
+    publishedUnaligned:totals.publishedUnaligned,
+    publishedCandidateMorphology:report.publishedCandidateMorphology.slice(0,10),
+    topPublishedCandidates:report.publishedCandidateForms.slice(0,12),
     fullOutputOverrides:totals.fullOutputOverrides,
     overridesAmongFlagged:totals.overridesAmongFlagged,
     samePointedFormDifferingAccent:conflicts.length,
