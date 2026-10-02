@@ -173,6 +173,51 @@
       "category": "contraejemplo-segolado-a-e",
       "hebrew": "שָׁקֶר",
       "expected": "Sháker"
+    },
+    {
+      "category": "tehilim-sheva-sufijo-positivo",
+      "hebrew": "שִׁמְךָ",
+      "expected": "Shimjá"
+    },
+    {
+      "category": "tehilim-sheva-sufijo-positivo",
+      "hebrew": "שִּׁמְךָ",
+      "expected": "Shimjá"
+    },
+    {
+      "category": "tehilim-sheva-sufijo-positivo",
+      "hebrew": "לִבְּךָ",
+      "expected": "Libjá"
+    },
+    {
+      "category": "tehilim-sheva-sufijo-positivo",
+      "hebrew": "מִמְּךָ",
+      "expected": "Mimjá"
+    },
+    {
+      "category": "tehilim-sheva-sufijo-positivo",
+      "hebrew": "עֻזְּךָ",
+      "expected": "'Uzjá"
+    },
+    {
+      "category": "tehilim-sheva-sufijo-positivo",
+      "hebrew": "וַאֲמִתְּךָ",
+      "expected": "Vaamitjá"
+    },
+    {
+      "category": "liturgico-contraejemplo-sufijo",
+      "hebrew": "בֵּיתְךָ",
+      "expected": "Beteja"
+    },
+    {
+      "category": "liturgico-contraejemplo-sufijo",
+      "hebrew": "רְצוֹנְךָ",
+      "expected": "Retsoneja"
+    },
+    {
+      "category": "liturgico-contraejemplo-sufijo",
+      "hebrew": "יְבָרֶכְךָ",
+      "expected": "Yevarejeja"
     }
   ]
 }
