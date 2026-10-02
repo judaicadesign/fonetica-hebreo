@@ -1,5 +1,15 @@
 # Biblioteca de textos maestros — Judaica Design
 
+## Acceso fácil · textos actualmente disponibles
+
+**[ABRIR BIBLIOTECA DE BIRCAT HAMAZÓN — ASHKENAZ Y SEFARADÍ](./bircat-hamazon/README.md)**
+
+- Dos TXT con **hebreo y fonética**, guardados para revisión sin alterar sus versiones originales.
+- Estado actual: **EN REVISIÓN**, no usarlos todavía como referencia definitiva de impresión.
+- [Leer la revisión del hebreo](./bircat-hamazon/REVISION_IVRIT_2026-10-02.md).
+- Los textos incorporan solo los cambios fonéticos expresamente autorizados a `'amjá` y `ule'amjá`. El hebreo original todavía contiene problemas puntuales de niqqud y encabezados repetidos.
+
+
 Esta carpeta contendrá las **versiones editoriales aprobadas**. No publicar ni completar un master con texto inventado o tomado de memoria: se importará una versión específica comprobada en las fuentes del proyecto.
 
 ## Identidad editorial
@@ -34,4 +44,4 @@ Una expresión hebrea y su lectura deben tener la misma fonética en cualquier r
 
 ## Pendiente de migración
 
-**Todavía no están cargados aquí los masters litúrgicos aprobados**. Antes hay que identificar los archivos fuentes exactos de Judaica Design y establecer qué variante/revisión fue efectivamente validada. No declarar aprobado lo que no haya pasado esa comparación.
+**Hay dos candidatos a maestro de Bircat Hamazón en revisión**, pero todavía **no existe ningún master litúrgico con estado `approved`** en esta carpeta. Antes de aprobar deben cerrarse el cotejo íntegro del hebreo y la fonética y fijarse la edición fuente. No declarar aprobado lo que no haya pasado esa comparación.
