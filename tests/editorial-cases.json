@@ -108,6 +108,46 @@
       "category": "liturgico",
       "hebrew": "וּמַשְׂבִּיעַ",
       "expected": "Umasbía'"
+    },
+    {
+      "category": "sufijo-2ms-en-preposicion",
+      "hebrew": "לְךָ",
+      "expected": "Lejá"
+    },
+    {
+      "category": "sufijo-2ms-en-preposicion",
+      "hebrew": "בְּךָ",
+      "expected": "Bejá"
+    },
+    {
+      "category": "sufijo-3mp-no-segolado",
+      "hebrew": "לָהֶם",
+      "expected": "Lahem"
+    },
+    {
+      "category": "sufijo-3mp-no-segolado",
+      "hebrew": "לָכֶם",
+      "expected": "Lajem"
+    },
+    {
+      "category": "sufijo-3mp-no-segolado",
+      "hebrew": "בָּהֶם",
+      "expected": "Bahem"
+    },
+    {
+      "category": "contraejemplo-segolado",
+      "hebrew": "לֶחֶם",
+      "expected": "Léjem"
+    },
+    {
+      "category": "contraejemplo-segolado",
+      "hebrew": "שֶׁכֶם",
+      "expected": "Shéjem"
+    },
+    {
+      "category": "contraejemplo-segolado",
+      "hebrew": "דֶּרֶךְ",
+      "expected": "Dérej"
     }
   ]
 }
