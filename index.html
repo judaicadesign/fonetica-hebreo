@@ -711,7 +711,11 @@ function stressAccent(a, out, nuclei, originalWord){
        // Contraejemplos segolados: לֶחֶם, שֶׁכֶם, דֶּרֶךְ.
        !(has(s1,N.QAMATS) && ["ה","כ"].includes(s2.b) &&
          has(s2,N.SEGOL) && ["ם","ן"].includes(s3.b)) &&
-       (has(s1,N.SEGOL)||has(s2,N.SEGOL))){
+       // Patrones nominales segolados e-e / e-a(pataj) / a-e.
+       // No confundir con verbos i-e (דִּבֶּר) o e-a(qamats)
+       // (אֶשָּׂא): en ellos el acento puede recaer en la última vocal.
+       (has(s1,N.SEGOL)||has(s1,N.QAMATS)) &&
+       (has(s2,N.SEGOL)||has(s2,N.PATAH))){
       const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-3);
       if(idx>-1) target=idx;
     }
