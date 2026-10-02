@@ -1082,6 +1082,8 @@ const FINAL_FORMS = new Map([
   ["הַיְסוֹד", "hayesod"],
   ["בַּנֶּגֶב", "baNéguev"],
   ["בְרִנָּה", "veriná"],
+  /* Editorial approval for incomplete niqqud in this specific golden form. */
+  ["חַסְדּו", "jasdó"],
   ["יְרוּשָׁלַיִם", "Yerushaláyim"],
   ["צֶדֶק", "tsédek"],
   ["וְהוּא", "vehu"],
@@ -1500,6 +1502,11 @@ function clustersText(a){ return a.map(clusterText).join(""); }
 function divine(token){
   const b=bareLetters(token);
   const a=clusters(token);
+
+  /* Editorial: וֵאלֹהֵי must retain the initial E of Elohé.
+     This narrow, fully pointed form is resolved before the generic
+     divine-family prefix parser, which may swallow the alef. */
+  if(norm(token)===norm("וֵאלֹהֵי")) return "veElohé";
 
   let m=b.match(/^([ולבמהשכ]*)(יי|יהוה|אדני)$/);
   if(m){
