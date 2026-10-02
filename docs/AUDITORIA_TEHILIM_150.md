@@ -126,3 +126,18 @@ También se ejecutaron **66 pruebas adicionales** que insertan meteg o taam en l
 - El corpus OSHB se consulta con comprobación de SHA; ni el código privado ni los textos maestros se publican como sitio.
 - **NO-GO editorial:** siguen 804 candidatos de acento entre casos finales alineables, 480 sin alineación, signos de cantilación no locales y ketiv/qere que requieren metodología adicional. No se ha medido la fidelidad total de la fonética de todos los textos y géneros, ni la fiabilidad contextual en línea de Dicta/Nakdan. No asignar porcentaje global de precisión.
 - Antes de aprobar producción, ampliar casos contrastados por morfología, comprobar consonantes/vocales/sufijos de la salida **en contexto**, incorporar masters litúrgicos aprobados por versión y comprobar las traducciones independientemente.
+
+## Segundo ciclo — shevá ante sufijo -ךָ (2026-10-02)
+
+Se revisaron las formas MorphHB marcadas como `Sp2ms` en los 150 salmos. El patrón *vocal breve + consonante con shevá + sufijo -ךָ* aparece en **90 ocurrencias, agrupadas en 43 grafías distintas** (incluidas formas verbales y nominales). No son 90 errores verificados.
+
+**Corrección estructural conservadora**: la shevá inmediatamente anterior al sufijo no crea una e cuando sigue a hiriq, patah o qubuts; el sufijo recibe acento. Los casos de referencia son Salmos 9:3 `שִׁמְךָ` y 3:9 `עַמְּךָ`. Se excluyó de esta regla la vocal segol hasta resolver separadamente formas como `יְבָרֶכְךָ`.
+
+- Casos positivos nuevos: `שִּׁמְךָ`, `לִבְּךָ`, `מִמְּךָ`, `עֻזְּךָ`, `וַאֲמִתְּךָ`.
+- Contraejemplos protegidos: `בֵּיתְךָ`, `רְצוֹנְךָ`, `יָדֶךָ`, `יְבָרֶכְךָ`.
+- El programa conserva reglas de edición histórica en `GOLD`, que pueden prevalecer sobre el motor nuevo. Hay casos aún incoherentes, como `עַמְּךָ`: `GOLD` entrega `'amja` mientras el motor estructural entrega `'amjá`. La corrección de la biblioteca histórica requiere cotejo controlado de masters, no reemplazo masivo indiscriminado.
+- El flujo de CI existente ya ejecuta la auditoría 1–150 y la comprobación de URL pública de GitHub Pages: se conservó sin duplicarlo.
+- Privacidad del repositorio comprobada mediante metadatos de GitHub: `private=true`, `has_pages=false`. La prueba HTTP de la URL habitual queda además configurada en la CI.
+
+**Sigue pendiente**: conciliar los casos de acento con maqqef/taamim múltiples, revisar prioridades de `GOLD` y validar la fonética publicada frente a un corpus humano independiente. No habilitar producción masiva todavía.
+
