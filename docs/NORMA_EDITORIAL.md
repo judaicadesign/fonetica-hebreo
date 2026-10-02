@@ -57,3 +57,20 @@ Una actualización del conversor **no reescribe automáticamente las publicacion
 ## Objetivo de publicación
 
 El proyecto final es un **sistema editorial**: motor fonético + normas de estilo + repositorio de textos maestros + pruebas automatizadas + versionado de publicaciones. El libro de Tehilim sirve como prueba de estrés del motor; **no debe producir reglas que rompan textos modernos, sidurim, Perek Shirá, Shemá, zemirot o nombres propios**.
+
+
+## Auditoría automática de Tehilim — inventario de fuente (2026-10-02)
+
+Fuente de contraste: Open Scriptures Hebrew Bible / MorphHB, archivo `wlc/Ps.xml`, blob SHA `2da40d4bfc7d1772eccb6f49cf027f460b8be4f4`.
+
+Inventario verificado: 150 capítulos, 2.527 versículos y 19.656 tokens `<w>`. Los 19.656 traen morfología; 19.510 contienen signos vocálicos y 14.670 contienen al menos un taam según el detector Unicode usado. Lotes de 25 salmos: 1–25 = 2.867 tokens; 26–50 = 3.591; 51–75 = 3.353; 76–100 = 3.386; 101–125 = 4.162; 126–150 = 2.297.
+
+### Límite crítico antes de usar los taamim
+
+MorphHB usa `/` dentro de `<w>` para segmentación morfológica y los taamim pueden distribuirse entre segmentos. No es válido comparar el acento del conversor con la posición bruta de un carácter de taam: primero hay que reconstruir la forma superficial y mapear el taam al núcleo vocálico. La ausencia de taam tampoco equivale automáticamente a “acento desconocido”: hay que considerar maqqef, ketiv/qere, notas editoriales y segmentación. La morfología es evidencia auxiliar, no una transcripción fonética independiente.
+
+### Estado
+
+Inventario 1–150: **hecho**. Validación fonética/acento token por token: **en curso, NO terminada**. Producción del Tehilim definitivo: **bloqueada**.
+
+Próximo lote: extractor reproducible que preserve `osisID`, forma superficial, forma segmentada, morfología y taamim; luego reportes de discrepancias por salmo/categoría. Las discrepancias se resolverán con reglas generales + caso positivo + contraejemplo, no con una tabla indiscriminada de palabras.
