@@ -23,6 +23,14 @@ const navigator={clipboard:{writeText:async()=>{},readText:async()=>""}};
 const requestAnimationFrame=fn=>fn();
 `;
 const api=vm.runInNewContext(stub+html.slice(start+8,end)+"\n;({phonetize})",{}, {timeout:20000});
+// Static UI contract: controls exist and their actions are wired.
+for(const id of ["hebrew","output","copy","clear","pasteHebrew","motorStatus"]){
+ if(!html.includes('id="'+id+'"'))throw Error("UI control missing: "+id);
+}
+for(const id of ["copy","clear","pasteHebrew"]){
+ if(!html.includes('$("'+id+'").addEventListener('))throw Error("UI handler missing: "+id);
+}
+console.log("UI static contract: PASS (browser interaction not exercised)");
 const specs=[
  ["Ashkenaz","ASHKENAZ__HEBREO_FONETICA__EN_REVISION.txt"],
  ["Sefaradi","SEFARADI__HEBREO_FONETICA__EN_REVISION.txt"]
