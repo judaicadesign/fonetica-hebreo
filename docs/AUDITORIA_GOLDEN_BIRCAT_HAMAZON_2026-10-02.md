@@ -47,3 +47,18 @@ Contra el respaldo previo, sobre la muestra de tokens vocalizados de los TXT sin
 5. No empezar libro de Tehilim en Word/ni diseñarlo durante esta auditoría: Tehilim sigue siendo exclusivamente corpus de pruebas.
 
 **Conclusión provisional:** ambas familias de TXT requieren una revisión menor y localizada para la acentuación `'amjá`/`ule'amjá`; aún no hay base suficiente para declararlos completamente verificados o reemitir nuevos golden.
+
+
+## Decisión editorial del usuario — 2026-10-02
+
+**Autorizado:** corregir las copias de trabajo más recientes (2), sin modificar su hebreo, reemplazando en cada nusaj:
+- `'amja` → `'amjá`, **dos** apariciones de `עַמְּךָ`.
+- `ule'amja` → `ule'amjá`, **una** aparición de `וּלְעַמְּךָ`.
+
+**Acentuación confirmada:** `זִכְרוֹנֵנוּ` / `זִכְרוֹנֵֽנוּ` lleva la fuerza en la `e` de `-ne-`. Transliteración editorial **`zijronenu`**, sin tilde, porque la acentuación llana se deduce del final vocal en la ortografía castellana.
+
+**Estado de realización:**
+- Se generaron **dos TXT corregidos de trabajo** separados de los originales (Ashkenaz y Sefaradí), con tres sustituciones fonéticas exactas por archivo, manteniendo el hebreo intacto. Los originales de la Biblioteca no se sobrescribieron.
+- En el motor de desarrollo la regla general para `tsere + -נוּ` hace `Zijronenu` en lugar de `Zijronenú`; añadidas **seis** regresiones, incluyendo el contraejemplo `יִבְחֲנוּ`.
+- Se conserva la separación: haber autorizado estas correcciones concretas **no implica** que los textos completos o las variantes de otros nusajim queden editorialmente aprobadas. Restan auditorías y otras diferencias de motor documentadas arriba.
+- `main` y los contenidos litúrgicos maestros publicados permanecen sin alteración.
