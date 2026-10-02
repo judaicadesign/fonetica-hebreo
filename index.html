@@ -326,11 +326,15 @@ function shevaVocalized(a,i){
   if(!has(c,N.SHEVA)) return false;
   if(i===a.length-1) return false;
 
-  /* In the masculine-singular possessive suffix -ךָ, the stem-final
-     sheva is mobile: בֵּיתְךָ → beteja, רְצוֹנְךָ → retsoneja. */
+  /* Shevá ante -ךָ: no es móvil tras vocal breve del tema.
+     MorphHB Ps 9:3 שִׁמְךָ, Ps 3:9 עַמְּךָ.
+     Contrastan con בֵּיתְךָ y רְצוֹנְךָ. */
   if(i===a.length-2 &&
      (a[a.length-1].b==="ך" || a[a.length-1].b==="כ") &&
      has(a[a.length-1],N.QAMATS)){
+    const prev=i>0?a[i-1]:null;
+    if(prev && (has(prev,N.HIRIQ)||has(prev,N.PATAH)||
+                has(prev,N.QUBUTS))) return false;
     return true;
   }
 
@@ -552,6 +556,9 @@ function stressAccent(a, out, nuclei, originalWord){
      (a[L-1].b==="ך" || a[L-1].b==="כ") &&
      has(a[L-1],N.QAMATS)){
     target = Math.max(0,nuclei.length-2);
+    // Shevá náj tras vocal breve: acento final sobre -ךָ.
+    if(L>=3 && has(a[L-2],N.SHEVA) &&
+       !shevaVocalized(a,L-2)) target=nuclei.length-1;
     // Preposición proclítica simple + sufijo masculino -ךָ:
     // el shevá de la primera letra no atrae el acento (לְךָ, בְּךָ).
     if(L===2 && has(a[0],N.SHEVA)){
