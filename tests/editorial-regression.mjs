@@ -72,11 +72,32 @@ for(const [i,entry] of fixtures.cases.entries()){
     groups.set(key,got);
   }
 }
+// La cantilación y el meteg de la fuente masorética no deben cambiar
+// la pronunciación editorial de una misma cadena vocalizada.
+for(const [i,entry] of fixtures.cases.entries()){
+  const v=entry.hebrew.match(/[\u05B0-\u05BB\u05C7]/u);
+  if(!v) continue;
+  const at=v.index+v[0].length;
+  const meteg=entry.hebrew.slice(0,at)+"\u05BD"+entry.hebrew.slice(at);
+  const taam=entry.hebrew.slice(0,at)+"\u0591"+entry.hebrew.slice(at);
+  for(const [label,marked] of [["meteg",meteg],["taam",taam]]){
+    const got=api.phonetize(marked);
+    if(got!==entry.expected) errors.push(
+      "Masoretic invariant "+label+" editorial case "+(i+1)+": "+
+      JSON.stringify(marked)+" -> "+JSON.stringify(got)+
+      "; expected "+JSON.stringify(entry.expected));
+  }
+}
+// Contraejemplo: niqqud realmente distinto puede cambiar pronunciación.
+if(api.phonetize("חַדֵּשׁ")===api.phonetize("חָדָשׁ")){
+  errors.push("Negative counterexample: chadesh and chadash conflated");
+}
 const status=errors.length?"FAILED":"PASSED";
 console.log("Judaica Design editorial checks:",status);
 console.log("Built-in cases:",builtIn.length?"FAIL ("+builtIn.length+")":"PASS");
 console.log("Nakdan merge cases:",nakdanMerge.length?"FAIL ("+nakdanMerge.length+")":"PASS");
 console.log("Cross-genre/cross-nusach fixtures:",fixtures.cases.length);
 console.log("Failed assertions:",errors.length);
+console.log("Meteg/taam invariants:",fixtures.cases.length*2,"candidate checks");
 for(const error of errors) console.error(error);
 if(errors.length) process.exitCode=1;
