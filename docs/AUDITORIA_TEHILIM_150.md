@@ -86,3 +86,43 @@ La herramienta NO se declara lista solo por completar 150 salmos o conseguir cer
 - Unicode, posiciones de marcas: https://www.unicode.org/versions/Unicode18.0.0/core-spec/chapter-9/
 - Mechon Mamre: https://mechon-mamre.org/c/hr/codes.htm
 - OSHB: https://github.com/openscriptures/morphhb
+
+## Segunda iteración — corpus completo y salida publicada (2026-10-02)
+
+**Rama:** `desarrollo/auditoria-tehilim-150`. **Motor bajo prueba:** commit `d7a34994b3c21e767243df573f6291b9d68182b9`. Esta sección registra resultados de GitHub Actions [ejecución 36985669172](https://github.com/judaicadesign/fonetica-hebreo/actions/runs/36985669172).
+
+### Nuevas observaciones instrumentadas
+
+El auditor ahora conserva por separado la comparación de `rawTranslit` y una comprobación acotada de la **salida real** `phonetize`. Para esta última, solo se compara el acento si la forma final coincide con la forma generada estructuralmente tras ignorar tildes y mayúsculas; los casos que cambian letras, sílabas u otras convenciones editoriales quedan expresamente **no alineados** y requieren otro método. Los resultados no equivalen a estimaciones de exactitud.
+
+| Métrica | Línea de base anterior | Segunda iteración |
+|---|---:|---:|
+| Salmos | 150 | 150 |
+| Unidades OSHB `<w>` | 19.656 | 19.656 |
+| Comparables por taam local — capa estructural | 8.084 | 8.084 |
+| Candidatos señalados — capa estructural | 934 | 868 |
+| Candidatos en salida final alineable | 832¹ | 804 |
+| Casos finales alineables | 7.604¹ | 7.604 |
+| Casos sin alineación final automática | 480¹ | 480 |
+| Fixtures editoriales | 20 | 33 |
+| Fallos en pruebas editoriales, internas y merge Nakdan | 0 | 0 |
+
+¹ Cifras registradas después de instrumentar `phonetize` y **antes** de los cambios morfológicos finales, por lo que son otra línea de base dentro de esta misma iteración. No forman parte del inventario inicial publicado en la sección anterior.
+
+También se ejecutaron **66 pruebas adicionales** que insertan meteg o taam en los casos editoriales vocalizados y confirman invariancia de la fonética editorial; se añadió un contraejemplo en el que cambia el niqqud. El código de prueba, el auditor y el workflow están en la rama de desarrollo.
+
+### Dos familias morfológicas corregidas sin entradas de palabra completa
+
+1. **Preposición simple con shevá + sufijo -ךָ**: se recupera el acento final en el patrón de dos letras (`לְךָ` → `Lejá`; `בְּךָ` → `Bejá`). La regla de sufijos nominales de varias sílabas se conserva (`בֵּיתְךָ` → `Beteja`).
+2. **No confundir sufijos pronominales con segolados**: `לָהֶם` → `Lahem`, `לָכֶם` → `Lajem`, `בָּהֶם` → `Bahem`, sin alterar los contraejemplos de sustantivos `לֶחֶם`, `שֶׁכֶם` y `דֶּרֶךְ`.
+3. **Diferenciación acotada de formas verbales frente a segolados**: en contextos gráficos de Pi'el perfecto i-e con dagesh interno (`דִּבֶּר` → `Diber`) y Qal e-a con א final (`אֶשָּׂא` → `Esá`). No se introdujo una tabla de pronunciaciones de palabras aisladas. Se conservan `רֶגַע`, `סֶלַע` y `שָׁקֶר` como contraejemplos.
+
+**Control de alcance:** un intento demasiado amplio de restringir la heurística segolada empeoró el corpus a 1.115 candidatos estructurales y 1.038 finales. Ese intento se descartó; la regla final acotada redujo ambos valores a **868 y 804** respectivamente. Este episodio demuestra que **0 fallos en fixtures no equivale a ausencia de regresiones en el corpus**.
+
+### Privacidad y puertas de calidad
+
+- `main` y la rama de respaldo permanecieron sin modificación. El trabajo se hizo en `desarrollo/auditoria-tehilim-150`.
+- GitHub Actions ejecutó los tests editoriales, la auditoría completa de los 150 salmos y un acceso HTTP a la **URL habitual** `https://judaicadesign.github.io/fonetica-hebreo/`: **404** en la ejecución 36985669172. Este chequeo **no confirma si GitHub Pages está deshabilitado en Settings ni descarta un dominio personalizado**. Verificar la configuración directamente con permisos de administración antes de dar por cerrada la auditoría de exposición.
+- El corpus OSHB se consulta con comprobación de SHA; ni el código privado ni los textos maestros se publican como sitio.
+- **NO-GO editorial:** siguen 804 candidatos de acento entre casos finales alineables, 480 sin alineación, signos de cantilación no locales y ketiv/qere que requieren metodología adicional. No se ha medido la fidelidad total de la fonética de todos los textos y géneros, ni la fiabilidad contextual en línea de Dicta/Nakdan. No asignar porcentaje global de precisión.
+- Antes de aprobar producción, ampliar casos contrastados por morfología, comprobar consonantes/vocales/sufijos de la salida **en contexto**, incorporar masters litúrgicos aprobados por versión y comprobar las traducciones independientemente.
