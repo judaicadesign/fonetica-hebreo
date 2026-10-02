@@ -147,3 +147,25 @@ La siguiente revisión identificó un override legado que producía `עַמְּ�
 
 Una comparación de la salida final con los 19.656 tokens del corpus OSHB indicó **8 ocurrencias modificadas de una sola grafía** (`עַמְּךָ`); los otros 19.648 tokens no cambiaron en ese barrido. Esta medida informa el alcance del cambio, **no equivale a 8 errores editoriales definitivamente validados ni establece exactitud general**. Regresiones internas, Nakdan y fixtures editoriales: sin fallos en simulación previa; verificar nuevamente GitHub Actions tras el commit.
 
+## Tercer corte medido — auditoría CI posterior a correcciones de sufijos (2026-10-02)
+
+**Evidencia reproducible:** [GitHub Actions, ejecución 36986566974](https://github.com/judaicadesign/fonetica-hebreo/actions/runs/36986566974), commit `5731a5097103681cec794b7eed8c803b53bc5a02`, rama de desarrollo; flujo finalizado con **success**.
+
+| Indicador comparable | Segunda iteración | Corte posterior |
+| --- | ---: | ---: |
+| Capítulos OSHB | 150 | 150 |
+| Unidades `<w>` | 19.656 | 19.656 |
+| Casos comparables — motor estructural | 8.084 | 8.084 |
+| Discrepancias candidatas — motor estructural | 868 | **822** |
+| Casos alineables — salida final `phonetize` | 7.604 | **7.625** |
+| Discrepancias candidatas — salida final | 804 | **779** |
+| Salidas sin alineación automática | 480 | **459** |
+| Casos editoriales `tests/editorial-cases.json` | 33 | **46** |
+| Aserciones fallidas en regresiones | 0 | **0** |
+
+Se mantuvieron las **92 comprobaciones de invariancia ante meteg/taamim** y se comprobó **HTTP 404** en la URL habitual de GitHub Pages (asimismo, `private=true`, `has_pages=false` en metadatos GitHub). La aprobación de CI no garantiza que un dominio personalizado, una copia o un caché ajeno no exponga materiales.
+
+Se detectaron **36 formas vocalizadas con posiciones de taam distintas según el contexto** en el método actual. Esos datos refuerzan la necesidad de analizar contexto, maqqef, acentos prepositivos/postpositivos y posible polisemia morfológica; **no se deben resolver mediante reglas globales basadas únicamente en la grafía**.
+
+**Interpretación:** las discrepancias candidatas bajaron bajo el mismo método, pero 822 y 779 no son errores confirmados. Las 459 salidas no alineadas y la bibliografía de textos maestros litúrgicos pendientes impiden atribuir una tasa general de exactitud. El estado editorial sigue siendo **NO-GO para libro completo** hasta validación independiente.
+
