@@ -1,11 +1,15 @@
 name: Judaica Design · Editorial regressions
 
+# En desarrollo, ejecutar manualmente para evitar correos de cada commit.
+# Mantener comprobaciones automáticas para main y sus pull requests.
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
-      - desarrollo/auditoria-tehilim-150
   pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
