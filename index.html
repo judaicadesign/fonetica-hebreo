@@ -552,6 +552,11 @@ function stressAccent(a, out, nuclei, originalWord){
      (a[L-1].b==="ך" || a[L-1].b==="כ") &&
      has(a[L-1],N.QAMATS)){
     target = Math.max(0,nuclei.length-2);
+    // Preposición proclítica simple + sufijo masculino -ךָ:
+    // el shevá de la primera letra no atrae el acento (לְךָ, בְּךָ).
+    if(L===2 && has(a[0],N.SHEVA)){
+      target=nuclei.length-1;
+    }
   }
 
   /* Excepción cerrada y verificable: sufijo dual/plural -áyim
@@ -701,6 +706,11 @@ function stressAccent(a, out, nuclei, originalWord){
        !has(s1,N.HATAF_PATAH) &&
        !has(s1,N.HATAF_SEGOL) &&
        !has(s1,N.HATAF_QAMATS) &&
+       // -הֶם / -כֶם / -הֶן / -כֶן tras prefijo en qamats
+       // son sufijos pronominales, no terminación nominal segolada.
+       // Contraejemplos segolados: לֶחֶם, שֶׁכֶם, דֶּרֶךְ.
+       !(has(s1,N.QAMATS) && ["ה","כ"].includes(s2.b) &&
+         has(s2,N.SEGOL) && ["ם","ן"].includes(s3.b)) &&
        (has(s1,N.SEGOL)||has(s2,N.SEGOL))){
       const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-3);
       if(idx>-1) target=idx;
