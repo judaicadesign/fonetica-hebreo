@@ -74,3 +74,13 @@ MorphHB usa `/` dentro de `<w>` para segmentación morfológica y los taamim pue
 Inventario 1–150: **hecho**. Validación fonética/acento token por token: **en curso, NO terminada**. Producción del Tehilim definitivo: **bloqueada**.
 
 Próximo lote: extractor reproducible que preserve `osisID`, forma superficial, forma segmentada, morfología y taamim; luego reportes de discrepancias por salmo/categoría. Las discrepancias se resolverán con reglas generales + caso positivo + contraejemplo, no con una tabla indiscriminada de palabras.
+
+## Decisiones expresas del editor — 2026-10-02 (contraste golden)
+
+- `לְעוֹלָם` → `le'olam`: incluir jolam sobre vav; la forma parcialmente vocalizada `לְעולָם` no debe confundirse con un fallo del motor sobre el texto completo.
+- `חַסְדּו` → `jasdó`: forma editorial aceptada aun cuando la entrada del TXT no muestre el jolam completo.
+- `גְּבוּרוֹת` → `guevurot` (g dura ante e).
+- `בְרִנָּה` → `veriná` (bet sin daguesh = v).
+- `בִּרְכַּת` → `birkat`. **כּ = k**; no distinguir כ/ק por c/k porque la c castellana ante e/i produciría un sonido erróneo. Mantener k para el sonido /k/ de kaf con daguesh.
+- Las tres decisiones anteriores `'amjá`, `ule'amjá` y `zijronenu` permanecen vigentes.
+- **No etiquetar como error del motor un resultado de niqqud incompleto ni un valor obsoleto del diccionario GOLD sin ejecutar el motor actual con la forma completa.** No modificar `main` ni golden aprobados sin autorización.
