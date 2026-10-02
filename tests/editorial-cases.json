@@ -218,6 +218,26 @@
       "category": "liturgico-contraejemplo-sufijo",
       "hebrew": "יְבָרֶכְךָ",
       "expected": "Yevarejeja"
+    },
+    {
+      "category": "tehilim-sufijo-gold",
+      "hebrew": "עַמְּךָ",
+      "expected": "'Amjá"
+    },
+    {
+      "category": "liturgico-sufijo-gold",
+      "hebrew": "וּלְעַמְּךָ",
+      "expected": "Ule'amjá"
+    },
+    {
+      "category": "contraejemplo-capitalizacion",
+      "hebrew": "לְשִׁמְךָ",
+      "expected": "LeShimjá"
+    },
+    {
+      "category": "tehilim-prefijo-sufijo-gold",
+      "hebrew": "בְּשִׁמְךָ",
+      "expected": "Beshimjá"
     }
   ]
 }
