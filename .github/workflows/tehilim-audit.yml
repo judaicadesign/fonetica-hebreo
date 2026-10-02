@@ -1,0 +1,32 @@
+name: Audit Tehilim 150
+
+on:
+  push:
+    paths:
+      - index.html
+      - scripts/audit-tehilim.mjs
+      - .github/workflows/tehilim-audit.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  corpus-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check JavaScript syntax
+        run: node --check scripts/audit-tehilim.mjs
+      - name: Audit all Psalms
+        run: node scripts/audit-tehilim.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tehilim-corpus-audit
+          path: audit-results/
+          if-no-files-found: ignore
