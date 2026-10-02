@@ -22,6 +22,8 @@ jobs:
           node-version: '20'
       - name: Check phonetics and cross-nusach consistency
         run: node tests/editorial-regression.mjs
+      - name: Procesar los dos Bircat Hamazon completos sin alterar golden
+        run: node tests/full-masters-smoke.mjs
       - name: Auditar acentos de Tehilim 1–150 contra OSHB (solo desarrollo)
         if: github.ref == 'refs/heads/desarrollo/auditoria-tehilim-150'
         run: node tests/tehilim-taam-audit.mjs --out /tmp/judaica-tehilim-audit.json
