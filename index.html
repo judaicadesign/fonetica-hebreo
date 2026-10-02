@@ -711,11 +711,16 @@ function stressAccent(a, out, nuclei, originalWord){
        // Contraejemplos segolados: לֶחֶם, שֶׁכֶם, דֶּרֶךְ.
        !(has(s1,N.QAMATS) && ["ה","כ"].includes(s2.b) &&
          has(s2,N.SEGOL) && ["ם","ן"].includes(s3.b)) &&
-       // Patrones nominales segolados e-e / e-a(pataj) / a-e.
-       // No confundir con verbos i-e (דִּבֶּר) o e-a(qamats)
-       // (אֶשָּׂא): en ellos el acento puede recaer en la última vocal.
-       (has(s1,N.SEGOL)||has(s1,N.QAMATS)) &&
-       (has(s2,N.SEGOL)||has(s2,N.PATAH))){
+       // Restituimos la regla amplia del patrón nominal anterior.
+       // Solo excluimos dos análisis VERBALES identificables:
+       // (1) i-e con dagesh interno, típico de Pi'el perfecto (דִּבֶּר);
+       // (2) e-a con qamats y alef muda terminal (אֶשָּׂא).
+       // No excluir por sistema los nominales i-e o sufijos posesivos.
+       (has(s1,N.SEGOL)||has(s2,N.SEGOL)) &&
+       !(has(s1,N.HIRIQ) && has(s2,N.SEGOL) &&
+         has(s2,N.DAGESH)) &&
+       !(has(s1,N.SEGOL) && has(s2,N.QAMATS) &&
+         s3.b==="א")){
       const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-3);
       if(idx>-1) target=idx;
     }
