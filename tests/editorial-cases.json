@@ -148,6 +148,31 @@
       "category": "contraejemplo-segolado",
       "hebrew": "דֶּרֶךְ",
       "expected": "Dérej"
+    },
+    {
+      "category": "verbo-piel-no-segolado",
+      "hebrew": "דִּבֶּר",
+      "expected": "Diber"
+    },
+    {
+      "category": "verbo-qal-no-segolado",
+      "hebrew": "אֶשָּׂא",
+      "expected": "Esá"
+    },
+    {
+      "category": "contraejemplo-segolado-e-a",
+      "hebrew": "רֶגַע",
+      "expected": "Rega'"
+    },
+    {
+      "category": "contraejemplo-segolado-e-a",
+      "hebrew": "סֶלַע",
+      "expected": "Sela'"
+    },
+    {
+      "category": "contraejemplo-segolado-a-e",
+      "hebrew": "שָׁקֶר",
+      "expected": "Sháker"
     }
   ]
 }
