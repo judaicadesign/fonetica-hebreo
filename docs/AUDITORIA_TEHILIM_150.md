@@ -141,3 +141,9 @@ Se revisaron las formas MorphHB marcadas como `Sp2ms` en los 150 salmos. El patr
 
 **Sigue pendiente**: conciliar los casos de acento con maqqef/taamim múltiples, revisar prioridades de `GOLD` y validar la fonética publicada frente a un corpus humano independiente. No habilitar producción masiva todavía.
 
+### Control de prioridad GOLD para el sufijo -ךָ
+
+La siguiente revisión identificó un override legado que producía `עַמְּךָ → 'amja` (sin tilde final) aunque la vocalización masorética de los ejemplos de Tehilim acentúa `־ךָ`. Se añadió una regla general **acotada a sufijos -ךָ con shevá náj precedida de vocal breve**, en la interfaz `phoneWord`, que solo normaliza la terminación del resultado heredado; conserva cualquier prefijo y no sustituye entradas contextuales aprobadas. Ejemplos: `עַמְּךָ → 'Amjá`, `וּלְעַמְּךָ → Ule'amjá`. Contraejemplo reverencial: `לְשִׁמְךָ → LeShimjá` se conserva tal como estaba.
+
+Una comparación de la salida final con los 19.656 tokens del corpus OSHB indicó **8 ocurrencias modificadas de una sola grafía** (`עַמְּךָ`); los otros 19.648 tokens no cambiaron en ese barrido. Esta medida informa el alcance del cambio, **no equivale a 8 errores editoriales definitivamente validados ni establece exactitud general**. Regresiones internas, Nakdan y fixtures editoriales: sin fallos en simulación previa; verificar nuevamente GitHub Actions tras el commit.
+
