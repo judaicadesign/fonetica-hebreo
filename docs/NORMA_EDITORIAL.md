@@ -84,3 +84,5 @@ Próximo lote: extractor reproducible que preserve `osisID`, forma superficial, 
 - `בִּרְכַּת` → `birkat`. **כּ = k**; no distinguir כ/ק por c/k porque la c castellana ante e/i produciría un sonido erróneo. Mantener k para el sonido /k/ de kaf con daguesh.
 - Las tres decisiones anteriores `'amjá`, `ule'amjá` y `zijronenu` permanecen vigentes.
 - **No etiquetar como error del motor un resultado de niqqud incompleto ni un valor obsoleto del diccionario GOLD sin ejecutar el motor actual con la forma completa.** No modificar `main` ni golden aprobados sin autorización.
+
+- **Confirmación editorial adicional (2026-10-02):** `וֵאלֹהֵי` → **`veElohé`**. Preservar la E inicial de Elohé tras el prefijo ve. Validar el resultado del motor en ejecución antes de dar por cerrado el caso.
