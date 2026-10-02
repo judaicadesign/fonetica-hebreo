@@ -80,11 +80,15 @@ async function main(){
     notInstrumented:0,unmappedTaam:0,comparable:0,
     agreement:0,flagged:0};
   const morphCounts=new Map(),formStress=new Map(),grouped=new Map();
+  const chapterCounts=new Map(),accentDisagreements=new Map();
+  totals.fullOutputOverrides=0; totals.overridesAmongFlagged=0;
 
   for(const v of verses){
     const chapter=+v[1],verse=+v[2];
+    let chapterRow=chapterCounts.get(chapter);
+    if(!chapterRow){chapterRow={chapter,words:0,comparable:0,flagged:0};chapterCounts.set(chapter,chapterRow);}
     for(const w of v[3].matchAll(/<w ([^>]*)>([^<]*)<\/w>/g)){
-      totals.wordTokens++;
+      totals.wordTokens++;chapterRow.words++;
       const p=accents(w[2]),morph=(w[1].match(/morph="([^"]+)"/)||[])[1]||"";
       if(!p.marks.length){totals.withoutTaam++;continue;}
       if(p.marks.length!==1){totals.multipleTaamim++;continue;}
@@ -95,11 +99,16 @@ async function main(){
       if(!result){totals.notInstrumented++;continue;}
       const expected=result.nuclei.findIndex(n=>n.clusterIndex===mark.clusterIndex);
       if(expected<0){totals.unmappedTaam++;continue;}
-      totals.comparable++;
+      totals.comparable++;chapterRow.comparable++;
+      const full=api.wordOutput(p.word);
+      const overridden=full.toLowerCase()!==rawOutput.toLowerCase();
+      if(overridden)totals.fullOutputOverrides++;
       let f=formStress.get(p.clean);if(!f){f=new Map();formStress.set(p.clean,f);}
       f.set(expected,(f.get(expected)||0)+1);
       if(expected===result.target){totals.agreement++;continue;}
-      totals.flagged++;
+      totals.flagged++;chapterRow.flagged++;
+      if(overridden) totals.overridesAmongFlagged++;
+      accentDisagreements.set(mark.code,(accentDisagreements.get(mark.code)||0)+1);
       const category=morph.split("/").at(-1).replace(/^H/,"").slice(0,3)||"other";
       morphCounts.set(category,(morphCounts.get(category)||0)+1);
       const key=p.clean+"|"+category;
@@ -111,7 +120,7 @@ async function main(){
       item.occurrences++;
       if(item.examples.length<3)item.examples.push({
         ref:chapter+":"+verse,morph,hebrew:p.clean,
-        rawOutput,currentOutput:api.wordOutput(p.word),
+        rawOutput,currentOutput:full,editorialOverride:overridden,taamCode:mark.code,
         masoreticVowelIndex:expected,motorVowelIndex:result.target
       });
     }
@@ -130,6 +139,9 @@ async function main(){
     flagRateAmongComparable:Math.round(totals.flagged/Math.max(1,totals.comparable)*1000)/10,
     distinctFlaggedForms:grouped.size,
     morphology:[...morphCounts].sort((a,b)=>b[1]-a[1]).slice(0,50),
+    perChapter:[...chapterCounts.values()].sort((a,b)=>a.chapter-b.chapter),
+    accentDisagreements:[...accentDisagreements].sort((a,b)=>b[1]-a[1]),
+    allFlaggedForms:[...grouped.values()].sort((a,b)=>b.occurrences-a.occurrences),
     mostFrequent:[...grouped.values()].sort((a,b)=>b.occurrences-a.occurrences).slice(0,100),
     repeatedPointedFormDifferingAccent:conflicts.slice(0,100),
     regressions:api.runRegressionTests()
@@ -142,6 +154,10 @@ async function main(){
     flaggedPercent:report.flagRateAmongComparable,
     distinctFlaggedForms:report.distinctFlaggedForms,
     topMorphology:report.morphology.slice(0,12),
+    topFlagged:report.mostFrequent.slice(0,18),
+    mostFlaggedChapters:report.perChapter.filter(c=>c.flagged).sort((a,b)=>b.flagged-a.flagged).slice(0,12),
+    fullOutputOverrides:totals.fullOutputOverrides,
+    overridesAmongFlagged:totals.overridesAmongFlagged,
     samePointedFormDifferingAccent:conflicts.length,
     regressionFailures:report.regressions.length
   },null,2));
