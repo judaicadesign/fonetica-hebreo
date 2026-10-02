@@ -1546,6 +1546,24 @@ function phoneWord(token,prev,stop){
     const f=FINAL_FORMS.get(k);
     return stop?capitalizeFirst(f):f;
   }
+  /*
+    GOLD es un registro histórico: no debe reintroducir una e
+    innecesaria ni ocultar el acento del sufijo -ךָ tras shevá náj.
+    Solo se corrige la terminación -ja; se preservan los prefijos,
+    las mayúsculas reverenciales y las formas aprobadas por contexto.
+  */
+  const sc=clusters(token), ln=sc.length;
+  if(ln>=3 && (sc[ln-1].b==="ך" || sc[ln-1].b==="כ") &&
+     has(sc[ln-1],N.QAMATS) && has(sc[ln-2],N.SHEVA) &&
+     (has(sc[ln-3],N.HIRIQ)||has(sc[ln-3],N.PATAH)||
+      has(sc[ln-3],N.QUBUTS)) &&
+     !shevaVocalized(sc,ln-2) && GOLD.sef.c[ck]===undefined){
+    const originalLexeme=GOLD.sef.w[k] ?? GOLD.sef.w[alt];
+    if(originalLexeme && /(?:e)?ja$/i.test(originalLexeme)){
+      const corrected=originalLexeme.replace(/(?:e)?ja$/i,"já");
+      return stop?capitalizeFirst(corrected):corrected;
+    }
+  }
   if(GOLD.sef.c[ck]!==undefined) return GOLD.sef.c[ck];
   let f=GOLD.sef.w[k];
   if(f===undefined&&alt!==k) f=GOLD.sef.w[alt];
