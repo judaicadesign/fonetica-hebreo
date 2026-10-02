@@ -238,6 +238,36 @@
       "category": "tehilim-prefijo-sufijo-gold",
       "hebrew": "בְּשִׁמְךָ",
       "expected": "Beshimjá"
+    },
+    {
+      "category": "sufijo-nu-tsere-mil-el",
+      "hebrew": "זִכְרוֹנֵנוּ",
+      "expected": "Zijronenu"
+    },
+    {
+      "category": "sufijo-nu-tsere-meteg-invariante",
+      "hebrew": "זִכְרוֹנֵֽנוּ",
+      "expected": "Zijronenu"
+    },
+    {
+      "category": "sufijo-nu-tsere",
+      "hebrew": "וּפִקְדוֹנֵנוּ",
+      "expected": "Ufikdonenu"
+    },
+    {
+      "category": "sufijo-nu-tsere",
+      "hebrew": "וְכַלְכְּלֵנוּ",
+      "expected": "Vejalkelenu"
+    },
+    {
+      "category": "sufijo-nu-tsere",
+      "hebrew": "יִשְׁעֵנוּ",
+      "expected": "Yish'enu"
+    },
+    {
+      "category": "contraejemplo-nu-radical-con-pataj",
+      "hebrew": "יִבְחֲנוּ",
+      "expected": "Yivjanú"
     }
   ]
 }
