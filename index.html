@@ -36,12 +36,12 @@ body{margin:0;background:var(--paper);min-height:100vh}
 button,select,textarea{font:inherit}
 button,select{-webkit-tap-highlight-color:transparent}
 .wrap{max-width:1180px;margin:0 auto;padding:30px 26px 58px}
-.header{display:flex;align-items:flex-start;justify-content:space-between;gap:36px;padding:8px 2px 28px;border-bottom:1px solid var(--line)}
+.header{display:flex;align-items:flex-start;justify-content:space-between;gap:36px;padding:8px 2px 20px;border-bottom:1px solid var(--line)}
 .brand-copy{min-width:0;padding-top:7px}
 .eyebrow{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
 h1{font-family:"Libre Caslon Condensed",Georgia,serif;font-weight:400;font-size:clamp(30px,3.5vw,44px);line-height:1.08;letter-spacing:normal;color:#0f5b5d;margin:0 0 12px}
 .sub{font-family:var(--sans);max-width:680px;margin:0;color:var(--muted);font-size:14px;line-height:1.65}
-.logo{width:174px;height:auto;display:block;flex:0 0 auto}
+.logo{width:130px;height:auto;display:block;flex:0 0 auto}
 .profile-row{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:24px 0 18px}
 .profile-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
 .profile-control{display:flex;align-items:center;gap:10px}
@@ -51,7 +51,7 @@ select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,154,75,.14)}
 .card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 30px rgba(25,50,52,.045)}
 .card-title{font-family:var(--sans-extended);font-size:15px;font-weight:800;font-style:normal;letter-spacing:.07em;font-kerning:normal;font-feature-settings:"kern" 1;text-transform:uppercase;color:var(--teal-dark);display:flex;align-items:center;gap:10px;margin:0 0 11px}
 .card-title::after{content:"";height:2px;width:34px;background:var(--gold);display:inline-block;border-radius:2px}
-textarea{width:100%;min-height:430px;border:1px solid var(--line);border-radius:11px;padding:16px;resize:vertical;line-height:1.7;background:#fff;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
+textarea{width:100%;min-height:clamp(240px,calc(100vh - 500px),430px);border:1px solid var(--line);border-radius:11px;padding:16px;resize:vertical;line-height:1.7;background:#fff;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
 textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,91,93,.09)}
 #hebrew{direction:rtl;text-align:right;font-size:20px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;line-height:1.85}
 #output{direction:ltr;text-align:left;font-size:20px;font-family:"Segoe UI",Arial,sans-serif;line-height:1.85}
@@ -92,7 +92,7 @@ details.rules[open] summary::before{content:"–"}
   .wrap{padding:22px 15px 42px}
   .header{padding-bottom:22px}
   h1{font-size:42px}
-  .logo{width:125px}
+  .logo{width:100px}
   .profile-row{align-items:flex-start;flex-direction:column;gap:10px}
   .profile-control{width:100%}
   select{width:100%}
