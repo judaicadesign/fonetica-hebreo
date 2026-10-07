@@ -52,3 +52,9 @@ Se corrigen las dos entradas de GOLD ash/sef a jásar, con pruebas para entrada 
 ## Master hebreo Ashkenaz: meteg incorporados
 
 Se agregaron 241 meteg por aparición, hasta 242 en el bloque hebreo, cotejados con los recortes del PDF de ArtScroll. Registro completo: `masters/bircat-hamazon/METEG_ARTSCROLL_2026-10-07.json`. Se comprobaron todas las ubicaciones extraídas; tres formas de Jerusalén conservan la grafía heredada y reciben la marca en lamed. Cuatro palabras marcadas del PDF pertenecen a pasajes ausentes del TXT y no se insertan; el zímún de Sheva Berajot, ausente de este PDF, no se marca por analogía. Las consonantes, el resto del nikud y la fonética quedan intactos. Esto completa la incorporación de marcas de los pasajes alineados, no la revisión del nikud ni la lectura de meteg por el motor.
+
+## Mayúsculas reverenciales y uso de meteg: decisión del editor
+
+Se restablece `Baruj Atá Ad-nai` por referencia explícita a Hashem y la cita `Potéaj et Yadeja`. Las formas de segunda persona fuera de estos contextos no se capitalizan globalmente. Pruebas con y sin meteg y contraejemplos humanos. `Rajamim` y `le’olam` no necesitan tilde por ser agudas terminadas en m. `Raíti` conserva tilde de hiato ra-í-ti.
+
+El editor rechaza un activador manual de lectura de meteg: Codex coteja y edita los masters. La futura lectura del meteg usará el registro editorial del master; el carácter pegado por sí solo no identifica fuente. No se presenta esa lectura como ya implementada. El TXT entregado es una copia de consulta del master, no una tarea de carga o edición para el usuario.
