@@ -1,0 +1,109 @@
+| Hebreo ArtScroll | Meteg / sílaba | Acento ArtScroll | GOLDEN actual | Generador actual | ¿Requiere tilde ES? | Cómo debe quedar | Resultado |
+|---|---|---|---|---|---|---|---|
+| יָשַׁבְנוּ | sí — שַׁב | ya-**SHAV**-nu | yashavnu | yashavnu | No | yashavnu | **OK** |
+| בָּכִינוּ | sí — כִי | ba-**JI**-nu | bajinu | bajinu | No | bajinu | **OK** |
+| בְּזָכְרֵנוּ | sí — רֵ | bezoj-**RE**-nu | bezojrenu | bezojrenu | No | bezojrenu | **OK** |
+| תָּלִינוּ | sí — לִי | ta-**LI**-nu | talinu | talinu | No | talinu | **OK** |
+| כִּנֹּרוֹתֵינוּ | sí — תֵי | kinoro-**TE**-nu | kinorotenu | kinorotenu | No | kinorotenu | **OK** |
+| שְׁאֵלוּנוּ | sí — לוּ | shee-**LU**-nu | sheelunu | sheelunu | No | sheelunu | **OK** |
+| שׁוֹבֵינוּ | sí — בֵי | sho-**VE**-nu | shovenu | shovenu | No | shovenu | **OK** |
+| וְתוֹלָלֵינוּ | sí — לֵי | vetola-**LE**-nu | vetolalenu | vetolalenu | No | vetolalenu | **OK** |
+| לָנוּ | sí — לָ | **LA**-nu | lanu | lanu | No | lanu | **OK** |
+| יְרוּשָׁלַיִם | sí — לַ | Yerusha-**LA**-yim | Yerushaláyim | Yerushaláyim | **Sí** | Yerushaláyim | **OK** |
+| הָיִינוּ | sí — יִי | ha-**YI**-nu | hayinu | hayinu | No | hayinu | **OK** |
+| פִּינוּ | sí — פִּי | **PI**-nu | pinu | pinu | No | pinu | **OK** |
+| וּלְשׁוֹנֵנוּ | sí — נֵ | ulesho-**NE**-nu | uleshonenu | uleshonenu | No | uleshonenu | **OK** |
+| עִמָּנוּ | sí — מָ | i-**MA**-nu | 'imanu | 'imanu | No | 'imanu | **OK** |
+| שְׁבִיתֵנוּ | sí — תֵ | shevi-**TE**-nu | shevitenu | shevitenu | No | shevitenu | **OK** |
+| בַּנֶּגֶב | sí — נֶ | ba-**NE**-guev | baNéguev | baNéguev | **Sí** | baNéguev | **OK** |
+| מֶשֶׁךְ | sí — מֶ | **ME**-shej | meshej | meshej | **Sí** | **méshej** | **CORREGIR GOLDEN + MOTOR** |
+| וַאֲנַחְנוּ | sí — נַחְ | vaa-**NAJ**-nu | Vaanajnu | Vaanajnu | No | Vaanajnu | **OK** |
+| מֵעַתָּה | sí — עַ | me-**'A**-ta | me'atá | me'atá | No, pero actualmente la tilde cambia el acento | **me'ata** | **CORREGIR GOLDEN + MOTOR** |
+| אֱלֹהֵינוּ | sí — הֵ | Elo-**HE**-nu | Elohenu | Elohenu | No | Elohenu | **OK** |
+| שֶׁאָכַלְנוּ | sí — כַל | shea-**JAL**-nu | sheajalnu | sheajalnu | No | sheajalnu | **OK** |
+| חָיִינוּ | sí — יִי | ja-**YI**-nu | jayinu | jayinu | No | **jayinu** | **OK** |
+| מֶלֶךְ | sí — מֶ | **ME**-lej | Mélej | Mélej | Sí | Mélej | **OK** |
+| בְּחֶסֶד | sí — חֶ | be-**JE**-sed | bejésed | bejésed | Sí | bejésed | **OK** |
+| לֶחֶם | sí — לֶ | **LE**-jem | léjem | léjem | Sí | léjem | **OK** |
+| לָנוּ | sí — לָ | **LA**-nu | lanu | lanu | No | lanu | **OK** |
+| פּוֹתֵחַ | sí — תֵ | po-**TE**-aj | potéaj | potéaj | Sí | potéaj | **OK** |
+| לַאֲבוֹתֵינוּ | sí — תֵי | laavot-**E**-nu | laavotenu | laavotenu | No | laavotenu | **OK** |
+| שֶׁהוֹצֵאתָנוּ | sí — תָ | shehotse-**TA**-nu | shehotsetanu | shehotsetanu | No | shehotsetanu | **OK** |
+| וּפְדִיתָנוּ | sí — תָ | ufdi-**TA**-nu | ufditanu | ufditanu | No | ufditanu | **OK** |
+| בִּבְשָׂרֵנוּ | sí — רֵ | bivsa-**RE**-nu | bivsarenu | bivsarenu | No | bivsarenu | **OK** |
+| שֶׁלִּמַּדְתָּנוּ | sí — דְתָ | shelimad-**TA**-nu | shelimadtanu | shelimadtanu | No | shelimadtanu | **OK** |
+| שֶׁהוֹדַעְתָּנוּ | sí — עְתָ | shehoda'-**TA**-nu | shehoda'tanu | shehoda'tanu | No | shehoda'tanu | **OK** |
+| שֶׁחוֹנַנְתָּנוּ | sí — תָ | shejonan-**TA**-nu | shejonantanu | shejonantanu | No | shejonantanu | **OK** |
+| אוֹתָנוּ | sí — תָ | o-**TA**-nu | otanu | otanu | No | otanu | **OK** |
+| עָשִׂיתָ | sí — שִׂי | a-**SI**-ta | 'asita | 'asita | No | 'asita | **OK** |
+| מַתִּתְיָהוּ | sí — יָ | Matit-**YA**-hu | Matityahu | Matityahu | No | Matityahu | **OK** |
+| עָמַדְתָּ | sí — מַד | a-**MAD**-ta | 'amadta | 'amadta | No | 'amadta | **OK** |
+| רַבְתָּ | sí — רַב | **RAV**-ta | ravta | ravta | No | ravta | **OK** |
+| דַּנְתָּ | sí — דַּן | **DAN**-ta | danta | danta | No | danta | **OK** |
+| נָקַמְתָּ | sí — קַם | na-**KAM**-ta | nakamta | nakamta | No | nakamta | **OK** |
+| מָסַרְתָּ | sí — סַר | ma-**SAR**-ta | masarta | masarta | No | masarta | **OK** |
+| בָּאוּ | sí — בָּ | **BA**-u | bau | bau | No | bau | **OK** |
+| וּפִנּוּ | sí — פִ | u-**FI**-nu | ufinú | ufinú | No; la tilde actual desplaza el acento | **ufinu** | **CORREGIR GOLDEN + MOTOR** |
+| וְהִדְלִיקוּ | sí — לִי | vehid-**LI**-ku | vehidliku | vehidliku | No | vehidliku | **OK** |
+| אֵלּוּ | sí — אֵ | **E**-lu | elu | elu | No | elu | **OK** |
+| הֵפַרְתָּ | sí — פַר | he-**FAR**-ta | hefarta | hefarta | No | hefarta | **OK** |
+| וְקִלְקַלְתָּ | sí — קַל | vekil-**KAL**-ta | vekilkalta | vekilkalta | No | vekilkalta | **OK** |
+| אֲנַחְנוּ | sí — נַחְ | a-**NAJ**-nu | anajnu | anajnu | No | anajnu | **OK** |
+| הַבַּיִת | sí — בַּ | ha-**BA**-yit | habáyit | habáyit | Sí | habáyit | **OK** |
+| אָבִינוּ | sí — בִי | a-**VI**-nu | Avinu | Avinu | No | Avinu | **OK** |
+| רְעֵנוּ | sí — עֵ | re-**'E**-nu | re'enu | re'enu | No | re'enu | **OK** |
+| זוּנֵנוּ | sí — נֵ | zu-**NE**-nu | zunenu | zunenu | No | zunenu | **OK** |
+| פַּרְנְסֵנוּ | sí — סֵ | parne-**SE**-nu | parnesenu | parnesenu | No | parnesenu | **OK** |
+| וְכַלְכְּלֵנוּ | sí — לֵ | vejalkel-**E**-nu | vejalkelenu | vejalkelenu | No | vejalkelenu | **OK** |
+| וְהַרְוִיחֵנוּ | sí — חֵ | veharvi-**JE**-nu | veharvijenu | veharvijenu | No | veharvijenu | **OK** |
+| מְהֵרָה | sí — הֵ | me-**HE**-ra | meherá | meherá | **No; la tilde actual lo hace agudo** | **mehera** | **CORREGIR GOLDEN + MOTOR** |
+| צָרוֹתֵינוּ | sí — תֵי | tsarot-**E**-nu | tsarotenu | tsarotenu | No | tsarotenu | **OK** |
+| תַּצְרִיכֵנוּ | sí — כֵ | tatsri-**JE**-nu | tatsrijenu | tatsrijenu | No | tatsrijenu | **OK** |
+| וְהַחֲלִיצֵנוּ | sí — צֵ | vehajalit-**SE**-nu | vehajalitsenu | vehajalitsenu | No | vehajalitsenu | **OK** |
+| לָנוּחַ | sí — נוּ | la-**NU**-aj | lanúaj | lanúaj | Sí | lanúaj | **OK** |
+| הָנִיחַ | sí — נִי | ha-**NI**-aj | haníaj | haníaj | Sí | haníaj | **OK** |
+| מְנוּחָתֵנוּ | sí — תֵ | menujat-**E**-nu | menujatenu | menujatenu | No | menujatenu | **OK** |
+| וְהַרְאֵנוּ | sí — אֵ | vehar-**E**-nu | Veharenu | Veharenu | No | Veharenu | **OK** |
+| אֲבוֹתֵינוּ | sí — תֵי | avot-**E**-nu | avotenu | avotenu | No | avotenu | **OK** |
+| זִכְרוֹנֵנוּ | sí — נֵ | zijro-**NE**-nu | zijronenu | zijronenu | No | zijronenu | **OK** |
+| וּפִקְדוֹנֵנוּ | sí — נֵ | ufikdo-**NE**-nu | ufikdonenu | ufikdonenu | No | ufikdonenu | **OK** |
+| זָכְרֵנוּ | sí — רֵ | zoj-**RE**-nu | Zojrenu | Zojrenu | No | Zojrenu | **OK** |
+| וּפָקְדֵנוּ | sí — דֵ | ufok-**DE**-nu | ufokdenu | ufokdenu | No | ufokdenu | **OK** |
+| וְהוֹשִׁיעֵנוּ | sí — עֵ | vehoshi-**'E**-nu | vehoshi'enu | vehoshi'enu | No | vehoshi'enu | **OK** |
+| וְחָנֵנוּ | sí — נֵ | vejo-**NE**-nu | vejonenu | vejonenu | No | vejonenu | **OK** |
+| עָלֵינוּ | sí — לֵ | 'a-**LE**-nu | 'alenu | 'alenu | No | 'alenu | **OK** |
+| עֵינֵינוּ | sí — נֵי | 'e-**NE**-nu | 'enenu | 'enenu | No | 'enenu | **OK** |
+| בִּמְהֵרָה | sí — הֵ | bim-**HE**-ra | bimherá | bimherá | **No; la tilde actual contradice ArtScroll** | **bimhera** | **CORREGIR GOLDEN + MOTOR** |
+| בְיָמֵינוּ | sí — מֵ | veya-**ME**-nu | veyamenu | veyamenu | No | veyamenu | **OK** |
+| מַלְכֵּנוּ | sí — כֵ | mal-**KE**-nu | Malkenu | Malkenu | No | Malkenu | **OK** |
+| אַדִּירֵנוּ | sí — רֵ | Adi-**RE**-nu | Adirenu | Adirenu | No | Adirenu | **OK** |
+| בּוֹרְאֵנוּ | sí — אֵ | Bor-**E**-nu | Borenu | Borenu | No | Borenu | **OK** |
+| גּוֹאֲלֵנוּ | sí — לֵ | Goa-**LE**-nu | Goalenu | Goalenu | No | Goalenu | **OK** |
+| יוֹצְרֵנוּ | sí — רֵ | Yotse-**RE**-nu | Yotserenu | Yotserenu | No | Yotserenu | **OK** |
+| קְדוֹשֵׁנוּ | sí — שֵׁ | Kedo-**SHE**-nu | Kedoshenu | Kedoshenu | No | Kedoshenu | **OK** |
+| רוֹעֵנוּ | sí — עֵ | ro-**'E**-nu | Ro'enu | Ro'enu | No | Ro'enu | **OK** |
+| גְמָלָנוּ | sí — לָ | guema-**LA**-nu | guemalanu | guemalanu | No | guemalanu | **OK** |
+| גוֹמְלֵנוּ | sí — לֵ | gom-**LE**-nu | gomlenu | gomlenu | No | gomlenu | **OK** |
+| יִגְמְלֵנוּ | sí — לֵ | yigme-**LE**-nu | yigmelenu | yigmelenu | No | yigmelenu | **OK** |
+| בַּשָּׁמַיִם | sí — מַ | basha-**MA**-yim | bashamáyim | bashamáyim | Sí | bashamáyim | **OK** |
+| בָּנוּ | sí — בָּ | **BA**-nu | banu | banu | No | banu | **OK** |
+| יְפַרְנְסֵנוּ | sí — סֵ | yefarne-**SE**-nu | yefarnesenu | yefarnesenu | No | yefarnesenu | **OK** |
+| עֻלֵנוּ | sí — לֵ | 'u-**LE**-nu | 'ulenu | 'ulenu | No | 'ulenu | **OK** |
+| צַוָּארֵנוּ | sí — רֵ | tsava-**RE**-nu | tsavarenu | tsavarenu | No | tsavarenu | **OK** |
+| יוֹלִיכֵנוּ | sí — כֵ | yolije-**JE**-nu | yolijenu | yolijenu | No | yolijenu | **OK** |
+| לְאַרְצֵנוּ | sí — צֵ | leart-**SE**-nu | leartsenu | leartsenu | No | leartsenu | **OK** |
+| אֵלִיָּהוּ | sí — יָ | Eli-**YA**-hu | Eliyahu | Eliyahu | No | Eliyahu | **OK** |
+| וְיַצְלִיחַ | sí — לִי | veyats-**LI**-aj | veyatslíaj | veyatslíaj | Sí | veyatslíaj | **OK** |
+| אוֹתָנוּ | sí — תָ | o-**TA**-nu | otanu | otanu | No | otanu | **OK** |
+| כֻּלָּנוּ | sí — לָ | ku-**LA**-nu | kulanu | kulanu | No | kulanu | **OK** |
+| יְלַמְּדוּ | sí — מְּ | yelam-**ME**-du | yelamedú | yelamedú | **No; la tilde actual lo hace agudo** | **yelamedu** | **CORREGIR GOLDEN + MOTOR** |
+| לְמִשְׁמֶרֶת | sí — מֶ | lemish-**ME**-ret | lemishmeret | lemishmeret | **Sí** | **lemishméret** | **CORREGIR GOLDEN + MOTOR** |
+| יִשְׁעֵנוּ | sí — עֵ | yish-**'E**-nu | yishe'enu | yishe'enu | No | yishe'enu | **OK** |
+| שֵׂכֶל | sí — שֵׂ | **SE**-jel | séjel | séjel | Sí | séjel | **OK** |
+| יַנְחִילֵנוּ | sí — לֵ | yanjile-**LE**-nu | yanjilenu | yanjilenu | No | yanjilenu | **OK** |
+| עָלֵינוּ | sí — לֵ | 'a-**LE**-nu | 'alenu | 'alenu | No | 'alenu | **OK** |
+| יְזַכֵּנוּ | sí — כֵּ | yezake-**KE**-nu | yezakenu | yezakenu | No | yezakenu | **OK** |
+| הַגֶּבֶר | sí — גֶּ | ha-**GUE**-ver | haguéver | haguéver | Sí | haguéver | **OK** |
+| הָיִיתִי | sí — יִי | ha-**YI**-ti | hayíti | hayíti | **No** | **hayiti** | **CORREGIR GOLDEN + MOTOR: tilde innecesaria** |
+| רָאִיתִי | sí — אִי | ra-**I**-ti | raíti | raíti | **No** | **raiti** | **CORREGIR GOLDEN + MOTOR: tilde innecesaria** |
+| לֶחֶם | sí — לֶ | **LE**-jem | lájem en esa línea | lájem | Sí, pero está sobre la vocal equivocada | **léjem** | **CORREGIR GOLDEN + MOTOR** |

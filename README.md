@@ -20,3 +20,10 @@ Si abriste GitHub y ves una lista de carpetas, entrá en `masters` y luego en `b
 **Importante:** esta es la rama de auditoría `desarrollo/auditoria-tehilim-150`. La rama `main` está protegida de los cambios de desarrollo. No mezclar borradores con textos definitivos.
 
 **Tehilim:** por ahora únicamente sirve como corpus para poner a punto el generador; no iniciar diseño ni maquetación del libro.
+
+
+## Trabajo activo de fonética
+
+Estado y pendientes: [ESTADO_GENERADOR_2026-10-07.md](docs/ESTADO_GENERADOR_2026-10-07.md).
+Registro de decisiones y alcance: [DECISIONES_FONETICA_2026-10-07.json](docs/DECISIONES_FONETICA_2026-10-07.json).
+No convertir tablas históricas en cambios automáticos; las confirmaciones de ArtScroll se contrastan y quedan cubiertas por pruebas.

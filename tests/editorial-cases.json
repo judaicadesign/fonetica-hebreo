@@ -308,6 +308,144 @@
       "category": "aprobacion-editorial-2026-10-02",
       "hebrew": "וּלְעַמְּךָ",
       "expected": "Ule'amjá"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "לָמוֹ",
+      "expected": "Lamo"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "יֵבֹשׁוּ",
+      "expected": "Yevoshu"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "אוֹדְךָ",
+      "expected": "Odejá"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "קֹרַח",
+      "expected": "Kóraj"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "שִׁירוּ",
+      "expected": "Shiru"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "עֵינִי",
+      "expected": "'Ení"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "חָיִל",
+      "expected": "Jáyil"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "עֹשֶׂה",
+      "expected": "'Osé"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "אֹרַח",
+      "expected": "Óraj"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "לְעֶזְרָתִי חוּשָׁה",
+      "expected": "Le'ezrati jushá"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "לָמָּה",
+      "expected": "Lama"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-contexto",
+      "hebrew": "בְּנִי אַתָּה אֲנִי",
+      "expected": "Bení ata aní"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-contexto",
+      "hebrew": "מִמְתִים יָדְךָ יְהוָה",
+      "expected": "Mimtim yadejá Ad-nai"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-contexto",
+      "hebrew": "הַלְלוּ יָהּ",
+      "expected": "HaleluYah"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "הַלְלוּ־יָהּ",
+      "expected": "HaleluYah"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "הַ֥לְﬞלוּ־יָ֨הּ",
+      "expected": "HaleluYah"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-contexto",
+      "hebrew": "כִּי הַלְלוּ יָהּ",
+      "expected": "Ki HaleluYah"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "הַלְלוּיָהּ",
+      "expected": "HaleluYah"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "אַתָּה",
+      "expected": "Atá"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "יָדְךָ",
+      "expected": "Yadeja"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "יָדֶךָ",
+      "expected": "Yadeja"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "verificado-editor-forma",
+      "hebrew": "הַלְלוּ",
+      "expected": "Hallú"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-07",
+      "category": "contraejemplo-contextual",
+      "hebrew": "לְעֶזְרָתִי",
+      "expected": "Le'ezratí"
     }
   ]
 }

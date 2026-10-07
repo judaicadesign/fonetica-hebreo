@@ -1232,7 +1232,7 @@ function hasUnpointedHebrew(text){
 */
 
 function transliterateHebrew(text){
-  let s=text.replace(/\u05BE/g,"-");
+  let s=normalizeHaleluYah(text).replace(/\u05BE/g,"-");
 
   /* Fixed editorial Hebrew abbreviations. */
   s=s.replace(/יו״ד/g,"Yud");
@@ -1528,7 +1528,39 @@ function divine(token){
   }
   return null;
 }
-function phoneWord(token,prev,stop){
+/* Decisiones ArtScroll verificadas, 2026-10-07.
+   Fuente y alcance en docs/DECISIONES_FONETICA_2026-10-07.json.
+   Claves vocalizadas exactas: no infieren tónica a partir de meteg ajeno. */
+const VERIFIED_TEHILIM_FORMS = new Map([
+  ["לָמוֹ","lamo"], ["יֵבֹשׁוּ","yevoshu"],
+  ["אוֹדְךָ","odejá"], ["קֹרַח","Kóraj"],
+  ["שִׁירוּ","shiru"], ["עֵינִי","'ení"],
+  ["חָיִל","jáyil"], ["עֹשֶׂה","'osé"],
+  ["אֹרַח","óraj"],
+  ["לָמָּה","lama"]
+].map(([k,v])=>[norm(k),v]));
+function verifiedTehilimForm(token,prev,next){
+  const k=norm(token);
+  // Pronombres y sufijos pueden variar según el contexto bíblico.
+  if(k===norm("אַתָּה") && norm(prev||"")===norm("בְּנִי") &&
+     norm(next||"")===norm("אֲנִי")) return "ata"; // 2:7
+  if(k===norm("יָדְךָ") && norm(prev||"")===norm("מִמְתִים") &&
+     bareLetters(next||"")==="יהוה") return "yadejá"; // 17:14
+  if(k===norm("לְעֶזְרָתִי") && /^(חושה|חישה)$/.test(bareLetters(next||"")))
+    return "le'ezrati"; // 22:20, 40:14, 70:2, 71:12; no extender a 38:23.
+  return VERIFIED_TEHILIM_FORMS.get(k) ?? null;
+}
+function normalizeHaleluYah(text){
+  // Reconocer la misma expresión unida, con espacio o maqaf.
+  // U+FB1E es varika, no una letra ni una vocal adicional.
+  const marks="[\\u0591-\\u05C7\\u200d\\uFB1E]*";
+  const letters="[\\u05D0-\\u05EA]";
+  const pair="(?<!"+letters+")(ה"+marks+"ל"+marks+"ל"+marks+"ו"+marks+")([ \\t\\u05BE-]+)(י"+marks+"ה"+marks+")(?!"+letters+")";
+  return text.replace(new RegExp(pair,"gu"),
+    (whole,a,sep,b)=>norm(a.replace(/\uFB1E/g,""))===norm("הַלְלוּ") &&
+      norm(b.replace(/\uFB1E/g,""))===norm("יָהּ") ? "הַלְלוּיָהּ" : whole);
+}
+function phoneWord(token,prev,stop,next){
   token=norm(token);
   if(/^ו\u05B0$/.test(token)) return stop?"Ve":"ve";
   const alt=token.replace(/כָ(?=ל(?![\u05B0-\u05C7]))/,"כָּ");
@@ -1539,6 +1571,9 @@ function phoneWord(token,prev,stop){
     const f="bina";
     return stop?capitalizeFirst(f):f;
   }
+
+  const verified=verifiedTehilimForm(token,prev,next);
+  if(verified!==null) return stop?capitalizeFirst(verified):verified;
 
   /* Las reglas gramaticales/contextuales preceden al corpus legacy. */
   if(bareLetters(token)==="השם") return "Hashem";
@@ -1586,13 +1621,14 @@ function stashLabels(s){
   return [s,st];
 }
 function phonetize(text){
-  let s=text.replace(/\u05BE/g,"-");
+  let s=normalizeHaleluYah(text).replace(/\u05BE/g,"-");
   let st; [s,st]=stashLabels(s);
   let prev="", stop=true, out="";
   let recentHebrew=[];
   for(const m of s.matchAll(/([\u05D0-\u05EA\u0591-\u05C7\u200d]+)|([^\u05D0-\u05EA\u0591-\u05C7\u200d]+)/gu)){
     if(m[1]){
-      let piece=phoneWord(m[1],prev,stop);
+      const following=s.slice(m.index+m[0].length).match(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/u);
+      let piece=phoneWord(m[1],prev,stop,following?.[0]);
       const bare=bareLetters(m[1]);
       const divineSpeech =
         bare==="אני" &&

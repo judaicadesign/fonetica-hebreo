@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "authoritative_digital_source": "Wikisource",
+  "editorial_stress_reference": "ArtScroll edición revisada por usuario",
+  "audit_comparison_source": "OSHB es referencia auxiliar, nunca sustituto del master de Wikisource",
+  "stress_policy": "Meteg ajeno a ArtScroll no implica tónica principal. Falta de meteg solo implica final bajo la convención editorial ArtScroll verificada. Tilde española se decide después de fijar sílabas/tónica; apóstrofo solo ayin.",
+  "workflow_order": [
+    "Tehilim: decisiones, reglas y pruebas",
+    "Bircat Hamazon: chequear ArtScroll, alinear por aparición, corregir master y acentos",
+    "Botón añadir/quitar marcas: aplazado por usuario",
+    "Validación continua por familias y contexto; no prometer exactitud universal"
+  ],
+  "decisions": [
+    {
+      "hebrew": "לָמוֹ",
+      "phonetic": "lamo",
+      "ref": "28:8",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "יֵבֹשׁוּ",
+      "phonetic": "yevoshu",
+      "ref": "25:3",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "אוֹדְךָ",
+      "phonetic": "odejá",
+      "ref": "18:50",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "קֹרַח",
+      "phonetic": "Kóraj",
+      "ref": "44:1",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "שִׁירוּ",
+      "phonetic": "shiru",
+      "ref": "96:1",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "עֵינִי",
+      "phonetic": "'ení",
+      "ref": "6:8",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "חָיִל",
+      "phonetic": "jáyil",
+      "ref": "18:33",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "עֹשֶׂה",
+      "phonetic": "'osé",
+      "ref": "37:7",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "אֹרַח",
+      "phonetic": "óraj",
+      "ref": "16:11",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "לְעֶזְרָתִי",
+      "phonetic": "le'ezrati",
+      "ref": "22:20",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "Solo ante חוּשָׁה o ketiv חישה; 38:23 conserva acento final, no extrapolar"
+    },
+    {
+      "hebrew": "לָמָּה",
+      "phonetic": "lama",
+      "ref": "44:24",
+      "status": "implementado-en-desarrollo",
+      "evidence": "Tónica confirmada por usuario al revisar ArtScroll; forma vocalizada exacta.",
+      "scope": "lexema vocalizado exacto; sin expansión automática a prefijos o variantes"
+    },
+    {
+      "hebrew": "אַתָּה",
+      "phonetic": "ata",
+      "ref": "2:7",
+      "status": "implementado-en-desarrollo",
+      "scope": "Solo בְּנִי אַתָּה אֲנִי; conservar Atá fuera de este contexto"
+    },
+    {
+      "hebrew": "יָדְךָ",
+      "phonetic": "yadejá",
+      "ref": "17:14",
+      "status": "implementado-en-desarrollo",
+      "scope": "Solo מִמְתִים יָדְךָ יְהוָה; otros contextos pendientes"
+    },
+    {
+      "hebrew": "הַלְלוּיָהּ",
+      "phonetic": "HaleluYah",
+      "ref": "111:1",
+      "status": "implementado-en-desarrollo",
+      "scope": "Forma unida, con espacio o maqaf, con niqqud equivalente; conservar original hebreo"
+    },
+    {
+      "hebrew": "פֹּעֲלֵי",
+      "phonetic": "pó'ale",
+      "ref": "5:6",
+      "status": "provisional-no-implementado",
+      "reason": "Usuario dijo creo que veo un meteg; falta confirmar marca"
+    },
+    {
+      "hebrew": "בְּצִדְקָתְךָ",
+      "ref": "31:2",
+      "status": "pendiente-revision-ArtScroll",
+      "phonetic": null
+    },
+    {
+      "hebrew": "צִדְקָתְךָ",
+      "ref": "36:7",
+      "status": "pendiente-revision-ArtScroll",
+      "phonetic": null
+    },
+    {
+      "hebrew": "יֹאבֵדוּ",
+      "ref": "37:20",
+      "status": "pendiente-revision-ArtScroll",
+      "phonetic": null
+    },
+    {
+      "hebrew": "יְמִינְךָ",
+      "ref": "44:4",
+      "status": "pendiente-revision-ArtScroll",
+      "phonetic": null
+    },
+    {
+      "hebrew": "הָרִיעוּ",
+      "ref": "47:2",
+      "status": "pendiente-revision-ArtScroll",
+      "phonetic": null
+    }
+  ],
+  "retained_material": [
+    "docs/antecedentes/tabla-importada-2026-10-07.txt",
+    "tests/data/tehilim-audit-baseline-2026-10-02.json"
+  ],
+  "historical_table_status": "Antecedente no aprobado: contiene afirmaciones corregidas en revisión posterior; no convertir OK en aprobación automática.",
+  "remaining_context_questions": [
+    {
+      "hebrew": "לְעֶזְרָתִי",
+      "ref": "38:23",
+      "evidence": "OSHB sitúa acento en תִי; contraste ArtScroll pendiente",
+      "status": "no-propagar-22:20"
+    }
+  ],
+  "verification": {
+    "editorial_cases": 83,
+    "editorial_failures": 0,
+    "meteg_taam_invariant_checks": 166,
+    "master_processing": "ambos masters completos pasan; no aprobación editorial",
+    "baseline_alerts": 738,
+    "after_alerts": 667,
+    "metric_scope": "Auditoría original por palabras aisladas; no cuenta correcciones dependientes de contexto ni resuelve HaleluYah como expresión compuesta."
+  }
+}
