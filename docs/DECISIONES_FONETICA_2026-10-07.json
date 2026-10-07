@@ -164,7 +164,7 @@
       "phonetic": "jásar",
       "source": "PDF ArtScroll Ashkenaz Bircat Hamazon, página 5, revisión visual previa",
       "status": "implementado-main-y-desarrollo",
-      "scope": "Lexema vocalizado exacto; entradas GOLD y léxico; master Ashkenaz con marca comprobada; fonética del master sefardí común corregida",
+      "scope": "Lexema exacto en el motor; master Ashkenaz verificado. La corrección del TXT Edot HaMizraj se revierte hasta cotejar Bircat Shelomo.",
       "note": "No afirmar que el resto de meteg del master está completado."
     }
   ],
@@ -189,5 +189,13 @@
     "baseline_alerts": 738,
     "after_alerts": 667,
     "metric_scope": "Auditoría original por palabras aisladas; no cuenta correcciones dependientes de contexto ni resuelve HaleluYah como expresión compuesta."
+  },
+  "ashkenaz_meteg_master": {
+    "status": "meteg-incorporados",
+    "added": 241,
+    "total": 242,
+    "ledger": "masters/bircat-hamazon/METEG_ARTSCROLL_2026-10-07.json",
+    "phonetic_block": "sin cambios; regeneración pendiente",
+    "sephardic_scope": "No propagar las marcas Ashkenaz. חָסַר en el master Edot HaMizraj permanece pendiente de cotejo con Bircat Shelomo; jasar heredado no se declara correcto."
   }
 }

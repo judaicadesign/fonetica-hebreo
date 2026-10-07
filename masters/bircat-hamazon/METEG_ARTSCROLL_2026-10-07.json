@@ -1,0 +1,2470 @@
+{
+  "date": "2026-10-07",
+  "source_pdf": "ArtScroll - ashkenaz bircat hamazon Interlinear Benching.pdf",
+  "source_sha256": "f50d33123d082f5ee86161b579c38ef2818b3a49719b07a9218902ce48a6eec7",
+  "scope": "Meteg additions only, occurrence aligned. Existing consonants, niqqud, headings and phonetic block preserved. Nusach-specific passages absent from PDF not extrapolated.",
+  "added": 241,
+  "previous_meteg": 1,
+  "result_meteg": 242,
+  "changes": [
+    {
+      "master_token": 13,
+      "start": 102,
+      "end": 112,
+      "old": "יָשַׁבְנוּ",
+      "new": "יָשַֽׁבְנוּ",
+      "pdf_page": 1,
+      "pdf_word": "יָשַֽׁבְנוּ",
+      "pdf_y": 88.3
+    },
+    {
+      "master_token": 15,
+      "start": 119,
+      "end": 128,
+      "old": "בָּכִינוּ",
+      "new": "בָּכִֽינוּ",
+      "pdf_page": 1,
+      "pdf_word": "בָּכֽינוּ",
+      "pdf_y": 88.3
+    },
+    {
+      "master_token": 16,
+      "start": 130,
+      "end": 142,
+      "old": "בְּזָכְרֵנוּ",
+      "new": "בְּזָכְרֵֽנוּ",
+      "pdf_page": 1,
+      "pdf_word": "בְּזָכְרֵֽנוּ",
+      "pdf_y": 88.3
+    },
+    {
+      "master_token": 22,
+      "start": 180,
+      "end": 189,
+      "old": "תָּלִינוּ",
+      "new": "תָּלִֽינוּ",
+      "pdf_page": 1,
+      "pdf_word": "תָּלֽינוּ",
+      "pdf_y": 120.5
+    },
+    {
+      "master_token": 23,
+      "start": 190,
+      "end": 205,
+      "old": "כִּנֹּרוֹתֵינוּ",
+      "new": "כִּנֹּרוֹתֵֽינוּ",
+      "pdf_page": 1,
+      "pdf_word": "כּנּרִוֹתֵֽינוּ",
+      "pdf_y": 120.5
+    },
+    {
+      "master_token": 26,
+      "start": 217,
+      "end": 228,
+      "old": "שְׁאֵלוּנוּ",
+      "new": "שְׁאֵלֽוּנוּ",
+      "pdf_page": 1,
+      "pdf_word": "שְׁאֵלֽוּנוּ",
+      "pdf_y": 145.0
+    },
+    {
+      "master_token": 27,
+      "start": 229,
+      "end": 239,
+      "old": "שׁוֹבֵינוּ",
+      "new": "שׁוֹבֵֽינוּ",
+      "pdf_page": 1,
+      "pdf_word": "שׁוֹבֵֽינוּ",
+      "pdf_y": 145.0
+    },
+    {
+      "master_token": 30,
+      "start": 255,
+      "end": 268,
+      "old": "וְתוֹלָלֵינוּ",
+      "new": "וְתוֹלָלֵֽינוּ",
+      "pdf_page": 1,
+      "pdf_word": "וְתוֹלָלֵֽינוּ",
+      "pdf_y": 145.0
+    },
+    {
+      "master_token": 32,
+      "start": 279,
+      "end": 286,
+      "old": "שִׁירוּ",
+      "new": "שִֽׁירוּ",
+      "pdf_page": 1,
+      "pdf_word": "שֽׁירוּ",
+      "pdf_y": 145.0
+    },
+    {
+      "master_token": 33,
+      "start": 287,
+      "end": 292,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 1,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 145.0
+    },
+    {
+      "master_token": 54,
+      "start": 451,
+      "end": 463,
+      "old": "אֶזְכְּרֵכִי",
+      "new": "אֶזְכְּרֵֽכִי",
+      "pdf_page": 1,
+      "pdf_word": "אֶזְכֹּרֵֽכי",
+      "pdf_y": 241.6
+    },
+    {
+      "master_token": 71,
+      "start": 582,
+      "end": 587,
+      "old": "עָרוּ",
+      "new": "עָֽרוּ",
+      "pdf_page": 1,
+      "pdf_word": "עָֽרוּ",
+      "pdf_y": 298.4
+    },
+    {
+      "master_token": 72,
+      "start": 588,
+      "end": 593,
+      "old": "עָרוּ",
+      "new": "עָֽרוּ",
+      "pdf_page": 1,
+      "pdf_word": "עָֽרוּ",
+      "pdf_y": 298.4
+    },
+    {
+      "master_token": 85,
+      "start": 697,
+      "end": 702,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 1,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 330.6
+    },
+    {
+      "master_token": 90,
+      "start": 737,
+      "end": 747,
+      "old": "עֹלָלַיִךְ",
+      "new": "עֹלָלַֽיִךְ",
+      "pdf_page": 1,
+      "pdf_word": "עלִָלַֽיךְ",
+      "pdf_y": 362.8
+    },
+    {
+      "master_token": 92,
+      "start": 752,
+      "end": 760,
+      "old": "הַסָּלַע",
+      "new": "הַסָּֽלַע",
+      "pdf_page": 1,
+      "pdf_word": "הַסָּֽלַע",
+      "pdf_y": 362.8
+    },
+    {
+      "master_token": 105,
+      "start": 844,
+      "end": 852,
+      "old": "הָיִינוּ",
+      "new": "הָיִֽינוּ",
+      "pdf_page": 2,
+      "pdf_word": "הָיֽינוּ",
+      "pdf_y": 89.0
+    },
+    {
+      "master_token": 110,
+      "start": 887,
+      "end": 894,
+      "old": "פִּינוּ",
+      "new": "פִּֽינוּ",
+      "pdf_page": 2,
+      "pdf_word": "פּֽינוּ",
+      "pdf_y": 122.7
+    },
+    {
+      "master_token": 111,
+      "start": 895,
+      "end": 908,
+      "old": "וּלְשׁוֹנֵנוּ",
+      "new": "וּלְשׁוֹנֵֽנוּ",
+      "pdf_page": 2,
+      "pdf_word": "וּלְשׁוֹנֵֽנוּ",
+      "pdf_y": 122.7
+    },
+    {
+      "master_token": 120,
+      "start": 969,
+      "end": 975,
+      "old": "אֵלֶּה",
+      "new": "אֵֽלֶּה",
+      "pdf_page": 2,
+      "pdf_word": "אֵֽלֶּה",
+      "pdf_y": 156.5
+    },
+    {
+      "master_token": 124,
+      "start": 1002,
+      "end": 1010,
+      "old": "עִמָּנוּ",
+      "new": "עִמָּֽנוּ",
+      "pdf_page": 2,
+      "pdf_word": "עמָּֽנוּ",
+      "pdf_y": 190.3
+    },
+    {
+      "master_token": 125,
+      "start": 1011,
+      "end": 1019,
+      "old": "הָיִינוּ",
+      "new": "הָיִֽינוּ",
+      "pdf_page": 2,
+      "pdf_word": "הָיֽינוּ",
+      "pdf_y": 190.3
+    },
+    {
+      "master_token": 130,
+      "start": 1048,
+      "end": 1059,
+      "old": "שְׁבִיתֵנוּ",
+      "new": "שְׁבִיתֵֽנוּ",
+      "pdf_page": 2,
+      "pdf_word": "שְׁביתֵֽנוּ",
+      "pdf_y": 216.6
+    },
+    {
+      "master_token": 132,
+      "start": 1073,
+      "end": 1082,
+      "old": "בַּנֶּגֶב",
+      "new": "בַּנֶּֽגֶב",
+      "pdf_page": 2,
+      "pdf_word": "בַּנֶּֽגֶב",
+      "pdf_y": 216.6
+    },
+    {
+      "master_token": 136,
+      "start": 1117,
+      "end": 1126,
+      "old": "יִקְצֹרוּ",
+      "new": "יִקְצֹֽרוּ",
+      "pdf_page": 2,
+      "pdf_word": "יקְצֽרִוּ",
+      "pdf_y": 250.3
+    },
+    {
+      "master_token": 141,
+      "start": 1158,
+      "end": 1165,
+      "old": "מֶשֶׁךְ",
+      "new": "מֶֽשֶׁךְ",
+      "pdf_page": 2,
+      "pdf_word": "מֶֽשֶׁךְ",
+      "pdf_y": 250.3
+    },
+    {
+      "master_token": 142,
+      "start": 1166,
+      "end": 1174,
+      "old": "הַזָּרַע",
+      "new": "הַזָּרַֽע",
+      "pdf_page": 2,
+      "pdf_word": "הַזָּרַֽע",
+      "pdf_y": 250.3
+    },
+    {
+      "master_token": 159,
+      "start": 1300,
+      "end": 1311,
+      "old": "וַאֲנַחְנוּ",
+      "new": "וַאֲנַֽחְנוּ",
+      "pdf_page": 3,
+      "pdf_word": "וַאֲנַֽחְנוּ",
+      "pdf_y": 90.0
+    },
+    {
+      "master_token": 208,
+      "start": 1697,
+      "end": 1707,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 4,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 75.6
+    },
+    {
+      "master_token": 209,
+      "start": 1709,
+      "end": 1721,
+      "old": "שֶׁאָכַלְנוּ",
+      "new": "שֶׁאָכַֽלְנוּ",
+      "pdf_page": 4,
+      "pdf_word": "שֶׁאָכַֽלְנוּ",
+      "pdf_y": 106.7
+    },
+    {
+      "master_token": 214,
+      "start": 1786,
+      "end": 1796,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 4,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 130.3
+    },
+    {
+      "master_token": 215,
+      "start": 1798,
+      "end": 1810,
+      "old": "שֶׁאָכַלְנוּ",
+      "new": "שֶׁאָכַֽלְנוּ",
+      "pdf_page": 4,
+      "pdf_word": "שֶׁאָכַֽלְנוּ",
+      "pdf_y": 130.3
+    },
+    {
+      "master_token": 218,
+      "start": 1833,
+      "end": 1841,
+      "old": "חָיִינוּ",
+      "new": "חָיִֽינוּ",
+      "pdf_page": 4,
+      "pdf_word": "חָיֽינוּ",
+      "pdf_y": 130.3
+    },
+    {
+      "master_token": 222,
+      "start": 1867,
+      "end": 1877,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 4,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 210.5
+    },
+    {
+      "master_token": 223,
+      "start": 1879,
+      "end": 1891,
+      "old": "שֶׁאָכַלְנוּ",
+      "new": "שֶׁאָכַֽלְנוּ",
+      "pdf_page": 4,
+      "pdf_word": "שֶׁאָכַֽלְנוּ",
+      "pdf_y": 210.5
+    },
+    {
+      "master_token": 226,
+      "start": 1914,
+      "end": 1922,
+      "old": "חָיִינוּ",
+      "new": "חָיִֽינוּ",
+      "pdf_page": 4,
+      "pdf_word": "חָיֽינוּ",
+      "pdf_y": 210.5
+    },
+    {
+      "master_token": 308,
+      "start": 2642,
+      "end": 2652,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 4,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 312.8
+    },
+    {
+      "master_token": 309,
+      "start": 2653,
+      "end": 2659,
+      "old": "מֶלֶךְ",
+      "new": "מֶֽלֶךְ",
+      "pdf_page": 4,
+      "pdf_word": "מֶֽלֶךְ",
+      "pdf_y": 312.8
+    },
+    {
+      "master_token": 317,
+      "start": 2717,
+      "end": 2725,
+      "old": "בְּחֶסֶד",
+      "new": "בְּחֶֽסֶד",
+      "pdf_page": 5,
+      "pdf_word": "בְּחֶֽסֶד",
+      "pdf_y": 63.3
+    },
+    {
+      "master_token": 321,
+      "start": 2752,
+      "end": 2757,
+      "old": "לֶחֶם",
+      "new": "לֶֽחֶם",
+      "pdf_page": 5,
+      "pdf_word": "לֶֽחֶם",
+      "pdf_y": 98.2
+    },
+    {
+      "master_token": 332,
+      "start": 2838,
+      "end": 2843,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 5,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 160.9
+    },
+    {
+      "master_token": 335,
+      "start": 2859,
+      "end": 2864,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 5,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 160.9
+    },
+    {
+      "master_token": 357,
+      "start": 3033,
+      "end": 3041,
+      "old": "פּוֹתֵחַ",
+      "new": "פּוֹתֵֽחַ",
+      "pdf_page": 5,
+      "pdf_word": "פּוֹתֵֽחַ",
+      "pdf_y": 257.7
+    },
+    {
+      "master_token": 359,
+      "start": 3046,
+      "end": 3052,
+      "old": "יָדֶךָ",
+      "new": "יָדֶֽךָ",
+      "pdf_page": 5,
+      "pdf_word": "יָדֶֽךָ",
+      "pdf_y": 257.7
+    },
+    {
+      "master_token": 360,
+      "start": 3053,
+      "end": 3066,
+      "old": "וּמַשְׂבִּיעַ",
+      "new": "וּמַשְׂבִּֽיעַ",
+      "pdf_page": 5,
+      "pdf_word": "וּמַשְׂבּֽיעַ",
+      "pdf_y": 257.7
+    },
+    {
+      "master_token": 373,
+      "start": 3146,
+      "end": 3156,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 6,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 75.2
+    },
+    {
+      "master_token": 375,
+      "start": 3162,
+      "end": 3176,
+      "old": "שֶׁהִנְחַלְתָּ",
+      "new": "שֶׁהִנְחַֽלְתָּ",
+      "pdf_page": 6,
+      "pdf_word": "שֶׁהנְחַֽלְתָּ",
+      "pdf_y": 75.2
+    },
+    {
+      "master_token": 376,
+      "start": 3177,
+      "end": 3190,
+      "old": "לַאֲבוֹתֵינוּ",
+      "new": "לַאֲבוֹתֵֽינוּ",
+      "pdf_page": 6,
+      "pdf_word": "לַאֲבוֹתֵֽינוּ",
+      "pdf_y": 110.1
+    },
+    {
+      "master_token": 377,
+      "start": 3191,
+      "end": 3196,
+      "old": "אֶרֶץ",
+      "new": "אֶֽרֶץ",
+      "pdf_page": 6,
+      "pdf_word": "אֶֽרֶץ",
+      "pdf_y": 110.1
+    },
+    {
+      "master_token": 382,
+      "start": 3229,
+      "end": 3243,
+      "old": "שֶׁהוֹצֵאתָנוּ",
+      "new": "שֶׁהוֹצֵאתָֽנוּ",
+      "pdf_page": 6,
+      "pdf_word": "שֶׁהוֹצֵאתָֽנוּ",
+      "pdf_y": 137.9
+    },
+    {
+      "master_token": 384,
+      "start": 3249,
+      "end": 3259,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 6,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 137.9
+    },
+    {
+      "master_token": 385,
+      "start": 3260,
+      "end": 3267,
+      "old": "מֵאֶרֶץ",
+      "new": "מֵאֶֽרֶץ",
+      "pdf_page": 6,
+      "pdf_word": "מֵאֶֽרֶץ",
+      "pdf_y": 137.9
+    },
+    {
+      "master_token": 386,
+      "start": 3268,
+      "end": 3277,
+      "old": "מִצְרַיִם",
+      "new": "מִצְרַֽיִם",
+      "pdf_page": 6,
+      "pdf_word": "מצְרַֽים",
+      "pdf_y": 137.9
+    },
+    {
+      "master_token": 387,
+      "start": 3279,
+      "end": 3291,
+      "old": "וּפְדִיתָנוּ",
+      "new": "וּפְדִיתָֽנוּ",
+      "pdf_page": 6,
+      "pdf_word": "וּפְדיתָֽנוּ",
+      "pdf_y": 165.7
+    },
+    {
+      "master_token": 392,
+      "start": 3327,
+      "end": 3339,
+      "old": "שֶׁחָתַמְתָּ",
+      "new": "שֶׁחָתַֽמְתָּ",
+      "pdf_page": 6,
+      "pdf_word": "שֶׁחָתַֽמְתָּ",
+      "pdf_y": 165.7
+    },
+    {
+      "master_token": 393,
+      "start": 3340,
+      "end": 3353,
+      "old": "בִּבְשָׂרֵנוּ",
+      "new": "בִּבְשָׂרֵֽנוּ",
+      "pdf_page": 6,
+      "pdf_word": "בּבְשָׂרֵֽנוּ",
+      "pdf_y": 201.0
+    },
+    {
+      "master_token": 396,
+      "start": 3372,
+      "end": 3389,
+      "old": "שֶׁלִּמַּדְתָּנוּ",
+      "new": "שֶׁלִּמַּדְתָּֽנוּ",
+      "pdf_page": 6,
+      "pdf_word": "שֶׁלּמַּדְתָּֽנוּ",
+      "pdf_y": 201.0
+    },
+    {
+      "master_token": 398,
+      "start": 3397,
+      "end": 3405,
+      "old": "חֻקֶּיךָ",
+      "new": "חֻקֶּֽיךָ",
+      "pdf_page": 6,
+      "pdf_word": "חֻקֶּֽיךָ",
+      "pdf_y": 201.0
+    },
+    {
+      "master_token": 399,
+      "start": 3406,
+      "end": 3422,
+      "old": "שֶׁהוֹדַעְתָּנוּ",
+      "new": "שֶׁהוֹדַעְתָּֽנוּ",
+      "pdf_page": 6,
+      "pdf_word": "שֶׁהוֹדַעְתָּֽנוּ",
+      "pdf_y": 235.5
+    },
+    {
+      "master_token": 403,
+      "start": 3442,
+      "end": 3449,
+      "old": "וָחֶסֶד",
+      "new": "וָחֶֽסֶד",
+      "pdf_page": 6,
+      "pdf_word": "וָחֶֽסֶד",
+      "pdf_y": 235.5
+    },
+    {
+      "master_token": 404,
+      "start": 3450,
+      "end": 3466,
+      "old": "שֶׁחוֹנַנְתָּנוּ",
+      "new": "שֶׁחוֹנַנְתָּֽנוּ",
+      "pdf_page": 6,
+      "pdf_word": "שֶׁחוֹנַנְתָּֽנוּ",
+      "pdf_y": 235.5
+    },
+    {
+      "master_token": 411,
+      "start": 3516,
+      "end": 3524,
+      "old": "אוֹתָנוּ",
+      "new": "אוֹתָֽנוּ",
+      "pdf_page": 6,
+      "pdf_word": "אוֹתָֽנוּ",
+      "pdf_y": 271.5
+    },
+    {
+      "master_token": 434,
+      "start": 3696,
+      "end": 3707,
+      "old": "שֶׁעָשִׂיתָ",
+      "new": "שֶׁעָשִֽׂיתָ",
+      "pdf_page": 7,
+      "pdf_word": "שֶׁעָשֽׂיתָ",
+      "pdf_y": 115.2
+    },
+    {
+      "master_token": 435,
+      "start": 3708,
+      "end": 3721,
+      "old": "לַאֲבוֹתֵינוּ",
+      "new": "לַאֲבוֹתֵֽינוּ",
+      "pdf_page": 7,
+      "pdf_word": "לַאֲבוֹתֵֽינוּ",
+      "pdf_y": 115.2
+    },
+    {
+      "master_token": 442,
+      "start": 3774,
+      "end": 3786,
+      "old": "מַתִּתְיָהוּ",
+      "new": "מַתִּתְיָֽהוּ",
+      "pdf_page": 7,
+      "pdf_word": "מַתּתְיָהֽוּ",
+      "pdf_y": 158.2,
+      "association": "visual correction of narrow-letter geometry"
+    },
+    {
+      "master_token": 457,
+      "start": 3919,
+      "end": 3929,
+      "old": "תּוֹרָתֶךָ",
+      "new": "תּוֹרָתֶֽךָ",
+      "pdf_page": 7,
+      "pdf_word": "תּוֹרָתֶֽךָ",
+      "pdf_y": 219.2
+    },
+    {
+      "master_token": 460,
+      "start": 3955,
+      "end": 3964,
+      "old": "רְצוֹנֶךָ",
+      "new": "רְצוֹנֶֽךָ",
+      "pdf_page": 7,
+      "pdf_word": "רְצוֹנֶֽךָ",
+      "pdf_y": 219.2
+    },
+    {
+      "master_token": 462,
+      "start": 3975,
+      "end": 3987,
+      "old": "בְּרַחֲמֶיךָ",
+      "new": "בְּרַחֲמֶֽיךָ",
+      "pdf_page": 7,
+      "pdf_word": "בְּרַחֲמֶֽיךָ",
+      "pdf_y": 219.2
+    },
+    {
+      "master_token": 464,
+      "start": 3999,
+      "end": 4008,
+      "old": "עָמַדְתָּ",
+      "new": "עָמַֽדְתָּ",
+      "pdf_page": 7,
+      "pdf_word": "עָמַֽדְתָּ",
+      "pdf_y": 249.7
+    },
+    {
+      "master_token": 468,
+      "start": 4031,
+      "end": 4038,
+      "old": "רַבְתָּ",
+      "new": "רַֽבְתָּ",
+      "pdf_page": 7,
+      "pdf_word": "רַֽבְתָּ",
+      "pdf_y": 249.7
+    },
+    {
+      "master_token": 471,
+      "start": 4051,
+      "end": 4059,
+      "old": "דַּנְתָּ",
+      "new": "דַּֽנְתָּ",
+      "pdf_page": 7,
+      "pdf_word": "דַּֽנְתָּ",
+      "pdf_y": 249.7
+    },
+    {
+      "master_token": 474,
+      "start": 4073,
+      "end": 4082,
+      "old": "נָקַמְתָּ",
+      "new": "נָקַֽמְתָּ",
+      "pdf_page": 7,
+      "pdf_word": "נָקַֽמְתָּ",
+      "pdf_y": 279.5
+    },
+    {
+      "master_token": 477,
+      "start": 4098,
+      "end": 4107,
+      "old": "מָסַרְתָּ",
+      "new": "מָסַֽרְתָּ",
+      "pdf_page": 7,
+      "pdf_word": "מָסַֽרְתָּ",
+      "pdf_y": 279.5
+    },
+    {
+      "master_token": 493,
+      "start": 4251,
+      "end": 4260,
+      "old": "תוֹרָתֶךָ",
+      "new": "תוֹרָתֶֽךָ",
+      "pdf_page": 7,
+      "pdf_word": "תוֹרָתֶֽךָ",
+      "pdf_y": 338.9
+    },
+    {
+      "master_token": 495,
+      "start": 4269,
+      "end": 4277,
+      "old": "עָשִׂיתָ",
+      "new": "עָשִֽׂיתָ",
+      "pdf_page": 7,
+      "pdf_word": "עָשֽׂיתָ",
+      "pdf_y": 338.9
+    },
+    {
+      "master_token": 499,
+      "start": 4301,
+      "end": 4313,
+      "old": "בְּעוֹלָמֶךָ",
+      "new": "בְּעוֹלָמֶֽךָ",
+      "pdf_page": 7,
+      "pdf_word": "בְּעוֹלָמֶֽךָ",
+      "pdf_y": 376.9
+    },
+    {
+      "master_token": 502,
+      "start": 4338,
+      "end": 4346,
+      "old": "עָשִׂיתָ",
+      "new": "עָשִֽׂיתָ",
+      "pdf_page": 7,
+      "pdf_word": "עָשֽׂיתָ",
+      "pdf_y": 376.9
+    },
+    {
+      "master_token": 508,
+      "start": 4396,
+      "end": 4403,
+      "old": "וְאַחַר",
+      "new": "וְאַֽחַר",
+      "pdf_page": 8,
+      "pdf_word": "וְאַֽחַר",
+      "pdf_y": 61.2
+    },
+    {
+      "master_token": 510,
+      "start": 4410,
+      "end": 4416,
+      "old": "בָּאוּ",
+      "new": "בָּֽאוּ",
+      "pdf_page": 8,
+      "pdf_word": "בָּֽאוּ",
+      "pdf_y": 61.2
+    },
+    {
+      "master_token": 511,
+      "start": 4417,
+      "end": 4424,
+      "old": "בָנֶיךָ",
+      "new": "בָנֶֽיךָ",
+      "pdf_page": 8,
+      "pdf_word": "בָנֶֽיךָ",
+      "pdf_y": 61.2
+    },
+    {
+      "master_token": 513,
+      "start": 4434,
+      "end": 4442,
+      "old": "בֵּיתֶךָ",
+      "new": "בֵּיתֶֽךָ",
+      "pdf_page": 8,
+      "pdf_word": "בֵּיתֶֽךָ",
+      "pdf_y": 61.2
+    },
+    {
+      "master_token": 516,
+      "start": 4457,
+      "end": 4466,
+      "old": "הֵיכָלֶךָ",
+      "new": "הֵיכָלֶֽךָ",
+      "pdf_page": 8,
+      "pdf_word": "הֵיכָלֶֽךָ",
+      "pdf_y": 92.7
+    },
+    {
+      "master_token": 519,
+      "start": 4482,
+      "end": 4494,
+      "old": "מִקְדָּשֶׁךָ",
+      "new": "מִקְדָּשֶֽׁךָ",
+      "pdf_page": 8,
+      "pdf_word": "מקְדָּשֶֽׁךָ",
+      "pdf_y": 92.7
+    },
+    {
+      "master_token": 520,
+      "start": 4496,
+      "end": 4508,
+      "old": "וְהִדְלִיקוּ",
+      "new": "וְהִדְלִֽיקוּ",
+      "pdf_page": 8,
+      "pdf_word": "וְהדְלֽיקוּ",
+      "pdf_y": 92.7
+    },
+    {
+      "master_token": 523,
+      "start": 4528,
+      "end": 4537,
+      "old": "קָדְשֶׁךָ",
+      "new": "קָדְשֶֽׁךָ",
+      "pdf_page": 8,
+      "pdf_word": "קָדְשֶֽׁךָ",
+      "pdf_y": 116.6
+    },
+    {
+      "master_token": 528,
+      "start": 4574,
+      "end": 4580,
+      "old": "אֵלּוּ",
+      "new": "אֵֽלּוּ",
+      "pdf_page": 8,
+      "pdf_word": "אֵֽלּוּ",
+      "pdf_y": 116.6
+    },
+    {
+      "master_token": 550,
+      "start": 4786,
+      "end": 4794,
+      "old": "מִנַּעַר",
+      "new": "מִנַּֽעַר",
+      "pdf_page": 8,
+      "pdf_word": "מנַּֽעַר",
+      "pdf_y": 256.4
+    },
+    {
+      "master_token": 559,
+      "start": 4857,
+      "end": 4865,
+      "old": "לְחֹדֶשׁ",
+      "new": "לְחֹֽדֶשׁ",
+      "pdf_page": 8,
+      "pdf_word": "לְחֽדִֶשׁ",
+      "pdf_y": 287.2
+    },
+    {
+      "master_token": 563,
+      "start": 4887,
+      "end": 4893,
+      "old": "חֹדֶשׁ",
+      "new": "חֹֽדֶשׁ",
+      "pdf_page": 8,
+      "pdf_word": "חֽדִֶשׁ",
+      "pdf_y": 287.2
+    },
+    {
+      "master_token": 568,
+      "start": 4929,
+      "end": 4941,
+      "old": "בְּרַחֲמֶיךָ",
+      "new": "בְּרַחֲמֶֽיךָ",
+      "pdf_page": 8,
+      "pdf_word": "בְּרַחֲמֶֽיךָ",
+      "pdf_y": 318.7
+    },
+    {
+      "master_token": 570,
+      "start": 4952,
+      "end": 4961,
+      "old": "הֵפַרְתָּ",
+      "new": "הֵפַֽרְתָּ",
+      "pdf_page": 8,
+      "pdf_word": "הֵפַֽרְתָּ",
+      "pdf_y": 318.7
+    },
+    {
+      "master_token": 573,
+      "start": 4975,
+      "end": 4988,
+      "old": "וְקִלְקַלְתָּ",
+      "new": "וְקִלְקַֽלְתָּ",
+      "pdf_page": 8,
+      "pdf_word": "וְקלְקַֽלְתָּ",
+      "pdf_y": 318.7
+    },
+    {
+      "master_token": 576,
+      "start": 5008,
+      "end": 5020,
+      "old": "וַהֲשֵׁבוֹתָ",
+      "new": "וַהֲשֵׁבֽוֹתָ",
+      "pdf_page": 8,
+      "pdf_word": "וַהֲשֵׁבֽוֹתָ",
+      "pdf_y": 350.2
+    },
+    {
+      "master_token": 589,
+      "start": 5107,
+      "end": 5117,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 9,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 66.8
+    },
+    {
+      "master_token": 590,
+      "start": 5119,
+      "end": 5128,
+      "old": "אֲנַחְנוּ",
+      "new": "אֲנַֽחְנוּ",
+      "pdf_page": 9,
+      "pdf_word": "אֲנַֽחְנוּ",
+      "pdf_y": 66.8
+    },
+    {
+      "master_token": 605,
+      "start": 5248,
+      "end": 5260,
+      "old": "וְשָׂבָעְתָּ",
+      "new": "וְשָׂבָֽעְתָּ",
+      "pdf_page": 9,
+      "pdf_word": "וְשָׂבָֽעְתָּ",
+      "pdf_y": 131.8
+    },
+    {
+      "master_token": 609,
+      "start": 5283,
+      "end": 5292,
+      "old": "אֱלֹהֶיךָ",
+      "new": "אֱלֹהֶֽיךָ",
+      "pdf_page": 9,
+      "pdf_word": "אְֶלהִֶֽיךָ",
+      "pdf_y": 168.2
+    },
+    {
+      "master_token": 611,
+      "start": 5298,
+      "end": 5305,
+      "old": "הָאָרֶץ",
+      "new": "הָאָֽרֶץ",
+      "pdf_page": 9,
+      "pdf_word": "הָאָֽרֶץ",
+      "pdf_y": 168.2
+    },
+    {
+      "master_token": 620,
+      "start": 5360,
+      "end": 5367,
+      "old": "הָאָרֶץ",
+      "new": "הָאָֽרֶץ",
+      "pdf_page": 9,
+      "pdf_word": "הָאָֽרֶץ",
+      "pdf_y": 204.6
+    },
+    {
+      "master_token": 625,
+      "start": 5397,
+      "end": 5407,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 9,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 278.6
+    },
+    {
+      "master_token": 628,
+      "start": 5423,
+      "end": 5430,
+      "old": "עַמֶּךָ",
+      "new": "עַמֶּֽךָ",
+      "pdf_page": 9,
+      "pdf_word": "עַמֶּֽךָ",
+      "pdf_y": 278.6
+    },
+    {
+      "master_token": 630,
+      "start": 5438,
+      "end": 5451,
+      "old": "יְרוּשָׁלַיִם",
+      "new": "יְרוּשָׁלַֽיִם",
+      "pdf_page": 9,
+      "pdf_word": "יְרוּשָׁלַֽים",
+      "pdf_y": 307.2
+    },
+    {
+      "master_token": 631,
+      "start": 5452,
+      "end": 5459,
+      "old": "עִירֶךָ",
+      "new": "עִירֶֽךָ",
+      "pdf_page": 9,
+      "pdf_word": "עירֶֽךָ",
+      "pdf_y": 307.2
+    },
+    {
+      "master_token": 635,
+      "start": 5485,
+      "end": 5495,
+      "old": "כְּבוֹדֶךָ",
+      "new": "כְּבוֹדֶֽךָ",
+      "pdf_page": 9,
+      "pdf_word": "כְּבוֹדֶֽךָ",
+      "pdf_y": 307.2
+    },
+    {
+      "master_token": 640,
+      "start": 5525,
+      "end": 5535,
+      "old": "מְשִׁיחֶךָ",
+      "new": "מְשִׁיחֶֽךָ",
+      "pdf_page": 10,
+      "pdf_word": "מְשׁיחֶֽךָ",
+      "pdf_y": 63.3
+    },
+    {
+      "master_token": 642,
+      "start": 5543,
+      "end": 5551,
+      "old": "הַבַּיִת",
+      "new": "הַבַּֽיִת",
+      "pdf_page": 10,
+      "pdf_word": "הַבַּֽית",
+      "pdf_y": 63.3
+    },
+    {
+      "master_token": 648,
+      "start": 5603,
+      "end": 5613,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 10,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 99.8
+    },
+    {
+      "master_token": 649,
+      "start": 5614,
+      "end": 5622,
+      "old": "אָבִינוּ",
+      "new": "אָבִֽינוּ",
+      "pdf_page": 10,
+      "pdf_word": "אָבֽינוּ",
+      "pdf_y": 128.4
+    },
+    {
+      "master_token": 650,
+      "start": 5624,
+      "end": 5631,
+      "old": "רְעֵנוּ",
+      "new": "רְעֵֽנוּ",
+      "pdf_page": 10,
+      "pdf_word": "רְעֵֽנוּ",
+      "pdf_y": 128.4
+    },
+    {
+      "master_token": 651,
+      "start": 5632,
+      "end": 5640,
+      "old": "זוּנֵנוּ",
+      "new": "זוּנֵֽנוּ",
+      "pdf_page": 10,
+      "pdf_word": "זוּנֵֽנוּ",
+      "pdf_y": 128.4
+    },
+    {
+      "master_token": 652,
+      "start": 5641,
+      "end": 5653,
+      "old": "פַּרְנְסֵנוּ",
+      "new": "פַּרְנְסֵֽנוּ",
+      "pdf_page": 10,
+      "pdf_word": "פַּרְנֹסֵֽנוּ",
+      "pdf_y": 128.4
+    },
+    {
+      "master_token": 653,
+      "start": 5654,
+      "end": 5668,
+      "old": "וְכַלְכְּלֵנוּ",
+      "new": "וְכַלְכְּלֵֽנוּ",
+      "pdf_page": 10,
+      "pdf_word": "וְכַלְכֹּלֵֽנוּ",
+      "pdf_y": 128.4
+    },
+    {
+      "master_token": 654,
+      "start": 5669,
+      "end": 5683,
+      "old": "וְהַרְוִיחֵנוּ",
+      "new": "וְהַרְוִיחֵֽנוּ",
+      "pdf_page": 10,
+      "pdf_word": "וְהַרְויחֵֽנוּ",
+      "pdf_y": 128.4
+    },
+    {
+      "master_token": 656,
+      "start": 5695,
+      "end": 5700,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 10,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 164.9
+    },
+    {
+      "master_token": 658,
+      "start": 5706,
+      "end": 5716,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 10,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 164.9
+    },
+    {
+      "master_token": 661,
+      "start": 5732,
+      "end": 5743,
+      "old": "צָרוֹתֵינוּ",
+      "new": "צָרוֹתֵֽינוּ",
+      "pdf_page": 10,
+      "pdf_word": "צָרוֹתֵֽינוּ",
+      "pdf_y": 201.4
+    },
+    {
+      "master_token": 664,
+      "start": 5755,
+      "end": 5768,
+      "old": "תַּצְרִיכֵנוּ",
+      "new": "תַּצְרִיכֵֽנוּ",
+      "pdf_page": 10,
+      "pdf_word": "תַּצְריכֵֽנוּ",
+      "pdf_y": 201.4
+    },
+    {
+      "master_token": 666,
+      "start": 5775,
+      "end": 5785,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 10,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 201.4
+    },
+    {
+      "master_token": 690,
+      "start": 5975,
+      "end": 5989,
+      "old": "וְהַחֲלִיצֵנוּ",
+      "new": "וְהַחֲלִיצֵֽנוּ",
+      "pdf_page": 11,
+      "pdf_word": "וְהַחֲליצֵֽנוּ",
+      "pdf_y": 75.2
+    },
+    {
+      "master_token": 692,
+      "start": 5995,
+      "end": 6005,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 11,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 75.2
+    },
+    {
+      "master_token": 693,
+      "start": 6006,
+      "end": 6020,
+      "old": "בְּמִצְוֹתֶיךָ",
+      "new": "בְּמִצְוֹתֶֽיךָ",
+      "pdf_page": 11,
+      "pdf_word": "בְּמצְותִֶֽיךָ",
+      "pdf_y": 75.2
+    },
+    {
+      "master_token": 707,
+      "start": 6130,
+      "end": 6139,
+      "old": "לְפָנֶיךָ",
+      "new": "לְפָנֶֽיךָ",
+      "pdf_page": 11,
+      "pdf_word": "לְפָנֶֽיךָ",
+      "pdf_y": 140.9
+    },
+    {
+      "master_token": 710,
+      "start": 6157,
+      "end": 6166,
+      "old": "וְלָנוּחַ",
+      "new": "וְלָנֽוּחַ",
+      "pdf_page": 11,
+      "pdf_word": "וְלָנֽוּחַ",
+      "pdf_y": 140.9
+    },
+    {
+      "master_token": 714,
+      "start": 6194,
+      "end": 6203,
+      "old": "רְצוֹנֶךָ",
+      "new": "רְצוֹנֶֽךָ",
+      "pdf_page": 11,
+      "pdf_word": "רְצוֹנֶֽךָ",
+      "pdf_y": 173.6
+    },
+    {
+      "master_token": 716,
+      "start": 6219,
+      "end": 6226,
+      "old": "הָנִיחַ",
+      "new": "הָנִֽיחַ",
+      "pdf_page": 11,
+      "pdf_word": "הָנֽיחַ",
+      "pdf_y": 173.6
+    },
+    {
+      "master_token": 717,
+      "start": 6227,
+      "end": 6232,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 11,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 173.6
+    },
+    {
+      "master_token": 719,
+      "start": 6239,
+      "end": 6249,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 11,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 173.6
+    },
+    {
+      "master_token": 726,
+      "start": 6298,
+      "end": 6310,
+      "old": "מְנוּחָתֵנוּ",
+      "new": "מְנוּחָתֵֽנוּ",
+      "pdf_page": 11,
+      "pdf_word": "מְנוּחָתֵֽנוּ",
+      "pdf_y": 206.3
+    },
+    {
+      "master_token": 727,
+      "start": 6312,
+      "end": 6323,
+      "old": "וְהַרְאֵנוּ",
+      "new": "וְהַרְאֵֽנוּ",
+      "pdf_page": 11,
+      "pdf_word": "וְהַרְאֵֽנוּ",
+      "pdf_y": 206.3
+    },
+    {
+      "master_token": 729,
+      "start": 6329,
+      "end": 6339,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 11,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 239.0
+    },
+    {
+      "master_token": 732,
+      "start": 6359,
+      "end": 6366,
+      "old": "עִירֶךָ",
+      "new": "עִירֶֽךָ",
+      "pdf_page": 11,
+      "pdf_word": "עירֶֽךָ",
+      "pdf_y": 239.0
+    },
+    {
+      "master_token": 734,
+      "start": 6381,
+      "end": 6394,
+      "old": "יְרוּשָׁלַיִם",
+      "new": "יְרוּשָׁלַֽיִם",
+      "pdf_page": 11,
+      "pdf_word": "יְרוּשָׁלַֽים",
+      "pdf_y": 239.0
+    },
+    {
+      "master_token": 736,
+      "start": 6400,
+      "end": 6409,
+      "old": "קָדְשֶׁךָ",
+      "new": "קָדְשֶֽׁךָ",
+      "pdf_page": 11,
+      "pdf_word": "קָדְשֶֽׁךָ",
+      "pdf_y": 271.6
+    },
+    {
+      "master_token": 740,
+      "start": 6428,
+      "end": 6434,
+      "old": "בַּעַל",
+      "new": "בַּֽעַל",
+      "pdf_page": 11,
+      "pdf_word": "בַּֽעַל",
+      "pdf_y": 271.6
+    },
+    {
+      "master_token": 742,
+      "start": 6448,
+      "end": 6455,
+      "old": "וּבַעַל",
+      "new": "וּבַֽעַל",
+      "pdf_page": 11,
+      "pdf_word": "וּבַֽעַל",
+      "pdf_y": 271.6
+    },
+    {
+      "master_token": 750,
+      "start": 6503,
+      "end": 6513,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 12,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 73.8
+    },
+    {
+      "master_token": 752,
+      "start": 6523,
+      "end": 6534,
+      "old": "אֲבוֹתֵינוּ",
+      "new": "אֲבוֹתֵֽינוּ",
+      "pdf_page": 12,
+      "pdf_word": "אֲבוֹתֵֽינוּ",
+      "pdf_y": 73.8
+    },
+    {
+      "master_token": 755,
+      "start": 6554,
+      "end": 6564,
+      "old": "וְיַגִּיעַ",
+      "new": "וְיַגִּֽיעַ",
+      "pdf_page": 12,
+      "pdf_word": "וְיַגּֽיעַ",
+      "pdf_y": 73.8
+    },
+    {
+      "master_token": 761,
+      "start": 6624,
+      "end": 6636,
+      "old": "זִכְרוֹנֵנוּ",
+      "new": "זִכְרוֹנֵֽנוּ",
+      "pdf_page": 12,
+      "pdf_word": "זכְרוֹנֵֽנוּ",
+      "pdf_y": 106.5
+    },
+    {
+      "master_token": 762,
+      "start": 6637,
+      "end": 6651,
+      "old": "וּפִקְדוֹנֵנוּ",
+      "new": "וּפִקְדוֹנֵֽנוּ",
+      "pdf_page": 12,
+      "pdf_word": "וּפקְדוֹנֵֽנוּ",
+      "pdf_y": 106.5
+    },
+    {
+      "master_token": 764,
+      "start": 6664,
+      "end": 6675,
+      "old": "אֲבוֹתֵינוּ",
+      "new": "אֲבוֹתֵֽינוּ",
+      "pdf_page": 12,
+      "pdf_word": "אֲבוֹתֵֽינוּ",
+      "pdf_y": 147.0
+    },
+    {
+      "master_token": 766,
+      "start": 6688,
+      "end": 6696,
+      "old": "מָשִׁיחַ",
+      "new": "מָשִֽׁיחַ",
+      "pdf_page": 12,
+      "pdf_word": "מָשֽׁיחַ",
+      "pdf_y": 147.0
+    },
+    {
+      "master_token": 769,
+      "start": 6709,
+      "end": 6717,
+      "old": "עַבְדֶךָ",
+      "new": "עַבְדֶֽךָ",
+      "pdf_page": 12,
+      "pdf_word": "עַבְדֶּֽךָ",
+      "pdf_y": 147.0
+    },
+    {
+      "master_token": 771,
+      "start": 6730,
+      "end": 6743,
+      "old": "יְרוּשָׁלַיִם",
+      "new": "יְרוּשָׁלַֽיִם",
+      "pdf_page": 12,
+      "pdf_word": "יְרוּשָׁלַֽים",
+      "pdf_y": 147.0
+    },
+    {
+      "master_token": 773,
+      "start": 6749,
+      "end": 6758,
+      "old": "קָדְשֶׁךָ",
+      "new": "קָדְשֶֽׁךָ",
+      "pdf_page": 12,
+      "pdf_word": "קָדְשֶֽׁךָ",
+      "pdf_y": 179.6
+    },
+    {
+      "master_token": 779,
+      "start": 6801,
+      "end": 6810,
+      "old": "לְפָנֶיךָ",
+      "new": "לְפָנֶֽיךָ",
+      "pdf_page": 12,
+      "pdf_word": "לְפָנֶֽיךָ",
+      "pdf_y": 179.6
+    },
+    {
+      "master_token": 783,
+      "start": 6838,
+      "end": 6847,
+      "old": "וּלְחֶסֶד",
+      "new": "וּלְחֶֽסֶד",
+      "pdf_page": 12,
+      "pdf_word": "וּלְחֶֽסֶד",
+      "pdf_y": 212.3
+    },
+    {
+      "master_token": 791,
+      "start": 6911,
+      "end": 6919,
+      "old": "הַחֹדֶשׁ",
+      "new": "הַחֹֽדֶשׁ",
+      "pdf_page": 12,
+      "pdf_word": "הַחֽדִֶשׁ",
+      "pdf_y": 253.4
+    },
+    {
+      "master_token": 808,
+      "start": 7077,
+      "end": 7086,
+      "old": "הָעֲצֶרֶת",
+      "new": "הָעֲצֶֽרֶת",
+      "pdf_page": 12,
+      "pdf_word": "הָעֲצֶֽרֶת",
+      "pdf_y": 286.6
+    },
+    {
+      "master_token": 810,
+      "start": 7095,
+      "end": 7104,
+      "old": "זָכְרֵנוּ",
+      "new": "זָכְרֵֽנוּ",
+      "pdf_page": 12,
+      "pdf_word": "זָכְרֵֽנוּ",
+      "pdf_y": 312.1
+    },
+    {
+      "master_token": 812,
+      "start": 7110,
+      "end": 7120,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 12,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 312.1
+    },
+    {
+      "master_token": 815,
+      "start": 7136,
+      "end": 7147,
+      "old": "וּפָקְדֵנוּ",
+      "new": "וּפָקְדֵֽנוּ",
+      "pdf_page": 12,
+      "pdf_word": "וּפָקְדֵֽנוּ",
+      "pdf_y": 312.1
+    },
+    {
+      "master_token": 818,
+      "start": 7163,
+      "end": 7177,
+      "old": "וְהוֹשִׁיעֵנוּ",
+      "new": "וְהוֹשִׁיעֵֽנוּ",
+      "pdf_page": 12,
+      "pdf_word": "וְהוֹשׁיעֵֽנוּ",
+      "pdf_y": 344.8
+    },
+    {
+      "master_token": 825,
+      "start": 7230,
+      "end": 7239,
+      "old": "וְחָנֵנוּ",
+      "new": "וְחָנֵֽנוּ",
+      "pdf_page": 12,
+      "pdf_word": "וְחָנֵּֽנוּ",
+      "pdf_y": 344.8
+    },
+    {
+      "master_token": 827,
+      "start": 7248,
+      "end": 7256,
+      "old": "עָלֵינוּ",
+      "new": "עָלֵֽינוּ",
+      "pdf_page": 12,
+      "pdf_word": "עָלֵֽינוּ",
+      "pdf_y": 377.4
+    },
+    {
+      "master_token": 828,
+      "start": 7257,
+      "end": 7271,
+      "old": "וְהוֹשִׁיעֵנוּ",
+      "new": "וְהוֹשִׁיעֵֽנוּ",
+      "pdf_page": 12,
+      "pdf_word": "וְהוֹשׁיעֵֽנוּ",
+      "pdf_y": 377.4
+    },
+    {
+      "master_token": 830,
+      "start": 7278,
+      "end": 7285,
+      "old": "אֵלֶיךָ",
+      "new": "אֵלֶֽיךָ",
+      "pdf_page": 12,
+      "pdf_word": "אֵלֶֽיךָ",
+      "pdf_y": 377.4
+    },
+    {
+      "master_token": 831,
+      "start": 7286,
+      "end": 7295,
+      "old": "עֵינֵינוּ",
+      "new": "עֵינֵֽינוּ",
+      "pdf_page": 12,
+      "pdf_word": "עֵינֵֽינוּ",
+      "pdf_y": 377.4
+    },
+    {
+      "master_token": 836,
+      "start": 7314,
+      "end": 7320,
+      "old": "מֶלֶךְ",
+      "new": "מֶֽלֶךְ",
+      "pdf_page": 12,
+      "pdf_word": "מֶֽלֶךְ",
+      "pdf_y": 377.4
+    },
+    {
+      "master_token": 839,
+      "start": 7339,
+      "end": 7345,
+      "old": "אַתָּה",
+      "new": "אַֽתָּה",
+      "pdf_page": 12,
+      "pdf_word": "אָֽתָּה",
+      "pdf_y": 410.0
+    },
+    {
+      "master_token": 841,
+      "start": 7356,
+      "end": 7369,
+      "old": "יְרוּשָׁלַיִם",
+      "new": "יְרוּשָׁלַֽיִם",
+      "pdf_page": 13,
+      "pdf_word": "יְרוּשָׁלַֽים",
+      "pdf_y": 65.5
+    },
+    {
+      "master_token": 843,
+      "start": 7375,
+      "end": 7384,
+      "old": "הַקֹּדֶשׁ",
+      "new": "הַקֹּֽדֶשׁ",
+      "pdf_page": 13,
+      "pdf_word": "הַקּֽדִֶשׁ",
+      "pdf_y": 65.5
+    },
+    {
+      "master_token": 845,
+      "start": 7396,
+      "end": 7406,
+      "old": "בְיָמֵינוּ",
+      "new": "בְיָמֵֽינוּ",
+      "pdf_page": 13,
+      "pdf_word": "בְיָמֵֽינוּ",
+      "pdf_y": 94.4
+    },
+    {
+      "master_token": 851,
+      "start": 7451,
+      "end": 7464,
+      "old": "יְרוּשָׁלָיִם",
+      "new": "יְרוּשָׁלָֽיִם",
+      "pdf_page": 13,
+      "pdf_word": "יְרוּשָׁלָֽים",
+      "pdf_y": 123.4
+    },
+    {
+      "master_token": 856,
+      "start": 7495,
+      "end": 7505,
+      "old": "אֱלֹהֵינוּ",
+      "new": "אֱלֹהֵֽינוּ",
+      "pdf_page": 13,
+      "pdf_word": "אְֶלהִֵֽינוּ",
+      "pdf_y": 188.1
+    },
+    {
+      "master_token": 857,
+      "start": 7506,
+      "end": 7512,
+      "old": "מֶלֶךְ",
+      "new": "מֶֽלֶךְ",
+      "pdf_page": 13,
+      "pdf_word": "מֶֽלֶךְ",
+      "pdf_y": 188.1
+    },
+    {
+      "master_token": 860,
+      "start": 7529,
+      "end": 7537,
+      "old": "אָבִינוּ",
+      "new": "אָבִֽינוּ",
+      "pdf_page": 13,
+      "pdf_word": "אָבֽינוּ",
+      "pdf_y": 217.0
+    },
+    {
+      "master_token": 861,
+      "start": 7538,
+      "end": 7548,
+      "old": "מַלְכֵּנוּ",
+      "new": "מַלְכֵּֽנוּ",
+      "pdf_page": 13,
+      "pdf_word": "מַלְכֵּֽנוּ",
+      "pdf_y": 217.0
+    },
+    {
+      "master_token": 862,
+      "start": 7549,
+      "end": 7560,
+      "old": "אַדִּירֵנוּ",
+      "new": "אַדִּירֵֽנוּ",
+      "pdf_page": 13,
+      "pdf_word": "אַדּירֵֽנוּ",
+      "pdf_y": 217.0
+    },
+    {
+      "master_token": 863,
+      "start": 7561,
+      "end": 7572,
+      "old": "בּוֹרְאֵנוּ",
+      "new": "בּוֹרְאֵֽנוּ",
+      "pdf_page": 13,
+      "pdf_word": "בּוֹראֵֽנוּ",
+      "pdf_y": 217.0
+    },
+    {
+      "master_token": 864,
+      "start": 7573,
+      "end": 7584,
+      "old": "גּוֹאֲלֵנוּ",
+      "new": "גּוֹאֲלֵֽנוּ",
+      "pdf_page": 13,
+      "pdf_word": "גּוֹאֲלֵֽנוּ",
+      "pdf_y": 217.0
+    },
+    {
+      "master_token": 865,
+      "start": 7585,
+      "end": 7595,
+      "old": "יוֹצְרֵנוּ",
+      "new": "יוֹצְרֵֽנוּ",
+      "pdf_page": 13,
+      "pdf_word": "יוֹצֹרֵֽנוּ",
+      "pdf_y": 245.9
+    },
+    {
+      "master_token": 866,
+      "start": 7597,
+      "end": 7608,
+      "old": "קְדוֹשֵׁנוּ",
+      "new": "קְדוֹשֵֽׁנוּ",
+      "pdf_page": 13,
+      "pdf_word": "קְדוֹשֵֽׁנוּ",
+      "pdf_y": 245.9
+    },
+    {
+      "master_token": 869,
+      "start": 7626,
+      "end": 7634,
+      "old": "רוֹעֵנוּ",
+      "new": "רוֹעֵֽנוּ",
+      "pdf_page": 13,
+      "pdf_word": "רוֹעֵֽנוּ",
+      "pdf_y": 245.9
+    },
+    {
+      "master_token": 872,
+      "start": 7654,
+      "end": 7663,
+      "old": "הַמֶּלֶךְ",
+      "new": "הַמֶּֽלֶךְ",
+      "pdf_page": 13,
+      "pdf_word": "הַמֶּֽלֶךְ",
+      "pdf_y": 282.9
+    },
+    {
+      "master_token": 885,
+      "start": 7753,
+      "end": 7758,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 14,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 63.3
+    },
+    {
+      "master_token": 887,
+      "start": 7765,
+      "end": 7774,
+      "old": "גְמָלָנוּ",
+      "new": "גְמָלָֽנוּ",
+      "pdf_page": 14,
+      "pdf_word": "גְמָלָֽנוּ",
+      "pdf_y": 63.3
+    },
+    {
+      "master_token": 889,
+      "start": 7781,
+      "end": 7791,
+      "old": "גוֹמְלֵנוּ",
+      "new": "גוֹמְלֵֽנוּ",
+      "pdf_page": 14,
+      "pdf_word": "גוֹמֹלֵֽנוּ",
+      "pdf_y": 63.3
+    },
+    {
+      "master_token": 891,
+      "start": 7798,
+      "end": 7809,
+      "old": "יִגְמְלֵנוּ",
+      "new": "יִגְמְלֵֽנוּ",
+      "pdf_page": 14,
+      "pdf_word": "יגְמֹלֵֽנוּ",
+      "pdf_y": 63.3
+    },
+    {
+      "master_token": 894,
+      "start": 7823,
+      "end": 7832,
+      "old": "וּלְחֶסֶד",
+      "new": "וּלְחֶֽסֶד",
+      "pdf_page": 14,
+      "pdf_word": "וּלְחֶֽסֶד",
+      "pdf_y": 98.6
+    },
+    {
+      "master_token": 896,
+      "start": 7846,
+      "end": 7855,
+      "old": "וּלְרֶוַח",
+      "new": "וּלְרֶֽוַח",
+      "pdf_page": 14,
+      "pdf_word": "וּלְרֶֽוַח",
+      "pdf_y": 98.6
+    },
+    {
+      "master_token": 913,
+      "start": 8000,
+      "end": 8012,
+      "old": "יְחַסְּרֵנוּ",
+      "new": "יְחַסְּרֵֽנוּ",
+      "pdf_page": 14,
+      "pdf_word": "יְחַסֹּרֵֽנוּ",
+      "pdf_y": 187.2
+    },
+    {
+      "master_token": 917,
+      "start": 8040,
+      "end": 8048,
+      "old": "עָלֵינוּ",
+      "new": "עָלֵֽינוּ",
+      "pdf_page": 14,
+      "pdf_word": "עָלֵֽינוּ",
+      "pdf_y": 225.6
+    },
+    {
+      "master_token": 923,
+      "start": 8092,
+      "end": 8104,
+      "old": "בַּשָּׁמַיִם",
+      "new": "בַּשָּׁמַֽיִם",
+      "pdf_page": 14,
+      "pdf_word": "בַּשָּׁמַֽים",
+      "pdf_y": 260.1
+    },
+    {
+      "master_token": 924,
+      "start": 8105,
+      "end": 8114,
+      "old": "וּבָאָרֶץ",
+      "new": "וּבָאָֽרֶץ",
+      "pdf_page": 14,
+      "pdf_word": "וּבָאָֽרֶץ",
+      "pdf_y": 260.1
+    },
+    {
+      "master_token": 930,
+      "start": 8161,
+      "end": 8173,
+      "old": "וְיִתְפָּאַר",
+      "new": "וְיִתְפָּֽאַר",
+      "pdf_page": 14,
+      "pdf_word": "וְיתְפָּֽאַר",
+      "pdf_y": 293.9
+    },
+    {
+      "master_token": 931,
+      "start": 8174,
+      "end": 8180,
+      "old": "בָּנוּ",
+      "new": "בָּֽנוּ",
+      "pdf_page": 14,
+      "pdf_word": "בָּֽנוּ",
+      "pdf_y": 293.9
+    },
+    {
+      "master_token": 933,
+      "start": 8187,
+      "end": 8196,
+      "old": "וּלְנֵצַח",
+      "new": "וּלְנֵֽצַח",
+      "pdf_page": 14,
+      "pdf_word": "וּלְנֵֽצַח",
+      "pdf_y": 328.4
+    },
+    {
+      "master_token": 936,
+      "start": 8220,
+      "end": 8226,
+      "old": "בָּנוּ",
+      "new": "בָּֽנוּ",
+      "pdf_page": 14,
+      "pdf_word": "בָּֽנוּ",
+      "pdf_y": 328.4
+    },
+    {
+      "master_token": 942,
+      "start": 8272,
+      "end": 8285,
+      "old": "יְפַרְנְסֵנוּ",
+      "new": "יְפַרְנְסֵֽנוּ",
+      "pdf_page": 14,
+      "pdf_word": "יְפַרְנֹסֵֽנוּ",
+      "pdf_y": 355.8
+    },
+    {
+      "master_token": 947,
+      "start": 8322,
+      "end": 8329,
+      "old": "עֻלֵנוּ",
+      "new": "עֻלֵֽנוּ",
+      "pdf_page": 15,
+      "pdf_word": "עֻלֵּֽנוּ",
+      "pdf_y": 63.3
+    },
+    {
+      "master_token": 949,
+      "start": 8336,
+      "end": 8347,
+      "old": "צַוָּארֵנוּ",
+      "new": "צַוָּארֵֽנוּ",
+      "pdf_page": 15,
+      "pdf_word": "צַוָּארֵֽנוּ",
+      "pdf_y": 63.3
+    },
+    {
+      "master_token": 951,
+      "start": 8356,
+      "end": 8367,
+      "old": "יוֹלִיכֵנוּ",
+      "new": "יוֹלִיכֵֽנוּ",
+      "pdf_page": 15,
+      "pdf_word": "יוֹליכֵֽנוּ",
+      "pdf_y": 98.3
+    },
+    {
+      "master_token": 953,
+      "start": 8381,
+      "end": 8392,
+      "old": "לְאַרְצֵנוּ",
+      "new": "לְאַרְצֵֽנוּ",
+      "pdf_page": 15,
+      "pdf_word": "לְאַרְצֵֽנוּ",
+      "pdf_y": 98.3
+    },
+    {
+      "master_token": 957,
+      "start": 8418,
+      "end": 8423,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 15,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 133.3
+    },
+    {
+      "master_token": 960,
+      "start": 8442,
+      "end": 8451,
+      "old": "בַּבַּיִת",
+      "new": "בַּבַּֽיִת",
+      "pdf_page": 15,
+      "pdf_word": "בַּבַּֽית",
+      "pdf_y": 133.3
+    },
+    {
+      "master_token": 965,
+      "start": 8479,
+      "end": 8491,
+      "old": "שֶׁאָכַלְנוּ",
+      "new": "שֶׁאָכַֽלְנוּ",
+      "pdf_page": 15,
+      "pdf_word": "שֶׁאָכַֽלְנוּ",
+      "pdf_y": 169.0
+    },
+    {
+      "master_token": 970,
+      "start": 8524,
+      "end": 8529,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 15,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 204.0
+    },
+    {
+      "master_token": 972,
+      "start": 8534,
+      "end": 8544,
+      "old": "אֵלִיָּהוּ",
+      "new": "אֵלִיָּֽהוּ",
+      "pdf_page": 15,
+      "pdf_word": "אֵליָּהֽוּ",
+      "pdf_y": 204.0,
+      "association": "visual correction of narrow-letter geometry"
+    },
+    {
+      "master_token": 977,
+      "start": 8582,
+      "end": 8587,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 15,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 237.9
+    },
+    {
+      "master_token": 990,
+      "start": 8688,
+      "end": 8694,
+      "old": "בַּעַל",
+      "new": "בַּֽעַל",
+      "pdf_page": 15,
+      "pdf_word": "בַּֽעַל",
+      "pdf_y": 275.0
+    },
+    {
+      "master_token": 991,
+      "start": 8695,
+      "end": 8703,
+      "old": "הַבַּיִת",
+      "new": "הַבַּֽיִת",
+      "pdf_page": 15,
+      "pdf_word": "הַבַּֽית",
+      "pdf_y": 275.0
+    },
+    {
+      "master_token": 999,
+      "start": 8755,
+      "end": 8766,
+      "old": "וְיַצְלִיחַ",
+      "new": "וְיַצְלִֽיחַ",
+      "pdf_page": 15,
+      "pdf_word": "וְיַצְלֽיחַ",
+      "pdf_y": 305.4
+    },
+    {
+      "master_token": 1031,
+      "start": 9019,
+      "end": 9025,
+      "old": "בַּעַל",
+      "new": "בַּֽעַל",
+      "pdf_page": 16,
+      "pdf_word": "בַּֽעַל",
+      "pdf_y": 104.1
+    },
+    {
+      "master_token": 1032,
+      "start": 9026,
+      "end": 9034,
+      "old": "הַבַּיִת",
+      "new": "הַבַּֽיִת",
+      "pdf_page": 16,
+      "pdf_word": "הַבַּֽית",
+      "pdf_y": 104.1
+    },
+    {
+      "master_token": 1038,
+      "start": 9076,
+      "end": 9084,
+      "old": "הַבַּיִת",
+      "new": "הַבַּֽיִת",
+      "pdf_page": 16,
+      "pdf_word": "הַבַּֽית",
+      "pdf_y": 132.3
+    },
+    {
+      "master_token": 1067,
+      "start": 9271,
+      "end": 9279,
+      "old": "אוֹתָנוּ",
+      "new": "אוֹתָֽנוּ",
+      "pdf_page": 16,
+      "pdf_word": "אוֹתָֽנוּ",
+      "pdf_y": 291.8
+    },
+    {
+      "master_token": 1071,
+      "start": 9298,
+      "end": 9303,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 16,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 291.8
+    },
+    {
+      "master_token": 1074,
+      "start": 9329,
+      "end": 9340,
+      "old": "אֲבוֹתֵינוּ",
+      "new": "אֲבוֹתֵֽינוּ",
+      "pdf_page": 16,
+      "pdf_word": "אֲבוֹתֵֽינוּ",
+      "pdf_y": 320.0
+    },
+    {
+      "master_token": 1083,
+      "start": 9404,
+      "end": 9412,
+      "old": "אוֹתָנוּ",
+      "new": "אוֹתָֽנוּ",
+      "pdf_page": 16,
+      "pdf_word": "אוֹתָֽנוּ",
+      "pdf_y": 355.3
+    },
+    {
+      "master_token": 1084,
+      "start": 9413,
+      "end": 9422,
+      "old": "כֻּלָּנוּ",
+      "new": "כֻּלָּֽנוּ",
+      "pdf_page": 16,
+      "pdf_word": "כֻּלָּֽנוּ",
+      "pdf_y": 355.3
+    },
+    {
+      "master_token": 1085,
+      "start": 9423,
+      "end": 9428,
+      "old": "יַחַד",
+      "new": "יַֽחַד",
+      "pdf_page": 16,
+      "pdf_word": "יַחַֽד",
+      "pdf_y": 355.3,
+      "association": "visual correction of narrow-letter geometry"
+    },
+    {
+      "master_token": 1093,
+      "start": 9499,
+      "end": 9509,
+      "old": "וְעָלֵינוּ",
+      "new": "וְעָלֵֽינוּ",
+      "pdf_page": 17,
+      "pdf_word": "וְעָלֵֽינוּ",
+      "pdf_y": 62.5
+    },
+    {
+      "master_token": 1096,
+      "start": 9528,
+      "end": 9540,
+      "old": "לְמִשְׁמֶרֶת",
+      "new": "לְמִשְׁמֶֽרֶת",
+      "pdf_page": 17,
+      "pdf_word": "לְמשְׁמֶֽרֶת",
+      "pdf_y": 96.4
+    },
+    {
+      "master_token": 1104,
+      "start": 9600,
+      "end": 9610,
+      "old": "יִשְׁעֵנוּ",
+      "new": "יִשְׁעֵֽנוּ",
+      "pdf_page": 17,
+      "pdf_word": "ישְׁעֵֽנוּ",
+      "pdf_y": 124.0
+    },
+    {
+      "master_token": 1107,
+      "start": 9626,
+      "end": 9634,
+      "old": "וְשֵׂכֶל",
+      "new": "וְשֵֽׂכֶל",
+      "pdf_page": 17,
+      "pdf_word": "וְשֵֽׂכֶל",
+      "pdf_y": 157.9
+    },
+    {
+      "master_token": 1115,
+      "start": 9690,
+      "end": 9702,
+      "old": "יַנְחִילֵנוּ",
+      "new": "יַנְחִילֵֽנוּ",
+      "pdf_page": 17,
+      "pdf_word": "יַנְחילֵֽנוּ",
+      "pdf_y": 218.4
+    },
+    {
+      "master_token": 1127,
+      "start": 9796,
+      "end": 9804,
+      "old": "עָלֵינוּ",
+      "new": "עָלֵֽינוּ",
+      "pdf_page": 17,
+      "pdf_word": "עָלֵֽינוּ",
+      "pdf_y": 280.2
+    },
+    {
+      "master_token": 1129,
+      "start": 9809,
+      "end": 9817,
+      "old": "הַחֹדֶשׁ",
+      "new": "הַחֹֽדֶשׁ",
+      "pdf_page": 17,
+      "pdf_word": "הַחֽדִֶשׁ",
+      "pdf_y": 280.2
+    },
+    {
+      "master_token": 1137,
+      "start": 9872,
+      "end": 9884,
+      "old": "יַנְחִילֵנוּ",
+      "new": "יַנְחִילֵֽנוּ",
+      "pdf_page": 17,
+      "pdf_word": "יַנְחילֵֽנוּ",
+      "pdf_y": 320.1
+    },
+    {
+      "master_token": 1146,
+      "start": 9943,
+      "end": 9951,
+      "old": "עָלֵינוּ",
+      "new": "עָלֵֽינוּ",
+      "pdf_page": 17,
+      "pdf_word": "עָלֵֽינוּ",
+      "pdf_y": 359.7
+    },
+    {
+      "master_token": 1156,
+      "start": 10026,
+      "end": 10031,
+      "old": "לָנוּ",
+      "new": "לָֽנוּ",
+      "pdf_page": 18,
+      "pdf_word": "לָֽנוּ",
+      "pdf_y": 67.2
+    },
+    {
+      "master_token": 1160,
+      "start": 10051,
+      "end": 10063,
+      "old": "הַנֹֹּּפָלֶת",
+      "new": "הַנֹֹּּפָֽלֶת",
+      "pdf_page": 18,
+      "pdf_word": "הַנּפִָֽלֶת",
+      "pdf_y": 67.2
+    },
+    {
+      "master_token": 1163,
+      "start": 10080,
+      "end": 10090,
+      "old": "יְזַכֵּנוּ",
+      "new": "יְזַכֵּֽנוּ",
+      "pdf_page": 18,
+      "pdf_word": "יְזַכֵּֽנוּ",
+      "pdf_y": 197.0
+    },
+    {
+      "master_token": 1165,
+      "start": 10099,
+      "end": 10110,
+      "old": "הַמָּשִׁיחַ",
+      "new": "הַמָּשִֽׁיחַ",
+      "pdf_page": 18,
+      "pdf_word": "הַמָּשֽׁיחַ",
+      "pdf_y": 197.0
+    },
+    {
+      "master_token": 1182,
+      "start": 10234,
+      "end": 10242,
+      "old": "וְעֹשֶׂה",
+      "new": "וְעֹֽשֶׂה",
+      "pdf_page": 18,
+      "pdf_word": "וְעֽשִֶׂה",
+      "pdf_y": 280.0
+    },
+    {
+      "master_token": 1183,
+      "start": 10243,
+      "end": 10248,
+      "old": "חֶסֶד",
+      "new": "חֶֽסֶד",
+      "pdf_page": 18,
+      "pdf_word": "חֶֽסֶד",
+      "pdf_y": 280.0
+    },
+    {
+      "master_token": 1195,
+      "start": 10344,
+      "end": 10352,
+      "old": "עָלֵינוּ",
+      "new": "עָלֵֽינוּ",
+      "pdf_page": 18,
+      "pdf_word": "עָלֵֽינוּ",
+      "pdf_y": 316.4
+    },
+    {
+      "master_token": 1211,
+      "start": 10469,
+      "end": 10478,
+      "old": "וְרָעֵבוּ",
+      "new": "וְרָעֵֽבוּ",
+      "pdf_page": 19,
+      "pdf_word": "וְרָעֵֽבוּ",
+      "pdf_y": 99.7
+    },
+    {
+      "master_token": 1225,
+      "start": 10569,
+      "end": 10577,
+      "old": "פּוֹתֵחַ",
+      "new": "פּוֹתֵֽחַ",
+      "pdf_page": 19,
+      "pdf_word": "פּוֹתֵֽחַ",
+      "pdf_y": 164.7
+    },
+    {
+      "master_token": 1227,
+      "start": 10582,
+      "end": 10588,
+      "old": "יָדֶךָ",
+      "new": "יָדֶֽךָ",
+      "pdf_page": 19,
+      "pdf_word": "יָדֶֽךָ",
+      "pdf_y": 164.7
+    },
+    {
+      "master_token": 1228,
+      "start": 10590,
+      "end": 10603,
+      "old": "וּמַשְׂבִּיעַ",
+      "new": "וּמַשְׂבִּֽיעַ",
+      "pdf_page": 19,
+      "pdf_word": "וּמַשְׂבּֽיעַ",
+      "pdf_y": 164.7
+    },
+    {
+      "master_token": 1233,
+      "start": 10631,
+      "end": 10639,
+      "old": "הַגֶּבֶר",
+      "new": "הַגֶּֽבֶר",
+      "pdf_page": 19,
+      "pdf_word": "הַגֶּֽבֶר",
+      "pdf_y": 193.3
+    },
+    {
+      "master_token": 1240,
+      "start": 10688,
+      "end": 10693,
+      "old": "נַעַר",
+      "new": "נַֽעַר",
+      "pdf_page": 19,
+      "pdf_word": "נַֽעַר",
+      "pdf_y": 221.8
+    },
+    {
+      "master_token": 1241,
+      "start": 10694,
+      "end": 10702,
+      "old": "הָיִיתִי",
+      "new": "הָיִֽיתִי",
+      "pdf_page": 19,
+      "pdf_word": "הָיֽיתי",
+      "pdf_y": 221.8
+    },
+    {
+      "master_token": 1243,
+      "start": 10707,
+      "end": 10717,
+      "old": "זָקַנְתִּי",
+      "new": "זָקַֽנְתִּי",
+      "pdf_page": 19,
+      "pdf_word": "זקַֽנְתּי",
+      "pdf_y": 250.4
+    },
+    {
+      "master_token": 1245,
+      "start": 10725,
+      "end": 10733,
+      "old": "רָאִיתִי",
+      "new": "רָאִֽיתִי",
+      "pdf_page": 19,
+      "pdf_word": "רָאֽיתי",
+      "pdf_y": 250.4
+    },
+    {
+      "master_token": 1250,
+      "start": 10771,
+      "end": 10776,
+      "old": "לָחֶם",
+      "new": "לָֽחֶם",
+      "pdf_page": 19,
+      "pdf_word": "לָֽחֶם",
+      "pdf_y": 279.0
+    },
+    {
+      "master_token": 46,
+      "start": 377,
+      "end": 390,
+      "old": "יְרוּשָׁלָ‍ִם",
+      "new": "יְרוּשָׁלָ‍ִֽם",
+      "pdf_page": 1,
+      "pdf_word": "יְרוּשָׁלָֽים",
+      "pdf_y": 209.4,
+      "association": "same lamed; preserve inherited defective spelling and niqqud"
+    },
+    {
+      "master_token": 59,
+      "start": 485,
+      "end": 498,
+      "old": "יְרוּשָׁלַ‍ִם",
+      "new": "יְרוּשָׁלַ‍ִֽם",
+      "pdf_page": 1,
+      "pdf_word": "יְרוּשָׁלַֽים",
+      "pdf_y": 241.6,
+      "association": "same lamed; preserve inherited defective spelling and niqqud"
+    },
+    {
+      "master_token": 69,
+      "start": 556,
+      "end": 569,
+      "old": "יְרוּשָׁלָ‍ִם",
+      "new": "יְרוּשָׁלָ‍ִֽם",
+      "pdf_page": 1,
+      "pdf_word": "יְרוּשָׁלָֽים",
+      "pdf_y": 298.4,
+      "association": "same lamed; preserve inherited defective spelling and niqqud"
+    }
+  ],
+  "pdf_marked_passages_absent_from_master": [
+    {
+      "j": 171,
+      "pdf_page": 3,
+      "printed_page": 5,
+      "word": "וְשָׂבָֽעְתָּ",
+      "baseline_y": 208.2,
+      "x0": 129.6106719970703,
+      "x1": 164.4955291748047,
+      "mark_count": 1
+    },
+    {
+      "j": 177,
+      "pdf_page": 3,
+      "printed_page": 5,
+      "word": "הָאָֽרֶץ",
+      "baseline_y": 238.5,
+      "x0": 199.88526916503906,
+      "x1": 228.85133361816406,
+      "mark_count": 1
+    },
+    {
+      "j": 217,
+      "pdf_page": 4,
+      "printed_page": 6,
+      "word": "אְֶלהִֵֽינוּ",
+      "baseline_y": 173.7,
+      "x0": 193.27296447753906,
+      "x1": 227.91259765625,
+      "mark_count": 1
+    },
+    {
+      "j": 1057,
+      "pdf_page": 18,
+      "printed_page": 20,
+      "word": "לַאֲבוֹתֵֽינוּ",
+      "baseline_y": 139.4,
+      "x0": 166.5112762451172,
+      "x1": 207.15969848632812,
+      "mark_count": 1
+    }
+  ],
+  "verification": "All 246 extracted marked word crops inspected; narrow-yod geometry in Matityahu/Eliyahu and yachad corrected visually."
+}
