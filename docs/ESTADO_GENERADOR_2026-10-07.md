@@ -55,6 +55,8 @@ Se agregaron 241 meteg por aparición, hasta 242 en el bloque hebreo, cotejados 
 
 ## Mayúsculas reverenciales y uso de meteg: decisión del editor
 
-Se restablece `Baruj Atá Ad-nai` por referencia explícita a Hashem y la cita `Potéaj et Yadeja`. Las formas de segunda persona fuera de estos contextos no se capitalizan globalmente. Pruebas con y sin meteg y contraejemplos humanos. `Rajamim` y `le’olam` no necesitan tilde por ser agudas terminadas en m. `Raíti` conserva tilde de hiato ra-í-ti.
+Se restablece `Baruj Atá Ad-nai` por referencia explícita a Hashem y el sufijo reverencial en `potéaj et Yadeja`. Las formas de segunda persona fuera de estos contextos no se capitalizan globalmente. Pruebas con y sin meteg y contraejemplos humanos. `Rajamim` y `le’olam` no necesitan tilde por ser agudas terminadas en m. `Raíti` conserva tilde de hiato ra-í-ti.
 
 El editor rechaza un activador manual de lectura de meteg: Codex coteja y edita los masters. La futura lectura del meteg usará el registro editorial del master; el carácter pegado por sí solo no identifica fuente. No se presenta esa lectura como ya implementada. El TXT entregado es una copia de consulta del master, no una tarea de carga o edición para el usuario.
+
+Rectificación: `(Kaamur: potéaj et Yadeja…)` conserva el verbo en minúscula. La regla general editorial es capitalizar referencias a Hashem; el motor actualmente reconoce contextos específicos, no todas las referencias semánticas. No describir esos reconocimientos parciales como cobertura completa de la regla.

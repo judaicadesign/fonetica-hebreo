@@ -12,7 +12,7 @@ const cases=[
  ['בָּרוּךְ אַתָּה יְיָ','Baruj Atá Ad-nai'],
  ['בָּרוּךְ אַתָּה יהוה','Baruj Atá Ad-nai'],
  ['בָּרוּךְ אַתָּה אֲדֹנָי','Baruj Atá Ad-nai'],
- ['כָּאָמוּר: פּוֹתֵחַ אֶת יָדֶךָ','Kaamur: Potéaj et Yadeja'],
+ ['כָּאָמוּר: פּוֹתֵחַ אֶת יָדֶךָ','Kaamur: potéaj et Yadeja'],
  ['פּוֹתֵֽחַ אֶת יָדֶֽךָ','Potéaj et Yadeja'],
  ['רָאִיתִי אֶת יָדֶךָ','Raíti et yadeja'],
  ['רַחֲמִים','Rajamim'],['לְעוֹלָם',"Le'olam"],['רָאִיתִי','Raíti']

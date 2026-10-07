@@ -1195,9 +1195,9 @@ function applySpanishStress(word){
 function editorialCaps(text){
   // JD: referencias confirmadas por contexto, nunca pronombres globales.
   text=text.replace(/(?<![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])atá(?=\s+Ad-nai\b)/giu,"Atá");
-  // Cita de Tehilim 145:16: apertura y sufijo dirigido a Hashem.
+  // Tehilim 145:16: capitalizar el sufijo dirigido a Hashem; conservar el verbo.
   text=text.replace(/\b(potéaj)\s+(et)\s+(yadej[áa])(?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])/giu,
-    (_,verb,link,hand)=>capitalizeFirst(verb)+" "+link+" "+capitalizeFirst(hand));
+    (_,verb,link,hand)=>verb+" "+link+" "+capitalizeFirst(hand));
   /* Referencias explícitas a Hashem: se capitalizan solo por contexto. */
   text=text.replace(/\bata hu Ad-nai\b/gi,"Atá Hu Ad-nai");
   text=text.replace(/\bki hu El\b/gi,"ki Hu El");

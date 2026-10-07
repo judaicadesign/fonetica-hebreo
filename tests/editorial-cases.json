@@ -8,21 +8,21 @@
       "category": "liturgico",
       "nusaj": "ashkenaz",
       "hebrew": "כָּאָמוּר פּוֹתֵחַ אֶת יָדֶךָ וּמַשְׂבִּיעַ",
-      "expected": "Kaamur Potéaj et Yadeja umasbía'"
+      "expected": "Kaamur potéaj et Yadeja umasbía'"
     },
     {
       "group": "birkat-hamazon-comun",
       "category": "liturgico",
       "nusaj": "sefaradi",
       "hebrew": "כָּאָמוּר פּוֹתֵחַ אֶת יָדֶךָ וּמַשְׂבִּיעַ",
-      "expected": "Kaamur Potéaj et Yadeja umasbía'"
+      "expected": "Kaamur potéaj et Yadeja umasbía'"
     },
     {
       "group": "birkat-hamazon-comun",
       "category": "liturgico",
       "nusaj": "jabad",
       "hebrew": "כָּאָמוּר פּוֹתֵחַ אֶת יָדֶךָ וּמַשְׂבִּיעַ",
-      "expected": "Kaamur Potéaj et Yadeja umasbía'"
+      "expected": "Kaamur potéaj et Yadeja umasbía'"
     },
     {
       "category": "cancion-israeli",
