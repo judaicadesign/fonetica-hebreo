@@ -157,6 +157,15 @@
       "ref": "47:2",
       "status": "pendiente-revision-ArtScroll",
       "phonetic": null
+    },
+    {
+      "hebrew": "חָסַר",
+      "marked_hebrew": "חָֽסַר",
+      "phonetic": "jásar",
+      "source": "PDF ArtScroll Ashkenaz Bircat Hamazon, página 5, revisión visual previa",
+      "status": "implementado-main-y-desarrollo",
+      "scope": "Lexema vocalizado exacto; entradas GOLD y léxico; master Ashkenaz con marca comprobada; fonética del master sefardí común corregida",
+      "note": "No afirmar que el resto de meteg del master está completado."
     }
   ],
   "retained_material": [
@@ -173,9 +182,9 @@
     }
   ],
   "verification": {
-    "editorial_cases": 83,
+    "editorial_cases": 86,
     "editorial_failures": 0,
-    "meteg_taam_invariant_checks": 166,
+    "meteg_taam_invariant_checks": 172,
     "master_processing": "ambos masters completos pasan; no aprobación editorial",
     "baseline_alerts": 738,
     "after_alerts": 667,

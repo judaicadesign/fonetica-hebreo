@@ -31,7 +31,7 @@ Wikisource es fuente digital principal. ArtScroll es referencia editorial para a
 - מְהֵרָה y בִּמְהֵרָה: la revisión visual posterior del Bircat no encontró las marcas afirmadas en la tabla; conservar meherá/bimherá hasta contrastar cada aparición.
 - -eja: la tabla antigua afirma finales en pasajes de Bircat donde la revisión posterior encontró marcas internas; no convertir toda la familia en -ejá. Yadejá se limita al contexto de Tehilim 17:14.
 - וּפִנּוּ: revisión posterior del Bircat sin marca: ufinú; la propuesta ufinu era errónea.
-- חָסַר: marca comprobada, jásar; pendiente de la fase Bircat.
+- חָסַר: marca comprobada, jásar; implementado en tablas GOLD de main/desarrollo y masters comunes. Ashkenaz incorpora חָֽסַר en el hebreo. El resto del master sigue en revisión.
 - מֶשֶׁךְ: marca comprobada, méshej; pendiente de la fase Bircat.
 - לֶחֶם con segol: léjem; לָחֶם con kamatz en el final: lájem. No unificar las vocales.
 - רָאִיתִי: conservar raíti para el hiato; no eliminar la tilde basándose solo en que sería llana en hebreo.
@@ -44,3 +44,7 @@ Las correcciones de este lote se guardan en desarrollo/auditoria-tehilim-150. No
 ## Resultado de la auditoría reproducida
 
 738 → 667 alertas por palabras aisladas. La referencia tiene 150 capítulos, 2.527 pesukim y 19.656 tokens; se conserva el mismo blob OSHB y el mismo denominador de comparación. Esta métrica no ve las reglas que requieren palabras vecinas. Las 8 alertas de הַלְלוּ requieren analizar la expresión completa y permanecen en el informe; no contarlas como errores de acento certificados.
+
+## Arreglo puntual publicado en main: חָסַר
+
+Se corrigen las dos entradas de GOLD ash/sef a jásar, con pruebas para entrada con/sin meteg y el pasaje completo. Se incorpora únicamente esta marca comprobada al master hebreo Ashkenaz y se corrige el pasaje fonético común en el master sefardí. El master Ashkenaz ya tenía jásar en su fonética, pero el motor conservaba jasar: las dos capas se alinean. No se declara completo el resto de meteg de ArtScroll. Las 13 decisiones de Tehilim continúan en desarrollo. Pruebas: 86 casos editoriales, 172 comprobaciones de invariancia; ambos masters pasan procesamiento; main pasa regresiones internas y prueba puntual. Guardar en main no acredita por sí solo el despliegue de un sitio externo.

@@ -446,6 +446,24 @@
       "category": "contraejemplo-contextual",
       "hebrew": "לְעֶזְרָתִי",
       "expected": "Le'ezratí"
+    },
+    {
+      "group": "bircat-artscroll-2026-10-07",
+      "category": "meteg-verificado",
+      "hebrew": "חָסַר",
+      "expected": "Jásar"
+    },
+    {
+      "group": "bircat-artscroll-2026-10-07",
+      "category": "meteg-verificado",
+      "hebrew": "חָֽסַר",
+      "expected": "Jásar"
+    },
+    {
+      "group": "bircat-artscroll-2026-10-07",
+      "category": "meteg-verificado",
+      "hebrew": "לֹא חָֽסַר לָנוּ",
+      "expected": "Lo jásar lanu"
     }
   ]
 }
