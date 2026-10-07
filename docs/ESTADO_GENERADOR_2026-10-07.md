@@ -60,3 +60,7 @@ Se restablece `Baruj Atá Ad-nai` por referencia explícita a Hashem y el sufijo
 El editor rechaza un activador manual de lectura de meteg: Codex coteja y edita los masters. La futura lectura del meteg usará el registro editorial del master; el carácter pegado por sí solo no identifica fuente. No se presenta esa lectura como ya implementada. El TXT entregado es una copia de consulta del master, no una tarea de carga o edición para el usuario.
 
 Rectificación: `(Kaamur: potéaj et Yadeja…)` conserva el verbo en minúscula. La regla general editorial es capitalizar referencias a Hashem; el motor actualmente reconoce contextos específicos, no todas las referencias semánticas. No describir esos reconocimientos parciales como cobertura completa de la regla.
+
+## Consistencia de masters y título
+
+El master Ashkenaz corrige `Hu Notén` a `Hu notén`; ambos masters usan `Yadeja` en la cita de Tehilim 145:16. No se cambia el hebreo. El motor deja `notén` en minúscula dentro de la oración y conserva `Notén` cuando inicia una oración. El título del generador original usa Libre Caslon Condensed, como System, sin el tracking extra anterior de .055em.
