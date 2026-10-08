@@ -2,9 +2,9 @@
 
 **Criterio para tachar un salmo:** únicamente al finalizar (1) máster hebreo *idéntico a ArtScroll* en consonantes, nikud y meteg, tras verificar todas las repeticiones y anotar aparte shevá na; (2) máster fonético derivado y corregido, con tildes solo cuando lo exigen las reglas españolas; (3) generador cotejado contra GOLDEN completo y regresiones sin fallos. Los tres archivos deben estar guardados en GitHub.
 
-**Versículos completos aprobados: 1 (13:6)**, con hebreo, meteg y fonética cotejados; [ver GOLDEN del pasuk](./verses/013_06__GOLDEN_ARTSCROLL.md). No se tacha el capítulo 13 hasta cerrar todos sus versículos.
+**Versículos completos aprobados: 6 (13:1–6)**, con hebreo, meteg, shevá na y fonética cotejados. [Hebreo máster](./approved/013__HEBREO__ARTSCROLL.txt), [fonética GOLDEN](./approved/013__FONETICA__GOLDEN.txt), [auditoría ArtScroll](./approved/013__AUDITORIA.md).
 
-**Estado 2026-10-08:** 0/150 aprobados; 17 capítulos tienen borradores en `masters/tehilim/` (188 versículos de base Wikisource y salida actual del generador), **no** máster aprobado. Los 10 capítulos incluidos en los PDF adjuntos están identificados, y 24–30 tienen capturas de la aplicación. Los 23, 126 y 137 fueron discutidos antes y siguen pendientes de las tres validaciones.
+**Estado 2026-10-08:** 1/150 aprobado; 16 capítulos permanecen en revisión y 17 capítulos tienen borradores en `masters/tehilim/` (188 versículos de base Wikisource y salida actual del generador), **no** máster aprobado. Los 10 capítulos incluidos en los PDF adjuntos están identificados, y 24–30 tienen capturas de la aplicación. Los 23, 126 y 137 fueron discutidos antes y siguen pendientes de las tres validaciones.
 
 **Leyenda:** `[x]` + ~~tachado~~ = APROBADO; `[ ]` = no aprobado. `PDF` = existe ArtScroll impreso para cotejar; `CAP` = imagen de app aportada; `BORRADOR` = texto importado en GitHub sin aprobar; `PREVIO` = visto en trabajo anterior sin aprobación comprobada.
 
@@ -25,7 +25,7 @@
 
 - [ ] **11**
 - [ ] **12**
-- [ ] **13** — PDF · BORRADOR
+- [x] ~~**13**~~ — **APROBADO**, [HEBREO](./approved/013__HEBREO__ARTSCROLL.txt) + [FONÉTICA](./approved/013__FONETICA__GOLDEN.txt) + [TESTS](./approved/013__AUDITORIA.md)
 - [ ] **14**
 - [ ] **15**
 - [ ] **16**
