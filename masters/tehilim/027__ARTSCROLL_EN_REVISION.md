@@ -12,7 +12,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 27:1 — א
 
-**Hebreo de trabajo:** לְדָוִד יְהֹוָה אוֹרִי וְיִשְׁעִי מִמִּי אִירָא יְהֹוָה מָעוֹז חַיַּי מִמִּי אֶפְחָד.
+**Hebreo de trabajo:** לְדָוִד יהוה אוֹרִי וְיִשְׁעִי מִמִּי אִירָא יהוה מָעוֹז חַיַּי מִמִּי אֶפְחָד.
 
 **Salida real del generador:** LeDavid Ad-nai orí veyish'í mimí irá Ad-nai ma'oz jayái mimí efjad.
 
@@ -30,7 +30,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 27:4 — ד
 
-**Hebreo de trabajo:** אַחַת שָׁאַלְתִּי מֵאֵת יְהֹוָה אוֹתָהּ אֲבַקֵּשׁ שִׁבְתִּי בְּבֵית יְהֹוָה כׇּל יְמֵי חַיַּי לַחֲזוֹת בְּנֹעַם יְהֹוָה וּלְבַקֵּר בְּהֵיכָלוֹ.
+**Hebreo de trabajo:** אַחַת שָׁאַלְתִּי מֵאֵת יהוה אוֹתָהּ אֲבַקֵּשׁ שִׁבְתִּי בְּבֵית יהוה כׇּל יְמֵי חַיַּי לַחֲזוֹת בְּנֹעַם יהוה וּלְבַקֵּר בְּהֵיכָלוֹ.
 
 **Salida real del generador:** Ajat shaalti meet Ad-nai ótah avakesh shivti bevet Ad-nai kol yemé jayái lajazot beno'am Ad-nai ulvaker behekaló.
 
@@ -42,19 +42,19 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 27:6 — ו
 
-**Hebreo de trabajo:** וְעַתָּה יָרוּם רֹאשִׁי עַל אֹיְבַי סְבִיבוֹתַי וְאֶזְבְּחָה בְאׇהֳלוֹ זִבְחֵי תְרוּעָה אָשִׁירָה וַאֲזַמְּרָה לַיהֹוָה.
+**Hebreo de trabajo:** וְעַתָּה יָרוּם רֹאשִׁי עַל אֹיְבַי סְבִיבוֹתַי וְאֶזְבְּחָה בְאׇהֳלוֹ זִבְחֵי תְרוּעָה אָשִׁירָה וַאֲזַמְּרָה לַיהוה.
 
 **Salida real del generador:** Ve'atá yarum roshí 'al oyvái sevivotái veezbejá veoholó zivjé teru'á ashira vaazamerá laAd-nai.
 
 ### 27:7 — ז
 
-**Hebreo de trabajo:** שְׁמַע יְהֹוָה קוֹלִי אֶקְרָא וְחׇנֵּנִי וַעֲנֵנִי.
+**Hebreo de trabajo:** שְׁמַע יהוה קוֹלִי אֶקְרָא וְחׇנֵּנִי וַעֲנֵנִי.
 
 **Salida real del generador:** Shemá' Ad-nai kolí ekrá vejoneni va'aneni.
 
 ### 27:8 — ח
 
-**Hebreo de trabajo:** לְךָ אָמַר לִבִּי בַּקְּשׁוּ פָנָי אֶת פָּנֶיךָ יְהֹוָה אֲבַקֵּשׁ.
+**Hebreo de trabajo:** לְךָ אָמַר לִבִּי בַּקְּשׁוּ פָנָי אֶת פָּנֶיךָ יהוה אֲבַקֵּשׁ.
 
 **Salida real del generador:** Lejá amar libí bakeshú fanái et paneja Ad-nai avakesh.
 
@@ -66,13 +66,13 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 27:10 — י
 
-**Hebreo de trabajo:** כִּי אָבִי וְאִמִּי עֲזָבוּנִי וַיהֹוָה יַאַסְפֵנִי.
+**Hebreo de trabajo:** כִּי אָבִי וְאִמִּי עֲזָבוּנִי וַיהוה יַאַסְפֵנִי.
 
 **Salida real del generador:** Ki aví veimí 'azavuni vaAd-nai yaasfeni.
 
 ### 27:11 — יא
 
-**Hebreo de trabajo:** הוֹרֵנִי יְהֹוָה דַּרְכֶּךָ וּנְחֵנִי בְּאֹרַח מִישׁוֹר לְמַעַן שׁוֹרְרָי.
+**Hebreo de trabajo:** הוֹרֵנִי יהוה דַּרְכֶּךָ וּנְחֵנִי בְּאֹרַח מִישׁוֹר לְמַעַן שׁוֹרְרָי.
 
 **Salida real del generador:** Horeni Ad-nai darkeja unjeni beoraj mishor lema'an shorerái.
 
@@ -84,13 +84,13 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 27:13 — יג
 
-**Hebreo de trabajo:** לוּלֵא הֶאֱמַנְתִּי לִרְאוֹת בְּטוּב יְהֹוָה בְּאֶרֶץ חַיִּים.
+**Hebreo de trabajo:** לוּלֵא הֶאֱמַנְתִּי לִרְאוֹת בְּטוּב יהוה בְּאֶרֶץ חַיִּים.
 
 **Salida real del generador:** Lulé heemanti lirot betuv Ad-nai beerets jayim.
 
 ### 27:14 — יד
 
-**Hebreo de trabajo:** קַוֵּה אֶל יְהֹוָה חֲזַק וְיַאֲמֵץ לִבֶּךָ וְקַוֵּה אֶל יְהֹוָה.
+**Hebreo de trabajo:** קַוֵּה אֶל יהוה חֲזַק וְיַאֲמֵץ לִבֶּךָ וְקַוֵּה אֶל יהוה.
 
 **Salida real del generador:** Kavé el Ad-nai jazak veyaaméts libeja vekavé el Ad-nai.
 
@@ -102,3 +102,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 - [ ] ArtScroll: meteg y rayita de shevá na cotejados en cada aparición.
 - [ ] Fonética GOLDEN aprobada por sílabas, tildes españolas y mayúsculas referenciales.
 - [ ] Salida del generador idéntica al GOLDEN; regresión sin roturas.
+
+## Hebreo canónico guardado
+
+Este borrador reproduce el mismo hebreo que el archivo maestro de trabajo [`approved/027__HEBREO__ARTSCROLL_APP.txt`](./approved/027__HEBREO__ARTSCROLL_APP.txt). Los resultados del generador son únicamente una ejecución de diagnóstico; **la fonética GOLDEN y la igualdad con ella siguen pendientes**.
