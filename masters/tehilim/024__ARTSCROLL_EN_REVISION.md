@@ -71,6 +71,21 @@
 
 **Generador:** Mi Hu ze Mélej hakavod Ad-nai tsevaot Hu Mélej hakavod sela.
 
+## Diferencias concretas al contrastar Wikisource con la captura ArtScroll
+
+La edición de Wikisource **con taamim** imprime U+05BD en posiciones que no se ven impresas como meteg en la captura de ArtScroll 24. **No trasladar esas marcas al máster**:
+
+| Versículo | Wikisource con taamim | ArtScroll (captura) | Tratamiento del máster |
+|---|---|---|---|
+| 24:1 | `לַֽיהֹוָה` | `לַיהֹוָה` | Sin U+05BD en ל |
+| 24:3 | `מִֽי־יַעֲלֶה` | `מִי יַעֲלֶה` | Sin U+05BD en מ |
+| 24:7 / 24:9 | `רָֽאשֵׁיכֶם` | `רָאשֵׁיכֶם` | Sin U+05BD en ר, en ambas ocurrencias |
+| 24:10 | `סֶֽלָה` | `סֶלָה` | Sin U+05BD en ס |
+
+Estas son **diferencias de marcas identificadas**, no una certificación de que se haya inspeccionado exhaustivamente cada punto vocálico y cada shevá de los diez versículos. Los asteriscos encima de ciertas letras en ArtScroll son ayudas de shevá na y **nunca** se copian como meteg.
+
+Se conserva la diferencia textual confirmada en 24:6: ArtScroll `דֹּרְשָׁיו`, Wikisource `דֹּרְשָׁו`; la fonética resultante es `doreshav`.
+
 ## Validaciones editoriales pendientes
 
 - [x] Fuente digital y diez pesukim importados, con diferencia textual 24:6 contrastada contra captura.
