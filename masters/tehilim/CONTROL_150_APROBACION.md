@@ -28,12 +28,12 @@
 | 22 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 23 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 24 | [Hebreo ✓](./approved/024__HEBREO__ARTSCROLL_APP.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
-| 25 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
-| 26 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
-| 27 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
-| 28 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
-| 29 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
-| 30 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
+| 25 | [Hebreo ✓](./approved/025__HEBREO__ARTSCROLL_APP.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
+| 26 | [Hebreo ✓](./approved/026__HEBREO__ARTSCROLL_APP.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
+| 27 | [Hebreo ✓](./approved/027__HEBREO__ARTSCROLL_APP.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
+| 28 | [Hebreo ✓](./approved/028__HEBREO__ARTSCROLL_APP.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
+| 29 | [Hebreo ✓](./approved/029__HEBREO__ARTSCROLL_APP.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
+| 30 | [Hebreo ✓](./approved/030__HEBREO__ARTSCROLL_APP.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
 | 31 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 32 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 33 | Pendiente | Pendiente | Pendiente | No iniciado |
@@ -155,4 +155,4 @@
 | 149 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 150 | Pendiente | Pendiente | Pendiente | No iniciado |
 
-**Avance confirmado en esta tabla:** 11/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
+**Avance confirmado en esta tabla:** 17/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
