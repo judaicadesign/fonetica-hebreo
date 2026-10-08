@@ -128,7 +128,7 @@ details.rules[open] summary::before{content:"–"}
   </div>
 
   <div class="profile-control">
-    <label class="nikud-toggle"><input id="autoNikud" type="checkbox" checked>Agregar nikud automáticamente</label>
+    
     <span class="profile-label">Nakdan</span>
     <select id="nakdanGenre" aria-label="Tipo de texto para Nakdan">
       <option value="rabbinic" selected>Rabínico · sidur / textos tradicionales</option>
@@ -1499,6 +1499,8 @@ function runRegressionTests(){
     const got=wordOutput(h);
     if(got!==expected) failures.push(h+" → "+got+" (esperado: "+expected+")");
   }
+  // Salmo 20:5: salida contextual real; la tilde en Yitén era incorrecta.
+  if(phonetize("יִֽתֶּן לְךָ")!=="Yiten lejá") failures.push("Tehilim 20:5: esperado Yiten lejá");
   // Seguridad editorial: meteg ajeno a ArtScroll NO es señal de acento.
   // phonetize() general debe conservar la misma lectura con y sin U+05BD.
   const uncontrolledMeteg=[
@@ -1612,6 +1614,9 @@ function verifiedTehilimOctober7(token,prev,next){
   if(k===norm("יֹאבֵדוּ") && p==="רשעים" && n==="ואיבי") return "yovedu"; // 37:20
   if(k===norm("יְמִינְךָ") && p==="כי" && n==="וזרועך") return "Yeminejá"; // 44:4
   if(k===norm("הָרִיעוּ") && p==="כף" && n==="לאלהים") return "harí'u"; // 47:2
+  // Tehilim 20:5 (ArtScroll): יִֽתֶּן לְךָ, mil'el, Yiten sin tilde española.
+  // Acotado a la expresión exacta, no se adopta meteg externo sin cotejo.
+  if(k===norm("יִתֶּן") && n==="לך") return "yiten";
   return null;
 }
 function phoneWord(token,prev,stop,next){
@@ -1912,7 +1917,7 @@ function invalidateRun(){
   lastNakdanChoices=[];hideNakdanChoices();
   $("output").value="";$("copy").disabled=true;
 }
-function automaticNikudEnabled(){return $("autoNikud")?.checked!==false;}
+function automaticNikudEnabled(){return true;}
 function hasUnpointedWords(text){
   const [probe]=stashLabels(text);
   return (probe.match(HRUN)||[]).some(w=>!NIKUD_RE.test(w)&&!/^(יי|יהוה|אדני)$/.test(bareLetters(w)));
@@ -2007,7 +2012,7 @@ $("pasteHebrew").addEventListener("click",async()=>{
 });
 
 $("nakdanGenre").addEventListener("change",()=>run());
-$("autoNikud").addEventListener("change",()=>run());
+
 
 $("clear").addEventListener("click",()=>{invalidateRun();lastNakdanChoices=[];lastWordState=[];lastRenderedHebrew="";hideNakdanChoices();$("hebrew").value="";$("output").value="";$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
 </script>
