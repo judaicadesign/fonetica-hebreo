@@ -102,7 +102,7 @@ Este archivo importa el niqqud original de Wikisource sin asumir que su meteg se
 
 ### 83:17
 
-**Hebreo en cotejo:** מַלֵּא פְנֵיהֶם קָלוֹן וִיבַקְשׁוּ שִׁמְךָ יְהֹוָה.
+**Hebreo en cotejo:** מַלֵּא פְנֵיהֶם קָלוֹן וִיבַקְשׁוּ שִׁמְךָ יהוה.
 
 **Salida real del generador:** Malé fenehem kalón vivakshú Shimjá Ad-nai.
 
@@ -114,7 +114,7 @@ Este archivo importa el niqqud original de Wikisource sin asumir que su meteg se
 
 ### 83:19
 
-**Hebreo en cotejo:** וְיֵדְעוּ כִּי אַתָּה שִׁמְךָ יְהֹוָה לְבַדֶּךָ עֶלְיוֹן עַל כׇּל הָאָרֶץ.
+**Hebreo en cotejo:** וְיֵדְעוּ כִּי אַתָּה שִׁמְךָ יהוה לְבַדֶּךָ עֶלְיוֹן עַל כׇּל הָאָרֶץ.
 
 **Salida real del generador:** Veyed'ú ki atá Shimjá Ad-nai levadeja 'elyón 'al kol haarets.
 
@@ -125,3 +125,7 @@ Este archivo importa el niqqud original de Wikisource sin asumir que su meteg se
 - [ ] Verificar cada palabra, nikud, meteg y shevá na contra página visible de la edición Seif.
 - [ ] Deducir GOLDEN desde ArtScroll con español rioplatense, tildes ortográficas y mayúsculas referenciales.
 - [ ] Comparar GOLDEN con generador; no pasar a master aprobado hasta igualdad integral.
+
+## Fuente hebrea consolidada
+
+[Hebreo editado desde ArtScroll Seif](./approved/083__HEBREO__ARTSCROLL_SEIF.txt). La fonética de este documento es diagnóstico del generador, todavía sin cotejo GOLDEN completo. La auditoría de cada meteg y nikud para impresión requiere una revisión final independiente.
