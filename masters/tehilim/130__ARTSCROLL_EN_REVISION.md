@@ -1,10 +1,10 @@
 # Tehilim 130 — ArtScroll Schottenstein, EN REVISIÓN
 
-**NO APROBADO.** Base digital: https://he.wikisource.org/wiki/תהלים_קל/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 7–8. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
+**HEBREO APROBADO contra ArtScroll; GOLDEN fonético y generador NO APROBADOS.** Base digital: https://he.wikisource.org/wiki/תהלים_קל/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 7–8. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
 
 ### 130:1
 
-**Hebreo en cotejo:** שִׁיר הַמַּעֲלוֹת מִמַּעֲמַקִּים קְרָאתִיךָ יְהֹוָה.
+**Hebreo en cotejo:** שִׁיר הַמַּעֲלוֹת מִמַּעֲמַקִּים קְרָאתִיךָ יהוה.
 
 **Salida real del generador:** Shir hama'alot mima'amakim keratija Ad-nai.
 
@@ -28,7 +28,7 @@
 
 ### 130:5
 
-**Hebreo en cotejo:** קִוִּיתִי יְהֹוָה קִוְּתָה נַפְשִׁי וְלִדְבָרוֹ הוֹחָלְתִּי.
+**Hebreo en cotejo:** קִוִּיתִי יהוה קִוְּתָה נַפְשִׁי וְלִדְבָרוֹ הוֹחָלְתִּי.
 
 **Salida real del generador:** Kiviti Ad-nai kiuta nafshí velidvaró hojalti.
 
@@ -40,7 +40,7 @@
 
 ### 130:7
 
-**Hebreo en cotejo:** יַחֵל יִשְׂרָאֵל אֶל יְהֹוָה כִּי עִם יְהֹוָה הַחֶסֶד וְהַרְבֵּה עִמּוֹ פְדוּת.
+**Hebreo en cotejo:** יַחֵל יִשְׂרָאֵל אֶל יהוה כִּי עִם יהוה הַחֶסֶד וְהַרְבֵּה עִמּוֹ פְדוּת.
 
 **Salida real del generador:** Yajel Yisrael el Ad-nai ki 'im Ad-nai hajésed veharbé 'imó fedut.
 
@@ -64,3 +64,7 @@
 Estas marcas `U+05BD` están presentes en la extracción del propio PDF Schottenstein y se corroboraron con su página impresa. **No representan una auditoría total de meteg de este salmo.**
 
 - 130:6 (página 8): לַבֹּֽקֶר — 2 apariciones ajustadas en el borrador.
+
+## Máster hebreo cerrado
+
+Hebreo cotejado y guardado en [`approved/130__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt`](./approved/130__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt). La salida aquí reproducida se calculó del máster, pero NO es GOLDEN aprobado; falta revisar acentuación, shevá na y todas las tildes españolas.
