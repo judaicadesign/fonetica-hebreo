@@ -1,16 +1,16 @@
 # Tehilim 120 — ArtScroll Schottenstein, EN REVISIÓN
 
-**NO APROBADO.** Base digital: https://he.wikisource.org/wiki/תהלים_קכ/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 6. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
+**HEBREO APROBADO contra ArtScroll; GOLDEN fonético y generador NO APROBADOS.** Base digital: https://he.wikisource.org/wiki/תהלים_קכ/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 6. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
 
 ### 120:1
 
-**Hebreo en cotejo:** שִׁיר הַמַּעֲלוֹת אֶל יְהֹוָה בַּצָּרָתָה לִּי קָרָאתִי וַיַּעֲנֵנִי.
+**Hebreo en cotejo:** שִׁיר הַמַּעֲלוֹת אֶל יהוה בַּצָּרָתָה לִּי קָרָאתִי וַיַּעֲנֵנִי.
 
 **Salida real del generador:** Shir hama'alot el Ad-nai batsarata li karati vaya'aneni.
 
 ### 120:2
 
-**Hebreo en cotejo:** יְהֹוָה הַצִּילָה נַפְשִׁי מִשְּׂפַת שֶׁקֶר מִלָּשׁוֹן רְמִיָּה.
+**Hebreo en cotejo:** יהוה הַצִּילָה נַפְשִׁי מִשְּׂפַת שֶׁקֶר מִלָּשׁוֹן רְמִיָּה.
 
 **Salida real del generador:** Ad-nai hatsila nafshí misfat shéker milashón remiyá.
 
@@ -56,3 +56,7 @@
 ## Cotejo adicional 120:5 (PDF Schottenstein, página 6)
 
 En la palabra de apertura אֽוֹיָה, el PDF ArtScroll incorpora una marca U+05BD a continuación de א, visible además en el texto extraído con dicha grafía. Wikisource con solo nikud no la trae; se añadió únicamente esta marca, sin generalizar el criterio a otras palabras. **Sigue pendiente comprobar exhaustivamente las otras apariciones** de meteg y los demás nikud antes de certificar todo el capítulo.
+
+## Máster hebreo cerrado
+
+Hebreo cotejado y guardado en [`approved/120__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt`](./approved/120__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt). La salida aquí reproducida se calculó del máster, pero NO es GOLDEN aprobado; falta revisar acentuación, shevá na y todas las tildes españolas.
