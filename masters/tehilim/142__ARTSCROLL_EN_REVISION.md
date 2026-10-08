@@ -10,7 +10,7 @@
 
 ### 142:2
 
-**Hebreo en cotejo:** קוֹלִי אֶל יְהֹוָה אֶזְעָק קוֹלִי אֶל יְהֹוָה אֶתְחַנָּן.
+**Hebreo en cotejo:** קוֹלִי אֶל יהוה אֶזְעָק קוֹלִי אֶל יהוה אֶתְחַנָּן.
 
 **Salida real del generador:** Kolí el Ad-nai ez'ak kolí el Ad-nai etjanán.
 
@@ -34,7 +34,7 @@
 
 ### 142:6
 
-**Hebreo en cotejo:** זָעַקְתִּי אֵלֶיךָ יְהֹוָה אָמַרְתִּי אַתָּה מַחְסִי חֶלְקִי בְּאֶרֶץ הַחַיִּים.
+**Hebreo en cotejo:** זָעַקְתִּי אֵלֶיךָ יהוה אָמַרְתִּי אַתָּה מַחְסִי חֶלְקִי בְּאֶרֶץ הַחַיִּים.
 
 **Salida real del generador:** Za'akti eleja Ad-nai amarti atá majsí jelkí beerets hajayim.
 
@@ -58,3 +58,7 @@
 - [ ] Meteg y shevá na verificados visualmente, sin confundir ambos.
 - [ ] Fonética GOLDEN aprobada, tildes españolas y mayúsculas reverenciales.
 - [ ] Comparación GOLDEN ↔ generador idéntica y regresiones completas.
+
+## Fuente hebrea consolidada
+
+[Hebreo editado desde ArtScroll Seif](./approved/142__HEBREO__ARTSCROLL_SEIF.txt). La fonética de este documento es diagnóstico del generador, todavía sin cotejo GOLDEN completo. La auditoría de cada meteg y nikud para impresión requiere una revisión final independiente.
