@@ -12,7 +12,7 @@ Texto base: https://he.wikisource.org/wiki/תהלים_כ/ניקוד. El editor c
 
 ### 20:2
 
-**Hebreo:** יַעַנְךָ יְהֹוָה בְּיוֹם צָרָה יְשַׂגֶּבְךָ שֵׁם אֱלֹהֵי יַעֲקֹב.
+**Hebreo:** יַעַנְךָ יהוה בְּיוֹם צָרָה יְשַׂגֶּבְךָ שֵׁם אֱלֹהֵי יַעֲקֹב.
 
 **Generador:** Ya'anjá Ad-nai beyom tsará yesagueveja Shem Elohé Ya'akov.
 
@@ -36,19 +36,19 @@ Texto base: https://he.wikisource.org/wiki/תהלים_כ/ניקוד. El editor c
 
 ### 20:6
 
-**Hebreo:** נְרַנְּנָה בִּישׁוּעָתֶךָ וּבְשֵׁם אֱלֹהֵינוּ נִדְגֹּל יְמַלֵּא יְהֹוָה כׇּל מִשְׁאֲלוֹתֶיךָ.
+**Hebreo:** נְרַנְּנָה בִּישׁוּעָתֶךָ וּבְשֵׁם אֱלֹהֵינוּ נִדְגֹּל יְמַלֵּא יהוה כׇּל מִשְׁאֲלוֹתֶיךָ.
 
 **Generador:** Neranená bishu'ateja uvshem Elohenu nidgol yemalé Ad-nai kol mishaloteja.
 
 ### 20:7
 
-**Hebreo:** עַתָּה יָדַעְתִּי כִּי הוֹשִׁיעַ יְהֹוָה מְשִׁיחוֹ יַעֲנֵֽהוּ מִשְּׁמֵי קׇדְשׁוֹ בִּגְבֻרוֹת יֵֽשַׁע יְמִינוֹ.
+**Hebreo:** עַתָּה יָדַעְתִּי כִּי הוֹשִׁיעַ יהוה מְשִׁיחוֹ יַעֲנֵֽהוּ מִשְּׁמֵי קׇדְשׁוֹ בִּגְבֻרוֹת יֵֽשַׁע יְמִינוֹ.
 
 **Generador:** 'Atá yada'ti ki hoshía' Ad-nai meshijó ya'anehu mishmé kodshó bigvurot yesha' yeminó.
 
 ### 20:8
 
-**Hebreo:** אֵלֶּה בָרֶכֶב וְאֵלֶּה בַסּוּסִים וַאֲנַחְנוּ בְּשֵׁם יְהֹוָה אֱלֹהֵינוּ נַזְכִּיר.
+**Hebreo:** אֵלֶּה בָרֶכֶב וְאֵלֶּה בַסּוּסִים וַאֲנַחְנוּ בְּשֵׁם יהוה אֱלֹהֵינוּ נַזְכִּיר.
 
 **Generador:** Ele varéjev veele vasusim vaanajnu beshem Ad-nai Elohenu nazkir.
 
@@ -60,7 +60,7 @@ Texto base: https://he.wikisource.org/wiki/תהלים_כ/ניקוד. El editor c
 
 ### 20:10
 
-**Hebreo:** יְהֹוָה הוֹשִֽׁיעָה הַמֶּֽלֶךְ יַעֲנֵֽנוּ בְיוֹם קׇרְאֵֽנוּ.
+**Hebreo:** יהוה הוֹשִֽׁיעָה הַמֶּֽלֶךְ יַעֲנֵֽנוּ בְיוֹם קׇרְאֵֽנוּ.
 
 **Generador:** Ad-nai hoshi'a haMélej ya'anenu veyom korenu.
 
@@ -82,3 +82,7 @@ Texto base: https://he.wikisource.org/wiki/תהלים_כ/ניקוד. El editor c
 - [ ] PDF ArtScroll: cotejo de todo nikud, meteg y shevá na (no visible completo en esta sesión).
 - [ ] GOLDEN fonético revisado de todos los diez versículos.
 - [ ] Prueba de igualdad GOLDEN ↔ generador en todo el capítulo.
+
+## Cotejo confirmado de grafía del Nombre (ArtScroll Schottenstein)
+
+El PDF impreso muestra **יהוה** sin los signos de vocalización que Wikisource aplica en **יְהֹוָה**. En las 5 apariciones del capítulo se conservó la grafía impresa. Se retuvo el nikud del prefijo separado, cuando lo hay (por ejemplo לַיהוה). La pronunciación convencional del generador sigue siendo **Ad-nai**; la falta de nikud en el Nombre no autoriza vocalizarlo automáticamente con Nakdan.
