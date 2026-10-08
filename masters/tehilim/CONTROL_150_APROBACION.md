@@ -123,7 +123,7 @@
 | 117 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 118 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 119 | Pendiente | Pendiente | Pendiente | No iniciado |
-| 120 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
+| 120 | [Hebreo ✓](./approved/120__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
 | 121 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
 | 122 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 123 | Pendiente | Pendiente | Pendiente | No iniciado |
@@ -155,4 +155,4 @@
 | 149 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 150 | Pendiente | Pendiente | Pendiente | No iniciado |
 
-**Avance confirmado en esta tabla:** 2/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
+**Avance confirmado en esta tabla:** 3/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
