@@ -28,7 +28,7 @@
 
 ### 120:5
 
-**Hebreo en cotejo:** אוֹיָה לִי כִּי גַרְתִּי מֶשֶׁךְ שָׁכַנְתִּי עִם אׇהֳלֵי קֵדָר.
+**Hebreo en cotejo:** אֽוֹיָה לִי כִּי גַרְתִּי מֶשֶׁךְ שָׁכַנְתִּי עִם אׇהֳלֵי קֵדָר.
 
 **Salida real del generador:** Oyá li ki garti méshej shajanti 'im oholé kedar.
 
@@ -52,3 +52,7 @@
 - [ ] Meteg y shevá na verificados visualmente, sin confundir ambos.
 - [ ] Fonética GOLDEN aprobada, tildes españolas y mayúsculas reverenciales.
 - [ ] Comparación GOLDEN ↔ generador idéntica y regresiones completas.
+
+## Cotejo adicional 120:5 (PDF Schottenstein, página 6)
+
+En la palabra de apertura אֽוֹיָה, el PDF ArtScroll incorpora una marca U+05BD a continuación de א, visible además en el texto extraído con dicha grafía. Wikisource con solo nikud no la trae; se añadió únicamente esta marca, sin generalizar el criterio a otras palabras. **Sigue pendiente comprobar exhaustivamente las otras apariciones** de meteg y los demás nikud antes de certificar todo el capítulo.
