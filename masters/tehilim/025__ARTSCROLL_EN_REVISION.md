@@ -8,7 +8,7 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 
 ### 25:1 — א
 
-**Hebreo:** לְדָוִד אֵלֶיךָ יְהֹוָה נַפְשִׁי אֶשָּׂא.
+**Hebreo:** לְדָוִד אֵלֶיךָ יהוה נַפְשִׁי אֶשָּׂא.
 
 **Generador actual:** LeDavid eleja Ad-nai nafshí esá.
 
@@ -26,7 +26,7 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 
 ### 25:4 — ד
 
-**Hebreo:** דְּרָכֶיךָ יְהֹוָה הוֹדִיעֵנִי אֹרְחוֹתֶיךָ לַמְּדֵנִי.
+**Hebreo:** דְּרָכֶיךָ יהוה הוֹדִיעֵנִי אֹרְחוֹתֶיךָ לַמְּדֵנִי.
 
 **Generador actual:** Derajeja Ad-nai hodi'eni orjoteja lamedeni.
 
@@ -38,19 +38,19 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 
 ### 25:6 — ו
 
-**Hebreo:** זְכֹר רַחֲמֶיךָ יְהֹוָה וַחֲסָדֶיךָ כִּי מֵעוֹלָם הֵמָּה.
+**Hebreo:** זְכֹר רַחֲמֶיךָ יהוה וַחֲסָדֶיךָ כִּי מֵעוֹלָם הֵמָּה.
 
 **Generador actual:** Zejor rajameja Ad-nai vajasadeja ki me'olam hema.
 
 ### 25:7 — ז
 
-**Hebreo:** חַטֹּאות נְעוּרַי וּפְשָׁעַי אַל תִּזְכֹּר כְּחַסְדְּךָ זְכׇר לִי אַתָּה לְמַעַן טוּבְךָ יְהֹוָה.
+**Hebreo:** חַטֹּאות נְעוּרַי וּפְשָׁעַי אַל תִּזְכֹּר כְּחַסְדְּךָ זְכׇר לִי אַתָּה לְמַעַן טוּבְךָ יהוה.
 
 **Generador actual:** Jatovt ne'urái ufsha'ái al tizkor kejasdejá zejor li atá lema'an tuveja Ad-nai.
 
 ### 25:8 — ח
 
-**Hebreo:** טוֹב וְיָשָׁר יְהֹוָה עַל כֵּן יוֹרֶה חַטָּאִים בַּדָּרֶךְ.
+**Hebreo:** טוֹב וְיָשָׁר יהוה עַל כֵּן יוֹרֶה חַטָּאִים בַּדָּרֶךְ.
 
 **Generador actual:** Tov veyashar Ad-nai 'al ken yoré jataím badárej.
 
@@ -62,19 +62,19 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 
 ### 25:10 — י
 
-**Hebreo:** כׇּל אׇרְחוֹת יְהֹוָה חֶסֶד וֶאֱמֶת לְנֹצְרֵי בְרִיתוֹ וְעֵדֹתָיו.
+**Hebreo:** כׇּל אׇרְחוֹת יהוה חֶסֶד וֶאֱמֶת לְנֹצְרֵי בְרִיתוֹ וְעֵדֹתָיו.
 
 **Generador actual:** Kol orjot Ad-nai jésed veemet lenotsré veritó ve'edotav.
 
 ### 25:11 — יא
 
-**Hebreo:** לְמַעַן שִׁמְךָ יְהֹוָה וְסָלַחְתָּ לַעֲוֺנִי כִּי רַב הוּא.
+**Hebreo:** לְמַעַן שִׁמְךָ יהוה וְסָלַחְתָּ לַעֲוֺנִי כִּי רַב הוּא.
 
 **Generador actual:** Lema'an Shimjá Ad-nai vesalajta la'aoni ki rav Hu.
 
 ### 25:12 — יב
 
-**Hebreo:** מִי זֶה הָאִישׁ יְרֵא יְהֹוָה יוֹרֶנּוּ בְּדֶרֶךְ יִבְחָר.
+**Hebreo:** מִי זֶה הָאִישׁ יְרֵא יהוה יוֹרֶנּוּ בְּדֶרֶךְ יִבְחָר.
 
 **Generador actual:** Mi ze haísh yeré Ad-nai yorenu bedérej yivjar.
 
@@ -86,13 +86,13 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 
 ### 25:14 — יד
 
-**Hebreo:** סוֹד יְהֹוָה לִירֵאָיו וּבְרִיתוֹ לְהוֹדִיעָם.
+**Hebreo:** סוֹד יהוה לִירֵאָיו וּבְרִיתוֹ לְהוֹדִיעָם.
 
 **Generador actual:** Sod Ad-nai lireav uvritó lehodi'am.
 
 ### 25:15 — טו
 
-**Hebreo:** עֵינַי תָּמִיד אֶל יְהֹוָה כִּי הוּא יוֹצִיא מֵרֶשֶׁת רַגְלָי.
+**Hebreo:** עֵינַי תָּמִיד אֶל יהוה כִּי הוּא יוֹצִיא מֵרֶשֶׁת רַגְלָי.
 
 **Generador actual:** 'Enái tamid el Ad-nai ki Hu yotsí meréshet raglái.
 
@@ -145,3 +145,7 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 - [ ] Cotejo visual de meteg por aparición y shevá na según signos auxiliares de ArtScroll.
 - [ ] Fonética GOLDEN humana aprobada.
 - [ ] Comparación automática de fonética final contra el motor y regresiones.
+
+## Hebreo canónico guardado
+
+Este borrador reproduce el mismo hebreo que el archivo maestro de trabajo [`approved/025__HEBREO__ARTSCROLL_APP.txt`](./approved/025__HEBREO__ARTSCROLL_APP.txt). Los resultados del generador son únicamente una ejecución de diagnóstico; **la fonética GOLDEN y la igualdad con ella siguen pendientes**.
