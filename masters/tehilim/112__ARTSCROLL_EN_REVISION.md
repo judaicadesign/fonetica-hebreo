@@ -1,10 +1,10 @@
 # Tehilim 112 — ArtScroll Schottenstein, EN REVISIÓN
 
-**NO APROBADO.** Base digital: https://he.wikisource.org/wiki/תהלים_קיב/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 4–5. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
+**HEBREO APROBADO contra ArtScroll; GOLDEN fonético y generador NO APROBADOS.** Base digital: https://he.wikisource.org/wiki/תהלים_קיב/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 4–5. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
 
 ### 112:1
 
-**Hebreo en cotejo:** הַלְלוּ יָהּ אַשְׁרֵי אִישׁ יָרֵא אֶת יְהֹוָה בְּמִצְוֺתָיו חָפֵץ מְאֹד.
+**Hebreo en cotejo:** הַלְלוּיָהּ אַשְׁרֵי אִישׁ יָרֵא אֶת יהוה בְּמִצְוֺתָיו חָפֵץ מְאֹד.
 
 **Salida real del generador:** HaleluYah ashré ish yaré et Ad-nai bemitsotav jaféts meod.
 
@@ -40,7 +40,7 @@
 
 ### 112:7
 
-**Hebreo en cotejo:** מִשְּׁמוּעָה רָעָה לֹא יִירָא נָכוֹן לִבּוֹ בָּטֻחַ בַּיהֹוָה.
+**Hebreo en cotejo:** מִשְּׁמוּעָה רָעָה לֹא יִירָא נָכוֹן לִבּוֹ בָּטֻחַ בַּיהוה.
 
 **Salida real del generador:** Mishmu'á ra'á lo yirá najón libó batúaj baAd-nai.
 
@@ -77,3 +77,7 @@ Estas marcas `U+05BD` están presentes en la extracción del propio PDF Schotten
 
 - 112:3 (página 5): וָעֹֽשֶׁר — 1 apariciones ajustadas en el borrador.
 - 112:4 (página 5): בַּחֹֽשֶׁךְ — 1 apariciones ajustadas en el borrador.
+
+## Máster hebreo cerrado
+
+Hebreo cotejado y guardado en [`approved/112__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt`](./approved/112__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt). La salida aquí reproducida se calculó del máster, pero NO es GOLDEN aprobado; falta revisar acentuación, shevá na y todas las tildes españolas.
