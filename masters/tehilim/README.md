@@ -31,6 +31,7 @@ Tres puertas obligatorias:
 - ציון: Tsiyón / miTsiyón / umiTsiyón con prefijos minúsculos.
 - 26:2: distinguir ketiv y qere de Wikisource. ArtScroll presenta lectura vocalizada; otros signos pendientes.
 - 27:13: quitar puntos masoréticos extraordinarios de Wikisource en לוּלֵא que no aparecen en ArtScroll.
+- 30:4: quitar el ketiv sin nikud מיורדי adicional que Wikisource intercala; en ArtScroll hay una sola palabra vocalizada en esa posición. El nikud final de la lectura restante sigue pendiente.
 
 Motor de desarrollo corregido en commits eb523534 y 07a69e5b; pruebas internas sin fallos. No está implementada la lectura segura de meteg para todo texto ni el control automático de procedencia de Wikisource / ArtScroll.
 
