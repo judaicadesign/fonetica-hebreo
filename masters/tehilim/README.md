@@ -30,13 +30,16 @@ Tres puertas obligatorias:
 | [130](./130__ARTSCROLL_EN_REVISION.md) | 8 | Pendiente | Pendiente | Salida real registrada |
 | [142](./142__ARTSCROLL_EN_REVISION.md) | 8 | Pendiente | Pendiente | Salida real registrada |
 
-**17 capítulos y 188 versículos importados.** Las 188 salidas del motor coinciden al volver a ejecutarlas. Esto no equivale a aprobación editorial.
+**17 capítulos y 188 versículos importados.** Las 188 salidas del motor coinciden al volver a ejecutarlas. Esto no equivale a aprobación editorial. En el corte del 8/10, además, **90/90 pruebas editoriales pasaron** y **0 regresiones internas**, con la salida modificada de 20:5.
 
 ## Correcciones guardadas
 
 - 24:6: ArtScroll דֹּרְשָׁיו y shevá na → doreshav; se distingue del texto de Wikisource.
 - 20: 12 meteg de grafías aportadas explícitamente por el editor; no inferir los faltantes.
 - 20:4–5: ve'olatejá y 'atsatejá.
+- 20:5: `יִֽתֶּן לְךָ` → **Yiten lejá**, sin tilde en *Yiten*: llana española terminada en -n. Corregidos el motor, el archivo de Tehilim 20 y la prueba editorial.
+- 13:6 y 20:4,7,10: **bishu'ateja, minjoteja, ya'anehu, hoshi'a, ya'anenu** no requieren tilde española sobre la sílaba marcada por meteg cuando quedan llanas terminadas en vocal.
+- 24:1, 3, 7, 9, 10: registradas diferencias puntuales de meteg que sí aparecen en la edición masorética con taamim de Wikisource y no en la captura de ArtScroll. Véase el archivo del Salmo 24.
 - ציון: Tsiyón / miTsiyón / umiTsiyón con prefijos minúsculos.
 - 26:2: distinguir ketiv y qere de Wikisource. ArtScroll presenta lectura vocalizada; otros signos pendientes.
 - 27:13: quitar puntos masoréticos extraordinarios de Wikisource en לוּלֵא que no aparecen en ArtScroll.
