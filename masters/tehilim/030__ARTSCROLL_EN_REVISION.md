@@ -18,25 +18,25 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 30:2 — ב
 
-**Hebreo de trabajo:** אֲרוֹמִמְךָ יְהֹוָה כִּי דִלִּיתָנִי וְלֹא שִׂמַּחְתָּ אֹיְבַי לִי.
+**Hebreo de trabajo:** אֲרוֹמִמְךָ יהוה כִּי דִלִּיתָנִי וְלֹא שִׂמַּחְתָּ אֹיְבַי לִי.
 
 **Salida real del generador:** Aromimjá Ad-nai ki dilitani veló simajta oyvái li.
 
 ### 30:3 — ג
 
-**Hebreo de trabajo:** יְהֹוָה אֱלֹהָי שִׁוַּעְתִּי אֵלֶיךָ וַתִּרְפָּאֵנִי.
+**Hebreo de trabajo:** יהוה אֱלֹהָי שִׁוַּעְתִּי אֵלֶיךָ וַתִּרְפָּאֵנִי.
 
 **Salida real del generador:** Ad-nai Elohái shiva'ti eleja vatirpaeni.
 
 ### 30:4 — ד
 
-**Hebreo de trabajo:** יְהֹוָה הֶעֱלִיתָ מִן שְׁאוֹל נַפְשִׁי חִיִּיתַנִי מִיׇּרְדִי בוֹר.
+**Hebreo de trabajo:** יהוה הֶעֱלִיתָ מִן שְׁאוֹל נַפְשִׁי חִיִּיתַנִי מִיׇּרְדִי בוֹר.
 
 **Salida real del generador:** Ad-nai he'elita min Sheol nafshí jiyitani miyordí vor.
 
 ### 30:5 — ה
 
-**Hebreo de trabajo:** זַמְּרוּ לַיהֹוָה חֲסִידָיו וְהוֹדוּ לְזֵכֶר קׇדְשׁוֹ.
+**Hebreo de trabajo:** זַמְּרוּ לַיהוה חֲסִידָיו וְהוֹדוּ לְזֵכֶר קׇדְשׁוֹ.
 
 **Salida real del generador:** Zamerú laAd-nai jasidav vehodú lezéjer kodshó.
 
@@ -54,13 +54,13 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 30:8 — ח
 
-**Hebreo de trabajo:** יְהֹוָה בִּרְצוֹנְךָ הֶעֱמַדְתָּה לְהַרְרִי עֹז הִסְתַּרְתָּ פָנֶיךָ הָיִיתִי נִבְהָל.
+**Hebreo de trabajo:** יהוה בִּרְצוֹנְךָ הֶעֱמַדְתָּה לְהַרְרִי עֹז הִסְתַּרְתָּ פָנֶיךָ הָיִיתִי נִבְהָל.
 
 **Salida real del generador:** Ad-nai birtsoneja he'emadta leharrí 'oz histarta faneja hayíti nivhal.
 
 ### 30:9 — ט
 
-**Hebreo de trabajo:** אֵלֶיךָ יְהֹוָה אֶקְרָא וְאֶל אֲדֹנָי אֶתְחַנָּן.
+**Hebreo de trabajo:** אֵלֶיךָ יהוה אֶקְרָא וְאֶל אֲדֹנָי אֶתְחַנָּן.
 
 **Salida real del generador:** Eleja Ad-nai ekrá veel Ad-nai etjanán.
 
@@ -72,7 +72,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 30:11 — יא
 
-**Hebreo de trabajo:** שְׁמַע יְהֹוָה וְחׇנֵּנִי יְהֹוָה הֱיֵה עֹזֵר לִי.
+**Hebreo de trabajo:** שְׁמַע יהוה וְחׇנֵּנִי יהוה הֱיֵה עֹזֵר לִי.
 
 **Salida real del generador:** Shemá' Ad-nai vejoneni Ad-nai heyé 'ozer li.
 
@@ -84,7 +84,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 30:13 — יג
 
-**Hebreo de trabajo:** לְמַעַן יְזַמֶּרְךָ כָבוֹד וְלֹא יִדֹּם יְהֹוָה אֱלֹהַי לְעוֹלָם אוֹדֶךָּ.
+**Hebreo de trabajo:** לְמַעַן יְזַמֶּרְךָ כָבוֹד וְלֹא יִדֹּם יהוה אֱלֹהַי לְעוֹלָם אוֹדֶךָּ.
 
 **Salida real del generador:** Lema'an yezamereja javod veló yidom Ad-nai Elohái le'olam odeka.
 
@@ -96,3 +96,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 - [ ] ArtScroll: meteg y rayita de shevá na cotejados en cada aparición.
 - [ ] Fonética GOLDEN aprobada por sílabas, tildes españolas y mayúsculas referenciales.
 - [ ] Salida del generador idéntica al GOLDEN; regresión sin roturas.
+
+## Hebreo canónico guardado
+
+[Texto maestro ArtScroll app del salmo 30](./approved/030__HEBREO__ARTSCROLL_APP.txt). La salida fonética es todavía diagnóstico, no GOLDEN aprobado.
