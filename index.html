@@ -1575,9 +1575,22 @@ function normalizeHaleluYah(text){
     (whole,a,sep,b)=>norm(a.replace(/\uFB1E/g,""))===norm("הַלְלוּ") &&
       norm(b.replace(/\uFB1E/g,""))===norm("יָהּ") ? "הַלְלוּיָהּ" : whole);
 }
+/* ArtScroll Tehilim: user checked these five occurrences on 2026-10-07.
+   Context anchors keep other occurrences pending; meteg from other sources is not used. */
+function verifiedTehilimOctober7(token,prev,next){
+  const k=norm(token),p=bareLetters(prev||""),n=bareLetters(next||"");
+  if(k===norm("בְּצִדְקָתְךָ") && p==="לעולם" && n==="פלטני") return "betsidkatejá"; // 31:2
+  if(k===norm("צִדְקָתְךָ") && n==="כהררי") return "tsidkatejá"; // 36:7
+  if(k===norm("יֹאבֵדוּ") && p==="רשעים" && n==="ואיבי") return "yovedu"; // 37:20
+  if(k===norm("יְמִינְךָ") && p==="כי" && n==="וזרועך") return "Yeminejá"; // 44:4
+  if(k===norm("הָרִיעוּ") && p==="כף" && n==="לאלהים") return "harí'u"; // 47:2
+  return null;
+}
 function phoneWord(token,prev,stop,next){
   token=norm(token);
   if(/^ו\u05B0$/.test(token)) return stop?"Ve":"ve";
+  const checkedTehilim=verifiedTehilimOctober7(token,prev,next);
+  if(checkedTehilim!==null) return stop?capitalizeFirst(checkedTehilim):checkedTehilim;
   const alt=token.replace(/כָ(?=ל(?![\u05B0-\u05C7]))/,"כָּ");
   const k=token, ck=(prev?norm(prev):"")+"|"+k+(stop?"|1":"");
 

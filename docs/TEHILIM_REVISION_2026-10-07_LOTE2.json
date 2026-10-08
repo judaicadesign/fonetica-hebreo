@@ -1,0 +1,41 @@
+{
+  "source": "Revisión visual del usuario en ArtScroll; capturas aún no recibidas",
+  "scope": "Solo apariciones indicadas, delimitadas por contexto. Otras repeticiones siguen pendientes.",
+  "decisions": [
+    {
+      "hebrew": "בְּצִדְקָתְךָ",
+      "ref": "31:2",
+      "phonetic": "betsidkatejá",
+      "meteg_letter": null,
+      "status": "implementado-por-contexto"
+    },
+    {
+      "hebrew": "צִדְקָתְךָ",
+      "ref": "36:7",
+      "phonetic": "tsidkatejá",
+      "meteg_letter": null,
+      "status": "implementado-por-contexto"
+    },
+    {
+      "hebrew": "יֹאבֵדוּ",
+      "ref": "37:20",
+      "phonetic": "yovedu",
+      "meteg_letter": "ב",
+      "status": "implementado-por-contexto"
+    },
+    {
+      "hebrew": "יְמִינְךָ",
+      "ref": "44:4",
+      "phonetic": "Yeminejá",
+      "meteg_letter": null,
+      "status": "implementado-por-contexto"
+    },
+    {
+      "hebrew": "הָרִיעוּ",
+      "ref": "47:2",
+      "phonetic": "harí'u",
+      "meteg_letter": "ר",
+      "status": "implementado-por-contexto"
+    }
+  ]
+}

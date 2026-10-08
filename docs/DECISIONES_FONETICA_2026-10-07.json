@@ -131,32 +131,47 @@
     {
       "hebrew": "בְּצִדְקָתְךָ",
       "ref": "31:2",
-      "status": "pendiente-revision-ArtScroll",
-      "phonetic": null
+      "status": "implementado-por-contexto-main-y-desarrollo",
+      "phonetic": "betsidkatejá",
+      "meteg_letter": null,
+      "source": "Revisión visual usuario ArtScroll 2026-10-07",
+      "scope": "Solo contexto de este pasuk; otras repeticiones pendientes"
     },
     {
       "hebrew": "צִדְקָתְךָ",
       "ref": "36:7",
-      "status": "pendiente-revision-ArtScroll",
-      "phonetic": null
+      "status": "implementado-por-contexto-main-y-desarrollo",
+      "phonetic": "tsidkatejá",
+      "meteg_letter": null,
+      "source": "Revisión visual usuario ArtScroll 2026-10-07",
+      "scope": "Solo contexto de este pasuk; otras repeticiones pendientes"
     },
     {
       "hebrew": "יֹאבֵדוּ",
       "ref": "37:20",
-      "status": "pendiente-revision-ArtScroll",
-      "phonetic": null
+      "status": "implementado-por-contexto-main-y-desarrollo",
+      "phonetic": "yovedu",
+      "meteg_letter": "ב",
+      "source": "Revisión visual usuario ArtScroll 2026-10-07",
+      "scope": "Solo contexto de este pasuk; otras repeticiones pendientes"
     },
     {
       "hebrew": "יְמִינְךָ",
       "ref": "44:4",
-      "status": "pendiente-revision-ArtScroll",
-      "phonetic": null
+      "status": "implementado-por-contexto-main-y-desarrollo",
+      "phonetic": "Yeminejá",
+      "meteg_letter": null,
+      "source": "Revisión visual usuario ArtScroll 2026-10-07",
+      "scope": "Solo contexto de este pasuk; otras repeticiones pendientes"
     },
     {
       "hebrew": "הָרִיעוּ",
       "ref": "47:2",
-      "status": "pendiente-revision-ArtScroll",
-      "phonetic": null
+      "status": "implementado-por-contexto-main-y-desarrollo",
+      "phonetic": "harí'u",
+      "meteg_letter": "ר",
+      "source": "Revisión visual usuario ArtScroll 2026-10-07",
+      "scope": "Solo contexto de este pasuk; otras repeticiones pendientes"
     },
     {
       "hebrew": "חָסַר",
