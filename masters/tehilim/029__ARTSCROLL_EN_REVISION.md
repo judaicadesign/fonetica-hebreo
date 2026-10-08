@@ -10,31 +10,31 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 29:1 — א
 
-**Hebreo de trabajo:** מִזְמוֹר לְדָוִד הָבוּ לַיהֹוָה בְּנֵי אֵלִים הָבוּ לַיהֹוָה כָּבוֹד וָעֹז.
+**Hebreo de trabajo:** מִזְמוֹר לְדָוִד הָבוּ לַיהוה בְּנֵי אֵלִים הָבוּ לַיהוה כָּבוֹד וָעֹז.
 
 **Salida real del generador:** Mizmor leDavid havú laAd-nai bené elim havú laAd-nai kavod va'oz.
 
 ### 29:2 — ב
 
-**Hebreo de trabajo:** הָבוּ לַיהֹוָה כְּבוֹד שְׁמוֹ הִשְׁתַּחֲווּ לַיהֹוָה בְּהַדְרַת קֹדֶשׁ.
+**Hebreo de trabajo:** הָבוּ לַיהוה כְּבוֹד שְׁמוֹ הִשְׁתַּחֲווּ לַיהוה בְּהַדְרַת קֹדֶשׁ.
 
 **Salida real del generador:** Havú laAd-nai kevod shemó hishtajavu laAd-nai behadrat kódesh.
 
 ### 29:3 — ג
 
-**Hebreo de trabajo:** קוֹל יְהֹוָה עַל הַמָּיִם אֵל הַכָּבוֹד הִרְעִים יְהֹוָה עַל מַיִם רַבִּים.
+**Hebreo de trabajo:** קוֹל יהוה עַל הַמָּיִם אֵל הַכָּבוֹד הִרְעִים יהוה עַל מַיִם רַבִּים.
 
 **Salida real del generador:** Kol Ad-nai 'al hamáyim El hakavod hir'im Ad-nai 'al máyim rabim.
 
 ### 29:4 — ד
 
-**Hebreo de trabajo:** קוֹל יְהֹוָה בַּכֹּחַ קוֹל יְהֹוָה בֶּהָדָר.
+**Hebreo de trabajo:** קוֹל יהוה בַּכֹּחַ קוֹל יהוה בֶּהָדָר.
 
 **Salida real del generador:** Kol Ad-nai bakóaj kol Ad-nai behadar.
 
 ### 29:5 — ה
 
-**Hebreo de trabajo:** קוֹל יְהֹוָה שֹׁבֵר אֲרָזִים וַיְשַׁבֵּר יְהֹוָה אֶת אַרְזֵי הַלְּבָנוֹן.
+**Hebreo de trabajo:** קוֹל יהוה שֹׁבֵר אֲרָזִים וַיְשַׁבֵּר יהוה אֶת אַרְזֵי הַלְּבָנוֹן.
 
 **Salida real del generador:** Kol Ad-nai shover arazim vaishaber Ad-nai et arzé halevanón.
 
@@ -46,31 +46,31 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 29:7 — ז
 
-**Hebreo de trabajo:** קוֹל יְהֹוָה חֹצֵב לַהֲבוֹת אֵשׁ.
+**Hebreo de trabajo:** קוֹל יהוה חֹצֵב לַהֲבוֹת אֵשׁ.
 
 **Salida real del generador:** Kol Ad-nai jotsev lahavot esh.
 
 ### 29:8 — ח
 
-**Hebreo de trabajo:** קוֹל יְהֹוָה יָחִיל מִדְבָּר יָחִיל יְהֹוָה מִדְבַּר קָדֵשׁ.
+**Hebreo de trabajo:** קוֹל יהוה יָחִיל מִדְבָּר יָחִיל יהוה מִדְבַּר קָדֵשׁ.
 
 **Salida real del generador:** Kol Ad-nai yajil midbar yajil Ad-nai midbar kadesh.
 
 ### 29:9 — ט
 
-**Hebreo de trabajo:** קוֹל יְהֹוָה יְחוֹלֵל אַיָּלוֹת וַיֶּחֱשֹׂף יְעָרוֹת וּבְהֵיכָלוֹ כֻּלּוֹ אֹמֵר כָּבוֹד.
+**Hebreo de trabajo:** קוֹל יהוה יְחוֹלֵל אַיָּלוֹת וַיֶּחֱשֹׂף יְעָרוֹת וּבְהֵיכָלוֹ כֻּלּוֹ אֹמֵר כָּבוֹד.
 
 **Salida real del generador:** Kol Ad-nai yejolel ayalot vayejesof ye'arot uvhekaló kuló omer kavod.
 
 ### 29:10 — י
 
-**Hebreo de trabajo:** יְהֹוָה לַמַּבּוּל יָשָׁב וַיֵּשֶׁב יְהֹוָה מֶלֶךְ לְעוֹלָם.
+**Hebreo de trabajo:** יהוה לַמַּבּוּל יָשָׁב וַיֵּשֶׁב יהוה מֶלֶךְ לְעוֹלָם.
 
 **Salida real del generador:** Ad-nai lamabul yashav vayéshev Ad-nai Mélej le'olam.
 
 ### 29:11 — יא
 
-**Hebreo de trabajo:** יְהֹוָה עֹז לְעַמּוֹ יִתֵּן יְהֹוָה יְבָרֵךְ אֶת עַמּוֹ בַשָּׁלוֹם.
+**Hebreo de trabajo:** יהוה עֹז לְעַמּוֹ יִתֵּן יהוה יְבָרֵךְ אֶת עַמּוֹ בַשָּׁלוֹם.
 
 **Salida real del generador:** Ad-nai 'oz le'amó yitén Ad-nai yevarej et 'Amó vashalom.
 
@@ -82,3 +82,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 - [ ] ArtScroll: meteg y rayita de shevá na cotejados en cada aparición.
 - [ ] Fonética GOLDEN aprobada por sílabas, tildes españolas y mayúsculas referenciales.
 - [ ] Salida del generador idéntica al GOLDEN; regresión sin roturas.
+
+## Hebreo canónico guardado
+
+Este borrador reproduce el mismo hebreo que el archivo maestro de trabajo [`approved/029__HEBREO__ARTSCROLL_APP.txt`](./approved/029__HEBREO__ARTSCROLL_APP.txt). Los resultados del generador son únicamente una ejecución de diagnóstico; **la fonética GOLDEN y la igualdad con ella siguen pendientes**.
