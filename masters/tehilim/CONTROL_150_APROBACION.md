@@ -124,7 +124,7 @@
 | 118 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 119 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 120 | [Hebreo ✓](./approved/120__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
-| 121 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
+| 121 | [Hebreo ✓](./approved/121__HEBREO__ARTSCROLL_SEIF.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
 | 122 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 123 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 124 | Pendiente | Pendiente | Pendiente | No iniciado |
@@ -145,7 +145,7 @@
 | 139 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 140 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 141 | Pendiente | Pendiente | Pendiente | No iniciado |
-| 142 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
+| 142 | [Hebreo ✓](./approved/142__HEBREO__ARTSCROLL_SEIF.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
 | 143 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 144 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 145 | Pendiente | Pendiente | Pendiente | No iniciado |
@@ -155,4 +155,4 @@
 | 149 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 150 | Pendiente | Pendiente | Pendiente | No iniciado |
 
-**Avance confirmado en esta tabla:** 8/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
+**Avance confirmado en esta tabla:** 10/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
