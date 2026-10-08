@@ -1,6 +1,6 @@
 # Tehilim 91 — ArtScroll Schottenstein, EN REVISIÓN
 
-**NO APROBADO.** Base digital: https://he.wikisource.org/wiki/תהלים_צא/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 3–4. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
+**HEBREO APROBADO contra ArtScroll; GOLDEN fonético y generador NO APROBADOS.** Base digital: https://he.wikisource.org/wiki/תהלים_צא/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 3–4. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
 
 ### 91:1
 
@@ -10,7 +10,7 @@
 
 ### 91:2
 
-**Hebreo en cotejo:** אֹמַר לַיהֹוָה מַחְסִי וּמְצוּדָתִי אֱלֹהַי אֶבְטַח בּוֹ.
+**Hebreo en cotejo:** אֹמַר לַיהוה מַחְסִי וּמְצוּדָתִי אֱלֹהַי אֶבְטַח בּוֹ.
 
 **Salida real del generador:** Omar laAd-nai majsí umetsudatí Elohái evtaj bo.
 
@@ -52,7 +52,7 @@
 
 ### 91:9
 
-**Hebreo en cotejo:** כִּי אַתָּה יְהֹוָה מַחְסִי עֶלְיוֹן שַׂמְתָּ מְעוֹנֶךָ.
+**Hebreo en cotejo:** כִּי אַתָּה יהוה מַחְסִי עֶלְיוֹן שַׂמְתָּ מְעוֹנֶךָ.
 
 **Salida real del generador:** Ki Atá Ad-nai majsí 'elyón samta me'oneja.
 
@@ -114,3 +114,7 @@ Estas marcas `U+05BD` están presentes en la extracción del propio PDF Schotten
 - 91:6 (página 3): בָּאֹֽפֶל — 1 apariciones ajustadas en el borrador.
 - 91:12 (página 4): יִשָּׂאֽוּנְךָ — 1 apariciones ajustadas en el borrador.
 - 91:16 (página 4): אֹֽרֶךְ — 1 apariciones ajustadas en el borrador.
+
+## Máster hebreo cerrado
+
+Hebreo cotejado y guardado en [`approved/091__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt`](./approved/091__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt). La salida aquí reproducida se calculó del máster, pero NO es GOLDEN aprobado; falta revisar acentuación, shevá na y todas las tildes españolas.
