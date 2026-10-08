@@ -1,6 +1,6 @@
 # Control editorial Tehilim — ArtScroll
 
-**Estado general: EN REVISIÓN. NINGÚN CAPÍTULO DE ESTA TANDA ESTÁ APROBADO PARA IMPRENTA.**
+**Estado general: 1/150 APROBADO (Salmo 13); otros 16 capítulos importados, pendientes de cierre editorial de fonética y/o signos ArtScroll.**
 
 Tres puertas obligatorias:
 
@@ -32,13 +32,13 @@ Tres puertas obligatorias:
 | 130 | 8 | ArtScroll SCHOTTENSTEIN | [Abrir](./approved/130__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) |
 | 142 | 8 | ArtScroll SEIF | [Abrir](./approved/142__HEBREO__ARTSCROLL_SEIF.txt) |
 
-**Puerta final:** no tachar ningún salmo en [CONTROL_150_APROBACION.md](./CONTROL_150_APROBACION.md) hasta que existan fonética GOLDEN íntegra y generador igualado, además del cotejo final de los signos pequeños de ArtScroll.
+**Puerta final:** Solo Salmo 13 tachado en [CONTROL_150_APROBACION.md](./CONTROL_150_APROBACION.md), con [hebreo](./approved/013__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt), [fonética](./approved/013__FONETICA__GOLDEN.txt) y [auditoría](./approved/013__AUDITORIA.md) guardados. Los demás salmos NO están aprobados.
 
 ## Capítulos importados — borradores, no aprobados
 
 | Capítulo | Versículos | Hebreo ArtScroll | GOLDEN fonética | Prueba del motor |
 |---|---:|---|---|---|
-| [13](./013__ARTSCROLL_EN_REVISION.md) | 6 | Pendiente | Pendiente | Salida real registrada |
+| [13](./approved/013__AUDITORIA.md) | 6 | **APROBADO** | **APROBADO** | **6/6 OK** |
 | [20](./020__ARTSCROLL_EN_REVISION.md) | 10 | Pendiente | Pendiente | Salida real registrada |
 | [24](./024__ARTSCROLL_EN_REVISION.md) | 10 | Pendiente | Pendiente | Salida real registrada |
 | [25](./025__ARTSCROLL_EN_REVISION.md) | 22 | Pendiente | Pendiente | Salida real registrada |
@@ -60,10 +60,10 @@ Tres puertas obligatorias:
 
 ## Hebreo máster ArtScroll — primeras entregas
 
-- [Salmo 13 — hebreo Schottenstein p. 1](./approved/013__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt): 6 pesukim, 3 meteg, Nombre divino sin nikud; commit `83707c8`.
+- [Salmo 13 — hebreo Schottenstein p. 1](./approved/013__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt): **APROBADO 6/6**: tres meteg, Nombre divino sin nikud, [GOLDEN fonético](./approved/013__FONETICA__GOLDEN.txt) y regresiones de capítulo completo en `index.html`.
 - [Salmo 20 — hebreo Schottenstein pp. 1–2](./approved/020__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt): 10 pesukim, 12 meteg y grafía `מִנְחֹתֶֽיךָ`; commit `872270d`.
 - Los otros capítulos siguen en cotejo visual, no se elevan a `approved/` por tener solo la extracción digital o una parte de los meteg.
-- [Control de 150 salmos](./CONTROL_150_APROBACION.md): sin tachar 13 ni 20, hasta que tengan GOLDEN fonético completo y prueba idéntica del generador.
+- [Control de 150 salmos](./CONTROL_150_APROBACION.md): **13 tachado**; 20 y los otros permanecen sin tachar hasta tener GOLDEN fonético aprobado y prueba idéntica del generador.
 
 ## Hallazgos adicionales de meteg en la impresión (no implican aprobación)
 
@@ -90,9 +90,9 @@ Motor de desarrollo corregido en commits eb523534 y 07a69e5b; pruebas internas s
 
 ## Otros salmos y etapas pendientes
 
-Los 10 salmos que aparecen en los dos PDFs ArtScroll ya tienen borradores: 13, 20, 83, 91, 112, 120, 121, 127, 130 y 142. Los salmos 24–30 proceden de capturas de la aplicación ArtScroll. Siguen faltando de otros trabajos 23, 126, 137. Las páginas son legibles; el cotejo completo palabra por palabra y el GOLDEN siguen pendientes.
+Los 10 salmos que aparecen en los dos PDFs ArtScroll ya tienen textos: 13, 20, 83, 91, 112, 120, 121, 127, 130 y 142. Los salmos 24–30 proceden de capturas de la aplicación ArtScroll. Siguen faltando de otros trabajos 23, 126, 137. Las páginas son legibles; el cotejo completo palabra por palabra y el GOLDEN siguen pendientes.
 
-**NO-GO:** no publicar estos borradores como master aprobado, ni promover a main, ni usar en impresión hasta completar y certificar las tres puertas.
+**NO-GO:** no publicar los 16 borradores restantes como master aprobado, ni promover a main ni usarlos para impresión hasta completar y certificar las tres puertas. El único salmo que ya cumple las tres en esta tanda es 13.
 
 ## Inventario de ediciones y criterio meteg
 
