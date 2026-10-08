@@ -1,10 +1,10 @@
 # Tehilim 127 — ArtScroll Schottenstein, EN REVISIÓN
 
-**NO APROBADO.** Base digital: https://he.wikisource.org/wiki/תהלים_קכז/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 6–7. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
+**HEBREO APROBADO contra ArtScroll; GOLDEN fonético y generador NO APROBADOS.** Base digital: https://he.wikisource.org/wiki/תהלים_קכז/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 6–7. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
 
 ### 127:1
 
-**Hebreo en cotejo:** שִׁיר הַמַּעֲלוֹת לִשְׁלֹמֹה אִם יְהֹוָה לֹא יִבְנֶה בַיִת שָׁוְא עָמְלוּ בוֹנָיו בּוֹ אִם יְהֹוָה לֹא יִשְׁמׇר עִיר שָׁוְא שָׁקַד שׁוֹמֵר.
+**Hebreo en cotejo:** שִׁיר הַמַּעֲלוֹת לִשְׁלֹמֹה אִם יהוה לֹא יִבְנֶה בַיִת שָׁוְא עָמְלוּ בוֹנָיו בּוֹ אִם יהוה לֹא יִשְׁמׇר עִיר שָׁוְא שָׁקַד שׁוֹמֵר.
 
 **Salida real del generador:** Shir hama'alot lishlomó im Ad-nai lo yivné vayit shav 'amlú vonav bo im Ad-nai lo yishmor 'ir shav shakad shomer.
 
@@ -16,7 +16,7 @@
 
 ### 127:3
 
-**Hebreo en cotejo:** הִנֵּה נַחֲלַת יְהֹוָה בָּנִים שָׂכָר פְּרִי הַבָּטֶן.
+**Hebreo en cotejo:** הִנֵּה נַחֲלַת יהוה בָּנִים שָׂכָר פְּרִי הַבָּטֶן.
 
 **Salida real del generador:** Hiné najalat Ad-nai banim sajar perí habaten.
 
@@ -46,3 +46,7 @@
 Estas marcas `U+05BD` están presentes en la extracción del propio PDF Schottenstein y se corroboraron con su página impresa. **No representan una auditoría total de meteg de este salmo.**
 
 - 127:5 (página 7): יֵבֹֽשׁוּ — 1 apariciones ajustadas en el borrador.
+
+## Máster hebreo cerrado
+
+Hebreo cotejado y guardado en [`approved/127__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt`](./approved/127__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt). La salida aquí reproducida se calculó del máster, pero NO es GOLDEN aprobado; falta revisar acentuación, shevá na y todas las tildes españolas.
