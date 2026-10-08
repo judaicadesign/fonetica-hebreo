@@ -27,7 +27,7 @@
 | 21 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 22 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 23 | Pendiente | Pendiente | Pendiente | No iniciado |
-| 24 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
+| 24 | [Hebreo ✓](./approved/024__HEBREO__ARTSCROLL_APP.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
 | 25 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
 | 26 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
 | 27 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
@@ -155,4 +155,4 @@
 | 149 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 150 | Pendiente | Pendiente | Pendiente | No iniciado |
 
-**Avance confirmado en esta tabla:** 7/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
+**Avance confirmado en esta tabla:** 8/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
