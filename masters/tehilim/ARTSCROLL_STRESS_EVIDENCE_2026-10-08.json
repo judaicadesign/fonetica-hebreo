@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "status": "editor_provided_pending_comprehensive_visual_audit",
+  "date": "2026-10-08",
+  "sourceEdition": "Schottenstein Edition Tehillim Simchas Yehoshua",
+  "description": "Anclas individuales de meteg proporcionadas por el editor en citas de ArtScroll. NO representan todos los meteg de los capítulos; no autorizan aprendizaje automático global ni marca de approved.",
+  "rows": [
+    {
+      "psalm": 13,
+      "verse": 6,
+      "pdfPage": 1,
+      "words": [
+        {
+          "hebrew": "בָטַֽחְתִּי",
+          "metegUnicodeOffset": 4,
+          "editorStatus": "in_review"
+        },
+        {
+          "hebrew": "בִּישׁוּעָתֶֽךָ",
+          "metegUnicodeOffset": 12,
+          "editorStatus": "in_review"
+        },
+        {
+          "hebrew": "אָשִֽׁירָה",
+          "metegUnicodeOffset": 4,
+          "editorStatus": "in_review"
+        }
+      ],
+      "source": "editor_copy_of_ArtScroll",
+      "visualCheck": "pending_per_mark_review_in_pdf"
+    },
+    {
+      "psalm": 20,
+      "verse": 3,
+      "pdfPage": 2,
+      "words": [
+        {
+          "hebrew": "מִקֹּֽדֶשׁ",
+          "metegUnicodeOffset": 5,
+          "editorStatus": "in_review"
+        },
+        {
+          "hebrew": "יִסְעָדֶֽךָּ",
+          "metegUnicodeOffset": 8,
+          "editorStatus": "in_review"
+        }
+      ],
+      "source": "editor_copy_of_ArtScroll",
+      "visualCheck": "pending_per_mark_review_in_pdf"
+    },
+    {
+      "psalm": 20,
+      "verse": 4,
+      "pdfPage": 2,
+      "words": [
+        {
+          "hebrew": "מִנְחֹתֶֽךָ",
+          "metegUnicodeOffset": 8,
+          "editorStatus": "in_review"
+        },
+        {
+          "hebrew": "סֶֽלָה",
+          "metegUnicodeOffset": 2,
+          "editorStatus": "in_review"
+        }
+      ],
+      "source": "editor_copy_of_ArtScroll",
+      "visualCheck": "pending_per_mark_review_in_pdf"
+    },
+    {
+      "psalm": 20,
+      "verse": 5,
+      "pdfPage": 2,
+      "words": [
+        {
+          "hebrew": "יִֽתֶּן",
+          "metegUnicodeOffset": 2,
+          "editorStatus": "in_review"
+        },
+        {
+          "hebrew": "כִלְבָבֶֽךָ",
+          "metegUnicodeOffset": 8,
+          "editorStatus": "in_review"
+        }
+      ],
+      "source": "editor_copy_of_ArtScroll",
+      "visualCheck": "pending_per_mark_review_in_pdf"
+    },
+    {
+      "psalm": 20,
+      "verse": 7,
+      "pdfPage": 2,
+      "words": [
+        {
+          "hebrew": "יַעֲנֵֽהוּ",
+          "metegUnicodeOffset": 6,
+          "editorStatus": "in_review"
+        },
+        {
+          "hebrew": "יֵֽשַׁע",
+          "metegUnicodeOffset": 2,
+          "editorStatus": "in_review"
+        }
+      ],
+      "source": "editor_copy_of_ArtScroll",
+      "visualCheck": "pending_per_mark_review_in_pdf"
+    },
+    {
+      "psalm": 20,
+      "verse": 10,
+      "pdfPage": 2,
+      "words": [
+        {
+          "hebrew": "הוֹשִֽׁיעָה",
+          "metegUnicodeOffset": 5,
+          "editorStatus": "in_review"
+        },
+        {
+          "hebrew": "הַמֶּֽלֶךְ",
+          "metegUnicodeOffset": 5,
+          "editorStatus": "in_review"
+        },
+        {
+          "hebrew": "יַעֲנֵֽנוּ",
+          "metegUnicodeOffset": 6,
+          "editorStatus": "in_review"
+        },
+        {
+          "hebrew": "קׇרְאֵֽנוּ",
+          "metegUnicodeOffset": 6,
+          "editorStatus": "in_review"
+        }
+      ],
+      "source": "editor_copy_of_ArtScroll",
+      "visualCheck": "pending_per_mark_review_in_pdf"
+    }
+  ],
+  "control": {
+    "rawPastedMetegHasNoAccentAuthority": true,
+    "externalWikisourceMetegIsNeverArtScrollEvidence": true,
+    "artscrollEditionMustBeNamed": true,
+    "shevaMarkIsSeparate": true
+  },
+  "next": "Cotejar contra página exacta y registrar sílaba tónica y salida GOLDEN aprobada para cada palabra por aparición."
+}
