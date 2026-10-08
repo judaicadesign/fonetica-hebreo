@@ -12,17 +12,25 @@ Tres puertas obligatorias:
 
 | Capítulo | Versículos | Hebreo ArtScroll | GOLDEN fonética | Prueba del motor |
 |---|---:|---|---|---|
-| [13](./013__ARTSCROLL_EN_REVISION.md) | 6 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
-| [20](./020__ARTSCROLL_EN_REVISION.md) | 10 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
-| [24](./024__ARTSCROLL_EN_REVISION.md) | 10 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
-| [25](./025__ARTSCROLL_EN_REVISION.md) | 22 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
-| [26](./026__ARTSCROLL_EN_REVISION.md) | 12 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
-| [27](./027__ARTSCROLL_EN_REVISION.md) | 14 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
-| [28](./028__ARTSCROLL_EN_REVISION.md) | 9 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
-| [29](./029__ARTSCROLL_EN_REVISION.md) | 11 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
-| [30](./030__ARTSCROLL_EN_REVISION.md) | 13 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
+| [13](./013__ARTSCROLL_EN_REVISION.md) | 6 | Pendiente | Pendiente | Salida real registrada |
+| [20](./020__ARTSCROLL_EN_REVISION.md) | 10 | Pendiente | Pendiente | Salida real registrada |
+| [24](./024__ARTSCROLL_EN_REVISION.md) | 10 | Pendiente | Pendiente | Salida real registrada |
+| [25](./025__ARTSCROLL_EN_REVISION.md) | 22 | Pendiente | Pendiente | Salida real registrada |
+| [26](./026__ARTSCROLL_EN_REVISION.md) | 12 | Pendiente | Pendiente | Salida real registrada |
+| [27](./027__ARTSCROLL_EN_REVISION.md) | 14 | Pendiente | Pendiente | Salida real registrada |
+| [28](./028__ARTSCROLL_EN_REVISION.md) | 9 | Pendiente | Pendiente | Salida real registrada |
+| [29](./029__ARTSCROLL_EN_REVISION.md) | 11 | Pendiente | Pendiente | Salida real registrada |
+| [30](./030__ARTSCROLL_EN_REVISION.md) | 13 | Pendiente | Pendiente | Salida real registrada |
+| [83](./083__ARTSCROLL_EN_REVISION.md) | 19 | Pendiente | Pendiente | Salida real registrada |
+| [91](./091__ARTSCROLL_EN_REVISION.md) | 16 | Pendiente | Pendiente | Salida real registrada |
+| [112](./112__ARTSCROLL_EN_REVISION.md) | 10 | Pendiente | Pendiente | Salida real registrada |
+| [120](./120__ARTSCROLL_EN_REVISION.md) | 7 | Pendiente | Pendiente | Salida real registrada |
+| [121](./121__ARTSCROLL_EN_REVISION.md) | 8 | Pendiente | Pendiente | Salida real registrada |
+| [127](./127__ARTSCROLL_EN_REVISION.md) | 5 | Pendiente | Pendiente | Salida real registrada |
+| [130](./130__ARTSCROLL_EN_REVISION.md) | 8 | Pendiente | Pendiente | Salida real registrada |
+| [142](./142__ARTSCROLL_EN_REVISION.md) | 8 | Pendiente | Pendiente | Salida real registrada |
 
-**Total de versículos en borrador: 107.**
+**17 capítulos y 188 versículos importados.** Las 188 salidas del motor coinciden al volver a ejecutarlas. Esto no equivale a aprobación editorial.
 
 ## Correcciones guardadas
 
@@ -36,12 +44,16 @@ Tres puertas obligatorias:
 
 Motor de desarrollo corregido en commits eb523534 y 07a69e5b; pruebas internas sin fallos. No está implementada la lectura segura de meteg para todo texto ni el control automático de procedencia de Wikisource / ArtScroll.
 
-## Otros salmos pendientes de completar
+## Otros salmos y etapas pendientes
 
-23, 83, 91, 112, 120, 121, 126, 127, 130, 137, 142 y otros mencionados durante la auditoría. Los dos PDFs fueron adjuntados nuevamente el 8/10/2026 y sus 22 páginas se pudieron abrir como imágenes legibles. El PDF Schottenstein contiene 13, 20, 91, 112, 120, 127, 130; el PDF Seif transliterado contiene 20, 83, 121, 130, 142. Los salmos 24–30 proceden de capturas de una app ArtScroll y son fuente visual separada. Hay que cotejar todas sus palabras, vocales, meteg y marcas de shevá na: que el archivo sea legible NO implica aprobación.
+Los 10 salmos que aparecen en los dos PDFs ArtScroll ya tienen borradores: 13, 20, 83, 91, 112, 120, 121, 127, 130 y 142. Los salmos 24–30 proceden de capturas de la aplicación ArtScroll. Siguen faltando de otros trabajos 23, 126, 137. Las páginas son legibles; el cotejo completo palabra por palabra y el GOLDEN siguen pendientes.
 
 **NO-GO:** no publicar estos borradores como master aprobado, ni promover a main, ni usar en impresión hasta completar y certificar las tres puertas.
 
 ## Inventario de ediciones y criterio meteg
 
 [Manifest de PDFs ArtScroll, páginas y control de procedencia](./ARTSCROLL_SOURCE_MANIFEST_2026-10-08.json). Schottenstein es autoridad editorial primaria para los salmos que incluye; Seif es fuente secundaria de pronunciación/transliteración y única edición de los salmos que no están en Schottenstein. El motor común IGNORA el meteg externo; no inferir acentos desde Unicode U+05BD importado. El aprendizaje inverso a partir de ArtScroll exige pares auditados por palabra y aparición; nunca sustituir el control editorial por meteg de Wikisource.
+
+## Control reproducido de esta tanda
+
+17 archivos, 188 versículos; 188/188 salidas guardadas idénticas a ejecución del generador de desarrollo; 0 fallos en regresiones internas. La prueba solo certifica consistencia del volcado, no ArtScroll ni GOLDEN. 15 casos de meteg externo no alteran la fonética de modo normal.
