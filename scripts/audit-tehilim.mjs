@@ -8,13 +8,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {extractEngine} from './extract-engine.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const sourceURL='https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/Ps.xml';
 const xml=process.argv[2]?fs.readFileSync(process.argv[2],'utf8'):
   await (async()=>{const r=await fetch(sourceURL);if(!r.ok)throw Error('OSHB HTTP '+r.status);return r.text()})();
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-const b=html.lastIndexOf('<script>'),e=html.lastIndexOf('</script>');
-if(b<0||e<=b)throw Error('Application script missing');
 const setup=[
  "const _els=new Map();",
  "function node(){return {className:'',textContent:'',type:'',dataset:{},children:[],appendChild(x){this.children.push(x)},replaceChildren(){this.children=[]},addEventListener(){}}}",
@@ -24,7 +23,7 @@ const setup=[
  "const navigator={clipboard:{writeText:async()=>{},readText:async()=>''}};",
  "const requestAnimationFrame=f=>f();"
 ].join('\n');
-const engine=new Function(setup+html.slice(b+8,e)+';return {wordOutput,runRegressionTests,runNakdanMergeRegressionTests};')();
+const engine=new Function(setup+extractEngine(html)+';return {wordOutput,runRegressionTests,runNakdanMergeRegressionTests};')();
 const regressions=[...engine.runRegressionTests(),...engine.runNakdanMergeRegressionTests()];
 const verses=[...xml.matchAll(/<verse osisID="Ps\.(\d+)\.(\d+)">([\s\S]*?)<\/verse>/g)];
 const chapters=new Set(),audits=[],flags={};

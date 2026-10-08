@@ -1,10 +1,11 @@
 import fs from 'node:fs';
 import vm from 'node:vm';
+import {extractEngine} from '../scripts/extract-engine.mjs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
-const source=html.slice(html.lastIndexOf('<script>')+8,html.lastIndexOf('</script>'));
+const source=extractEngine(html);
 const stub=`const document={getElementById(){return {value:'rabbinic',addEventListener(){},focus(){},select(){}}},createElement(){return {appendChild(){},addEventListener(){},replaceChildren(){}}},execCommand(){return true}};const window={addEventListener(){}};const navigator={clipboard:{writeText(){}}};const requestAnimationFrame=f=>f();`;
 const api=vm.runInNewContext(stub+source+';({phonetize,runRegressionTests});',{}, {timeout:20000});
 const failures=api.runRegressionTests();

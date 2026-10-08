@@ -5,6 +5,8 @@ on:
     paths:
       - index.html
       - scripts/audit-tehilim.mjs
+      - scripts/extract-engine.mjs
+      - tests/**
       - .github/workflows/tehilim-audit.yml
   workflow_dispatch:
 
@@ -22,6 +24,11 @@ jobs:
           node-version: '22'
       - name: Check JavaScript syntax
         run: node --check scripts/audit-tehilim.mjs
+      - name: Check phonetics and Nakdan behavior
+        run: |
+          node tests/jasar-regression.mjs
+          node tests/reverential-caps-regression.mjs
+          node tests/nakdan-workflow.mjs
       - name: Audit all Psalms
         run: node scripts/audit-tehilim.mjs
       - uses: actions/upload-artifact@v4
