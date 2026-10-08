@@ -24,7 +24,7 @@ Texto base: https://he.wikisource.org/wiki/תהלים_כ/ניקוד. El editor c
 
 ### 20:4
 
-**Hebreo:** יִזְכֹּר כׇּל מִנְחֹתֶֽךָ וְעוֹלָתְךָ יְדַשְּׁנֶה סֶֽלָה.
+**Hebreo:** יִזְכֹּר כׇּל מִנְחֹתֶֽיךָ וְעוֹלָתְךָ יְדַשְּׁנֶה סֶֽלָה.
 
 **Generador:** Yizkor kol minjoteja ve'olatejá yedashené sela.
 
@@ -86,3 +86,7 @@ Texto base: https://he.wikisource.org/wiki/תהלים_כ/ניקוד. El editor c
 ## Cotejo confirmado de grafía del Nombre (ArtScroll Schottenstein)
 
 El PDF impreso muestra **יהוה** sin los signos de vocalización que Wikisource aplica en **יְהֹוָה**. En las 5 apariciones del capítulo se conservó la grafía impresa. Se retuvo el nikud del prefijo separado, cuando lo hay (por ejemplo לַיהוה). La pronunciación convencional del generador sigue siendo **Ad-nai**; la falta de nikud en el Nombre no autoriza vocalizarlo automáticamente con Nakdan.
+
+## Diferencia consonántica 20:4 — ArtScroll vs Wikisource
+
+En el PDF Schottenstein, página 2, **מִנְחֹתֶֽיךָ** incluye la letra **י** en la terminación (מנחותיך), que faltaba en la transcripción de Wikisource **מִנְחֹתֶךָ** y en el borrador inicial. Se incorporó la י manteniendo el meteg conforme a la evidencia del editor. La salida del generador se mantiene **minjoteja**, sin tilde escrita por ser llana terminada en vocal. Verificar aún el resto del salmo palabra por palabra antes de aprobarlo.
