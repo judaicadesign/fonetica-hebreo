@@ -1143,6 +1143,8 @@ function wordOutput(token){
     out=pronoun;
   }else if(div){
     out=div;
+  }else if(VERIFIED_TEHILIM_FORMS.has(n)){
+    out=VERIFIED_TEHILIM_FORMS.get(n);
   }else if(FINAL_FORMS.has(n)){
     out=FINAL_FORMS.get(n);
   }else if(GOLDEN_EDITORIAL.has(n)){
@@ -1487,7 +1489,10 @@ function runRegressionTests(){
     ["עַתָּה","'atá"],["וְעַתָּה","ve'atá"],["בְּיֵשַׁע","beyesha'"],
     ["הַבִּיטָה","habita"],["הָאִירָה","haíra"],["בְּחַסְדְּךָ","bejasdejá"],
     ["הִשְׁחִיתוּ","hishjitu"],["הִתְעִיבוּ","hit'ivu"],["נֶאֱלָחוּ","neelaju"],
-    ["פָחַד","fájad"],["תָבִישׁוּ","tavishu"],["וְשֹׁחַד","veshójad"]
+    ["פָחַד","fájad"],["תָבִישׁוּ","tavishu"],["וְשֹׁחַד","veshójad"],
+    // ArtScroll 24:6 / Tehilim 20:4-5: fonética editorial verificada.
+    ["דֹּרְשָׁיו","doreshav"],["וְעוֹלָתְךָ","ve'olatejá"],
+    ["עֲצָתְךָ","'atsatejá"]
   ];
   const failures=[];
   for(const [h,expected] of tests){
