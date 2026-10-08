@@ -28,7 +28,7 @@
 
 ### 127:5
 
-**Hebreo en cotejo:** אַשְׁרֵי הַגֶּבֶר אֲשֶׁר מִלֵּא אֶת אַשְׁפָּתוֹ מֵהֶם לֹא יֵבֹשׁוּ כִּי יְדַבְּרוּ אֶת אוֹיְבִים בַּשָּׁעַר.
+**Hebreo en cotejo:** אַשְׁרֵי הַגֶּבֶר אֲשֶׁר מִלֵּא אֶת אַשְׁפָּתוֹ מֵהֶם לֹא יֵבֹֽשׁוּ כִּי יְדַבְּרוּ אֶת אוֹיְבִים בַּשָּׁעַר.
 
 **Salida real del generador:** Ashré haguéver asher milé et ashpató méhem lo yevoshu ki yedaberu et oyvim basha'ar.
 
@@ -40,3 +40,9 @@
 - [ ] Meteg y shevá na verificados visualmente, sin confundir ambos.
 - [ ] Fonética GOLDEN aprobada, tildes españolas y mayúsculas reverenciales.
 - [ ] Comparación GOLDEN ↔ generador idéntica y regresiones completas.
+
+## Marcas puntuales identificadas en PDF ArtScroll
+
+Estas marcas `U+05BD` están presentes en la extracción del propio PDF Schottenstein y se corroboraron con su página impresa. **No representan una auditoría total de meteg de este salmo.**
+
+- 127:5 (página 7): יֵבֹֽשׁוּ — 1 apariciones ajustadas en el borrador.
