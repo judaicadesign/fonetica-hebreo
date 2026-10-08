@@ -22,7 +22,7 @@ Generador actual: 'Ad aná Ad-nai tishkajeni nétsaj 'ad aná tastir et paneja m
 
 Hebreo en cotejo: עַד אָנָה אָשִׁית עֵצוֹת בְּנַפְשִׁי יָגוֹן בִּלְבָבִי יוֹמָם עַד אָנָה יָרוּם אֹיְבִי עָלָי.
 
-Generador actual: 'Ad aná ashit 'etsot benafshí yagón bilvaví yomam 'ad aná yarum oyví 'alái.
+Generador actual: 'Ad aná ashit 'etsot benafshí yagón bilvaví yomam 'ad aná yarum oyeví 'alái.
 
 ### 13:4
 
@@ -34,7 +34,7 @@ Generador actual: Habita 'aneni Ad-nai Elohái haíra 'enái pen ishán hamávet
 
 Hebreo en cotejo: פֶּן יֹאמַר אֹיְבִי יְכׇלְתִּיו צָרַי יָגִילוּ כִּי אֶמּוֹט.
 
-Generador actual: Pen yomar oyví yejoltiv tsarái yaguilu ki emot.
+Generador actual: Pen yomar oyeví yejoltiv tsarái yaguilu ki emot.
 
 ### 13:6
 
@@ -52,3 +52,7 @@ Generador actual: Vaaní bejasdejá vatajti yaguel libí bishu'ateja ashira laAd
 ## Cotejo confirmado de grafía del Nombre (ArtScroll Schottenstein)
 
 El PDF impreso muestra **יהוה** sin los signos de vocalización que Wikisource aplica en **יְהֹוָה**. En las 3 apariciones del capítulo se conservó la grafía impresa. Se retuvo el nikud del prefijo separado, cuando lo hay (por ejemplo לַיהוה). La pronunciación convencional del generador sigue siendo **Ad-nai**; la falta de nikud en el Nombre no autoriza vocalizarlo automáticamente con Nakdan.
+
+## Cotejo adicional ArtScroll 13:3 y 13:5 — shevá na
+
+La página PDF 1 de Schottenstein imprime la raya superior **sobre la יְ** de **אֹיְבִי** en ambas apariciones: esa shevá es *na*. Por lo tanto, la fonética exige la vocal **e**: **oyeví**, no **oyví**. Se corrigió el generador y se incorporó la forma a sus pruebas de regresión (commit `38cc737`). No se copia la raya superior al máster hebreo como meteg.
