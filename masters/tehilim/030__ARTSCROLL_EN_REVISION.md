@@ -8,7 +8,7 @@ Fuente visual ArtScroll: capturas adjuntas IMG_1355.
 
 Este archivo contiene el texto digital base y la salida ejecutada del generador. **No equivale a una certificación de nikud/meteg/shevá na**; todavía falta cotejo íntegro por aparición y GOLDEN revisado.
 
-**Pendiente 30:4:** Wikisource inserta ketiv no vocalizado `מיורדי` seguido de qere `מִיׇּרְדִי`; se conserva explícitamente **como dato pendiente de cotejo** y NO se aprobó como lectura de imprenta.
+**Diferencia confirmada 30:4:** Wikisource coloca ketiv adicional sin nikud (מיורדי) junto a la lectura vocalizada. La captura IMG_1355 de ArtScroll imprime solo una palabra en esa posición: eliminamos el ketiv adicional del cuerpo de trabajo. La vocalización exacta de la forma restante sigue EN REVISIÓN y no está aprobada.
 
 ### 30:1 — א
 
@@ -30,9 +30,9 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 30:4 — ד
 
-**Hebreo de trabajo:** יְהֹוָה הֶעֱלִיתָ מִן שְׁאוֹל נַפְשִׁי חִיִּיתַנִי מיורדי מִיׇּרְדִי בוֹר.
+**Hebreo de trabajo:** יְהֹוָה הֶעֱלִיתָ מִן שְׁאוֹל נַפְשִׁי חִיִּיתַנִי מִיׇּרְדִי בוֹר.
 
-**Salida real del generador:** Ad-nai he'elita min Sheol nafshí jiyitani myvrdy miyordí vor.
+**Salida real del generador:** Ad-nai he'elita min Sheol nafshí jiyitani miyordí vor.
 
 ### 30:5 — ה
 
