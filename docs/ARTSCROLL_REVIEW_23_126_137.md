@@ -2,7 +2,7 @@
 
 2026-10-08. Canonical source: System masters/tehilim/ARTSCROLL_023_REVISION.json, ARTSCROLL_126_REVISION.json and ARTSCROLL_137_REVISION.json. Psalm 23: app screenshot; 126 and 137: Interlinear Benching PDF pages 2 and 1.
 
-The generator recognizes the full pointed verse, preserving the actual consonants and nikud. It uses primary stress from the registered ArtScroll meteg, then Spanish accent rules. It does not assume an arbitrary pasted meteg is an ArtScroll primary accent. No-marker words retain fallback unless a specific occurrence has been checked. Divine aliases are not inferred from user input here; matching is conservative.
+The generator recognizes the full pointed verse, preserving the actual consonants and nikud. It uses primary stress from the registered ArtScroll meteg, then Spanish accent rules. It does not assume an arbitrary pasted meteg is an ArtScroll primary accent. No-marker words retain fallback unless a specific occurrence has been checked. Explicit spellings יי, יהוה and אדני are accepted as aliases when matching the reviewed verse. Other consonants and nikud must still agree.
 
 Reverential capitalizations and final stress for 23:6 are context-scoped. 126:2 uleshonenu and 137:8 sheyeshalem remain explicit, source-scoped vocalization corrections. This does not approve every occurrence elsewhere.
 
