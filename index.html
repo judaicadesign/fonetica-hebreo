@@ -1189,6 +1189,11 @@ function editorialCaps(text){
   // Tehilim 145:16: capitalizar el sufijo dirigido a Hashem; conservar el verbo.
   text=text.replace(/\b(potéaj)\s+(et)\s+(yadej[áa])(?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])/giu,
     (_,verb,link,hand)=>verb+" "+link+" "+capitalizeFirst(hand));
+  // Confirmed Birkat Hamazon possessives: the prefix stays lowercase.
+  text=text.replace(/('al )'amejá(?= Yisrael,? lehashkijam)/giu,"$1'Amejá");
+  text=text.replace(/ul'amejá(?= Yisrael 'asita teshu'á)/giu,"ul'Amejá");
+  text=text.replace(/(Rajem Ad-nai Elohenu 'al Yisrael )'amejá/giu,"$1'Amejá");
+  text=text.replace(/(vezijrón kol )'amejá(?= bet Yisrael lefaneja)/giu,"$1'Amejá");
   /* Referencias explícitas a Hashem: se capitalizan solo por contexto. */
   text=text.replace(/\bata hu Ad-nai\b/gi,"Atá Hu Ad-nai");
   text=text.replace(/\bki hu El\b/gi,"ki Hu El");
