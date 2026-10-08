@@ -13,3 +13,12 @@ const at=ref=>cases.find(c=>c.ref===ref);
 assert.match(at('91:5').phonetic,/mipájad/);assert.match(at('83:13').phonetic,/nirsha/);assert.doesNotMatch(at('83:13').phonetic,/nirshá/);assert.match(at('112:1').phonetic,/^HaleluYah/);
 assert.match(at('20:9').hebrew,/קַֽמְנוּ/);assert.doesNotMatch(at('20:9').hebrew,/קַּ/);assert.match(at('120:5').hebrew,/לִּי/);
 console.log('PASS: 118 reviewed verses, source-scoped stress, NFC/NFD, unchanged undotted bet and unreviewed counterexamples');
+
+// User-confirmed ArtScroll vocal sheva on mem; no extra e on the lamed.
+for(const [word,expected] of [["עַמְּךָ","'amejá"],["וּלְעַמְּךָ","ul'amejá"],["לְעַמְּךָ","le'amejá"]]){
+ assert.equal(api.rawTranslit(word,"final"),expected,word+' structural rule');
+ assert.equal(api.phonetize("וְזִכְרוֹן כָּל "+word).split(' ').at(-1),expected,word+' legacy bypass');
+ assert.equal(api.phonetize("וְזִכְרוֹן כָּל "+word.normalize('NFD')).split(' ').at(-1),expected,word+' NFD');
+}
+assert.equal(api.rawTranslit("יַעֲנְךָ","final"),"ya'anjá",'Do not vocalize every short-vowel suffix');
+console.log('PASS: vocal mem sheva, silent lamed after shuruk, prefixed forms and legacy bypass');
