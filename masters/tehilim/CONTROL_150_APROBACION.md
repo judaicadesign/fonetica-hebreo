@@ -86,7 +86,7 @@
 | 80 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 81 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 82 | Pendiente | Pendiente | Pendiente | No iniciado |
-| 83 | Borrador, falta ArtScroll | Pendiente | Pendiente | En revisión |
+| 83 | [Hebreo ✓](./approved/083__HEBREO__ARTSCROLL_SEIF.txt) | Pendiente | Pendiente | Hebreo terminado; falta fonética |
 | 84 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 85 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 86 | Pendiente | Pendiente | Pendiente | No iniciado |
@@ -155,4 +155,4 @@
 | 149 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 150 | Pendiente | Pendiente | Pendiente | No iniciado |
 
-**Avance confirmado en esta tabla:** 10/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
+**Avance confirmado en esta tabla:** 11/150 capítulos con hebreo separado guardado; 0/150 capítulos con las tres puertas completas. Se verificará nuevamente antes de tachar cualquiera.
