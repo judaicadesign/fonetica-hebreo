@@ -1,6 +1,6 @@
 # Control editorial de los 150 Tehilim
 
-**Regla para tachar:** un capítulo se tacha únicamente después de publicar hebreo ArtScroll validado + GOLDEN fonético aprobado + salida del generador coincidente (regresiones sin fallos). Ningún capítulo reúne todavía las tres condiciones.
+**Regla para tachar:** un capítulo se tacha únicamente después de publicar hebreo ArtScroll validado + GOLDEN fonético aprobado + salida del generador coincidente (regresiones sin fallos). El capítulo 13 reúne las tres condiciones, con GOLDEN hebreo, GOLDEN fonético y seis pruebas del generador sin diferencias.
 
 | Salmo | Hebreo máster ArtScroll | GOLDEN fonético | Motor ↔ GOLDEN | Resultado |
 |---:|---|---|---|---|
@@ -16,7 +16,7 @@
 | 10 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 11 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 12 | Pendiente | Pendiente | Pendiente | No iniciado |
-| 13 | [Hebreo ✓](./approved/013__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) | Solo 13:6 aprobado; capítulo pendiente | Pendiente | Hebreo terminado; falta fonética |
+| ~~13~~ | [Hebreo ✓](./approved/013__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) | [GOLDEN ✓](./approved/013__FONETICA__GOLDEN.txt) | [6/6 ✓](./approved/013__AUDITORIA.md) | **APROBADO** |
 | 14 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 15 | Pendiente | Pendiente | Pendiente | No iniciado |
 | 16 | Pendiente | Pendiente | Pendiente | No iniciado |
