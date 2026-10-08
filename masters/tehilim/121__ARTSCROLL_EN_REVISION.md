@@ -12,7 +12,7 @@ Este archivo importa el niqqud original de Wikisource sin asumir que su meteg se
 
 ### 121:2
 
-**Hebreo en cotejo:** עֶזְרִי מֵעִם יְהֹוָה עֹשֵׂה שָׁמַיִם וָאָרֶץ.
+**Hebreo en cotejo:** עֶזְרִי מֵעִם יהוה עֹשֵׂה שָׁמַיִם וָאָרֶץ.
 
 **Salida real del generador:** 'Ezrí me'im Ad-nai 'osé shamáyim vaarets.
 
@@ -30,7 +30,7 @@ Este archivo importa el niqqud original de Wikisource sin asumir que su meteg se
 
 ### 121:5
 
-**Hebreo en cotejo:** יְהֹוָה שֹׁמְרֶךָ יְהֹוָה צִלְּךָ עַל יַד יְמִינֶךָ.
+**Hebreo en cotejo:** יהוה שֹׁמְרֶךָ יהוה צִלְּךָ עַל יַד יְמִינֶךָ.
 
 **Salida real del generador:** Ad-nai shomreja Ad-nai tsiljá 'al yad yemineja.
 
@@ -42,13 +42,13 @@ Este archivo importa el niqqud original de Wikisource sin asumir que su meteg se
 
 ### 121:7
 
-**Hebreo en cotejo:** יְהֹוָה יִשְׁמׇרְךָ מִכׇּל רָע יִשְׁמֹר אֶת נַפְשֶׁךָ.
+**Hebreo en cotejo:** יהוה יִשְׁמׇרְךָ מִכׇּל רָע יִשְׁמֹר אֶת נַפְשֶׁךָ.
 
 **Salida real del generador:** Ad-nai yishmoreja mikol ra' yishmor et nafsheja.
 
 ### 121:8
 
-**Hebreo en cotejo:** יְהֹוָה יִשְׁמׇר צֵאתְךָ וּבוֹאֶךָ מֵעַתָּה וְעַד עוֹלָם.
+**Hebreo en cotejo:** יהוה יִשְׁמׇר צֵאתְךָ וּבוֹאֶךָ מֵעַתָּה וְעַד עוֹלָם.
 
 **Salida real del generador:** Ad-nai yishmor tseteja uvoeja me'atá ve'ad 'olam.
 
@@ -59,3 +59,7 @@ Este archivo importa el niqqud original de Wikisource sin asumir que su meteg se
 - [ ] Verificar cada palabra, nikud, meteg y shevá na contra página visible de la edición Seif.
 - [ ] Deducir GOLDEN desde ArtScroll con español rioplatense, tildes ortográficas y mayúsculas referenciales.
 - [ ] Comparar GOLDEN con generador; no pasar a master aprobado hasta igualdad integral.
+
+## Fuente hebrea consolidada
+
+[Hebreo editado desde ArtScroll Seif](./approved/121__HEBREO__ARTSCROLL_SEIF.txt). La fonética de este documento es diagnóstico del generador, todavía sin cotejo GOLDEN completo. La auditoría de cada meteg y nikud para impresión requiere una revisión final independiente.
