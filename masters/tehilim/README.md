@@ -12,6 +12,7 @@ Tres puertas obligatorias:
 
 | Capítulo | Versículos | Hebreo ArtScroll | GOLDEN fonética | Prueba del motor |
 |---|---:|---|---|---|
+| [13](./013__ARTSCROLL_EN_REVISION.md) | 6 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
 | [20](./020__ARTSCROLL_EN_REVISION.md) | 10 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
 | [24](./024__ARTSCROLL_EN_REVISION.md) | 10 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
 | [25](./025__ARTSCROLL_EN_REVISION.md) | 22 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
@@ -21,7 +22,7 @@ Tres puertas obligatorias:
 | [29](./029__ARTSCROLL_EN_REVISION.md) | 11 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
 | [30](./030__ARTSCROLL_EN_REVISION.md) | 13 | Parcial / pendiente | Pendiente | Salida real registrada (no comparada con GOLDEN) |
 
-**Total de versículos en borrador: 101.**
+**Total de versículos en borrador: 107.**
 
 ## Correcciones guardadas
 
@@ -37,6 +38,10 @@ Motor de desarrollo corregido en commits eb523534 y 07a69e5b; pruebas internas s
 
 ## Otros salmos pendientes de completar
 
-13, 23, 83, 91, 112, 120, 121, 126, 127, 130, 137, 142 y otros mencionados durante la auditoría. Los PDFs de ArtScroll están referenciados como archivos del Proyecto, pero no se pudo recuperar la imagen de sus páginas durante esta sesión. El texto extraído es ilegible y no permite distinguir meteg de las rayitas de shevá na. Para aprobarlos se necesitan páginas visualmente legibles.
+23, 83, 91, 112, 120, 121, 126, 127, 130, 137, 142 y otros mencionados durante la auditoría. Los dos PDFs fueron adjuntados nuevamente el 8/10/2026 y sus 22 páginas se pudieron abrir como imágenes legibles. El PDF Schottenstein contiene 13, 20, 91, 112, 120, 127, 130; el PDF Seif transliterado contiene 20, 83, 121, 130, 142. Los salmos 24–30 proceden de capturas de una app ArtScroll y son fuente visual separada. Hay que cotejar todas sus palabras, vocales, meteg y marcas de shevá na: que el archivo sea legible NO implica aprobación.
 
 **NO-GO:** no publicar estos borradores como master aprobado, ni promover a main, ni usar en impresión hasta completar y certificar las tres puertas.
+
+## Inventario de ediciones y criterio meteg
+
+[Manifest de PDFs ArtScroll, páginas y control de procedencia](./ARTSCROLL_SOURCE_MANIFEST_2026-10-08.json). Schottenstein es autoridad editorial primaria para los salmos que incluye; Seif es fuente secundaria de pronunciación/transliteración y única edición de los salmos que no están en Schottenstein. El motor común IGNORA el meteg externo; no inferir acentos desde Unicode U+05BD importado. El aprendizaje inverso a partir de ArtScroll exige pares auditados por palabra y aparición; nunca sustituir el control editorial por meteg de Wikisource.
