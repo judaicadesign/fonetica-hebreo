@@ -16,13 +16,13 @@
 
 ### 112:3
 
-**Hebreo en cotejo:** הוֹן וָעֹשֶׁר בְּבֵיתוֹ וְצִדְקָתוֹ עֹמֶדֶת לָעַד.
+**Hebreo en cotejo:** הוֹן וָעֹֽשֶׁר בְּבֵיתוֹ וְצִדְקָתוֹ עֹמֶדֶת לָעַד.
 
 **Salida real del generador:** Hon va'ósher bevetó vetsidkató 'omédet la'ad.
 
 ### 112:4
 
-**Hebreo en cotejo:** זָרַח בַּחֹשֶׁךְ אוֹר לַיְשָׁרִים חַנּוּן וְרַחוּם וְצַדִּיק.
+**Hebreo en cotejo:** זָרַח בַּחֹֽשֶׁךְ אוֹר לַיְשָׁרִים חַנּוּן וְרַחוּם וְצַדִּיק.
 
 **Salida real del generador:** Zaraj bajóshej or laysharim janún verajum vetsadik.
 
@@ -70,3 +70,10 @@
 - [ ] Meteg y shevá na verificados visualmente, sin confundir ambos.
 - [ ] Fonética GOLDEN aprobada, tildes españolas y mayúsculas reverenciales.
 - [ ] Comparación GOLDEN ↔ generador idéntica y regresiones completas.
+
+## Marcas puntuales identificadas en PDF ArtScroll
+
+Estas marcas `U+05BD` están presentes en la extracción del propio PDF Schottenstein y se corroboraron con su página impresa. **No representan una auditoría total de meteg de este salmo.**
+
+- 112:3 (página 5): וָעֹֽשֶׁר — 1 apariciones ajustadas en el borrador.
+- 112:4 (página 5): בַּחֹֽשֶׁךְ — 1 apariciones ajustadas en el borrador.
