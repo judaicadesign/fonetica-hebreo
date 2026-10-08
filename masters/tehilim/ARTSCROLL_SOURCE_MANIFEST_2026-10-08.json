@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-08",
+  "status": "source_inventory_not_audit",
+  "purpose": "Control de ediciones ArtScroll para másteres de Tehilim. Solo un cotejo visual por aparición permite aprobar meteg y niqqud.",
+  "primary": {
+    "edition": "Schottenstein Edition Tehillim Simchas Yehoshua",
+    "file": "ARTSCROLL - tehillim-and-avinu-malkeinu-download-v3(1).pdf",
+    "pages": 12,
+    "psalms": {
+      "13": [
+        1
+      ],
+      "20": [
+        1,
+        2
+      ],
+      "91": [
+        3,
+        4
+      ],
+      "112": [
+        4,
+        5
+      ],
+      "120": [
+        6
+      ],
+      "127": [
+        6,
+        7
+      ],
+      "130": [
+        7,
+        8
+      ]
+    }
+  },
+  "secondary": {
+    "edition": "Seif Edition ArtScroll Transliterated Linear Tehillim",
+    "file": "ARTSCROLL - Transliterated_Tehillim_Eretz_Yisrael(1).pdf",
+    "pages": 10,
+    "psalms": {
+      "20": [
+        2,
+        3
+      ],
+      "83": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "121": [
+        6,
+        7
+      ],
+      "130": [
+        7,
+        8
+      ],
+      "142": [
+        9,
+        10
+      ]
+    }
+  },
+  "appScreenshots": {
+    "psalms": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "status": "ArtScroll app screenshots from editor, separate edition/medium; not contained in these PDFs"
+  },
+  "conventions": {
+    "wikisource": "Digital base only; its U+05BD must never be assumed equal to ArtScroll stress",
+    "metegDefault": "ignored",
+    "validatedArtScroll": "authorized as stress position only when corroborated by specific edition/page/psalm/verse/token occurrence",
+    "shevaNa": "ArtScroll mark above letter, not meteg; never convert to U+05BD",
+    "niqqudAuthority": "ArtScroll edition visually confirmed",
+    "foreignEdition": "different edition does not override the primary without editorial decision"
+  },
+  "approvalGate": [
+    "Hebrew per-token consonants, niqqud, meteg, sheva na in printed order",
+    "Edited phonetic GOLDEN with Spanish accent rules and referential capitalization",
+    "Full generator output diff and passing regressions"
+  ],
+  "mastersStatus": "in_review",
+  "verifiedTexts": [],
+  "suggestionsForFutureEngine": {
+    "sourceContext": "citation-bound master ID, SHA and ArtScroll page with token-position marks",
+    "noGlobalModeToggle": true,
+    "autoApplyMetegToArbitraryPaste": false,
+    "inverseLearning": "Derive repeatable placement patterns from verified token-level labels, and keep a human review gate for exceptions"
+  }
+}
