@@ -10,13 +10,13 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 
 ### 26:1 — א
 
-**Hebreo:** לְדָוִד שׇׁפְטֵנִי יְהֹוָה כִּי אֲנִי בְּתֻמִּי הָלַכְתִּי וּבַיהֹוָה בָּטַחְתִּי לֹא אֶמְעָד.
+**Hebreo:** לְדָוִד שׇׁפְטֵנִי יהוה כִּי אֲנִי בְּתֻמִּי הָלַכְתִּי וּבַיהוה בָּטַחְתִּי לֹא אֶמְעָד.
 
 **Generador actual:** LeDavid shofteni Ad-nai ki aní betumí halajti uváAd-nai batajti lo em'ad.
 
 ### 26:2 — ב
 
-**Hebreo:** בְּחָנֵנִי יְהֹוָה וְנַסֵּנִי צׇרְפָה כִלְיוֹתַי וְלִבִּי.
+**Hebreo:** בְּחָנֵנִי יהוה וְנַסֵּנִי צׇרְפָה כִלְיוֹתַי וְלִבִּי.
 
 **Generador actual:** Bejaneni Ad-nai venaseni tsorfá jilyotái velibí.
 
@@ -40,7 +40,7 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 
 ### 26:6 — ו
 
-**Hebreo:** אֶרְחַץ בְּנִקָּיוֹן כַּפָּי וַאֲסֹבְבָה אֶת מִזְבַּחֲךָ יְהֹוָה.
+**Hebreo:** אֶרְחַץ בְּנִקָּיוֹן כַּפָּי וַאֲסֹבְבָה אֶת מִזְבַּחֲךָ יהוה.
 
 **Generador actual:** Erjáts benikayón kapái vaasovvá et mizbajaja Ad-nai.
 
@@ -52,7 +52,7 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 
 ### 26:8 — ח
 
-**Hebreo:** יְהֹוָה אָהַבְתִּי מְעוֹן בֵּיתֶךָ וּמְקוֹם מִשְׁכַּן כְּבוֹדֶךָ.
+**Hebreo:** יהוה אָהַבְתִּי מְעוֹן בֵּיתֶךָ וּמְקוֹם מִשְׁכַּן כְּבוֹדֶךָ.
 
 **Generador actual:** Ad-nai ahavti me'ón beteja umekom mishkán kevodeja.
 
@@ -76,7 +76,7 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 
 ### 26:12 — יב
 
-**Hebreo:** רַגְלִי עָמְדָה בְמִישׁוֹר בְּמַקְהֵלִים אֲבָרֵךְ יְהֹוָה.
+**Hebreo:** רַגְלִי עָמְדָה בְמִישׁוֹר בְּמַקְהֵלִים אֲבָרֵךְ יהוה.
 
 **Generador actual:** Raglí 'amdá vemishor bemakhelim avarej Ad-nai.
 
@@ -87,3 +87,7 @@ Los textos siguientes son la edición digital de partida, NO una confirmación d
 - [ ] Cotejo visual de meteg por aparición y shevá na según signos auxiliares de ArtScroll.
 - [ ] Fonética GOLDEN humana aprobada.
 - [ ] Comparación automática de fonética final contra el motor y regresiones.
+
+## Hebreo canónico guardado
+
+Este borrador reproduce el mismo hebreo que el archivo maestro de trabajo [`approved/026__HEBREO__ARTSCROLL_APP.txt`](./approved/026__HEBREO__ARTSCROLL_APP.txt). Los resultados del generador son únicamente una ejecución de diagnóstico; **la fonética GOLDEN y la igualdad con ella siguen pendientes**.
