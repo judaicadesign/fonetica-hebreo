@@ -1200,6 +1200,10 @@ function applySpanishStress(word){
 }
 
 function editorialCaps(text){
+  // ציון es nombre propio incluso después de prefijos inseparables
+  // (מִצִּיּוֹן, וּמִצִּיּוֹן). No se capitaliza el prefijo.
+  text=text.replace(/(?<![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])((?:umi|mi|ve|le|be|ba|u)?)tsiyón(?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])/giu,
+    (_,prefix)=>prefix+"Tsiyón");
   // JD: referencias confirmadas por contexto, nunca pronombres globales.
   text=text.replace(/(?<![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])atá(?=\s+Ad-nai\b)/giu,"Atá");
   // Tehilim 145:16: capitalizar el sufijo dirigido a Hashem; conservar el verbo.
@@ -1552,7 +1556,12 @@ const VERIFIED_TEHILIM_FORMS = new Map([
   ["שִׁירוּ","shiru"], ["עֵינִי","'ení"],
   ["חָיִל","jáyil"], ["עֹשֶׂה","'osé"],
   ["אֹרַח","óraj"],
-  ["לָמָּה","lama"]
+  ["לָמָּה","lama"],
+  // ArtScroll Tehilim 24:6: shevá na marcada sobre resh.
+  ["דֹּרְשָׁיו","doreshav"],
+  // Tehilim 20:4 y 20:5: sufijo -ךָ agudo; solo tilde si español la requiere.
+  ["וְעוֹלָתְךָ","ve'olatejá"],
+  ["עֲצָתְךָ","'atsatejá"]
 ].map(([k,v])=>[norm(k),v]));
 function verifiedTehilimForm(token,prev,next){
   const k=norm(token);
