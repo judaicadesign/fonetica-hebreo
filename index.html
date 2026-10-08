@@ -1527,6 +1527,18 @@ function runRegressionTests(){
   const approved13v6Phonetic="Vaaní bejasdejá vatajti yaguel libí bishu'ateja ashira laAd-nai ki gamal 'alái.";
   if(phonetize(approved13v6Hebrew)!==approved13v6Phonetic)
     failures.push("Tehilim 13:6 no coincide con GOLDEN ArtScroll");
+  // GOLDEN ArtScroll Schottenstein 13 completo (6/6).
+  const approved13=[
+    ["לַמְנַצֵּחַ מִזְמוֹר לְדָוִד.","Lamnatséaj mizmor leDavid."],
+    ["עַד אָנָה יהוה תִּשְׁכָּחֵנִי נֶצַח עַד אָנָה תַּסְתִּיר אֶת פָּנֶיךָ מִמֶּנִּי.","'Ad aná Ad-nai tishkajeni nétsaj 'ad aná tastir et paneja mimeni."],
+    ["עַד אָנָה אָשִׁית עֵצוֹת בְּנַפְשִׁי יָגוֹן בִּלְבָבִי יוֹמָם עַד אָנָה יָרוּם אֹיְבִי עָלָי.","'Ad aná ashit 'etsot benafshí yagón bilvaví yomam 'ad aná yarum oyeví 'alái."],
+    ["הַבִּיטָה עֲנֵנִי יהוה אֱלֹהָי הָאִירָה עֵינַי פֶּן אִישַׁן הַמָּוֶת.","Habita 'aneni Ad-nai Elohái haíra 'enái pen ishán hamávet."],
+    ["פֶּן יֹאמַר אֹיְבִי יְכׇלְתִּיו צָרַי יָגִילוּ כִּי אֶמּוֹט.","Pen yomar oyeví yejoltiv tsarái yaguilu ki emot."],
+    [approved13v6Hebrew,approved13v6Phonetic]
+  ];
+  approved13.forEach(([h,golden],index)=>{
+    if(phonetize(h)!==golden) failures.push("Tehilim 13:"+(index+1)+" distinto de GOLDEN ArtScroll");
+  });
   return failures;
 }
 
