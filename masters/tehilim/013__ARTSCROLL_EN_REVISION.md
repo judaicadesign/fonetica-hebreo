@@ -42,6 +42,8 @@ Hebreo en cotejo: וַאֲנִי בְּחַסְדְּךָ בָטַֽחְתִּי
 
 Generador actual: Vaaní bejasdejá vatajti yaguel libí bishu'ateja ashira laAd-nai ki gamal 'alái.
 
+**13:6 ya fue cerrado por separado:** [Hebreo + fonética GOLDEN verificados con ArtScroll](./verses/013_06__GOLDEN_ARTSCROLL.md). No implica que el salmo entero esté aprobado.
+
 ## Puerta de aprobación
 
 - [x] Texto base de los 6 versículos importado.
