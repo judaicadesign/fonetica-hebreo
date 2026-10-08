@@ -34,7 +34,7 @@
 
 ### 130:6
 
-**Hebreo en cotejo:** נַפְשִׁי לַאדֹנָי מִשֹּׁמְרִים לַבֹּקֶר שֹׁמְרִים לַבֹּקֶר.
+**Hebreo en cotejo:** נַפְשִׁי לַאדֹנָי מִשֹּׁמְרִים לַבֹּֽקֶר שֹׁמְרִים לַבֹּֽקֶר.
 
 **Salida real del generador:** Nafshí laAd-nai mishomrim labóker shomrim labóker.
 
@@ -58,3 +58,9 @@
 - [ ] Meteg y shevá na verificados visualmente, sin confundir ambos.
 - [ ] Fonética GOLDEN aprobada, tildes españolas y mayúsculas reverenciales.
 - [ ] Comparación GOLDEN ↔ generador idéntica y regresiones completas.
+
+## Marcas puntuales identificadas en PDF ArtScroll
+
+Estas marcas `U+05BD` están presentes en la extracción del propio PDF Schottenstein y se corroboraron con su página impresa. **No representan una auditoría total de meteg de este salmo.**
+
+- 130:6 (página 8): לַבֹּֽקֶר — 2 apariciones ajustadas en el borrador.
