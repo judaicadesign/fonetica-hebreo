@@ -2,6 +2,8 @@
 
 **Criterio para tachar un salmo:** únicamente al finalizar (1) máster hebreo *idéntico a ArtScroll* en consonantes, nikud y meteg, tras verificar todas las repeticiones y anotar aparte shevá na; (2) máster fonético derivado y corregido, con tildes solo cuando lo exigen las reglas españolas; (3) generador cotejado contra GOLDEN completo y regresiones sin fallos. Los tres archivos deben estar guardados en GitHub.
 
+**Versículos completos aprobados: 1 (13:6)**, con hebreo, meteg y fonética cotejados; [ver GOLDEN del pasuk](./verses/013_06__GOLDEN_ARTSCROLL.md). No se tacha el capítulo 13 hasta cerrar todos sus versículos.
+
 **Estado 2026-10-08:** 0/150 aprobados; 17 capítulos tienen borradores en `masters/tehilim/` (188 versículos de base Wikisource y salida actual del generador), **no** máster aprobado. Los 10 capítulos incluidos en los PDF adjuntos están identificados, y 24–30 tienen capturas de la aplicación. Los 23, 126 y 137 fueron discutidos antes y siguen pendientes de las tres validaciones.
 
 **Leyenda:** `[x]` + ~~tachado~~ = APROBADO; `[ ]` = no aprobado. `PDF` = existe ArtScroll impreso para cotejar; `CAP` = imagen de app aportada; `BORRADOR` = texto importado en GitHub sin aprobar; `PREVIO` = visto en trabajo anterior sin aprobación comprobada.
