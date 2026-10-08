@@ -234,7 +234,8 @@ details.rules[open] summary::before{content:"–"}
    FONÉTICA SEFARADÍ — MOTOR ESTRUCTURAL
    ============================================================ */
 
-const NIKUD_RE = /[\u0591-\u05C7]/u;
+/* Vocales reales: excluir U+05BD (meteg) y taamim. Un meteg sin vocales NO equivale a nikud añadido. */
+const NIKUD_RE = /[\u05B0-\u05BB\u05C7]/u;
 const HEBREW_LETTER_RE = /[\u05D0-\u05EA]/;
 const CANT_RE = /[\u0591-\u05AF]/g;
 
@@ -1411,6 +1412,11 @@ function runNakdanMergeRegressionTests(){
   const mixedExpected="יַחַד לֵב אֶל לֵב";
   const mixedMerged=mergeContextualNiqqud(mixed,mixedDicta);
   if(mixedMerged!==mixedExpected) tests.push("existing niqqud was altered");
+
+  // Un meteg aislado de una fuente externa no debe impedir que Nakdan agregue vocales.
+  if(NIKUD_RE.test("שֽלום")) tests.push("meteg-only treated as niqqud");
+  if(mergeContextualNiqqud("שֽלום יהוה","שָׁלוֹם יְהוָה")!=="שָׁלוֹם יהוה")
+    tests.push("external meteg or divine name was mishandled");
 
   return tests;
 }
