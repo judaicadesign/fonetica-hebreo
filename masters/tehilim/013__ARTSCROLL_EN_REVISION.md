@@ -14,7 +14,7 @@ Generador actual: Lamnatséaj mizmor leDavid.
 
 ### 13:2
 
-Hebreo en cotejo: עַד אָנָה יְהֹוָה תִּשְׁכָּחֵנִי נֶצַח עַד אָנָה תַּסְתִּיר אֶת פָּנֶיךָ מִמֶּנִּי.
+Hebreo en cotejo: עַד אָנָה יהוה תִּשְׁכָּחֵנִי נֶצַח עַד אָנָה תַּסְתִּיר אֶת פָּנֶיךָ מִמֶּנִּי.
 
 Generador actual: 'Ad aná Ad-nai tishkajeni nétsaj 'ad aná tastir et paneja mimeni.
 
@@ -26,7 +26,7 @@ Generador actual: 'Ad aná ashit 'etsot benafshí yagón bilvaví yomam 'ad aná
 
 ### 13:4
 
-Hebreo en cotejo: הַבִּיטָה עֲנֵנִי יְהֹוָה אֱלֹהָי הָאִירָה עֵינַי פֶּן אִישַׁן הַמָּוֶת.
+Hebreo en cotejo: הַבִּיטָה עֲנֵנִי יהוה אֱלֹהָי הָאִירָה עֵינַי פֶּן אִישַׁן הַמָּוֶת.
 
 Generador actual: Habita 'aneni Ad-nai Elohái haíra 'enái pen ishán hamávet.
 
@@ -48,3 +48,7 @@ Generador actual: Vaaní bejasdejá vatajti yaguel libí bishu'ateja ashira laAd
 - [ ] Nikud, meteg y shevá na verificados exhaustivamente contra Schottenstein.
 - [ ] Fonética GOLDEN aprobada.
 - [ ] Salida del generador comparada contra GOLDEN.
+
+## Cotejo confirmado de grafía del Nombre (ArtScroll Schottenstein)
+
+El PDF impreso muestra **יהוה** sin los signos de vocalización que Wikisource aplica en **יְהֹוָה**. En las 2 apariciones del capítulo se conservó la grafía impresa. Se retuvo el nikud del prefijo separado, cuando lo hay (por ejemplo לַיהוה). La pronunciación convencional del generador sigue siendo **Ad-nai**; la falta de nikud en el Nombre no autoriza vocalizarlo automáticamente con Nakdan.
