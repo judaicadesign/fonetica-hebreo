@@ -458,7 +458,7 @@ function consonant(c,i,a){
    (ver el proyecto Phonikud, de la misma gente de Dicta). Esos
    casos siguen viviendo en APPROVED / EXACT como excepción
    editorial explícita. */
-function stressAccent(a, out, nuclei, originalWord){
+function stressAccent(a, out, nuclei, originalWord, confirmedStress){
   if(!out || nuclei.length<=1) return out;
   if(/[áéíóúÁÉÍÓÚ]/.test(out)) return out;
 
@@ -738,6 +738,15 @@ function stressAccent(a, out, nuclei, originalWord){
     Los apóstrofes/guiones transliterativos finales no cuentan como
     letras para decidir la acentuación española.
   */
+  // A verified occurrence can override morphology; never infer source from U+05BD.
+  if(confirmedStress==='final'){
+    target=nuclei.length-1;
+    while(target>0 && nuclei[target].furtive) target--;
+  }
+  if(Number.isInteger(confirmedStress)){
+    const marked=nuclei.findIndex(n=>n.clusterIndex===confirmedStress);
+    if(marked!==-1)target=marked;
+  }
   const spanishShape = out.replace(/['’\-]+$/g,"");
   const last = spanishShape[spanishShape.length-1] || out[out.length-1];
   const spanishDefault = (/[aeiou]/i.test(last) || last==="n" || last==="s")
@@ -785,7 +794,7 @@ function isQamatzQatan(a,i,word){
   return QAMATZ_QATAN_FORMS.has(norm(word));
 }
 
-function rawTranslit(word){
+function rawTranslit(word, confirmedStress, details=false){
   const n=norm(word);
   if(VAY_FORMS.has(n)) return VAY_FORMS.get(n);
   const a=clusters(word);
@@ -860,7 +869,8 @@ function rawTranslit(word){
     DESPUÉS de stressAccent mantiene válidas las posiciones de
     los núcleos usadas para decidir las tildes.
   */
-  return stressAccent(a, out, nuclei, word)
+  if(details)return {a,out,nuclei};
+  return stressAccent(a, out, nuclei, word, confirmedStress)
     .replace(/g(?=[eéií])/gi,match=>match==="G"?"Gu":"gu");
 }
 
@@ -1510,8 +1520,12 @@ function verifiedTehilimOctober7(token,prev,next){
   if(k===norm("הָרִיעוּ") && p==="כף" && n==="לאלהים") return "harí'u"; // 47:2
   return null;
 }
-function phoneWord(token,prev,stop,next){
+function phoneWord(token,prev,stop,next,reviewed){
   token=norm(token);
+  if(reviewed?.stress==='final'){
+    const output=rawTranslit(token,reviewed.stress);
+    return stop?capitalizeFirst(output):output;
+  }
   if(/^ו\u05B0$/.test(token)) return stop?"Ve":"ve";
   const checkedTehilim=verifiedTehilimOctober7(token,prev,next);
   if(checkedTehilim!==null) return stop?capitalizeFirst(checkedTehilim):checkedTehilim;
@@ -1551,15 +1565,52 @@ function stashLabels(s){
   const st=[]; for(const [h,p] of LABELS){ s=s.replaceAll(h,()=>{st.push(p);return "\uE000"+(st.length-1)+"\uE001";}); }
   return [s,st];
 }
+// Reviewed ArtScroll Psalms 23, 126 and 137, matched by the entire pointed verse.
+// Unrelated uses of the same word and arbitrary meteg remain on normal fallback.
+const REVIEWED_ARTSCROLL_VERSES=[{"ref": "23:1", "hebrew": "מִזְמוֹר לְדָוִד יְהֹוָה רֹעִי לֹא אֶחְסָר.", "changes": {}}, {"ref": "23:2", "hebrew": "בִּנְאוֹת דֶּֽשֶׁא יַרְבִּיצֵֽנִי עַל מֵי מְנֻחוֹת יְנַהֲלֵֽנִי.", "changes": {"דשא": {"stress": 0}, "ירביצני": {"stress": 4}, "ינהלני": {"stress": 3}}}, {"ref": "23:3", "hebrew": "נַפְשִׁי יְשׁוֹבֵב יַנְחֵֽנִי בְמַעְגְּלֵי צֶֽדֶק לְמַֽעַן שְׁמוֹ.", "changes": {"ינחני": {"stress": 2}, "צדק": {"stress": 0}, "למען": {"stress": 1}, "שמו": {"capital": true}}}, {"ref": "23:4", "hebrew": "גַּם כִּי אֵלֵךְ בְּגֵיא צַלְמָֽוֶת לֹא אִירָא רָע כִּי אַתָּה עִמָּדִי שִׁבְטְךָ וּמִשְׁעַנְתֶּֽךָ הֵֽמָּה יְנַחֲמֻֽנִי.", "changes": {"צלמות": {"stress": 2}, "ומשענתך": {"stress": 5, "capital": true, "prefix": "uM"}, "המה": {"stress": 0}, "ינחמני": {"stress": 3}, "אתה": {"capital": true}, "שבטך": {"capital": true}}}, {"ref": "23:5", "hebrew": "תַּעֲרֹךְ לְפָנַי שֻׁלְחָן נֶֽגֶד צֹרְרָי דִּשַּֽׁנְתָּ בַשֶּֽׁמֶן רֹאשִׁי כּוֹסִי רְוָיָה.", "changes": {"נגד": {"stress": 0}, "דשנת": {"stress": 1}, "בשמן": {"stress": 1}}}, {"ref": "23:6", "hebrew": "אַךְ טוֹב וָחֶֽסֶד יִרְדְּפוּֽנִי כָּל יְמֵי חַיָּי וְשַׁבְתִּי בְּבֵית יְהֹוָה לְאֹֽרֶךְ יָמִים.", "changes": {"וחסד": {"stress": 1}, "ירדפוני": {"stress": 4}, "לארך": {"stress": 1}, "ושבתי": {"stress": "final"}}}, {"ref": "126:1", "hebrew": "שִׁיר הַמַּעֲלוֹת בְּשׁוּב יְהֹוָה אֶת שִׁיבַת צִיּוֹן הָיִֽינוּ כְּחֹלְמִים.", "changes": {"היינו": {"stress": 1}}}, {"ref": "126:2", "hebrew": "אָז יִמָּלֵא שְׂחוֹק פִּֽינוּ וּלְשׁוֹנֵֽנוּ רִנָּה אָז יֹאמְרוּ בַגּוֹיִם הִגְדִּיל יְהֹוָה לַעֲשׂוֹת עִם אֵֽלֶּה.", "changes": {"פינו": {"stress": 0}, "ולשוננו": {"stress": 4, "spelling": "uleshonenu"}, "אלה": {"stress": 0}}}, {"ref": "126:3", "hebrew": "הִגְדִּיל יְהֹוָה לַעֲשׂוֹת עִמָּֽנוּ הָיִֽינוּ שְׂמֵחִים.", "changes": {"עמנו": {"stress": 1}, "היינו": {"stress": 1}}}, {"ref": "126:4", "hebrew": "שׁוּבָה יְהֹוָה אֶת שְׁבִיתֵֽנוּ כַּאֲפִיקִים בַּנֶּֽגֶב.", "changes": {"שביתנו": {"stress": 3}, "בנגב": {"stress": 1}}}, {"ref": "126:5", "hebrew": "הַזֹּרְעִים בְּדִמְעָה בְּרִנָּה יִקְצֹֽרוּ.", "changes": {"יקצרו": {"stress": 2}}}, {"ref": "126:6", "hebrew": "הָלוֹךְ יֵלֵךְ וּבָכֹה נֹשֵׂא מֶֽשֶׁךְ הַזָּֽרַע בֹּא יָבֹא בְרִנָּה נֹשֵׂא אֲלֻמֹּתָיו.", "changes": {"משך": {"stress": 0}, "הזרע": {"stress": 1}}}, {"ref": "137:1", "hebrew": "עַל נַהֲרוֹת בָּבֶל שָׁם יָשַֽׁבְנוּ גַּם בָּכִֽינוּ בְּזָכְרֵֽנוּ אֶת צִיּוֹן.", "changes": {"ישבנו": {"stress": 1}, "בכינו": {"stress": 1}, "בזכרנו": {"stress": 3}}}, {"ref": "137:2", "hebrew": "עַל עֲרָבִים בְּתוֹכָהּ תָּלִֽינוּ כִּנֹּרוֹתֵֽינוּ.", "changes": {"תלינו": {"stress": 1}, "כנרותינו": {"stress": 4}}}, {"ref": "137:3", "hebrew": "כִּי שָׁם שְׁאֵלֽוּנוּ שׁוֹבֵֽינוּ דִּבְרֵי שִׁיר וְתוֹלָלֵֽינוּ שִׂמְחָה שִֽׁירוּ לָֽנוּ מִשִּׁיר צִיּוֹן.", "changes": {"שאלונו": {"stress": 2}, "שובינו": {"stress": 2}, "ותוללינו": {"stress": 4}, "שירו": {"stress": 0}, "לנו": {"stress": 0}}}, {"ref": "137:4", "hebrew": "אֵיךְ נָשִׁיר אֶת שִׁיר יְהֹוָה עַל אַדְמַת נֵכָר.", "changes": {}}, {"ref": "137:5", "hebrew": "אִם אֶשְׁכָּחֵךְ יְרוּשָׁלָֽיִם תִּשְׁכַּח יְמִינִי.", "changes": {"ירושלים": {"stress": 4}}}, {"ref": "137:6", "hebrew": "תִּדְבַּק לְשׁוֹנִי לְחִכִּי אִם לֹא אֶזְכְּרֵֽכִי אִם לֹא אַעֲלֶה אֶת יְרוּשָׁלַֽיִם עַל רֹאשׁ שִׂמְחָתִי.", "changes": {"אזכרכי": {"stress": 3}, "ירושלים": {"stress": 4}, "לשוני": {"stress": "final"}, "אעלה": {"stress": "final"}}}, {"ref": "137:7", "hebrew": "זְכֹר יְהֹוָה לִבְנֵי אֱדוֹם אֵת יוֹם יְרוּשָׁלָֽיִם הָאֹמְרִים עָֽרוּ עָֽרוּ עַד הַיְסוֹד בָּהּ.", "changes": {"ירושלים": {"stress": 4}, "ערו": {"stress": 0}}}, {"ref": "137:8", "hebrew": "בַּת בָּבֶל הַשְּׁדוּדָה אַשְׁרֵי שֶׁיְשַׁלֶּם לָךְ אֶת גְּמוּלֵךְ שֶׁגָּמַלְתְּ לָֽנוּ.", "changes": {"לנו": {"stress": 0}, "השדודה": {"stress": "final"}, "שישלם": {"spelling": "sheyeshalem"}}}, {"ref": "137:9", "hebrew": "אַשְׁרֵי שֶׁיֹּאחֵז וְנִפֵּץ אֶת עֹלָלַֽיִךְ אֶל הַסָּֽלַע.", "changes": {"עלליך": {"stress": 2}, "הסלע": {"stress": 1}}}];
+function reviewedArtScrollTokens(text){
+ const tokens=[...text.matchAll(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)], result=new Map();
+ for(const verse of REVIEWED_ARTSCROLL_VERSES){
+  const expected=[...verse.hebrew.matchAll(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)].map(m=>norm(m[0]));
+  for(let i=0;i<=tokens.length-expected.length;i++){
+   if(!expected.every((word,j)=>word===norm(tokens[i+j][0])))continue;
+   expected.forEach((word,j)=>{const change=verse.changes[bareLetters(word)];if(change)result.set(tokens[i+j].index,change)});
+  }
+ }
+ return result;
+}
+function confirmedArtScrollAccent(token,piece,clusterIndex){
+ const detail=rawTranslit(token,undefined,true);
+ if(typeof detail!=='object')return piece;
+ const primary=detail.nuclei.findIndex(n=>n.clusterIndex===clusterIndex);
+ if(primary<0)return piece;
+ const plain=piece.normalize('NFD').replace(/[\u0301]/g,'').normalize('NFC');
+ const positions=[];
+ for(let i=0;i<plain.length;i++){
+  if(!/[aeiou]/i.test(plain[i]))continue;
+  if(plain[i].toLowerCase()==='u'&&/g/i.test(plain[i-1]||'')&&/[ei]/i.test(plain[i+1]||''))continue;
+  if(i===plain.length-1&&plain[i].toLowerCase()==='i'&&/[ao]/i.test(plain[i-1]||''))continue;
+  positions.push(i);
+ }
+ const target=positions.length-(detail.nuclei.length-primary);
+ if(target<0||target>=positions.length)return piece;
+ const nuclei=positions.map((pos,i)=>({pos,clusterIndex:i}));
+ return stressAccent(detail.a,plain,nuclei,token,target);
+}
 function phonetize(text){
   let s=text.replace(/\u05BE/g,"-");
   let st; [s,st]=stashLabels(s);
+  const reviewed=reviewedArtScrollTokens(s);
   let prev="", stop=true, out="";
   let recentHebrew=[];
   for(const m of s.matchAll(/([\u05D0-\u05EA\u0591-\u05C7\u200d]+)|([^\u05D0-\u05EA\u0591-\u05C7\u200d]+)/gu)){
     if(m[1]){
       const following=s.slice(m.index+m[0].length).match(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/u);
-      let piece=phoneWord(m[1],prev,stop,following?.[0]);
+      const review=reviewed.get(m.index);
+      let piece=phoneWord(m[1],prev,stop,following?.[0],review);
+      if(review?.spelling) piece=stop?capitalizeFirst(review.spelling):review.spelling;
+      if(Number.isInteger(review?.stress))piece=confirmedArtScrollAccent(m[1],piece,review.stress);
+      if(review?.capital) piece=review.prefix ? review.prefix+piece.slice(review.prefix.length) : capitalizeFirst(piece);
       const bare=bareLetters(m[1]);
       const divineSpeech =
         bare==="אני" &&

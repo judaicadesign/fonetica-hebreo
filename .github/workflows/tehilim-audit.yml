@@ -29,6 +29,7 @@ jobs:
           node tests/jasar-regression.mjs
           node tests/reverential-caps-regression.mjs
           node tests/tehilim-artscroll-five.mjs
+          node tests/tehilim-reviewed-regression.mjs
           node tests/nakdan-workflow.mjs
       - name: Audit all Psalms
         run: node scripts/audit-tehilim.mjs
