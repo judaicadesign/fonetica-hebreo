@@ -464,6 +464,30 @@
       "category": "meteg-verificado",
       "hebrew": "לֹא חָֽסַר לָנוּ",
       "expected": "Lo jásar lanu"
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-08",
+      "category": "acento-y-ortografia-salmo-20",
+      "hebrew": "יִֽתֶּן לְךָ כִלְבָבֶֽךָ וְכׇל עֲצָתְךָ יְמַלֵּא.",
+      "expected": "Yiten lejá jilvaveja vejol 'atsatejá yemalé."
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-08",
+      "category": "meteg-sin-tilde-innecesaria-salmo-13",
+      "hebrew": "וַאֲנִי בְּחַסְדְּךָ בָטַֽחְתִּי יָגֵל לִבִּי בִּישׁוּעָתֶֽךָ אָשִֽׁירָה לַיהֹוָה כִּי גָמַל עָלָי.",
+      "expected": "Vaaní bejasdejá vatajti yaguel libí bishu'ateja ashira laAd-nai ki gamal 'alái."
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-08",
+      "category": "meteg-sin-tilde-innecesaria-salmo-20",
+      "hebrew": "יִזְכֹּר כׇּל מִנְחֹתֶֽךָ וְעוֹלָתְךָ יְדַשְּׁנֶה סֶֽלָה.",
+      "expected": "Yizkor kol minjoteja ve'olatejá yedashené sela."
+    },
+    {
+      "group": "tehilim-artscroll-2026-10-08",
+      "category": "meteg-sin-tilde-innecesaria-salmo-20",
+      "hebrew": "יְהֹוָה הוֹשִֽׁיעָה הַמֶּֽלֶךְ יַעֲנֵֽנוּ בְיוֹם קׇרְאֵֽנוּ.",
+      "expected": "Ad-nai hoshi'a haMélej ya'anenu veyom korenu."
     }
   ]
 }
