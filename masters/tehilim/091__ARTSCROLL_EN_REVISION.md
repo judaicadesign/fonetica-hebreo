@@ -34,7 +34,7 @@
 
 ### 91:6
 
-**Hebreo en cotejo:** מִדֶּבֶר בָּאֹפֶל יַהֲלֹךְ מִקֶּטֶב יָשׁוּד צׇהֳרָיִם.
+**Hebreo en cotejo:** מִדֶּבֶר בָּאֹֽפֶל יַהֲלֹךְ מִקֶּטֶב יָשׁוּד צׇהֳרָיִם.
 
 **Salida real del generador:** Midéver baófel yahaloj mikétev yashud tsohoráyim.
 
@@ -70,7 +70,7 @@
 
 ### 91:12
 
-**Hebreo en cotejo:** עַל כַּפַּיִם יִשָּׂאוּנְךָ פֶּן תִּגֹּף בָּאֶבֶן רַגְלֶךָ.
+**Hebreo en cotejo:** עַל כַּפַּיִם יִשָּׂאֽוּנְךָ פֶּן תִּגֹּף בָּאֶבֶן רַגְלֶךָ.
 
 **Salida real del generador:** 'Al kapáyim yisauneja pen tigof baeven ragleja.
 
@@ -94,7 +94,7 @@
 
 ### 91:16
 
-**Hebreo en cotejo:** אֹרֶךְ יָמִים אַשְׂבִּיעֵהוּ וְאַרְאֵהוּ בִּישׁוּעָתִי.
+**Hebreo en cotejo:** אֹֽרֶךְ יָמִים אַשְׂבִּיעֵהוּ וְאַרְאֵהוּ בִּישׁוּעָתִי.
 
 **Salida real del generador:** Órej yamim asbi'ehu vearehu bishu'atí.
 
@@ -106,3 +106,11 @@
 - [ ] Meteg y shevá na verificados visualmente, sin confundir ambos.
 - [ ] Fonética GOLDEN aprobada, tildes españolas y mayúsculas reverenciales.
 - [ ] Comparación GOLDEN ↔ generador idéntica y regresiones completas.
+
+## Marcas puntuales identificadas en PDF ArtScroll
+
+Estas marcas `U+05BD` están presentes en la extracción del propio PDF Schottenstein y se corroboraron con su página impresa. **No representan una auditoría total de meteg de este salmo.**
+
+- 91:6 (página 3): בָּאֹֽפֶל — 1 apariciones ajustadas en el borrador.
+- 91:12 (página 4): יִשָּׂאֽוּנְךָ — 1 apariciones ajustadas en el borrador.
+- 91:16 (página 4): אֹֽרֶךְ — 1 apariciones ajustadas en el borrador.
