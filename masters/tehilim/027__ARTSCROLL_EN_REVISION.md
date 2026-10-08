@@ -8,7 +8,7 @@ Fuente visual ArtScroll: capturas adjuntas IMG_1351 y IMG_1352.
 
 Este archivo contiene el texto digital base y la salida ejecutada del generador. **No equivale a una certificación de nikud/meteg/shevá na**; todavía falta cotejo íntegro por aparición y GOLDEN revisado.
 
-**Pendiente 27:13:** Wikisource incluye puntos extraordinarios en `לׅׄוּׅׄלֵׅׄאׅׄ`, cuyo tratamiento editorial hay que cotejar en ArtScroll.
+**Cotejo 27:13 con captura IMG_1352:** Wikisource incluye puntos extraordinarios encima de las letras de לוּלֵא; ArtScroll no los imprime. Se retiraron exclusivamente esos puntos extraordinarios en la versión de trabajo; se conservan las letras y el nikud usual.
 
 ### 27:1 — א
 
@@ -84,7 +84,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 27:13 — יג
 
-**Hebreo de trabajo:** לׅׄוּׅׄלֵׅׄאׅׄ הֶאֱמַנְתִּי לִרְאוֹת בְּטוּב יְהֹוָה בְּאֶרֶץ חַיִּים.
+**Hebreo de trabajo:** לוּלֵא הֶאֱמַנְתִּי לִרְאוֹת בְּטוּב יְהֹוָה בְּאֶרֶץ חַיִּים.
 
 **Salida real del generador:** Lulé heemanti lirot betuv Ad-nai beerets jayim.
 
