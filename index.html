@@ -1499,6 +1499,20 @@ function runRegressionTests(){
     const got=wordOutput(h);
     if(got!==expected) failures.push(h+" → "+got+" (esperado: "+expected+")");
   }
+  // Seguridad editorial: meteg ajeno a ArtScroll NO es señal de acento.
+  // phonetize() general debe conservar la misma lectura con y sin U+05BD.
+  const uncontrolledMeteg=[
+    "בָטַֽחְתִּי","בִּישׁוּעָתֶֽךָ","אָשִֽׁירָה",
+    "מִקֹּֽדֶשׁ","יִסְעָדֶֽךָּ","מִנְחֹתֶֽךָ","סֶֽלָה",
+    "יִֽתֶּן","כִלְבָבֶֽךָ","יַעֲנֵֽהוּ","יֵֽשַׁע",
+    "הוֹשִֽׁיעָה","הַמֶּֽלֶךְ","יַעֲנֵֽנוּ","קׇרְאֵֽנוּ"
+  ];
+  for(const token of uncontrolledMeteg){
+    const without=token.replace(/\u05BD/gu,"");
+    if(phonetize(token)!==phonetize(without)) {
+      failures.push("El meteg externo alteró fonética: "+token);
+    }
+  }
   return failures;
 }
 
