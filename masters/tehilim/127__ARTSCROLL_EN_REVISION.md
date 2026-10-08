@@ -1,0 +1,42 @@
+# Tehilim 127 — ArtScroll Schottenstein, EN REVISIÓN
+
+**NO APROBADO.** Base digital: https://he.wikisource.org/wiki/תהלים_קכז/ניקוד. Referencia editorial: PDF ArtScroll Schottenstein, páginas PDF 6–7. El texto importado es Wikisource con nikud; **no se han cotejado todas las marcas ni se agregan meteg por analogía**. La salida fonética es ejecución REAL del motor, no GOLDEN final.
+
+### 127:1
+
+**Hebreo en cotejo:** שִׁיר הַמַּעֲלוֹת לִשְׁלֹמֹה אִם יְהֹוָה לֹא יִבְנֶה בַיִת שָׁוְא עָמְלוּ בוֹנָיו בּוֹ אִם יְהֹוָה לֹא יִשְׁמׇר עִיר שָׁוְא שָׁקַד שׁוֹמֵר.
+
+**Salida real del generador:** Shir hama'alot lishlomó im Ad-nai lo yivné vayit shav 'amlú vonav bo im Ad-nai lo yishmor 'ir shav shakad shomer.
+
+### 127:2
+
+**Hebreo en cotejo:** שָׁוְא לָכֶם מַשְׁכִּימֵי קוּם מְאַחֲרֵי שֶׁבֶת אֹכְלֵי לֶחֶם הָעֲצָבִים כֵּן יִתֵּן לִידִידוֹ שֵׁנָא.
+
+**Salida real del generador:** Shav lajem mashkimé kum meajaré shévet ojlé léjem ha'atsavim ken yitén lididó shená.
+
+### 127:3
+
+**Hebreo en cotejo:** הִנֵּה נַחֲלַת יְהֹוָה בָּנִים שָׂכָר פְּרִי הַבָּטֶן.
+
+**Salida real del generador:** Hiné najalat Ad-nai banim sajar perí habaten.
+
+### 127:4
+
+**Hebreo en cotejo:** כְּחִצִּים בְּיַד גִּבּוֹר כֵּן בְּנֵי הַנְּעוּרִים.
+
+**Salida real del generador:** Kejitsim beyad guibor ken bené hane'urim.
+
+### 127:5
+
+**Hebreo en cotejo:** אַשְׁרֵי הַגֶּבֶר אֲשֶׁר מִלֵּא אֶת אַשְׁפָּתוֹ מֵהֶם לֹא יֵבֹשׁוּ כִּי יְדַבְּרוּ אֶת אוֹיְבִים בַּשָּׁעַר.
+
+**Salida real del generador:** Ashré haguéver asher milé et ashpató méhem lo yevoshu ki yedaberu et oyvim basha'ar.
+
+## Puerta de aprobación
+
+- [x] 5 versículos importados de Wikisource.
+- [x] Salida real del motor guardada; regresiones internas sin fallos.
+- [ ] Comparación contra PDF ArtScroll de niqqud y todas las apariciones.
+- [ ] Meteg y shevá na verificados visualmente, sin confundir ambos.
+- [ ] Fonética GOLDEN aprobada, tildes españolas y mayúsculas reverenciales.
+- [ ] Comparación GOLDEN ↔ generador idéntica y regresiones completas.
