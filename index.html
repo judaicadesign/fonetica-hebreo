@@ -1521,6 +1521,12 @@ function runRegressionTests(){
       failures.push("El meteg externo alteró fonética: "+token);
     }
   }
+  // GOLDEN completo revisado: Tehilim 13:6, Schottenstein página PDF 1.
+  // Meteg acentúa taj / te / shi, y no exige tilde en palabras llanas.
+  const approved13v6Hebrew="וַאֲנִי בְּחַסְדְּךָ בָטַֽחְתִּי יָגֵל לִבִּי בִּישׁוּעָתֶֽךָ אָשִֽׁירָה לַיהוה כִּי גָמַל עָלָי.";
+  const approved13v6Phonetic="Vaaní bejasdejá vatajti yaguel libí bishu'ateja ashira laAd-nai ki gamal 'alái.";
+  if(phonetize(approved13v6Hebrew)!==approved13v6Phonetic)
+    failures.push("Tehilim 13:6 no coincide con GOLDEN ArtScroll");
   return failures;
 }
 
