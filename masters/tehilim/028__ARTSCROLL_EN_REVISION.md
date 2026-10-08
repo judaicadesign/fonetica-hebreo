@@ -10,7 +10,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 28:1 — א
 
-**Hebreo de trabajo:** לְדָוִד אֵלֶיךָ יְהֹוָה אֶקְרָא צוּרִי אַל תֶּחֱרַשׁ מִמֶּנִּי פֶּן תֶּחֱשֶׁה מִמֶּנִּי וְנִמְשַׁלְתִּי עִם יוֹרְדֵי בוֹר.
+**Hebreo de trabajo:** לְדָוִד אֵלֶיךָ יהוה אֶקְרָא צוּרִי אַל תֶּחֱרַשׁ מִמֶּנִּי פֶּן תֶּחֱשֶׁה מִמֶּנִּי וְנִמְשַׁלְתִּי עִם יוֹרְדֵי בוֹר.
 
 **Salida real del generador:** LeDavid eleja Ad-nai ekrá tsurí al tejerash mimeni pen tejeshé mimeni venimshalti 'im yordé vor.
 
@@ -34,25 +34,25 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 
 ### 28:5 — ה
 
-**Hebreo de trabajo:** כִּי לֹא יָבִינוּ אֶל פְּעֻלֹּת יְהֹוָה וְאֶל מַעֲשֵׂה יָדָיו יֶהֶרְסֵם וְלֹא יִבְנֵם.
+**Hebreo de trabajo:** כִּי לֹא יָבִינוּ אֶל פְּעֻלֹּת יהוה וְאֶל מַעֲשֵׂה יָדָיו יֶהֶרְסֵם וְלֹא יִבְנֵם.
 
 **Salida real del generador:** Ki lo yavinu el pe'ulot Ad-nai veel ma'asé yadav yehersem veló yivnem.
 
 ### 28:6 — ו
 
-**Hebreo de trabajo:** בָּרוּךְ יְהֹוָה כִּי שָׁמַע קוֹל תַּחֲנוּנָי.
+**Hebreo de trabajo:** בָּרוּךְ יהוה כִּי שָׁמַע קוֹל תַּחֲנוּנָי.
 
 **Salida real del generador:** Baruj Ad-nai ki shamá' kol tajanunái.
 
 ### 28:7 — ז
 
-**Hebreo de trabajo:** יְהֹוָה עֻזִּי וּמָגִנִּי בּוֹ בָטַח לִבִּי וְנֶעֱזָרְתִּי וַיַּעֲלֹז לִבִּי וּמִשִּׁירִי אֲהוֹדֶנּוּ.
+**Hebreo de trabajo:** יהוה עֻזִּי וּמָגִנִּי בּוֹ בָטַח לִבִּי וְנֶעֱזָרְתִּי וַיַּעֲלֹז לִבִּי וּמִשִּׁירִי אֲהוֹדֶנּוּ.
 
 **Salida real del generador:** Ad-nai 'uzí umaguiní bo vataj libí vene'ezarti vaya'aloz libí umishirí ahodenu.
 
 ### 28:8 — ח
 
-**Hebreo de trabajo:** יְהֹוָה עֹז לָמוֹ וּמָעוֹז יְשׁוּעוֹת מְשִׁיחוֹ הוּא.
+**Hebreo de trabajo:** יהוה עֹז לָמוֹ וּמָעוֹז יְשׁוּעוֹת מְשִׁיחוֹ הוּא.
 
 **Salida real del generador:** Ad-nai 'oz lamo uma'oz yeshu'ot meshijó Hu.
 
@@ -70,3 +70,7 @@ Este archivo contiene el texto digital base y la salida ejecutada del generador.
 - [ ] ArtScroll: meteg y rayita de shevá na cotejados en cada aparición.
 - [ ] Fonética GOLDEN aprobada por sílabas, tildes españolas y mayúsculas referenciales.
 - [ ] Salida del generador idéntica al GOLDEN; regresión sin roturas.
+
+## Hebreo canónico guardado
+
+Este borrador reproduce el mismo hebreo que el archivo maestro de trabajo [`approved/028__HEBREO__ARTSCROLL_APP.txt`](./approved/028__HEBREO__ARTSCROLL_APP.txt). Los resultados del generador son únicamente una ejecución de diagnóstico; **la fonética GOLDEN y la igualdad con ella siguen pendientes**.
