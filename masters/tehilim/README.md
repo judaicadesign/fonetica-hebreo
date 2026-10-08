@@ -32,6 +32,21 @@ Tres puertas obligatorias:
 
 **17 capítulos y 188 versículos importados.** Las 188 salidas del motor coinciden al volver a ejecutarlas. Esto no equivale a aprobación editorial. En el corte del 8/10, además, **90/90 pruebas editoriales pasaron** y **0 regresiones internas**, con la salida modificada de 20:5.
 
+## Hebreo máster ArtScroll — primeras entregas
+
+- [Salmo 13 — hebreo Schottenstein p. 1](./approved/013__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt): 6 pesukim, 3 meteg, Nombre divino sin nikud; commit `83707c8`.
+- [Salmo 20 — hebreo Schottenstein pp. 1–2](./approved/020__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt): 10 pesukim, 12 meteg y grafía `מִנְחֹתֶֽיךָ`; commit `872270d`.
+- Los otros capítulos siguen en cotejo visual, no se elevan a `approved/` por tener solo la extracción digital o una parte de los meteg.
+- [Control de 150 salmos](./CONTROL_150_APROBACION.md): sin tachar 13 ni 20, hasta que tengan GOLDEN fonético completo y prueba idéntica del generador.
+
+## Hallazgos adicionales de meteg en la impresión (no implican aprobación)
+
+- Schottenstein 91:6 `בָּאֹֽפֶל`, 91:12 `יִשָּׂאֽוּנְךָ`, 91:16 `אֹֽרֶךְ`.
+- Schottenstein 112:3 `וָעֹֽשֶׁר`, 112:4 `בַּחֹֽשֶׁךְ`.
+- Schottenstein 120:5 `אֽוֹיָה`.
+- Schottenstein 127:5 `יֵבֹֽשׁוּ`.
+- Schottenstein 130:6 `לַבֹּֽקֶר` en ambas apariciones.
+
 ## Correcciones guardadas
 
 - 24:6: ArtScroll דֹּרְשָׁיו y shevá na → doreshav; se distingue del texto de Wikisource.
