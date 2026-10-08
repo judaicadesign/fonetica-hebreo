@@ -8,6 +8,32 @@ Tres puertas obligatorias:
 2. **Fonética GOLDEN aprobada**: derivada solo del hebreo confirmado; regla sefardí de Judaica Design; tilde únicamente cuando el español leería mal el acento; mayúsculas referenciales en contexto.
 3. **Generador aprobado**: ejecutar cada versículo, comparar su salida con el GOLDEN y comprobar regresiones del corpus anterior.
 
+## Estado del máster HEBREO — corte de esta revisión
+
+**17/150 salmos, 188/188 versículos incorporados** a archivos hebreos separados bajo `approved/`. Este nombre de carpeta indica cierre de la **edición hebrea de trabajo**, no aprobación de la fonética, del generador ni certificación independiente exhaustiva de cada marca minúscula en PDF/captura. Para la aprobación definitiva de imprenta todavía falta cerrar cotejo fino de nikud y meteg en todas las apariciones: no interpretar el número de archivos guardados como 17 aprobaciones integrales.
+
+| Tehilim | Versículos | Edición visual | Máster hebreo |
+|---:|---:|---|---|
+| 13 | 6 | ArtScroll SCHOTTENSTEIN | [Abrir](./approved/013__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) |
+| 20 | 10 | ArtScroll SCHOTTENSTEIN | [Abrir](./approved/020__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) |
+| 24 | 10 | ArtScroll APP | [Abrir](./approved/024__HEBREO__ARTSCROLL_APP.txt) |
+| 25 | 22 | ArtScroll APP | [Abrir](./approved/025__HEBREO__ARTSCROLL_APP.txt) |
+| 26 | 12 | ArtScroll APP | [Abrir](./approved/026__HEBREO__ARTSCROLL_APP.txt) |
+| 27 | 14 | ArtScroll APP | [Abrir](./approved/027__HEBREO__ARTSCROLL_APP.txt) |
+| 28 | 9 | ArtScroll APP | [Abrir](./approved/028__HEBREO__ARTSCROLL_APP.txt) |
+| 29 | 11 | ArtScroll APP | [Abrir](./approved/029__HEBREO__ARTSCROLL_APP.txt) |
+| 30 | 13 | ArtScroll APP | [Abrir](./approved/030__HEBREO__ARTSCROLL_APP.txt) |
+| 83 | 19 | ArtScroll SEIF | [Abrir](./approved/083__HEBREO__ARTSCROLL_SEIF.txt) |
+| 91 | 16 | ArtScroll SCHOTTENSTEIN | [Abrir](./approved/091__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) |
+| 112 | 10 | ArtScroll SCHOTTENSTEIN | [Abrir](./approved/112__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) |
+| 120 | 7 | ArtScroll SCHOTTENSTEIN | [Abrir](./approved/120__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) |
+| 121 | 8 | ArtScroll SEIF | [Abrir](./approved/121__HEBREO__ARTSCROLL_SEIF.txt) |
+| 127 | 5 | ArtScroll SCHOTTENSTEIN | [Abrir](./approved/127__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) |
+| 130 | 8 | ArtScroll SCHOTTENSTEIN | [Abrir](./approved/130__HEBREO__ARTSCROLL_SCHOTTENSTEIN.txt) |
+| 142 | 8 | ArtScroll SEIF | [Abrir](./approved/142__HEBREO__ARTSCROLL_SEIF.txt) |
+
+**Puerta final:** no tachar ningún salmo en [CONTROL_150_APROBACION.md](./CONTROL_150_APROBACION.md) hasta que existan fonética GOLDEN íntegra y generador igualado, además del cotejo final de los signos pequeños de ArtScroll.
+
 ## Capítulos importados — borradores, no aprobados
 
 | Capítulo | Versículos | Hebreo ArtScroll | GOLDEN fonética | Prueba del motor |
