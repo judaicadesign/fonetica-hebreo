@@ -1,18 +1,17 @@
 /**
  * Full-corpus mechanical audit of Tehilim 1-150.
- * Independent text: Open Scriptures Hebrew Bible / WLC (public domain).
- * Attribution: https://github.com/openscriptures/morphhb
+ * Canonical text: JD System master, sourced from Wikisource and reviewed against ArtScroll.
  * Does NOT certify linguistic pronunciation accuracy.
- * Usage: node scripts/audit-tehilim.mjs [local-Ps.xml]
+ * Usage: node scripts/audit-tehilim.mjs [local-tehilim.json]
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {extractEngine} from './extract-engine.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const sourceURL='https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/Ps.xml';
-const xml=process.argv[2]?fs.readFileSync(process.argv[2],'utf8'):
-  await (async()=>{const r=await fetch(sourceURL);if(!r.ok)throw Error('OSHB HTTP '+r.status);return r.text()})();
+const sourceURL='https://raw.githubusercontent.com/judaicadesign/judaica-design-system/main/masters/tehilim/tehilim.json';
+const corpusText=process.argv[2]?fs.readFileSync(process.argv[2],'utf8'):
+  await (async()=>{const r=await fetch(sourceURL);if(!r.ok)throw Error('Canonical Wikisource master HTTP '+r.status);return r.text()})();
 const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
 const setup=[
  "const _els=new Map();",
@@ -25,16 +24,20 @@ const setup=[
 ].join('\n');
 const engine=new Function(setup+extractEngine(html)+';return {wordOutput,runRegressionTests,runNakdanMergeRegressionTests};')();
 const regressions=[...engine.runRegressionTests(),...engine.runNakdanMergeRegressionTests()];
-const verses=[...xml.matchAll(/<verse osisID="Ps\.(\d+)\.(\d+)">([\s\S]*?)<\/verse>/g)];
+const corpus=JSON.parse(corpusText);
+if(!/Wikisource/.test(corpus.source))throw Error('Expected Wikisource canonical master');
+const verses=corpus.items.flatMap(c=>c.verses.map(v=>({chapter:c.chapter,verse:v.verse,hebrew:v.hebrew})));
 const chapters=new Set(),audits=[],flags={};
 const niqqud=/[\u05B0-\u05BB\u05C7]/u,hebrew=/[\u05D0-\u05EA]/u;
 const stripAccents=s=>s.replace(/[\u0591-\u05AF\u05BD]/gu,'');
 let words=0,pointed=0;
 function mark(row,k){row.flags.push(k);flags[k]=(flags[k]||0)+1;}
 for(const v of verses){
- const chapter=Number(v[1]),verse=Number(v[2]);chapters.add(chapter);
- for(const m of v[3].matchAll(/<w [^>]*>([^<]*)<\/w>/g)){
-  const source=m[1].replaceAll('/',''),output=engine.wordOutput(source);
+ const {chapter,verse}=v;chapters.add(chapter);
+ for(const m of v.hebrew.matchAll(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)){
+  const source=m[0];
+  if(!hebrew.test(source))continue; // Nun hafukha and standalone marks are punctuation.
+  const output=engine.wordOutput(source);
   const row={chapter,verse,hebrew:source,phonetic:output,flags:[]};
   words++;if(niqqud.test(source))pointed++;
   if(!output||hebrew.test(output))mark(row,'incomplete_output');
@@ -53,7 +56,7 @@ const lines=[['salmo','versiculo','hebreo','fonetica','flags'].map(csv).join(','
 for(const r of audits)lines.push([r.chapter,r.verse,r.hebrew,r.phonetic,r.flags.join('|')].map(csv).join(','));
 fs.writeFileSync(path.join(out,'tehilim-all-words.csv'),lines.join('\n'),'utf8');
 const summary={
-  source:'Open Scriptures Hebrew Bible / WLC (independent checking, not a replacement for Wikisource)',
+  source:'JD canonical master: Wikisource with documented ArtScroll reviews',
   sourceURL,chapters:chapters.size,verses:verses.length,wordTokens:words,pointedTokens:pointed,
   uniqueForms:new Set(audits.map(x=>x.hebrew)).size,
   technicalFlags:flags,regressionFailures:regressions,
