@@ -13,7 +13,7 @@
 
 ### פסוק א
 
-**Hebreo:** לְדָוִד מִזְמוֹר לַיהֹוָה הָאָרֶץ וּמְלוֹאָהּ תֵּבֵל וְיֹשְׁבֵי בָהּ.
+**Hebreo:** לְדָוִד מִזְמוֹר לַיהוה הָאָרֶץ וּמְלוֹאָהּ תֵּבֵל וְיֹשְׁבֵי בָהּ.
 
 **Generador:** LeDavid mizmor laAd-nai haarets umeloah tevel veyoshvé vah.
 
@@ -25,7 +25,7 @@
 
 ### פסוק ג
 
-**Hebreo:** מִי יַעֲלֶה בְהַר יְהֹוָה וּמִי יָקוּם בִּמְקוֹם קׇדְשׁוֹ.
+**Hebreo:** מִי יַעֲלֶה בְהַר יהוה וּמִי יָקוּם בִּמְקוֹם קׇדְשׁוֹ.
 
 **Generador:** Mi ya'alé vehar Ad-nai umí yakum bimkom kodshó.
 
@@ -37,7 +37,7 @@
 
 ### פסוק ה
 
-**Hebreo:** יִשָּׂא בְרָכָה מֵאֵת יְהֹוָה וּצְדָקָה מֵאֱלֹהֵי יִשְׁעוֹ.
+**Hebreo:** יִשָּׂא בְרָכָה מֵאֵת יהוה וּצְדָקָה מֵאֱלֹהֵי יִשְׁעוֹ.
 
 **Generador:** Yisá verajá meet Ad-nai utsdaká meElohé yish'ó.
 
@@ -55,7 +55,7 @@
 
 ### פסוק ח
 
-**Hebreo:** מִי זֶה מֶלֶךְ הַכָּבוֹד יְהֹוָה עִזּוּז וְגִבּוֹר יְהֹוָה גִּבּוֹר מִלְחָמָה.
+**Hebreo:** מִי זֶה מֶלֶךְ הַכָּבוֹד יהוה עִזּוּז וְגִבּוֹר יהוה גִּבּוֹר מִלְחָמָה.
 
 **Generador:** Mi ze Mélej hakavod Ad-nai 'izuz veguibor Ad-nai guibor miljamá.
 
@@ -67,7 +67,7 @@
 
 ### פסוק י
 
-**Hebreo:** מִי הוּא זֶה מֶלֶךְ הַכָּבוֹד יְהֹוָה צְבָאוֹת הוּא מֶלֶךְ הַכָּבוֹד סֶלָה.
+**Hebreo:** מִי הוּא זֶה מֶלֶךְ הַכָּבוֹד יהוה צְבָאוֹת הוּא מֶלֶךְ הַכָּבוֹד סֶלָה.
 
 **Generador:** Mi Hu ze Mélej hakavod Ad-nai tsevaot Hu Mélej hakavod sela.
 
@@ -94,3 +94,7 @@ Se conserva la diferencia textual confirmada en 24:6: ArtScroll `דֹּרְשָ�
 - [ ] Revisión de rayitas auxiliares de shevá na por aparición.
 - [ ] GOLDEN fonético revisado, tildes y mayúsculas por contexto.
 - [ ] Comparación GOLDEN vs salida ejecutada: igualdad en los 10 pesukim.
+
+## Hebreo canónico guardado
+
+Este borrador reproduce el mismo hebreo que el archivo maestro de trabajo [`approved/024__HEBREO__ARTSCROLL_APP.txt`](./approved/024__HEBREO__ARTSCROLL_APP.txt). Los resultados del generador son únicamente una ejecución de diagnóstico; **la fonética GOLDEN y la igualdad con ella siguen pendientes**.
