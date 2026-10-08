@@ -32,7 +32,7 @@ Texto base: https://he.wikisource.org/wiki/תהלים_כ/ניקוד. El editor c
 
 **Hebreo:** יִֽתֶּן לְךָ כִלְבָבֶֽךָ וְכׇל עֲצָתְךָ יְמַלֵּא.
 
-**Generador:** Yitén lejá jilvaveja vejol 'atsatejá yemalé.
+**Generador (corregido en la rama):** Yiten lejá jilvaveja vejol 'atsatejá yemalé.
 
 ### 20:6
 
@@ -63,6 +63,13 @@ Texto base: https://he.wikisource.org/wiki/תהלים_כ/ניקוד. El editor c
 **Hebreo:** יְהֹוָה הוֹשִֽׁיעָה הַמֶּֽלֶךְ יַעֲנֵֽנוּ בְיוֹם קׇרְאֵֽנוּ.
 
 **Generador:** Ad-nai hoshi'a haMélej ya'anenu veyom korenu.
+
+## Corrección comprobable (ArtScroll 20:5)
+
+- `יִֽתֶּן לְךָ` lleva meteg en `יִ` en el texto aportado por el editor: se anota **Yiten lejá**, no **Yitén lejá**. En español, *Yiten* es llana terminada en -n y no necesita tilde.
+- `מִנְחֹתֶֽךָ` → **minjoteja** y `יַעֲנֵֽהוּ` → **ya'anehu**: son llanas terminadas en vocal; no escribir *minjotéja* ni *ya'anéhu*.
+- `בִּישׁוּעָתֶֽךָ` (13:6) → **bishu'ateja**, también llana sin tilde. No confundir marca de meteg con obligación de tilde española.
+- `הוֹשִֽׁיעָה` → **hoshi'a** (llana sin tilde). Se mantiene la entrada hebrea con meteg, sin inferir que Wikisource sea autoridad.
 
 ## Decisiones editoriales vigentes
 
