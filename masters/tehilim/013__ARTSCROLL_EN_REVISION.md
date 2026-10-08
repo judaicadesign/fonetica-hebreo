@@ -4,7 +4,7 @@ Base: https://he.wikisource.org/wiki/תהלים_יג/ניקוד
 
 Referencia principal: PDF ArtScroll Schottenstein, página 1. Fuente secundaria Seif, edición diferente.
 
-El verso 13:6 incorpora 3 meteg citados expresamente por el editor. No se han verificado exhaustivamente otros meteg ni todas las marcas auxiliares de shevá na. La salida fonética es la ejecución REAL del motor, no GOLDEN aprobado.
+El verso 13:6 incorpora 3 meteg citados expresamente por el editor. En 13:2 (dos veces) y 13:3 (dos veces), **אָנָה** aparece sin meteg visible sobre la vocal inicial en la página 1 de Schottenstein; de acuerdo con nuestro criterio de acento final, **aná** lleva tilde en español. La regla del generador está corregida, commit `6d77f5f`. No se han verificado exhaustivamente otros meteg ni todas las marcas auxiliares de shevá na. La salida fonética es la ejecución REAL del motor, no GOLDEN aprobado.
 
 ### 13:1
 
@@ -16,13 +16,13 @@ Generador actual: Lamnatséaj mizmor leDavid.
 
 Hebreo en cotejo: עַד אָנָה יְהֹוָה תִּשְׁכָּחֵנִי נֶצַח עַד אָנָה תַּסְתִּיר אֶת פָּנֶיךָ מִמֶּנִּי.
 
-Generador actual: 'Ad ana Ad-nai tishkajeni nétsaj 'ad ana tastir et paneja mimeni.
+Generador actual: 'Ad aná Ad-nai tishkajeni nétsaj 'ad aná tastir et paneja mimeni.
 
 ### 13:3
 
 Hebreo en cotejo: עַד אָנָה אָשִׁית עֵצוֹת בְּנַפְשִׁי יָגוֹן בִּלְבָבִי יוֹמָם עַד אָנָה יָרוּם אֹיְבִי עָלָי.
 
-Generador actual: 'Ad ana ashit 'etsot benafshí yagón bilvaví yomam 'ad ana yarum oyví 'alái.
+Generador actual: 'Ad aná ashit 'etsot benafshí yagón bilvaví yomam 'ad aná yarum oyví 'alái.
 
 ### 13:4
 
