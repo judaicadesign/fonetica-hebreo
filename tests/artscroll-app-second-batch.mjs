@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+import {extractEngine} from '../scripts/extract-engine.mjs';
+const source=extractEngine(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8'));
+const stub=`const document={getElementById(){return {value:'rabbinic',addEventListener(){},focus(){},select(){}}},createElement(){return {appendChild(){},addEventListener(){},replaceChildren(){}}}};const window={addEventListener(){}};const navigator={clipboard:{}};const requestAnimationFrame=f=>f();`;
+const api=vm.runInNewContext(stub+source+';({phonetize,reviewedArtScrollTokens});');
+const cases=JSON.parse(fs.readFileSync(new URL('./fixtures/artscroll-app-partial-9-17.json',import.meta.url),'utf8'));
+for(const c of cases){assert.equal(api.phonetize(c.hebrew),c.phonetic,c.ref);assert.equal(api.phonetize(c.hebrew.normalize('NFD')),c.phonetic,c.ref+' NFD');}
+const verse=ref=>cases.find(c=>c.ref===ref);
+assert.match(verse('10:2').phonetic,/jashavu/,'Meteg on shin: jashavu, not jashavú');
+assert.match(verse('17:5').phonetic,/Vema'gueloteja.*námotu/,'Undotted bet and meteg on nun');
+assert.doesNotMatch(verse('17:5').hebrew,/בְּמַעְגְּ/,'Do not insert a bet dagesh');
+assert.equal(api.reviewedArtScrollTokens(verse('17:5').hebrew.replace('בְמַעְגְּ','בְּמַעְגְּ')).size,0,'Nikud mismatch must invalidate source scope');
+const tokens=[...api.reviewedArtScrollTokens(verse('12:3').hebrew).values()];
+assert.ok(tokens.some(x=>x.vocalSheva?.includes(2)),'First yedaberu has vocal sheva on bet');
+assert.ok(tokens.some(x=>x.stress===2&&!x.vocalSheva),'Second yedaberu has meteg on bet-tsere, without a sheva');
+assert.doesNotMatch(verse('13:2').phonetic,/tishekajeni/,'No invented sheva-na bar on shin');
+assert.doesNotMatch(verse('14:1').phonetic,/hishejitu|hite'ivu/,'No invented sheva-na bar on shin or tav');
+assert.doesNotMatch(verse('16:4').phonetic,/nisekehem/,'No invented sheva-na bar on samekh');
+console.log('PASS: 81 contexts, source scope, distinct pointed homographs, meteg and rejected visual guesses');
