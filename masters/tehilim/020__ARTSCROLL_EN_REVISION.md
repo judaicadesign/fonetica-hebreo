@@ -90,3 +90,9 @@ El PDF impreso muestra **יהוה** sin los signos de vocalización que Wikisour
 ## Diferencia consonántica 20:4 — ArtScroll vs Wikisource
 
 En el PDF Schottenstein, página 2, **מִנְחֹתֶֽיךָ** incluye la letra **י** en la terminación (מנחותיך), que faltaba en la transcripción de Wikisource **מִנְחֹתֶךָ** y en el borrador inicial. Se incorporó la י manteniendo el meteg conforme a la evidencia del editor. La salida del generador se mantiene **minjoteja**, sin tilde escrita por ser llana terminada en vocal. Verificar aún el resto del salmo palabra por palabra antes de aprobarlo.
+
+## Diferencia pendiente de corrección del motor — 20:6
+
+- En ArtScroll Schottenstein, PDF página 2, se imprime **בִּישׁוּעָתֶךָ** sin meteg visible en la vocal de תֶ. Esto contrasta con **בִּישׁוּעָתֶֽךָ** de 13:6, que sí tiene meteg.
+- Según la convención editorial vigente (*sin meteg en esa posición → sílaba final*), la lectura esperada de esta aparición sería **bishu'atejá**, pero el motor actualmente produce **bishu'ateja**. **FALLO DETECTADO — NO APROBADO**, se necesita prueba contextual antes de modificar una regla global para no romper 13:6.
+- No se modifica el hebreo al añadir un meteg solo para forzar la fonética: el master hebreo conserva la impresión de ArtScroll.
