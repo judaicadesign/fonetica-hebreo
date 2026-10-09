@@ -15,6 +15,7 @@ assert.equal(api.reviewedArtScrollTokens(verse('17:5').hebrew.replace('בְמַ�
 const tokens=[...api.reviewedArtScrollTokens(verse('12:3').hebrew).values()];
 assert.ok(tokens.some(x=>x.vocalSheva?.includes(2)),'First yedaberu has vocal sheva on bet');
 assert.ok(tokens.some(x=>x.stress===2&&!x.vocalSheva),'Second yedaberu has meteg on bet-tsere, without a sheva');
+assert.equal(verse('9:19').phonetic,"Ki lo lanétsaj yishajaj evyón tikvat 'aniyim tovad la'ad.",'No sheva-na bar over kuf in tikvat');
 assert.doesNotMatch(verse('13:2').phonetic,/tishekajeni/,'No invented sheva-na bar on shin');
 assert.doesNotMatch(verse('14:1').phonetic,/hishejitu|hite'ivu/,'No invented sheva-na bar on shin or tav');
 assert.doesNotMatch(verse('16:4').phonetic,/nisekehem/,'No invented sheva-na bar on samekh');
