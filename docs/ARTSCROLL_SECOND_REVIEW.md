@@ -9,3 +9,7 @@ Canonical decisions, retained source filenames, source hashes in original invent
 For every future visual transcription: inspect a source crop including the whole word, establish that the helper is isolated above the letter and that the underlying vowel is sheva, record source/page/location, and label the claim as visual or grammatical. Unclear marks remain pending. Meteg is a separate vertical mark below the letter. Do not use a predicted pronunciation as proof a printed mark exists.
 
 The independent word-level regression tests prevent the known false annotations returning and check an initial vocal-sheva counterexample. Full-verse fixtures remain compatibility tests, not independent visual certification or approval of the 150 Psalms.
+
+## Rectificación confirmada el 9 de octubre
+
+La rayita sobre פ en 9:20 sí está presente: se restaura `yishafetú`. El segundo cotejo pasó por alto esa marca. `sifté` (12:4) y `Amart` (16:2) se mantienen. La forma exacta לַמְנַצֵּחַ produce `Lamenatséaj`; se evita que el corpus antiguo imponga `Lamnatséaj`. La foto de las reglas de ArtScroll confirma que la shevá inicial es na sin rayita. Esta confirmación corresponde a palabras, no a salmos completos.
