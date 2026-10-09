@@ -15,3 +15,6 @@ assert.equal(get('9:20').changes['ישפטו'].vocalSheva[0],2);
 
 assert.equal(api.phonetize("בְּאַנְחָתִי"),"Beanjatí");
 assert.ok(!get("6:7").hebrew.includes("בְּאַנְחָֽתִי"));
+
+assert.match(api.phonetize(get("126:2").hebrew),/ulshonenu.*yomerú/);
+assert.match(api.phonetize(get("126:5").hebrew),/^Hazore'im /);
