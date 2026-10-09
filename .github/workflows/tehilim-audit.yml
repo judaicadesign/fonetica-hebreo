@@ -32,6 +32,7 @@ jobs:
           node tests/tehilim-reviewed-regression.mjs
           node tests/artscroll-app-sheva.mjs
           node tests/artscroll-app-second-batch.mjs
+          node tests/artscroll-app-third-batch.mjs
           node tests/artscroll-second-review.mjs
           node tests/nakdan-workflow.mjs
       - name: Audit all Psalms
