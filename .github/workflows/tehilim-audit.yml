@@ -6,9 +6,14 @@ on:
       - index.html
       - scripts/audit-tehilim.mjs
       - scripts/extract-engine.mjs
+      - scripts/run-regressions.mjs
       - tests/**
       - .github/workflows/tehilim-audit.yml
   workflow_dispatch:
+
+concurrency:
+  group: tehilim-audit-${{ github.ref }}
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -31,17 +36,9 @@ jobs:
       - name: Regress final decisions and 126/137 review
         run: node tests/artscroll-126-137-20261011.mjs
       - name: Check phonetics and Nakdan behavior
-        run: |
-          node tests/jasar-regression.mjs
-          node tests/reverential-caps-regression.mjs
-          node tests/tehilim-artscroll-five.mjs
-          node tests/tehilim-reviewed-regression.mjs
-          node tests/artscroll-app-sheva.mjs
-          node tests/artscroll-app-second-batch.mjs
-          node tests/artscroll-app-third-batch.mjs
-          node tests/artscroll-second-review.mjs
-          node tests/nakdan-workflow.mjs
+        run: node scripts/run-regressions.mjs
       - name: Audit all Psalms
+        if: ${{ !cancelled() }}
         run: node scripts/audit-tehilim.mjs
       - uses: actions/upload-artifact@v4
         if: always()
