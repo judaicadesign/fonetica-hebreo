@@ -19,3 +19,4 @@ const summary={chapter:14,sourceURL:corpusURL,generatorSha:process.env.GITHUB_SH
 fs.mkdirSync('audit-results',{recursive:true});
 fs.writeFileSync('audit-results/psalm-014-live-generator.json',JSON.stringify({summary,verses:rows},null,2)+'\n');
 console.log('PSALM_14_LIVE_COMPARISON '+JSON.stringify(summary));
+if(mismatches.length)throw Error('Generator differs from Psalm 14 FINAL on '+mismatches.map(x=>x.verse).join(','));
