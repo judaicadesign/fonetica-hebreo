@@ -1,0 +1,3122 @@
+[
+  {
+    "table": "FINAL_FORMS",
+    "key": "יֶהְגֶּה",
+    "value": "yehgué"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "יֶהְגֶה",
+    "value": "yehgué"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "פַּלְגֵי",
+    "value": "palgué"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "לִבְנֵי",
+    "value": "livné"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "הַיְסוֹד",
+    "value": "hayesod"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "בְרִנָּה",
+    "value": "veriná"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "יְרוּשָׁלַיִם",
+    "value": "Yerushaláyim"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "צֶדֶק",
+    "value": "tsédek"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "לִשְׁמָהּ",
+    "value": "lishmah"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "בִּגְבוּרָה",
+    "value": "bigvurá"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "כִּרְצוֹנוֹ",
+    "value": "kirtsonó"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "לִפְגָרִים",
+    "value": "lifgarim"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "צָרְכִּי",
+    "value": "tsorkí"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "יָדַיִם",
+    "value": "yadáyim"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "בֵּין",
+    "value": "ben"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "וּבֵין",
+    "value": "uvén"
+  },
+  {
+    "table": "FINAL_FORMS",
+    "key": "כָּלֵב",
+    "value": "Kalev"
+  },
+  {
+    "table": "GOLDEN_EDITORIAL",
+    "key": "בְּמַעְגְּלֵי",
+    "value": "bema'guelé"
+  },
+  {
+    "table": "GOLDEN_EDITORIAL",
+    "key": "בַשָּׁלוֹם",
+    "value": "vashalom"
+  },
+  {
+    "table": "APPROVED",
+    "key": "יְיָ",
+    "value": "Ad-nai"
+  },
+  {
+    "table": "APPROVED",
+    "key": "יי",
+    "value": "Ad-nai"
+  },
+  {
+    "table": "APPROVED",
+    "key": "יהוה",
+    "value": "Ad-nai"
+  },
+  {
+    "table": "APPROVED",
+    "key": "יְהוָה",
+    "value": "Ad-nai"
+  },
+  {
+    "table": "APPROVED",
+    "key": "יְהֹוָה",
+    "value": "Ad-nai"
+  },
+  {
+    "table": "APPROVED",
+    "key": "אֱלֹהִים",
+    "value": "Elohim"
+  },
+  {
+    "table": "APPROVED",
+    "key": "אֱלֹהֵינוּ",
+    "value": "Elohenu"
+  },
+  {
+    "table": "APPROVED",
+    "key": "אֱלֹהֶיךָ",
+    "value": "Eloheja"
+  },
+  {
+    "table": "APPROVED",
+    "key": "הוּא",
+    "value": "hu"
+  },
+  {
+    "table": "APPROVED",
+    "key": "הִנֵּה",
+    "value": "hiné"
+  },
+  {
+    "table": "APPROVED",
+    "key": "לִישׁוּעָה",
+    "value": "lishu'á"
+  },
+  {
+    "table": "APPROVED",
+    "key": "הַשְּׁבִיעִי",
+    "value": "hashevi'í"
+  },
+  {
+    "table": "APPROVED",
+    "key": "טוֹבָה",
+    "value": "tová"
+  },
+  {
+    "table": "APPROVED",
+    "key": "בְּמַעְגְּלֵי",
+    "value": "bema'guelé"
+  },
+  {
+    "table": "APPROVED",
+    "key": "בִּרְכַּת",
+    "value": "birkat"
+  },
+  {
+    "table": "APPROVED",
+    "key": "בִּמְעוֹנוֹ",
+    "value": "bim'onó"
+  },
+  {
+    "table": "APPROVED",
+    "key": "לִפְנֵי",
+    "value": "lifné"
+  },
+  {
+    "table": "APPROVED",
+    "key": "הַזָּן",
+    "value": "hazán"
+  },
+  {
+    "table": "APPROVED",
+    "key": "רָצוֹן",
+    "value": "ratsón"
+  },
+  {
+    "table": "APPROVED",
+    "key": "רֶוַח",
+    "value": "révaj"
+  },
+  {
+    "table": "APPROVED",
+    "key": "מִצְוֹתָיו",
+    "value": "mitsvotav"
+  },
+  {
+    "table": "APPROVED",
+    "key": "כָּל",
+    "value": "kol"
+  },
+  {
+    "table": "APPROVED",
+    "key": "מִכָּל",
+    "value": "mikol"
+  },
+  {
+    "table": "APPROVED",
+    "key": "כְבוֹדוֹ",
+    "value": "jevodó"
+  },
+  {
+    "table": "APPROVED",
+    "key": "בְּחֶסֶד",
+    "value": "bejésed"
+  },
+  {
+    "table": "APPROVED",
+    "key": "בַשָּׁלוֹם",
+    "value": "vashalom"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וְלֹא",
+    "value": "veló"
+  },
+  {
+    "table": "APPROVED",
+    "key": "לְעוֹלָם",
+    "value": "le'olam"
+  },
+  {
+    "table": "APPROVED",
+    "key": "כִּסֵּא",
+    "value": "kisé"
+  },
+  {
+    "table": "APPROVED",
+    "key": "נִשְׁמָע",
+    "value": "nishmá'"
+  },
+  {
+    "table": "APPROVED",
+    "key": "עַל",
+    "value": "'al"
+  },
+  {
+    "table": "APPROVED",
+    "key": "אַל",
+    "value": "al"
+  },
+  {
+    "table": "APPROVED",
+    "key": "עִירָךְ",
+    "value": "'iraj"
+  },
+  {
+    "table": "APPROVED",
+    "key": "עוֹשֶׂה",
+    "value": "'osé"
+  },
+  {
+    "table": "APPROVED",
+    "key": "עֹשֶׁר",
+    "value": "'ósher"
+  },
+  {
+    "table": "APPROVED",
+    "key": "אֵלַי",
+    "value": "elái"
+  },
+  {
+    "table": "APPROVED",
+    "key": "עַיִשׁ",
+    "value": "'ayish"
+  },
+  {
+    "table": "APPROVED",
+    "key": "לָעִיר",
+    "value": "la'ir"
+  },
+  {
+    "table": "APPROVED",
+    "key": "פְּאֵרֶךָ",
+    "value": "peereja"
+  },
+  {
+    "table": "APPROVED",
+    "key": "מֵאֶרֶץ",
+    "value": "meerets"
+  },
+  {
+    "table": "APPROVED",
+    "key": "חַיִּים",
+    "value": "jayim"
+  },
+  {
+    "table": "APPROVED",
+    "key": "חָיִינוּ",
+    "value": "jayinu"
+  },
+  {
+    "table": "APPROVED",
+    "key": "שָׁמַיִם",
+    "value": "shamáyim"
+  },
+  {
+    "table": "APPROVED",
+    "key": "אַשְׁרֵי",
+    "value": "ashré"
+  },
+  {
+    "table": "APPROVED",
+    "key": "אַשְׁרֶיךָ",
+    "value": "ashreja"
+  },
+  {
+    "table": "APPROVED",
+    "key": "בִּנְגִינֹת",
+    "value": "binguinot"
+  },
+  {
+    "table": "APPROVED",
+    "key": "אוֹתוֹ",
+    "value": "otó"
+  },
+  {
+    "table": "APPROVED",
+    "key": "קָדְשׁוֹ",
+    "value": "kodshó"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וְנִתְעַנֵּג",
+    "value": "venit'aneg"
+  },
+  {
+    "table": "APPROVED",
+    "key": "הַצָּלָה",
+    "value": "hatsalá"
+  },
+  {
+    "table": "APPROVED",
+    "key": "חוֹנֵן",
+    "value": "jonén"
+  },
+  {
+    "table": "APPROVED",
+    "key": "אֻשְׁפִּיזָא",
+    "value": "ushpizá"
+  },
+  {
+    "table": "APPROVED",
+    "key": "מוֹרַי",
+    "value": "morái"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וְרַבּוֹתַי",
+    "value": "verabotái"
+  },
+  {
+    "table": "APPROVED",
+    "key": "בְּרֶוַח",
+    "value": "berévaj"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וְהִתְקִין",
+    "value": "vehitkín"
+  },
+  {
+    "table": "APPROVED",
+    "key": "פּוֹתֵחַ",
+    "value": "potéaj"
+  },
+  {
+    "table": "APPROVED",
+    "key": "יֵיטִיב",
+    "value": "yetiv"
+  },
+  {
+    "table": "APPROVED",
+    "key": "יִפְרוֹשׂ",
+    "value": "yifrós"
+  },
+  {
+    "table": "APPROVED",
+    "key": "רָאִיתִי",
+    "value": "raíti"
+  },
+  {
+    "table": "APPROVED",
+    "key": "הַגֶּבֶר",
+    "value": "haguéver"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וְהִנֵּה",
+    "value": "vehiné"
+  },
+  {
+    "table": "APPROVED",
+    "key": "מְהֵרָה",
+    "value": "meherá"
+  },
+  {
+    "table": "APPROVED",
+    "key": "רְחוֹקָה",
+    "value": "rejoká"
+  },
+  {
+    "table": "APPROVED",
+    "key": "בִּקְדֻשָּׁה",
+    "value": "bikdushá"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וּבְטָהֳרָה",
+    "value": "uvtahorá"
+  },
+  {
+    "table": "APPROVED",
+    "key": "לִמּוּדֵי",
+    "value": "limudé"
+  },
+  {
+    "table": "APPROVED",
+    "key": "נִמְשַׁחְתָּ",
+    "value": "nimshajta"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וַיְכַל",
+    "value": "vaijal"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וַיְכֻלּוּ",
+    "value": "vaijulú"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וַיְבָרֶךְ",
+    "value": "vaivaréj"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וַיְקַדֵּשׁ",
+    "value": "vaikadésh"
+  },
+  {
+    "table": "APPROVED",
+    "key": "וַיִּשְׁבֹּת",
+    "value": "vaishbót"
+  },
+  {
+    "table": "APPROVED",
+    "key": "הַשִּׁשִּׁי",
+    "value": "hashishí"
+  },
+  {
+    "table": "APPROVED",
+    "key": "הַשָּׁמַיִם",
+    "value": "hashamáyim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בִּנְגִינֹת",
+    "value": "binguinot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִזְמוֹר",
+    "value": "mizmor"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שִׁיר",
+    "value": "shir"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֱלֹהִים",
+    "value": "Elohim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יָאֵר",
+    "value": "yaer"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אִתָּנוּ",
+    "value": "itanu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "סֶלָה",
+    "value": "sela"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לָדַעַת",
+    "value": "lada'at"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בָּאָרֶץ",
+    "value": "baarets"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "דַּרְכֶּךָ",
+    "value": "darkeja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "גּוֹיִם",
+    "value": "goyim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְשׁוּעָתֶךָ",
+    "value": "yeshu'ateja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יוֹדוּךָ",
+    "value": "yoduja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עַמִּים",
+    "value": "'amim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כֻּלָּם",
+    "value": "kulam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִשְׂמְחוּ",
+    "value": "yismejú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וִירַנְּנוּ",
+    "value": "viranenú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְאֻמִּים",
+    "value": "leumim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כִּי",
+    "value": "ki"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "תִשְׁפֹּט",
+    "value": "tishpot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִישֹׁר",
+    "value": "mishor"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "תַּנְחֵם",
+    "value": "tanjem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֶרֶץ",
+    "value": "erets"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֱלֹהֵינוּ",
+    "value": "Elohenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְיִירְאוּ",
+    "value": "veyirú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אוֹתוֹ",
+    "value": "otó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כָּל",
+    "value": "kol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אַפְסֵי",
+    "value": "afsé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אָרֶץ",
+    "value": "arets"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֶת",
+    "value": "et"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְיָ",
+    "value": "Ad-nai"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עֵת",
+    "value": "'et"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "תָּמִיד",
+    "value": "tamid"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "תְּהִלָּתוֹ",
+    "value": "tehilató"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּפִי",
+    "value": "befí"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "סוֹף",
+    "value": "sof"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "דָּבָר",
+    "value": "davar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַכֹּל",
+    "value": "hakol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נִשְׁמָע",
+    "value": "nishmá'"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָאֱלֹהִים",
+    "value": "haElohim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְרָא",
+    "value": "yerá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְאֶת",
+    "value": "veet"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִצְוֹתָיו",
+    "value": "mitsvotav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שְׁמוֹר",
+    "value": "shemor"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "זֶה",
+    "value": "ze"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָאָדָם",
+    "value": "haadam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "פִּי",
+    "value": "pi"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וִיבָרֵךְ",
+    "value": "vivarej"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בָּשָׂר",
+    "value": "basar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "קָדְשׁוֹ",
+    "value": "kodshó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְעוֹלָם",
+    "value": "le'olam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וַאֲנַחְנוּ",
+    "value": "vaanajnu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נְבָרֵךְ",
+    "value": "nevarej"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מֵעַתָּה",
+    "value": "me'atá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְעַד",
+    "value": "ve'ad"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עוֹלָם",
+    "value": "'olam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֵלַי",
+    "value": "elái"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַשֻּׁלְחָן",
+    "value": "hashulján"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִפְנֵי",
+    "value": "lifné"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַב",
+    "value": "hav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לָן",
+    "value": "lan"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְנִבְרִיךְ",
+    "value": "venivrij"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עִלָּאָה",
+    "value": "'ilaá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "קַדִּישָׁא",
+    "value": "kadishá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שָׁמַיִם",
+    "value": "shamáyim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מַלְכְּתָּא",
+    "value": "malketá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֻשְׁפִּיזָא",
+    "value": "ushpizá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שִׁבְעָה",
+    "value": "shiv'á"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֻשְׁפִּיזִין",
+    "value": "ushpizín"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עִלָּאִין",
+    "value": "'ilaín"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "קַדִּישִׁין",
+    "value": "kadishín"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְרַבּוֹתַי",
+    "value": "verabotái"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּבִרְשׁוּתְכֶם",
+    "value": "uvirshutjem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נְבָרֵך",
+    "value": "nevarej"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁהַשִּׂמְחָה",
+    "value": "shehasimjá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בִּמְעוֹנוֹ",
+    "value": "bim'onó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁאָכַלְנוּ",
+    "value": "sheajalnu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִשֶּׁלוֹ",
+    "value": "misheló"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּבְטוּבוֹ",
+    "value": "uvtuvó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חָיִינוּ",
+    "value": "jayinu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָעוֹלָם",
+    "value": "ha'olam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַזָּן",
+    "value": "hazán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כֻּלּוֹ",
+    "value": "kuló"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּטוּבוֹ",
+    "value": "betuvó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּחֵן",
+    "value": "bején"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּחֶסֶד",
+    "value": "bejésed"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּרֶוַח",
+    "value": "berévaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רַבִּים",
+    "value": "rabim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נוֹתֵן",
+    "value": "notén"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לֶחֶם",
+    "value": "léjem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חַסְדּוֹ",
+    "value": "jasdó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַגָּדוֹל",
+    "value": "hagadol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לֹא",
+    "value": "lo"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְאַל",
+    "value": "veal"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יֶחְסַר",
+    "value": "yejsar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מָזוֹן",
+    "value": "mazón"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "זָן",
+    "value": "zan"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לַכֹּל",
+    "value": "lakol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְשֻׁלְחָנוֹ",
+    "value": "veshuljanó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עָרוּךְ",
+    "value": "'aruj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהִתְקִין",
+    "value": "vehitkín"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִחְיָה",
+    "value": "mijyá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּמָזוֹן",
+    "value": "umazón"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּרִיּוֹתָיו",
+    "value": "beriyotav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בָּרָא",
+    "value": "bará"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְרַחֲמָיו",
+    "value": "verajamav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חֲסָדָיו",
+    "value": "jasadav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כָּאָמוּר",
+    "value": "kaamur"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "פּוֹתֵחַ",
+    "value": "potéaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יָדֶךָ",
+    "value": "yadeja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּמַשְׂבִּיעַ",
+    "value": "umasbía'"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רָצוֹן",
+    "value": "ratsón"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נוֹדֶה",
+    "value": "nodé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עַל",
+    "value": "'al"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לַאֲבוֹתֵינוּ",
+    "value": "laavotenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חֶמְדָּה",
+    "value": "jemdá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "טוֹבָה",
+    "value": "tová"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּרִית",
+    "value": "berit"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חַיִּים",
+    "value": "jayim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִצְרַיִם",
+    "value": "Mitsráyim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִבֵּית",
+    "value": "mibet"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עֲבָדִים",
+    "value": "'avadim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְעַל",
+    "value": "ve'al"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁחָתַמְתָּ",
+    "value": "shejatamta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁלִּמַּדְתָּנוּ",
+    "value": "shelimadtanu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רְצוֹנָךְ",
+    "value": "retsonaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁהוֹדַעְתָּנוּ",
+    "value": "shehoda'tanu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַנִּסִּים",
+    "value": "hanisim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַפֻּרְקָן",
+    "value": "hapurkán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַגְּבוּרוֹת",
+    "value": "haguevurot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַתְּשׁוּעוֹת",
+    "value": "hateshu'ot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַנִּפְלָאוֹת",
+    "value": "haniflaot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַנֶּחָמוֹת",
+    "value": "hanejamot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁעָשִֽׂיתָ",
+    "value": "she'asita"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לַאֲבוֹתֵֽינוּ",
+    "value": "laavotenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בַּיָּמִים",
+    "value": "bayamim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָהֵם",
+    "value": "hahem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בַּזְּמַן",
+    "value": "bazemán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בִּימֵי",
+    "value": "bimé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בֶּן",
+    "value": "ben"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יוֹחָנָן",
+    "value": "Yojanán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "גָּדוֹל",
+    "value": "gadol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חַשְׁמוֹנָאִי",
+    "value": "jashmonaí"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּבָנָיו",
+    "value": "uvanav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כְּשֶׁעָמְדָה",
+    "value": "keshe'amdá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מַלְכוּת",
+    "value": "maljut"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָרְשָׁעָה",
+    "value": "haresha'á"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עַמְּךָ",
+    "value": "'amejá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִשְׂרָאֵל",
+    "value": "Yisrael"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְשַׁכְּחָם",
+    "value": "leshakejam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מֵחֻקֵּי",
+    "value": "mejuké"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּרַחֲמֶיךָ",
+    "value": "berajameja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָרַבִּים",
+    "value": "harabim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עָמַדְתָּ",
+    "value": "'amadta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּעֵת",
+    "value": "be'et"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "צָרָתָם",
+    "value": "tsaratam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רַבְתָּ",
+    "value": "ravta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רִיבָם",
+    "value": "rivam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "דַּנְתָּ",
+    "value": "danta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "דִּינָם",
+    "value": "dinam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נָקַמְתָּ",
+    "value": "nakamta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נִקְמָתָם",
+    "value": "nikmatam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מָסַרְתָּ",
+    "value": "masarta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "גִבּוֹרִים",
+    "value": "guiborim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּיַד",
+    "value": "beyad"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חַלָּשִׁים",
+    "value": "jalashim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְרַבִּים",
+    "value": "verabim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מְעַטִּים",
+    "value": "me'atim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "צַדִּיקִים",
+    "value": "tsadikim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "טְהוֹרִים",
+    "value": "tehorim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְזֵדִים",
+    "value": "vezedim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עוֹסְקֵי",
+    "value": "'oské"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עָשִׂיתָ",
+    "value": "'asita"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְקָדוֹשׁ",
+    "value": "vekadosh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּעוֹלָמָךְ",
+    "value": "be'olamaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּלְעַמְּךָ",
+    "value": "ul'amejá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "תְּשׁוּעָה",
+    "value": "teshu'á"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "גְדוֹלָה",
+    "value": "guedolá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּפֻרְקָן",
+    "value": "ufurkán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כְּהַיּוֹם",
+    "value": "kehayom"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְאַחַר",
+    "value": "veajar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כַּךְ",
+    "value": "kaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בָנֶיךָ",
+    "value": "vaneja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִדְבִיר",
+    "value": "lidvir"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בֵּיתֶךָ",
+    "value": "beteja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הֵיכָלֶךָ",
+    "value": "hejaleja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְטִהֲרוּ",
+    "value": "vetiharú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נֵרוֹת",
+    "value": "nerot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּחַצְרוֹת",
+    "value": "bejatsrot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְקָבְעוּ",
+    "value": "vekav'ú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שְׁמוֹנַת",
+    "value": "shemonat"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְמֵי",
+    "value": "yemé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּהַלֵּל",
+    "value": "behalel"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְעָשִׂיתָ",
+    "value": "ve'asita"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נִסִּים",
+    "value": "nisim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְנִפְלָאוֹת",
+    "value": "veniflaot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְנוֹדֶה",
+    "value": "venodé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מָרְדְּכַי",
+    "value": "Mordejái"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כְּשֶׁעָמַד",
+    "value": "keshe'amad"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עֲלֵיהֶם",
+    "value": "'alehem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָרָשָׁע",
+    "value": "harashá'"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בִּקֵּשׁ",
+    "value": "bikesh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְהַשְׁמִיד",
+    "value": "lehashmid"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לַהֲרוֹג",
+    "value": "laharog"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּלְאַבֵּד",
+    "value": "ulabed"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַיְּהוּדִים",
+    "value": "hayehudim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִנַּעַר",
+    "value": "mina'ar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "זָקֵן",
+    "value": "zakén"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "טַף",
+    "value": "taf"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְנָשִׁים",
+    "value": "venashim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּיוֹם",
+    "value": "beyom"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בִּשְׁלֹשָׁה",
+    "value": "bishloshá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עָשָׂר",
+    "value": "'asar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְחֹדֶשׁ",
+    "value": "lejódesh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חֹדֶשׁ",
+    "value": "jódesh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּשְׁלָלָם",
+    "value": "ushlalam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לָבוֹז",
+    "value": "lavoz"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הֵפַרְתָּ",
+    "value": "hefarta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עֲצָתוֹ",
+    "value": "'atsató"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְקִלְקַלְתָּ",
+    "value": "vekilkalta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מַחֲשַׁבְתּוֹ",
+    "value": "majashavtó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וַהֲשֵׁבוֹתָ",
+    "value": "vahashevota"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לּוֹ",
+    "value": "lo"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "גְּמוּלוֹ",
+    "value": "guemuló"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּרֹאשׁוֹ",
+    "value": "beroshó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְתָלוּ",
+    "value": "vetalú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בָּנָיו",
+    "value": "banav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֲנַחְנוּ",
+    "value": "anajnu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מוֹדִים",
+    "value": "modim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לָךְ",
+    "value": "laj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּמְבָרְכִים",
+    "value": "umevarjim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְאָכַלְתָּ",
+    "value": "veajalta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְשָׂבָעְתָּ",
+    "value": "vesava'ta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּבֵרַכְתָּ",
+    "value": "uverajta"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֱלֹהֶיךָ",
+    "value": "Eloheja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָאָרֶץ",
+    "value": "haarets"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַטּוֹבָה",
+    "value": "hatová"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַמָּזוֹן",
+    "value": "hamazón"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רַחֵם",
+    "value": "rajem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עַמָּךְ",
+    "value": "'amaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְרוּשָׁלַיִם",
+    "value": "Yerushaláyim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עִירָךְ",
+    "value": "'iraj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַר",
+    "value": "har"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "צִיּוֹן",
+    "value": "Tsiyón"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִשְׁכַּן",
+    "value": "mishkán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כְּבוֹדָךְ",
+    "value": "kevodaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הֵיכָלָךְ",
+    "value": "hejalaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מְעוֹנָךְ",
+    "value": "me'onaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "דְּבִירָךְ",
+    "value": "deviraj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהַקָּדוֹשׁ",
+    "value": "vehakadosh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁנִּקְרָא",
+    "value": "shenikrá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עָלָיו",
+    "value": "'alav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַרְוַח",
+    "value": "harvaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מְהֵרָה",
+    "value": "meherá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִכָּל",
+    "value": "mikol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "צָרוֹתֵינוּ",
+    "value": "tsarotenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְנָא",
+    "value": "vená"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אַל",
+    "value": "al"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִידֵי",
+    "value": "lidé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וָדָם",
+    "value": "vadam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְלֹא",
+    "value": "veló"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַלְוָאָתָם",
+    "value": "halvaatam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהָרְחָבָה",
+    "value": "veharjavá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָעֲשִׁירָה",
+    "value": "ha'ashirá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהַפְּתוּחָה",
+    "value": "vehapetujá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְהִי",
+    "value": "yehí"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נֵבוֹשׁ",
+    "value": "nevosh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בָּעוֹלָם",
+    "value": "ba'olam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נִכָּלֵם",
+    "value": "nikalem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַבָּא",
+    "value": "habá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּמַלְכוּת",
+    "value": "umaljut"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בֵּית",
+    "value": "bet"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "דָּוִד",
+    "value": "David"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מְשִׁיחָךְ",
+    "value": "meshijaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "תַּחֲזִירֶנָּה",
+    "value": "tajazirena"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בִּמְהֵרָה",
+    "value": "bimherá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְיָמֵינוּ",
+    "value": "veyamenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רְצֵה",
+    "value": "retsé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּמִצְוֹתֶיךָ",
+    "value": "bemitsvoteja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יוֹם",
+    "value": "yom"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַשְּׁבִיעִי",
+    "value": "hashevi'í"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִלְּפָנֶיךָ",
+    "value": "milefaneja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נִשְׁבּוֹת",
+    "value": "nishbot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בּוֹ",
+    "value": "bo"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְנָנוּחַ",
+    "value": "venanúaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְנִתְעַנֵּג",
+    "value": "venit'aneg"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כְּמִצְוַת",
+    "value": "kemitsvat"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "תְּהִי",
+    "value": "tehí"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "צָרָה",
+    "value": "tsará"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְיָגוֹן",
+    "value": "veyagón"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּנֶחָמַת",
+    "value": "benejamat"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בַּעַל",
+    "value": "ba'al"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וַהֲגַם",
+    "value": "vahagam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְשָׁתִינוּ",
+    "value": "veshatinu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חָרְבַּן",
+    "value": "jorbán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שָׁכַחְנוּ",
+    "value": "shajajnu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לָנֶצַח",
+    "value": "lanétsaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לָעַד",
+    "value": "la'ad"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֲבוֹתֵינוּ",
+    "value": "avotenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְיָבֹא",
+    "value": "veyavó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְיַגִּֽיעַ",
+    "value": "veyaguía'"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְיִשָּׁמַע",
+    "value": "veyishamá'"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְיִפָּקֵד",
+    "value": "veyipaked"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְיִזָּכֵר",
+    "value": "veyizajer"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְזִכְרוֹן",
+    "value": "vezijrón"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֲבוֹתֵֽינוּ",
+    "value": "avotenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "זִכְרוֹן",
+    "value": "zijrón"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְרוּשָׁלַֽיִם",
+    "value": "Yerushaláyim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְפָנֶֽיךָ",
+    "value": "lefaneja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִפְלֵיטָה",
+    "value": "lifletá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְטוֹבָה",
+    "value": "letová"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְחֵן",
+    "value": "lején"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְחֶסֶד",
+    "value": "lejésed"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּלְרַחֲמִים",
+    "value": "ulrajamim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְחַיִּים",
+    "value": "lejayim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "טוֹבִים",
+    "value": "tovim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּלְשָׁלוֹם",
+    "value": "ulshalom"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רֹאשׁ",
+    "value": "rosh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "טוֹב",
+    "value": "tov"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִקְרָא",
+    "value": "mikrá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַזִּכָּרוֹן",
+    "value": "hazikarón"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שְׁמִינִי",
+    "value": "sheminí"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְרַחֵם",
+    "value": "lerajem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בוֹ",
+    "value": "vo"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִבְרָכָה",
+    "value": "livrajá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְשׁוּעָה",
+    "value": "yeshu'á"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְרַחֲמִים",
+    "value": "verajamim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חוּס",
+    "value": "jus"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וַחֲמוֹל",
+    "value": "vajamol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֵלֶיךָ",
+    "value": "eleja"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עֵינֵינוּ",
+    "value": "'enenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חַנּוּן",
+    "value": "janún"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְרַחוּם",
+    "value": "verajum"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְתִבְנֶה",
+    "value": "vetivné"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בּוֹנֵה",
+    "value": "boné"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְרוּשָׁלָיִם",
+    "value": "Yerushaláyim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "קְדוֹשׁ",
+    "value": "kedosh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יַעֲקֹב",
+    "value": "Ya'akov"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַטּוֹב",
+    "value": "hatov"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהַמֵּטִיב",
+    "value": "vehametiv"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וָיוֹם",
+    "value": "vayom"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הֵטִיב",
+    "value": "hetiv"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מֵטִיב",
+    "value": "metiv"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יֵיטִיב",
+    "value": "yetiv"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חֵן",
+    "value": "jen"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וָחֶסֶד",
+    "value": "vajésed"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְרֶוַח",
+    "value": "verévaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהַצָּלָה",
+    "value": "vehatsalá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָרַחֲמָן",
+    "value": "harajamán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִשְׁתַּבַּח",
+    "value": "yishtabaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כִּסֵּא",
+    "value": "kisé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כְבוֹדוֹ",
+    "value": "jevodó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בַּשָּׁמַיִם",
+    "value": "bashamáyim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּבָאָרֶץ",
+    "value": "uvaarets"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בָּנוּ",
+    "value": "banu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְדוֹר",
+    "value": "ledor"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "דּוֹרִים",
+    "value": "dorim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "קֶרֶן",
+    "value": "keren"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְעַמּוֹ",
+    "value": "le'amó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יָרִים",
+    "value": "yarim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִתְפָּאַר",
+    "value": "yitpaar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נְצָחִים",
+    "value": "netsajim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּכָבוֹד",
+    "value": "bejavod"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְאִסּוּר",
+    "value": "veisur"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִתֵּן",
+    "value": "yitén"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שָׁלוֹם",
+    "value": "shalom"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בֵּינֵינוּ",
+    "value": "benenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִשְׁלַח",
+    "value": "yishlaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּרָכָה",
+    "value": "berajá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רְוָחָה",
+    "value": "revajá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהַצְלָחָה",
+    "value": "vehatslajá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מַעֲשֵׂה",
+    "value": "ma'asé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יָדֵינוּ",
+    "value": "yadenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יַצְלִיחַ",
+    "value": "yatslíaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "דְּרָכֵינוּ",
+    "value": "derajenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִשְׁבּוֹר",
+    "value": "yishbor"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עוֹל",
+    "value": "'ol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "גָּלוּת",
+    "value": "galut"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מֵעַל",
+    "value": "me'al"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "קוֹמְמִיּוּת",
+    "value": "komemiyut"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רְפוּאָה",
+    "value": "refuá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רְפוּאַת",
+    "value": "refuat"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּרְפוּאַת",
+    "value": "urfuat"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַגּוּף",
+    "value": "haguf"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִפְתַּח",
+    "value": "yiftaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָרְחָבָה",
+    "value": "harejavá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְבָרֵךְ",
+    "value": "yevarej"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִמֶּנּוּ",
+    "value": "mimenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כְּמוֹ",
+    "value": "kemó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁנִּתְבָּרְכוּ",
+    "value": "shenitbarjú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אַבְרָהָם",
+    "value": "Avraham"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִצְחָק",
+    "value": "Yitsjak"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בַּכֹּל",
+    "value": "bakol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִכֹּל",
+    "value": "mikol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כֹּל",
+    "value": "kol"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כֵּן",
+    "value": "ken"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יַחַד",
+    "value": "yájad"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְכֵן",
+    "value": "vején"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְנֹאמַר",
+    "value": "venomar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁכֻּלּוֹ",
+    "value": "shekuló"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּמְנוּחָה",
+    "value": "umenujá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְחַיֵּי",
+    "value": "lejayé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הָעוֹלָמִים",
+    "value": "ha'olamim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְחַדֵּשׁ",
+    "value": "yejadesh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְלִבְרָכָה",
+    "value": "velivrajá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְמוֹעֲדִים",
+    "value": "lemo'adim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אֲחֵרִים",
+    "value": "ajerim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְשָלוֹם",
+    "value": "leshalom"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַשָּׁנָה",
+    "value": "hashaná"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַזֹּאת",
+    "value": "hazot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לֵישֵׁב",
+    "value": "leshev"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עוֹרוֹ",
+    "value": "'oró"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁל",
+    "value": "shel"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִוְיָתָן",
+    "value": "livyatán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יַשְׁפִּיעַ",
+    "value": "yashpía'"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁפַע",
+    "value": "shefa'"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "קְדוּשָּׁה",
+    "value": "kedushá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְטָהֳרָה",
+    "value": "vetahorá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִשִּׁבְעָה",
+    "value": "mishiv'á"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "אוּשְׁפִּיזִין",
+    "value": "ushpizín"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "זְכוּתָם",
+    "value": "zejutam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "תְּהֵא",
+    "value": "tehé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מָגֵן",
+    "value": "maguén"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְצִנָּה",
+    "value": "vetsiná"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יָקִים",
+    "value": "yakim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַנּוֹפֶלֶת",
+    "value": "hanofélet"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִטַּע",
+    "value": "yitá'"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְאַהֲבָתוֹ",
+    "value": "veahavató"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְתִהְיֶה",
+    "value": "vetihyé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִרְאָתוֹ",
+    "value": "yirató"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "פָּנֵינוּ",
+    "value": "panenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נֶחֱטָא",
+    "value": "nejetá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מַעֲשֵׂינוּ",
+    "value": "ma'asenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְשֵׁם",
+    "value": "leshem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שָׁמָיִם",
+    "value": "shamáyim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וִיסַדֵּר",
+    "value": "visader"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מַעֲדַנֵּי",
+    "value": "ma'adané"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְיִהְיֶה",
+    "value": "veyihyé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רָעֵב",
+    "value": "ra'ev"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יֹאכַל",
+    "value": "yojal"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "צָמֵא",
+    "value": "tsamé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִשְׁתֶּה",
+    "value": "yishté"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "טוּב",
+    "value": "tuv"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עוֹלָמִים",
+    "value": "'olamim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּבַעַל",
+    "value": "uva'al"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְאִשְׁתּוֹ",
+    "value": "veishtó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לוֹ",
+    "value": "lo"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּבָנִים",
+    "value": "bevanim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁיִּחְיוּ",
+    "value": "sheyijyú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּבִנְכָסִים",
+    "value": "uvinjasim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶׁיִּרְבּוּ",
+    "value": "sheyirbú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בָּרֵךְ",
+    "value": "barej"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חֵילוֹ",
+    "value": "jeló"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּפֹעַל",
+    "value": "ufó'al"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יָדָיו",
+    "value": "yadav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נְכָסָיו",
+    "value": "nejasav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מֻצְלָחִים",
+    "value": "mutslajim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּקְרוֹבִים",
+    "value": "ukrovim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לָעִיר",
+    "value": "la'ir"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִזְדַּקֵּק",
+    "value": "yizdakek"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְפָנָיו",
+    "value": "lefanav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לְפָנֵינוּ",
+    "value": "lefanenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שׁוּם",
+    "value": "shum"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "דְּבַר",
+    "value": "devar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חֵטְא",
+    "value": "jet"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהִרְהוּר",
+    "value": "vehirhur"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שָׂשׂ",
+    "value": "sas"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְשָׂמֵחַ",
+    "value": "vesaméaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַיָּמִים",
+    "value": "hayamim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּעֹשֶׁר",
+    "value": "be'ósher"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְכָבוֹד",
+    "value": "vejavod"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יֵבוֹשׁ",
+    "value": "yevosh"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִכָּלֵם",
+    "value": "yikalem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לָעוֹלָם",
+    "value": "la'olam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הֶחָתָן",
+    "value": "hejatán"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהַכַּלָּה",
+    "value": "vehakalá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "קַיָּמָא",
+    "value": "kayamá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לַעֲבוֹדָתוֹ",
+    "value": "la'avodató"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִתְבָּרַךְ",
+    "value": "yitbaraj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַמְּסֻבִּין",
+    "value": "hamesubín"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בַּשֻּׁלְחָן",
+    "value": "bashulján"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְיִתֵּן",
+    "value": "veyitén"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִשְׁאֲלוֹת",
+    "value": "mishalot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְחַיֵּינוּ",
+    "value": "yejayenu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִימוֹת",
+    "value": "limot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַמִּקְדָּשׁ",
+    "value": "hamikdash"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יְשׁוּעוֹת",
+    "value": "yeshu'ot"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מַלְכּוֹ",
+    "value": "malkó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חֶסֶד",
+    "value": "jésed"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִמְשִׁיחוֹ",
+    "value": "limshijó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּלְזַרְעוֹ",
+    "value": "ulzar'ó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עַד",
+    "value": "'ad"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כְּפִירִים",
+    "value": "kefirim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רָשׁוּ",
+    "value": "rashú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְרָעֵבוּ",
+    "value": "vera'evú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְדֹרְשֵׁי",
+    "value": "vedorshé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יַחְסְרוּ",
+    "value": "yajserú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "גַּם",
+    "value": "gam"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "זָקַנְתִּי",
+    "value": "zakanti"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "רָאִיתִי",
+    "value": "raíti"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "צַדִּיק",
+    "value": "tsadik"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "נֶעֱזָב",
+    "value": "ne'ezav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לָחֶם",
+    "value": "lájem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַיּוֹם",
+    "value": "hayom"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "חוֹנֵן",
+    "value": "jonén"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּמַלְוֶה",
+    "value": "umalvé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מַה",
+    "value": "ma"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶּׁאָכַלְנוּ",
+    "value": "sheajalnu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִהְיֶה",
+    "value": "yihyé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וּמַה",
+    "value": "umá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶּׁשָּׁתִינוּ",
+    "value": "sheshatinu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִרְפוּאָה",
+    "value": "lirfuá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "שֶּׁהוֹתַרְנוּ",
+    "value": "shehotarnu"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כְּדִכְתִיב",
+    "value": "kedijtiv"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לִפְנֵיהֶם",
+    "value": "lifnehem"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "כִּדְבַר",
+    "value": "kidvar"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בְּרוּכִים",
+    "value": "berujim"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עוֹשֵׂה",
+    "value": "'osé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וָאָרֶץ",
+    "value": "vaarets"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "הַגֶּבֶר",
+    "value": "haguéver"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "יִבְטַח",
+    "value": "yivtaj"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְהָיָה",
+    "value": "vehayá"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "מִבְטָחוֹ",
+    "value": "mivtajó"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עֹז",
+    "value": "'oz"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בַשָּׁלוֹם",
+    "value": "vashalom"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "עוֹשֶׂה",
+    "value": "'osé"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בִּמְרוֹמָיו",
+    "value": "bimromav"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "וְאִמְרוּ",
+    "value": "veimrú"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "לַיְיָ",
+    "value": "laAd-nai"
+  },
+  {
+    "table": "GOLD.sef.w",
+    "key": "בַּיְיָ",
+    "value": "baAd-nai"
+  }
+]
