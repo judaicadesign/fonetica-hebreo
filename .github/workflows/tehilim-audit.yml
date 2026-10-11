@@ -26,6 +26,8 @@ jobs:
         run: node --check scripts/audit-tehilim.mjs
       - name: Snapshot exact generator output for ArtScroll 8–12
         run: node tests/artscroll-eight-twelve-audit.mjs
+      - name: Regress final decisions and 126/137 review
+        run: node tests/artscroll-126-137-20261011.mjs
       - name: Check phonetics and Nakdan behavior
         run: |
           node tests/jasar-regression.mjs
