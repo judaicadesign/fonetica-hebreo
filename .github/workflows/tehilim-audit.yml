@@ -24,6 +24,8 @@ jobs:
           node-version: '22'
       - name: Check JavaScript syntax
         run: node --check scripts/audit-tehilim.mjs
+      - name: Compare generator against live Tehilim 14 master
+        run: node tests/psalm-14-live-audit.mjs
       - name: Snapshot exact generator output for ArtScroll 8–12
         run: node tests/artscroll-eight-twelve-audit.mjs
       - name: Regress final decisions and 126/137 review
