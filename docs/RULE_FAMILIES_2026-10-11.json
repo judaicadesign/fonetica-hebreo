@@ -1,0 +1,5861 @@
+{
+  "baseline": "618cfaf5cae682ed906a86399bbd868453ec0772",
+  "baselineEntries": 306,
+  "baselineForms": 270,
+  "currentEntries": 275,
+  "currentForms": 241,
+  "retiredEntries": 31,
+  "retiredForms": 29,
+  "familyCounts": {
+    "dagesh": 181,
+    "qamats-a-or-o": 138,
+    "possible-prefix": 175,
+    "sheva": 158,
+    "kha-suffix-candidate": 11,
+    "enu-connecting-vowel": 41,
+    "other-lexical-or-stress": 15,
+    "phrase": 9,
+    "mappiq-he": 10,
+    "other-nu": 10,
+    "ta-verb-candidate": 2,
+    "enu-ambiguous-nun-stem": 4,
+    "unpointed-or-abbreviation": 3
+  },
+  "tableDisagreements": 16,
+  "note": "Families overlap. Prefix/suffix candidates are not grammatical analyses. Pending does not mean a genuine exception. Compatibility fixtures are not independent pronunciation certification.",
+  "forms": [
+    {
+      "key": "תּוֹרָה",
+      "families": [
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "torá",
+      "currentRaw": "torá",
+      "activeOutput": "Torá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Torá",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַתּוֹרָה",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hatorá",
+      "currentRaw": "hatorá",
+      "activeOutput": "haTorá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "haTorá",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בַּתּוֹרָה",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "batorá",
+      "currentRaw": "batorá",
+      "activeOutput": "baTorá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "baTorá",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּתוֹרַת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "betorat",
+      "currentRaw": "betorat",
+      "activeOutput": "beTorat",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "beTorat",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְתוֹרַת",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "vetorat",
+      "currentRaw": "vetorat",
+      "activeOutput": "beTorat",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "beTorat",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּבְתוֹרָתוֹ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "uvtorató",
+      "currentRaw": "uvtorató",
+      "activeOutput": "uvTorató",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "uvTorató",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּבְּתוֹרָתוֹ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ubetorató",
+      "currentRaw": "ubetorató",
+      "activeOutput": "uvTorató",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "uvTorató",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "תּוֹרָתְךָ",
+      "families": [
+        "kha-suffix-candidate",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "torateja",
+      "currentRaw": "torateja",
+      "activeOutput": "Torateja",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Torateja",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "Torateja",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "תּוֹרָתֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "toratenú",
+      "currentRaw": "toratenu",
+      "activeOutput": "Toratenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Toratenu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יְהְגֶּה",
+      "families": [
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "yehegué",
+      "currentRaw": "yehegué",
+      "activeOutput": "yehgué",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "yehgué",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "פַלְגֵי",
+      "families": [
+        "sheva"
+      ],
+      "baselineRaw": "falgué",
+      "currentRaw": "falgué",
+      "activeOutput": "palgué",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "palgué",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וָלָיְלָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "valaylá",
+      "currentRaw": "valaylá",
+      "activeOutput": "valayla",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "valayla",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בַּנֶּגֶב",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "banéguev",
+      "currentRaw": "banéguev",
+      "activeOutput": "baNéguev",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "baNéguev",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְהוּא",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "vehú",
+      "currentRaw": "vehú",
+      "activeOutput": "vehu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "vehu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בֵיתְךָ",
+      "families": [
+        "possible-prefix",
+        "kha-suffix-candidate",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "veteja",
+      "currentRaw": "veteja",
+      "activeOutput": "beteja",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "beteja",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "betjá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לָיְלָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "laylá",
+      "currentRaw": "laylá",
+      "activeOutput": "layla",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "layla",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּחָכְמָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "bejojmó",
+      "currentRaw": "bejojmó",
+      "activeOutput": "bejojmá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "bejojmá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אֵיתָן",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "etán",
+      "currentRaw": "etán",
+      "activeOutput": "Eitán",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Eitán",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אִלְעַי",
+      "families": [
+        "sheva"
+      ],
+      "baselineRaw": "il'ái",
+      "currentRaw": "il'ái",
+      "activeOutput": "Il'ay",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Il'ay",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אִילְעַי",
+      "families": [
+        "sheva"
+      ],
+      "baselineRaw": "il'ái",
+      "currentRaw": "il'ái",
+      "activeOutput": "Il'ay",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Il'ay",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "דָּנִיֵּאל",
+      "families": [
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "daniyel",
+      "currentRaw": "daniyel",
+      "activeOutput": "Daniel",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Daniel",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַשְּׁמִינִי",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "hasheminí",
+      "currentRaw": "hasheminí",
+      "activeOutput": "Hasheminí",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLDEN_EDITORIAL",
+          "value": "Hasheminí",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "APPROVED",
+          "value": "Hasheminí",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שָׁאַתָּה",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shaatá",
+      "currentRaw": "shaatá",
+      "activeOutput": "shaatá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLDEN_EDITORIAL",
+          "value": "shaAtá",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "APPROVED",
+          "value": "shaAtá",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שֶׁאַתָּה",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "sheatá",
+      "currentRaw": "sheatá",
+      "activeOutput": "sheatá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLDEN_EDITORIAL",
+          "value": "sheAtá",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "APPROVED",
+          "value": "sheAtá",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "sheAtá",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אֵל",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "el",
+      "currentRaw": "el",
+      "activeOutput": "El",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "El",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מֶלֶךְ",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "mélej",
+      "currentRaw": "mélej",
+      "activeOutput": "Mélej",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Mélej",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "Mélej",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַמֶּלֶךְ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "hamélej",
+      "currentRaw": "hamélej",
+      "activeOutput": "haMélej",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "HaMélej",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "haMélej",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לַאֲדוֹן",
+      "families": [
+        "possible-prefix"
+      ],
+      "baselineRaw": "laadón",
+      "currentRaw": "laadón",
+      "activeOutput": "laAdón",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "laAdón",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד",
+      "families": [
+        "phrase",
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hinehelyshu'atiyevtajvloefjad",
+      "currentRaw": "hinehelyshu'atiyevtajvloefjad",
+      "activeOutput": "Hiné El yeshua'tí evtaj veló efjad",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Hiné El yeshua'tí evtaj veló efjad",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הִנֵּה אֵל יְשׁוּעָתִי אֶבְטַח וְלֹא אֶפְחָד, כִּי עָזִּי וְזִמְרָת יָהּ יְיָ, וַיְהִי לִי לִישׁוּעָה",
+      "families": [
+        "phrase",
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hinehelyshu'atiyevtajvloefjadkiy'aziyvzimratyahyyavayhiyliylishu'á",
+      "currentRaw": "hinehelyshu'atiyevtajvloefjadkiy'aziyvzimratyahyyavayhiyliylishu'á",
+      "activeOutput": "Hiné El yeshua'tí evtaj veló efjad, ki 'ozí vezimrát Yah Ad-nai, vayehí li lishu'á",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Hiné El yeshua'tí evtaj veló efjad, ki 'ozí vezimrát Yah Ad-nai, vayehí li lishu'á",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יְשׁוּעָתִי",
+      "families": [
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yeshu'atí",
+      "currentRaw": "yeshu'atí",
+      "activeOutput": "yeshua'tí",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "yeshua'tí",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "עָזִּי",
+      "families": [
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "'azí",
+      "currentRaw": "'azí",
+      "activeOutput": "'ozí",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "'ozí",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְזִמְרָת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "vezimrat",
+      "currentRaw": "vezimrat",
+      "activeOutput": "vezimrát",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "vezimrát",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יָהּ",
+      "families": [
+        "mappiq-he",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yah",
+      "currentRaw": "yah",
+      "activeOutput": "Yah",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Yah",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "Yah",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וַיְהִי",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "vaihi",
+      "currentRaw": "vaihi",
+      "activeOutput": "vayehí",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "vayehí",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "תַּצְהִיר",
+      "families": [
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "tatshir",
+      "currentRaw": "tatshir",
+      "activeOutput": "tats-hir",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "tats-hir",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יוֹחַאי",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "yojay",
+      "currentRaw": "yojay",
+      "activeOutput": "Yojái",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Yojái",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שָׁנָה",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shaná",
+      "currentRaw": "shaná",
+      "activeOutput": "Shaná",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Shaná",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אִלֵּם",
+      "families": [
+        "dagesh"
+      ],
+      "baselineRaw": "ilem",
+      "currentRaw": "ilem",
+      "activeOutput": "ilém",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "ilém",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בִּרְשׁוּת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "birshut",
+      "currentRaw": "birshut",
+      "activeOutput": "birshut",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Birshut",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "birshut",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שֵׁם קָדְשׁוֹ",
+      "families": [
+        "phrase",
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shemkadshó",
+      "currentRaw": "shemkadshó",
+      "activeOutput": "Shem kodshó",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Shem kodshó",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הוֹדוּ לַייָ",
+      "families": [
+        "phrase",
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hodulayá",
+      "currentRaw": "hodulayá",
+      "activeOutput": "Hodú laAd-nai",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Hodú laAd-nai",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הוֹדוּ לַיְיָ",
+      "families": [
+        "phrase",
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hodulayyá",
+      "currentRaw": "hodulayyá",
+      "activeOutput": "Hodú laAd-nai",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Hodú laAd-nai",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הוֹדוּ לַיי",
+      "families": [
+        "phrase",
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "hodulay",
+      "currentRaw": "hodulay",
+      "activeOutput": "Hodú laAd-nai",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Hodú laAd-nai",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שֵׁם יְיָ",
+      "families": [
+        "phrase",
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shemyyá",
+      "currentRaw": "shemyyá",
+      "activeOutput": "Shem Ad-nai",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Shem Ad-nai",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בָּרוּךְ שְׁמוֹ",
+      "families": [
+        "phrase",
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "barujshemó",
+      "currentRaw": "barujshemó",
+      "activeOutput": "Baruj Shemó",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Baruj Shemó",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּבְמִלְחֶמֶת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "uvmiljémet",
+      "currentRaw": "uvmiljémet",
+      "activeOutput": "uvemiljemet",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "uvemiljemet",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מִלְחֶמֶת",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "miljémet",
+      "currentRaw": "miljémet",
+      "activeOutput": "miljemet",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "miljemet",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּזָכְרֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "bezajrenú",
+      "currentRaw": "bezajrenu",
+      "activeOutput": "bezojrenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "bezojrenu",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יְרוּשָׁלִם",
+      "families": [
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yerushalim",
+      "currentRaw": "yerushalim",
+      "activeOutput": "Yerushaláyim",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Yerushaláyim",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יְרוּשָׁלִַם",
+      "families": [
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yerushalam",
+      "currentRaw": "yerushalam",
+      "activeOutput": "Yerushaláyim",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Yerushaláyim",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "חֻקֵּי",
+      "families": [
+        "dagesh"
+      ],
+      "baselineRaw": "juké",
+      "currentRaw": "juké",
+      "activeOutput": "juké",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Juké",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "juké",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "נֹתֵן",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "notén",
+      "currentRaw": "notén",
+      "activeOutput": "Notén",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "notén",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "נָתַן",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "natán",
+      "currentRaw": "natán",
+      "activeOutput": "natán",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "natán",
+          "kind": "rule-equivalent",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "natán",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "רֵיוַח",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "revaj",
+      "currentRaw": "revaj",
+      "activeOutput": "révaj",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "révaj",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּכָל",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "bejal",
+      "currentRaw": "bejal",
+      "activeOutput": "bejol",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "bejol",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "bejol",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בִּכָל",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "bijal",
+      "currentRaw": "bijal",
+      "activeOutput": "bikal",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "bejol",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לְכָל",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "lejal",
+      "currentRaw": "lejal",
+      "activeOutput": "lejol",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "lejol",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "lejol",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְכָל",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "vejal",
+      "currentRaw": "vejal",
+      "activeOutput": "vejol",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "vejol",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "vejol",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "נַעַר",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "na'ar",
+      "currentRaw": "na'ar",
+      "activeOutput": "na'ar",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "ná'ar",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "na'ar",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְהוֹשִׁיעֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "vehoshi'enú",
+      "currentRaw": "vehoshi'enu",
+      "activeOutput": "vehoshi'enu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "vehoshi'enu",
+          "kind": "rule-equivalent",
+          "retired": true
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "vehoshi'enu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "עָלֵינוּ",
+      "families": [
+        "other-nu",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "'alenu",
+      "currentRaw": "'alenu",
+      "activeOutput": "'alenu",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "'Alenu",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "'alenu",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "עַלֵינוּ",
+      "families": [
+        "other-nu",
+        "dagesh"
+      ],
+      "baselineRaw": "'alenu",
+      "currentRaw": "'alenu",
+      "activeOutput": "'Alenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "'Alenu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מַעְלָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ma'lá",
+      "currentRaw": "ma'lá",
+      "activeOutput": "ma'la",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "ma'la",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מַעֲלֶה",
+      "families": [
+        "possible-prefix"
+      ],
+      "baselineRaw": "ma'ale",
+      "currentRaw": "ma'ale",
+      "activeOutput": "ma'alé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "ma'alé",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "עַיִן",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "'ayín",
+      "currentRaw": "'ayín",
+      "activeOutput": "'ayin",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "'ayin",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אֶעֱשֶׂה",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "e'ese",
+      "currentRaw": "e'ese",
+      "activeOutput": "e'esé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "e'esé",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וִירוּשָׁלַיִם",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "virushaláyim",
+      "currentRaw": "virushaláyim",
+      "activeOutput": "Virushaláyim",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Virushaláyim",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "פָּנָיו",
+      "families": [
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "panav",
+      "currentRaw": "panav",
+      "activeOutput": "Panav",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Panav",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "Panav",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אֲבָרְכָה",
+      "families": [
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "avarjá",
+      "currentRaw": "avarjá",
+      "activeOutput": "avarejá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "avarejá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "avarejá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "תְּהִלַּת",
+      "families": [
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "tehilat",
+      "currentRaw": "tehilat",
+      "activeOutput": "tehilat",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Tehilat",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "tehilat",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יְדַבֶּר",
+      "families": [
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "yedáber",
+      "currentRaw": "yedáber",
+      "activeOutput": "yedaber",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "yedaber",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "yedaber",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שֶׁהִנְחַלְתָּ",
+      "families": [
+        "possible-prefix",
+        "ta-verb-candidate",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shehinjalta",
+      "currentRaw": "shehinjalta",
+      "activeOutput": "shehinjalta",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "shehinjaltá",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "shehinjalta",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְהֲגַם",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "vehagam",
+      "currentRaw": "vehagam",
+      "activeOutput": "Vehagam",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Vehagam",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְחָנֵּנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-ambiguous-nun-stem",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "vejanenú",
+      "currentRaw": "vejanenú",
+      "activeOutput": "vejanenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "vejanenu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "vejanenu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְזַרְעוֹ",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "vezar'ó",
+      "currentRaw": "vezar'ó",
+      "activeOutput": "vezar'ó",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Vezar'ó",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "vezar'ó",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַלְלוּיָהּ",
+      "families": [
+        "possible-prefix",
+        "mappiq-he",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hallúyah",
+      "currentRaw": "hallúyah",
+      "activeOutput": "HaleluYah",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "haleluYá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "HaleluYah",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יוֹמָא",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yomá",
+      "currentRaw": "yomá",
+      "activeOutput": "yomá",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Yomá",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "yomá",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "טָבָא",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "tavá",
+      "currentRaw": "tavá",
+      "activeOutput": "tavá",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Tavá",
+          "kind": "capitalization-only",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "tavá",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְשָׂבַעְתָּ",
+      "families": [
+        "possible-prefix",
+        "ta-verb-candidate",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "vesava'ta",
+      "currentRaw": "vesava'ta",
+      "activeOutput": "vesava'tá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "vesava'tá",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אֶלָּא",
+      "families": [
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ela",
+      "currentRaw": "ela",
+      "activeOutput": "ela",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Elá",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "ela",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מָשִׁיחַ",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "mashíaj",
+      "currentRaw": "mashíaj",
+      "activeOutput": "Mashíaj",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Mashíaj",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "עַבְדָּךְ",
+      "families": [
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "'avdaj",
+      "currentRaw": "'avdaj",
+      "activeOutput": "'avdaj",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "'avdejá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "'avdaj",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יְפַרְנְסֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "yefarnesenú",
+      "currentRaw": "yefarnesenu",
+      "activeOutput": "yefarnesenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "yefarnesenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "yefarnesenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "לְבִלְתִּי",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "levilti",
+      "currentRaw": "levilti",
+      "activeOutput": "leviltí",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "leviltí",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "leviltí",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בִזּוּי",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "vizuy",
+      "currentRaw": "vizuy",
+      "activeOutput": "bizúi",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "bizúi",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הָיִיתִי",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hayiti",
+      "currentRaw": "hayiti",
+      "activeOutput": "hayíti",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "hayíti",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "hayíti",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "תִּרְצֶה",
+      "families": [
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "tirtsé",
+      "currentRaw": "tirtsé",
+      "activeOutput": "tirtsé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "tirtsé",
+          "kind": "rule-equivalent",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "tirtsé",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּתִפְאַרְתֶּךָ",
+      "families": [
+        "possible-prefix",
+        "kha-suffix-candidate",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "betifarteja",
+      "currentRaw": "betifarteja",
+      "activeOutput": "betifartéja",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "betifartéja",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לְתוֹכָהּ",
+      "families": [
+        "possible-prefix",
+        "mappiq-he",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "letojah",
+      "currentRaw": "letojah",
+      "activeOutput": "letojáh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "letojáh",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְשַׂמְּחֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "vesamejenú",
+      "currentRaw": "vesamejenu",
+      "activeOutput": "vesamejenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "vesamejenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "בִּנְיָנָהּ",
+      "families": [
+        "possible-prefix",
+        "mappiq-he",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "binyanah",
+      "currentRaw": "binyanah",
+      "activeOutput": "bivnayanáh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "bivnayanáh",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מִפִּרְיָהּ",
+      "families": [
+        "possible-prefix",
+        "mappiq-he",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "mipiryah",
+      "currentRaw": "mipiryah",
+      "activeOutput": "mipiriyáh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "mipiriyáh",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְנִשְׂבַּע",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "venisbá'",
+      "currentRaw": "venisbá'",
+      "activeOutput": "venisba'",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "venisba'",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מִטּוּבָה",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "mituvá",
+      "currentRaw": "mituvá",
+      "activeOutput": "mituváh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "mituváh",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מִטּוּבָהּ",
+      "families": [
+        "possible-prefix",
+        "mappiq-he",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "mituvah",
+      "currentRaw": "mituvah",
+      "activeOutput": "mituváh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "mituváh",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לִכְבוֹדָהּ",
+      "families": [
+        "possible-prefix",
+        "mappiq-he",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "lijvódah",
+      "currentRaw": "lijvódah",
+      "activeOutput": "lijvodáh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "lijvodáh",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּלְתִפְאֶרֶתָהּ",
+      "families": [
+        "possible-prefix",
+        "mappiq-he",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ultiferétah",
+      "currentRaw": "ultiferétah",
+      "activeOutput": "uletiferetáh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "uletiferetáh",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּרְחָבָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "urjavá",
+      "currentRaw": "urjavá",
+      "activeOutput": "urjavá",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "urejavá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "urjavá",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְרַחֵם",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "verajem",
+      "currentRaw": "verajem",
+      "activeOutput": "verajem",
+      "tableDisagreement": true,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "verajém",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "verajem",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יו״ד",
+      "families": [
+        "unpointed-or-abbreviation"
+      ],
+      "baselineRaw": "yvd",
+      "currentRaw": "yvd",
+      "activeOutput": "Yud",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Yud",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "ל״ב",
+      "families": [
+        "unpointed-or-abbreviation",
+        "possible-prefix"
+      ],
+      "baselineRaw": "lv",
+      "currentRaw": "lv",
+      "activeOutput": "Lev",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Lev",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בַּר",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "bar",
+      "currentRaw": "bar",
+      "activeOutput": "Bar",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Bar",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שָׂשׂוֹן",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "sasón",
+      "currentRaw": "sasón",
+      "activeOutput": "sason",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "sason",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יוֹם הַשִּׁשִּׁי",
+      "families": [
+        "phrase",
+        "dagesh"
+      ],
+      "baselineRaw": "yomhashishí",
+      "currentRaw": "yomhashishí",
+      "activeOutput": "Yom hashishí",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "APPROVED",
+          "value": "Yom hashishí",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יְחָנֵּנוּ",
+      "families": [
+        "enu-ambiguous-nun-stem",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yejanenú",
+      "currentRaw": "yejanenú",
+      "activeOutput": "yejanenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yejanenu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וִיבָרְכֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "vivarjenú",
+      "currentRaw": "vivarjenu",
+      "activeOutput": "vivarjenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vivarjenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "וּלְאֻמִּים",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "ulumim",
+      "currentRaw": "ulumim",
+      "activeOutput": "uleumim",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uleumim",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "נָתְנָה",
+      "families": [
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "natna",
+      "currentRaw": "natna",
+      "activeOutput": "natná",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "natná",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יְבוּלָהּ",
+      "families": [
+        "mappiq-he",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yevulah",
+      "currentRaw": "yevulah",
+      "activeOutput": "yevuláh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yevuláh",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יְבָרְכֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yevarjenú",
+      "currentRaw": "yevarjenu",
+      "activeOutput": "yevarejenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yevarejenu",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שֵׁם",
+      "families": [
+        "possible-prefix"
+      ],
+      "baselineRaw": "shem",
+      "currentRaw": "shem",
+      "activeOutput": "Shem",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shem",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וָעֶד",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "vá'ed",
+      "currentRaw": "vá'ed",
+      "activeOutput": "va'ed",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "va'ed",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וַיְדַבֵּר",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "vaidaber",
+      "currentRaw": "vaidaber",
+      "activeOutput": "vaydaber",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vaydaber",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אֲשֶׁר",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "ásher",
+      "currentRaw": "ásher",
+      "activeOutput": "asher",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "asher",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לְמַלְכָּא",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "lemalká",
+      "currentRaw": "lemalká",
+      "activeOutput": "leMalká",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "leMalká",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מַלְכָּא",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "malká",
+      "currentRaw": "malká",
+      "activeOutput": "Malká",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Malká",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּבִרְשׁוּת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "uvirshut",
+      "currentRaw": "uvirshut",
+      "activeOutput": "Ubirshut",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Ubirshut",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שַׁבָּת",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shabat",
+      "currentRaw": "shabat",
+      "activeOutput": "Shabat",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shabat",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּבִּרְשׁוּת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "ubirshut",
+      "currentRaw": "ubirshut",
+      "activeOutput": "Ubirshut",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Ubirshut",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מוֹרַי",
+      "families": [
+        "possible-prefix"
+      ],
+      "baselineRaw": "morái",
+      "currentRaw": "morái",
+      "activeOutput": "morai",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "morai",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בָּרוּךְ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "baruj",
+      "currentRaw": "baruj",
+      "activeOutput": "Baruj",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Baruj",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הָאֵל",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hael",
+      "currentRaw": "hael",
+      "activeOutput": "haEl",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "haEl",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אוֹתָנוּ",
+      "families": [
+        "other-nu",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "otanú",
+      "currentRaw": "otanú",
+      "activeOutput": "otanu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "otanu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּבְרַחֲמִים",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "uvrajamim",
+      "currentRaw": "uvrajamim",
+      "activeOutput": "uverajamim",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uverajamim",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "חָסַר",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "jasar",
+      "currentRaw": "jasar",
+      "activeOutput": "jásar",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "jásar",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לָנוּ",
+      "families": [
+        "possible-prefix",
+        "other-nu",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "lanú",
+      "currentRaw": "lanú",
+      "activeOutput": "lanu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "lanu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הוּא",
+      "families": [
+        "unpointed-or-abbreviation",
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "hu",
+      "currentRaw": "hu",
+      "activeOutput": "Hu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּמְפַרְנֵס",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "umefarnés",
+      "currentRaw": "umefarnés",
+      "activeOutput": "umfarnés",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "umfarnés",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּבְרוֹב",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "uvrov",
+      "currentRaw": "uvrov",
+      "activeOutput": "uverov",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uverov",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "חַי",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "jai",
+      "currentRaw": "jai",
+      "activeOutput": "jay",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "jay",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לְךָ",
+      "families": [
+        "possible-prefix",
+        "kha-suffix-candidate",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "leja",
+      "currentRaw": "leja",
+      "activeOutput": "lejá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "lejá",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְתוֹרָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "vetorá",
+      "currentRaw": "vetorá",
+      "activeOutput": "veTorá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veTorá",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שֶׁהוֹצֵאתָנוּ",
+      "families": [
+        "possible-prefix",
+        "other-nu",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shehotsetanú",
+      "currentRaw": "shehotsetanú",
+      "activeOutput": "shehotsetanu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "shehotsetanu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מֵאֶרֶץ",
+      "families": [
+        "possible-prefix"
+      ],
+      "baselineRaw": "meerets",
+      "currentRaw": "meerets",
+      "activeOutput": "meérets",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "meérets",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּפְדִיתָנוּ",
+      "families": [
+        "possible-prefix",
+        "other-nu",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ufditanú",
+      "currentRaw": "ufditanú",
+      "activeOutput": "ufditanu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ufditanu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּרִיתְךָ",
+      "families": [
+        "possible-prefix",
+        "kha-suffix-candidate",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "beriteja",
+      "currentRaw": "beriteja",
+      "activeOutput": "beritjá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "beritjá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בִּבְשָׂרֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "bivsarenú",
+      "currentRaw": "bivsarenu",
+      "activeOutput": "bivsarenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "bivsarenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "הַזֶּה",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "haze",
+      "currentRaw": "haze",
+      "activeOutput": "hazé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "hazé",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מַתִּתְיָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "matityá",
+      "currentRaw": "matityá",
+      "activeOutput": "Matityá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Matityá",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "כֹּהֵן",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "kohén",
+      "currentRaw": "kohén",
+      "activeOutput": "Cohén",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Cohén",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יָוָן",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yaván",
+      "currentRaw": "yaván",
+      "activeOutput": "Yaván",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Yaván",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "תּוֹרָתָךְ",
+      "families": [
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "torataj",
+      "currentRaw": "torataj",
+      "activeOutput": "Torataj",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Torataj",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּלְהַעֲבִירָם",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ulha'aviram",
+      "currentRaw": "ulha'aviram",
+      "activeOutput": "uleha'aviram",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uleha'aviram",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לָהֶם",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "láhem",
+      "currentRaw": "láhem",
+      "activeOutput": "lahem",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "lahem",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּרְשָׁעִים",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ursha'im",
+      "currentRaw": "ursha'im",
+      "activeOutput": "uresha'im",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uresha'im",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּטְמֵאִים",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "utmeím",
+      "currentRaw": "utmeím",
+      "activeOutput": "utmeim",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "utmeim",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "תוֹרָתֶךָ",
+      "families": [
+        "kha-suffix-candidate",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "torateja",
+      "currentRaw": "torateja",
+      "activeOutput": "Torateja",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Torateja",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בָּאוּ",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "baú",
+      "currentRaw": "baú",
+      "activeOutput": "bau",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "bau",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּפִנּוּ",
+      "families": [
+        "possible-prefix",
+        "other-nu",
+        "dagesh"
+      ],
+      "baselineRaw": "ufinu",
+      "currentRaw": "ufinu",
+      "activeOutput": "ufinú",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ufinú",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מִקְדָּשֶׁךָ",
+      "families": [
+        "possible-prefix",
+        "kha-suffix-candidate",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "mikdasheja",
+      "currentRaw": "mikdasheja",
+      "activeOutput": "Mikdasheja",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Mikdasheja",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְהִדְלִיקוּ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "vehidlikú",
+      "currentRaw": "vehidlikú",
+      "activeOutput": "vehidliku",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vehidliku",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "קָדְשֶׁךָ",
+      "families": [
+        "kha-suffix-candidate",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "kadsheja",
+      "currentRaw": "kadsheja",
+      "activeOutput": "kodsheja",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "kodsheja",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "חֲנֻכָּה",
+      "families": [
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "januká",
+      "currentRaw": "januká",
+      "activeOutput": "Janucá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Janucá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אֵלּוּ",
+      "families": [
+        "dagesh"
+      ],
+      "baselineRaw": "elú",
+      "currentRaw": "elú",
+      "activeOutput": "elu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "elu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּבְהוֹדָאָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "uvhodaá",
+      "currentRaw": "uvhodaá",
+      "activeOutput": "uvehodaá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uvehodaá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "עִמָּהֶם",
+      "families": [
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "'imáhem",
+      "currentRaw": "'imáhem",
+      "activeOutput": "'imahem",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "'imahem",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לְשִׁמְךָ",
+      "families": [
+        "possible-prefix",
+        "kha-suffix-candidate",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "leshimjá",
+      "currentRaw": "leshimjá",
+      "activeOutput": "leShimjá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "leShimjá",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְאֶסְתֵּר",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "veester",
+      "currentRaw": "veester",
+      "activeOutput": "veEster",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veEster",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּשׁוּשַׁן",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "beshushán",
+      "currentRaw": "beshushán",
+      "activeOutput": "beShushán",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "beShushán",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַבִּירָה",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "habira",
+      "currentRaw": "habira",
+      "activeOutput": "habirá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "habirá",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הָמָן",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hamán",
+      "currentRaw": "hamán",
+      "activeOutput": "Hamán",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hamán",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אֶחָד",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "éjad",
+      "currentRaw": "éjad",
+      "activeOutput": "ejad",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ejad",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שְׁנֵים",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "shenem",
+      "currentRaw": "shenem",
+      "activeOutput": "sheném",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "sheném",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אֲדָר",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "adar",
+      "currentRaw": "adar",
+      "activeOutput": "Adar",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Adar",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הָעֵץ",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ha'éts",
+      "currentRaw": "ha'éts",
+      "activeOutput": "ha'ets",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ha'ets",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שְׁמָךְ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shemaj",
+      "currentRaw": "shemaj",
+      "activeOutput": "Shemaj",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shemaj",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַבַּיִת",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "habayit",
+      "currentRaw": "habayit",
+      "activeOutput": "habáyit",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "habáyit",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שִׁמְךָ",
+      "families": [
+        "possible-prefix",
+        "kha-suffix-candidate",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shimjá",
+      "currentRaw": "shimjá",
+      "activeOutput": "Shimjá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shimjá",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אָבִינוּ",
+      "families": [
+        "other-nu",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "avinu",
+      "currentRaw": "avinu",
+      "activeOutput": "Avinu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Avinu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "רְעֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "re'enú",
+      "currentRaw": "re'enu",
+      "activeOutput": "re'enu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "re'enu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "זוּנֵנוּ",
+      "families": [
+        "enu-ambiguous-nun-stem",
+        "dagesh"
+      ],
+      "baselineRaw": "zunenú",
+      "currentRaw": "zunenú",
+      "activeOutput": "zunenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "zunenu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "פַּרְנְסֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "parnesenú",
+      "currentRaw": "parnesenu",
+      "activeOutput": "parnesenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "parnesenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "כַּלְכְּלֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "kalkelenú",
+      "currentRaw": "kalkelenu",
+      "activeOutput": "kalkelenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "kalkelenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "הַרְוִיחֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "harvijenú",
+      "currentRaw": "harvijenu",
+      "activeOutput": "harvijenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "harvijenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "תַּצְרִיכֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "tatsrijenú",
+      "currentRaw": "tatsrijenu",
+      "activeOutput": "tatsrijenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "tatsrijenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "מַתְּנוֹת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "matenot",
+      "currentRaw": "matenot",
+      "activeOutput": "matnot",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "matnot",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לְיָדְךָ",
+      "families": [
+        "possible-prefix",
+        "kha-suffix-candidate",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "leyadeja",
+      "currentRaw": "leyadeja",
+      "activeOutput": "leYadjá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "leYadjá",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַמְּלֵאָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hamelea",
+      "currentRaw": "hamelea",
+      "activeOutput": "hameleá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "hameleá",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שֶׁלּא",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "shel",
+      "currentRaw": "shel",
+      "activeOutput": "sheló",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "sheló",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לִמְקוֹמָהּ",
+      "families": [
+        "possible-prefix",
+        "mappiq-he",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "limkómah",
+      "currentRaw": "limkómah",
+      "activeOutput": "limkomáh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "limkomáh",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְהַחֲלִיצֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "vehajalitsenú",
+      "currentRaw": "vehajalitsenu",
+      "activeOutput": "vehajalitsenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vehajalitsenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "וּבְמִצְוַת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "uvmitsvat",
+      "currentRaw": "uvmitsvat",
+      "activeOutput": "uvemitsvat",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uvemitsvat",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַשַׁבָּת",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hashabat",
+      "currentRaw": "hashabat",
+      "activeOutput": "haShabat",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "haShabat",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "חֻקּי",
+      "families": [
+        "dagesh"
+      ],
+      "baselineRaw": "juky",
+      "currentRaw": "juky",
+      "activeOutput": "juké",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "juké",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מְנוּחָתֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "menujatenú",
+      "currentRaw": "menujatenu",
+      "activeOutput": "menujatenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "menujatenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "וְהַרְאֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "veharenú",
+      "currentRaw": "veharenu",
+      "activeOutput": "veharenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veharenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "תִּשְׁכָּחֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "tishkajenú",
+      "currentRaw": "tishkajenu",
+      "activeOutput": "tishkajenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "tishkajenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "תִּזְנָחֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "tiznajenú",
+      "currentRaw": "tiznajenu",
+      "activeOutput": "tiznajenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "tiznajenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "אָתָּה",
+      "families": [
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ata",
+      "currentRaw": "ata",
+      "activeOutput": "ata",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Atá",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וֵאלֹהֵי",
+      "families": [
+        "possible-prefix"
+      ],
+      "baselineRaw": "velohé",
+      "currentRaw": "velohé",
+      "activeOutput": "veLohé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veElohé",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יַעֲלֶה",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "ya'ale",
+      "currentRaw": "ya'ale",
+      "activeOutput": "ya'alé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ya'alé",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְיֵרָאֶה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "veyerae",
+      "currentRaw": "veyerae",
+      "activeOutput": "veyeraé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veyeraé",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְיֵרָצֶה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "veyeratse",
+      "currentRaw": "veyeratse",
+      "activeOutput": "veyeratsé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veyeratsé",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "זִכְרוֹנֵֽנוּ",
+      "families": [
+        "enu-ambiguous-nun-stem",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "zijronenú",
+      "currentRaw": "zijronenú",
+      "activeOutput": "zijronenú",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "zijronenu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מָשִֽׁיחַ",
+      "families": [
+        "possible-prefix",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "mashíaj",
+      "currentRaw": "mashíaj",
+      "activeOutput": "Mashíaj",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Mashíaj",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַחֹדֶשׁ",
+      "families": [
+        "possible-prefix"
+      ],
+      "baselineRaw": "hajódesh",
+      "currentRaw": "hajódesh",
+      "activeOutput": "Hajódesh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hajódesh",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "חַג",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "jag",
+      "currentRaw": "jag",
+      "activeOutput": "Jag",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Jag",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַמַּצוֹת",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "hamatsot",
+      "currentRaw": "hamatsot",
+      "activeOutput": "Hamatsot",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hamatsot",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "קוֹדֶשׁ",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "kodesh",
+      "currentRaw": "kodesh",
+      "activeOutput": "kódesh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "kódesh",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַשָּׁבוּעוֹת",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hashavu'ot",
+      "currentRaw": "hashavu'ot",
+      "activeOutput": "Hashavu'ot",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hashavu'ot",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַסֻּכּוֹת",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "hasukot",
+      "currentRaw": "hasukot",
+      "activeOutput": "HaSucot",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "HaSucot",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "עֲצֶרֶת",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "'atséret",
+      "currentRaw": "'atséret",
+      "activeOutput": "'Atséret",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "'Atséret",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּלְהוֹשִׁיעֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "ulhoshi'enú",
+      "currentRaw": "ulhoshi'enu",
+      "activeOutput": "ulehoshi'enu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ulehoshi'enu",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "זָכְרֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "zajrenú",
+      "currentRaw": "zajrenu",
+      "activeOutput": "zojrenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "zojrenu",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּפָקְדֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ufakdenú",
+      "currentRaw": "ufakdenu",
+      "activeOutput": "ufokdenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ufokdenu",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בִדְבַר",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "vidvar",
+      "currentRaw": "vidvar",
+      "activeOutput": "bidvar",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "bidvar",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אָמֵן",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "amén",
+      "currentRaw": "amén",
+      "activeOutput": "Amén",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Amén",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מַלְכֵּנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "malkenú",
+      "currentRaw": "malkenu",
+      "activeOutput": "Malkenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Malkenu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אַדִּירֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "dagesh"
+      ],
+      "baselineRaw": "adirenú",
+      "currentRaw": "adirenu",
+      "activeOutput": "Adirenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Adirenu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בּוֹרְאֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "borenú",
+      "currentRaw": "borenu",
+      "activeOutput": "Borenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Borenu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "גּוֹאֲלֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "dagesh"
+      ],
+      "baselineRaw": "goalenú",
+      "currentRaw": "goalenu",
+      "activeOutput": "Goalenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Goalenu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "קְדוֹשֵׁנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "kedoshenú",
+      "currentRaw": "kedoshenu",
+      "activeOutput": "Kedoshenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Kedoshenu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "רוֹעֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "dagesh"
+      ],
+      "baselineRaw": "ro'enú",
+      "currentRaw": "ro'enu",
+      "activeOutput": "Ro'enu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Ro'enu",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "רוֹעֵה",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "ro'é",
+      "currentRaw": "ro'é",
+      "activeOutput": "Ro'é",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Ro'é",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שֶׁבְּכָל",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shebejal",
+      "currentRaw": "shebejal",
+      "activeOutput": "shebejol",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "shebejol",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "גְמָלָנוּ",
+      "families": [
+        "other-nu",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "guemalanú",
+      "currentRaw": "guemalanú",
+      "activeOutput": "guemalanu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "guemalanu",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "גוֹמְלֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "gomlenú",
+      "currentRaw": "gomlenu",
+      "activeOutput": "gomlenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "gomlenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "יִגְמְלֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "yigmelenú",
+      "currentRaw": "yigmelenu",
+      "activeOutput": "yigmelenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yigmelenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "בְבִזּוּי",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "vevizuy",
+      "currentRaw": "vevizuy",
+      "activeOutput": "vevizui",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vevizui",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּהֶתֵּר",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "behéter",
+      "currentRaw": "behéter",
+      "activeOutput": "beheter",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "beheter",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּנַחַת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "benajat",
+      "currentRaw": "benajat",
+      "activeOutput": "benájat",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "benájat",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְצָעַר",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "vetsa'ar",
+      "currentRaw": "vetsa'ar",
+      "activeOutput": "vetsá'ar",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vetsá'ar",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "צַוָּארֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "tsavarenú",
+      "currentRaw": "tsavarenu",
+      "activeOutput": "tsavarenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "tsavarenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "יוֹלִיכֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "dagesh"
+      ],
+      "baselineRaw": "yolijenú",
+      "currentRaw": "yolijenu",
+      "activeOutput": "yolijenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yolijenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "לְאַרְצֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "leartsenú",
+      "currentRaw": "leartsenu",
+      "activeOutput": "leartsenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "leartsenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "יִרְפָּאֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yirpaenú",
+      "currentRaw": "yirpaenu",
+      "activeOutput": "yirpaenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yirpaenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "שְׁלֵמָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "shelemá",
+      "currentRaw": "shelemá",
+      "activeOutput": "shelemá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "shelemá",
+          "kind": "rule-equivalent",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַנֶּפֶשׁ",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "hanéfesh",
+      "currentRaw": "hanéfesh",
+      "activeOutput": "hanefesh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "hanefesh",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יָדוֹ",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "yadó",
+      "currentRaw": "yadó",
+      "activeOutput": "Yadó",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Yadó",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְאֶחָד",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "veéjad",
+      "currentRaw": "veéjad",
+      "activeOutput": "veejad",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veejad",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בִּשְׁמוֹ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "bishmó",
+      "currentRaw": "bishmó",
+      "activeOutput": "biShmó",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "biShmó",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְיַעֲקֹב",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "veya'akov",
+      "currentRaw": "veya'akov",
+      "activeOutput": "veYa'akov",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veYa'akov",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יִפְרוֹשׂ",
+      "families": [
+        "sheva"
+      ],
+      "baselineRaw": "yifrós",
+      "currentRaw": "yifrós",
+      "activeOutput": "yifros",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yifros",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "סֻכַּת",
+      "families": [
+        "dagesh"
+      ],
+      "baselineRaw": "sukat",
+      "currentRaw": "sukat",
+      "activeOutput": "sucat",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "sucat",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "שְׁלוֹמוֹ",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "shelomó",
+      "currentRaw": "shelomó",
+      "activeOutput": "Shelomó",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shelomó",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יַנְחִילֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "yanjilenú",
+      "currentRaw": "yanjilenu",
+      "activeOutput": "yanjilenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yanjilenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "יַגִּיעֵנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "dagesh"
+      ],
+      "baselineRaw": "yagui'enú",
+      "currentRaw": "yagui'enu",
+      "activeOutput": "yagui'enu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yagui'enu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "הַבָּאִים",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "habaím",
+      "currentRaw": "habaím",
+      "activeOutput": "habaim",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "habaim",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לִקְרָתֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "likratenú",
+      "currentRaw": "likratenu",
+      "activeOutput": "likratenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "likratenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "יְזַכֵּנוּ",
+      "families": [
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "yezakenú",
+      "currentRaw": "yezakenu",
+      "activeOutput": "yezakenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yezakenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "בְּסֻכַּת",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "besukat",
+      "currentRaw": "besukat",
+      "activeOutput": "besucat",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "besucat",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "תּוֹרָתוֹ",
+      "families": [
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "torató",
+      "currentRaw": "torató",
+      "activeOutput": "Torató",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Torató",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "בְּלִבֵּנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "belibenú",
+      "currentRaw": "belibenu",
+      "activeOutput": "belibenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "belibenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "וְיִהְיוּ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "veyihyú",
+      "currentRaw": "veyihyú",
+      "activeOutput": "Veyihyú",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Veyihyú",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "כְשֻׁלְחָנוֹ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "jeshuljanó",
+      "currentRaw": "jeshuljanó",
+      "activeOutput": "keshuljanó",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "keshuljanó",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּלְעוֹלְמֵי",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "ul'olmé",
+      "currentRaw": "ul'olmé",
+      "activeOutput": "ule'olmé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ule'olmé",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַסְּעֻדָּה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hase'uda",
+      "currentRaw": "hase'uda",
+      "activeOutput": "hase'udá",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "hase'udá",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּנְכָסֵינוּ",
+      "families": [
+        "possible-prefix",
+        "other-nu",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "unjasenu",
+      "currentRaw": "unjasenu",
+      "activeOutput": "unejasenu",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "unejasenu",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "עָוֹן",
+      "families": [
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "'aón",
+      "currentRaw": "'aón",
+      "activeOutput": "'avón",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "'avón",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "זְכָרִים",
+      "families": [
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "zejarim",
+      "currentRaw": "zejarim",
+      "activeOutput": "zejarím",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "zejarím",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "הַקָּדוֹשׁ",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hakadosh",
+      "currentRaw": "hakadosh",
+      "activeOutput": "Hakadosh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hakadosh",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לִבֵּנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "dagesh"
+      ],
+      "baselineRaw": "libenú",
+      "currentRaw": "libenu",
+      "activeOutput": "libenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "libenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "וִיזַכֵּנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "dagesh"
+      ],
+      "baselineRaw": "vizakenú",
+      "currentRaw": "vizakenu",
+      "activeOutput": "vizakenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vizakenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "וִיקָרְבֵנוּ",
+      "families": [
+        "possible-prefix",
+        "enu-connecting-vowel",
+        "sheva",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "vikarvenú",
+      "currentRaw": "vikarvenu",
+      "activeOutput": "vikarvenu",
+      "tableDisagreement": false,
+      "status": "retired-by-enu-rule",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vikarvenu",
+          "kind": "rule-equivalent",
+          "retired": true
+        }
+      ]
+    },
+    {
+      "key": "הַמָּשִׁיחַ",
+      "families": [
+        "possible-prefix",
+        "dagesh",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "hamashíaj",
+      "currentRaw": "hamashíaj",
+      "activeOutput": "haMashíaj",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "haMashíaj",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּלְבִנְיַן",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "ulvinyán",
+      "currentRaw": "ulvinyán",
+      "activeOutput": "ulevinyán",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ulevinyán",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וּלְחַיֵּי",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "uljayé",
+      "currentRaw": "uljayé",
+      "activeOutput": "ulejayé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ulejayé",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מִגְדּוֹל",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "migdol",
+      "currentRaw": "migdol",
+      "activeOutput": "Migdol",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Migdol",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מַגְדִּיל",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "magdil",
+      "currentRaw": "magdil",
+      "activeOutput": "Magdil",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Magdil",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וְעֹשֶׂה",
+      "families": [
+        "possible-prefix",
+        "sheva"
+      ],
+      "baselineRaw": "ve'ose",
+      "currentRaw": "ve'ose",
+      "activeOutput": "ve'osé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ve'osé",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לְדָוִד",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "ledavid",
+      "currentRaw": "ledavid",
+      "activeOutput": "leDavid",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "leDavid",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "מְבַקֶּשׁ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "mevákesh",
+      "currentRaw": "mevákesh",
+      "activeOutput": "mevakesh",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "mevakesh",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "לְשָׂבְעָה",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "qamats-a-or-o"
+      ],
+      "baselineRaw": "lesav'á",
+      "currentRaw": "lesav'á",
+      "activeOutput": "lesov'á",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "lesov'á",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וַיִּתֵּן",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "vayiten",
+      "currentRaw": "vayiten",
+      "activeOutput": "vayitén",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vayitén",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וַיֹּאכְלוּ",
+      "families": [
+        "possible-prefix",
+        "sheva",
+        "dagesh"
+      ],
+      "baselineRaw": "vayojlú",
+      "currentRaw": "vayojlú",
+      "activeOutput": "vayojelú",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vayojelú",
+          "kind": "segmental-or-editorial",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "וַיּוֹתִירוּ",
+      "families": [
+        "possible-prefix",
+        "dagesh"
+      ],
+      "baselineRaw": "vayotirú",
+      "currentRaw": "vayotirú",
+      "activeOutput": "vayotiru",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vayotiru",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "אַתֶּם",
+      "families": [
+        "dagesh"
+      ],
+      "baselineRaw": "átem",
+      "currentRaw": "átem",
+      "activeOutput": "atem",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "atem",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "עַמּוֹ",
+      "families": [
+        "dagesh"
+      ],
+      "baselineRaw": "'amó",
+      "currentRaw": "'amó",
+      "activeOutput": "'Amó",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "'Amó",
+          "kind": "capitalization-only",
+          "retired": false
+        }
+      ]
+    },
+    {
+      "key": "יַעֲשֶׂה",
+      "families": [
+        "other-lexical-or-stress"
+      ],
+      "baselineRaw": "ya'ase",
+      "currentRaw": "ya'ase",
+      "activeOutput": "ya'asé",
+      "tableDisagreement": false,
+      "status": "pending-investigation",
+      "pronunciationDeltas": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ya'asé",
+          "kind": "stress-or-capitalization",
+          "retired": false
+        }
+      ]
+    }
+  ]
+}
