@@ -2,8 +2,8 @@
   "baseline": "618cfaf5cae682ed906a86399bbd868453ec0772",
   "baselineEntries": 306,
   "baselineForms": 270,
-  "currentEntries": 275,
-  "currentForms": 241,
+  "currentEntries": 248,
+  "currentForms": 228,
   "retiredEntries": 31,
   "retiredForms": 29,
   "familyCounts": {
@@ -21,7 +21,7 @@
     "enu-ambiguous-nun-stem": 4,
     "unpointed-or-abbreviation": 3
   },
-  "tableDisagreements": 16,
+  "tableDisagreements": 2,
   "note": "Families overlap. Prefix/suffix candidates are not grammatical analyses. Pending does not mean a genuine exception. Compatibility fixtures are not independent pronunciation certification.",
   "forms": [
     {
@@ -33,7 +33,14 @@
       "baselineRaw": "torá",
       "currentRaw": "torá",
       "activeOutput": "Torá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Torá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -54,7 +61,14 @@
       "baselineRaw": "hatorá",
       "currentRaw": "hatorá",
       "activeOutput": "haTorá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "haTorá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -75,7 +89,14 @@
       "baselineRaw": "batorá",
       "currentRaw": "batorá",
       "activeOutput": "baTorá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "baTorá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -96,7 +117,14 @@
       "baselineRaw": "betorat",
       "currentRaw": "betorat",
       "activeOutput": "beTorat",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "beTorat"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -116,7 +144,14 @@
       "baselineRaw": "vetorat",
       "currentRaw": "vetorat",
       "activeOutput": "beTorat",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "beTorat"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -138,7 +173,14 @@
       "baselineRaw": "uvtorató",
       "currentRaw": "uvtorató",
       "activeOutput": "uvTorató",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "uvTorató"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -160,7 +202,14 @@
       "baselineRaw": "ubetorató",
       "currentRaw": "ubetorató",
       "activeOutput": "uvTorató",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "uvTorató"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -182,7 +231,18 @@
       "baselineRaw": "torateja",
       "currentRaw": "torateja",
       "activeOutput": "Torateja",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Torateja"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "Torateja"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -209,7 +269,14 @@
       "baselineRaw": "toratenú",
       "currentRaw": "toratenu",
       "activeOutput": "Toratenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Toratenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -229,7 +296,14 @@
       "baselineRaw": "yehegué",
       "currentRaw": "yehegué",
       "activeOutput": "yehgué",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "yehgué"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -248,7 +322,14 @@
       "baselineRaw": "falgué",
       "currentRaw": "falgué",
       "activeOutput": "palgué",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "palgué"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -269,7 +350,14 @@
       "baselineRaw": "valaylá",
       "currentRaw": "valaylá",
       "activeOutput": "valayla",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "valayla"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -289,7 +377,14 @@
       "baselineRaw": "banéguev",
       "currentRaw": "banéguev",
       "activeOutput": "baNéguev",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "baNéguev"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -310,7 +405,14 @@
       "baselineRaw": "vehú",
       "currentRaw": "vehú",
       "activeOutput": "vehu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "vehu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -331,9 +433,16 @@
       ],
       "baselineRaw": "veteja",
       "currentRaw": "veteja",
-      "activeOutput": "beteja",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "activeOutput": "betejá",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "betejá"
+        }
+      ],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "FINAL_FORMS",
@@ -345,7 +454,7 @@
           "table": "GOLD.sef.w",
           "value": "betjá",
           "kind": "segmental-or-editorial",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -359,7 +468,14 @@
       "baselineRaw": "laylá",
       "currentRaw": "laylá",
       "activeOutput": "layla",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "layla"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -381,7 +497,14 @@
       "baselineRaw": "bejojmó",
       "currentRaw": "bejojmó",
       "activeOutput": "bejojmá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "bejojmá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -400,7 +523,14 @@
       "baselineRaw": "etán",
       "currentRaw": "etán",
       "activeOutput": "Eitán",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Eitán"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -419,7 +549,14 @@
       "baselineRaw": "il'ái",
       "currentRaw": "il'ái",
       "activeOutput": "Il'ay",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Il'ay"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -438,7 +575,14 @@
       "baselineRaw": "il'ái",
       "currentRaw": "il'ái",
       "activeOutput": "Il'ay",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Il'ay"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -458,7 +602,14 @@
       "baselineRaw": "daniyel",
       "currentRaw": "daniyel",
       "activeOutput": "Daniel",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "FINAL_FORMS",
+          "value": "Daniel"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -479,7 +630,18 @@
       "baselineRaw": "hasheminí",
       "currentRaw": "hasheminí",
       "activeOutput": "Hasheminí",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Hasheminí"
+        },
+        {
+          "table": "GOLDEN_EDITORIAL",
+          "value": "Hasheminí"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -506,7 +668,18 @@
       "baselineRaw": "shaatá",
       "currentRaw": "shaatá",
       "activeOutput": "shaatá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "shaAtá"
+        },
+        {
+          "table": "GOLDEN_EDITORIAL",
+          "value": "shaAtá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -533,7 +706,22 @@
       "baselineRaw": "sheatá",
       "currentRaw": "sheatá",
       "activeOutput": "sheatá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "sheAtá"
+        },
+        {
+          "table": "GOLDEN_EDITORIAL",
+          "value": "sheAtá"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "sheAtá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -564,7 +752,14 @@
       "baselineRaw": "el",
       "currentRaw": "el",
       "activeOutput": "El",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "El"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -584,7 +779,18 @@
       "baselineRaw": "mélej",
       "currentRaw": "mélej",
       "activeOutput": "Mélej",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Mélej"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "Mélej"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -611,7 +817,18 @@
       "baselineRaw": "hamélej",
       "currentRaw": "hamélej",
       "activeOutput": "haMélej",
+      "baselineTableDisagreement": true,
       "tableDisagreement": true,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "HaMélej"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "haMélej"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -636,7 +853,14 @@
       "baselineRaw": "laadón",
       "currentRaw": "laadón",
       "activeOutput": "laAdón",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "laAdón"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -659,7 +883,14 @@
       "baselineRaw": "hinehelyshu'atiyevtajvloefjad",
       "currentRaw": "hinehelyshu'atiyevtajvloefjad",
       "activeOutput": "Hiné El yeshua'tí evtaj veló efjad",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Hiné El yeshua'tí evtaj veló efjad"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -682,7 +913,14 @@
       "baselineRaw": "hinehelyshu'atiyevtajvloefjadkiy'aziyvzimratyahyyavayhiyliylishu'á",
       "currentRaw": "hinehelyshu'atiyevtajvloefjadkiy'aziyvzimratyahyyavayhiyliylishu'á",
       "activeOutput": "Hiné El yeshua'tí evtaj veló efjad, ki 'ozí vezimrát Yah Ad-nai, vayehí li lishu'á",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Hiné El yeshua'tí evtaj veló efjad, ki 'ozí vezimrát Yah Ad-nai, vayehí li lishu'á"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -703,7 +941,14 @@
       "baselineRaw": "yeshu'atí",
       "currentRaw": "yeshu'atí",
       "activeOutput": "yeshua'tí",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "yeshua'tí"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -723,7 +968,14 @@
       "baselineRaw": "'azí",
       "currentRaw": "'azí",
       "activeOutput": "'ozí",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "'ozí"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -744,7 +996,14 @@
       "baselineRaw": "vezimrat",
       "currentRaw": "vezimrat",
       "activeOutput": "vezimrát",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "vezimrát"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -765,7 +1024,18 @@
       "baselineRaw": "yah",
       "currentRaw": "yah",
       "activeOutput": "Yah",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Yah"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "Yah"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -791,7 +1061,14 @@
       "baselineRaw": "vaihi",
       "currentRaw": "vaihi",
       "activeOutput": "vayehí",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "vayehí"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -811,7 +1088,14 @@
       "baselineRaw": "tatshir",
       "currentRaw": "tatshir",
       "activeOutput": "tats-hir",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "tats-hir"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -830,7 +1114,14 @@
       "baselineRaw": "yojay",
       "currentRaw": "yojay",
       "activeOutput": "Yojái",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Yojái"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -850,7 +1141,14 @@
       "baselineRaw": "shaná",
       "currentRaw": "shaná",
       "activeOutput": "Shaná",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Shaná"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -869,7 +1167,14 @@
       "baselineRaw": "ilem",
       "currentRaw": "ilem",
       "activeOutput": "ilém",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "ilém"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -890,20 +1195,22 @@
       "baselineRaw": "birshut",
       "currentRaw": "birshut",
       "activeOutput": "birshut",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "Birshut",
           "kind": "capitalization-only",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "birshut",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -918,7 +1225,14 @@
       "baselineRaw": "shemkadshó",
       "currentRaw": "shemkadshó",
       "activeOutput": "Shem kodshó",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Shem kodshó"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -940,7 +1254,14 @@
       "baselineRaw": "hodulayá",
       "currentRaw": "hodulayá",
       "activeOutput": "Hodú laAd-nai",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Hodú laAd-nai"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -963,7 +1284,14 @@
       "baselineRaw": "hodulayyá",
       "currentRaw": "hodulayyá",
       "activeOutput": "Hodú laAd-nai",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Hodú laAd-nai"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -984,7 +1312,14 @@
       "baselineRaw": "hodulay",
       "currentRaw": "hodulay",
       "activeOutput": "Hodú laAd-nai",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Hodú laAd-nai"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1006,7 +1341,14 @@
       "baselineRaw": "shemyyá",
       "currentRaw": "shemyyá",
       "activeOutput": "Shem Ad-nai",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Shem Ad-nai"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1029,7 +1371,14 @@
       "baselineRaw": "barujshemó",
       "currentRaw": "barujshemó",
       "activeOutput": "Baruj Shemó",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Baruj Shemó"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1050,7 +1399,14 @@
       "baselineRaw": "uvmiljémet",
       "currentRaw": "uvmiljémet",
       "activeOutput": "uvemiljemet",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "uvemiljemet"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1070,7 +1426,14 @@
       "baselineRaw": "miljémet",
       "currentRaw": "miljémet",
       "activeOutput": "miljemet",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "miljemet"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1093,7 +1456,14 @@
       "baselineRaw": "bezajrenú",
       "currentRaw": "bezajrenu",
       "activeOutput": "bezojrenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "bezojrenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1114,7 +1484,14 @@
       "baselineRaw": "yerushalim",
       "currentRaw": "yerushalim",
       "activeOutput": "Yerushaláyim",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Yerushaláyim"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1135,7 +1512,14 @@
       "baselineRaw": "yerushalam",
       "currentRaw": "yerushalam",
       "activeOutput": "Yerushaláyim",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Yerushaláyim"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1154,20 +1538,22 @@
       "baselineRaw": "juké",
       "currentRaw": "juké",
       "activeOutput": "juké",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "Juké",
           "kind": "capitalization-only",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "juké",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1179,7 +1565,14 @@
       "baselineRaw": "notén",
       "currentRaw": "notén",
       "activeOutput": "Notén",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "notén"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1198,7 +1591,18 @@
       "baselineRaw": "natán",
       "currentRaw": "natán",
       "activeOutput": "natán",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "natán"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "natán"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1223,7 +1627,14 @@
       "baselineRaw": "revaj",
       "currentRaw": "revaj",
       "activeOutput": "révaj",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "révaj"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1245,7 +1656,18 @@
       "baselineRaw": "bejal",
       "currentRaw": "bejal",
       "activeOutput": "bejol",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "bejol"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "bejol"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1272,7 +1694,14 @@
       "baselineRaw": "bijal",
       "currentRaw": "bijal",
       "activeOutput": "bikal",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "bejol"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1293,7 +1722,18 @@
       "baselineRaw": "lejal",
       "currentRaw": "lejal",
       "activeOutput": "lejol",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "lejol"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "lejol"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1320,7 +1760,18 @@
       "baselineRaw": "vejal",
       "currentRaw": "vejal",
       "activeOutput": "vejol",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "vejol"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "vejol"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1343,22 +1794,24 @@
         "other-lexical-or-stress"
       ],
       "baselineRaw": "na'ar",
-      "currentRaw": "na'ar",
-      "activeOutput": "na'ar",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "currentRaw": "ná'ar",
+      "activeOutput": "ná'ar",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "ná'ar",
-          "kind": "stress-or-capitalization",
-          "retired": false
+          "kind": "rule-equivalent",
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "na'ar",
-          "kind": "rule-equivalent",
-          "retired": false
+          "kind": "stress-or-capitalization",
+          "retired": true
         }
       ]
     },
@@ -1373,7 +1826,9 @@
       "baselineRaw": "vehoshi'enú",
       "currentRaw": "vehoshi'enu",
       "activeOutput": "vehoshi'enu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -1400,20 +1855,22 @@
       "baselineRaw": "'alenu",
       "currentRaw": "'alenu",
       "activeOutput": "'alenu",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "'Alenu",
           "kind": "capitalization-only",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "'alenu",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1425,15 +1882,17 @@
       ],
       "baselineRaw": "'alenu",
       "currentRaw": "'alenu",
-      "activeOutput": "'Alenu",
+      "activeOutput": "'alenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
-      "status": "pending-investigation",
+      "currentValues": [],
+      "status": "retired-by-rules",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "'Alenu",
           "kind": "capitalization-only",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1447,7 +1906,14 @@
       "baselineRaw": "ma'lá",
       "currentRaw": "ma'lá",
       "activeOutput": "ma'la",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "ma'la"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1466,7 +1932,14 @@
       "baselineRaw": "ma'ale",
       "currentRaw": "ma'ale",
       "activeOutput": "ma'alé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "ma'alé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1485,7 +1958,14 @@
       "baselineRaw": "'ayín",
       "currentRaw": "'ayín",
       "activeOutput": "'ayin",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "'ayin"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1504,7 +1984,14 @@
       "baselineRaw": "e'ese",
       "currentRaw": "e'ese",
       "activeOutput": "e'esé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "e'esé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1525,7 +2012,14 @@
       "baselineRaw": "virushaláyim",
       "currentRaw": "virushaláyim",
       "activeOutput": "Virushaláyim",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Virushaláyim"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1545,7 +2039,18 @@
       "baselineRaw": "panav",
       "currentRaw": "panav",
       "activeOutput": "Panav",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Panav"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "Panav"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1571,7 +2076,18 @@
       "baselineRaw": "avarjá",
       "currentRaw": "avarjá",
       "activeOutput": "avarejá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "avarejá"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "avarejá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1597,20 +2113,22 @@
       "baselineRaw": "tehilat",
       "currentRaw": "tehilat",
       "activeOutput": "tehilat",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "Tehilat",
           "kind": "capitalization-only",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "tehilat",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1623,7 +2141,18 @@
       "baselineRaw": "yedáber",
       "currentRaw": "yedáber",
       "activeOutput": "yedaber",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "yedaber"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "yedaber"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1652,20 +2181,22 @@
       "baselineRaw": "shehinjalta",
       "currentRaw": "shehinjalta",
       "activeOutput": "shehinjalta",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "shehinjaltá",
           "kind": "stress-or-capitalization",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "shehinjalta",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1678,7 +2209,14 @@
       "baselineRaw": "vehagam",
       "currentRaw": "vehagam",
       "activeOutput": "Vehagam",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Vehagam"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1701,7 +2239,18 @@
       "baselineRaw": "vejanenú",
       "currentRaw": "vejanenú",
       "activeOutput": "vejanenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "vejanenu"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "vejanenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1727,20 +2276,22 @@
       "baselineRaw": "vezar'ó",
       "currentRaw": "vezar'ó",
       "activeOutput": "vezar'ó",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "Vezar'ó",
           "kind": "capitalization-only",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "vezar'ó",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1755,9 +2306,16 @@
       ],
       "baselineRaw": "hallúyah",
       "currentRaw": "hallúyah",
-      "activeOutput": "HaleluYah",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "activeOutput": "haleluYah",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "haleluYah"
+        }
+      ],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
@@ -1769,7 +2327,7 @@
           "table": "GOLD.sef.w",
           "value": "HaleluYah",
           "kind": "segmental-or-editorial",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1780,21 +2338,23 @@
       ],
       "baselineRaw": "yomá",
       "currentRaw": "yomá",
-      "activeOutput": "yomá",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "activeOutput": "Yomá",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "Yomá",
           "kind": "capitalization-only",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "yomá",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1805,21 +2365,23 @@
       ],
       "baselineRaw": "tavá",
       "currentRaw": "tavá",
-      "activeOutput": "tavá",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "activeOutput": "Tavá",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "Tavá",
           "kind": "capitalization-only",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "tavá",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1835,7 +2397,14 @@
       "baselineRaw": "vesava'ta",
       "currentRaw": "vesava'ta",
       "activeOutput": "vesava'tá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "vesava'tá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1855,7 +2424,18 @@
       "baselineRaw": "ela",
       "currentRaw": "ela",
       "activeOutput": "ela",
+      "baselineTableDisagreement": true,
       "tableDisagreement": true,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Elá"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "ela"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1881,7 +2461,14 @@
       "baselineRaw": "mashíaj",
       "currentRaw": "mashíaj",
       "activeOutput": "Mashíaj",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Mashíaj"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1902,20 +2489,22 @@
       "baselineRaw": "'avdaj",
       "currentRaw": "'avdaj",
       "activeOutput": "'avdaj",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "'avdejá",
           "kind": "segmental-or-editorial",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "'avdaj",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -1929,7 +2518,9 @@
       "baselineRaw": "yefarnesenú",
       "currentRaw": "yefarnesenu",
       "activeOutput": "yefarnesenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -1956,7 +2547,18 @@
       "baselineRaw": "levilti",
       "currentRaw": "levilti",
       "activeOutput": "leviltí",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "leviltí"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "leviltí"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -1982,7 +2584,14 @@
       "baselineRaw": "vizuy",
       "currentRaw": "vizuy",
       "activeOutput": "bizúi",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "bizúi"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2002,7 +2611,18 @@
       "baselineRaw": "hayiti",
       "currentRaw": "hayiti",
       "activeOutput": "hayíti",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "hayíti"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "hayíti"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2028,7 +2648,18 @@
       "baselineRaw": "tirtsé",
       "currentRaw": "tirtsé",
       "activeOutput": "tirtsé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "tirtsé"
+        },
+        {
+          "table": "GOLD.sef.w",
+          "value": "tirtsé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2057,7 +2688,14 @@
       "baselineRaw": "betifarteja",
       "currentRaw": "betifarteja",
       "activeOutput": "betifartéja",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "betifartéja"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2080,7 +2718,14 @@
       "baselineRaw": "letojah",
       "currentRaw": "letojah",
       "activeOutput": "letojáh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "letojáh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2102,7 +2747,9 @@
       "baselineRaw": "vesamejenú",
       "currentRaw": "vesamejenu",
       "activeOutput": "vesamejenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -2125,7 +2772,14 @@
       "baselineRaw": "binyanah",
       "currentRaw": "binyanah",
       "activeOutput": "bivnayanáh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "bivnayanáh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2148,7 +2802,14 @@
       "baselineRaw": "mipiryah",
       "currentRaw": "mipiryah",
       "activeOutput": "mipiriyáh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "mipiriyáh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2169,7 +2830,14 @@
       "baselineRaw": "venisbá'",
       "currentRaw": "venisbá'",
       "activeOutput": "venisba'",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "venisba'"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2190,7 +2858,14 @@
       "baselineRaw": "mituvá",
       "currentRaw": "mituvá",
       "activeOutput": "mituváh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "mituváh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2212,7 +2887,14 @@
       "baselineRaw": "mituvah",
       "currentRaw": "mituvah",
       "activeOutput": "mituváh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "mituváh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2235,7 +2917,14 @@
       "baselineRaw": "lijvódah",
       "currentRaw": "lijvódah",
       "activeOutput": "lijvodáh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "lijvodáh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2258,7 +2947,14 @@
       "baselineRaw": "ultiferétah",
       "currentRaw": "ultiferétah",
       "activeOutput": "uletiferetáh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "uletiferetáh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2280,20 +2976,22 @@
       "baselineRaw": "urjavá",
       "currentRaw": "urjavá",
       "activeOutput": "urjavá",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "urejavá",
           "kind": "segmental-or-editorial",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "urjavá",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -2306,20 +3004,22 @@
       "baselineRaw": "verajem",
       "currentRaw": "verajem",
       "activeOutput": "verajem",
-      "tableDisagreement": true,
-      "status": "pending-investigation",
+      "baselineTableDisagreement": true,
+      "tableDisagreement": false,
+      "currentValues": [],
+      "status": "resolved-by-user-confirmation",
       "pronunciationDeltas": [
         {
           "table": "APPROVED",
           "value": "verajém",
           "kind": "stress-or-capitalization",
-          "retired": false
+          "retired": true
         },
         {
           "table": "GOLD.sef.w",
           "value": "verajem",
           "kind": "rule-equivalent",
-          "retired": false
+          "retired": true
         }
       ]
     },
@@ -2331,7 +3031,14 @@
       "baselineRaw": "yvd",
       "currentRaw": "yvd",
       "activeOutput": "Yud",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Yud"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2351,7 +3058,14 @@
       "baselineRaw": "lv",
       "currentRaw": "lv",
       "activeOutput": "Lev",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Lev"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2371,7 +3085,14 @@
       "baselineRaw": "bar",
       "currentRaw": "bar",
       "activeOutput": "Bar",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Bar"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2391,7 +3112,14 @@
       "baselineRaw": "sasón",
       "currentRaw": "sasón",
       "activeOutput": "sason",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "sason"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2411,7 +3139,14 @@
       "baselineRaw": "yomhashishí",
       "currentRaw": "yomhashishí",
       "activeOutput": "Yom hashishí",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "APPROVED",
+          "value": "Yom hashishí"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2433,7 +3168,14 @@
       "baselineRaw": "yejanenú",
       "currentRaw": "yejanenú",
       "activeOutput": "yejanenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yejanenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2456,7 +3198,9 @@
       "baselineRaw": "vivarjenú",
       "currentRaw": "vivarjenu",
       "activeOutput": "vivarjenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -2477,7 +3221,14 @@
       "baselineRaw": "ulumim",
       "currentRaw": "ulumim",
       "activeOutput": "uleumim",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uleumim"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2497,7 +3248,14 @@
       "baselineRaw": "natna",
       "currentRaw": "natna",
       "activeOutput": "natná",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "natná"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2519,7 +3277,14 @@
       "baselineRaw": "yevulah",
       "currentRaw": "yevulah",
       "activeOutput": "yevuláh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yevuláh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2541,7 +3306,14 @@
       "baselineRaw": "yevarjenú",
       "currentRaw": "yevarjenu",
       "activeOutput": "yevarejenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yevarejenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2560,7 +3332,14 @@
       "baselineRaw": "shem",
       "currentRaw": "shem",
       "activeOutput": "Shem",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shem"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2580,7 +3359,14 @@
       "baselineRaw": "vá'ed",
       "currentRaw": "vá'ed",
       "activeOutput": "va'ed",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "va'ed"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2601,7 +3387,14 @@
       "baselineRaw": "vaidaber",
       "currentRaw": "vaidaber",
       "activeOutput": "vaydaber",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vaydaber"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2620,7 +3413,14 @@
       "baselineRaw": "ásher",
       "currentRaw": "ásher",
       "activeOutput": "asher",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "asher"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2642,7 +3442,14 @@
       "baselineRaw": "lemalká",
       "currentRaw": "lemalká",
       "activeOutput": "leMalká",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "leMalká"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2664,7 +3471,14 @@
       "baselineRaw": "malká",
       "currentRaw": "malká",
       "activeOutput": "Malká",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Malká"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2685,7 +3499,14 @@
       "baselineRaw": "uvirshut",
       "currentRaw": "uvirshut",
       "activeOutput": "Ubirshut",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Ubirshut"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2706,7 +3527,14 @@
       "baselineRaw": "shabat",
       "currentRaw": "shabat",
       "activeOutput": "Shabat",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shabat"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2727,7 +3555,14 @@
       "baselineRaw": "ubirshut",
       "currentRaw": "ubirshut",
       "activeOutput": "Ubirshut",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Ubirshut"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2746,7 +3581,14 @@
       "baselineRaw": "morái",
       "currentRaw": "morái",
       "activeOutput": "morai",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "morai"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2768,7 +3610,14 @@
       "baselineRaw": "baruj",
       "currentRaw": "baruj",
       "activeOutput": "Baruj",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Baruj"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2788,7 +3637,14 @@
       "baselineRaw": "hael",
       "currentRaw": "hael",
       "activeOutput": "haEl",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "haEl"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2809,7 +3665,14 @@
       "baselineRaw": "otanú",
       "currentRaw": "otanú",
       "activeOutput": "otanu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "otanu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2830,7 +3693,14 @@
       "baselineRaw": "uvrajamim",
       "currentRaw": "uvrajamim",
       "activeOutput": "uverajamim",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uverajamim"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2849,7 +3719,14 @@
       "baselineRaw": "jasar",
       "currentRaw": "jasar",
       "activeOutput": "jásar",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "jásar"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2871,7 +3748,14 @@
       "baselineRaw": "lanú",
       "currentRaw": "lanú",
       "activeOutput": "lanu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "lanu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2892,7 +3776,14 @@
       "baselineRaw": "hu",
       "currentRaw": "hu",
       "activeOutput": "Hu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2913,7 +3804,14 @@
       "baselineRaw": "umefarnés",
       "currentRaw": "umefarnés",
       "activeOutput": "umfarnés",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "umfarnés"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2934,7 +3832,14 @@
       "baselineRaw": "uvrov",
       "currentRaw": "uvrov",
       "activeOutput": "uverov",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uverov"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2953,7 +3858,14 @@
       "baselineRaw": "jai",
       "currentRaw": "jai",
       "activeOutput": "jay",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "jay"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2975,7 +3887,14 @@
       "baselineRaw": "leja",
       "currentRaw": "leja",
       "activeOutput": "lejá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "lejá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -2996,7 +3915,14 @@
       "baselineRaw": "vetorá",
       "currentRaw": "vetorá",
       "activeOutput": "veTorá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veTorá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3018,7 +3944,14 @@
       "baselineRaw": "shehotsetanú",
       "currentRaw": "shehotsetanú",
       "activeOutput": "shehotsetanu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "shehotsetanu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3037,7 +3970,14 @@
       "baselineRaw": "meerets",
       "currentRaw": "meerets",
       "activeOutput": "meérets",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "meérets"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3060,7 +4000,14 @@
       "baselineRaw": "ufditanú",
       "currentRaw": "ufditanú",
       "activeOutput": "ufditanu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ufditanu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3083,7 +4030,14 @@
       "baselineRaw": "beriteja",
       "currentRaw": "beriteja",
       "activeOutput": "beritjá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "beritjá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3106,7 +4060,9 @@
       "baselineRaw": "bivsarenú",
       "currentRaw": "bivsarenu",
       "activeOutput": "bivsarenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -3126,7 +4082,14 @@
       "baselineRaw": "haze",
       "currentRaw": "haze",
       "activeOutput": "hazé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "hazé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3148,7 +4111,14 @@
       "baselineRaw": "matityá",
       "currentRaw": "matityá",
       "activeOutput": "Matityá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Matityá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3168,7 +4138,14 @@
       "baselineRaw": "kohén",
       "currentRaw": "kohén",
       "activeOutput": "Cohén",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Cohén"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3187,7 +4164,14 @@
       "baselineRaw": "yaván",
       "currentRaw": "yaván",
       "activeOutput": "Yaván",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Yaván"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3208,7 +4192,14 @@
       "baselineRaw": "torataj",
       "currentRaw": "torataj",
       "activeOutput": "Torataj",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Torataj"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3230,7 +4221,14 @@
       "baselineRaw": "ulha'aviram",
       "currentRaw": "ulha'aviram",
       "activeOutput": "uleha'aviram",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uleha'aviram"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3250,7 +4248,14 @@
       "baselineRaw": "láhem",
       "currentRaw": "láhem",
       "activeOutput": "lahem",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "lahem"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3272,7 +4277,14 @@
       "baselineRaw": "ursha'im",
       "currentRaw": "ursha'im",
       "activeOutput": "uresha'im",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uresha'im"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3293,7 +4305,14 @@
       "baselineRaw": "utmeím",
       "currentRaw": "utmeím",
       "activeOutput": "utmeim",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "utmeim"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3313,7 +4332,14 @@
       "baselineRaw": "torateja",
       "currentRaw": "torateja",
       "activeOutput": "Torateja",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Torateja"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3334,7 +4360,14 @@
       "baselineRaw": "baú",
       "currentRaw": "baú",
       "activeOutput": "bau",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "bau"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3355,7 +4388,14 @@
       "baselineRaw": "ufinu",
       "currentRaw": "ufinu",
       "activeOutput": "ufinú",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ufinú"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3378,7 +4418,14 @@
       "baselineRaw": "mikdasheja",
       "currentRaw": "mikdasheja",
       "activeOutput": "Mikdasheja",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Mikdasheja"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3399,7 +4446,14 @@
       "baselineRaw": "vehidlikú",
       "currentRaw": "vehidlikú",
       "activeOutput": "vehidliku",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vehidliku"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3420,7 +4474,14 @@
       "baselineRaw": "kadsheja",
       "currentRaw": "kadsheja",
       "activeOutput": "kodsheja",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "kodsheja"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3440,7 +4501,14 @@
       "baselineRaw": "januká",
       "currentRaw": "januká",
       "activeOutput": "Janucá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Janucá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3459,7 +4527,14 @@
       "baselineRaw": "elú",
       "currentRaw": "elú",
       "activeOutput": "elu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "elu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3481,7 +4556,14 @@
       "baselineRaw": "uvhodaá",
       "currentRaw": "uvhodaá",
       "activeOutput": "uvehodaá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uvehodaá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3501,7 +4583,14 @@
       "baselineRaw": "'imáhem",
       "currentRaw": "'imáhem",
       "activeOutput": "'imahem",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "'imahem"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3523,7 +4612,14 @@
       "baselineRaw": "leshimjá",
       "currentRaw": "leshimjá",
       "activeOutput": "leShimjá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "leShimjá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3544,7 +4640,14 @@
       "baselineRaw": "veester",
       "currentRaw": "veester",
       "activeOutput": "veEster",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veEster"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3565,7 +4668,14 @@
       "baselineRaw": "beshushán",
       "currentRaw": "beshushán",
       "activeOutput": "beShushán",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "beShushán"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3586,7 +4696,14 @@
       "baselineRaw": "habira",
       "currentRaw": "habira",
       "activeOutput": "habirá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "habirá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3606,7 +4723,14 @@
       "baselineRaw": "hamán",
       "currentRaw": "hamán",
       "activeOutput": "Hamán",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hamán"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3625,7 +4749,14 @@
       "baselineRaw": "éjad",
       "currentRaw": "éjad",
       "activeOutput": "ejad",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ejad"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3645,7 +4776,14 @@
       "baselineRaw": "shenem",
       "currentRaw": "shenem",
       "activeOutput": "sheném",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "sheném"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3664,7 +4802,14 @@
       "baselineRaw": "adar",
       "currentRaw": "adar",
       "activeOutput": "Adar",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Adar"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3684,7 +4829,14 @@
       "baselineRaw": "ha'éts",
       "currentRaw": "ha'éts",
       "activeOutput": "ha'ets",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ha'ets"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3705,7 +4857,14 @@
       "baselineRaw": "shemaj",
       "currentRaw": "shemaj",
       "activeOutput": "Shemaj",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shemaj"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3725,7 +4884,14 @@
       "baselineRaw": "habayit",
       "currentRaw": "habayit",
       "activeOutput": "habáyit",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "habáyit"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3747,7 +4913,14 @@
       "baselineRaw": "shimjá",
       "currentRaw": "shimjá",
       "activeOutput": "Shimjá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shimjá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3768,7 +4941,14 @@
       "baselineRaw": "avinu",
       "currentRaw": "avinu",
       "activeOutput": "Avinu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Avinu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3789,7 +4969,9 @@
       "baselineRaw": "re'enú",
       "currentRaw": "re'enu",
       "activeOutput": "re'enu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -3809,7 +4991,14 @@
       "baselineRaw": "zunenú",
       "currentRaw": "zunenú",
       "activeOutput": "zunenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "zunenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3830,7 +5019,9 @@
       "baselineRaw": "parnesenú",
       "currentRaw": "parnesenu",
       "activeOutput": "parnesenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -3852,7 +5043,9 @@
       "baselineRaw": "kalkelenú",
       "currentRaw": "kalkelenu",
       "activeOutput": "kalkelenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -3874,7 +5067,9 @@
       "baselineRaw": "harvijenú",
       "currentRaw": "harvijenu",
       "activeOutput": "harvijenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -3895,7 +5090,9 @@
       "baselineRaw": "tatsrijenú",
       "currentRaw": "tatsrijenu",
       "activeOutput": "tatsrijenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -3916,7 +5113,14 @@
       "baselineRaw": "matenot",
       "currentRaw": "matenot",
       "activeOutput": "matnot",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "matnot"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3938,7 +5142,14 @@
       "baselineRaw": "leyadeja",
       "currentRaw": "leyadeja",
       "activeOutput": "leYadjá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "leYadjá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3960,7 +5171,14 @@
       "baselineRaw": "hamelea",
       "currentRaw": "hamelea",
       "activeOutput": "hameleá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "hameleá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -3980,7 +5198,14 @@
       "baselineRaw": "shel",
       "currentRaw": "shel",
       "activeOutput": "sheló",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "sheló"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4003,7 +5228,14 @@
       "baselineRaw": "limkómah",
       "currentRaw": "limkómah",
       "activeOutput": "limkomáh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "limkomáh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4025,7 +5257,9 @@
       "baselineRaw": "vehajalitsenú",
       "currentRaw": "vehajalitsenu",
       "activeOutput": "vehajalitsenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4046,7 +5280,14 @@
       "baselineRaw": "uvmitsvat",
       "currentRaw": "uvmitsvat",
       "activeOutput": "uvemitsvat",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "uvemitsvat"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4067,7 +5308,14 @@
       "baselineRaw": "hashabat",
       "currentRaw": "hashabat",
       "activeOutput": "haShabat",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "haShabat"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4086,7 +5334,14 @@
       "baselineRaw": "juky",
       "currentRaw": "juky",
       "activeOutput": "juké",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "juké"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4109,7 +5364,9 @@
       "baselineRaw": "menujatenú",
       "currentRaw": "menujatenu",
       "activeOutput": "menujatenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4131,7 +5388,9 @@
       "baselineRaw": "veharenú",
       "currentRaw": "veharenu",
       "activeOutput": "veharenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4153,7 +5412,9 @@
       "baselineRaw": "tishkajenú",
       "currentRaw": "tishkajenu",
       "activeOutput": "tishkajenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4175,7 +5436,9 @@
       "baselineRaw": "tiznajenú",
       "currentRaw": "tiznajenu",
       "activeOutput": "tiznajenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4195,7 +5458,14 @@
       "baselineRaw": "ata",
       "currentRaw": "ata",
       "activeOutput": "ata",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Atá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4214,7 +5484,14 @@
       "baselineRaw": "velohé",
       "currentRaw": "velohé",
       "activeOutput": "veLohé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veElohé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4233,7 +5510,14 @@
       "baselineRaw": "ya'ale",
       "currentRaw": "ya'ale",
       "activeOutput": "ya'alé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ya'alé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4254,7 +5538,14 @@
       "baselineRaw": "veyerae",
       "currentRaw": "veyerae",
       "activeOutput": "veyeraé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veyeraé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4275,7 +5566,14 @@
       "baselineRaw": "veyeratse",
       "currentRaw": "veyeratse",
       "activeOutput": "veyeratsé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veyeratsé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4296,7 +5594,14 @@
       "baselineRaw": "zijronenú",
       "currentRaw": "zijronenú",
       "activeOutput": "zijronenú",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "zijronenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4316,7 +5621,14 @@
       "baselineRaw": "mashíaj",
       "currentRaw": "mashíaj",
       "activeOutput": "Mashíaj",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Mashíaj"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4335,7 +5647,14 @@
       "baselineRaw": "hajódesh",
       "currentRaw": "hajódesh",
       "activeOutput": "Hajódesh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hajódesh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4354,7 +5673,14 @@
       "baselineRaw": "jag",
       "currentRaw": "jag",
       "activeOutput": "Jag",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Jag"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4374,7 +5700,14 @@
       "baselineRaw": "hamatsot",
       "currentRaw": "hamatsot",
       "activeOutput": "Hamatsot",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hamatsot"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4393,7 +5726,14 @@
       "baselineRaw": "kodesh",
       "currentRaw": "kodesh",
       "activeOutput": "kódesh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "kódesh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4414,7 +5754,14 @@
       "baselineRaw": "hashavu'ot",
       "currentRaw": "hashavu'ot",
       "activeOutput": "Hashavu'ot",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hashavu'ot"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4434,7 +5781,14 @@
       "baselineRaw": "hasukot",
       "currentRaw": "hasukot",
       "activeOutput": "HaSucot",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "HaSucot"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4453,7 +5807,14 @@
       "baselineRaw": "'atséret",
       "currentRaw": "'atséret",
       "activeOutput": "'Atséret",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "'Atséret"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4475,7 +5836,14 @@
       "baselineRaw": "ulhoshi'enú",
       "currentRaw": "ulhoshi'enu",
       "activeOutput": "ulehoshi'enu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ulehoshi'enu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4497,7 +5865,14 @@
       "baselineRaw": "zajrenú",
       "currentRaw": "zajrenu",
       "activeOutput": "zojrenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "zojrenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4520,7 +5895,14 @@
       "baselineRaw": "ufakdenú",
       "currentRaw": "ufakdenu",
       "activeOutput": "ufokdenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ufokdenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4540,7 +5922,14 @@
       "baselineRaw": "vidvar",
       "currentRaw": "vidvar",
       "activeOutput": "bidvar",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "bidvar"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4559,7 +5948,14 @@
       "baselineRaw": "amén",
       "currentRaw": "amén",
       "activeOutput": "Amén",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Amén"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4581,7 +5977,14 @@
       "baselineRaw": "malkenú",
       "currentRaw": "malkenu",
       "activeOutput": "Malkenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Malkenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4601,7 +6004,14 @@
       "baselineRaw": "adirenú",
       "currentRaw": "adirenu",
       "activeOutput": "Adirenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Adirenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4623,7 +6033,14 @@
       "baselineRaw": "borenú",
       "currentRaw": "borenu",
       "activeOutput": "Borenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Borenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4643,7 +6060,14 @@
       "baselineRaw": "goalenú",
       "currentRaw": "goalenu",
       "activeOutput": "Goalenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Goalenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4664,7 +6088,14 @@
       "baselineRaw": "kedoshenú",
       "currentRaw": "kedoshenu",
       "activeOutput": "Kedoshenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Kedoshenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4684,7 +6115,14 @@
       "baselineRaw": "ro'enú",
       "currentRaw": "ro'enu",
       "activeOutput": "Ro'enu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Ro'enu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4703,7 +6141,14 @@
       "baselineRaw": "ro'é",
       "currentRaw": "ro'é",
       "activeOutput": "Ro'é",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Ro'é"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4725,7 +6170,14 @@
       "baselineRaw": "shebejal",
       "currentRaw": "shebejal",
       "activeOutput": "shebejol",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "shebejol"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4747,7 +6199,14 @@
       "baselineRaw": "guemalanú",
       "currentRaw": "guemalanú",
       "activeOutput": "guemalanu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "guemalanu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4768,7 +6227,9 @@
       "baselineRaw": "gomlenú",
       "currentRaw": "gomlenu",
       "activeOutput": "gomlenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4789,7 +6250,9 @@
       "baselineRaw": "yigmelenú",
       "currentRaw": "yigmelenu",
       "activeOutput": "yigmelenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4810,7 +6273,14 @@
       "baselineRaw": "vevizuy",
       "currentRaw": "vevizuy",
       "activeOutput": "vevizui",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vevizui"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4831,7 +6301,14 @@
       "baselineRaw": "behéter",
       "currentRaw": "behéter",
       "activeOutput": "beheter",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "beheter"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4852,7 +6329,14 @@
       "baselineRaw": "benajat",
       "currentRaw": "benajat",
       "activeOutput": "benájat",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "benájat"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4873,7 +6357,14 @@
       "baselineRaw": "vetsa'ar",
       "currentRaw": "vetsa'ar",
       "activeOutput": "vetsá'ar",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vetsá'ar"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4894,7 +6385,9 @@
       "baselineRaw": "tsavarenú",
       "currentRaw": "tsavarenu",
       "activeOutput": "tsavarenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4914,7 +6407,9 @@
       "baselineRaw": "yolijenú",
       "currentRaw": "yolijenu",
       "activeOutput": "yolijenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4936,7 +6431,9 @@
       "baselineRaw": "leartsenú",
       "currentRaw": "leartsenu",
       "activeOutput": "leartsenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4958,7 +6455,9 @@
       "baselineRaw": "yirpaenú",
       "currentRaw": "yirpaenu",
       "activeOutput": "yirpaenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -4979,7 +6478,14 @@
       "baselineRaw": "shelemá",
       "currentRaw": "shelemá",
       "activeOutput": "shelemá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "shelemá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -4999,7 +6505,14 @@
       "baselineRaw": "hanéfesh",
       "currentRaw": "hanéfesh",
       "activeOutput": "hanefesh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "hanefesh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5018,7 +6531,14 @@
       "baselineRaw": "yadó",
       "currentRaw": "yadó",
       "activeOutput": "Yadó",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Yadó"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5039,7 +6559,14 @@
       "baselineRaw": "veéjad",
       "currentRaw": "veéjad",
       "activeOutput": "veejad",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veejad"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5060,7 +6587,14 @@
       "baselineRaw": "bishmó",
       "currentRaw": "bishmó",
       "activeOutput": "biShmó",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "biShmó"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5080,7 +6614,14 @@
       "baselineRaw": "veya'akov",
       "currentRaw": "veya'akov",
       "activeOutput": "veYa'akov",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "veYa'akov"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5099,7 +6640,14 @@
       "baselineRaw": "yifrós",
       "currentRaw": "yifrós",
       "activeOutput": "yifros",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "yifros"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5118,7 +6666,14 @@
       "baselineRaw": "sukat",
       "currentRaw": "sukat",
       "activeOutput": "sucat",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "sucat"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5138,7 +6693,14 @@
       "baselineRaw": "shelomó",
       "currentRaw": "shelomó",
       "activeOutput": "Shelomó",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Shelomó"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5159,7 +6721,9 @@
       "baselineRaw": "yanjilenú",
       "currentRaw": "yanjilenu",
       "activeOutput": "yanjilenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -5179,7 +6743,9 @@
       "baselineRaw": "yagui'enú",
       "currentRaw": "yagui'enu",
       "activeOutput": "yagui'enu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -5200,7 +6766,14 @@
       "baselineRaw": "habaím",
       "currentRaw": "habaím",
       "activeOutput": "habaim",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "habaim"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5223,7 +6796,9 @@
       "baselineRaw": "likratenú",
       "currentRaw": "likratenu",
       "activeOutput": "likratenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -5244,7 +6819,9 @@
       "baselineRaw": "yezakenú",
       "currentRaw": "yezakenu",
       "activeOutput": "yezakenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -5265,7 +6842,14 @@
       "baselineRaw": "besukat",
       "currentRaw": "besukat",
       "activeOutput": "besucat",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "besucat"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5285,7 +6869,14 @@
       "baselineRaw": "torató",
       "currentRaw": "torató",
       "activeOutput": "Torató",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Torató"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5307,7 +6898,9 @@
       "baselineRaw": "belibenú",
       "currentRaw": "belibenu",
       "activeOutput": "belibenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -5328,7 +6921,14 @@
       "baselineRaw": "veyihyú",
       "currentRaw": "veyihyú",
       "activeOutput": "Veyihyú",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Veyihyú"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5349,7 +6949,14 @@
       "baselineRaw": "jeshuljanó",
       "currentRaw": "jeshuljanó",
       "activeOutput": "keshuljanó",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "keshuljanó"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5370,7 +6977,14 @@
       "baselineRaw": "ul'olmé",
       "currentRaw": "ul'olmé",
       "activeOutput": "ule'olmé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ule'olmé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5392,7 +7006,14 @@
       "baselineRaw": "hase'uda",
       "currentRaw": "hase'uda",
       "activeOutput": "hase'udá",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "hase'udá"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5415,7 +7036,14 @@
       "baselineRaw": "unjasenu",
       "currentRaw": "unjasenu",
       "activeOutput": "unejasenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "unejasenu"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5434,7 +7062,14 @@
       "baselineRaw": "'aón",
       "currentRaw": "'aón",
       "activeOutput": "'avón",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "'avón"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5454,7 +7089,14 @@
       "baselineRaw": "zejarim",
       "currentRaw": "zejarim",
       "activeOutput": "zejarím",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "zejarím"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5475,7 +7117,14 @@
       "baselineRaw": "hakadosh",
       "currentRaw": "hakadosh",
       "activeOutput": "Hakadosh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Hakadosh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5496,7 +7145,9 @@
       "baselineRaw": "libenú",
       "currentRaw": "libenu",
       "activeOutput": "libenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -5517,7 +7168,9 @@
       "baselineRaw": "vizakenú",
       "currentRaw": "vizakenu",
       "activeOutput": "vizakenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -5540,7 +7193,9 @@
       "baselineRaw": "vikarvenú",
       "currentRaw": "vikarvenu",
       "activeOutput": "vikarvenu",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [],
       "status": "retired-by-enu-rule",
       "pronunciationDeltas": [
         {
@@ -5561,7 +7216,14 @@
       "baselineRaw": "hamashíaj",
       "currentRaw": "hamashíaj",
       "activeOutput": "haMashíaj",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "haMashíaj"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5582,7 +7244,14 @@
       "baselineRaw": "ulvinyán",
       "currentRaw": "ulvinyán",
       "activeOutput": "ulevinyán",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ulevinyán"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5603,7 +7272,14 @@
       "baselineRaw": "uljayé",
       "currentRaw": "uljayé",
       "activeOutput": "ulejayé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ulejayé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5624,7 +7300,14 @@
       "baselineRaw": "migdol",
       "currentRaw": "migdol",
       "activeOutput": "Migdol",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Migdol"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5645,7 +7328,14 @@
       "baselineRaw": "magdil",
       "currentRaw": "magdil",
       "activeOutput": "Magdil",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "Magdil"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5665,7 +7355,14 @@
       "baselineRaw": "ve'ose",
       "currentRaw": "ve'ose",
       "activeOutput": "ve'osé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ve'osé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5686,7 +7383,14 @@
       "baselineRaw": "ledavid",
       "currentRaw": "ledavid",
       "activeOutput": "leDavid",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "leDavid"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5707,7 +7411,14 @@
       "baselineRaw": "mevákesh",
       "currentRaw": "mevákesh",
       "activeOutput": "mevakesh",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "mevakesh"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5728,7 +7439,14 @@
       "baselineRaw": "lesav'á",
       "currentRaw": "lesav'á",
       "activeOutput": "lesov'á",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "lesov'á"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5748,7 +7466,14 @@
       "baselineRaw": "vayiten",
       "currentRaw": "vayiten",
       "activeOutput": "vayitén",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vayitén"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5769,7 +7494,14 @@
       "baselineRaw": "vayojlú",
       "currentRaw": "vayojlú",
       "activeOutput": "vayojelú",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vayojelú"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5789,7 +7521,14 @@
       "baselineRaw": "vayotirú",
       "currentRaw": "vayotirú",
       "activeOutput": "vayotiru",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "vayotiru"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5808,7 +7547,14 @@
       "baselineRaw": "átem",
       "currentRaw": "átem",
       "activeOutput": "atem",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "atem"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5827,7 +7573,14 @@
       "baselineRaw": "'amó",
       "currentRaw": "'amó",
       "activeOutput": "'Amó",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "'Amó"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {
@@ -5846,7 +7599,14 @@
       "baselineRaw": "ya'ase",
       "currentRaw": "ya'ase",
       "activeOutput": "ya'asé",
+      "baselineTableDisagreement": false,
       "tableDisagreement": false,
+      "currentValues": [
+        {
+          "table": "GOLD.sef.w",
+          "value": "ya'asé"
+        }
+      ],
       "status": "pending-investigation",
       "pronunciationDeltas": [
         {

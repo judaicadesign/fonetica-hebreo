@@ -1502,7 +1502,9 @@
   {
     "table": "GOLD.sef.w",
     "key": "מִנַּעַר",
-    "value": "mina'ar"
+    "value": "miná'ar",
+    "previousValue": "mina'ar",
+    "correctionSource": "User-confirmed ArtScroll ná’ar, 2026-10-11; lexical stress retained with prefix. Birkat working Hebrew already has meteg on nun in מִנַּֽעַר."
   },
   {
     "table": "GOLD.sef.w",

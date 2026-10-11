@@ -4,6 +4,8 @@ import vm from 'node:vm';
 import {extractEngine} from './extract-engine.mjs';
 const baseline=JSON.parse(fs.readFileSync(new URL('../tests/fixtures/legacy-rule-backlog.json',import.meta.url),'utf8'));
 const retired=JSON.parse(fs.readFileSync(new URL('../tests/fixtures/enu-rule-retired.json',import.meta.url),'utf8'));
+const confirmed=JSON.parse(fs.readFileSync(new URL('../tests/fixtures/user-confirmations-20261011.json',import.meta.url),'utf8'));
+const confirmedKeys=new Set([...Object.keys(confirmed.readings),...confirmed.sentenceOnlyCapitals,...Object.keys(confirmed.editorialTerms)].map(s=>s.normalize('NFC')));
 const stub=`const document={getElementById(){return {value:'rabbinic',addEventListener(){},focus(){},select(){}}},createElement(){return {appendChild(){},addEventListener(){},replaceChildren(){}}}};const window={addEventListener(){}};const navigator={clipboard:{}};const requestAnimationFrame=f=>f();`;
 const api=vm.runInNewContext(stub+extractEngine(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8'))+';({clusters,rawTranslit,phoneWord,APPROVED,FINAL_FORMS,GOLDEN_EDITORIAL,GOLD});',{}, {timeout:20000});
 const groups=new Map();
@@ -29,13 +31,16 @@ const forms=[...groups].map(([key,entries])=>{
  if(a.some(c=>has(c,'\u05B8')))families.push('qamats-a-or-o');
  if(!families.length)families.push('other-lexical-or-stress');
  const raw=api.rawTranslit(key);
+ const currentValues=[...['APPROVED','FINAL_FORMS','GOLDEN_EDITORIAL'].flatMap(table=>api[table].has(key)?[{table,value:api[table].get(key)}]:[]),
+  ...(key in api.GOLD.sef.w?[{table:'GOLD.sef.w',value:api.GOLD.sef.w[key]}]:[])];
  const pronunciationDeltas=entries.map(e=>({table:e.table,value:e.value,
   kind:e.value===raw?'rule-equivalent':e.value.toLowerCase()===raw.toLowerCase()?'capitalization-only':latin(e.value)===latin(raw)?'stress-or-capitalization':'segmental-or-editorial',
-  retired:retired.some(r=>r.table===e.table&&r.key===key)}));
+  retired:!currentValues.some(v=>v.table===e.table)}));
  return {key,families,baselineRaw:entries[0].raw,currentRaw:raw,
   activeOutput:api.phoneWord(key,'',false,''),
-  tableDisagreement:new Set(entries.map(e=>e.value)).size>1,
-  status:pronunciationDeltas.every(e=>e.retired)?'retired-by-enu-rule':'pending-investigation',
+  baselineTableDisagreement:new Set(entries.map(e=>e.value)).size>1,
+  tableDisagreement:new Set(currentValues.map(e=>e.value)).size>1,currentValues,
+  status:confirmedKeys.has(key)?'resolved-by-user-confirmation':retired.some(r=>r.key===key)?'retired-by-enu-rule':pronunciationDeltas.every(e=>e.retired)?'retired-by-rules':'pending-investigation',
   pronunciationDeltas};
 });
 const counts={};for(const f of forms)for(const family of f.families)counts[family]=(counts[family]||0)+1;
