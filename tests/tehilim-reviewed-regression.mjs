@@ -22,3 +22,16 @@ for(const [word,expected] of [["עַמְּךָ","'amejá"],["וּלְעַמְּ�
 }
 assert.equal(api.rawTranslit("יַעֲנְךָ","final"),"ya'anjá",'Do not vocalize every short-vowel suffix');
 console.log('PASS: vocal mem sheva, silent lamed after shuruk, prefixed forms and legacy bypass');
+
+// ArtScroll 7:1 has an explicit sheva-na mark on ב of דִּבְרֵי.
+// The complete verse is approved with the editorial Divine Name לַיְיָ.
+// The unrelated occurrence in 137:3 remains under its independent source.
+{
+ const hebrew7='שִׁגָּיוֹן לְדָוִד אֲשֶׁר שָׁר לַיְיָ עַל דִּבְרֵי כוּשׁ בֶּן יְמִינִי.';
+ const sheva=api.reviewedArtScrollTokens(hebrew7);
+ assert.ok([...sheva.values()].some(v=>JSON.stringify(v.vocalSheva)==='[1]'),'7:1 ArtScroll annotation must match the JD prefixed Name');
+ assert.match(api.phonetize(hebrew7),/diveré/,'7:1 approved vocal sheva must produce diveré');
+ const other='כִּי שָׁם שְׁאֵלֽוּנוּ שׁוֹבֵֽינוּ דִּבְרֵי שִׁיר וְתוֹלָלֵֽינוּ שִׂמְחָה שִֽׁירוּ לָֽנוּ מִשִּׁיר צִיּוֹן.';
+ assert.match(api.phonetize(other),/divré/,'137:3 remains independent of 7:1');
+}
+console.log('PASS: Psalm 7:1 vocal sheva and independent 137:3 pronunciation');
