@@ -24,6 +24,8 @@ jobs:
           node-version: '22'
       - name: Check JavaScript syntax
         run: node --check scripts/audit-tehilim.mjs
+      - name: Snapshot exact generator output for ArtScroll 8–12
+        run: node tests/artscroll-eight-twelve-audit.mjs
       - name: Check phonetics and Nakdan behavior
         run: |
           node tests/jasar-regression.mjs
