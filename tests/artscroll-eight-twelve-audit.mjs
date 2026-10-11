@@ -14,7 +14,6 @@ const stub=`const document={getElementById(){return {value:'rabbinic',addEventLi
 const {phonetize}=vm.runInNewContext(stub+source+';({phonetize});',{}, {timeout:20000});
 const targets=[['9:21','שִׁיתָה'],['9:21','הֵמָּה'],['10:3','בֵּרֵךְ'],['11:3','פָּעָל']];
 const output={timestamp:new Date().toISOString(),corpusUrl,sourceSha:process.env.GITHUB_SHA||'unknown',chapters:[],questions:[]};
-const normalizedTokens=s=>s.match(/[\\p{L}\\p{M}'’\-]+/gu)||[];
 for(const c of corpus.items.filter(c=>c.chapter>=8&&c.chapter<=12)){
  const report={chapter:c.chapter,verses:c.verses.length,differences:[],verseResults:[]};
  for(const v of c.verses){
@@ -23,10 +22,10 @@ for(const c of corpus.items.filter(c=>c.chapter>=8&&c.chapter<=12)){
   report.verseResults.push({ref,hebrew:v.hebrew,generatorActual:actual,masterProvisional:v.phonetic});
   if(actual!==v.phonetic)report.differences.push({ref,generatorActual:actual,masterProvisional:v.phonetic});
   for(const [target,word] of targets.filter(x=>x[0]===ref)){
-   const hw=v.hebrew.match(/[\\u05D0-\\u05EA\\u0591-\\u05C7\\u200d]+/gu)||[];
+   const hw=v.hebrew.match(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)||[];
    const index=hw.indexOf(word);
    if(index<0)throw Error('Missing question word '+ref+' '+word);
-   const phones=actual.match(/[^\\s,.;:!?]+/gu)||[];
+   const phones=actual.match(/[^\s,.;:!?]+/gu)||[];
    output.questions.push({ref,word,previousWord:hw[index-1]||null,nextWord:hw[index+1]||null,wordIndex:index,generatorActualWord:phones[index]||null,generatorActualVerse:actual});
   }
  }
@@ -34,5 +33,5 @@ for(const c of corpus.items.filter(c=>c.chapter>=8&&c.chapter<=12)){
 }
 const out='audit-results';
 fs.mkdirSync(out,{recursive:true});
-fs.writeFileSync(out+'/artscroll-008-012-generator.json',JSON.stringify(output,null,2)+'\\n');
+fs.writeFileSync(out+'/artscroll-008-012-generator.json',JSON.stringify(output,null,2)+'\n');
 console.log('ARTSCROLL_8_12_AUDIT '+JSON.stringify({chapters:output.chapters.map(x=>({chapter:x.chapter,verses:x.verses,differenceCount:x.differences.length})),questions:output.questions}));
