@@ -40,4 +40,13 @@ const r137=corpus.items[136].verses[2];
 assert.ok(r137.phonetic.includes('divré'),'137:3 historical reading preserved');
 const r7=corpus.items[6].verses[0];
 assert.ok(r7.phonetic.includes('diveré'),'7:1 FINAL cannot regress');
+// Masoretic Tehilim 137:1 and 137:8 have revi'a on the SECOND bet of
+// בָּבֶ֗ל. This is milra (ba-VEL), not mil'el. Spanish spelling Bavél.
+for(const v of [1,8]){
+ const source=corpus.items[136].verses[v-1];
+ assert.ok(source.phonetic.includes('Bavél'),'137:'+v+' canonical final stress');
+ assert.ok(!source.phonetic.includes('Bável'),'137:'+v+' no wrong initial stress');
+ const actual=api.phonetize(source.hebrew);
+ assert.equal(actual,source.phonetic,'137:'+v+' generator must retain final stress');
+}
 console.log('PASS 126 and 137: '+checked+' verses, full phonetics and NFC/NFD; plus 9:21, 12:2, 20:10 user approvals; 7:1 and 137:3 distinct');
