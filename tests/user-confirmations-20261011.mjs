@@ -18,6 +18,8 @@ for(const [w,p]of [['בִּרְשׁוּת','birshut'],['חֻקֵּי','juké'],[
 assert.equal(a.rawTranslit('מִנַּעַר'),"miná'ar",'Prefix preserves verified lexical stress');
 assert.equal(a.rawTranslit('הַנַּעַר'),"haná'ar",'Another prefix, no full-word lookup');
 assert.equal(a.rawTranslit('מַחַר'),'majar','Do not turn every patah/guttural/patah word into milel');
+assert.equal(a.rawTranslit('בֵּיתְךָ'),'betejá','Bet dagesh does not change the source stress');
+assert.equal(a.phonetize('אֶת בֵּיתְךָ'),'Et betejá','Dotted bet uses the same sheva/stress reading');
 assert.equal(a.phonetize('אֶת בֵּיתֶךָ'),'Et beteja','Segol is a different confirmed reading');
 assert.equal(a.phonetize('אֶת עַבְדֶּךָ'),"Et 'avdeja",'Segol must not become qamats');
 console.log('PASS user readings: public pipeline, source distinctions, prefixes, NFC/NFD and sentence/editorial capitals');

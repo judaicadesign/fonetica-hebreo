@@ -1220,7 +1220,9 @@ function isLexicalMilel(word){
   return false;
 }
 
-const LEXICAL_MILRA=new Set(["עַתָּה"].map(stressKey));
+// ArtScroll/user: ביתְךָ has mobile tav sheva and final stress.
+// Initial bet dagesh affects b/v, not the position of that stress.
+const LEXICAL_MILRA=new Set(["עַתָּה","בֵּיתְךָ"].map(stressKey));
 function isLexicalMilra(word){
   if(LEXICAL_MILRA.has(stressKey(word))) return true;
   const a=clusters(word);
@@ -1576,7 +1578,7 @@ function runRegressionTests(){
     ["פְּאֵרֶךָ","peereja"],["אֶרֶץ","erets"],["הָאָרֶץ","haarets"],["בָּאָרֶץ","baarets"],
   ["מִצְרַיִם","Mitsráyim"],["חַיִּים","jayim"],
   ["יוֹחַאי","Yojái"],["חָכְמָה","jajmá"],["קְדוּמָה","kedumá"],
-    ["בֵּיתְךָ","beteja"],["דַּרְכֶּךָ","darkeja"],["רְצוֹנְךָ","retsoneja"],["אִתָּנוּ","itanu"],["מִצְוֹתֶיךָ","mitsvoteja"],["מֵחֲבֵרֶיךָ","mejavereja"],
+    ["בֵּיתְךָ","betejá"],["דַּרְכֶּךָ","darkeja"],["רְצוֹנְךָ","retsoneja"],["אִתָּנוּ","itanu"],["מִצְוֹתֶיךָ","mitsvoteja"],["מֵחֲבֵרֶיךָ","mejavereja"],
     ["יְיָ","Ad-nai"],["יהוה","Ad-nai"],["יְהוָה","Ad-nai"],["אֱלֹהַי","Elohái"],["הַמֶּלֶךְ","HaMélej"],
     ["הַיְשׁוּעָה","hayeshu'á"],
     ["שָׁכַבְתִּי","shajavti"],["הֱקִיצוֹתִי","hekitsoti"],["יִסְמְכֵנִי","yismejeni"],["הוֹשִׁיעֵנִי","hoshi'eni"],

@@ -4,7 +4,7 @@ Fuente: mensaje del usuario del 11/10/2026. Las observaciones visuales se atribu
 
 | Forma | Salida dentro de oración | Aplicación |
 |---|---|---|
-| בֵיתְךָ | betejá | Se actualiza el dato verificado existente y se retira el valor viejo betjá. |
+| בֵיתְךָ | betejá | Se actualiza el dato verificado existente y se retira el valor viejo betjá. La variante בֵּיתְךָ calcula el mismo acento final por clase léxica; el dagesh inicial no cambia ese acento. |
 | נַעַר | ná'ar | Se conserva solo la clase de acento léxico mil'él; las consonantes y vocales se calculan. Se retiran dos pronunciaciones completas. |
 | שֶׁהִנְחַלְתָּ | shehinjalta | El acento en jal coincide con la lectura española sin tilde. Se retiran las entradas contradictorias. |
 | הַלְלוּיָהּ | haleluYah | Una sola forma editorial; HaleluYah al comienzo de oración. |
