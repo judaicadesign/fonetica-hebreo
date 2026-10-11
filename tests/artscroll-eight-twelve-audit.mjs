@@ -12,7 +12,7 @@ const corpus=await res.json();
 const source=extractEngine(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8'));
 const stub=`const document={getElementById(){return {value:'rabbinic',addEventListener(){},focus(){},select(){}}},createElement(){return {appendChild(){},addEventListener(){},replaceChildren(){}}}};const window={addEventListener(){}};const navigator={clipboard:{}};const requestAnimationFrame=f=>f();`;
 const {phonetize}=vm.runInNewContext(stub+source+';({phonetize});',{}, {timeout:20000});
-const targets=[['9:21','שִׁיתָה'],['9:21','הֵמָּה'],['10:3','בֵּרֵךְ'],['11:3','פָּעָל']];
+const targets=[['9:21','שִׁיתָה'],['9:21','הֵֽמָּה'],['10:3','בֵּרֵךְ'],['11:3','פָּעָל']];
 const output={timestamp:new Date().toISOString(),corpusUrl,sourceSha:process.env.GITHUB_SHA||'unknown',chapters:[],questions:[]};
 for(const c of corpus.items.filter(c=>c.chapter>=8&&c.chapter<=12)){
  const report={chapter:c.chapter,verses:c.verses.length,differences:[],verseResults:[]};
