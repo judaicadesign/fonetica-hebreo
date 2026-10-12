@@ -253,3 +253,6 @@ Additional source conflicts found by the complete regression suite, preserved as
   }
 ]
 The UI warns when one of these retained source readings is used. Unscoped rule tests now expect tidefenu, merivevot and gomelenu; initial zeroa also extends structurally to zero'otai. None of these test updates certifies an unchecked master passage.
+
+## Follow-up visual audit
+The earlier lists are historical, not active counts. Visually confirmed vocal helper marks resolved 20 contexts; the Sisra hold was redundant and was removed. Current unresolved count: 7 contexts (83:3, 83:5, 83:13, 83:19, 121:3, 121:5, 142:7). Exact provenance, before/after readings and source hashes: SHEVA_COTEJO_20261012.json. Resolved refs: 23:5, 83:10, 3:7, 3:8, 7:2, 7:5, 7:14, 9:4, 9:14, 9:16, 10:8, 10:16, 12:2, 14:4, 17:9, 18:16, 18:39, 18:49, 126:1, 137:7, 2:2. No new whole-word pronunciation overrides.

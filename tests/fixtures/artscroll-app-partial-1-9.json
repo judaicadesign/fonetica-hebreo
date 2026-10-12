@@ -37,7 +37,7 @@
   {
     "ref": "2:2",
     "hebrew": "יִתְיַצְּבוּ מַלְכֵי אֶרֶץ וְרוֹזְנִים נוֹסְדוּ יָֽחַד עַל יְהֹוָה וְעַל מְשִׁיחוֹ.",
-    "phonetic": "Yitiatsevú maljé erets veroznim nósedu yájad 'al Ad-nai ve'al meshijó."
+    "phonetic": "Yitiatsevú maljé erets verozenim nósedu yájad 'al Ad-nai ve'al meshijó."
   },
   {
     "ref": "2:3",
@@ -122,12 +122,12 @@
   {
     "ref": "3:7",
     "hebrew": "לֹא אִירָא מֵרִבְבוֹת עָם אֲשֶׁר סָבִיב שָֽׁתוּ עָלָי.",
-    "phonetic": "Lo irá merivvot 'am asher saviv shatu 'alái."
+    "phonetic": "Lo irá merivevot 'am asher saviv shatu 'alái."
   },
   {
     "ref": "3:8",
     "hebrew": "קוּמָה יְהֹוָה הוֹשִׁיעֵֽנִי אֱלֹהַי כִּי הִכִּֽיתָ אֶת כׇּל אֹיְבַי לֶֽחִי שִׁנֵּי רְשָׁעִים שִׁבַּֽרְתָּ.",
-    "phonetic": "Kumá Ad-nai hoshi'eni Elohái ki hikita et kol oyvái leji shiné resha'im shibarta."
+    "phonetic": "Kumá Ad-nai hoshi'eni Elohái ki hikita et kol oyevái leji shiné resha'im shibarta."
   },
   {
     "ref": "3:9",
@@ -307,7 +307,7 @@
   {
     "ref": "7:2",
     "hebrew": "יְהֹוָה אֱלֹהַי בְּךָ חָסִֽיתִי הוֹשִׁיעֵֽנִי מִכׇּל רֹדְפַי וְהַצִּילֵֽנִי.",
-    "phonetic": "Ad-nai Elohái beja jasiti hoshi'eni mikol rodfái vehatsileni."
+    "phonetic": "Ad-nai Elohái beja jasiti hoshi'eni mikol rodefái vehatsileni."
   },
   {
     "ref": "7:3",
@@ -322,7 +322,7 @@
   {
     "ref": "7:5",
     "hebrew": "אִם גָּמַֽלְתִּי שׁוֹלְמִי רָע וָאֲחַלְּצָה צוֹרְרִי רֵיקָם.",
-    "phonetic": "Im gamalti sholmí ra' vaajaletsá tsorerí rekam."
+    "phonetic": "Im gamalti sholemí ra' vaajaletsá tsorerí rekam."
   },
   {
     "ref": "7:6",
@@ -367,7 +367,7 @@
   {
     "ref": "7:14",
     "hebrew": "וְלוֹ הֵכִין כְּלֵי מָֽוֶת חִצָּיו לְדֹלְקִים יִפְעָל.",
-    "phonetic": "Veló hejín kelé mávet jitsav ledolkim yif'al."
+    "phonetic": "Veló hejín kelé mávet jitsav ledolekim yif'al."
   },
   {
     "ref": "7:15",
@@ -457,7 +457,7 @@
   {
     "ref": "9:4",
     "hebrew": "בְּשׁוּב אוֹיְבַי אָחוֹר יִכָּשְׁלוּ וְיֹֽאבְדוּ מִפָּנֶֽיךָ.",
-    "phonetic": "Beshuv oyvái ajor yikashelú veyóvedu Mipaneja."
+    "phonetic": "Beshuv oyevái ajor yikashelú veyóvedu Mipaneja."
   },
   {
     "ref": "9:5",
@@ -507,7 +507,7 @@
   {
     "ref": "9:14",
     "hebrew": "חָנְנֵֽנִי יְהֹוָה רְאֵה עׇנְיִי מִשֹּׂנְאָי מְרוֹמְמִי מִשַּׁעֲרֵי מָֽוֶת.",
-    "phonetic": "Janeneni Ad-nai reé 'onyí misonái meromemí misha'aré mávet."
+    "phonetic": "Janeneni Ad-nai reé 'onyí misoneái meromemí misha'aré mávet."
   },
   {
     "ref": "9:15",
@@ -517,6 +517,6 @@
   {
     "ref": "9:16",
     "hebrew": "טָבְעוּ גוֹיִם בְּשַֽׁחַת עָשׂוּ בְּרֶֽשֶׁת זוּ טָמָֽנוּ נִלְכְּדָה רַגְלָם.",
-    "phonetic": "Tav'ú goyim beshájat 'asú beréshet zu tamanu nilkedá raglam."
+    "phonetic": "Tave'ú goyim beshájat 'asú beréshet zu tamanu nilkedá raglam."
   }
 ]
