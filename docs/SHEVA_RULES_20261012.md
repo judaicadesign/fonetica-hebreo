@@ -112,3 +112,144 @@ Existing reviewed passage outputs conflicting with broader rules have heldSilent
 Nakdan: keepmetagim remains true; user vowels remain verbatim. Marks-only tokens may now be vocalized, with existing meteg/rafe restored by consonant index. Alternate-option selection uses the same preservation function; changed consonantal spelling with marks fails closed.
 
 Future display contract: phonetics and optional meteg/rafe rendering consume one internal analysis. Display switches must never change pronunciation. This change does not add automatic display controls or guess unverified meteg positions.
+
+Additional source conflicts found by the complete regression suite, preserved as explicit pending-review annotations (not rule certification):
+[
+  {
+    "ref": "2:2",
+    "holds": {
+      "וְרוֹזְנִים": [
+        3
+      ]
+    }
+  },
+  {
+    "ref": "3:7",
+    "holds": {
+      "מֵרִבְבוֹת": [
+        2
+      ]
+    }
+  },
+  {
+    "ref": "3:8",
+    "holds": {
+      "אֹיְבַי": [
+        1
+      ]
+    }
+  },
+  {
+    "ref": "7:2",
+    "holds": {
+      "רֹדְפַי": [
+        1
+      ]
+    }
+  },
+  {
+    "ref": "7:5",
+    "holds": {
+      "שׁוֹלְמִי": [
+        2
+      ]
+    }
+  },
+  {
+    "ref": "7:14",
+    "holds": {
+      "לְדֹלְקִים": [
+        2
+      ]
+    }
+  },
+  {
+    "ref": "9:4",
+    "holds": {
+      "אוֹיְבַי": [
+        2
+      ]
+    }
+  },
+  {
+    "ref": "9:14",
+    "holds": {
+      "מִשֹּׂנְאָי": [
+        2
+      ]
+    }
+  },
+  {
+    "ref": "9:16",
+    "holds": {
+      "טָבְעוּ": [
+        1
+      ]
+    }
+  },
+  {
+    "ref": "10:8",
+    "holds": {
+      "לְחֵלְכָה": [
+        2
+      ]
+    }
+  },
+  {
+    "ref": "10:16",
+    "holds": {
+      "אָבְדוּ": [
+        1
+      ]
+    }
+  },
+  {
+    "ref": "12:2",
+    "holds": {
+      "מִבְּנֵי": [
+        1
+      ]
+    }
+  },
+  {
+    "ref": "14:4",
+    "holds": {
+      "אֹכְלֵי": [
+        1
+      ]
+    }
+  },
+  {
+    "ref": "17:9",
+    "holds": {
+      "אֹיְבַי": [
+        1
+      ]
+    }
+  },
+  {
+    "ref": "18:16",
+    "holds": {
+      "מוֹסְדוֹת": [
+        2
+      ]
+    }
+  },
+  {
+    "ref": "18:39",
+    "holds": {
+      "יִפְּלוּ": [
+        1
+      ]
+    }
+  },
+  {
+    "ref": "18:49",
+    "holds": {
+      "מֵאֹיְבָי": [
+        2
+      ]
+    }
+  }
+]
+The UI warns when one of these retained source readings is used. Unscoped rule tests now expect tidefenu, merivevot and gomelenu; initial zeroa also extends structurally to zero'otai. None of these test updates certifies an unchecked master passage.
