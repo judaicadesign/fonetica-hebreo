@@ -23,3 +23,8 @@ assert.equal(a.phonetize('אֶת בֵּיתְךָ'),'Et betejá','Dotted bet use
 assert.equal(a.phonetize('אֶת בֵּיתֶךָ'),'Et beteja','Segol is a different confirmed reading');
 assert.equal(a.phonetize('אֶת עַבְדֶּךָ'),"Et 'avdeja",'Segol must not become qamats');
 console.log('PASS user readings: public pipeline, source distinctions, prefixes, NFC/NFD and sentence/editorial capitals');
+for(const w of ['וּבְרַחֲמִים','וּבְרַחֲמִים'.normalize('NFD')]){
+ assert.equal(a.rawTranslit(w),'uvrajamim');
+ assert.equal(a.phoneWord(w,'',false,''),'uvrajamim','Retired lexical value cannot override the structural fallback');
+ assert.equal(a.phonetize('בְּחֵן בְּחֶֽסֶד '+w),'Bején bejésed uvrajamim');
+}
