@@ -818,6 +818,15 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
   if(Number.isInteger(confirmedStress)){
     const marked=nuclei.findIndex(n=>n.clusterIndex===confirmedStress);
     if(marked!==-1)target=marked;
+  }else{
+    /* Convención ArtScroll: un meteg en una sílaba que no es la última marca la sílaba tónica
+       (נָֽפְלוּ → náflu, אָֽכְלוּ → ájlu). Si hay más de un meteg en la palabra, es ambiguo y no se usa. */
+    const mk=[];a.forEach((c,i)=>{if(c.sourceMarks?.includes("\u05BD"))mk.push(i);});
+    if(mk.length===1){
+      const k=mk[0];
+      const idx=nuclei.findIndex(n=>n.clusterIndex===k||(n.clusterIndex===k+1&&(isShuruk(a[k+1])||isHolamMale(a[k+1]))));
+      if(idx!==-1&&idx<nuclei.length-1&&!nuclei[idx].furtive)target=idx;
+    }
   }
   const spanishShape = out.replace(/['’\-]+$/g,"");
   const last = spanishShape[spanishShape.length-1] || out[out.length-1];
@@ -864,8 +873,12 @@ function isQamatzQatan(a,i,word){
   const c=a[i];
   if(!has(c,N.QAMATS) && !has(c,N.QAMATS_QATAN)) return false;
   if(has(c,N.QAMATS_QATAN)) return true;
-  return QAMATZ_QATAN_FORMS.has(norm(word));
+  if(QAMATZ_QATAN_FORMS.has(norm(word))) return true;
+  /* Raíces con qamats katan (CָCְC- cerrada y átona): חָכְמָה, קָדְשׁוֹ, עָנְיִי… con o sin prefijos. */
+  const stem=a.slice(i,i+3).map(x=>x.b).join("");
+  return QAMATZ_QATAN_ROOTS.has(stem)&&has(a[i+1],N.SHEVA)&&onlyLightPrefixesBefore(a,i);
 }
+const QAMATZ_QATAN_ROOTS = new Set(["חכמ","קדש","עני","שרש","חפש","אזנ"]);
 
 function rawTranslit(word, confirmedStress, details=false, vocalSheva=[], heldSilentSheva=[]){
   const n=norm(word);
@@ -1637,7 +1650,7 @@ function runRegressionTests(){
     ["מַעְלָה","ma'la"],["מַעֲלֶה","ma'alé"],["עַיִשׁ","'ayish"],["עַיִן","'ayin"],
     ["פְּאֵרֶךָ","peereja"],["אֶרֶץ","erets"],["הָאָרֶץ","haarets"],["בָּאָרֶץ","baarets"],
   ["מִצְרַיִם","Mitsráyim"],["חַיִּים","jayim"],
-  ["יוֹחַאי","Yojái"],["חָכְמָה","jajmá"],["קְדוּמָה","kedumá"],
+  ["יוֹחַאי","Yojái"],["חָכְמָה","jojmá"],["קְדוּמָה","kedumá"],
     ["בֵּיתְךָ","betejá"],["דַּרְכֶּךָ","darkeja"],["רְצוֹנְךָ","retsoneja"],["אִתָּנוּ","itanu"],["מִצְוֹתֶיךָ","mitsvoteja"],["מֵחֲבֵרֶיךָ","mejavereja"],
     ["יְיָ","Ad-nai"],["יהוה","Ad-nai"],["יְהוָה","Ad-nai"],["אֱלֹהַי","Elohái"],["הַמֶּלֶךְ","HaMélej"],
     ["הַיְשׁוּעָה","hayeshu'á"],
@@ -1660,7 +1673,7 @@ function runRegressionTests(){
     ["בָּרוּךְ שְׁמוֹ","Baruj Shemó"],
     ["רוּחַ","rúaj"],["נֹחַ","nóaj"],["וַיְבָרֶךְ","vaivaréj"],["לַמְּנַצֵּחַ","lamenatséaj"],
     ["הַמּוֹרֶה","hamoré"],["כֹּהֵן","kohén"],
-    ["פַּעֲמַיִם","pa'amáyim"],["אָזְנַיִם","aznáyim"],["יָדַיִם","yadáyim"],
+    ["פַּעֲמַיִם","pa'amáyim"],["אָזְנַיִם","oznáyim"],["יָדַיִם","yadáyim"],
     ["תּוֹרָתְךָ","Toratejá"],["בֵיתְךָ","betejá"],["לִשְׁמָהּ","lishmah"],
     ["בִּגְבוּרָה","bigvurá"],["כִּרְצוֹנוֹ","kirtsonó"],["לִפְגָרִים","lifgarim"],
     ["לָיְלָה","layla"],["צָרְכִּי","tsorkí"],["בְּחָכְמָה","bejojmá"],

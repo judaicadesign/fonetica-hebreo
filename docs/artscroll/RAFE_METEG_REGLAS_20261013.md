@@ -40,11 +40,17 @@ ArtScroll pone meteg en la sílaba tónica cuando no es la última. El perfil Se
 Fallas típicas (42 palabras): vav conversiva (וְאָכַלְתָּ, וּבֵרַכְתָּ: milrá), palabras que ArtScroll deja sin meteg (בָּבֶל, שֶׁלֹּא, מִשֶּׁלּוֹ),
 meteg secundario/ga'ya (עָֽרוּ, שִֽׁירוּ, וְעֹֽשֶׂה). Se corrigen agregando excepciones verificadas, no con más datos de Tehilim.
 
-### El meteg no siempre es solo visual
-En 8 de las 646 palabras con meteg de los masters, el meteg es una ga'ya que vuelve muda la shevá siguiente:
-שֹֽׁפְטֵי Shofté · וְתֹֽאבְדוּ · וְיֹֽאבְדוּ · אָֽכְלוּ Ajlú · נָֽפְלוּ Naflú · סָּֽגְרוּ Sagrú · יֹֽשְׁבֵי Yoshvé · נִֽירְשָׁה Nirshá.
-Sin ese meteg, el motor las leería con shevá na (Shofeté, Ajelú…). Por eso `applyVisualMarks` conserva el meteg de la fuente cuando quitarlo cambiaría la fonética.
-Para textos sin teamim ni meteg (Jabad) esas 8 formas quedan pendientes de una regla de ga'ya.
+### Corrección posterior: el meteg escrito en el texto SÍ marca la tónica
+Convención de ArtScroll (y de tus masters): un meteg en una sílaba que no es la última marca la sílaba tónica (נָֽפְלוּ → náflu, אָֽכְלוּ → ájlu).
+El motor lo ignoraba y acentuaba la última sílaba (Naflú, Ajlú). Ahora lo respeta. Comparado con la fonética aprobada de los masters
+(10 salmos aprobados, 164 palabras con meteg): **antes coincidían 124, ahora 158**. Lo que queda distinto (6): מוֹסְרוֹתֵֽימוֹ, אַֽתָּה, אָֽנִי,
+שֹֽׁפְטֵי / וְתֹֽאבְדוּ / שׇׁפְטֵֽנִי (el master lee shófete, vetóvedu con shevá na tras holam acentuada, y yoshve con shevá muda: criterio a unificar).
+Si hay más de un meteg en la palabra, no se usa (ambiguo).
+Consecuencia para el interruptor: el meteg que el generador agrega solo se muestra si no cambia la fonética (si el acento tradicional difiere del que lee el motor,
+la palabra queda sin meteg y es una señal para revisar el acento del motor).
+
+### Qamats katan sin marca
+Se agregaron raíces con qamats katan (חָכְמָה Jojmá, קָדְשְׁךָ Kodshejá, אָזְנַיִם Oznáyim, עָנְיִי, שָׁרְשׁ, חָפְשִׁי), con o sin prefijos. Antes חָכְמָה se leía "Jajmá".
 
 ## 4. Pendientes que necesitan tu ojo en el ArtScroll impreso
 - ¿Lleva rafe sobre la פ שָׁפְרָה (Tehilim 16:6)? Hoy se lee "shafrá" (shevá muda). Misma duda para דָּבְקָה, כָּלְתָה, עָתְקָה, שָׁכְנָה, שָׂבְעָה, נָתְנָה (perfecto 3ª f.).
