@@ -414,6 +414,8 @@ function prefixBoundarySheva(a,i){
 
   /* וּ + shevá: sin e automática; מְ- conserva su vocal reducida. */
   if(i===1 && prev.b==="ו" && isShuruk(prev) && a[i].b==="מ") return true;
+  /* וּ con meteg (ga'ya, p.ej. Shemá וּֽבְשָׁכְבְּךָ, ArtScroll rafe en la ב): la shevá siguiente suena. */
+  if(i===1 && prev.b==="ו" && isShuruk(prev) && prev.sourceMarks?.includes("\u05BD")) return true;
 
   /* Artículo (o preposición fusionada) con qamats delante de ר/guturales, también tras prefijos:
      וְהָרְחָבָה, וְלָרְשָׁעִים. ArtScroll marca rafe. */
@@ -814,7 +816,7 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
     if(mk.length===1){
       const k=mk[0];
       const idx=nuclei.findIndex(n=>n.clusterIndex===k||(n.clusterIndex===k+1&&(isShuruk(a[k+1])||isHolamMale(a[k+1]))));
-      if(idx!==-1&&idx<nuclei.length-1&&!nuclei[idx].furtive)target=idx;
+      const gaya=k===0&&a[0].b==="ו"&&isShuruk(a[0])&&a[1]&&has(a[1],N.SHEVA); if(!gaya&&idx!==-1&&idx<nuclei.length-1&&!nuclei[idx].furtive)target=idx;
     }
   }
   const spanishShape = out.replace(/['’\-]+$/g,"");
