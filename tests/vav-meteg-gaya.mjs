@@ -7,6 +7,4 @@ assert.equal(api.phonetize('וּבְשָׁכְבְּךָ'),'Uvshajbejá');
 assert.equal(api.phonetize('וּ'+M+'בְשׇׁכְבְּךָ'),'Úveshojbejá');
 assert.equal(api.phonetize('וּבְשׇׁכְבְּךָ'),'Uvshojbejá');
 assert.equal(api.phonetize('וּבְקוּמֶךָ'),'Uvkumeja');
-assert.equal(api.phonetize('וּ\u05BDבְשׇׁכְבְּךָ'),'Uveshojbejá');
-assert.equal(api.phonetize('וּבְשׇׁכְבְּךָ'),'Uvshojbejá');
 console.log('PASS: meteg sobre וּ = shevá siguiente suena (Shemá), sin meteg muda');
