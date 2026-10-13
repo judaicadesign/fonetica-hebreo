@@ -4,7 +4,7 @@ const stub=`const document={getElementById(){return {value:'rabbinic',addEventLi
 const api=vm.runInNewContext(stub+extractEngine(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8'))+';({phonetize});');
 const M='ֽ';
 assert.equal(api.phonetize('וּבְשָׁכְבְּךָ'),'Uvshajbejá');
-assert.equal(api.phonetize('וּ'+M+'בְשׇׁכְבְּךָ'),'Úveshojbejá');
+assert.equal(api.phonetize('וּ'+M+'בְשׇׁכְבְּךָ'),'Uveshojbejá');
 assert.equal(api.phonetize('וּבְשׇׁכְבְּךָ'),'Uvshojbejá');
 assert.equal(api.phonetize('וּבְקוּמֶךָ'),'Uvkumeja');
 console.log('PASS: meteg sobre וּ = shevá siguiente suena (Shemá), sin meteg muda');

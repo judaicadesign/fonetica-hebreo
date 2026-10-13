@@ -414,6 +414,8 @@ function prefixBoundarySheva(a,i){
 
   /* וּ + shevá: sin e automática; מְ- conserva su vocal reducida. */
   if(i===1 && prev.b==="ו" && isShuruk(prev) && a[i].b==="מ") return true;
+  /* וּ + ב/כ/פ... con dagesh y shevá (וּבְּתוֹרָתוֹ): la shevá suena (ubeTorató). */
+  if(i===1 && prev.b==="ו" && isShuruk(prev) && has(a[i],N.DAGESH)) return true;
   /* וּ con meteg (ga'ya, p.ej. Shemá וּֽבְשָׁכְבְּךָ, ArtScroll rafe en la ב): la shevá siguiente suena. */
   if(i===1 && prev.b==="ו" && isShuruk(prev) && prev.sourceMarks?.includes("\u05BD")) return true;
 
@@ -841,7 +843,7 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
 
   const map = {a:"á",e:"é",i:"í",o:"ó",u:"ú",A:"Á",E:"É",I:"Í",O:"Ó",U:"Ú"};
   /* Meteg sobre וּ (ga'ya): acento secundario también marcado (Úveshojbejá). */
-  const fin=r=>{ if(!gayaSecondary||target===0)return r; const p0=nuclei[0].pos; return map[r[p0]]?r.slice(0,p0)+map[r[p0]]+r.slice(p0+1):r; };
+  const fin=r=>{ return r; const p0=nuclei[0].pos; return map[r[p0]]?r.slice(0,p0)+map[r[p0]]+r.slice(p0+1):r; };
   if(target===spanishDefault && !needsHiatusMark) return fin(out);
   if(!map[ch]) return fin(out);
   return fin(out.slice(0,pos)+map[ch]+out.slice(pos+1));
@@ -1338,42 +1340,6 @@ function capitalizeFirst(s){
    Tienen prioridad sobre las tablas heredadas de versiones anteriores. */
 const FINAL_FORMS = new Map([
   [
-    "תּוֹרָה",
-    "Torá"
-  ],
-  [
-    "הַתּוֹרָה",
-    "haTorá"
-  ],
-  [
-    "בַּתּוֹרָה",
-    "baTorá"
-  ],
-  [
-    "בְּתוֹרַת",
-    "beTorat"
-  ],
-  [
-    "בְתוֹרַת",
-    "beTorat"
-  ],
-  [
-    "וּבְתוֹרָתוֹ",
-    "uvTorató"
-  ],
-  [
-    "וּבְּתוֹרָתוֹ",
-    "uvTorató"
-  ],
-  [
-    "תּוֹרָתְךָ",
-    "Toratejá"
-  ],
-  [
-    "תּוֹרָתֵנוּ",
-    "Toratenu"
-  ],
-  [
     "יְהְגֶּה",
     "yehgué"
   ],
@@ -1470,7 +1436,7 @@ function wordOutput(token){
   const bare=bareLetters(token);
   /* Torá se escribe SIEMPRE con T mayúscula, también dentro de la palabra
      (haTorá, baTorá, uvTorató, Toratejá, Toratéja). Criterio editorial. */
-  if(/^[ובכלהש]*תור[הת]/u.test(bare)) out=out.replace(/tor(?=[aá])/,"Tor");
+  if(/^[ובכלהשמ]*תור(?:[הת]|ות)/u.test(bare)) out=out.replace(/tor(?=[aáo])/,"Tor");
   if(PROPER_NOUNS.has(bare) || PROPER_NOUNS_EXTRA.has(bare) || EDITORIAL_CAPITAL_TERMS.has(n)) {
     if(norm(token)===norm("כֶּלֶב")) {
       /* Nakdan chose the common noun "dog", not the name Kalev. */
