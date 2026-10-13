@@ -3,7 +3,7 @@
 **Fuente de teamim:** OpenScriptures `morphhb` (Westminster Leningrad Codex, `wlc/Ps.xml`), leído por git (Wikisource, HebrewBooks y Sefaria están bloqueados desde el entorno). **Código:** `tools/taamim/`. **Salida:** `METEG_PREDICHO_TEAMIM_20261013.json` (150 salmos).
 
 ## Regla
-1. El tamaz (taʿam) marca la sílaba tónica, salvo los que se escriben antes (yetiv, telishá guedolá, dehi, ole, guerésh mukdam) o después (segolta, zarká, pashtá, telishá ketaná) de ella.
+1. Cada taʿam (singular de teamim) marca la sílaba tónica, salvo los que se escriben antes (yetiv, telishá guedolá, dehi, ole, guerésh mukdam) o después (segolta, zarká, pashtá, telishá ketaná) de ella.
 2. Si la tónica no es la última sílaba (el patáj furtivo cuenta como sílaba) → **meteg** en esa sílaba.
 3. Si la sílaba lleva vav-shuruk o jolam escrito con vav, el meteg va en la consonante anterior (שְׁאֵלֽוּנוּ, הֱקִיצֽוֹתִי).
 4. Palabras con maqqef: sin tónica propia. Sin teamim concluyentes: se usa el motor.
