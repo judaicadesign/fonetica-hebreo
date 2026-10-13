@@ -104,6 +104,7 @@ details.rules[open] summary::before{content:"–"}
   .rules-inner{columns:1}
   textarea{min-height:340px}
 }
+.marks-card{margin-top:18px}.marks-note{font-weight:400;opacity:.7;font-size:.85em;margin-left:6px}.marks-options{display:flex;gap:22px;flex-wrap:wrap;margin:6px 0 12px}#marked{font-family:"SBL Hebrew","Ezra SIL","Frank Ruehl CLM","Times New Roman",serif;font-size:1.25rem;line-height:2;min-height:150px}
 </style>
 <script src="jd-embed.js?v=20261007-tools" defer></script>
 </head>
@@ -161,6 +162,19 @@ details.rules[open] summary::before{content:"–"}
     <div id="motorStatus" class="status">Motor listo.</div>
   </section>
 </div>
+
+<section class="card marks-card" id="marksCard">
+  <div class="card-title">3. Hebreo con meteg y rafe <span class="marks-note">(ayuda visual; la fonética no cambia)</span></div>
+  <div class="marks-options">
+    <label class="nikud-toggle"><input id="showMeteg" type="checkbox">Meteg · marca la sílaba tónica</label>
+    <label class="nikud-toggle"><input id="showRafe" type="checkbox">Rafe · marca la shevá na</label>
+  </div>
+  <textarea id="marked" readonly spellcheck="false" dir="rtl" placeholder="Activá meteg y/o rafe para verlos sobre tu texto hebreo…"></textarea>
+  <div class="toolbar right">
+    <button id="copyMarked" type="button" disabled>Copiar hebreo con marcas</button>
+  </div>
+  <div id="markedStatus" class="status">Se derivan por reglas (rafe: shevá na; meteg: acento tradicional aprendido de los teamim). Revisalos contra ArtScroll.</div>
+</section>
 
 <details class="card rules">
   <summary>Reglas de transliteración</summary>
@@ -264,7 +278,7 @@ function norm(s){
   // Also strip zero-width joiner/non-joiner (U+200D/U+200C): invisible
   // formatting characters some sources insert (e.g. the double-pointed
   // Yerushalayim, pataj+jirik together) that shouldn't affect matching.
-  return s.normalize("NFD").replace(CANT_RE,"").replace(/\u05BD/g,"").replace(/[\u200C\u200D]/g,"").normalize("NFC");
+  return s.normalize("NFD").replace(CANT_RE,"").replace(/[\u05BD\u05BF]/g,"").replace(/[\u200C\u200D]/g,"").normalize("NFC");
 }
 
 function clusters(word){
@@ -370,7 +384,15 @@ function shevaVocalized(a,i){
     isShuruk(before)||
     (has(before,N.HIRIQ)&&v+1<i&&a[v+1].b==="י");
   // Pointed Qal plural perfect/imperative, CָCְCוּ: the root vowel is long.
-  const qalPlural=v===0&&i===1&&a.length===4&&isShuruk(a[3])&&has(before,N.QAMATS)&&!isQamatzQatan(a,v,word);
+  const qalPlural=v===i-1&&onlyLightPrefixesBefore(a,v)&&has(before,N.QAMATS)&&!has(before,N.QAMATS_QATAN)&&!isQamatzQatan(a,v,word)&&
+    ((a.length===i+3&&isShuruk(a[i+2]))||            /* 3ª pl.: CָCְCוּ (וְקָבְעוּ) */
+     (a.length===i+3&&has(a[i+1],N.QAMATS)&&a[i+2].b==="ה"&&!a[i+2].m.length&&SHEVA_NA_3FS_ARTSCROLL.has(bareLetters(word).replace(/^כש(?=.{4}$)/u,"")))); /* 3ª f. CָCְCָה: solo formas con rafe verificado en ArtScroll */
+  /* ArtScroll (rafe): qamats largo + shevá na también con prefijo y en estos patrones:
+     Pi'el participio con alargamiento compensatorio (מְבָרְכִים) y 3ª pl. Hitpa'el/Nitpa'el (נִתְבָּרְכוּ, הִתְפָּרְדוּ). */
+  const pielParticiple=i>=2&&v===i-1&&has(before,N.QAMATS)&&!has(before,N.DAGESH)&&"רעחאה".includes(c.b)&&
+    a[i-2].b==="מ"&&has(a[i-2],N.SHEVA)&&onlyLightPrefixesBefore(a,i-2)&&/(?:ים|ות)$/u.test(bareLetters(word))&&!isQamatzQatan(a,v,word);
+  const hitpaelPlural=i>=3&&v===i-1&&has(before,N.QAMATS)&&has(before,N.DAGESH)&&c.b==="ר"&&
+    a[i-2].b==="ת"&&has(a[i-2],N.SHEVA)&&has(a[i-3],N.HIRIQ)&&a.length===i+3&&isShuruk(a[i+2])&&!isQamatzQatan(a,v,word);
   const accents=before.sourceMarks?.filter(x=>/[\u0591-\u05AF]/u.test(x))||[];
   const laterAccent=a.slice(v+1).some(x=>x.sourceMarks?.some(m=>/[\u0591-\u05AF]/u.test(m)));
   // A primary accent closes the syllable; a first accent before a later accent does not.
@@ -378,7 +400,23 @@ function shevaVocalized(a,i){
   const ending=bareLetters(word).slice(i+1);
   const knownStressed=ending==="תי"||ending==="נו"||isLexicalMilel(word)||
     (before.sourceMarks?.includes("\u05BD")&&!accents.length&&!laterAccent);
-  return (long||qalPlural)&&!knownStressed;
+  return (long||qalPlural||pielParticiple||hitpaelPlural)&&!knownStressed;
+}
+
+/* Prefijos ligeros (ו ב כ ל מ ש ה con vocal breve o shevá): hasta dos antes del tema. */
+/* Perfecto 3ª f. CָCְCָה con qamats largo y shevá na. El patrón es gramatical, pero hay sustantivos con
+   qamats katan (חָכְמָה); por eso solo se aceptan formas cuyo rafe se verificó en ArtScroll impreso.
+   Pendiente de cotejo (sin rafe visible hasta ahora): שָׁפְרָה, דָּבְקָה, כָּלְתָה, נָתְנָה, שָׁכְנָה, שָׂבְעָה… */
+const SHEVA_NA_3FS_ARTSCROLL = new Set(["עמדה"]);
+function lightPrefix(c){
+  return !!c && "והבכלמש".includes(c.b) &&
+    (has(c,N.SHEVA)||has(c,N.PATAH)||has(c,N.HIRIQ)||has(c,N.SEGOL)||has(c,N.TSERE)||has(c,N.HATAF_PATAH)||isShuruk(c));
+}
+function onlyLightPrefixesBefore(a,k){
+  if(k===0)return true;
+  if(k===1)return lightPrefix(a[0]);
+  if(k===2)return (a[0].b==="ו"&&lightPrefix(a[0])&&lightPrefix(a[1]))||(a[0].b==="כ"&&a[1].b==="ש"&&lightPrefix(a[0])&&lightPrefix(a[1]));
+  return false;
 }
 
 function prefixBoundarySheva(a,i){
@@ -388,6 +426,10 @@ function prefixBoundarySheva(a,i){
   /* וּ + shevá: sin e automática; מְ- conserva su vocal reducida. */
   if(i===1 && prev.b==="ו" && isShuruk(prev) && a[i].b==="מ") return true;
 
+  /* Artículo (o preposición fusionada) con qamats delante de ר/guturales, también tras prefijos:
+     וְהָרְחָבָה, וְלָרְשָׁעִים. ArtScroll marca rafe. */
+  if(i>=2 && "הבכל".includes(prev.b) && has(prev,N.QAMATS) && !has(prev,N.DAGESH) &&
+     "רעחאה".includes(a[i].b) && onlyLightPrefixesBefore(a,i-1)) return true;
   /* Artículo הָ + shevá; y הַ + יְ- como הַיְשׁוּעָה. */
   if(i===1 && prev.b==="ה" && has(prev,N.QAMATS)) return true;
   if(i===1 && prev.b==="ה" && has(prev,N.PATAH) && a[i].b==="י") return true;
@@ -468,9 +510,11 @@ function consonant(c,i,a){
    falta información morfológica o la lectura difiere según el
    contexto, conservamos datos verificados en vez de inventar una
    regla universal. Un acento confirmado tiene prioridad. */
+let STRESS_PROBE=null; // cluster de la sílaba tónica de la última palabra analizada (solo lectura, para meteg)
 function stressAccent(a, out, nuclei, originalWord, confirmedStress){
-  if(!out || nuclei.length<=1) return out;
-  if(/[áéíóúÁÉÍÓÚ]/.test(out)) return out;
+  STRESS_PROBE=null;
+  if(!out || nuclei.length<=1){ if(nuclei.length===1)STRESS_PROBE=nuclei[0].clusterIndex; return out; }
+  if(/[áéíóúÁÉÍÓÚ]/.test(out)){ const k=nuclei.find(n=>/[áéíóúÁÉÍÓÚ]/.test(out[n.pos]||"")); if(k)STRESS_PROBE=k.clusterIndex; return out; }
 
   /* Milrá por defecto: última sílaba REAL. La vocal furtiva (patáj
      furtivo, antes de jet/ain final) nunca es tónica en hebreo —
@@ -781,6 +825,7 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
     ? nuclei.length-2
     : nuclei.length-1;
 
+  STRESS_PROBE=nuclei[target].clusterIndex;
   const pos = nuclei[target].pos;
   const ch = out[pos];
 
@@ -1845,6 +1890,121 @@ function confirmedArtScrollAccent(token,piece,clusterIndex,vocalSheva=[]){
  const nuclei=positions.map((pos,i)=>({pos,clusterIndex:i}));
  return stressAccent(detail.a,plain,nuclei,token,target);
 }
+/* ============================================================
+   MARCAS VISUALES: RAFE (U+05BF, shevá na) Y METEG (U+05BD, tónica no final).
+   Son ayudas para el lector hebreo: se derivan del mismo análisis interno que la
+   fonética y NUNCA la modifican (norm() las ignora). Criterio de ArtScroll:
+   - rafe: sobre la shevá na del medio de la palabra; no en la shevá inicial de palabra
+     ni en la inicial del tema tras un prefijo (וּמְ-, הַיְ-), salvo que lleve dagesh,
+     preceda a la misma letra o siga a otra shevá.
+   - meteg: a la izquierda de la vocal de la sílaba tónica cuando no es la última.
+   ============================================================ */
+function stripVisualMarks(word){ return word.normalize("NFD").replace(/[\u05BD\u05BF]/g,"").normalize("NFC"); }
+function rafePositions(word){
+  const clean=stripVisualMarks(word);
+  let d; try{ d=rawTranslit(clean,undefined,true); }catch(e){ return []; }
+  if(!d||typeof d!=="object")return [];
+  const a=d.a, vocal=new Set(d.nuclei.map(n=>n.clusterIndex)), res=[];
+  for(let i=1;i<a.length-1;i++){
+    if(!has(a[i],N.SHEVA)||!vocal.has(i))continue;
+    const prev=a[i-1], nx=a[i+1];
+    const prefixInit=(i===1&&lightPrefix(prev)&&!has(prev,N.QAMATS))||
+      (i===2&&a[0].b==="ו"&&lightPrefix(a[0])&&lightPrefix(prev)&&!has(prev,N.QAMATS));
+    if(prefixInit&&!has(a[i],N.DAGESH)&&nx.b!==a[i].b&&!has(prev,N.SHEVA))continue;
+    res.push(i);
+  }
+  return res;
+}
+/* Rasgos estructurales de una palabra para el acento tradicional (milrá/milel). Sin teamim ni diccionarios. */
+const VOWEL_CODES={[N.SHEVA]:1,[N.HATAF_SEGOL]:2,[N.HATAF_PATAH]:3,[N.HATAF_QAMATS]:4,[N.HIRIQ]:5,[N.TSERE]:6,[N.SEGOL]:7,[N.PATAH]:8,[N.QAMATS]:9,[N.HOLAM]:10,[N.QUBUTS]:12,[N.QAMATS_QATAN]:9};
+function vowelCode(c){ if(!c)return 0; if(isShuruk(c))return 11; for(const m of c.m)if(VOWEL_CODES[m])return VOWEL_CODES[m]; return 0; }
+const LETTER_IDS="אבגדהוזחטיכלמנסעפצקרשת".split("");
+const FEATURE_NAMES=[];
+for(let k=1;k<=4;k++){ FEATURE_NAMES.push("L"+k+"_letter","L"+k+"_vowel","L"+k+"_dagesh"); }
+FEATURE_NAMES.push("nclusters","nnuclei","last_closed","last_nucleus_vowel","penult_nucleus_vowel","last_nucleus_furtive","prefix_vav","vav_consec","ends_final_form","penult_open","clusters_after_last_nucleus","clusters_between_last_two_nuclei");
+function stressFeatures(word){
+  const clean=stripVisualMarks(word); const a=clusters(clean); if(a.length<2)return null;
+  let d; try{ d=rawTranslit(clean,undefined,true); }catch(e){ return null; }
+  if(!d||typeof d!=="object"||d.nuclei.length<1)return null;
+  const f={}, n=a.length;
+  for(let k=1;k<=4;k++){ const c=a[n-k]; f["L"+k+"_letter"]=c?LETTER_IDS.indexOf(c.b.replace(/[ךםןףץ]/,x=>({ך:"כ",ם:"מ",ן:"נ",ף:"פ",ץ:"צ"}[x])))+1:0; f["L"+k+"_vowel"]=c?vowelCode(c):0; f["L"+k+"_dagesh"]=c&&has(c,N.DAGESH)?1:0; }
+  const nuc=d.nuclei; const ln=nuc.at(-1), pn=nuc.at(-2);
+  f.nclusters=n; f.nnuclei=nuc.length;
+  f.last_closed=ln.clusterIndex<n-1?1:0;
+  f.last_nucleus_vowel=vowelCode(a[ln.clusterIndex]);
+  f.penult_nucleus_vowel=pn?vowelCode(a[pn.clusterIndex]):0;
+  f.last_nucleus_furtive=ln.furtive?1:0;
+  f.prefix_vav=a[0].b==="ו"&&n>2?1:0;
+  f.vav_consec=(a[0].b==="ו"&&has(a[0],N.PATAH)&&a[1]&&has(a[1],N.DAGESH))?1:0;
+  f.ends_final_form=/[ךםןףץ]$/.test(clean.normalize("NFD").replace(/[\u0591-\u05C7]/g,""))?1:0;
+  f.penult_open=pn&&pn.clusterIndex+1<n&&ln.clusterIndex-pn.clusterIndex===1?1:0;
+  f.clusters_after_last_nucleus=n-1-ln.clusterIndex;
+  f.clusters_between_last_two_nuclei=pn?ln.clusterIndex-pn.clusterIndex-1:0;
+  return f;
+}
+/*STRESS_TREE:BEGIN*/
+const STRESS_TREE={"features":["L1_letter","L1_vowel","L1_dagesh","L2_letter","L2_vowel","L2_dagesh","L3_letter","L3_vowel","L3_dagesh","L4_letter","L4_vowel","L4_dagesh","nclusters","nnuclei","last_closed","last_nucleus_vowel","penult_nucleus_vowel","last_nucleus_furtive","prefix_vav","vav_consec","ends_final_form","penult_open","clusters_after_last_nucleus","clusters_between_last_two_nuclei"],"f":[7,14,16,10,3,12,-2,9,6,-2,-2,3,-2,-2,9,-2,-2,6,6,12,11,-2,-2,-2,12,3,-2,-2,-2,6,-2,3,12,-2,-2,-2,13,7,3,-2,3,-2,-2,10,0,11,-2,-2,-2,15,-2,6,-2,-2,3,18,23,-2,4,-2,-2,7,13,-2,-2,13,-2,-2,21,2,-2,9,-2,-2,-2,3,13,10,16,-2,16,-2,18,-2,-2,0,0,6,-2,-2,6,-2,-2,9,0,-2,-2,18,-2,-2,0,7,0,6,-2,-2,9,-2,-2,10,16,-2,-2,6,-2,-2,19,13,13,-2,-2,-2,10,9,-2,-2,-2,15,18,12,16,-2,-2,9,6,-2,-2,16,-2,-2,6,-2,9,-2,-2,0,12,9,-2,6,-2,-2,6,-2,-2,-2,7,16,-2,4,15,15,6,13,-2,-2,12,-2,-2,16,-2,-2,16,20,3,-2,-2,-2,-2,6,-2,7,5,13,-2,-2,-2,3,-2,5,-2,-2,2,17,15,10,4,12,-2,-2,0,-2,-2,10,0,-2,-2,15,-2,-2,0,4,9,-2,-2,1,-2,-2,23,10,-2,-2,-2,-2,13,3,6,-2,6,3,-2,-2,6,-2,-2,3,3,6,-2,-2,8,-2,-2,7,8,-2,-2,-2,22,18,5,-2,-2,13,10,-2,-2,1,-2,-2,3,-2,-2],"t":[5.5,0.5,4.5,7.5,20.5,5.5,-2,5.5,10.5,-2,-2,2,-2,-2,6,-2,-2,12.5,10,6.5,0.5,-2,-2,-2,4.5,11.5,-2,-2,-2,17.5,-2,20.5,4.5,-2,-2,-2,2.5,0.5,11.5,-2,16.5,-2,-2,8.5,8.5,0.5,-2,-2,-2,10.5,-2,13.5,-2,-2,20.5,0.5,0.5,-2,0.5,-2,-2,0.5,3.5,-2,-2,3.5,-2,-2,0.5,0.5,-2,5,-2,-2,-2,21.5,2.5,4,5.5,-2,6.5,-2,0.5,-2,-2,5.5,4.5,2.5,-2,-2,10.5,-2,-2,2.5,11.5,-2,-2,0.5,-2,-2,10.5,0.5,6,9.5,-2,-2,12,-2,-2,8.5,7.5,-2,-2,14.5,-2,-2,0.5,5.5,3.5,-2,-2,-2,9,8,-2,-2,-2,5.5,0.5,4.5,7,-2,-2,18,1.5,-2,-2,5.5,-2,-2,9,-2,14.5,-2,-2,6.5,4.5,6.5,-2,8,-2,-2,11.5,-2,-2,-2,7.5,5.5,-2,7.5,6.5,5.5,1.5,3.5,-2,-2,3.5,-2,-2,6.5,-2,-2,6.5,0.5,21.5,-2,-2,-2,-2,1.5,-2,6.5,0.5,4.5,-2,-2,-2,1.5,-2,0.5,-2,-2,0.5,0.5,8.5,7.5,6.5,5.5,-2,-2,10.5,-2,-2,10.5,10.5,-2,-2,6.5,-2,-2,11.5,5,0.5,-2,-2,5,-2,-2,0.5,8.5,-2,-2,-2,-2,2.5,12.5,2.5,-2,12,5.5,-2,-2,15.5,-2,-2,14.5,13.5,20.5,-2,-2,0.5,-2,-2,9.5,0.5,-2,-2,-2,0.5,0.5,0.5,-2,-2,3.5,0.5,-2,-2,10,-2,-2,3.5,-2,-2],"l":[1,2,3,4,5,6,-1,8,9,-1,-1,12,-1,-1,15,-1,-1,18,19,20,21,-1,-1,-1,25,26,-1,-1,-1,30,-1,32,33,-1,-1,-1,37,38,39,-1,41,-1,-1,44,45,46,-1,-1,-1,50,-1,52,-1,-1,55,56,57,-1,59,-1,-1,62,63,-1,-1,66,-1,-1,69,70,-1,72,-1,-1,-1,76,77,78,79,-1,81,-1,83,-1,-1,86,87,88,-1,-1,91,-1,-1,94,95,-1,-1,98,-1,-1,101,102,103,104,-1,-1,107,-1,-1,110,111,-1,-1,114,-1,-1,117,118,119,-1,-1,-1,123,124,-1,-1,-1,128,129,130,131,-1,-1,134,135,-1,-1,138,-1,-1,141,-1,143,-1,-1,146,147,148,-1,150,-1,-1,153,-1,-1,-1,157,158,-1,160,161,162,163,164,-1,-1,167,-1,-1,170,-1,-1,173,174,175,-1,-1,-1,-1,180,-1,182,183,184,-1,-1,-1,188,-1,190,-1,-1,193,194,195,196,197,198,-1,-1,201,-1,-1,204,205,-1,-1,208,-1,-1,211,212,213,-1,-1,216,-1,-1,219,220,-1,-1,-1,-1,225,226,227,-1,229,230,-1,-1,233,-1,-1,236,237,238,-1,-1,241,-1,-1,244,245,-1,-1,-1,249,250,251,-1,-1,254,255,-1,-1,258,-1,-1,261,-1,-1],"r":[156,75,36,17,14,7,-1,11,10,-1,-1,13,-1,-1,16,-1,-1,29,24,23,22,-1,-1,-1,28,27,-1,-1,-1,31,-1,35,34,-1,-1,-1,54,43,40,-1,42,-1,-1,49,48,47,-1,-1,-1,51,-1,53,-1,-1,68,61,58,-1,60,-1,-1,65,64,-1,-1,67,-1,-1,74,71,-1,73,-1,-1,-1,127,100,85,80,-1,82,-1,84,-1,-1,93,90,89,-1,-1,92,-1,-1,97,96,-1,-1,99,-1,-1,116,109,106,105,-1,-1,108,-1,-1,113,112,-1,-1,115,-1,-1,122,121,120,-1,-1,-1,126,125,-1,-1,-1,145,140,133,132,-1,-1,137,136,-1,-1,139,-1,-1,142,-1,144,-1,-1,155,152,149,-1,151,-1,-1,154,-1,-1,-1,192,159,-1,179,172,169,166,165,-1,-1,168,-1,-1,171,-1,-1,178,177,176,-1,-1,-1,-1,181,-1,187,186,185,-1,-1,-1,189,-1,191,-1,-1,224,223,210,203,200,199,-1,-1,202,-1,-1,207,206,-1,-1,209,-1,-1,218,215,214,-1,-1,217,-1,-1,222,221,-1,-1,-1,-1,248,235,228,-1,232,231,-1,-1,234,-1,-1,243,240,239,-1,-1,242,-1,-1,247,246,-1,-1,-1,260,253,252,-1,-1,257,256,-1,-1,259,-1,-1,262,-1,-1],"v":[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,1,0,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,1,1,1,1,0,0,1,0,0,0,1,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,1,1,1,1,0,1,1,0,1,1,0,0,0,0,1,0,0,0,1,1,1,0,0,1,0,1,1,1,1,0,0,1,1,1,1,0,0,0,1,1,1,1,1,0,1,0,0,1,0,0,0,1,1,1,0,1,1,1,0,0,0,0,0,0,0,1,0,0,1,1,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,1,0,0,1,0,0,0,0,0,1,0,1,1,1,0,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,0,1,1,1,1,0,0,0]};
+/* Árbol entrenado con 12952 palabras de los Tehilim (teamim) · validación por salmo 0.9277 · ArtScroll Bircat Hamazón (no visto) 0.9612. Regenerar con tools/stress_tree/. */
+/*STRESS_TREE:END*/
+/* ¿La palabra tiene acento tradicional en la penúltima sílaba (milel)? Árbol aprendido de los Tehilim con teamim. */
+function traditionalMilel(word){
+  const f=stressFeatures(word); if(!f)return null;
+  let n=0; const T=STRESS_TREE;
+  while(T.l[n]!==-1){ n=f[T.features[T.f[n]]]<=T.t[n]?T.l[n]:T.r[n]; }
+  return T.v[n]===1;
+}
+/* Posición del meteg: vocal de la penúltima sílaba cuando el acento tradicional no es final.
+   Devuelve el índice del cluster (consonante) que lleva el meteg, o -1. */
+function metegPosition(word){
+  const clean=stripVisualMarks(word);
+  const a=clusters(clean); if(a.length<2)return -1;
+  let d; try{ d=rawTranslit(clean,undefined,true); }catch(e){ return -1; }
+  if(!d||typeof d!=="object"||d.nuclei.length<2)return -1;
+  if(!traditionalMilel(clean))return -1;
+  let k=d.nuclei.at(-2).clusterIndex;
+  if((isShuruk(a[k])||isHolamMale(a[k]))&&k>0)k--; // vav-mater: meteg en la consonante previa
+  return k;
+}
+function addVisualMarks(word,{meteg=false,rafe=false}={}){
+  const base=stripVisualMarks(word);
+  if(!meteg&&!rafe)return base;
+  const clustersNFD=[]; for(const ch of base.normalize("NFD")){ if(/[\u05D0-\u05EA]/.test(ch))clustersNFD.push([ch]); else if(clustersNFD.length)clustersNFD.at(-1).push(ch); }
+  const add=(k,mark)=>{ if(k>=0&&k<clustersNFD.length&&!clustersNFD[k].includes(mark)){
+    const c=clustersNFD[k]; const at=c.findIndex((x,i)=>i>0&&/[\u05B0\u05B1-\u05B3]/.test(x)); // tras la shevá/hataf si la hay
+    c.splice(at>=0?at+1:c.length,0,mark); } };
+  if(rafe)for(const k of rafePositions(base))add(k,"\u05BF");
+  if(meteg){ const m=metegPosition(base); if(m>=0)add(m,"\u05BD"); }
+  return clustersNFD.map(c=>c.join("")).join("").normalize("NFC");
+}
+
+/* Aplica meteg/rafe a un texto completo sin tocar la fonética: una palabra solo cambia si
+   phonetize() da exactamente lo mismo antes y después. Las marcas de la fuente que sí influyen en
+   la lectura (p. ej. אָֽכְלוּ con meteg → shevá muda) se conservan. Palabras unidas por maqqef:
+   la primera no recibe meteg. */
+const VISUAL_MARKS_CACHE=new Map();
+function applyVisualMarks(text,{meteg=false,rafe=false}={}){
+  return text.replace(/[\u05D0-\u05EA\u0591-\u05BD\u05BF-\u05C7]+/g,(tok,offset,all)=>{
+    if(!/[\u05B0-\u05BB\u05C7]/.test(tok))return tok; // sin niqqud: nada que decidir
+    const bound=all[offset+tok.length]==="\u05BE";
+    const key=tok+"|"+(meteg&&!bound?1:0)+(rafe?1:0);
+    if(VISUAL_MARKS_CACHE.has(key))return VISUAL_MARKS_CACHE.get(key);
+    let out=tok;
+    try{
+      const cand=addVisualMarks(tok,{meteg:meteg&&!bound,rafe});
+      if(cand!==tok.normalize("NFC")&&phonetize(cand)===phonetize(tok))out=cand;
+      else if(cand!==tok.normalize("NFC")){
+        // intento parcial: solo rafe, o solo meteg, por si una de las dos marcas es la que molesta
+        for(const alt of [{meteg:false,rafe},{meteg:meteg&&!bound,rafe:false}]){
+          const c2=addVisualMarks(tok,alt);
+          if(c2!==tok.normalize("NFC")&&phonetize(c2)===phonetize(tok)){out=c2;break;}
+        }
+      }
+    }catch(e){ out=tok; }
+    VISUAL_MARKS_CACHE.set(key,out);
+    return out;
+  });
+}
+
 function phonetize(text){
   let s=text.replace(/\u05BE/g,"-");
   let st; [s,st]=stashLabels(s);
@@ -2116,7 +2276,7 @@ async function run(){
   const id=runId,h=$("hebrew"),input=h.value;
   const ns=$("nakdanStatus"),ms=$("motorStatus");
   if(!input.trim()){
-    $("output").value="";lastRenderedHebrew="";lastWordState=[];lastNakdanChoices=[];hideNakdanChoices();
+    $("output").value="";lastRenderedHebrew="";lastWordState=[];lastNakdanChoices=[];hideNakdanChoices();updateMarked("");
     ns.textContent="Listo.";ns.className="status";ms.textContent="Motor listo.";ms.className="status";return;
   }
 
@@ -2152,6 +2312,7 @@ async function run(){
     ns.className="status "+(warn?"warn":"ok");
   }
   $("output").value=phonetize(text);$("copy").disabled=!$("output").value;
+  updateMarked(h.value);
   const pending=[...reviewedArtScrollTokens(text).values()].filter(x=>x.reviewRequired).length;
   ms.textContent=warn?"Fonética parcial: hay palabras sin nikud; revisalas antes de copiar.":pending?"Se conservaron "+pending+" lectura(s) guardada(s) que requieren cotejo de shevá con ArtScroll.":"Fonética generada (Sefaradí).";
   ms.className="status "+((warn||pending)?"warn":"ok");
@@ -2201,10 +2362,26 @@ $("pasteHebrew").addEventListener("click",async()=>{
   }
 });
 
+
+function updateMarked(text){
+  const out=$("marked"),st=$("markedStatus"),m=$("showMeteg").checked,r=$("showRafe").checked;
+  if(!text||!text.trim()||(!m&&!r)){
+    out.value=(m||r)?"":""; $("copyMarked").disabled=true;
+    st.textContent=(m||r)?"Escribí o pegá texto hebreo con niqqud.":"Se derivan por reglas (rafe: shevá na; meteg: acento tradicional aprendido de los teamim). Revisalos contra ArtScroll.";
+    st.className="status"; return;
+  }
+  out.value=applyVisualMarks(text,{meteg:m,rafe:r});
+  $("copyMarked").disabled=!out.value;
+  st.textContent="Marcas derivadas por reglas; la fonética es idéntica con o sin ellas. Cotejá con ArtScroll antes de publicar.";
+  st.className="status ok";
+}
+$("showMeteg").addEventListener("change",()=>updateMarked($("hebrew").value));
+$("showRafe").addEventListener("change",()=>updateMarked($("hebrew").value));
+$("copyMarked").addEventListener("click",()=>copyWithStatus($("marked").value,$("marked"),$("markedStatus")));
 $("nakdanGenre").addEventListener("change",()=>run());
 $("autoNikud").addEventListener("change",()=>run());
 
-$("clear").addEventListener("click",()=>{invalidateRun();lastNakdanChoices=[];lastWordState=[];lastRenderedHebrew="";hideNakdanChoices();$("hebrew").value="";$("output").value="";$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
+$("clear").addEventListener("click",()=>{invalidateRun();lastNakdanChoices=[];lastWordState=[];lastRenderedHebrew="";hideNakdanChoices();$("hebrew").value="";$("output").value="";updateMarked("");$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
 </script>
 </body>
 </html>
