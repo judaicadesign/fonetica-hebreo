@@ -19,5 +19,5 @@ for(const ln of fs.readFileSync(new URL('./fixtures/artscroll-bircat-hamazon-pdf
 assert.equal(rafeBad.length,0,'Rafe distinto de ArtScroll: '+JSON.stringify(rafeBad));
 assert.ok(mOk/words>=0.955,'Meteg: coincidencia '+(mOk/words).toFixed(3)+' < 0.955');
 // Las cinco formas con rafe en ArtScroll que antes se leían con shevá muda: ahora shevá na (e).
-for(const [h,exp] of [['וְקָבְעוּ',"Vekave'ú"],['וּמְבָרְכִים','Umevarejim'],['וְהָרְחָבָה','Veharejavá'],['שֶׁנִּתְבָּרְכוּ','Shenitbarejú'],['כְּשֶׁעָמְדָה',"Keshe'amedá"]])assert.equal(api.phonetize(h),exp,h);
+for(const [h,exp] of [['וְקָבְעוּ',"Vekave'ú"],['וּמְבָרְכִים','Umvarejim'],['וְהָרְחָבָה','Veharejavá'],['שֶׁנִּתְבָּרְכוּ','Shenitbarejú'],['כְּשֶׁעָמְדָה',"Keshe'amedá"]])assert.equal(api.phonetize(h),exp,h);
 console.log(`PASS: rafe ${rOk}/${words} idéntico a ArtScroll; meteg ${mOk}/${words} (${(100*mOk/words).toFixed(1)} %) derivado por reglas, sin teamim`);
