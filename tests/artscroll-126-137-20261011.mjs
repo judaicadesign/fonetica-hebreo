@@ -20,7 +20,8 @@ for(const n of check){
  for(const v of c.verses){
   for(const [hebrew,label] of [[v.hebrew,'original'],[v.hebrew.normalize('NFD'),'NFD']]){
    const actual=api.phonetize(hebrew);
-   assert.equal(actual,v.phonetic,n+':'+v.verse+' '+label);
+   // Corrección pendiente del master (decisión del usuario 2026-10-13, regla RAE agudas en -ts sin tilde): venipéts → venipets.
+   assert.equal(actual,v.phonetic.replace('venipéts','venipets'),n+':'+v.verse+' '+label);
   }
   checked++;
  }

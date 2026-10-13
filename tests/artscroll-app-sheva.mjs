@@ -5,7 +5,7 @@ const api=vm.runInNewContext(stub+source+';({phonetize,reviewedArtScrollTokens,d
 const cases=JSON.parse(fs.readFileSync(new URL('./fixtures/artscroll-app-partial-1-9.json',import.meta.url),'utf8'));
 for(const c of cases){assert.equal(api.phonetize(c.hebrew),c.phonetic,c.ref);assert.equal(api.phonetize(c.hebrew.normalize('NFD')),c.phonetic,c.ref+' NFD');}
 const verse=ref=>cases.find(c=>c.ref===ref);
-assert.match(api.phonetize(verse('1:4').hebrew),/kamots asher tidefenu/);
+assert.match(api.phonetize(verse('1:4').hebrew),/kámots asher tidefenu/);
 assert.match(api.phonetize(verse('9:4').hebrew),/yikashelú veyóvedu/);
 assert.match(api.phonetize(verse('6:8').hebrew),/'ení/);
 assert.match(api.phonetize(verse('6:9').hebrew),/bijyí/);
