@@ -590,7 +590,9 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
       (prev && prev.b==="י" && prev.m.length===0) ||
       (prev && has(prev,N.SHEVA) && prev.b!=="נ") ||
       (prev && isShuruk(prev)) ||
-      (prev && has(prev,N.QAMATS) && has(prev,N.DAGESH));
+      (prev && has(prev,N.QAMATS) && has(prev,N.DAGESH)) ||
+      // Sufijo "nos" tras qamats (לָנוּ, אוֹתָנוּ, וּפְדִיתָנוּ, גְמָלָנוּ); קָנוּ/בָּנוּ (verbos, nun radical) quedan fuera.
+      (prev && has(prev,N.QAMATS) && !has(prev,N.DAGESH) && prev.b!=="ק" && (L>=4 || (L===3 && a[0].b==="ל")));
     if(unstressedNu) target=Math.max(0,nuclei.length-2);
   }
 
@@ -744,8 +746,12 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
     const s1=a[L-3], s2=a[L-2], s3=a[L-1];
     const s1IsMaterVav=s1.b==="ו" && isHolamMale(s1);
     const s2IsMaterVav=s2.b==="ו" && isHolamMale(s2);
+    /* No son segolados: אֶחָד (qamats final), אֲשֶׁר (jatef inicial), אַתֶּם (dagesh), לָהֶם / לָכֶם (preposición + sufijo). */
+    const notSegolate = (has(s2,N.QAMATS) && has(s1,N.SEGOL) && s1.b==="א") ||
+      (has(s1,N.HATAF_PATAH)&&s1.b==="א"&&s2.b==="ש") ||
+      (L===3 && "לבכ".includes(s1.b) && has(s1,N.QAMATS) && !has(s1,N.DAGESH) && "הכ".includes(s2.b) && has(s2,N.SEGOL) && (s3.b==="ם"||s3.b==="ן"));
     if(!vowel(s3) && vowel(s1) && vowel(s2) &&
-       !s1IsMaterVav && !s2IsMaterVav &&
+       !s1IsMaterVav && !s2IsMaterVav && !notSegolate &&
        (has(s1,N.SEGOL)||has(s2,N.SEGOL))){
       const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-3);
       if(idx>-1) target=idx;
