@@ -104,7 +104,6 @@ details.rules[open] summary::before{content:"–"}
   .rules-inner{columns:1}
   textarea{min-height:340px}
 }
-.marks-card{margin-top:18px}.marks-note{font-weight:400;opacity:.7;font-size:.85em;margin-left:6px}.marks-options{display:flex;gap:22px;flex-wrap:wrap;margin:6px 0 12px}#marked{font-family:"SBL Hebrew","Ezra SIL","Frank Ruehl CLM","Times New Roman",serif;font-size:1.25rem;line-height:2;min-height:150px}
 </style>
 <script src="jd-embed.js?v=20261007-tools" defer></script>
 </head>
@@ -131,6 +130,8 @@ details.rules[open] summary::before{content:"–"}
 
   <div class="profile-control">
     <label class="nikud-toggle"><input id="autoNikud" type="checkbox" checked>Agregar nikud automáticamente</label>
+    <label class="nikud-toggle" title="Marca con meteg la sílaba tónica cuando no es la última"><input id="showMeteg" type="checkbox">Meteg</label>
+    <label class="nikud-toggle" title="Marca con rafe la shevá na"><input id="showRafe" type="checkbox">Rafe</label>
     <span class="profile-label">Nakdan</span>
     <select id="nakdanGenre" aria-label="Tipo de texto para Nakdan">
       <option value="rabbinic" selected>Rabínico · sidur / textos tradicionales</option>
@@ -163,18 +164,6 @@ details.rules[open] summary::before{content:"–"}
   </section>
 </div>
 
-<section class="card marks-card" id="marksCard">
-  <div class="card-title">3. Hebreo con meteg y rafe <span class="marks-note">(ayuda visual; la fonética no cambia)</span></div>
-  <div class="marks-options">
-    <label class="nikud-toggle"><input id="showMeteg" type="checkbox">Meteg · marca la sílaba tónica</label>
-    <label class="nikud-toggle"><input id="showRafe" type="checkbox">Rafe · marca la shevá na</label>
-  </div>
-  <textarea id="marked" readonly spellcheck="false" dir="rtl" placeholder="Activá meteg y/o rafe para verlos sobre tu texto hebreo…"></textarea>
-  <div class="toolbar right">
-    <button id="copyMarked" type="button" disabled>Copiar hebreo con marcas</button>
-  </div>
-  <div id="markedStatus" class="status">Se derivan por reglas (rafe: shevá na; meteg: acento tradicional aprendido de los teamim). Revisalos contra ArtScroll.</div>
-</section>
 
 <details class="card rules">
   <summary>Reglas de transliteración</summary>
@@ -2289,7 +2278,7 @@ async function run(){
   const id=runId,h=$("hebrew"),input=h.value;
   const ns=$("nakdanStatus"),ms=$("motorStatus");
   if(!input.trim()){
-    $("output").value="";lastRenderedHebrew="";lastWordState=[];lastNakdanChoices=[];hideNakdanChoices();updateMarked("");
+    $("output").value="";lastRenderedHebrew="";lastWordState=[];lastNakdanChoices=[];hideNakdanChoices();
     ns.textContent="Listo.";ns.className="status";ms.textContent="Motor listo.";ms.className="status";return;
   }
 
@@ -2324,8 +2313,17 @@ async function run(){
     ns.textContent=automaticNikudEnabled()?"El nikud existente se conserva.":"Nikud automático desactivado. Se conservan las marcas existentes.";
     ns.className="status "+(warn?"warn":"ok");
   }
+  {
+    // Meteg y rafe sobre el mismo texto: no cambian la fonética (applyVisualMarks lo garantiza palabra por palabra).
+    const marked=applyVisualMarks(text,{meteg:$("showMeteg").checked,rafe:$("showRafe").checked});
+    if(marked!==text){
+      const prev=lastRenderedHebrew;text=marked;h.value=text;
+      const nw=text.match(HRUN)||[];
+      lastWordState=nw.length===lastWordState.length?lastWordState.map((st,i)=>({...st,renderedWord:nw[i]})):reconcileWordState(prev,lastWordState,text);
+      lastRenderedHebrew=text;
+    }
+  }
   $("output").value=phonetize(text);$("copy").disabled=!$("output").value;
-  updateMarked(h.value);
   const pending=[...reviewedArtScrollTokens(text).values()].filter(x=>x.reviewRequired).length;
   ms.textContent=warn?"Fonética parcial: hay palabras sin nikud; revisalas antes de copiar.":pending?"Se conservaron "+pending+" lectura(s) guardada(s) que requieren cotejo de shevá con ArtScroll.":"Fonética generada (Sefaradí).";
   ms.className="status "+((warn||pending)?"warn":"ok");
@@ -2376,25 +2374,12 @@ $("pasteHebrew").addEventListener("click",async()=>{
 });
 
 
-function updateMarked(text){
-  const out=$("marked"),st=$("markedStatus"),m=$("showMeteg").checked,r=$("showRafe").checked;
-  if(!text||!text.trim()||(!m&&!r)){
-    out.value=(m||r)?"":""; $("copyMarked").disabled=true;
-    st.textContent=(m||r)?"Escribí o pegá texto hebreo con niqqud.":"Se derivan por reglas (rafe: shevá na; meteg: acento tradicional aprendido de los teamim). Revisalos contra ArtScroll.";
-    st.className="status"; return;
-  }
-  out.value=applyVisualMarks(text,{meteg:m,rafe:r});
-  $("copyMarked").disabled=!out.value;
-  st.textContent="Marcas derivadas por reglas; la fonética es idéntica con o sin ellas. Cotejá con ArtScroll antes de publicar.";
-  st.className="status ok";
-}
-$("showMeteg").addEventListener("change",()=>updateMarked($("hebrew").value));
-$("showRafe").addEventListener("change",()=>updateMarked($("hebrew").value));
-$("copyMarked").addEventListener("click",()=>copyWithStatus($("marked").value,$("marked"),$("markedStatus")));
+$("showMeteg").addEventListener("change",()=>run());
+$("showRafe").addEventListener("change",()=>run());
 $("nakdanGenre").addEventListener("change",()=>run());
 $("autoNikud").addEventListener("change",()=>run());
 
-$("clear").addEventListener("click",()=>{invalidateRun();lastNakdanChoices=[];lastWordState=[];lastRenderedHebrew="";hideNakdanChoices();$("hebrew").value="";$("output").value="";updateMarked("");$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
+$("clear").addEventListener("click",()=>{invalidateRun();lastNakdanChoices=[];lastWordState=[];lastRenderedHebrew="";hideNakdanChoices();$("hebrew").value="";$("output").value="";$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
 </script>
 </body>
 </html>
