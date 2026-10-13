@@ -11,7 +11,7 @@ assert.match(get('17:14').phonetic,/Mimetim Yadejá.*mimetim.*vetsefuneja/);
 assert.doesNotMatch(get('17:14').hebrew,/וצפינך/,'Do not phoneticize the unpointed ketiv as another word');
 assert.match(get('18:6').phonetic,/kidemuni mokeshé/);
 assert.match(get('18:33').phonetic,/hameazereni jáyil/);
-assert.match(get('18:36').phonetic,/Viminejá.*Ve'anvateja/);
+assert.match(get('18:36').phonetic,/Viminejá.*Ve'anvatejá/);
 assert.match(get('18:39').phonetic,/yújelu.*tájat/);
 assert.match(get('18:39').hebrew,/תַֽחַת/,'No invented initial tav dagesh');
 assert.match(get('18:42').phonetic,/Yeshave'ú/);
