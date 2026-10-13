@@ -806,6 +806,7 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
     target=nuclei.length-1;
     while(target>0 && nuclei[target].furtive) target--;
   }
+  let gayaSecondary=false;
   if(Number.isInteger(confirmedStress)){
     const marked=nuclei.findIndex(n=>n.clusterIndex===confirmedStress);
     if(marked!==-1)target=marked;
@@ -816,7 +817,7 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
     if(mk.length===1){
       const k=mk[0];
       const idx=nuclei.findIndex(n=>n.clusterIndex===k||(n.clusterIndex===k+1&&(isShuruk(a[k+1])||isHolamMale(a[k+1]))));
-      const gaya=k===0&&a[0].b==="ו"&&isShuruk(a[0])&&a[1]&&has(a[1],N.SHEVA); if(!gaya&&idx!==-1&&idx<nuclei.length-1&&!nuclei[idx].furtive)target=idx;
+      const gaya=k===0&&a[0].b==="ו"&&isShuruk(a[0])&&a[1]&&has(a[1],N.SHEVA); if(gaya)gayaSecondary=true; if(!gaya&&idx!==-1&&idx<nuclei.length-1&&!nuclei[idx].furtive)target=idx;
     }
   }
   const spanishShape = out.replace(/['’\-]+$/g,"");
@@ -838,11 +839,12 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
   const needsHiatusMark=(ch==="i"||ch==="u") &&
     (/[aeo]/i.test(prevCh)||/[aeo]/i.test(nextCh));
 
-  if(target===spanishDefault && !needsHiatusMark) return out;
-
   const map = {a:"á",e:"é",i:"í",o:"ó",u:"ú",A:"Á",E:"É",I:"Í",O:"Ó",U:"Ú"};
-  if(!map[ch]) return out;
-  return out.slice(0,pos)+map[ch]+out.slice(pos+1);
+  /* Meteg sobre וּ (ga'ya): acento secundario también marcado (Úveshojbejá). */
+  const fin=r=>{ if(!gayaSecondary||target===0)return r; const p0=nuclei[0].pos; return map[r[p0]]?r.slice(0,p0)+map[r[p0]]+r.slice(p0+1):r; };
+  if(target===spanishDefault && !needsHiatusMark) return fin(out);
+  if(!map[ch]) return fin(out);
+  return fin(out.slice(0,pos)+map[ch]+out.slice(pos+1));
 }
 
 /*
