@@ -69,3 +69,23 @@ El máster reescribió comas y puntos (el PDF usa «,» donde el máster pone «
 
 ## 4. Rafe: lo que muestra ArtScroll
 Todos los rafe están en shevá na. Casos: tras jolam (בּוֹרְֿאֵֽנוּ, הָאֹמְֿרִים), tras dagesh jazak (הַגְּֿבוּרוֹת), tras kamats (מָרְדְּֿכַי), en sustantivos femeninos -תְֿךָ (תּוֹרָתְֿךָ, בְּרִיתְֿךָ). Insumo directo para derivar rafe por reglas.
+
+## 5. Contraste con la edición española impresa (fotos págs. 196–206)
+El máster sigue la edición española-hebreo. Las fotos permiten decidir las **variantes de palabra**; no alcanzan para leer con certeza un dagesh o meteg suelto, y para eso vale el PDF (que coincide con la española en todo lo que pude leer).
+
+| Tema | Edición española (fotos) | Conclusión |
+|---|---|---|
+| כַּךְ / כֵּן | וְאַחַר כֵּן | **máster mal** |
+| לִשְׁבּוֹת / לִשְׁבָּת | לִשְׁבָּת בּוֹ | **máster mal** |
+| הַשָּׁבוּעוֹת / הַשָּׁבֻעוֹת | הַשָּׁבֻעוֹת | **máster mal** |
+| מִגְדּוֹל / מַגְדִּיל | מִגְדּוֹל y מַגְדִּל | **máster mal** (sobra la י) |
+| יִשְׁבֹּר עֻלֵֽנוּ | יִשְׁבּוֹר עֻלֵּנוּ | **máster mal** |
+| נוֹתֵן / נֹתֵן | נֹתֵן (me parece) | revisar en papel |
+| בִּשְׁלֹשָׁה | בִּשְׁלֹשָׁה | máster bien (el PDF inglés difiere) |
+| אַתָּה (בַּעַל הַיְשׁוּעוֹת) | אַתָּה con patáj | máster bien (errata del PDF) |
+| על הנסים con הַנִּפְלָאוֹת… | no lo trae | máster bien |
+| הִנְנִי מוּכָן… e yiddish | no los trae | máster bien |
+| Harajamán יַעֲשֶׂה לָנוּ נִסִּים וְנִפְלָאוֹת | lo trae (pág. 206) | **falta en el máster** |
+| כָּאָמוּר: פּוֹתֵחַ אֶת יָדֶךָ… | no lo trae | adición de JD, no es diferencia |
+
+Los dagesh del cuadro 2 (הַשַּׁבָּת, עַבְדֶּךָ, הַמַּצּוֹת, וְחָנֵּנוּ, יִזְדַּקֵּק, חֶמְדָּה, גִּבּוֹרִים, גַּם, שֶׁלֹּא, תְהֵא sin dagesh, בְּמַעֲשֵׂה, בַּעְלִי, ליְיָ→לַיְיָ, חַסְדּוֹ) se ven igual en las fotos.
