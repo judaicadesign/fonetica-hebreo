@@ -190,6 +190,7 @@ details.rules[open] summary::before{content:"–"}
     <h4>Criterio general</h4>
     <p>La salida corresponde siempre a una fonética sefaradí / israelí moderna, pensada para que un hispanohablante —especialmente un lector rioplatense— pueda leer el texto de manera natural y aproximarse a la pronunciación sefaradí.</p>
     <p>La transliteración debe ser uniforme. No se introducen convenciones ashkenazíes en esta versión. La versión ashkenazí, con sus diferencias específicas de pronunciación, se incorporará en una etapa posterior.</p>
+    <p>La referencia editorial prioritaria es ArtScroll (PDF o fotos aportadas). El generador deriva todo por <b>reglas gramaticales</b>, no por una lista creciente de excepciones por palabra: si una regla reproduce una palabra, esa palabra no lleva excepción. No se inventan meteg, shevá na ni rafé que ArtScroll no tenga.</p>
 
     <h4>Consonantes</h4>
     <p>ע = ' (apóstrofo) · א = no se representa con apóstrofo · צ / ץ = ts · בּ = b · ב = v · כּ = k · כ / ך = j · ח = j · שׁ = sh · שׂ = s · ק = k · תּ / ת = t.</p>
@@ -203,12 +204,28 @@ details.rules[open] summary::before{content:"–"}
     <p><b>בֵּין = ben · וּבֵין = uven · עָלֵינוּ = 'alenu</b></p>
     <p>No se incorporan las realizaciones ashkenazíes del Tsere, como <i>bein</i> / <i>aleinu</i>.</p>
 
-    <h4>Shevá</h4>
-    <p>La shevá no se transcribe automáticamente como e. Shevá vocal (shevá na) = e. Shevá muda (shevá naj) = no se representa. La decisión debe basarse en la pronunciación de la palabra y su estructura.</p>
-    <p><b>בִּגְבוּרָה = bigvurá · לִפְגָרִים = lifgarim · לִשְׁמָהּ = lishmáh · כִּרְצוֹנוֹ = kirtsonó · תּוֹרָה = Torá · תּוֹרָתְךָ = Toratejá · תּוֹרָתֵנוּ = Toratenu · לִבְנֵי = livné · בְרִנָּה = veriná</b></p>
+    <h4>Shevá: na y naj</h4>
+    <p>La shevá no se transcribe automáticamente como e. Shevá vocal (shevá na) = e. Shevá muda (shevá naj) = no se representa. La decisión sale de la estructura de la palabra, siguiendo los principios clásicos de Shaar HaShva (Gaón de Vilna) en lo que el motor ya aplica:</p>
+    <ul>
+      <li><b>Shevá inicial de palabra</b> = na (<i>lamenatséaj, bejol</i>).</li>
+      <li><b>La segunda de dos shevás seguidas</b> = na; la primera = naj (<i>yismejú, vaidaber</i>: la primera muda).</li>
+      <li><b>Shevá bajo letra con dagesh fuerte</b> = na (<i>matenot</i> מַתְּנוֹת, <i>hamelea</i>).</li>
+      <li><b>Shevá bajo una letra igual a la siguiente</b> = na (<i>halelu</i>).</li>
+      <li><b>Shevá tras vocal larga sin acento</b> = na (tsere, jolam, shuruk, qamats largo: <i>umevarejim, veharejavá</i>). Tras vocal breve o acentuada es naj (<i>bigvurá, lifgarim, kirtsonó</i>).</li>
+      <li><b>Shevá tras vav-shuruk</b> (וּ) = muda: <i>uvtuvó, ulrajamim, ulumim</i> (וּלְאֻמִּים). Sin la ו, la shevá inicial suena: <i>leumim</i>. Con meteg en la וּ (ga'ya) la shevá siguiente suena.</li>
+      <li><b>Shevá final</b> de palabra = muda (<i>lej</i>, <i>melej</i>).</li>
+    </ul>
+    <p><b>בִּגְבוּרָה = bigvurá · לִפְגָרִים = lifgarim · לִשְׁמָהּ = lishmáh · כִּרְצוֹנוֹ = kirtsonó · תּוֹרָתְךָ = Toratejá · לִבְנֵי = livné · בְרִנָּה = veriná · מַתְּנוֹת = matenot</b></p>
+    <p>Patrones con qamats largo y shevá na (ArtScroll marca rafé): artículo o preposición con qamats ante ר/guturales (<i>veharejavá, velaresha'im</i>), 3ª plural CָCְCוּ (<i>vekave'ú, uvarejú</i>), participio Pi'el (<i>umevarejim</i>) y 3ª plural Hitpa'el/Nitpa'el (<i>shenitbarejú</i>), y la 3ª femenina <i>keshe'amedá</i> (sólo las formas verificadas en ArtScroll).</p>
+    <p>Pendiente de contrastar con datos: las reglas 6 y 7 de Shaar HaShva y los criterios de Rab Yaakov Emden; el motor todavía no los aplica.</p>
+
+    <h4>Rafé (ֿ) y meteg (ֽ)</h4>
+    <p><b>Rafé:</b> el rafé U+05BF marca visualmente la consonante con <b>shevá na</b> confirmada. No se aplica a la shevá naj. Criterio de ArtScroll: no lleva rafé la shevá inicial de palabra ni la inicial del tema tras un prefijo (salvo dagesh, letra repetida o shevá previa); sí lleva toda shevá na del medio de la palabra. Un rafé escrito en el texto fuerza shevá na (<i>מַתְּֿנוֹת = matenot</i>).</p>
+    <p><b>Meteg:</b> un meteg en una sílaba que no es la última marca la <b>sílaba tónica</b> (convención de ArtScroll): <i>אָֽתָּה = Ata, שִֽׁירוּ = shiru, נָֽפְלוּ = náflu</i>. Si la palabra trae más de un meteg no se usa (ambiguo). Sin meteg, אַתָּה es milrá (<i>Atá</i>) y la forma pausal אָתָּה con qamats es <i>Ata</i>.</p>
+    <p>Las casillas <b>Meteg</b> y <b>Rafe</b> sólo cambian el hebreo que se muestra: la fonética es idéntica con o sin marcas (cada palabra se verifica antes de marcarla) y el cambio es reversible.</p>
 
     <h4>Qamats qatan</h4>
-    <p>Kamats gadol = a. Kamats qatan = o. Cuando el texto utiliza explícitamente el carácter Unicode U+05C7, debe reconocerse como tal. No debe confundirse con el kamats gadol simplemente por su aspecto visual.</p>
+    <p>Kamats gadol = a. Kamats qatan = o. Cuando el texto utiliza explícitamente el carácter Unicode U+05C7, debe reconocerse como tal. Raíces con qamats katan sin marca se reconocen por estructura (<i>חָכְמָה = jojmá, קָדְשְׁךָ = kodshejá, אָזְנַיִם = oznáyim</i>), con o sin prefijos.</p>
 
     <h4>Apóstrofos</h4>
     <p>El apóstrofo se reserva exclusivamente para ע. No se utiliza para א. Cuando י + ע genera un hiato, el apóstrofo corresponde únicamente a la ע.</p>
@@ -221,23 +238,32 @@ details.rules[open] summary::before{content:"–"}
 
     <h4>Acentuación</h4>
     <p>Se utilizan las tildes del español únicamente cuando son necesarias para que un hispanohablante lea correctamente el acento hebreo.</p>
-    <p><b>Regla práctica: si un argentino lo leería correctamente sin tilde, no se agrega tilde.</b></p>
-    <p>Ejemplos: <i>bigvurá, kirtsonó, yadáyim, shamáyim, Mitsráyim, Yerushaláyim, hashevi'í.</i></p>
+    <p><b>Regla práctica: si un argentino lo leería correctamente sin tilde, no se agrega tilde.</b> Llanas terminadas en vocal, n o s y agudas terminadas en otra consonante no llevan tilde; llanas terminadas en otra consonante sí (<i>léjem, Mélej</i>).</p>
+    <p>Ejemplos: <i>bigvurá, kirtsonó, yadáyim, shamáyim, Mitsráyim, Yerushaláyim, hashevi'í, shiru / shirú</i>.</p>
+    <p><b>Terminación -ah:</b> las palabras con ה final precedida de vocal llevan siempre tilde en la vocal tónica (<i>letojáh, minógah, kegováh, lishmáh</i>), para que no se lean como agudas. Excepción: <i>HaleluYah, BeYah</i>.</p>
+    <p>Hiato y diptongos: <i>báyit, 'ayin, 'áyish</i>. Nombres con acento milrá fijo: <i>Bavél, beVavél</i>.</p>
 
-    <h4>Nombres propios</h4>
-    <p>Los nombres propios se escriben con mayúscula inicial: <b>Moshé, Aharón, Yitsjak, Eliyahu, Kalev, Mijael, Rafael, Daniel, Etán, Efráyim, Zevulún.</b></p>
+    <h4>Nombres propios, lugares y Templo</h4>
+    <p>Los nombres propios se escriben con mayúscula inicial: <b>Moshé, Aharón, Yitsjak, Eliyahu, Kalev, Mijael, Rafael, Daniel, David, Etán, Efráyim, Zevulún.</b></p>
+    <p>Lugares y pueblos también, y con un prefijo la mayúscula va en el nombre, no en el prefijo: <b>miTsiyón, beVavél, uveVavél, ve'Amón, ba'Amalek.</b></p>
+    <p>El Templo, que tanto añoramos, va con mayúscula en el sustantivo: <b>Bet haMikdash, haBáyit hagadol vehakadosh.</b></p>
 
     <h4>Referencias a Hashem</h4>
-    <p>Las mayúsculas también pueden utilizarse para distinguir referencias reverenciales a Hashem cuando así se haya establecido editorialmente.</p>
-    <p><b>VeHú Elohenu · Shemí · vaAní</b></p>
+    <p>Llevan mayúscula los pronombres, títulos y atributos de Hashem (<b>Hu, Harajamán, HaEl, Mélej, Hakadosh Baruj Hu</b>), el nombre y el rostro (<b>Shemeja, Paneja, Shemó, Panav</b>), las partes del cuerpo cuando se dice de Él (<b>Yadeja, Yeminó</b>), sus lugares (<b>Kodshejá, Hejal, Kisó, Mikdasheja</b>), la <b>Torá</b>, y los sufijos de segunda persona que Le hablan (<b>Lejá, Laj, Bejá</b>).</p>
+    <p>No llevan mayúscula las cosas externas a Hashem: <b>'amejá, oyveja, tsefuneja, jasdeja, shameja, darkó, 'amó</b> (su pueblo).</p>
+    <p><b>Atá / VeAtá / sheAtá:</b> el motor no «sabe» de quién se habla; lo deduce por el contexto de la oración. Si la oración nombra a Hashem (Ad-nai, Elohim, Elohenu) o contiene un sufijo -ךָ dirigido a Él, <i>Atá</i> lleva mayúscula en la raíz (<i>VeAtá berajameja harabim</i>). Para <i>Lejá / Laj / Bejá</i> se exige el nombre divino en la oración. En los versículos ya revisados con ArtScroll manda la decisión tomada versículo por versículo. <i>Harajamán</i> (epíteto de Hashem en Birkat Hamazón) siempre va con mayúscula.</p>
     <p>No toda aparición de la misma palabra recibe automáticamente mayúscula: depende de su función en el contexto.</p>
 
-    <h4>Niqqud y Nakdan</h4>
-    <p>El niqqud existente se conserva exactamente como está y no se vuelve a vocalizar. Nakdan se consulta solamente para las palabras que no tienen niqqud.</p>
-    <p>Una misma secuencia consonántica puede corresponder a palabras diferentes según el niqqud y el contexto: <b>כֶּלֶב = kelev</b> (perro) / <b>כָּלֵב = Kalev</b> (nombre propio).</p>
-
     <h4>Mayúsculas</h4>
-    <p>Inicio de oración = mayúscula. Nombre propio = mayúscula. Referencia editorial a Hashem = mayúscula cuando corresponda. No se capitalizan automáticamente palabras comunes por aparecer en una posición determinada.</p>
+    <p>Inicio de oración = mayúscula. Nombre propio, lugar y Templo = mayúscula. Referencia reverencial a Hashem = mayúscula según lo anterior. No se capitalizan automáticamente palabras comunes por aparecer en una posición determinada.</p>
+
+    <h4>Niqqud y Nakdan</h4>
+    <p>El niqqud existente se conserva exactamente como está y no se vuelve a vocalizar. Nakdan se consulta solamente para las palabras que no tienen niqqud, con el texto completo como contexto. Una vocal que falta en un nombre divino (<i>וֵאלהֵי</i> → <i>vElohé</i>) se restituye.</p>
+    <p>Una misma secuencia consonántica puede corresponder a palabras diferentes según el niqqud y el contexto: <b>כֶּלֶב = kelev</b> (perro) / <b>כָּלֵב = Kalev</b> (nombre propio).</p>
+    <p>Debajo del aviso de Nakdan aparece la <b>lista de palabras que puso o revisó</b>; el niqqud automático es provisional, el tuyo y tus elecciones quedan fijos. Las palabras con otras lecturas posibles llevan borde dorado.</p>
+
+    <h4>Uso de la página</h4>
+    <p><b>Clic o selección</b> en una palabra hebrea marca su fonética, y al revés. <b>Ctrl+Z / Ctrl+Y</b> (o los botones Deshacer / Rehacer) recuperan el texto, también después de «Limpiar».</p>
 
     <h4>Criterio de lectura</h4>
     <p>La prueba final de la transliteración es la lectura: fidelidad al hebreo vocalizado, pronunciación sefaradí, lectura natural para un hispanohablante y uniformidad editorial en todo el texto.</p>
@@ -2020,17 +2046,20 @@ function applyVisualMarks(text,{meteg=false,rafe=false}={}){
 }
 
 /* ¿La oración contiene una referencia a Hashem (Ad-nai, Elohim, o un sufijo -ךָ dirigido a Él)? Sirve para decidir Atá/VeAtá. */
-function sentenceAddressesHashem(s,idx){
+function sentenceAddressesHashem(s,idx,self){
   let a=idx, b=idx;
   while(a>0 && !/[.!?\n]/.test(s[a-1])) a--;
   while(b<s.length && !/[.!?\n]/.test(s[b])) b++;
   const seg=s.slice(a,b);
   const words=seg.match(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)||[];
-  return words.some(w=>{
+  let suffixed=0;
+  for(const w of words){
     const bw=bareLetters(w);
     if(/^[ולבמהשכ]*(?:יי|יהוה|אדני|אלהים|אלהינו|אלהי|אלהיך|אלהיכם)$/u.test(bw))return true;
-    return /\u05DA[\u05B0-\u05C7]*$/u.test(w);
-  });
+    if(/\u05DA[\u05B0-\u05C7]*$/u.test(w) && w!==self)suffixed++;
+  }
+  /* Sin nombre divino: para Atá basta un sufijo -ךָ; para lejá/laj (self) solo cuenta el nombre divino (evita «yiten lejá» = el rey, «sheyeshalem laj» = Bavel). */
+  return self ? false : suffixed>=1;
 }
 function phonetize(text){ return phonetizeDetailed(text).out; }
 /* Devuelve la fonética y la correspondencia palabra a palabra hebreo ↔ fonética (items: {hs,he,os,oe}). */
@@ -2052,6 +2081,11 @@ function phonetizeDetailed(text){
       /* Atá referido a Hashem: la mayúscula va en la raíz (VeAtá, sheAtá). Se decide por el contexto de la oración, salvo en versículos revisados. */
       if(!review && /^[ולבמהשכ]*אתה$/u.test(bareLetters(m[1])) && sentenceAddressesHashem(s,m.index)){
         const k=[...bareLetters(m[1])].length-3;
+        piece=k>0 ? capitalizeAfterPrefix(piece,m[1],k) : capitalizeFirst(piece);
+      }
+      /* Lejá / laj / bejá / baj dirigidos a Hashem: mayúscula en la raíz (leJá, baJ) si la oración nombra a Hashem (Ad-nai, Elohenu…). */
+      if(!review && /^[וש]?[לב]ך$/u.test(bareLetters(m[1])) && /[\u05DA]/u.test(m[1]) && sentenceAddressesHashem(s,m.index,m[1])){
+        const k=[...bareLetters(m[1])].length-2;
         piece=k>0 ? capitalizeAfterPrefix(piece,m[1],k) : capitalizeFirst(piece);
       }
       /* Templo: Bet haMikdash, haBáyit hagadol (el Templo que anhelamos va con mayúscula). */
