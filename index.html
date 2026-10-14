@@ -298,6 +298,7 @@ details.rules[open] summary::before{content:"–"}
 
     <h4>Uso de la página</h4>
     <p><b>Teclado de nikud:</b> botones grandes con el nombre y el sonido de cada signo. Poné el cursor después de la letra y tocá el signo; «Borrar signo» quita el último. <b>Escribir otra…</b> (en las opciones de Nakdan) permite tipear la palabra con tu nikud cuando Nakdan no ofrece la correcta; queda fija.</p>
+    <p><b>Kamats katán al copiar:</b> en el recuadro se conserva el signo propio (ׇ, U+05C7) para que la fonética lea O; al copiar (botón o Ctrl+C) se escribe como kamats común (ָ), porque las fuentes de InDesign no tienen el katán.</p>
     <p><b>Clic o selección</b> en una palabra hebrea marca su fonética, y al revés. <b>Ctrl+Z / Ctrl+Y</b> (o los botones Deshacer / Rehacer) recuperan el texto, también después de «Limpiar».</p>
 
     <h4>Criterio de lectura</h4>
@@ -2661,13 +2662,28 @@ $("hebrew").addEventListener("input",()=>{
   $("motorStatus").textContent="Actualizando…";$("motorStatus").className="status";
   if(!isComposingHebrew) debounceTimer=setTimeout(run,NAKDAN_DEBOUNCE_MS);
 });
+/* Kamats katán (U+05C7): la fonética lo lee como O, pero las fuentes de InDesign no tienen ese carácter (cuadradito).
+   Solo en lo que se copia o exporta se escribe como kamats común (U+05B8); el texto del recuadro no cambia. */
+function hebrewForExport(s){ return String(s).replace(/ׇ/g,"ָ"); }
 async function copyText(value, fallbackEl){
   if(!value) return;
   try{ await navigator.clipboard.writeText(value);return true; }
   catch{
-    if(fallbackEl.value!==value)return false;
-    fallbackEl.select();return document.execCommand("copy");
+    if(fallbackEl.value===value){fallbackEl.select();return document.execCommand("copy");}
+    /* El valor a copiar difiere del recuadro (p. ej. kamats katán convertido): se copia desde un campo temporal. */
+    const t=document.createElement("textarea");t.value=value;t.setAttribute("readonly","");t.style.position="fixed";t.style.opacity="0";
+    document.body.appendChild(t);t.select();const ok=document.execCommand("copy");t.remove();return ok;
   }
+}
+/* Ctrl+C / Cortar desde el recuadro hebreo: misma conversión. */
+for(const ev of ["copy","cut"]){
+  $("hebrew").addEventListener(ev,e=>{
+    const h=$("hebrew"),a=h.selectionStart,b=h.selectionEnd;
+    if(a===b||!e.clipboardData)return;
+    const sel=h.value.slice(a,b);if(!/ׇ/.test(sel))return;
+    e.preventDefault();e.clipboardData.setData("text/plain",hebrewForExport(sel));
+    if(ev==="cut"){snapHebrew();h.value=h.value.slice(0,a)+h.value.slice(b);h.setSelectionRange(a,a);h.dispatchEvent(new Event("input",{bubbles:true}));}
+  });
 }
 async function copyWithStatus(value,el,status){
   if(!value)return;
@@ -2675,7 +2691,7 @@ async function copyWithStatus(value,el,status){
   status.textContent=copied?"Texto copiado.":"No se pudo copiar automáticamente. Seleccioná el texto y usá Copiar.";
   status.className="status "+(copied?"ok":"warn");
 }
-$("copyHebrew").addEventListener("click",()=>copyWithStatus($("hebrew").value,$("hebrew"),$("nakdanStatus")));
+$("copyHebrew").addEventListener("click",()=>copyWithStatus(hebrewForExport($("hebrew").value),$("hebrew"),$("nakdanStatus")));
 $("copy").addEventListener("click",()=>copyWithStatus($("output").value,$("output"),$("motorStatus")));
 
 $("pasteHebrew").addEventListener("click",async()=>{
