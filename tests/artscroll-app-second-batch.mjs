@@ -9,7 +9,7 @@ const cases=JSON.parse(fs.readFileSync(new URL('./fixtures/artscroll-app-partial
 for(const c of cases){assert.equal(api.phonetize(c.hebrew),c.phonetic,c.ref);assert.equal(api.phonetize(c.hebrew.normalize('NFD')),c.phonetic,c.ref+' NFD');}
 const verse=ref=>cases.find(c=>c.ref===ref);
 assert.match(verse('10:2').phonetic,/jashavu/,'Meteg on shin: jashavu, not jashavú');
-assert.match(verse('17:5').phonetic,/Vema'gueloteja.*námotu/,'Undotted bet and meteg on nun');
+assert.match(verse('17:5').phonetic,/vema'gueloteja.*námotu/,'Undotted bet and meteg on nun');
 assert.doesNotMatch(verse('17:5').hebrew,/בְּמַעְגְּ/,'Do not insert a bet dagesh');
 assert.equal(api.reviewedArtScrollTokens(verse('17:5').hebrew.replace('בְמַעְגְּ','בְּמַעְגְּ')).size,0,'Nikud mismatch must invalidate source scope');
 const tokens=[...api.reviewedArtScrollTokens(verse('12:3').hebrew).values()];
