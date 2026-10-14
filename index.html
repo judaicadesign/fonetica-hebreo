@@ -1255,10 +1255,10 @@ function bareLetters(s){
 
 const PROPER_NOUNS = new Set([
   "אברהם","יצחק","יעקב","שרה","רבקה","רחל","לאה","יוסף","בנימין",
-  "משה","אהרן","מרים","יהושע","כלב","שמואל","שאול","דוד","שלמה",
+  "משה","אהרן","מרים","יהושע","כלב","שמואל","שאול","דוד",
   "אליהו","אלישע","ישעיהו","ירמיהו","יחזקאל","דניאל","עזרא","נחמיה",
   "אסתר","מרדכי","רות","שמשון","יונה","יואל","עמוס","עובדיה","מיכה","נחום",
-  "חבקוק","צפניה","חגי","זכריה","מלאכי","נתן","יונתן","מתתיהו","יוחנן",
+  "חבקוק","צפניה","חגי","זכריה","מלאכי","יונתן","מתתיהו","יוחנן",
   "אלחנן","חזקיהו","נתניהו","ירמיה","ישראל","ציון","בבל","ירושלים","מצרים",
   "סיני","כנען","אבשלום"
 ,"אדום"].map(bareLetters));
@@ -1298,7 +1298,7 @@ const PROPER_NOUNS_EXTRA = new Set([
   "עובדיה","זכריה","מלאכי","נחמיה","עזרא","מתתיהו","יוחנן","יונתן","יחזקאל",
   "יששכר","זבולון","שמעון","ראובן","נפתלי","לוי","מיכאל","מרים","אסתר",
   "חנה","דבורה","אביגיל","יעל","נעמי","חולדה","אבישג","בתיה","ציפורה",
-  "תרצה","יוכבד","אחינעם","דויד"
+  "יוכבד","אחינעם","דויד"
 ].map(bareLetters));
 
 /* Pueblos, lugares y personas de los Tehilim (solo mayúscula; la fonética sigue saliendo de las reglas).
@@ -1307,12 +1307,16 @@ const PROPER_NOUNS_TEHILIM = new Set([
   "גבל","עמון","עמלק","פלשת","פלשתים","אשור","כוש","רהב","מואב","ישמעאל","ישמעאלים","שבא","סבא","תרשיש",
   "סכות","גלעד","יהודה","לבנון","חרמון","תבור","ירדן","סיחון","עוג","בשן","מדין","סיסרא",
   "קישון","לוט","שעיר","צען","מסה","מריבה","שילה","שילו","אפרתה","פרעה","קרח","אסף","הימן",
-  "איתן","ידותון","שלמה","שמעון","יהודה"
+  "איתן","ידותון","שמעון","יהודה"
 ].map(bareLetters));
 /* Homógrafos: solo con esta vocalización exacta (חָם = Cam, no חַם "caliente"; צוֹר = Tiro, no צוּר "roca"). */
-const PROPER_NOUNS_VOCALIZED = new Set(["חָם","צוֹר","צֹר","חֹרֵב","הַגְרִים","שְׁכֶם","קֵדָר"].map(w=>w.normalize("NFC")));
+const PROPER_NOUNS_VOCALIZED = new Set(["חָם","צוֹר","צֹר","חֹרֵב","הַגְרִים","שְׁכֶם","קֵדָר",
+  /* Clase D: homógrafos de nombres, solo con su niqqud (נָתַן verbo ≠ נָתָן; שְׁלֵמָה ≠ שְׁלֹמֹה; תִּרְצֶה ≠ תִּרְצָה). */
+  "נָתָן","שְׁלֹמֹה","שְׁלֹמוֹה","תִּרְצָה",
+  /* Clase A: Janucá y Purim (יָוָן ≠ יָוֵן «lodo»; הָמָן ≠ הַמָּן «el maná»; אֲדָר ≠ אֶדֶר). */
+  "יָוָן","הָמָן","אֲדָר","מַתִּתְיָה","מַתִּתְיָהוּ"].map(w=>norm(w)));
 /* Con prefijo y vocalización exacta: כְּיָבִין (Yavín, rey de Jatsor; יָבִין suelto es el verbo "entiende"). */
-const PROPER_PREFIXED_VOCALIZED = new Map([["כְּיָבִין",1],["וּלְעוֹג",2],["לְעוֹג",1],["וְהַגְרִים",1]].map(([w,k])=>[w.normalize("NFC"),k]));
+const PROPER_PREFIXED_VOCALIZED = new Map([["לִשְׁלֹמֹה",1],["כִּשְׁלֹמֹה",1],["כְּיָבִין",1],["וּלְעוֹג",2],["לְעוֹג",1],["וְהַגְרִים",1]].map(([w,k])=>[w.normalize("NFC"),k]));
 /* Nombres que son además palabras comunes: se reconocen solo sin prefijo. */
 const PROPER_PREFIX_BLOCK = new Set(["נתן","יונה","כלב","יעל","מלאכי","דבורה","תרצה","חנה","רות","שרה","לאה","לוי","מרים","עמוס","חגי","משך","מסה","קדר","צען","סבא","שעיר","אסף","איתן","עוג","יהושע","בנימין","שמואל","אסתר","יחזקאל"].map(bareLetters));
 /* Mayúscula en la raíz, después de k letras de prefijo: meHejaló, beOholeja, ve'Amón. */
@@ -2017,6 +2021,77 @@ function sentenceAddressesHashem(s,idx,self){
   /* Sin nombre divino: para Atá basta un sufijo -ךָ; para lejá/laj (self) solo cuenta el nombre divino (evita «yiten lejá» = el rey, «sheyeshalem laj» = Bavel). */
   return self ? false : suffixed>=1;
 }
+/* ===== Mayúscula reverencial y nombres propios POR REGLA (clases A–C, decisión 14/10) =====
+   B siempre: títulos de Hashem con sufijo -enu y Malká (salvo «Avraham avinu»).
+   B/C con contexto: títulos, pronombre Hu y sustantivos con sufijo (Shem, Shimjá, Yadó, Panav…) cuando la oración
+   nombra a Hashem o trae un epíteto suyo (Harajamán, Hakadosh Baruj Hu, Malkenu…). */
+const REV_ALWAYS=new Set(["מלכנו","אדירנו","בוראנו","גואלנו","יוצרנו","קדושנו","רוענו","מלכא","אבינו","הרחמן"]);
+const REV_CONTEXT=new Set(["הוא","אל","קדוש","רועה","שם","שמך","ידך","פניך","ימינך","מקדשך","היכלך","כסאך"]);
+/* 3ª persona y מֶלֶךְ: el contexto de la oración no alcanza (63:12 וְהַמֶּלֶךְ = David; 17:13 פָנָיו = el enemigo).
+   Solo en fórmula o pegados a un nombre/epíteto divino. */
+const REV_THIRD=new Set(["שמו","ידו","פניו","ימינו","היכלו","כסאו","שלומו"]);
+const REV_DIVINE_NEIGHBOR=/^[ולבמהשכ]*(?:יי|יהוה|אדני|אלהים|אלהינו|אלהי|אלהיך|אל|ברוך|הקדוש|הרחמן)$/u;
+const MELEJ_FORMULA_NEXT=/^(?:העולם|הכבוד|מלכי|הטוב|רחמן|חנון|נאמן|עליון|עולם|גדול|רם|יחיד)$/u;
+const REV_WHOLE=new Set(["הקדוש","הוא"]); /* sin separar prefijo: Hakadosh, Hu */
+function reverentialSentence(s,idx){
+  if(sentenceAddressesHashem(s,idx,"\u0000"))return true;
+  let a=idx,b=idx; while(a>0&&!/[.!?\n]/.test(s[a-1]))a--; while(b<s.length&&!/[.!?\n]/.test(s[b]))b++;
+  const ws=(s.slice(a,b).match(/[א-ת֑-ׇ‍]+/gu)||[]).map(bareLetters);
+  return ws.some((w,i)=>REV_ALWAYS.has(w.replace(/^[ולבמשכ]+(?=.{3})/u,""))||(w==="הקדוש"&&ws[i+1]==="ברוך"));
+}
+/* Prefijos reales: ו (shevá/shuruk/pataj/qamats), ב כ ל (shevá/jirik/pataj/qamats), ה artículo (pataj/qamats), מ (jirik/tsere), שֶׁ. */
+function revPrefixOk(a,k){
+  for(let j=0;j<k;j++){
+    const c=a[j], v=x=>has(c,x);
+    const ok=c.b==="ו"?(v(N.SHEVA)||isShuruk(c)||v(N.PATAH)||v(N.QAMATS)):
+      "בכל".includes(c.b)?(v(N.SHEVA)||v(N.HIRIQ)||v(N.PATAH)||v(N.QAMATS)):
+      c.b==="ה"?(v(N.PATAH)||v(N.QAMATS)):c.b==="מ"?(v(N.HIRIQ)||v(N.TSERE)):c.b==="ש"?v(N.SEGOL):false;
+    if(!ok)return false;
+  }
+  return true;
+}
+/* El niqqud separa los homógrafos: אֵל ≠ אַל/אֶל; שֵׁם/שְׁמוֹ ≠ שָׁם/שָׂמוּ; מֶלֶךְ ≠ מָלַךְ; קְדוֹשׁ (constructo) ≠ קָדוֹשׁ (adjetivo). */
+function revStemNiqqud(stem,a,k){
+  const c=a[k]; if(!c)return false;
+  if(stem==="אל")return has(c,N.TSERE);
+  if(/^ש[םמ]/u.test(stem))return !c.m.includes("ׂ")&&(stem==="שם"?has(c,N.TSERE):(has(c,N.SHEVA)||has(c,N.HIRIQ)));
+  if(stem==="מלך")return has(c,N.SEGOL);
+  if(stem==="קדוש")return k===0&&has(c,N.SHEVA);
+  return true;
+}
+function reverentialCapital(token,prev,next,s,idx){
+  if(!/[ְ-ֻ]/u.test(token.normalize("NFD")))return null;
+  const b=bareLetters(token), pb=bareLetters(prev||""), nb=bareLetters(next||""), a=clusters(token);
+  if(REV_WHOLE.has(b)){
+    if(b==="הוא"&&!(pb==="ברוך"||pb==="הרחמן"||reverentialSentence(s,idx)))return null;
+    if(b==="הקדוש"&&nb!=="ברוך"&&!reverentialSentence(s,idx))return null;
+    return 0;
+  }
+  for(let k=0;k<=3&&k<b.length-1;k++){
+    if(k>0&&(!/^[ולבמהשכ]+$/u.test(b.slice(0,k))||!revPrefixOk(a,k)))break;
+    const stem=b.slice(k);
+    if(stem==="אבינו"&&/^(?:אברהם|יצחק|יעקב)$/u.test(pb))return null;
+    if(REV_ALWAYS.has(stem))return k;
+    if(REV_THIRD.has(stem))return (REV_DIVINE_NEIGHBOR.test(pb)||REV_DIVINE_NEIGHBOR.test(nb)||/^(?:קדשו|כבודו)$/u.test(nb))?k:null;
+    if(stem==="מלך"&&revStemNiqqud(stem,a,k))
+      return (MELEJ_FORMULA_NEXT.test(nb)||/^[ולבמהשכ]*(?:אל|אלהינו|יי|יהוה|אדני)$/u.test(pb))?k:null;
+    if(REV_CONTEXT.has(stem)&&revStemNiqqud(stem,a,k)){
+      /* «Shem» del Nombre: Baruj Shem, Shem kodshó, Shem kevod… aunque la oración no diga Ad-nai. */
+      if(stem==="שם"&&(pb==="ברוך"||/^(?:קדשו|כבוד|יי|יהוה|אדני)$/u.test(nb)))return k;
+      if(reverentialSentence(s,idx))return k;
+      return null;
+    }
+  }
+  return null;
+}
+/* Clase A: nombres de fiestas en frase (Jag Hamatsot, Rosh Hajódesh, Shemini 'Atséret). */
+const HOLIDAY_PHRASES=[["חג","המצות"],["חג","השבועות"],["חג","הסכות"],["חג","הסוכות"],["חג","העצרת"],["שמיני","עצרת"],
+  ["ראש","החדש"],["ראש","החודש"],["ראש","השנה"],["יום","הכפורים"],["יום","הזכרון"]];
+function holidayWord(prev,token,next){
+  if(!/[ְ-ֻ]/u.test(token.normalize("NFD")))return false;
+  const p=bareLetters(prev||"").replace(/^[ובל]/u,""),t=bareLetters(token).replace(/^[ובל](?=..)/u,""),n=bareLetters(next||"");
+  return HOLIDAY_PHRASES.some(([x,y])=>(t===x&&n===y)||(p===x&&t===y));
+}
 function phonetize(text){ return phonetizeDetailed(text).out; }
 /* Devuelve la fonética y la correspondencia palabra a palabra hebreo ↔ fonética (items: {hs,he,os,oe}). */
 function phonetizeDetailed(text){
@@ -2049,6 +2124,12 @@ function phonetizeDetailed(text){
         const bb=bareLetters(m[1]), nb=following?bareLetters(following[0]):"";
         if(/^[ולבמהשכ]*המקדש$/u.test(bb)){ const k=[...bb].length-4; piece=capitalizeAfterPrefix(piece,m[1],k); }
         else if(/^[ולבמהשכ]*הבית$/u.test(bb) && /^(?:הגדול|והגדול)$/u.test(nb)){ const k=[...bb].length-3; piece=capitalizeAfterPrefix(piece,m[1],k); }
+      }
+      /* Mayúscula reverencial y fiestas por regla (no por tabla de palabras). */
+      if(!review&&!/[A-ZÁÉÍÓÚ]/u.test(piece.slice(1))){
+        const rk=reverentialCapital(m[1],prev,following?.[0],s,m.index);
+        if(rk!==null) piece=rk>0 ? capitalizeAfterPrefix(piece,m[1],rk) : capitalizeFirst(piece);
+        else if(holidayWord(prev,m[1],following?.[0])) piece=capitalizeFirst(piece);
       }
       if(review?.capital) piece=review.prefixLen ? capitalizeAfterPrefix(piece,m[1],review.prefixLen) : review.prefix ? review.prefix+piece.slice(review.prefix.length) : capitalizeFirst(piece);
       const bare=bareLetters(m[1]);
