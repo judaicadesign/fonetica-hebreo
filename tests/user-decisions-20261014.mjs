@@ -21,7 +21,7 @@ const cases=[
  ['מַתְּנוֹת','Matenot'],['מַתְּֿנוֹת','Matenot'],                               // shevá na (rafe en la entrada)
  ['לְעוֹלָם בְּעֹשֶׁר וְכָבוֹד מֵעַתָּה וְעַד','Le\'olam be\'ósher vejavod me\'atá ve\'ad'],
  ['יְיָ יְבָרֵךְ אֶת עַמּוֹ','Ad-nai yevarej et \'amó'],                           // su pueblo: minúscula
- ['סֻכַּת דָּוִיד','Sucat David'],
+ ['סֻכַּת דָּוִיד','Sukat David'],
  ['בְּסֻוכּוֹת: הָרַחֲמָן הוּא','Besuvkot: Harajamán Hu'],
  ['וְאַתָּה בְּרַחֲמֶֽיךָ הָרַבִּים','VeAtá berajameja harabim'],                  // Atá = Hashem por contexto
  ['בֵּית הַמִּקְדָּשׁ','Bet haMikdash'],
