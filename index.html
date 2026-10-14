@@ -1881,8 +1881,12 @@ function rafePositions(word){
   for(let i=1;i<a.length-1;i++){
     if(!has(a[i],N.SHEVA)||!vocal.has(i))continue;
     const prev=a[i-1], nx=a[i+1];
-    const prefixInit=(i===1&&lightPrefix(prev)&&!has(prev,N.QAMATS))||
-      (i===2&&a[0].b==="ו"&&lightPrefix(a[0])&&lightPrefix(prev)&&!has(prev,N.QAMATS));
+    /* Artículo con pataj (לַ, בַּ, כַּ, הַ) sobre מְ que perdió el dagesh: si el motor lee shevá na, lleva rafé
+       como en ArtScroll (לַמְנַצֵּחַ, 8 de 8 en salmos verificados). Con יְ ArtScroll no imprime rafé
+       (הַיְסוֹד, הַיְשׁוּעָה, הַיְשׁוּעוֹת, הַיְשַׁר): ahí se mantiene sin rafé. */
+    const articleMem=has(prev,N.PATAH)&&a[i].b==="מ";
+    const prefixInit=(i===1&&lightPrefix(prev)&&!has(prev,N.QAMATS)&&!articleMem)||
+      (i===2&&a[0].b==="ו"&&lightPrefix(a[0])&&lightPrefix(prev)&&!has(prev,N.QAMATS)&&!articleMem);
     if(prefixInit&&!has(a[i],N.DAGESH)&&nx.b!==a[i].b&&!has(prev,N.SHEVA))continue;
     res.push(i);
   }
