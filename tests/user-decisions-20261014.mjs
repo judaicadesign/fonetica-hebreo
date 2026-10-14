@@ -18,6 +18,15 @@ const cases=[
  ['אֱלֹהֵינוּ וֵאלהֵי אֲבוֹתֵינוּ','Elohenu vElohé avotenu'],
  ['בַּיִת','Báyit'],['עַיִן','\'Ayin'],['עַֽיִן','\'Ayin'],
  ['יְהֹוָה אֱלֹהַי בְּךָ חָסִֽיתִי הוֹשִׁיעֵֽנִי מִכׇּל רֹדְפַי וְהַצִּילֵֽנִי.','Ad-nai Elohái Bejá jasiti hoshi\'eni mikol rodefái vehatsileni.'],
+ ['מַתְּנוֹת','Matenot'],['מַתְּֿנוֹת','Matenot'],                               // shevá na (rafe en la entrada)
+ ['לְעוֹלָם בְּעֹשֶׁר וְכָבוֹד מֵעַתָּה וְעַד','Le\'olam be\'ósher vejavod me\'atá ve\'ad'],
+ ['יְיָ יְבָרֵךְ אֶת עַמּוֹ','Ad-nai yevarej et \'amó'],                           // su pueblo: minúscula
+ ['סֻכַּת דָּוִיד','Sucat David'],
+ ['בְּסֻוכּוֹת: הָרַחֲמָן הוּא','Besuvkot: Harajamán Hu'],
+ ['וְאַתָּה בְּרַחֲמֶֽיךָ הָרַבִּים','VeAtá berajameja harabim'],                  // Atá = Hashem por contexto
+ ['בֵּית הַמִּקְדָּשׁ','Bet haMikdash'],
+ ['עַל הַבַּיִת הַגָּדוֹל וְהַקָּדוֹשׁ','\'Al haBáyit hagadol vehakadosh'],
+ ['כִּי אַתָּה הוּא בַּעַל','Ki Atá Hu ba\'al'],
 ];
 for(const [h,e] of cases)for(const x of [h,h.normalize('NFD')])assert.equal(phonetize(x),e,h);
 console.log('PASS: '+cases.length+' decisiones del 14/10 (meteg de entrada, Bavél, "ah" opción C, jolam faltante, CaYiC)');

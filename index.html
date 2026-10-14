@@ -59,6 +59,21 @@ textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,91,93,.09)}
 #hebrew{direction:rtl;text-align:right;font-size:20px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;line-height:1.85}
 #output{direction:ltr;text-align:left;font-size:20px;font-family:"Segoe UI",Arial,sans-serif;line-height:1.85}
 textarea::placeholder{color:#9AA7A8;opacity:1}
+/* Resaltado hebreo ↔ fonética y lista de palabras del Nakdan */
+.hl-wrap{position:relative;background:var(--white);border-radius:11px}
+.hl-wrap>textarea{position:relative;z-index:1;display:block;background:transparent}
+.hl-back{position:absolute;z-index:0;pointer-events:none;overflow:hidden;white-space:pre-wrap;overflow-wrap:break-word;word-break:normal;color:transparent;margin:0;border:0}
+.hl-back mark{background:rgba(198,154,75,.42);color:transparent;border-radius:4px;box-shadow:0 0 0 2px rgba(198,154,75,.42)}
+.nakdan-words{margin-top:10px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:var(--gold-soft)}
+.nakdan-words[hidden]{display:none}
+.nw-head{font-size:11px;color:var(--muted);margin-bottom:8px;line-height:1.45}
+.nw-list{display:flex;flex-wrap:wrap;gap:6px;max-height:170px;overflow:auto}
+.nw{display:inline-flex;flex-direction:column;align-items:center;gap:1px;padding:5px 9px;border:1px solid var(--line);border-radius:9px;background:var(--white);font-weight:400;transform:none}
+.nw:hover{border-color:var(--gold);transform:none}
+.nw.alt{border-color:var(--gold);box-shadow:0 0 0 2px rgba(198,154,75,.22)}
+.nw-he{font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:17px;direction:rtl;color:var(--teal-dark)}
+.nw-ph{font-family:"Segoe UI",Arial,sans-serif;font-size:12px;color:var(--muted)}
+
 .toolbar{display:flex;gap:9px;margin-top:13px;align-items:center}
 .toolbar.split{justify-content:space-between}
 .toolbar.right{justify-content:flex-end}
@@ -147,11 +162,14 @@ details.rules[open] summary::before{content:"–"}
     <textarea id="hebrew" spellcheck="false" placeholder="Pegá aquí el texto hebreo, con o sin niqqud…"></textarea>
     <div id="nakdanChoices" class="nakdan-choices" aria-live="polite"></div>
     <div class="toolbar split">
+      <button id="undoBtn" type="button" title="Deshacer (Ctrl+Z)">↶ Deshacer</button>
+      <button id="redoBtn" type="button" title="Rehacer (Ctrl+Y)">↷ Rehacer</button>
       <button id="clear" type="button">Limpiar</button>
       <button id="pasteHebrew" type="button">Pegar texto</button>
       <button id="copyHebrew" type="button">Copiar hebreo</button>
     </div>
     <div id="nakdanStatus" class="status">Listo. Nakdan se activa automáticamente cuando hace falta.</div>
+    <div id="nakdanWords" class="nakdan-words" hidden></div>
   </section>
 
   <section class="card">
@@ -1304,7 +1322,7 @@ const PROPER_NOUNS_EXTRA = new Set([
   "עובדיה","זכריה","מלאכי","נחמיה","עזרא","מתתיהו","יוחנן","יונתן","יחזקאל",
   "יששכר","זבולון","שמעון","ראובן","נפתלי","לוי","מיכאל","מרים","אסתר",
   "חנה","דבורה","אביגיל","יעל","נעמי","חולדה","אבישג","בתיה","ציפורה",
-  "תרצה","יוכבד","אחינעם"
+  "תרצה","יוכבד","אחינעם","דויד"
 ].map(bareLetters));
 
 /* Pueblos, lugares y personas de los Tehilim (solo mayúscula; la fonética sigue saliendo de las reglas).
@@ -1356,7 +1374,7 @@ function properNounPrefixLength(bare,token){
         const c=a[i]; if(!c)return -1;
         if(c.b==="מ" && !(has(c,N.HIRIQ)||has(c,N.TSERE)||has(c,N.SHEVA)))return -1;
       }
-      if(m[2]==="דוד" && !has(a[k],N.QAMATS))return -1; /* מִדּוּד "del canasto" no es David */
+      if((m[2]==="דוד"||m[2]==="דויד") && !has(a[k],N.QAMATS))return -1; /* מִדּוּד "del canasto" no es David */
     }
     return k;
   }
@@ -1400,6 +1418,8 @@ function wordOutput(token){
   if(/^[ובכלהשמ]*תור(?:[הת]|ות)/u.test(bare)) out=out.replace(/tor(?=[aáo])/,"Tor");
   /* Bavél: nombre propio milrá; el maestro 137 lo escribe con tilde (Bavél, beVavél). */
   if(/^[ולבמהשכ]*בבל$/u.test(bare) && isLexicalMilra(token)) out=out.replace(/vel$/i,m=>m.replace("e","é"));
+  /* HaRajamán: epíteto de Hashem (Birkat Hamazón), siempre con mayúscula. */
+  if(bare==="הרחמן") out=capitalizeFirst(out);
   const pnLen=properNounPrefixLength(bare,token);
   if(pnLen===0 || EDITORIAL_CAPITAL_TERMS.has(n) || PROPER_NOUNS_VOCALIZED.has(n)) {
     if(norm(token)===norm("כֶּלֶב")) {
@@ -1443,7 +1463,9 @@ function editorialCaps(text){
   text=text.replace(/(janún verajum )at[aá](?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])/giu,(m,p,off,all)=>p+(/ata$/i.test(m)?"Ata":"Atá"));
   /* Referencias explícitas a Hashem: se capitalizan solo por contexto. */
   text=text.replace(/\bata hu Ad-nai\b/gi,"Atá Hu Ad-nai");
-  text=text.replace(/\bki hu El\b/gi,"ki Hu El");
+  text=text.replace(/\bki hu El\b/gi,m=>m[0]+"i Hu El");
+  /* "ki atá Hu": Atá referido a Hashem, conserva el acento escrito. */
+  text=text.replace(/(?<![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])(at[aá])( Hu)(?![A-Za-zÁÉÍÓÚÜÑáéíóúüñ])/gi,(m,a,h)=>capitalizeFirst(a)+h);
   text=text.replace(/\bvehú Elohenu\b/gi,"VeHú Elohenu").replace(/\bvehu Elohenu\b/gi,"VeHú Elohenu");
   text=text.replace(/\bhu Elohenu\b/gi,"Hu Elohenu");
   text=text.replace(/\bvehú El\b/gi,"VeHú El").replace(/\bvehu El\b/gi,"VeHú El");
@@ -1647,7 +1669,7 @@ function runRegressionTests(){
 
 
 /* ===== v35: fuente interna de referencia + salida sefardí ===== */
-const GOLD={"ash":{"w":{"עַל":"'al","נַהֲרוֹת":"naharot","בָּבֶל":"Bavel","שָׁם":"sham","יָשַׁבְנוּ":"yashavnu","גַּם":"gam","בָּכִינוּ":"bajinu","אֶת":"et","צִיּוֹן":"Tsiyón","עֲרָבִים":"'aravim","בְּתוֹכָהּ":"betojah","תָּלִינוּ":"talinu","כִּנֹּרוֹתֵינוּ":"kinorotenu","כִּי":"ki","שְׁאֵלוּנוּ":"sheelunu","שׁוֹבֵינוּ":"shovenu","דִּבְרֵי":"divré","שִׁיר":"shir","וְתוֹלָלֵינוּ":"vetolalenu","שִׂמְחָה":"simjá","שִׁירוּ":"shirú","מִשִּׁיר":"mishir","אֵיךְ":"ej","נָשִׁיר":"nashir","יְיָ":"Ad-nai","אַדְמַת":"admat","נֵכָר":"nejar","אִם":"im","אֶשְׁכָּחֵךְ":"eshkajej","יְרוּשָׁלִָם":"Yerushaláyim","תִּשְׁכַּח":"tishkaj","יְמִינִי":"yeminí","תִּדְבַּק":"tidbak","לְשׁוֹנִי":"leshoní","לְחִכִּי":"lejikí","לֹא":"lo","אֶזְכְּרֵכִי":"ezkerejí","אַעֲלֶה":"a'alé","יְרוּשָׁלִַם":"Yerushaláyim","רֹאשׁ":"rosh","שִׂמְחָתִי":"simjatí","זְכֹר":"zejor","לִבְנֵי":"livné","אֱדוֹם":"Edom","אֵת":"et","יוֹם":"yom","הָאֹמְרִים":"haomrim","עָרוּ":"'arú","עַד":"'ad","הַיְסוֹד":"hayesod","בָּהּ":"bah","בַּת":"bat","הַשְּׁדוּדָה":"hashedudá","אַשְׁרֵי":"ashré","שֶׁיְשַׁלֶּם":"sheyshalem","לָךְ":"laj","גְּמוּלֵךְ":"gemulej","שֶׁגָּמַלְתְּ":"shegamalt","שֶׁיֹּאחֵז":"sheyojez","וְנִפֵּץ":"venipets","עֹלָלַיִךְ":"'olalayij","הַסָּלַע":"hasala'","הַמַּעֲלוֹת":"hama'alot","בְּשׁוּב":"beshuv","שִׁיבַת":"shivat","הָיִינוּ":"hayinu","כְּחֹלְמִים":"kejolmim","אָז":"az","יִמָּלֵא":"yimalé","שְׂחוֹק":"sejok","פִּינוּ":"pinu","וּלְשׁוֹנֵנוּ":"ulshonenu","רִנָּה":"riná","יֹאמְרוּ":"yomerú","בַגּוֹיִם":"vagoyim","הִגְדִּיל":"higdil","לַעֲשׂוֹת":"la'asot","עִם":"'im","אֵלֶּה":"elé","עִמָּנוּ":"'imanu","שְׂמֵחִים":"semejim","שׁוּבָה":"shuvá","שְׁבִיתֵנוּ":"shevitenu","כַּאֲפִיקִים":"kaafikim","בַּנֶּגֶב":"baNéguev","הַזֹּרְעִים":"hazore'im","בְּדִמְעָה":"bedim'á","בְּרִנָּה":"beriná","יִקְצֹרוּ":"yiktsorú","הָלוֹךְ":"haloj","יֵלֵךְ":"yelej","וּבָכֹה":"uvajó","נֹשֵׂא":"nosé","מֶשֶׁךְ":"meshej","הַזָּרַע":"hazara'","בֹּא":"bo","יָבֹא":"yavó","בְרִנָּה":"beriná","אֲלֻמֹּתָיו":"alumotav","תְּהִלַּת":"tehilat","יְדַבֶּר":"yedaber","פִּי":"pi","וִיבָרֵךְ":"vivarej","כָּל":"kol","בָּשָׂר":"basar","שֵׁם":"Shem","קָדְשׁוֹ":"kodshó","לְעוֹלָם":"le'olam","וָעֶד":"va'ed","וַאֲנַחְנוּ":"vaanajnu","נְבָרֵךְ":"nevarej","יָהּ":"Yah","מֵעַתָּה":"me'atá","וְעַד":"ve'ad","עוֹלָם":"'olam","הוֹדוּ":"hodú","טוֹב":"tov","לְעולָם":"le'olam","חַסְדּו":"jasdó","מִי":"mi","יְמַלֵּל":"yemalel","גְּבוּרוֹת":"gevurot","יַשְׁמִיעַ":"yashmía'","תְּהִלָּתוֹ":"tehilató","רַבּוֹתַי":"rabotái","יְהִי":"yehí","מְבֹרָךְ":"mevoraj","בִּרְשׁוּת":"birshut","מָרָנָן":"maranán","וְרַבָּנָן":"verabanán","וְרַבּוֹתַי":"verabotái","נְבָרֵך":"nevarej","אֱלֹהֵינוּ":"Elohenu","שֶׁאָכַלְנוּ":"sheajalnu","מִשֶּׁלּוֹ":"misheló","בָּרוּךְ":"baruj","וּבְטוּבוֹ":"uvtuvó","חָיִינוּ":"jayinu","הוּא":"Hu","וּבָרוּךְ":"uvaruj","שְׁמוֹ":"Shemó","דְּוַי":"devái","הָסֵר":"haser","וְגַם":"vegam","חָרוֹן":"jarón","וְאָז":"veaz","בְּשִׁיר":"beshir","יָרוֹן":"yarón","נְחֵנוּ":"nejenu","בְּמַעְגְּלֵי":"bema'guelé","צֶדֶק":"tsédek","שְׁעֵה":"she'é","בִּרְכַּת":"bircat","בְּנֵי":"bené","אַהֲרֹן":"Aharón","שֶׁהַשִּׂמְחָה":"shehasimjá","בִּמְעוֹנוֹ":"bim'onó","מִשֶּׁלוֹ":"misheló","מֶלֶךְ":"Mélej","הָעוֹלָם":"ha'olam","הַזָּן":"hazán","כֻּלּוֹ":"kuló","בְּטוּבוֹ":"betuvó","בְּחֵן":"bején","בְּחֶסֶד":"bejésed","נוֹתֵן":"notén","לֶחֶם":"léjem","חַסְדּוֹ":"jasdó","הַגָּדוֹל":"hagadol","תָּמִיד":"tamid","חָסַר":"jásar","וְאַל":"veal","יֶחְסַר":"yejsar","מָזוֹן":"mazón","בַּעֲבוּר":"ba'avur","זָן":"zan","לַכֹּל":"lakol","וּמֵטִיב":"umetiv","וּמֵכִין":"umejín","בְּרִיּוֹתָיו":"beriyotav","בָּרָא":"bará","כָּאָמוּר":"kaamur","פּוֹתֵחַ":"potéaj","יָדֶךָ":"yadeja","וּמַשְׂבִּיעַ":"umasbía'","רָצוֹן":"ratsón","הַכֹּל":"hakol","נוֹדֶה":"nodé","לְּךָ":"lejá","שֶׁהִנְחַלְתָּ":"shehinjalta","לַאֲבוֹתֵינוּ":"laavotenu","אֶרֶץ":"érets","חֶמְדָה":"jemdá","טוֹבָה":"tová","וּרְחָבָה":"urjavá","וְעַל":"ve'al","מֵאֶרֶץ":"meérets","מִצְרַיִם":"Mitsráyim","מִבֵּית":"mibet","עֲבָדִים":"'avadim","בְּרִיתְךָ":"beriteja","שֶׁחָתַמְתָּ":"shejatamta","בִּבְשָׂרֵנוּ":"bivsarenu","תּוֹרָתְךָ":"Toratejá","שֶׁלִּמַּדְתָּנוּ":"shelimadtanu","חֻקֶּיךָ":"jukeja","שֶׁהוֹדַעְתָּנוּ":"shehoda'tanu","חַיִּים":"jayim","חֵן":"jen","וָחֶסֶד":"vajésed","שֶׁחוֹנַנְתָּנוּ":"shejonantanu","אֲכִילַת":"ajilat","שָׁאַתָּה":"shaAtá","וּבְכָל":"uvejol","עֵת":"'et","שָׁעָה":"sha'á","הַנִּסִּים":"hanisim","הַפֻּרְקָן":"hapurkán","הַגְּבוּרוֹת":"haguevurot","הַתְּשׁוּעוֹת":"hateshu'ot","הַמִּלְחָמוֹת":"hamiljamot","שֶׁעָשִׂיתָ":"she'asita","בַּיָּמִים":"bayamim","הָהֵם":"hahem","בַּזְּמַן":"bazemán","בִּימֵי":"bimé","מַתִּתְיָהוּ":"Matityahu","בֶּן":"ben","יוֹחָנָן":"Yojanán","כֹּהֵן":"Cohén","גָּדוֹל":"gadol","חַשְׁמוֹנָאִי":"jashmonaí","וּבָנָיו":"uvanav","כְּשֶׁעָמְדָה":"keshe'amdá","מַלְכוּת":"maljut","יָוָן":"Yaván","הָרְשָׁעָה":"haresha'á","עַמְּךָ":"'amejá","יִשְׂרָאֵל":"Yisrael","לְהַשְׁכִּיחָם":"lehashkijam","תּוֹרָתֶךָ":"Torateja","וּלְהַעֲבִירָם":"uleha'aviram","מֵחֻקֵּי":"mejuké","רְצוֹנֶךָ":"retsoneja","בְּרַחֲמֶיךָ":"berajameja","הָרַבִּים":"harabim","עָמַדְתָּ":"'amadta","בְּעֵת":"be'et","צָרָתָם":"tsaratam","רַבְתָּ":"ravta","רִיבָם":"rivam","דַּנְתָּ":"danta","דִּינָם":"dinam","נָקַמְתָּ":"nakamta","נִקְמָתָם":"nikmatam","מָסַרְתָּ":"masarta","גִבּוֹרִים":"guiborim","בְּיַד":"beyad","חַלָּשִׁים":"jalashim","וְרַבִּים":"verabim","מְעַטִּים":"me'atim","טְהוֹרִים":"tehorim","צַדִּיקִים":"tsadikim","וְזֵדִים":"vezedim","עוֹסְקֵי":"'oské","תוֹרָתֶךָ":"Torateja","וּלְךָ":"uljá","עָשִׂיתָ":"'asita","וְקָדוֹשׁ":"vekadosh","בְּעוֹלָמֶךָ":"be'olameja","וּלְעַמְּךָ":"ul'amejá","תְּשׁוּעָה":"teshu'á","גְדוֹלָה":"guedolá","וּפֻרְקָן":"ufurkán","כְּהַיּוֹם":"kehayom","וְאַחַר":"veajar","כַּךְ":"kaj","בָּאוּ":"bau","בָנֶיךָ":"vaneja","לִדְבִיר":"lidvir","בֵּיתֶךָ":"beteja","וּפִנּוּ":"ufinú","הֵיכָלֶךָ":"hejaleja","וְטִהֲרוּ":"vetiharú","מִקְדָּשֶׁךָ":"Mikdasheja","נֵרוֹת":"nerot","בְּחַצְרוֹת":"bejatsrot","קָדְשֶׁךָ":"kodsheja","וְקָבְעוּ":"vekav'ú","שְׁמוֹנַת":"shemonat","יְמֵי":"yemé","חֲנֻכָּה":"Januká","אֵלּוּ":"elu","לְהוֹדוֹת":"lehodot","וּלְהַלֵּל":"ulhalel","לְשִׁמְךָ":"leShimjá","מָרְדְּכַי":"Mordejái","וְאֶסְתֵּר":"veEster","בְּשׁוּשַׁן":"beShushán","הַבִּירָה":"habirá","כְּשֶׁעָמַד":"keshe'amad","עֲלֵיהֶם":"'alehem","הָמָן":"Hamán","הָרָשָׁע":"harashá'","בִּקֵּשׁ":"bikesh","לְהַשְׁמִיד":"lehashmid","לַהֲרֹג":"laharog","וּלְאַבֵּד":"ulabed","הַיְּהוּדִים":"hayehudim","מִנַּעַר":"mina'ar","זָקֵן":"zakén","טַף":"taf","וְנָשִׁים":"venashim","בְּיוֹם":"beyom","בִּשְׁלֹשָׁה":"bishloshá","עָשָׂר":"'asar","לְחֹדֶשׁ":"lejódesh","שְׁנֵים":"sheném","חֹדֶשׁ":"jódesh","אֲדָר":"Adar","וּשְׁלָלָם":"ushlalam","לָבוֹז":"lavoz","הֵפַרְתָּ":"hefarta","עֲצָתוֹ":"'atsató","וְקִלְקַלְתָּ":"vekilkalta","מַחֲשַׁבְתּוֹ":"majashavtó","וַהֲשֵׁבוֹתָ":"vahashevota","לּוֹ":"lo","גְּמוּלוֹ":"guemuló","בְּרֹאשׁוֹ":"beroshó","וְתָלוּ":"vetalú","אוֹתוֹ":"otó","וְאֶת":"veet","בָּנָיו":"banav","אֲנַחְנוּ":"anajnu","מוֹדִים":"modim","וּמְבָרְכִים":"umevarjim","אוֹתָךְ":"Otaj","יִתְבָּרַךְ":"Yitbaraj","שִׁמְךָ":"Shimjá","בְּפִי":"befí","כַּכָּתוּב":"kakatuv","וְאָכַלְתָּ":"veajalta","וְשָׂבָעְתָּ":"vesava'ta","וּבֵרַכְתָּ":"uverajta","אֱלֹהֶיךָ":"Eloheja","הָאָרֶץ":"haárets","הַטֹּבָה":"hatová","נָתַן":"natán","הַמָּזוֹן":"hamazón","רַחֵם":"rajem","עַמֶּךָ":"'ameja","יְרוּשָׁלַיִם":"Yerushaláyim","עִירֶךָ":"'ireja","מִשְׁכַּן":"mishkán","כְּבוֹדֶךָ":"kevodeja","בֵּית":"Bet","דָּוִד":"David","מְשִׁיחֶךָ":"meshijeja","הַבַּיִת":"habáyit","וְהַקָּדוֹשׁ":"vehakadosh","שֶׁנִּקְרָא":"shenikrá","עָלָיו":"'alav","אָבִינוּ":"Avinu","רְעֵנוּ":"re'enu","פַּרְנְסֵנוּ":"parnesenu","וְכַלְכְּלֵנוּ":"vejalkelenu","וְהַרְוִיחֵנוּ":"veharvijenu","וְהַרְוַח":"veharvaj","מְהֵרָה":"meherá","מִכָּל":"mikol","צָרוֹתֵינוּ":"tsarotenu","וְנָא":"vená","אַל":"al","תַּצְרִיכֵנוּ":"tatsrijenu","לִידֵי":"lidé","מַתְּנַת":"matnat","וָדָם":"vadam","וְלֹא":"veló","הַלְוָאָתָם":"halvaatam","לְיָדְךָ":"leYadjá","הַמְּלֵאָה":"hameleá","הַפְּתוּחָה":"hapetujá","הַקְּדוֹשָׁה":"hakedoshá","וְהָרְחָבָה":"veharjavá","שֶׁלֹּא":"sheló","נֵבוֹשׁ":"nevosh","נִכָּלֵם":"nikalem","רְצֵה":"retsé","וְהַחֲלִיצֵנוּ":"vehajalitsenu","בְּמִצְוֹתֶיךָ":"bemitsvoteja","וּבְמִצְוַת":"uvemitsvat","הַשְּׁבִיעִי":"hashevi'í","הַשַׁבָּת":"haShabat","זֶה":"ze","לְפָנֶיךָ":"lefaneja","לִשְׁבּוֹת":"lishbot","בּוֹ":"bo","וְלָנוּחַ":"velanúaj","בְּאַהֲבָה":"beahavá","כְּמִצְוַת":"kemitsvat","וּבִרְצוֹנְךָ":"uvirtsoneja","הָנִיחַ":"haníaj","שֶׁלֹא":"sheló","תְּהֵא":"tehé","צָרָה":"tsará","וְיָגוֹן":"veyagón","וַאֲנָחָה":"vaanajá","מְנוּחָתֵנוּ":"menujatenu","וְהַרְאֵנוּ":"veharenu","בְּנֶחָמַת":"benejamat","וּבְּבִנְיַן":"uvevinyán","עִיר":"'ir","בַּעַל":"ba'al","הַיְשׁוּעוֹת":"hayeshu'ot","וּבַעַל":"uva'al","הַנֶּחָמוֹת":"hanejamot","וֵאלֹהֵי":"veElohé","אֲבוֹתֵינוּ":"avotenu","וְיָבֹא":"veyavó","וְיַגִּיעַ":"veyaguía'","וְיִשָּׁמַע":"veyishamá'","וְיִפָּקֵד":"veyipaked","וְיִזָּכֵר":"veyizajer","זִכְרוֹנֵנוּ":"zijronenu","וּפִקְדוֹנֵנוּ":"ufikdonenu","וְזִכְרוֹן":"vezijrón","מָשִׁיחַ":"Mashíaj","עַבְדֶךָ":"'avdeja","לִפְלֵיטָה":"lifletá","לְטוֹבָה":"letová","לְחֵן":"lején","וּלְחֶסֶד":"uljésed","וּלְרַחֲמִים":"ulrajamim","לְחַיִּים":"lejayim","וּלְשָׁלוֹם":"ulshalom","הַחֹדֶשׁ":"Hajódesh","חַג":"Jag","הַמַּצוֹת":"Hamatsot","הַשָּׁבוּעוֹת":"Hashavu'ot","הַזִּכָּרוֹן":"hazikarón","הַסֻּכּוֹת":"Hasucot","הַשְּׁמִינִי":"hasheminí","הָעֲצֶרֶת":"Ha'atséret","זָכְרֵנוּ":"zojrenu","וּפָקְדֵנוּ":"ufokdenu","בוֹ":"vo","לִבְרָכָה":"livrajá","וְהוֹשִׁיעֵנוּ":"vehoshi'enu","וּבִדְבַר":"uvidvar","יְשׁוּעָה":"yeshu'á","וְרַחֲמִים":"verajamim","חוּס":"jus","וְחָנֵנוּ":"vejonenu","וְרַחֵם":"verajem","עָלֵינוּ":"'alenu","אֵלֶיךָ":"Eleja","עֵינֵינוּ":"'enenu","חַנּוּן":"janún","וְרַחוּם":"verajum","וּבְנֵה":"uvné","הַקֹּדֶשׁ":"hakódesh","בִּמְהֵרָה":"bimherá","בְיָמֵינוּ":"veyamenu","בּוֹנֵה":"boné","בְרַחֲמָיו":"verajamav","יְרוּשָׁלָיִם":"Yerushaláyim","אָמֵן":"amén","הָאֵל":"haEl","מַלְכֵּנוּ":"Malkenu","אַדִּירֵנוּ":"Adirenu","בּוֹרְאֵנוּ":"Borenu","גּוֹאֲלֵנוּ":"Goalenu","יוֹצְרֵנוּ":"Yotserenu","קְדוֹשֵׁנוּ":"kedoshenu","קְדוֹשׁ":"Kedosh","יַעֲקֹב":"Ya'akov","רוֹעֵנוּ":"Ro'enu","רוֹעֵה":"Ro'é","הַמֶּלֶךְ":"haMélej","הַטּוֹב":"hatov","וְהַמֵּטִיב":"vehametiv","וָיוֹם":"vayom","הֵטִיב":"hetiv","מֵטִיב":"metiv","יֵיטִיב":"yetiv","גוֹמְלֵנוּ":"gomlenu","יִגְמְלֵנוּ":"yigmelenu","לָעַד":"la'ad","וּלְרֶוַח":"ulrevaj","הַצָּלָה":"hatsalá","וְהַצְלָחָה":"vehatslajá","בְּרָכָה":"berajá","וִישׁוּעָה":"vishu'á","נֶחָמָה":"nejamá","פַּרְנָסָה":"parnasá","וְכַלְכָּלָה":"vejalkalá","וְחַיִּים":"vejayim","וְשָׁלוֹם":"veshalom","וּמִכָּל":"umikol","טוּב":"tuv","יְחַסְּרֵנוּ":"yejaserenu","הָרַחֲמָן":"harajamán","יִמְלוֹךְ":"yimloj","בַּשָּׁמַיִם":"bashamáyim","וּבָאָרֶץ":"uvaárets","יִשְׁתַּבַּח":"yishtabaj","לְדוֹר":"ledor","דּוֹרִים":"dorim","וְיִתְפָּאַר":"veyitpaar","בָּנוּ":"banu","וּלְנֵצַח":"ulnétsaj","נְצָחִים":"netsajim","וְיִתְהַדַּר":"veyithadar","וּלְעוֹלְמֵי":"ule'olmé","עוֹלָמִים":"'olamim","יְפַרְנְסֵנוּ":"yefarnesenu","בְּכָבוֹד":"bejavod","יִשְׁבֹּר":"yishbor","עֻלֵנוּ":"'ulenu","מֵעַל":"me'al","צַוָּארֵנוּ":"tsavarenu","יוֹלִיכֵנוּ":"yolijenu","קוֹמְמִיּוּת":"komemiyut","לְאַרְצֵנוּ":"leartsenu","יִשְׁלַח":"yishlaj","מְרֻבָּה":"merubá","בַּבַּיִת":"babayit","שֻׁלְחָן":"shulján","אֵלִיָּהוּ":"Eliyahu","הַנָּבִיא":"hanaví","זָכוּר":"zajur","לַטּוֹב":"latov","וִיבַשֶּׂר":"vivaser","בְּשׂוֹרוֹת":"besorot","טוֹבוֹת":"tovot","יְשׁוּעוֹת":"yeshu'ot","וְנֶחָמוֹת":"venejamot","יֵבוֹשׁ":"yevosh","יִכָּלֵם":"yikalem","בָעוֹלָם":"va'olam","הַבָּא":"habá","וְיַצְלִיחַ":"veyatslíaj","נְכָסָיו":"nejasav","וְיִהְיוּ":"veyihyú","מֻצְלָחִים":"mutslajim","וּקְרוֹבִים":"ukrovim","לָעִיר":"la'ir","יִשְׁלוֹט":"yishlot","שָׂטָן":"satán","בְּמַעַשֵׂה":"bema'asé","יָדָיו":"yadav","יִזְדַּקֵק":"yizdakek","לְפָנָיו":"lefanav","שׁוּם":"shum","דְּבַר":"devar","חֵטְא":"jet","וְהִרְהוּר":"vehirhur","יְבָרֵךְ":"yevarej","אָבִי":"aví","מוֹרִי":"morí","אִמִּי":"imí","מוֹרָתִי":"moratí","בַּעֲלַת":"ba'alat","אוֹתָם":"otam","בֵּיתָם":"betam","זַרְעָם":"zar'am","אִשְׁתִּי":"ishtí","בַּעֲלִי":"ba'alí","זַרְעִי":"zar'í","לִי":"lí","כְּמוֹ":"kemó","שֶׁנִּתְבָּרְכוּ":"shenitbarjú","אַבְרָהָם":"Avraham","יִצְחָק":"Yitsjak","וְיַעֲקֹב":"veYa'akov","בַּכֹּל":"bakol","מִכֹּל":"mikol","כֹּל":"kol","כֵּן":"ken","כֻּלָּנוּ":"kulanu","יַחַד":"yájad","בִּבְרָכָה":"bivrajá","שְׁלֵמָה":"shelemá","וְנֹאמַר":"venomar","בַּמָּּרוֹם":"bamarom","יְלַמְּדוּ":"yelamedú","וְעָלֵינוּ":"ve'alenu","זְכוּת":"zejut","שֶׁתְּהֵא":"shetehé","לְמִשְׁמֶרֶת":"lemishmeret","שָׁלוֹם":"shalom","וְנִשָּׂא":"venisá","בְרָכָה":"verajá","מֵאֵת":"meét","וּצְדָקָה":"utsdaká","מֵאֱלֹהֵי":"meElohé","יִשְׁעֵנוּ":"yishe'enu","וְנִמְצָא":"Venimtsá","וְשֵׂכֶל":"veséjel","בְּעֵינֵי":"be'ené","אֱלֹהִים":"Elohim","וְאָדָם":"veadam","יַנְחִילֵנוּ":"yanjilenu","שֶׁכֻּלּוֹ":"shekuló","שַׁבָּת":"Shabat","וּמְנוּחָה":"umenujá","לְחַיֵּי":"lejayé","הָעוֹלָמִים":"ha'olamim","יְחַדֵּשׁ":"yejadesh","וְלִבְרָכָה":"velivrajá","הַשָּׁנָה":"hashaná","הַזֹּאת":"hazot","יָקִים":"yakim","סֻכַּת":"sucat","דָּוִיד":"David","הַנֹֹּּפָלֶת":"hanofálet","יְזַכֵּנוּ":"yezakenu","לִימוֹת":"limot","הַמָּשִׁיחַ":"haMashíaj","וּלְחַיֵּי":"ulejayé","מִגְדּוֹל":"Migdol","מַגְדִּיל":"Magdil","מַלְכּוֹ":"malkó","וְעֹשֶׂה":"ve'osé","חֶסֶד":"jésed","לִמְשִׁיחוֹ":"liMshijó","לְדָוִד":"leDavid","וּלְזַרְעוֹ":"ulzar'ó","עֹשֶׂה":"'osé","בִּמְרוֹמָיו":"bimromav","יַעֲשֶׂה":"ya'asé","וְאִמְרוּ":"veimrú","יְראוּ":"yirú","קְדֹשָׁיו":"kedoshav","מַחְסוֹר":"majsor","לִירֵאָיו":"lireav","כְּפִירִים":"kefirim","רָשׁוּ":"rashú","וְרָעֵבוּ":"vera'evú","וְדֹרְשֵׁי":"vedoreshé","יַחְסְרוּ":"yajserú","הַגֶּבֶר":"haguéver","יִבְטַח":"yivtaj","וְהָיָה":"vehayá","מִבְטַחוֹ":"mivtajó","נַעַר":"na'ar","הָיִיתִי":"hayíti","גַם":"gam","זָקַנְתִּי":"zakanti","רָאִיתִי":"raíti","צַדִּיק":"tsadik","נֶעֱזָב":"ne'ezav","וְזַרְעוֹ":"vezar'ó","מְבַקֶּשׁ":"mevakesh","לָחֶם":"lájem","עֹז":"'oz","לְעַמּוֹ":"le'amó","יִתֵּן":"yitén","עַמּוֹ":"'amó","בַשָּׁלוֹם":"vashalom","לַיְיָ":"laAd-nai","בַּיְיָ":"baAd-nai"},"c":{"וְ|עַל":"Ve)'al","הַזֶּה|כִּי":"Ki","מוֹדִים|לָךְ":"Laj","וְ|שֶׁאָכַלְנוּ":"ve)sheajalnu","עָשָׂר|הוּא":"hu","וְקָדוֹשׁ|הוּא":"hu","לִי|אוֹתָנוּ|1":"otanu","הָעֲצֶרֶת|הַזֶּה|1":"hazé","כֹּהֵן|גָּדוֹל":"Gadol","הוּא|יִתְבָּרַךְ":"yitbaraj","עַמְּךָ|בֵּית":"bet","אֶת|הַחֹדֶשׁ":"hajódesh","מַגְדִּיל|יְשׁוּעוֹת|1":"yeshu'ot"}},"sef":{"w":{"יְחָנֵּנוּ":"yejanenu","פָּנָיו":"Panav","וּלְאֻמִּים":"uleumim","נָתְנָה":"natná","יְבוּלָהּ":"yevuláh","יְבָרְכֵנוּ":"yevarejenu","אֲבָרְכָה":"avarejá","יְדַבֶּר":"yedaber","שֵׁם":"Shem","וָעֶד":"va'ed","יָהּ":"Yah","וַיְדַבֵּר":"vaydaber","לְמַלְכָּא":"leMalká","מַלְכָּא":"Malká","שַׁבָּת":"Shabat","וּבִּרְשׁוּת":"Ubirshut","בָּרוּךְ":"Baruj","מֶלֶךְ":"Mélej","הָאֵל":"haEl","חָסַר":"jásar","הוּא":"Hu","וְתוֹרָה":"veTorá","מֵאֶרֶץ":"meérets","בְּרִיתְךָ":"beritejá","תּוֹרָתְךָ":"Toratejá","שֶׁאַתָּה":"sheAtá","מַתִּתְיָה":"Matityá","כֹּהֵן":"Cohén","יָוָן":"Yaván","תּוֹרָתָךְ":"Torataj","וּלְהַעֲבִירָם":"uleha'aviram","תוֹרָתֶךָ":"Torateja","בָּאוּ":"bau","וּפִנּוּ":"ufinú","מִקְדָּשֶׁךָ":"Mikdasheja","קָדְשֶׁךָ":"kodsheja","חֲנֻכָּה":"Janucá","אֵלּוּ":"elu","וּבְהוֹדָאָה":"uvehodaá","עִמָּהֶם":"'imahem","לְשִׁמְךָ":"leShimjá","וְאֶסְתֵּר":"veEster","בְּשׁוּשַׁן":"beShushán","הַבִּירָה":"habirá","הָמָן":"Hamán","שְׁנֵים":"sheném","אֲדָר":"Adar","שְׁמָךְ":"Shemaj","נָתַן":"natán","הַבַּיִת":"habáyit","שִׁמְךָ":"Shimjá","אָבִינוּ":"Avinu","מַתְּנוֹת":"matnot","לְיָדְךָ":"leYadjá","הַמְּלֵאָה":"hameleá","שֶׁלּא":"sheló","לִמְקוֹמָהּ":"limkomáh","וּבְמִצְוַת":"uvemitsvat","הַשַׁבָּת":"haShabat","חֻקּי":"juké","אָתָּה":"Atá","וֵאלֹהֵי":"veElohé","זִכְרוֹנֵֽנוּ":"zijronenu","מָשִֽׁיחַ":"Mashíaj","הַחֹדֶשׁ":"Hajódesh","חַג":"Jag","הַמַּצוֹת":"Hamatsot","קוֹדֶשׁ":"kódesh","הַשָּׁבוּעוֹת":"Hashavu'ot","הַסֻּכּוֹת":"HaSucot","עֲצֶרֶת":"'Atséret","וּלְהוֹשִׁיעֵנוּ":"ulehoshi'enu","זָכְרֵנוּ":"zojrenu","וּפָקְדֵנוּ":"ufokdenu","בִדְבַר":"bidvar","וְחָנֵּנוּ":"vejanenu","אָמֵן":"Amén","מַלְכֵּנוּ":"Malkenu","אַדִּירֵנוּ":"Adirenu","בּוֹרְאֵנוּ":"Borenu","גּוֹאֲלֵנוּ":"Goalenu","קְדוֹשֵׁנוּ":"Kedoshenu","רוֹעֵנוּ":"Ro'enu","רוֹעֵה":"Ro'é","הַמֶּלֶךְ":"haMélej","בְבִזּוּי":"vevizui","בְּהֶתֵּר":"beheter","בְּנַחַת":"benájat","בְצָעַר":"vetsá'ar","שְׁלֵמָה":"shelemá","הַנֶּפֶשׁ":"hanefesh","יָדוֹ":"Yadó","וְאֶחָד":"veejad","בִּשְׁמוֹ":"biShmó","וְיַעֲקֹב":"veYa'akov","יִפְרוֹשׂ":"yifros","סֻכַּת":"sucat","שְׁלוֹמוֹ":"Shelomó","הַבָּאִים":"habaim","בְּסֻכַּת":"besucat","תּוֹרָתוֹ":"Torató","לְבִלְתִּי":"leviltí","וְיִהְיוּ":"Veyihyú","כְשֻׁלְחָנוֹ":"keshuljanó","וּלְעוֹלְמֵי":"ule'olmé","הַסְּעֻדָּה":"hase'udá","תִּרְצֶה":"tirtsé","וּנְכָסֵינוּ":"unejasenu","זְכָרִים":"zejarím","הַקָּדוֹשׁ":"Hakadosh","הַמָּשִׁיחַ":"haMashíaj","וּלְבִנְיַן":"ulevinyán","וּלְחַיֵּי":"ulejayé","מִגְדּוֹל":"Migdol","מַגְדִּיל":"Magdil","וְעֹשֶׂה":"ve'osé","לְדָוִד":"leDavid","הָיִיתִי":"hayíti","מְבַקֶּשׁ":"mevakesh","לְשָׂבְעָה":"lesov'á","וַיִּתֵּן":"vayitén","וַיֹּאכְלוּ":"vayojelú","וַיּוֹתִירוּ":"vayotiru","אַתֶּם":"atem","עַמּוֹ":"'Amó","יַעֲשֶׂה":"ya'asé","אֶלָּא":"ela"},"c":{"עָשִׂיתָ|שֵׁם":"shem","וְכָבוֹד|מֵעַתָּה":"Me'atá","קַדִּישִׁין|וּבִרְשׁוּת":"ubirshut","יִשְׁתֶּה|וְאַל|1":"veal","עָשָׂר|הוּא":"hu","וְקָדוֹשׁ|הוּא":"hu","הַזֹּאת|הוּא|1":"hu","קוֹדֶשׁ|הַזֶּה|1":"hazé","אַבְרָהָם|אָבִינוּ":"avinu","אֲבוֹתֵֽינוּ|זִכְרוֹן|1":"zijrón","אֶת|הַחֹדֶשׁ":"hajódesh","עוֹלָמִים|אָמֵן":"amén","הַבָּא|אָמֵן|1":"amén","מַגְדִּיל|יְשׁוּעוֹת|1":"yeshu'ot","כָּל|עַמּוֹ":"'amó"}}};
+const GOLD={"ash":{"w":{"עַל":"'al","נַהֲרוֹת":"naharot","בָּבֶל":"Bavel","שָׁם":"sham","יָשַׁבְנוּ":"yashavnu","גַּם":"gam","בָּכִינוּ":"bajinu","אֶת":"et","צִיּוֹן":"Tsiyón","עֲרָבִים":"'aravim","בְּתוֹכָהּ":"betojah","תָּלִינוּ":"talinu","כִּנֹּרוֹתֵינוּ":"kinorotenu","כִּי":"ki","שְׁאֵלוּנוּ":"sheelunu","שׁוֹבֵינוּ":"shovenu","דִּבְרֵי":"divré","שִׁיר":"shir","וְתוֹלָלֵינוּ":"vetolalenu","שִׂמְחָה":"simjá","שִׁירוּ":"shirú","מִשִּׁיר":"mishir","אֵיךְ":"ej","נָשִׁיר":"nashir","יְיָ":"Ad-nai","אַדְמַת":"admat","נֵכָר":"nejar","אִם":"im","אֶשְׁכָּחֵךְ":"eshkajej","יְרוּשָׁלִָם":"Yerushaláyim","תִּשְׁכַּח":"tishkaj","יְמִינִי":"yeminí","תִּדְבַּק":"tidbak","לְשׁוֹנִי":"leshoní","לְחִכִּי":"lejikí","לֹא":"lo","אֶזְכְּרֵכִי":"ezkerejí","אַעֲלֶה":"a'alé","יְרוּשָׁלִַם":"Yerushaláyim","רֹאשׁ":"rosh","שִׂמְחָתִי":"simjatí","זְכֹר":"zejor","לִבְנֵי":"livné","אֱדוֹם":"Edom","אֵת":"et","יוֹם":"yom","הָאֹמְרִים":"haomrim","עָרוּ":"'arú","עַד":"'ad","הַיְסוֹד":"hayesod","בָּהּ":"bah","בַּת":"bat","הַשְּׁדוּדָה":"hashedudá","אַשְׁרֵי":"ashré","שֶׁיְשַׁלֶּם":"sheyshalem","לָךְ":"laj","גְּמוּלֵךְ":"gemulej","שֶׁגָּמַלְתְּ":"shegamalt","שֶׁיֹּאחֵז":"sheyojez","וְנִפֵּץ":"venipets","עֹלָלַיִךְ":"'olalayij","הַסָּלַע":"hasala'","הַמַּעֲלוֹת":"hama'alot","בְּשׁוּב":"beshuv","שִׁיבַת":"shivat","הָיִינוּ":"hayinu","כְּחֹלְמִים":"kejolmim","אָז":"az","יִמָּלֵא":"yimalé","שְׂחוֹק":"sejok","פִּינוּ":"pinu","וּלְשׁוֹנֵנוּ":"ulshonenu","רִנָּה":"riná","יֹאמְרוּ":"yomerú","בַגּוֹיִם":"vagoyim","הִגְדִּיל":"higdil","לַעֲשׂוֹת":"la'asot","עִם":"'im","אֵלֶּה":"elé","עִמָּנוּ":"'imanu","שְׂמֵחִים":"semejim","שׁוּבָה":"shuvá","שְׁבִיתֵנוּ":"shevitenu","כַּאֲפִיקִים":"kaafikim","בַּנֶּגֶב":"baNéguev","הַזֹּרְעִים":"hazore'im","בְּדִמְעָה":"bedim'á","בְּרִנָּה":"beriná","יִקְצֹרוּ":"yiktsorú","הָלוֹךְ":"haloj","יֵלֵךְ":"yelej","וּבָכֹה":"uvajó","נֹשֵׂא":"nosé","מֶשֶׁךְ":"meshej","הַזָּרַע":"hazara'","בֹּא":"bo","יָבֹא":"yavó","בְרִנָּה":"beriná","אֲלֻמֹּתָיו":"alumotav","תְּהִלַּת":"tehilat","יְדַבֶּר":"yedaber","פִּי":"pi","וִיבָרֵךְ":"vivarej","כָּל":"kol","בָּשָׂר":"basar","שֵׁם":"Shem","קָדְשׁוֹ":"kodshó","לְעוֹלָם":"le'olam","וָעֶד":"va'ed","וַאֲנַחְנוּ":"vaanajnu","נְבָרֵךְ":"nevarej","יָהּ":"Yah","מֵעַתָּה":"me'atá","וְעַד":"ve'ad","עוֹלָם":"'olam","הוֹדוּ":"hodú","טוֹב":"tov","לְעולָם":"le'olam","חַסְדּו":"jasdó","מִי":"mi","יְמַלֵּל":"yemalel","גְּבוּרוֹת":"gevurot","יַשְׁמִיעַ":"yashmía'","תְּהִלָּתוֹ":"tehilató","רַבּוֹתַי":"rabotái","יְהִי":"yehí","מְבֹרָךְ":"mevoraj","בִּרְשׁוּת":"birshut","מָרָנָן":"maranán","וְרַבָּנָן":"verabanán","וְרַבּוֹתַי":"verabotái","נְבָרֵך":"nevarej","אֱלֹהֵינוּ":"Elohenu","שֶׁאָכַלְנוּ":"sheajalnu","מִשֶּׁלּוֹ":"misheló","בָּרוּךְ":"baruj","וּבְטוּבוֹ":"uvtuvó","חָיִינוּ":"jayinu","הוּא":"Hu","וּבָרוּךְ":"uvaruj","שְׁמוֹ":"Shemó","דְּוַי":"devái","הָסֵר":"haser","וְגַם":"vegam","חָרוֹן":"jarón","וְאָז":"veaz","בְּשִׁיר":"beshir","יָרוֹן":"yarón","נְחֵנוּ":"nejenu","בְּמַעְגְּלֵי":"bema'guelé","צֶדֶק":"tsédek","שְׁעֵה":"she'é","בִּרְכַּת":"bircat","בְּנֵי":"bené","אַהֲרֹן":"Aharón","שֶׁהַשִּׂמְחָה":"shehasimjá","בִּמְעוֹנוֹ":"bim'onó","מִשֶּׁלוֹ":"misheló","מֶלֶךְ":"Mélej","הָעוֹלָם":"ha'olam","הַזָּן":"hazán","כֻּלּוֹ":"kuló","בְּטוּבוֹ":"betuvó","בְּחֵן":"bején","בְּחֶסֶד":"bejésed","נוֹתֵן":"notén","לֶחֶם":"léjem","חַסְדּוֹ":"jasdó","הַגָּדוֹל":"hagadol","תָּמִיד":"tamid","חָסַר":"jásar","וְאַל":"veal","יֶחְסַר":"yejsar","מָזוֹן":"mazón","בַּעֲבוּר":"ba'avur","זָן":"zan","לַכֹּל":"lakol","וּמֵטִיב":"umetiv","וּמֵכִין":"umejín","בְּרִיּוֹתָיו":"beriyotav","בָּרָא":"bará","כָּאָמוּר":"kaamur","פּוֹתֵחַ":"potéaj","יָדֶךָ":"yadeja","וּמַשְׂבִּיעַ":"umasbía'","רָצוֹן":"ratsón","הַכֹּל":"hakol","נוֹדֶה":"nodé","לְּךָ":"lejá","שֶׁהִנְחַלְתָּ":"shehinjalta","לַאֲבוֹתֵינוּ":"laavotenu","אֶרֶץ":"érets","חֶמְדָה":"jemdá","טוֹבָה":"tová","וּרְחָבָה":"urjavá","וְעַל":"ve'al","מֵאֶרֶץ":"meérets","מִצְרַיִם":"Mitsráyim","מִבֵּית":"mibet","עֲבָדִים":"'avadim","בְּרִיתְךָ":"beriteja","שֶׁחָתַמְתָּ":"shejatamta","בִּבְשָׂרֵנוּ":"bivsarenu","תּוֹרָתְךָ":"Toratejá","שֶׁלִּמַּדְתָּנוּ":"shelimadtanu","חֻקֶּיךָ":"jukeja","שֶׁהוֹדַעְתָּנוּ":"shehoda'tanu","חַיִּים":"jayim","חֵן":"jen","וָחֶסֶד":"vajésed","שֶׁחוֹנַנְתָּנוּ":"shejonantanu","אֲכִילַת":"ajilat","שָׁאַתָּה":"shaAtá","וּבְכָל":"uvejol","עֵת":"'et","שָׁעָה":"sha'á","הַנִּסִּים":"hanisim","הַפֻּרְקָן":"hapurkán","הַגְּבוּרוֹת":"haguevurot","הַתְּשׁוּעוֹת":"hateshu'ot","הַמִּלְחָמוֹת":"hamiljamot","שֶׁעָשִׂיתָ":"she'asita","בַּיָּמִים":"bayamim","הָהֵם":"hahem","בַּזְּמַן":"bazemán","בִּימֵי":"bimé","מַתִּתְיָהוּ":"Matityahu","בֶּן":"ben","יוֹחָנָן":"Yojanán","כֹּהֵן":"Cohén","גָּדוֹל":"gadol","חַשְׁמוֹנָאִי":"jashmonaí","וּבָנָיו":"uvanav","כְּשֶׁעָמְדָה":"keshe'amdá","מַלְכוּת":"maljut","יָוָן":"Yaván","הָרְשָׁעָה":"haresha'á","עַמְּךָ":"'amejá","יִשְׂרָאֵל":"Yisrael","לְהַשְׁכִּיחָם":"lehashkijam","תּוֹרָתֶךָ":"Torateja","וּלְהַעֲבִירָם":"uleha'aviram","מֵחֻקֵּי":"mejuké","רְצוֹנֶךָ":"retsoneja","בְּרַחֲמֶיךָ":"berajameja","הָרַבִּים":"harabim","עָמַדְתָּ":"'amadta","בְּעֵת":"be'et","צָרָתָם":"tsaratam","רַבְתָּ":"ravta","רִיבָם":"rivam","דַּנְתָּ":"danta","דִּינָם":"dinam","נָקַמְתָּ":"nakamta","נִקְמָתָם":"nikmatam","מָסַרְתָּ":"masarta","גִבּוֹרִים":"guiborim","בְּיַד":"beyad","חַלָּשִׁים":"jalashim","וְרַבִּים":"verabim","מְעַטִּים":"me'atim","טְהוֹרִים":"tehorim","צַדִּיקִים":"tsadikim","וְזֵדִים":"vezedim","עוֹסְקֵי":"'oské","תוֹרָתֶךָ":"Torateja","וּלְךָ":"uljá","עָשִׂיתָ":"'asita","וְקָדוֹשׁ":"vekadosh","בְּעוֹלָמֶךָ":"be'olameja","וּלְעַמְּךָ":"ul'amejá","תְּשׁוּעָה":"teshu'á","גְדוֹלָה":"guedolá","וּפֻרְקָן":"ufurkán","כְּהַיּוֹם":"kehayom","וְאַחַר":"veajar","כַּךְ":"kaj","בָּאוּ":"bau","בָנֶיךָ":"vaneja","לִדְבִיר":"lidvir","בֵּיתֶךָ":"beteja","וּפִנּוּ":"ufinú","הֵיכָלֶךָ":"hejaleja","וְטִהֲרוּ":"vetiharú","מִקְדָּשֶׁךָ":"Mikdasheja","נֵרוֹת":"nerot","בְּחַצְרוֹת":"bejatsrot","קָדְשֶׁךָ":"kodsheja","וְקָבְעוּ":"vekav'ú","שְׁמוֹנַת":"shemonat","יְמֵי":"yemé","חֲנֻכָּה":"Januká","אֵלּוּ":"elu","לְהוֹדוֹת":"lehodot","וּלְהַלֵּל":"ulhalel","לְשִׁמְךָ":"leShimjá","מָרְדְּכַי":"Mordejái","וְאֶסְתֵּר":"veEster","בְּשׁוּשַׁן":"beShushán","הַבִּירָה":"habirá","כְּשֶׁעָמַד":"keshe'amad","עֲלֵיהֶם":"'alehem","הָמָן":"Hamán","הָרָשָׁע":"harashá'","בִּקֵּשׁ":"bikesh","לְהַשְׁמִיד":"lehashmid","לַהֲרֹג":"laharog","וּלְאַבֵּד":"ulabed","הַיְּהוּדִים":"hayehudim","מִנַּעַר":"mina'ar","זָקֵן":"zakén","טַף":"taf","וְנָשִׁים":"venashim","בְּיוֹם":"beyom","בִּשְׁלֹשָׁה":"bishloshá","עָשָׂר":"'asar","לְחֹדֶשׁ":"lejódesh","שְׁנֵים":"sheném","חֹדֶשׁ":"jódesh","אֲדָר":"Adar","וּשְׁלָלָם":"ushlalam","לָבוֹז":"lavoz","הֵפַרְתָּ":"hefarta","עֲצָתוֹ":"'atsató","וְקִלְקַלְתָּ":"vekilkalta","מַחֲשַׁבְתּוֹ":"majashavtó","וַהֲשֵׁבוֹתָ":"vahashevota","לּוֹ":"lo","גְּמוּלוֹ":"guemuló","בְּרֹאשׁוֹ":"beroshó","וְתָלוּ":"vetalú","אוֹתוֹ":"otó","וְאֶת":"veet","בָּנָיו":"banav","אֲנַחְנוּ":"anajnu","מוֹדִים":"modim","וּמְבָרְכִים":"umevarjim","אוֹתָךְ":"Otaj","יִתְבָּרַךְ":"Yitbaraj","שִׁמְךָ":"Shimjá","בְּפִי":"befí","כַּכָּתוּב":"kakatuv","וְאָכַלְתָּ":"veajalta","וְשָׂבָעְתָּ":"vesava'ta","וּבֵרַכְתָּ":"uverajta","אֱלֹהֶיךָ":"Eloheja","הָאָרֶץ":"haárets","הַטֹּבָה":"hatová","נָתַן":"natán","הַמָּזוֹן":"hamazón","רַחֵם":"rajem","עַמֶּךָ":"'ameja","יְרוּשָׁלַיִם":"Yerushaláyim","עִירֶךָ":"'ireja","מִשְׁכַּן":"mishkán","כְּבוֹדֶךָ":"kevodeja","בֵּית":"Bet","דָּוִד":"David","מְשִׁיחֶךָ":"meshijeja","הַבַּיִת":"habáyit","וְהַקָּדוֹשׁ":"vehakadosh","שֶׁנִּקְרָא":"shenikrá","עָלָיו":"'alav","אָבִינוּ":"Avinu","רְעֵנוּ":"re'enu","פַּרְנְסֵנוּ":"parnesenu","וְכַלְכְּלֵנוּ":"vejalkelenu","וְהַרְוִיחֵנוּ":"veharvijenu","וְהַרְוַח":"veharvaj","מְהֵרָה":"meherá","מִכָּל":"mikol","צָרוֹתֵינוּ":"tsarotenu","וְנָא":"vená","אַל":"al","תַּצְרִיכֵנוּ":"tatsrijenu","לִידֵי":"lidé","מַתְּנַת":"matnat","וָדָם":"vadam","וְלֹא":"veló","הַלְוָאָתָם":"halvaatam","לְיָדְךָ":"leYadjá","הַמְּלֵאָה":"hameleá","הַפְּתוּחָה":"hapetujá","הַקְּדוֹשָׁה":"hakedoshá","וְהָרְחָבָה":"veharjavá","שֶׁלֹּא":"sheló","נֵבוֹשׁ":"nevosh","נִכָּלֵם":"nikalem","רְצֵה":"retsé","וְהַחֲלִיצֵנוּ":"vehajalitsenu","בְּמִצְוֹתֶיךָ":"bemitsvoteja","וּבְמִצְוַת":"uvemitsvat","הַשְּׁבִיעִי":"hashevi'í","הַשַׁבָּת":"haShabat","זֶה":"ze","לְפָנֶיךָ":"lefaneja","לִשְׁבּוֹת":"lishbot","בּוֹ":"bo","וְלָנוּחַ":"velanúaj","בְּאַהֲבָה":"beahavá","כְּמִצְוַת":"kemitsvat","וּבִרְצוֹנְךָ":"uvirtsoneja","הָנִיחַ":"haníaj","שֶׁלֹא":"sheló","תְּהֵא":"tehé","צָרָה":"tsará","וְיָגוֹן":"veyagón","וַאֲנָחָה":"vaanajá","מְנוּחָתֵנוּ":"menujatenu","וְהַרְאֵנוּ":"veharenu","בְּנֶחָמַת":"benejamat","וּבְּבִנְיַן":"uvevinyán","עִיר":"'ir","בַּעַל":"ba'al","הַיְשׁוּעוֹת":"hayeshu'ot","וּבַעַל":"uva'al","הַנֶּחָמוֹת":"hanejamot","וֵאלֹהֵי":"veElohé","אֲבוֹתֵינוּ":"avotenu","וְיָבֹא":"veyavó","וְיַגִּיעַ":"veyaguía'","וְיִשָּׁמַע":"veyishamá'","וְיִפָּקֵד":"veyipaked","וְיִזָּכֵר":"veyizajer","זִכְרוֹנֵנוּ":"zijronenu","וּפִקְדוֹנֵנוּ":"ufikdonenu","וְזִכְרוֹן":"vezijrón","מָשִׁיחַ":"Mashíaj","עַבְדֶךָ":"'avdeja","לִפְלֵיטָה":"lifletá","לְטוֹבָה":"letová","לְחֵן":"lején","וּלְחֶסֶד":"uljésed","וּלְרַחֲמִים":"ulrajamim","לְחַיִּים":"lejayim","וּלְשָׁלוֹם":"ulshalom","הַחֹדֶשׁ":"Hajódesh","חַג":"Jag","הַמַּצוֹת":"Hamatsot","הַשָּׁבוּעוֹת":"Hashavu'ot","הַזִּכָּרוֹן":"hazikarón","הַסֻּכּוֹת":"Hasucot","הַשְּׁמִינִי":"hasheminí","הָעֲצֶרֶת":"Ha'atséret","זָכְרֵנוּ":"zojrenu","וּפָקְדֵנוּ":"ufokdenu","בוֹ":"vo","לִבְרָכָה":"livrajá","וְהוֹשִׁיעֵנוּ":"vehoshi'enu","וּבִדְבַר":"uvidvar","יְשׁוּעָה":"yeshu'á","וְרַחֲמִים":"verajamim","חוּס":"jus","וְחָנֵנוּ":"vejonenu","וְרַחֵם":"verajem","עָלֵינוּ":"'alenu","אֵלֶיךָ":"Eleja","עֵינֵינוּ":"'enenu","חַנּוּן":"janún","וְרַחוּם":"verajum","וּבְנֵה":"uvné","הַקֹּדֶשׁ":"hakódesh","בִּמְהֵרָה":"bimherá","בְיָמֵינוּ":"veyamenu","בּוֹנֵה":"boné","בְרַחֲמָיו":"verajamav","יְרוּשָׁלָיִם":"Yerushaláyim","אָמֵן":"amén","הָאֵל":"haEl","מַלְכֵּנוּ":"Malkenu","אַדִּירֵנוּ":"Adirenu","בּוֹרְאֵנוּ":"Borenu","גּוֹאֲלֵנוּ":"Goalenu","יוֹצְרֵנוּ":"Yotserenu","קְדוֹשֵׁנוּ":"kedoshenu","קְדוֹשׁ":"Kedosh","יַעֲקֹב":"Ya'akov","רוֹעֵנוּ":"Ro'enu","רוֹעֵה":"Ro'é","הַמֶּלֶךְ":"haMélej","הַטּוֹב":"hatov","וְהַמֵּטִיב":"vehametiv","וָיוֹם":"vayom","הֵטִיב":"hetiv","מֵטִיב":"metiv","יֵיטִיב":"yetiv","גוֹמְלֵנוּ":"gomlenu","יִגְמְלֵנוּ":"yigmelenu","לָעַד":"la'ad","וּלְרֶוַח":"ulrevaj","הַצָּלָה":"hatsalá","וְהַצְלָחָה":"vehatslajá","בְּרָכָה":"berajá","וִישׁוּעָה":"vishu'á","נֶחָמָה":"nejamá","פַּרְנָסָה":"parnasá","וְכַלְכָּלָה":"vejalkalá","וְחַיִּים":"vejayim","וְשָׁלוֹם":"veshalom","וּמִכָּל":"umikol","טוּב":"tuv","יְחַסְּרֵנוּ":"yejaserenu","הָרַחֲמָן":"harajamán","יִמְלוֹךְ":"yimloj","בַּשָּׁמַיִם":"bashamáyim","וּבָאָרֶץ":"uvaárets","יִשְׁתַּבַּח":"yishtabaj","לְדוֹר":"ledor","דּוֹרִים":"dorim","וְיִתְפָּאַר":"veyitpaar","בָּנוּ":"banu","וּלְנֵצַח":"ulnétsaj","נְצָחִים":"netsajim","וְיִתְהַדַּר":"veyithadar","וּלְעוֹלְמֵי":"ule'olmé","עוֹלָמִים":"'olamim","יְפַרְנְסֵנוּ":"yefarnesenu","בְּכָבוֹד":"bejavod","יִשְׁבֹּר":"yishbor","עֻלֵנוּ":"'ulenu","מֵעַל":"me'al","צַוָּארֵנוּ":"tsavarenu","יוֹלִיכֵנוּ":"yolijenu","קוֹמְמִיּוּת":"komemiyut","לְאַרְצֵנוּ":"leartsenu","יִשְׁלַח":"yishlaj","מְרֻבָּה":"merubá","בַּבַּיִת":"babayit","שֻׁלְחָן":"shulján","אֵלִיָּהוּ":"Eliyahu","הַנָּבִיא":"hanaví","זָכוּר":"zajur","לַטּוֹב":"latov","וִיבַשֶּׂר":"vivaser","בְּשׂוֹרוֹת":"besorot","טוֹבוֹת":"tovot","יְשׁוּעוֹת":"yeshu'ot","וְנֶחָמוֹת":"venejamot","יֵבוֹשׁ":"yevosh","יִכָּלֵם":"yikalem","בָעוֹלָם":"va'olam","הַבָּא":"habá","וְיַצְלִיחַ":"veyatslíaj","נְכָסָיו":"nejasav","וְיִהְיוּ":"veyihyú","מֻצְלָחִים":"mutslajim","וּקְרוֹבִים":"ukrovim","לָעִיר":"la'ir","יִשְׁלוֹט":"yishlot","שָׂטָן":"satán","בְּמַעַשֵׂה":"bema'asé","יָדָיו":"yadav","יִזְדַּקֵק":"yizdakek","לְפָנָיו":"lefanav","שׁוּם":"shum","דְּבַר":"devar","חֵטְא":"jet","וְהִרְהוּר":"vehirhur","יְבָרֵךְ":"yevarej","אָבִי":"aví","מוֹרִי":"morí","אִמִּי":"imí","מוֹרָתִי":"moratí","בַּעֲלַת":"ba'alat","אוֹתָם":"otam","בֵּיתָם":"betam","זַרְעָם":"zar'am","אִשְׁתִּי":"ishtí","בַּעֲלִי":"ba'alí","זַרְעִי":"zar'í","לִי":"lí","כְּמוֹ":"kemó","שֶׁנִּתְבָּרְכוּ":"shenitbarjú","אַבְרָהָם":"Avraham","יִצְחָק":"Yitsjak","וְיַעֲקֹב":"veYa'akov","בַּכֹּל":"bakol","מִכֹּל":"mikol","כֹּל":"kol","כֵּן":"ken","כֻּלָּנוּ":"kulanu","יַחַד":"yájad","בִּבְרָכָה":"bivrajá","שְׁלֵמָה":"shelemá","וְנֹאמַר":"venomar","בַּמָּּרוֹם":"bamarom","יְלַמְּדוּ":"yelamedú","וְעָלֵינוּ":"ve'alenu","זְכוּת":"zejut","שֶׁתְּהֵא":"shetehé","לְמִשְׁמֶרֶת":"lemishmeret","שָׁלוֹם":"shalom","וְנִשָּׂא":"venisá","בְרָכָה":"verajá","מֵאֵת":"meét","וּצְדָקָה":"utsdaká","מֵאֱלֹהֵי":"meElohé","יִשְׁעֵנוּ":"yishe'enu","וְנִמְצָא":"Venimtsá","וְשֵׂכֶל":"veséjel","בְּעֵינֵי":"be'ené","אֱלֹהִים":"Elohim","וְאָדָם":"veadam","יַנְחִילֵנוּ":"yanjilenu","שֶׁכֻּלּוֹ":"shekuló","שַׁבָּת":"Shabat","וּמְנוּחָה":"umenujá","לְחַיֵּי":"lejayé","הָעוֹלָמִים":"ha'olamim","יְחַדֵּשׁ":"yejadesh","וְלִבְרָכָה":"velivrajá","הַשָּׁנָה":"hashaná","הַזֹּאת":"hazot","יָקִים":"yakim","סֻכַּת":"sucat","דָּוִיד":"David","הַנֹֹּּפָלֶת":"hanofálet","יְזַכֵּנוּ":"yezakenu","לִימוֹת":"limot","הַמָּשִׁיחַ":"haMashíaj","וּלְחַיֵּי":"ulejayé","מִגְדּוֹל":"Migdol","מַגְדִּיל":"Magdil","מַלְכּוֹ":"malkó","וְעֹשֶׂה":"ve'osé","חֶסֶד":"jésed","לִמְשִׁיחוֹ":"liMshijó","לְדָוִד":"leDavid","וּלְזַרְעוֹ":"ulzar'ó","עֹשֶׂה":"'osé","בִּמְרוֹמָיו":"bimromav","יַעֲשֶׂה":"ya'asé","וְאִמְרוּ":"veimrú","יְראוּ":"yirú","קְדֹשָׁיו":"kedoshav","מַחְסוֹר":"majsor","לִירֵאָיו":"lireav","כְּפִירִים":"kefirim","רָשׁוּ":"rashú","וְרָעֵבוּ":"vera'evú","וְדֹרְשֵׁי":"vedoreshé","יַחְסְרוּ":"yajserú","הַגֶּבֶר":"haguéver","יִבְטַח":"yivtaj","וְהָיָה":"vehayá","מִבְטַחוֹ":"mivtajó","נַעַר":"na'ar","הָיִיתִי":"hayíti","גַם":"gam","זָקַנְתִּי":"zakanti","רָאִיתִי":"raíti","צַדִּיק":"tsadik","נֶעֱזָב":"ne'ezav","וְזַרְעוֹ":"vezar'ó","מְבַקֶּשׁ":"mevakesh","לָחֶם":"lájem","עֹז":"'oz","לְעַמּוֹ":"le'amó","יִתֵּן":"yitén","עַמּוֹ":"'amó","בַשָּׁלוֹם":"vashalom","לַיְיָ":"laAd-nai","בַּיְיָ":"baAd-nai"},"c":{"וְ|עַל":"Ve)'al","הַזֶּה|כִּי":"Ki","מוֹדִים|לָךְ":"Laj","וְ|שֶׁאָכַלְנוּ":"ve)sheajalnu","עָשָׂר|הוּא":"hu","וְקָדוֹשׁ|הוּא":"hu","לִי|אוֹתָנוּ|1":"otanu","הָעֲצֶרֶת|הַזֶּה|1":"hazé","כֹּהֵן|גָּדוֹל":"Gadol","הוּא|יִתְבָּרַךְ":"yitbaraj","עַמְּךָ|בֵּית":"bet","אֶת|הַחֹדֶשׁ":"hajódesh","מַגְדִּיל|יְשׁוּעוֹת|1":"yeshu'ot"}},"sef":{"w":{"יְחָנֵּנוּ":"yejanenu","פָּנָיו":"Panav","וּלְאֻמִּים":"uleumim","נָתְנָה":"natná","יְבוּלָהּ":"yevuláh","יְבָרְכֵנוּ":"yevarejenu","אֲבָרְכָה":"avarejá","יְדַבֶּר":"yedaber","שֵׁם":"Shem","וָעֶד":"va'ed","יָהּ":"Yah","וַיְדַבֵּר":"vaydaber","לְמַלְכָּא":"leMalká","מַלְכָּא":"Malká","שַׁבָּת":"Shabat","וּבִּרְשׁוּת":"Ubirshut","בָּרוּךְ":"Baruj","מֶלֶךְ":"Mélej","הָאֵל":"haEl","חָסַר":"jásar","הוּא":"Hu","וְתוֹרָה":"veTorá","מֵאֶרֶץ":"meérets","בְּרִיתְךָ":"beritejá","תּוֹרָתְךָ":"Toratejá","שֶׁאַתָּה":"sheAtá","מַתִּתְיָה":"Matityá","כֹּהֵן":"Cohén","יָוָן":"Yaván","תּוֹרָתָךְ":"Torataj","וּלְהַעֲבִירָם":"uleha'aviram","תוֹרָתֶךָ":"Torateja","בָּאוּ":"bau","וּפִנּוּ":"ufinú","מִקְדָּשֶׁךָ":"Mikdasheja","קָדְשֶׁךָ":"kodsheja","חֲנֻכָּה":"Janucá","אֵלּוּ":"elu","וּבְהוֹדָאָה":"uvehodaá","עִמָּהֶם":"'imahem","לְשִׁמְךָ":"leShimjá","וְאֶסְתֵּר":"veEster","בְּשׁוּשַׁן":"beShushán","הַבִּירָה":"habirá","הָמָן":"Hamán","שְׁנֵים":"sheném","אֲדָר":"Adar","שְׁמָךְ":"Shemaj","נָתַן":"natán","הַבַּיִת":"habáyit","שִׁמְךָ":"Shimjá","אָבִינוּ":"Avinu","לְיָדְךָ":"leYadjá","הַמְּלֵאָה":"hameleá","שֶׁלּא":"sheló","לִמְקוֹמָהּ":"limkomáh","וּבְמִצְוַת":"uvemitsvat","הַשַׁבָּת":"haShabat","חֻקּי":"juké","אָתָּה":"Atá","וֵאלֹהֵי":"veElohé","זִכְרוֹנֵֽנוּ":"zijronenu","מָשִֽׁיחַ":"Mashíaj","הַחֹדֶשׁ":"Hajódesh","חַג":"Jag","הַמַּצוֹת":"Hamatsot","קוֹדֶשׁ":"kódesh","הַשָּׁבוּעוֹת":"Hashavu'ot","הַסֻּכּוֹת":"HaSucot","עֲצֶרֶת":"'Atséret","וּלְהוֹשִׁיעֵנוּ":"ulehoshi'enu","זָכְרֵנוּ":"zojrenu","וּפָקְדֵנוּ":"ufokdenu","בִדְבַר":"bidvar","וְחָנֵּנוּ":"vejanenu","אָמֵן":"Amén","מַלְכֵּנוּ":"Malkenu","אַדִּירֵנוּ":"Adirenu","בּוֹרְאֵנוּ":"Borenu","גּוֹאֲלֵנוּ":"Goalenu","קְדוֹשֵׁנוּ":"Kedoshenu","רוֹעֵנוּ":"Ro'enu","רוֹעֵה":"Ro'é","הַמֶּלֶךְ":"haMélej","בְבִזּוּי":"vevizui","בְּהֶתֵּר":"beheter","בְּנַחַת":"benájat","בְצָעַר":"vetsá'ar","שְׁלֵמָה":"shelemá","הַנֶּפֶשׁ":"hanefesh","יָדוֹ":"Yadó","וְאֶחָד":"veejad","בִּשְׁמוֹ":"biShmó","וְיַעֲקֹב":"veYa'akov","יִפְרוֹשׂ":"yifros","סֻכַּת":"sucat","שְׁלוֹמוֹ":"Shelomó","הַבָּאִים":"habaim","בְּסֻכַּת":"besucat","תּוֹרָתוֹ":"Torató","לְבִלְתִּי":"leviltí","וְיִהְיוּ":"Veyihyú","כְשֻׁלְחָנוֹ":"keshuljanó","וּלְעוֹלְמֵי":"ule'olmé","הַסְּעֻדָּה":"hase'udá","תִּרְצֶה":"tirtsé","וּנְכָסֵינוּ":"unejasenu","זְכָרִים":"zejarím","הַקָּדוֹשׁ":"Hakadosh","הַמָּשִׁיחַ":"haMashíaj","וּלְבִנְיַן":"ulevinyán","וּלְחַיֵּי":"ulejayé","מִגְדּוֹל":"Migdol","מַגְדִּיל":"Magdil","וְעֹשֶׂה":"ve'osé","לְדָוִד":"leDavid","הָיִיתִי":"hayíti","מְבַקֶּשׁ":"mevakesh","לְשָׂבְעָה":"lesov'á","וַיִּתֵּן":"vayitén","וַיֹּאכְלוּ":"vayojelú","וַיּוֹתִירוּ":"vayotiru","אַתֶּם":"atem","עַמּוֹ":"'amó","יַעֲשֶׂה":"ya'asé","אֶלָּא":"ela"},"c":{"עָשִׂיתָ|שֵׁם":"shem","קַדִּישִׁין|וּבִרְשׁוּת":"ubirshut","יִשְׁתֶּה|וְאַל|1":"veal","עָשָׂר|הוּא":"hu","וְקָדוֹשׁ|הוּא":"hu","הַזֹּאת|הוּא|1":"hu","קוֹדֶשׁ|הַזֶּה|1":"hazé","אַבְרָהָם|אָבִינוּ":"avinu","אֲבוֹתֵֽינוּ|זִכְרוֹן|1":"zijrón","אֶת|הַחֹדֶשׁ":"hajódesh","עוֹלָמִים|אָמֵן":"amén","הַבָּא|אָמֵן|1":"amén","מַגְדִּיל|יְשׁוּעוֹת|1":"yeshu'ot","כָּל|עַמּוֹ":"'amó"}}};
 const LABELS=[["המזמן אומר","Conductor"],["המסובים עונים","comensales"],["המזמן","conductor"],["המסובים","comensales"]];
 const HRUN=/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu;
 function grammaticalPronoun(token){
@@ -1818,6 +1840,17 @@ function stashLabels(s){
   const st=[]; for(const [h,p] of LABELS){ s=s.replaceAll(h,()=>{st.push(p);return "\uE000"+(st.length-1)+"\uE001";}); }
   return [s,st];
 }
+/* Igual que stashLabels, pero además devuelve el texto original con cada etiqueta tapada por caracteres privados
+   (mismo largo, así se conservan las posiciones) para poder ubicar cada palabra hebrea en la fonética. */
+function stashLabelsMasked(s){
+  const st=[]; let ms=s;
+  for(const [h,p] of LABELS){
+    const base=st.length; let k=0;
+    s=s.replaceAll(h,()=>{st.push(p);return "\uE000"+(st.length-1)+"\uE001";});
+    ms=ms.replaceAll(h,()=>String.fromCharCode(0xE100+((base+k++)%6000)).repeat(h.length));
+  }
+  return [s,st,ms];
+}
 // Reviewed ArtScroll Psalms: 13, 20, 23, 83, 91, 112, 120, 121, 126, 127, 130, 137, 142.
 // Match the entire pointed verse; never assume provenance from a meteg alone.
 // Unrelated uses of the same word and arbitrary meteg remain on normal fallback.
@@ -1986,12 +2019,29 @@ function applyVisualMarks(text,{meteg=false,rafe=false}={}){
   });
 }
 
-function phonetize(text){
+/* ¿La oración contiene una referencia a Hashem (Ad-nai, Elohim, o un sufijo -ךָ dirigido a Él)? Sirve para decidir Atá/VeAtá. */
+function sentenceAddressesHashem(s,idx){
+  let a=idx, b=idx;
+  while(a>0 && !/[.!?\n]/.test(s[a-1])) a--;
+  while(b<s.length && !/[.!?\n]/.test(s[b])) b++;
+  const seg=s.slice(a,b);
+  const words=seg.match(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)||[];
+  return words.some(w=>{
+    const bw=bareLetters(w);
+    if(/^[ולבמהשכ]*(?:יי|יהוה|אדני|אלהים|אלהינו|אלהי|אלהיך|אלהיכם)$/u.test(bw))return true;
+    return /\u05DA[\u05B0-\u05C7]*$/u.test(w);
+  });
+}
+function phonetize(text){ return phonetizeDetailed(text).out; }
+/* Devuelve la fonética y la correspondencia palabra a palabra hebreo ↔ fonética (items: {hs,he,os,oe}). */
+function phonetizeDetailed(text){
   let s=text.replace(/\u05BE/g,"-");
-  let st; [s,st]=stashLabels(s);
+  let st,ms; [s,st,ms]=stashLabelsMasked(s);
+  const hFrag=[...ms.matchAll(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)];
+  const items=[], labelSpans=new Map(); let wi=0;
   const reviewed=reviewedArtScrollTokens(s);
   let prev="", stop=true, out="";
-  let recentHebrew=[];
+  let recentHebrew=[], mergeYah=false;
   for(const m of s.matchAll(/([\u05D0-\u05EA\u0591-\u05C7\u200d]+)|([^\u05D0-\u05EA\u0591-\u05C7\u200d]+)/gu)){
     if(m[1]){
       const following=s.slice(m.index+m[0].length).match(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/u);
@@ -1999,6 +2049,17 @@ function phonetize(text){
       let piece=phoneWord(m[1],prev,stop,following?.[0],review);
       if(review?.spelling) piece=stop?capitalizeFirst(review.spelling):review.spelling;
       if(Number.isInteger(review?.stress)&&!review?.spelling)piece=confirmedArtScrollAccent(m[1],piece,review.stress,review.vocalSheva);
+      /* Atá referido a Hashem: la mayúscula va en la raíz (VeAtá, sheAtá). Se decide por el contexto de la oración, salvo en versículos revisados. */
+      if(!review && /^[ולבמהשכ]*אתה$/u.test(bareLetters(m[1])) && sentenceAddressesHashem(s,m.index)){
+        const k=[...bareLetters(m[1])].length-3;
+        piece=k>0 ? capitalizeAfterPrefix(piece,m[1],k) : capitalizeFirst(piece);
+      }
+      /* Templo: Bet haMikdash, haBáyit hagadol (el Templo que anhelamos va con mayúscula). */
+      if(!review){
+        const bb=bareLetters(m[1]), nb=following?bareLetters(following[0]):"";
+        if(/^[ולבמהשכ]*המקדש$/u.test(bb)){ const k=[...bb].length-4; piece=capitalizeAfterPrefix(piece,m[1],k); }
+        else if(/^[ולבמהשכ]*הבית$/u.test(bb) && /^(?:הגדול|והגדול)$/u.test(nb)){ const k=[...bb].length-3; piece=capitalizeAfterPrefix(piece,m[1],k); }
+      }
       if(review?.capital) piece=review.prefixLen ? capitalizeAfterPrefix(piece,m[1],review.prefixLen) : review.prefix ? review.prefix+piece.slice(review.prefix.length) : capitalizeFirst(piece);
       const bare=bareLetters(m[1]);
       const divineSpeech =
@@ -2010,21 +2071,66 @@ function phonetize(text){
       if(bare==='יה' && bareLetters(prev)==='הללו'){
         out=out.replace(/(?:hallú|halelú|halelu)\s*$/iu,m=>/^[A-Z]/.test(m)?'Halelu':'halelu');
         piece='Yah';
+        mergeYah=true;
       }
+      const os0=out.length;
       out+=piece;
+      {
+        const fr=hFrag[wi++];
+        if(fr){
+          const it={hs:fr.index,he:fr.index+fr[0].length,os:os0,oe:out.length};
+          if(mergeYah&&items.length){const pv=items[items.length-1];pv.oe=out.length;it.os=pv.os;mergeYah=false;}
+          items.push(it);
+        }
+      }
       recentHebrew.push(bare);
       if(recentHebrew.length>8) recentHebrew.shift();
       prev=m[1];
       stop=false;
     }
     else{
-      out+=m[2].replace(/\uE000(\d+)\uE001/g,(_,i)=>st[+i]);
+      {
+        let acc="", last=0; const seg=m[2];
+        for(const lm of seg.matchAll(/\uE000(\d+)\uE001/g)){
+          acc+=seg.slice(last,lm.index); const a0=out.length+acc.length; acc+=st[+lm[1]];
+          labelSpans.set(+lm[1],[a0,out.length+acc.length]); last=lm.index+lm[0].length;
+        }
+        acc+=seg.slice(last); out+=acc;
+      }
       if(/[.\n\u2013]/.test(m[2])) stop=true;
       if(/[.!?\n]/.test(m[2])) recentHebrew=[];
     }
   }
-  out=out.replace(/[ \t]+/g," ").replace(/ *\n */g,"\n");
-  return editorialCaps(out);
+  /* Colapsa espacios llevando la cuenta de las posiciones. */
+  let map=null;
+  const collapse=(str,re,rep)=>{
+    let res="", mp=new Array(str.length+1), last=0;
+    for(const mm of str.matchAll(re)){
+      for(let q=last;q<mm.index;q++)mp[q]=res.length+(q-last);
+      res+=str.slice(last,mm.index); const r0=res.length;
+      for(let q=mm.index;q<=mm.index+mm[0].length&&q<=str.length;q++)mp[q]=r0;
+      res+=rep; last=mm.index+mm[0].length; mp[last]=res.length;
+    }
+    for(let q=last;q<=str.length;q++)mp[q]=res.length+(q-last);
+    res+=str.slice(last);
+    return [res,mp];
+  };
+  let c1,m1,c2,m2;
+  [c1,m1]=collapse(out,/[ \t]+/g," "); [c2,m2]=collapse(c1,/ *\n */g,"\n");
+  const result=editorialCaps(c2);
+  const ok=result.length===c2.length;
+  const mapPos=x=>m2[m1[x]];
+  const fin=[];
+  if(ok){
+    for(const it of items)fin.push({hs:it.hs,he:it.he,os:mapPos(it.os),oe:mapPos(it.oe)});
+    /* Etiquetas: cada una cubre las posiciones hebreas tapadas con su carácter privado. */
+    for(const [idx,[a,b]] of labelSpans){
+      const ch=String.fromCharCode(0xE100+(idx%6000)); const hs=ms.indexOf(ch), he=ms.lastIndexOf(ch)+1;
+      if(hs>=0)fin.push({hs,he,os:mapPos(a),oe:mapPos(b),label:true});
+    }
+    fin.sort((x,y)=>x.hs-y.hs);
+  }
+  return {out:result,items:ok?fin:[]};
 }
 /* Nakdan SOLO para palabras sin niqqud */
 /*
@@ -2196,6 +2302,7 @@ function renderNakdanChoice(choice,currentWord){
       const h=$("hebrew"),r=hebrewWordRanges(h.value)[choice.wordIndex];if(!r)return;
       let selected;
       try{selected=preserveReadingMarks(r.text,opt.text);}catch(error){$("nakdanStatus").textContent=error.message;$("nakdanStatus").className="status warn";return;}
+      snapHebrew();
       h.value=h.value.slice(0,r.start)+selected+h.value.slice(r.end);
       choice.chosen=selected;
       if(lastWordState[choice.wordIndex]){
@@ -2226,7 +2333,7 @@ function showNakdanChoicesForCaret(){
 function syncScrollPair(a,b){
   let lock=false;
   const sync=(from,to)=>{
-    if(lock) return;
+    if(lock||syncMute) return;
     lock=true;
     const fromMax=Math.max(1,from.scrollHeight-from.clientHeight);
     const toMax=Math.max(0,to.scrollHeight-to.clientHeight);
@@ -2243,6 +2350,7 @@ window.addEventListener("DOMContentLoaded",()=>{
   if(h){h.addEventListener("click",showNakdanChoicesForCaret);h.addEventListener("keyup",showNakdanChoicesForCaret);h.addEventListener("select",showNakdanChoicesForCaret);}
 });
 function invalidateRun(){
+  hlClear();
   runId++;clearTimeout(debounceTimer);activeNakdanController?.abort();
   lastNakdanChoices=[];hideNakdanChoices();
   $("output").value="";$("copy").disabled=true;
@@ -2256,6 +2364,7 @@ async function run(){
   invalidateRun();
   const id=runId,h=$("hebrew"),input=h.value;
   const ns=$("nakdanStatus"),ms=$("motorStatus");
+  const skipNakdan=noNakdanOnce; noNakdanOnce=false;
   if(!input.trim()){
     $("output").value="";lastRenderedHebrew="";lastWordState=[];lastNakdanChoices=[];hideNakdanChoices();
     ns.textContent="Listo.";ns.className="status";ms.textContent="Motor listo.";ms.className="status";return;
@@ -2266,18 +2375,18 @@ async function run(){
   let text=input,warn=false;
   const need=hasUnpointedWords(sourceForNakdan);
 
-  if(need&&automaticNikudEnabled()){
+  if(need&&automaticNikudEnabled()&&!skipNakdan){
     const genreLabel={modern:"Moderno",rabbinic:"Rabínico",poetry:"Zemirot / Piyutim"}[selectedNakdanGenre()];
     ns.textContent="Vocalizando con Nakdan ("+genreLabel+") con el contexto actualizado…";ns.className="status";
     try{
       const r=await vocalizeUnpointed(sourceForNakdan);
       if(id!==runId) return;
-      text=r.text;h.value=text;lastNakdanChoices=r.choices||[];
+      text=r.text;snapHebrew();h.value=text;lastNakdanChoices=r.choices||[];
       lastWordState=buildWordStateAfterRun(sourceForNakdan,text,currentState);
       lastRenderedHebrew=text;hideNakdanChoices();
       ns.textContent="Nakdan vocalizó/revisó "+r.count+" palabra(s)"+
         (lastNakdanChoices.length?" · alternativas en "+lastNakdanChoices.length+" palabra(s): hacé clic en una para revisarlas.":"")+
-        ". El niqqud automático queda provisional; el tuyo y tus elecciones quedan fijos.";
+        ". El niqqud automático queda provisional; el tuyo y tus elecciones quedan fijos. Debajo ves cuáles son y podés tocarlas.";
       warn=hasUnpointedWords(text);
       ns.className="status "+(warn?"warn":"ok");
     }catch(e){
@@ -2296,13 +2405,14 @@ async function run(){
     // Meteg y rafe sobre el mismo texto: no cambian la fonética (applyVisualMarks lo garantiza palabra por palabra).
     const marked=applyVisualMarks(text,{meteg:$("showMeteg").checked,rafe:$("showRafe").checked});
     if(marked!==text){
-      const prev=lastRenderedHebrew;text=marked;h.value=text;
+      const prev=lastRenderedHebrew;text=marked;snapHebrew();h.value=text;
       const nw=text.match(HRUN)||[];
       lastWordState=nw.length===lastWordState.length?lastWordState.map((st,i)=>({...st,renderedWord:nw[i]})):reconcileWordState(prev,lastWordState,text);
       lastRenderedHebrew=text;
     }
   }
   $("output").value=phonetize(text);$("copy").disabled=!$("output").value;
+  hlClear();renderNakdanWords();
   const pending=[...reviewedArtScrollTokens(text).values()].filter(x=>x.reviewRequired).length;
   ms.textContent=warn?"Fonética parcial: hay palabras sin nikud; revisalas antes de copiar.":pending?"Se conservaron "+pending+" lectura(s) guardada(s) que requieren cotejo de shevá con ArtScroll.":"Fonética generada (Sefaradí).";
   ms.className="status "+((warn||pending)?"warn":"ok");
@@ -2340,6 +2450,7 @@ $("pasteHebrew").addEventListener("click",async()=>{
     const text=await navigator.clipboard.readText();
     if(clipboardRequestId!==runId||!text) return;
     runId++;
+    snapHebrew();
     $("hebrew").value=text;
     lastRenderedHebrew="";lastWordState=[];lastNakdanChoices=[];hideNakdanChoices();
     clearTimeout(debounceTimer);
@@ -2358,7 +2469,190 @@ $("showRafe").addEventListener("change",()=>run());
 $("nakdanGenre").addEventListener("change",()=>run());
 $("autoNikud").addEventListener("change",()=>run());
 
-$("clear").addEventListener("click",()=>{invalidateRun();lastNakdanChoices=[];lastWordState=[];lastRenderedHebrew="";hideNakdanChoices();$("hebrew").value="";$("output").value="";$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
+$("clear").addEventListener("click",()=>{snapHebrew();invalidateRun();lastNakdanChoices=[];lastWordState=[];lastRenderedHebrew="";hideNakdanChoices();$("hebrew").value="";$("output").value="";$("nakdanStatus").textContent="Listo.";$("nakdanStatus").className="status";$("motorStatus").textContent="Motor listo.";$("motorStatus").className="status";$("hebrew").focus();});
+
+/* ============================================================
+   Deshacer / rehacer del texto hebreo (Ctrl+Z, Ctrl+Y)
+   El textarea pierde su historial nativo cada vez que el programa
+   reescribe el valor (Nakdan, meteg/rafe, pegar, limpiar), así que
+   se lleva un historial propio.
+   ============================================================ */
+let noNakdanOnce=false, histRestoring=false, lastTypeSnap=0;
+const histUndo=[], histRedo=[];
+function snapHebrew(){
+  if(histRestoring)return;
+  const h=$("hebrew"); if(!h)return;
+  const v=h.value;
+  if(histUndo[histUndo.length-1]!==v){histUndo.push(v);if(histUndo.length>300)histUndo.shift();}
+  histRedo.length=0;
+  updateHistButtons();
+}
+function updateHistButtons(){
+  const u=$("undoBtn"),r=$("redoBtn"); if(u)u.disabled=!histUndo.length; if(r)r.disabled=!histRedo.length;
+}
+function restoreHebrew(v){
+  const h=$("hebrew"); histRestoring=true;
+  try{
+    invalidateRun(); h.value=v;
+    lastRenderedHebrew="";lastWordState=[];lastNakdanChoices=[];hideNakdanChoices();
+    noNakdanOnce=true; clearTimeout(debounceTimer);
+    Promise.resolve(run()).finally(()=>{histRestoring=false;updateHistButtons();});
+  }catch(e){histRestoring=false;}
+}
+function undoHebrew(){
+  const h=$("hebrew"),cur=h.value;
+  while(histUndo.length&&histUndo[histUndo.length-1]===cur)histUndo.pop();
+  if(!histUndo.length){updateHistButtons();return;}
+  histRedo.push(cur); restoreHebrew(histUndo.pop());
+}
+function redoHebrew(){
+  if(!histRedo.length)return;
+  const h=$("hebrew"); histUndo.push(h.value); restoreHebrew(histRedo.pop());
+}
+
+/* ============================================================
+   Resaltado palabra por palabra: hebreo ↔ fonética
+   ============================================================ */
+function makeHighlighter(ta){
+  const wrap=document.createElement("div"); wrap.className="hl-wrap";
+  ta.parentNode.insertBefore(wrap,ta);
+  const back=document.createElement("div"); back.className="hl-back"; back.setAttribute("aria-hidden","true");
+  wrap.appendChild(back); wrap.appendChild(ta);
+  const hl={ta,back,range:null};
+  hl.layout=()=>{
+    const cs=getComputedStyle(ta);
+    Object.assign(back.style,{left:ta.clientLeft+"px",top:ta.clientTop+"px",width:ta.clientWidth+"px",height:ta.clientHeight+"px",
+      padding:cs.padding,font:cs.font,lineHeight:cs.lineHeight,direction:cs.direction,textAlign:cs.textAlign,letterSpacing:cs.letterSpacing,tabSize:cs.tabSize});
+    back.scrollTop=ta.scrollTop;
+  };
+  hl.render=()=>{
+    back.replaceChildren();
+    const v=ta.value, r=hl.range;
+    if(!r||r[0]>=r[1]||r[1]>v.length){back.appendChild(document.createTextNode(v));}
+    else{
+      back.appendChild(document.createTextNode(v.slice(0,r[0])));
+      const mk=document.createElement("mark"); mk.textContent=v.slice(r[0],r[1]); back.appendChild(mk);
+      back.appendChild(document.createTextNode(v.slice(r[1])));
+      hl.mark=mk;
+    }
+    hl.layout();
+  };
+  hl.set=(a,b,reveal)=>{
+    hl.range=(a==null)?null:[a,b]; hl.render();
+    if(reveal&&hl.mark&&hl.range){
+      const top=hl.mark.offsetTop, bot=top+hl.mark.offsetHeight, vis=ta.clientHeight;
+      if(top<ta.scrollTop+8||bot>ta.scrollTop+vis-8){
+        syncMute=true; ta.scrollTop=Math.max(0,top-vis/3); back.scrollTop=ta.scrollTop;
+        setTimeout(()=>{syncMute=false;},150);
+      }
+    }
+  };
+  ta.addEventListener("scroll",()=>{back.scrollTop=ta.scrollTop;},{passive:true});
+  if(window.ResizeObserver)new ResizeObserver(()=>hl.layout()).observe(ta);
+  window.addEventListener("resize",hl.layout);
+  hl.render();
+  return hl;
+}
+let syncMute=false, hlHeb=null, hlOut=null, mapCache={text:null,res:null}, pairBusy=false;
+function hlClear(){ if(hlHeb)hlHeb.set(null); if(hlOut)hlOut.set(null); }
+function wordMap(){
+  const t=$("hebrew").value;
+  if(mapCache.text!==t){ let res=null; try{res=phonetizeDetailed(t);}catch(e){} mapCache={text:t,res}; }
+  const r=mapCache.res;
+  return (r&&r.out===$("output").value&&r.items.length)?r:null;
+}
+/* Palabras hebreas que toca la selección [p0,p1] (o el cursor). */
+function hebrewWordsAt(text,p0,p1){
+  const ws=hebrewWordRanges(text);
+  if(p0===p1){
+    const w=ws.find(x=>p0>x.start&&p0<=x.end)||ws.find(x=>p0===x.start);
+    return w?[w]:[];
+  }
+  return ws.filter(x=>x.end>p0&&x.start<p1);
+}
+function pairFromHebrew(reveal){
+  if(pairBusy)return; const h=$("hebrew"), map=wordMap(); if(!map||!hlHeb)return;
+  const ws=hebrewWordsAt(h.value,h.selectionStart,h.selectionEnd);
+  if(!ws.length){hlHeb.set(null);hlOut.set(null);return;}
+  const a=ws[0].start,b=ws[ws.length-1].end;
+  const its=map.items.filter(x=>x.hs<b&&x.he>a);
+  hlHeb.set(a,b,reveal);
+  if(its.length)hlOut.set(Math.min(...its.map(x=>x.os)),Math.max(...its.map(x=>x.oe)),true); else hlOut.set(null);
+}
+function pairFromOutput(){
+  const o=$("output"), map=wordMap(); if(!map||!hlOut)return;
+  const p0=o.selectionStart,p1=o.selectionEnd;
+  let its;
+  if(p0===p1) its=map.items.filter(x=>p0>x.os&&p0<=x.oe).slice(0,1).concat(map.items.filter(x=>p0===x.os&&p0===x.oe));
+  else its=map.items.filter(x=>x.oe>p0&&x.os<p1);
+  if(!its.length){hlHeb.set(null);hlOut.set(null);return;}
+  const os=Math.min(...its.map(x=>x.os)),oe=Math.max(...its.map(x=>x.oe));
+  const ws=hebrewWordRanges($("hebrew").value).filter(w=>its.some(x=>x.hs<w.end&&x.he>w.start));
+  hlOut.set(os,oe,false);
+  if(ws.length)hlHeb.set(ws[0].start,ws[ws.length-1].end,true); else hlHeb.set(null);
+}
+/* Lista de palabras que vocalizó Nakdan: clic para ubicarlas en hebreo y fonética. */
+function renderNakdanWords(){
+  const box=$("nakdanWords"); if(!box)return;
+  const ws=(lastWordState||[]).map((st,i)=>({st,i})).filter(x=>x.st&&x.st.origin==="nakdan");
+  if(!ws.length){box.hidden=true;box.replaceChildren();return;}
+  const h=$("hebrew"), ranges=hebrewWordRanges(h.value), map=wordMap(), out=$("output").value;
+  box.replaceChildren(); box.hidden=false;
+  const head=document.createElement("div"); head.className="nw-head";
+  head.textContent="Palabras que puso o revisó Nakdan ("+ws.length+"). Tocá una para verla en el hebreo y en la fonética. Las marcadas con borde dorado tienen otras lecturas posibles.";
+  const list=document.createElement("div"); list.className="nw-list";
+  const alts=new Set((lastNakdanChoices||[]).map(c=>c.wordIndex));
+  for(const {i} of ws){
+    const r=ranges[i]; if(!r)continue;
+    const b=document.createElement("button"); b.type="button"; b.className="nw"+(alts.has(i)?" alt":"");
+    const he=document.createElement("span"); he.className="nw-he"; he.textContent=r.text;
+    const ph=document.createElement("span"); ph.className="nw-ph";
+    const its=map?map.items.filter(x=>x.hs<r.end&&x.he>r.start):[];
+    ph.textContent=its.length?out.slice(Math.min(...its.map(x=>x.os)),Math.max(...its.map(x=>x.oe))):"";
+    b.appendChild(he); b.appendChild(ph);
+    b.addEventListener("click",()=>{
+      const rr=hebrewWordRanges(h.value)[i]; if(!rr)return;
+      h.focus({preventScroll:true}); h.setSelectionRange(rr.start,rr.end);
+      pairFromHebrew(true); showNakdanChoicesForCaret();
+    });
+    list.appendChild(b);
+  }
+  box.appendChild(head); box.appendChild(list);
+}
+window.addEventListener("DOMContentLoaded",()=>{
+  const h=$("hebrew"), o=$("output");
+  hlHeb=makeHighlighter(h); hlOut=makeHighlighter(o);
+  let raf=0;
+  document.addEventListener("selectionchange",()=>{
+    const a=document.activeElement;
+    if(a!==h&&a!==o)return;
+    cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(()=>{ if(a===h)pairFromHebrew(false); else pairFromOutput(); });
+  });
+  h.addEventListener("click",()=>pairFromHebrew(false));
+  o.addEventListener("click",()=>pairFromOutput());
+  h.addEventListener("input",()=>{hlClear();});
+  /* Historial */
+  h.addEventListener("beforeinput",e=>{
+    if(histRestoring)return;
+    const t=e.inputType||"";
+    if(t==="historyUndo"){e.preventDefault();undoHebrew();return;}
+    if(t==="historyRedo"){e.preventDefault();redoHebrew();return;}
+    const now=Date.now();
+    if(now-lastTypeSnap>800||/^delete|^insertFromPaste|^insertFromDrop|^insertReplacement/.test(t))snapHebrew();
+    lastTypeSnap=now;
+  });
+  document.addEventListener("keydown",e=>{
+    if(!(e.ctrlKey||e.metaKey)||e.altKey)return;
+    const k=e.key.toLowerCase(), t=e.target, tag=t&&t.tagName;
+    if(tag==="INPUT"||tag==="SELECT"||(tag==="TEXTAREA"&&t!==h&&t!==o))return;
+    if(k==="z"&&!e.shiftKey){e.preventDefault();undoHebrew();}
+    else if(k==="y"||(k==="z"&&e.shiftKey)){e.preventDefault();redoHebrew();}
+  });
+  $("undoBtn").addEventListener("click",()=>{undoHebrew();h.focus();});
+  $("redoBtn").addEventListener("click",()=>{redoHebrew();h.focus();});
+  updateHistButtons();
+});
 </script>
 </body>
 </html>
