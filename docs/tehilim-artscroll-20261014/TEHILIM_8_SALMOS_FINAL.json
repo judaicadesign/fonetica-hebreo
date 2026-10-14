@@ -1,0 +1,738 @@
+{
+ "11": [
+  {
+   "verse": 1,
+   "label": "א",
+   "hebreo_final": "לַמְֿנַצֵּֽחַ לְדָוִד; בַּיְיָ חָסִֽיתִי, אֵיךְ תֹּאמְֿרוּ לְנַפְשִׁי, נוּֽדִי הַרְכֶם צִפּוֹר.",
+   "hebreo_anterior": "לַמְנַצֵּֽחַ לְדָוִד בַּיהֹוָה חָסִֽיתִי אֵיךְ תֹּאמְרוּ לְנַפְשִׁי נוּֽדִי הַרְכֶם צִפּוֹר.",
+   "fonetica_generada": "Lamenatséaj leDavid; baAd-nai jasiti, ej tomerú lenafshí, nudi harjem tsipor.",
+   "fonetica_anterior": "Lamenatséaj leDavid baAd-nai jasiti ej tomerú lenafshí nudi harjem tsipor."
+  },
+  {
+   "verse": 2,
+   "label": "ב",
+   "hebreo_final": "כִּי הִנֵּה הָרְֿשָׁעִים יִדְרְֿכוּן קֶֽשֶׁת, כּוֹנְֿנוּ חִצָּם עַל יֶֽתֶר, לִירוֹת בְּמוֹ אֹֽפֶל לְיִשְׁרֵי לֵב.",
+   "hebreo_anterior": "כִּי הִנֵּה הָרְשָׁעִים יִדְרְכוּן קֶֽשֶׁת כּוֹנְנוּ חִצָּם עַל יֶֽתֶר לִירוֹת בְּמוֹ אֹֽפֶל לְיִשְׁרֵי לֵב.",
+   "fonetica_generada": "Ki hiné haresha'im yidrejún késhet, konenú jitsam 'al yéter, lirot bemó ófel leyisheré lev.",
+   "fonetica_anterior": "Ki hiné haresha'im yidrejún késhet konenú jitsam 'al yéter lirot bemó ófel leyisheré lev."
+  },
+  {
+   "verse": 3,
+   "label": "ג",
+   "hebreo_final": "כִּי הַשָּׁתוֹת יֵהָרֵסוּן, צַדִּיק מַה פָּעָל.",
+   "hebreo_anterior": "כִּי הַשָּׁתוֹת יֵהָרֵסוּן צַדִּיק מַה פָּעָל.",
+   "fonetica_generada": "Ki hashatot yeharesún, tsadik ma pa'al.",
+   "fonetica_anterior": "Ki hashatot yeharesún tsadik ma pa'al."
+  },
+  {
+   "verse": 4,
+   "label": "ד",
+   "hebreo_final": "יְיָ בְּהֵיכַל קׇדְשׁוֹ, יְיָ בַּשָּׁמַֽיִם כִּסְאוֹ; עֵינָיו יֶחֱזוּ, עַפְעַפָּיו יִבְחֲנוּ בְּנֵי אָדָם.",
+   "hebreo_anterior": "יְיָ בְּהֵיכַל קׇדְשׁוֹ יְיָ בַּשָּׁמַֽיִם כִּסְאוֹ עֵינָיו יֶחֱזוּ עַפְעַפָּיו יִבְחֲנוּ בְּנֵי אָדָם.",
+   "fonetica_generada": "Ad-nai beHejal Kodshó, Ad-nai bashamáyim Kisó; 'Enav yejezú, 'Af'apav yivjanú bené adam.",
+   "fonetica_anterior": "Ad-nai behejal Kodshó Ad-nai bashamáyim Kisó 'Enav yejezú 'Af'apav yivjanú bené adam."
+  },
+  {
+   "verse": 5,
+   "label": "ה",
+   "hebreo_final": "יְיָ צַדִּיק יִבְחָן, וְרָשָׁע וְאֹהֵב חָמָס שָׂנְֿאָה נַפְשׁוֹ.",
+   "hebreo_anterior": "יְיָ צַדִּיק יִבְחָן וְרָשָׁע וְאֹהֵב חָמָס שָׂנְאָה נַפְשׁוֹ.",
+   "fonetica_generada": "Ad-nai tsadik yivján, verashá' veohev jamás saneá nafshó.",
+   "fonetica_anterior": "Ad-nai tsadik yivján verashá' veohev jamás saná Nafshó."
+  },
+  {
+   "verse": 6,
+   "label": "ו",
+   "hebreo_final": "יַמְטֵר עַל רְשָׁעִים פַּחִים; אֵשׁ וְגׇפְרִית וְרֽוּחַ זִלְעָפוֹת מְנָת כּוֹסָם.",
+   "hebreo_anterior": "יַמְטֵר עַל רְשָׁעִים פַּחִים אֵשׁ וְגׇפְרִית וְרוּחַ זִלְעָפוֹת מְנָת כּוֹסָם.",
+   "fonetica_generada": "Yamter 'al resha'im pajim; esh vegofrit verúaj zil'afot menat kosam.",
+   "fonetica_anterior": "Yamter 'al resha'im pajim esh vegofrit verúaj zil'afot menat kosam."
+  },
+  {
+   "verse": 7,
+   "label": "ז",
+   "hebreo_final": "כִּי צַדִּיק יְיָ, צְדָקוֹת אָהֵב, יָשָׁר יֶחֱזוּ פָנֵֽימוֹ.",
+   "hebreo_anterior": "כִּי צַדִּיק יְיָ צְדָקוֹת אָהֵב יָשָׁר יֶחֱזוּ פָנֵֽימוֹ.",
+   "fonetica_generada": "Ki tsadik Ad-nai, tsedakot ahev, yashar yejezú fanemo.",
+   "fonetica_anterior": "Ki tsadik Ad-nai tsedakot ahev yashar yejezú fanemo."
+  }
+ ],
+ "14": [
+  {
+   "verse": 1,
+   "label": "1",
+   "hebreo_final": "לַמְֿנַצֵּֽחַ לְדָוִד; אָמַר נָבָל בְּלִבּוֹ אֵין אֱלֹהִים, הִשְׁחִֽיתוּ הִתְעִֽיבוּ עֲלִילָה, אֵין עֹֽשֵׂה טוֹב.",
+   "hebreo_anterior": "לַמְנַצֵּֽחַ לְדָוִד; אָמַר נָבָל בְּלִבּוֹ אֵין אֱלֹהִים, הִשְׁחִֽיתוּ הִתְעִֽיבוּ עֲלִילָה, אֵין עֹֽשֵׂה טוֹב.",
+   "fonetica_generada": "Lamenatséaj leDavid; amar naval belibó en Elohim, hishjitu hit'ivu 'alilá, en 'ose tov.",
+   "fonetica_anterior": "Lamenatséaj leDavid; amar naval belibó en Elohim, hishjitu hit'ivu 'alilá, en 'ose tov."
+  },
+  {
+   "verse": 2,
+   "label": "2",
+   "hebreo_final": "יְיָ מִשָּׁמַֽיִם הִשְׁקִיף עַל בְּנֵי אָדָם, לִרְאוֹת הֲיֵשׁ מַשְׂכִּיל דֹּרֵשׁ אֶת אֱלֹהִים.",
+   "hebreo_anterior": "יְיָ מִשָּׁמַֽיִם הִשְׁקִיף עַל בְּנֵי אָדָם, לִרְאוֹת הֲיֵשׁ מַשְׂכִּיל דֹּרֵשׁ אֶת אֱלֹהִים.",
+   "fonetica_generada": "Ad-nai mishamáyim hishkif 'al bené adam, lirot hayesh maskil doresh et Elohim.",
+   "fonetica_anterior": "Ad-nai mishamáyim hishkif 'al bené adam, lirot hayesh maskil doresh et Elohim."
+  },
+  {
+   "verse": 3,
+   "label": "3",
+   "hebreo_final": "הַכֹּל סָר, יַחְדָּו נֶאֱלָֽחוּ; אֵין עֹֽשֵׂה טוֹב, אֵין גַּם אֶחָד.",
+   "hebreo_anterior": "הַכֹּל סָר, יַחְדָּו נֶאֱלָֽחוּ; אֵין עֹֽשֵׂה טוֹב, אֵין גַּם אֶחָד.",
+   "fonetica_generada": "Hakol sar, yajdav neelaju; en 'ose tov, en gam ejad.",
+   "fonetica_anterior": "Hakol sar, yajdav neelaju; en 'ose tov, en gam ejad."
+  },
+  {
+   "verse": 4,
+   "label": "4",
+   "hebreo_final": "הֲלֹא יָדְֿעוּ כׇּל פֹּֽעֲלֵי אָֽוֶן; אֹכְֿלֵי עַמִּי אָֽכְֿלוּ לֶֽחֶם, יְיָ לֹא קָרָאוּ.",
+   "hebreo_anterior": "הֲלֹא יָדְעוּ כׇּל פֹּֽעֲלֵי אָֽוֶן; אֹכְלֵי עַמִּי אָֽכְלוּ לֶֽחֶם, יְיָ לֹא קָרָאוּ.",
+   "fonetica_generada": "Haló yade'u kol pó'ale aven; ojelé 'amí ájelu léjem, Ad-nai lo karaú.",
+   "fonetica_anterior": "Haló yade'u kol pó'ale aven; ojelé 'amí ajlu léjem, Ad-nai lo karaú."
+  },
+  {
+   "verse": 5,
+   "label": "5",
+   "hebreo_final": "שָׁם פָּחֲדוּ פָֽחַד, כִּי אֱלֹהִים בְּדוֹר צַדִּיק.",
+   "hebreo_anterior": "שָׁם פָּחֲדוּ פָֽחַד, כִּי אֱלֹהִים בְּדוֹר צַדִּיק.",
+   "fonetica_generada": "Sham pajadú fájad, ki Elohim bedor tsadik.",
+   "fonetica_anterior": "Sham pajadú fájad, ki Elohim bedor tsadik."
+  },
+  {
+   "verse": 6,
+   "label": "6",
+   "hebreo_final": "עֲצַת עָנִי תָבִֽישׁוּ, כִּי יְיָ מַחְסֵֽהוּ.",
+   "hebreo_anterior": "עֲצַת עָנִי תָבִֽישׁוּ, כִּי יְיָ מַחְסֵֽהוּ.",
+   "fonetica_generada": "'Atsat 'aní tavishu, ki Ad-nai majsehu.",
+   "fonetica_anterior": "'Atsat 'aní tavishu, ki Ad-nai majsehu."
+  },
+  {
+   "verse": 7,
+   "label": "7",
+   "hebreo_final": "מִי יִתֵּן מִצִּיּוֹן יְשׁוּעַת יִשְׂרָאֵל; בְּשׁוּב יְיָ שְׁבוּת עַמּוֹ, יָגֵל יַעֲקֹב יִשְׂמַח יִשְׂרָאֵל.",
+   "hebreo_anterior": "מִי יִתֵּן מִצִּיּוֹן יְשׁוּעַת יִשְׂרָאֵל; בְּשׁוּב יְיָ שְׁבוּת עַמּוֹ, יָגֵל יַעֲקֹב יִשְׂמַח יִשְׂרָאֵל.",
+   "fonetica_generada": "Mi yitén miTsiyón yeshu'at Yisrael; beshuv Ad-nai shevut 'amó, yaguel Ya'akov yismaj Yisrael.",
+   "fonetica_anterior": "Mi yitén mitsiyón yeshu'at Yisrael; beshuv Ad-nai shevut 'Amó, yaguel Ya'akov yismaj Yisrael."
+  }
+ ],
+ "16": [
+  {
+   "verse": 1,
+   "label": "א",
+   "hebreo_final": "מִכְתָּם לְדָוִד, שׇׁמְרֵֽנִי אֵל כִּי חָסִֽיתִי בָךְ.",
+   "hebreo_anterior": "מִכְתָּם לְדָוִד שׇׁמְרֵֽנִי אֵל כִּי חָסִֽיתִי בָךְ.",
+   "fonetica_generada": "Mijtam leDavid, shomereni El ki jasiti Vaj.",
+   "fonetica_anterior": "Mijtam leDavid shomereni El ki jasiti Vaj."
+  },
+  {
+   "verse": 2,
+   "label": "ב",
+   "hebreo_final": "אָמַרְתְּ לַיְיָ, אֲדֹנָי אָֽתָּה, טוֹבָתִי בַּל עָלֶֽיךָ.",
+   "hebreo_anterior": "אָמַרְתְּ לַיהֹוָה אֲדֹנָי אָֽתָּה טוֹבָתִי בַּל עָלֶֽיךָ.",
+   "fonetica_generada": "Amart laAd-nai, Ad-nai Ata, tovatí bal 'Aleja.",
+   "fonetica_anterior": "Amart laAd-nai Ad-nai Ata tovatí bal 'Aleja."
+  },
+  {
+   "verse": 3,
+   "label": "ג",
+   "hebreo_final": "לִקְדוֹשִׁים אֲשֶׁר בָּאָֽרֶץ הֵֽמָּה, וְאַדִּירֵי כׇּל חֶפְצִי בָם.",
+   "hebreo_anterior": "לִקְדוֹשִׁים אֲשֶׁר בָּאָרֶץ הֵֽמָּה וְאַדִּירֵי כׇּל חֶפְצִי בָם.",
+   "fonetica_generada": "Likdoshim asher baárets hema, veadiré kol jeftsí vam.",
+   "fonetica_anterior": "Likdoshim asher baarets hema veadiré kol jeftsí vam."
+  },
+  {
+   "verse": 4,
+   "label": "ד",
+   "hebreo_final": "יִרְבּוּ עַצְּֿבוֹתָם אַחֵר מָהָֽרוּ; בַּל אַסִּיךְ נִסְכֵּיהֶם מִדָּם, וּבַל אֶשָּׂא אֶת שְׁמוֹתָם עַל שְׂפָתָי.",
+   "hebreo_anterior": "יִרְבּוּ עַצְּבוֹתָם אַחֵר מָהָֽרוּ בַּל אַסִּיךְ נִסְכֵּיהֶם מִדָּם וּבַל אֶשָּׂא אֶת שְׁמוֹתָם עַל שְׂפָתָי.",
+   "fonetica_generada": "Yirbú 'atsevotam ajer maharu; bal asij niskehem midam, uval esá et shemotam 'al sefatái.",
+   "fonetica_anterior": "Yirbú 'atsevotam ajer maharu bal asij niskehem midam uval esa et shemotam 'al sefatái."
+  },
+  {
+   "verse": 5,
+   "label": "ה",
+   "hebreo_final": "יְיָ מְנָת חֶלְקִי וְכוֹסִי, אַתָּה תּוֹמִיךְ גּוֹרָלִי.",
+   "hebreo_anterior": "יְהֹוָה מְנָת חֶלְקִי וְכוֹסִי אַתָּה תּוֹמִיךְ גּוֹרָלִי.",
+   "fonetica_generada": "Ad-nai menat jelkí vejosí, Atá tomij goralí.",
+   "fonetica_anterior": "Ad-nai menat jelkí vejosí Atá tomij goralí."
+  },
+  {
+   "verse": 6,
+   "label": "ו",
+   "hebreo_final": "חֲבָלִים נָֽפְֿלוּ לִי בַּנְּֿעִמִים, אַף נַחֲלָת שָׁפְֿרָה עָלָי.",
+   "hebreo_anterior": "חֲבָלִים נָֽפְלוּ לִי בַּנְּעִמִים אַף נַחֲלָת שָׁפְרָה עָלָי.",
+   "fonetica_generada": "Javalim náfelu li bane'imim, af najalat shaferá 'alái.",
+   "fonetica_anterior": "Javalim naflu li bane'imim af najalat shafrá 'alái."
+  },
+  {
+   "verse": 7,
+   "label": "ז",
+   "hebreo_final": "אֲבָרֵךְ אֶת יְיָ אֲשֶׁר יְעָצָֽנִי, אַף לֵילוֹת יִסְּֿרֽוּנִי כִלְיוֹתָי.",
+   "hebreo_anterior": "אֲבָרֵךְ אֶת יְהֹוָה אֲשֶׁר יְעָצָֽנִי אַף לֵילוֹת יִסְּרוּֽנִי כִלְיוֹתָי.",
+   "fonetica_generada": "Avarej et Ad-nai asher ye'atsani, af lelot yiseruni jilyotái.",
+   "fonetica_anterior": "Avarej et Ad-nai asher ye'atsani af lelot yiseruni jilyotái."
+  },
+  {
+   "verse": 8,
+   "label": "ח",
+   "hebreo_final": "שִׁוִּֽיתִי יְיָ לְנֶגְדִּי תָמִיד, כִּי מִימִינִי, בַּל אֶמּוֹט.",
+   "hebreo_anterior": "שִׁוִּֽיתִי יְהֹוָה לְנֶגְדִּי תָמִיד כִּי מִימִינִי בַּל אֶמּוֹט.",
+   "fonetica_generada": "Shiviti Ad-nai lenegdí tamid, ki miminí, bal emot.",
+   "fonetica_anterior": "Shiviti Ad-nai lenegdí tamid ki miminí bal emot."
+  },
+  {
+   "verse": 9,
+   "label": "ט",
+   "hebreo_final": "לָכֵן שָׂמַח לִבִּי וַיָּֽגֶל כְּבוֹדִי, אַף בְּשָׂרִי יִשְׁכֹּן לָבֶֽטַח.",
+   "hebreo_anterior": "לָכֵן שָׂמַח לִבִּי וַיָּגֶל כְּבוֹדִי אַף בְּשָׂרִי יִשְׁכֹּן לָבֶֽטַח.",
+   "fonetica_generada": "Lajén samaj libí vayáguel kevodí, af besarí yishkón lavétaj.",
+   "fonetica_anterior": "Lajén samaj libí vayáguel kevodí af besarí yishkón lavétaj."
+  },
+  {
+   "verse": 10,
+   "label": "י",
+   "hebreo_final": "כִּי לֹא תַעֲזֹב נַפְשִׁי לִשְׁאוֹל, לֹא תִתֵּן חֲסִידְֿךָ לִרְאוֹת שָֽׁחַת.",
+   "hebreo_anterior": "כִּי לֹא תַעֲזֹב נַפְשִׁי לִשְׁאוֹל לֹא תִתֵּן חֲסִידְךָ לִרְאוֹת שָֽׁחַת.",
+   "fonetica_generada": "Ki lo ta'azov nafshí liShol, lo titén jasideja lirot shájat.",
+   "fonetica_anterior": "Ki lo ta'azov nafshí lishol lo titén jasideja lirot shájat."
+  },
+  {
+   "verse": 11,
+   "label": "יא",
+   "hebreo_final": "תּוֹדִיעֵֽנִי אֹֽרַח חַיִּים, שֹֽׂבַע שְׂמָחוֹת אֶת פָּנֶֽיךָ, נְעִמוֹת בִּימִינְֿךָ נֶֽצַח.",
+   "hebreo_anterior": "תּוֹדִיעֵֽנִי אֹֽרַח חַיִּים שֹׂבַע שְׂמָחוֹת אֶת פָּנֶֽיךָ נְעִמוֹת בִּימִינְךָ נֶֽצַח.",
+   "fonetica_generada": "Todi'eni óraj jayim, sova' semajot et Paneja, ne'imot biMineja nétsaj.",
+   "fonetica_anterior": "Todi'eni óraj jayim sová' semajot et Paneja ne'imot Bimineja nétsaj."
+  }
+ ],
+ "63": [
+  {
+   "verse": 1,
+   "label": "א",
+   "hebreo_final": "מִזְמוֹר לְדָוִד, בִּהְיוֹתוֹ בְּמִדְבַּר יְהוּדָה.",
+   "hebreo_anterior": "מִזְמוֹר לְדָוִד בִּהְיוֹתוֹ בְּמִדְבַּר יְהוּדָה.",
+   "fonetica_generada": "Mizmor leDavid, bihyotó bemidbar Yehudá.",
+   "fonetica_anterior": "Mizmor leDavid bihyotó bemidbar yehudá."
+  },
+  {
+   "verse": 2,
+   "label": "ב",
+   "hebreo_final": "אֱלֹהִים אֵלִי ׀ אַתָּה, אֲשַׁחֲרֶֽךָּ; צָמְֿאָה לְךָ נַפְשִׁי, כָּמַהּ לְךָ בְשָׂרִי, בְּאֶֽרֶץ צִיָּה וְעָיֵף בְּלִי מָֽיִם.",
+   "hebreo_anterior": "אֱלֹהִים אֵלִי אַתָּה אֲשַׁחֲרֶךָּ צָמְאָה לְךָ נַפְשִׁי כָּמַהּ לְךָ בְשָׂרִי בְּאֶרֶץ צִיָּה וְעָיֵף בְּלִי מָיִם.",
+   "fonetica_generada": "Elohim elí Atá, ashajareka; tsameá Lejá nafshí, kamáh Lejá vesarí, beérets tsiyá ve'ayef belí máyim.",
+   "fonetica_anterior": "Elohim elí atá ashajareka tsamá lejá nafshí kamah lejá vesarí beerets tsiyá ve'ayef belí máyim."
+  },
+  {
+   "verse": 3,
+   "label": "ג",
+   "hebreo_final": "כֵּן בַּקֹּֽדֶשׁ חֲזִיתִֽךָ, לִרְאוֹת עֻזְּֿךָ וּכְבוֹדֶֽךָ.",
+   "hebreo_anterior": "כֵּן בַּקֹּדֶשׁ חֲזִיתִךָ לִרְאוֹת עֻזְּךָ וּכְבוֹדֶךָ.",
+   "fonetica_generada": "Ken bakódesh jazitija, lirot 'uzeja ujvodeja.",
+   "fonetica_anterior": "Ken bakódesh jazitija lirot 'uzjá ujvodeja."
+  },
+  {
+   "verse": 4,
+   "label": "ד",
+   "hebreo_final": "כִּי טוֹב חַסְדְּֿךָ מֵחַיִּים, שְׂפָתַי יְשַׁבְּֿחֽוּנְֿךָ.",
+   "hebreo_anterior": "כִּי טוֹב חַסְדְּךָ מֵחַיִּים שְׂפָתַי יְשַׁבְּחוּנְךָ.",
+   "fonetica_generada": "Ki tov jasdejá mejayim, sefatái yeshabejúneja.",
+   "fonetica_anterior": "Ki tov jasdejá mejayim sefatái yeshabejuneja."
+  },
+  {
+   "verse": 5,
+   "label": "ה",
+   "hebreo_final": "כֵּן אֲבָרֶכְֿךָ בְחַיָּי, בְּשִׁמְךָ אֶשָּׂא כַפָּי.",
+   "hebreo_anterior": "כֵּן אֲבָרֶכְךָ בְחַיָּי בְּשִׁמְךָ אֶשָּׂא כַפָּי.",
+   "fonetica_generada": "Ken avarejeja vejayái, beshimjá esá japái.",
+   "fonetica_anterior": "Ken avarejeja vejayái beshimjá esá japái."
+  },
+  {
+   "verse": 6,
+   "label": "ו",
+   "hebreo_final": "כְּמוֹ חֵֽלֶב וָדֶֽשֶׁן תִּשְׂבַּע נַפְשִׁי, וְשִׂפְתֵי רְנָנוֹת יְהַלֶּל פִּי.",
+   "hebreo_anterior": "כְּמוֹ חֵלֶב וָדֶשֶׁן תִּשְׂבַּע נַפְשִׁי וְשִׂפְתֵי רְנָנוֹת יְהַלֶּל פִּי.",
+   "fonetica_generada": "Kemó jélev vadeshen tisbá' nafshí, vesifté renanot yehálel pi.",
+   "fonetica_anterior": "Kemó jélev vadeshen tisbá' nafshí vesifté renanot yehálel pi."
+  },
+  {
+   "verse": 7,
+   "label": "ז",
+   "hebreo_final": "אִם זְכַרְתִּֽיךָ עַל יְצוּעָי, בְּאַשְׁמֻרוֹת אֶהְגֶּה בָּךְ.",
+   "hebreo_anterior": "אִם זְכַרְתִּיךָ עַל יְצוּעָי בְּאַשְׁמֻרוֹת אֶהְגֶּה בָּךְ.",
+   "fonetica_generada": "Im zejartija 'al yetsu'ái, beashmurot ehgué baj.",
+   "fonetica_anterior": "Im zejartija 'al yetsu'ái beashmurot ehgué baj."
+  },
+  {
+   "verse": 8,
+   "label": "ח",
+   "hebreo_final": "כִּי הָיִיתָ עֶזְרָֽתָה לִּי, וּבְצֵל כְּנָפֶֽיךָ אֲרַנֵּן.",
+   "hebreo_anterior": "כִּי הָיִיתָ עֶזְרָתָה לִּי וּבְצֵל כְּנָפֶיךָ אֲרַנֵּן.",
+   "fonetica_generada": "Ki hayita 'ezrata li, uvtsel kenafeja aranén.",
+   "fonetica_anterior": "Ki hayita 'ezrata li uvtsel kenafeja aranén."
+  },
+  {
+   "verse": 9,
+   "label": "ט",
+   "hebreo_final": "דָּבְֿקָה נַפְשִׁי אַחֲרֶֽיךָ, בִּי תָּמְֿכָה יְמִינֶֽךָ.",
+   "hebreo_anterior": "דָּבְקָה נַפְשִׁי אַחֲרֶיךָ בִּי תָּמְכָה יְמִינֶךָ.",
+   "fonetica_generada": "Daveká nafshí ajareja, bi tamejá yemineja.",
+   "fonetica_anterior": "Davká nafshí ajareja bi tamjá yemineja."
+  },
+  {
+   "verse": 10,
+   "label": "י",
+   "hebreo_final": "וְהֵֽמָּה לְשׁוֹאָה יְבַקְשׁוּ נַפְשִׁי, יָבֹֽאוּ בְּתַחְתִּיּוֹת הָאָֽרֶץ.",
+   "hebreo_anterior": "וְהֵמָּה לְשׁוֹאָה יְבַקְשׁוּ נַפְשִׁי יָבֹאוּ בְּתַחְתִּיּוֹת הָאָרֶץ.",
+   "fonetica_generada": "Vehema leshoá yevakshú nafshí, yavou betajtiyot haárets.",
+   "fonetica_anterior": "Vehemá leshoá yevakshú nafshí yavou betajtiyot haarets."
+  },
+  {
+   "verse": 11,
+   "label": "יא",
+   "hebreo_final": "יַגִּירֻֽהוּ עַל יְדֵי חָֽרֶב, מְנָת שֻׁעָלִים יִהְיוּ.",
+   "hebreo_anterior": "יַגִּירֻהוּ עַל יְדֵי חָרֶב מְנָת שֻׁעָלִים יִהְיוּ.",
+   "fonetica_generada": "Yaguiruhu 'al yedé járev, menat shu'alim yihyú.",
+   "fonetica_anterior": "Yaguiruhu 'al yedé járev menat shu'alim yihyú."
+  },
+  {
+   "verse": 12,
+   "label": "יב",
+   "hebreo_final": "וְהַמֶּֽלֶךְ יִשְׂמַח בֵּאלֹהִים; יִתְהַלֵּל כׇּל הַנִּשְׁבָּע בּוֹ, כִּי יִסָּכֵר פִּי דֽוֹבְֿרֵי שָֽׁקֶר.",
+   "hebreo_anterior": "וְהַמֶּלֶךְ יִשְׂמַח בֵּאלֹהִים יִתְהַלֵּל כׇּל הַנִּשְׁבָּע בּוֹ כִּי יִסָּכֵר פִּי דוֹבְרֵי שָׁקֶר.",
+   "fonetica_generada": "Vehamélej yismaj bElohim; yithalel kol hanishbá' bo, ki yisajer pi dóvere sháker.",
+   "fonetica_anterior": "Vehamélej yismaj beLohim yithalel kol hanishbá' bo ki yisajer pi dovré sháker."
+  }
+ ],
+ "76": [
+  {
+   "verse": 1,
+   "label": "א",
+   "hebreo_final": "לַמְֿנַצֵּֽחַ בִּנְגִינֹת, מִזְמוֹר לְאָסָף שִׁיר.",
+   "hebreo_anterior": "לַמְנַצֵּחַ בִּנְגִינֹת מִזְמוֹר לְאָסָף שִׁיר.",
+   "fonetica_generada": "Lamenatséaj binguinot, mizmor leasaf shir.",
+   "fonetica_anterior": "Lamenatséaj binguinot mizmor leasaf shir."
+  },
+  {
+   "verse": 2,
+   "label": "ב",
+   "hebreo_final": "נוֹדָע בִּיהוּדָה אֱלֹהִים, בְּיִשְׂרָאֵל גָּדוֹל שְׁמוֹ.",
+   "hebreo_anterior": "נוֹדָע בִּיהוּדָה אֱלֹהִים בְּיִשְׂרָאֵל גָּדוֹל שְׁמוֹ.",
+   "fonetica_generada": "Nodá' biHudá Elohim, beYisrael gadol shemó.",
+   "fonetica_anterior": "Nodá' bihudá Elohim beyisrael gadol shemó."
+  },
+  {
+   "verse": 3,
+   "label": "ג",
+   "hebreo_final": "וַיְהִי בְשָׁלֵם סוּכּוֹ, וּמְעוֹנָתוֹ בְצִיּוֹן.",
+   "hebreo_anterior": "וַיְהִי בְשָׁלֵם סוּכּוֹ וּמְעוֹנָתוֹ בְצִיּוֹן.",
+   "fonetica_generada": "Vaihí veshalem sukó, um'onató veTsiyón.",
+   "fonetica_anterior": "Vayehí veshalem sukó ume'onató vetsiyón."
+  },
+  {
+   "verse": 4,
+   "label": "ד",
+   "hebreo_final": "שָֽׁמָּה שִׁבַּר רִשְׁפֵי קָֽשֶׁת, מָגֵן וְחֶֽרֶב וּמִלְחָמָה סֶֽלָה.",
+   "hebreo_anterior": "שָׁמָּה שִׁבַּר רִשְׁפֵי קָשֶׁת מָגֵן וְחֶרֶב וּמִלְחָמָה סֶלָה.",
+   "fonetica_generada": "Shama shibar rishfé káshet, maguén vejérev umiljamá sela.",
+   "fonetica_anterior": "Shamá shibar rishfé káshet maguén vejérev umiljamá sela."
+  },
+  {
+   "verse": 5,
+   "label": "ה",
+   "hebreo_final": "נָאוֹר אַתָּה, אַדִּיר מֵֽהַרְֿרֵי טָֽרֶף.",
+   "hebreo_anterior": "נָאוֹר אַתָּה אַדִּיר מֵהַרְרֵי טָרֶף.",
+   "fonetica_generada": "Naor atá, adir méharere táref.",
+   "fonetica_anterior": "Naor atá adir meharré táref."
+  },
+  {
+   "verse": 6,
+   "label": "ו",
+   "hebreo_final": "אֶשְׁתּוֹלְֿלוּ אַבִּֽירֵי לֵב, נָמוּ שְׁנָתָם, וְלֹא מָצְֿאוּ כׇל אַנְשֵׁי חַֽיִל יְדֵיהֶם.",
+   "hebreo_anterior": "אֶשְׁתּוֹלְלוּ אַבִּירֵי לֵב נָמוּ שְׁנָתָם וְלֹא מָצְאוּ כׇל אַנְשֵׁי חַיִל יְדֵיהֶם.",
+   "fonetica_generada": "Eshtolelú abire lev, namu shenatam, veló matseú jol anshé jáyil yedehem.",
+   "fonetica_anterior": "Eshtolelú abiré lev namu shenatam veló matsú jol anshé jayil yedehem."
+  },
+  {
+   "verse": 7,
+   "label": "ז",
+   "hebreo_final": "מִגַּעֲרָֽתְֿךָ אֱלֹהֵי יַעֲקֹב, נִרְדָּם וְרֶֽכֶב וָסוּס.",
+   "hebreo_anterior": "מִגַּעֲרָתְךָ אֱלֹהֵי יַעֲקֹב נִרְדָּם וְרֶכֶב וָסוּס.",
+   "fonetica_generada": "Miga'aráteja Elohé Ya'akov, nirdam veréjev vasús.",
+   "fonetica_anterior": "Miga'arateja Elohé Ya'akov nirdam veréjev vasús."
+  },
+  {
+   "verse": 8,
+   "label": "ח",
+   "hebreo_final": "אַתָּה נֽוֹרָא ׀ אַֽתָּה, וּמִי יַעֲמֹד לְפָנֶֽיךָ מֵאָז אַפֶּֽךָ.",
+   "hebreo_anterior": "אַתָּה נוֹרָא אַתָּה וּמִי יַעֲמֹד לְפָנֶיךָ מֵאָז אַפֶּךָ.",
+   "fonetica_generada": "Atá nora Ata, umí ya'amod lefaneja meaz apeja.",
+   "fonetica_anterior": "Atá norá atá umí ya'amod lefaneja meaz apeja."
+  },
+  {
+   "verse": 9,
+   "label": "ט",
+   "hebreo_final": "מִשָּׁמַֽיִם הִשְׁמַֽעְתָּ דִּין, אֶֽרֶץ יָרְֿאָה וְשָׁקָֽטָה.",
+   "hebreo_anterior": "מִשָּׁמַיִם הִשְׁמַעְתָּ דִּין אֶרֶץ יָרְאָה וְשָׁקָטָה.",
+   "fonetica_generada": "Mishamáyim hishma'ta din, érets yareá veshakata.",
+   "fonetica_anterior": "Mishamáyim hishma'ta din erets yará veshakatá."
+  },
+  {
+   "verse": 10,
+   "label": "י",
+   "hebreo_final": "בְּקוּם לַמִּשְׁפָּט אֱלֹהִים, לְהוֹשִֽׁיעַ כׇּל עַנְוֵי אֶֽרֶץ סֶֽלָה.",
+   "hebreo_anterior": "בְּקוּם לַמִּשְׁפָּט אֱלֹהִים לְהוֹשִׁיעַ כׇּל עַנְוֵי אֶרֶץ סֶלָה.",
+   "fonetica_generada": "Bekum lamishpat Elohim, lehoshía' kol 'anvé érets sela.",
+   "fonetica_anterior": "Bekum lamishpat Elohim lehoshía' kol 'anvé erets sela."
+  },
+  {
+   "verse": 11,
+   "label": "יא",
+   "hebreo_final": "כִּי חֲמַת אָדָם תּוֹדֶֽךָּ, שְׁאֵרִית חֵמֹת תַּחְגֹּר.",
+   "hebreo_anterior": "כִּי חֲמַת אָדָם תּוֹדֶךָּ שְׁאֵרִית חֵמֹת תַּחְגֹּר.",
+   "fonetica_generada": "Ki jamat adam todeka, sheerit jemot tajgor.",
+   "fonetica_anterior": "Ki jamat adam todeka sheerit jemot tajgor."
+  },
+  {
+   "verse": 12,
+   "label": "יב",
+   "hebreo_final": "נִדְרוּ וְשַׁלְּֿמוּ לַיְיָ אֱלֹהֵיכֶם; כׇּל סְבִיבָיו, יֹבִֽילוּ שַׁי לַמּוֹרָא.",
+   "hebreo_anterior": "נִדְרוּ וְשַׁלְּמוּ לַיהֹוָה אֱלֹהֵיכֶם כׇּל סְבִיבָיו יֹבִילוּ שַׁי לַמּוֹרָא.",
+   "fonetica_generada": "Nidru veshalemu laAd-nai elohejem; kol sevivav, yovilu shay lamorá.",
+   "fonetica_anterior": "Nidru veshalemu laAd-nai elohejem kol sevivav yovilú shai lamorá."
+  },
+  {
+   "verse": 13,
+   "label": "יג",
+   "hebreo_final": "יִבְצֹר רֽוּחַ נְגִידִים, נוֹרָא לְמַלְכֵי אָֽרֶץ.",
+   "hebreo_anterior": "יִבְצֹר רוּחַ נְגִידִים נוֹרָא לְמַלְכֵי אָרֶץ.",
+   "fonetica_generada": "Yivtsor rúaj neguidim, norá lemaljé árets.",
+   "fonetica_anterior": "Yivtsor rúaj neguidim norá lemaljé arets."
+  }
+ ],
+ "83": [
+  {
+   "verse": 1,
+   "label": "א",
+   "hebreo_final": "שִׁיר מִזְמוֹר לְאָסָף.",
+   "hebreo_anterior": "שִׁיר מִזְמוֹר לְאָסָף.",
+   "fonetica_generada": "Shir mizmor leasaf.",
+   "fonetica_anterior": "Shir mizmor leasaf."
+  },
+  {
+   "verse": 2,
+   "label": "ב",
+   "hebreo_final": "אֱלֹהִים, אַל דֳּמִי לָךְ; אַל תֶּחֱרַשׁ וְאַל תִּשְׁקֹט, אֵל.",
+   "hebreo_anterior": "אֱלֹהִים אַל דֳּמִי לָךְ אַל תֶּחֱרַשׁ וְאַל תִּשְׁקֹט אֵל.",
+   "fonetica_generada": "Elohim, al domí Laj; al tejerash veal tishkot, El.",
+   "fonetica_anterior": "Elohim al domí laj al tejerash veal tishkot El."
+  },
+  {
+   "verse": 3,
+   "label": "ג",
+   "hebreo_final": "כִּי הִנֵּה אוֹיְֿבֶֽיךָ יֶהֱמָיוּן, וּמְשַׂנְאֶֽיךָ נָֽשְֿׂאוּ רֹאשׁ.",
+   "hebreo_anterior": "כִּי הִנֵּה אוֹיְבֶֽיךָ יֶהֱמָיוּן וּמְשַׂנְאֶֽיךָ נָשְׂאוּ רֹאשׁ.",
+   "fonetica_generada": "Ki hiné oyveja yehemayún, umsaneja nasú rosh.",
+   "fonetica_anterior": "Ki hiné Oyveja yehemayún uMesaneja nasú rosh."
+  },
+  {
+   "verse": 4,
+   "label": "ד",
+   "hebreo_final": "עַל עַמְּֿךָ יַעֲרִֽימוּ סוֹד, וְיִתְיָעֲצוּ עַל צְפוּנֶֽיךָ.",
+   "hebreo_anterior": "עַל עַמְּךָ יַעֲרִֽימוּ סוֹד וְיִתְיָעֲצוּ עַל צְפוּנֶיךָ.",
+   "fonetica_generada": "'Al 'amejá ya'arimu sod, veyitya'atsú 'al tsefuneja.",
+   "fonetica_anterior": "'Al 'Amejá ya'arimu sod veyitya'atsú 'al Tsefuneja."
+  },
+  {
+   "verse": 5,
+   "label": "ה",
+   "hebreo_final": "אָמְֿרוּ: לְכוּ וְנַכְחִידֵם מִגּוֹי, וְלֹא יִזָּכֵר שֵׁם יִשְׂרָאֵל עוֹד.",
+   "hebreo_anterior": "אָמְרוּ לְכוּ וְנַכְחִידֵם מִגּוֹי וְלֹא יִזָּכֵר שֵׁם יִשְׂרָאֵל עוֹד.",
+   "fonetica_generada": "Amrú: lejú venajjidem migó, veló yizajer Shem Yisrael 'od.",
+   "fonetica_anterior": "Amrú lejú venajjidem migó veló yizajer Shem Yisrael 'od."
+  },
+  {
+   "verse": 6,
+   "label": "ו",
+   "hebreo_final": "כִּי נוֹעֲצוּ לֵב יַחְדָּו, עָלֶֽיךָ בְּרִית יִכְרֹֽתוּ.",
+   "hebreo_anterior": "כִּי נוֹעֲצוּ לֵב יַחְדָּו עָלֶֽיךָ בְּרִית יִכְרֹֽתוּ.",
+   "fonetica_generada": "Ki no'atsú lev yajdav, 'Aleja berit yijrotu.",
+   "fonetica_anterior": "Ki no'atsú lev yajdav 'Aleja berit yijrotu."
+  },
+  {
+   "verse": 7,
+   "label": "ז",
+   "hebreo_final": "אׇהֳלֵי אֱדוֹם וְיִשְׁמְֿעֵאלִים, מוֹאָב וְהַגְרִים.",
+   "hebreo_anterior": "אׇהֳלֵי אֱדוֹם וְיִשְׁמְעֵאלִים מוֹאָב וְהַגְרִים.",
+   "fonetica_generada": "Oholé Edom veYishme'elim, Moav veHagrim.",
+   "fonetica_anterior": "Oholé Edom veyishme'elim moav vehagrim."
+  },
+  {
+   "verse": 8,
+   "label": "ח",
+   "hebreo_final": "גְּבָל וְעַמּוֹן וַעֲמָלֵק, פְּלֶֽשֶׁת עִם יֹֽשְֿׁבֵי צוֹר.",
+   "hebreo_anterior": "גְּבָל וְעַמּוֹן וַעֲמָלֵק פְּלֶֽשֶׁת עִם יֹֽשְׁבֵי צוֹר.",
+   "fonetica_generada": "Gueval ve'Amón va'Amalek, Peléshet 'im yósheve Tsor.",
+   "fonetica_anterior": "Gueval ve'amón va'amalek peléshet 'im yoshve tsor."
+  },
+  {
+   "verse": 9,
+   "label": "ט",
+   "hebreo_final": "גַּם אַשּׁוּר נִלְוָה עִמָּם, הָיוּ זְרֽוֹעַ לִבְנֵי לוֹט סֶֽלָה.",
+   "hebreo_anterior": "גַּם אַשּׁוּר נִלְוָה עִמָּם הָיוּ זְרֽוֹעַ לִבְנֵי לוֹט סֶֽלָה.",
+   "fonetica_generada": "Gam Ashur nilvá 'imam, hayú zeroa' livné Lot sela.",
+   "fonetica_anterior": "Gam ashur nilvá 'imam hayú zroa' livné lot sela."
+  },
+  {
+   "verse": 10,
+   "label": "י",
+   "hebreo_final": "עֲשֵׂה לָהֶם כְּמִדְיָן, כְּסִיסְֿרָא כְיָבִין בְּנַֽחַל קִישׁוֹן.",
+   "hebreo_anterior": "עֲשֵׂה לָהֶם כְּמִדְיָן כְּסִיסְרָא כְיָבִין בְּנַחַל קִישׁוֹן.",
+   "fonetica_generada": "'Asé lahem keMidyán, kEsiserá jeyavín benájal Kishón.",
+   "fonetica_anterior": "'Asé lahem kemidyán kesisrá jeyavín benajal kishón."
+  },
+  {
+   "verse": 11,
+   "label": "יא",
+   "hebreo_final": "נִשְׁמְֿדוּ בְעֵין דֹּאר, הָֽיוּ דֹֽמֶן לָאֲדָמָה.",
+   "hebreo_anterior": "נִשְׁמְדוּ בְעֵין דֹּאר הָֽיוּ דֹֽמֶן לָאֲדָמָה.",
+   "fonetica_generada": "Nishmedu ve'én dor, hayu domen laadamá.",
+   "fonetica_anterior": "Nishmedu ve'én dor hayu domen laadamá."
+  },
+  {
+   "verse": 12,
+   "label": "יב",
+   "hebreo_final": "שִׁיתֵֽמוֹ נְדִיבֵֽימוֹ כְּעֹרֵב וְכִזְאֵב, וּכְזֶֽבַח וּכְצַלְמֻנָּע כׇּל נְסִיכֵֽימוֹ.",
+   "hebreo_anterior": "שִׁיתֵֽמוֹ נְדִיבֵֽימוֹ כְּעֹרֵב וְכִזְאֵב וּכְזֶבַח וּכְצַלְמֻנָּע כׇּל נְסִיכֵֽימוֹ.",
+   "fonetica_generada": "Shitemo nedivemo ke'orev vejizev, ujzévaj ujtsalmuná' kol nesijemo.",
+   "fonetica_anterior": "Shitemo nedivemo ke'orev vejizev ujzévaj ujtsalmuná' kol nesijemo."
+  },
+  {
+   "verse": 13,
+   "label": "יג",
+   "hebreo_final": "אֲשֶׁר אָמְֿרוּ: נִֽירְֿשָׁה לָּֽנוּ, אֵת נְאוֹת אֱלֹהִים.",
+   "hebreo_anterior": "אֲשֶׁר אָמְרוּ נִֽירְשָׁה לָּֽנוּ אֵת נְאוֹת אֱלֹהִים.",
+   "fonetica_generada": "Asher amrú: níresha lanu, et neot Elohim.",
+   "fonetica_anterior": "Asher amrú nirsha lanu et neot Elohim."
+  },
+  {
+   "verse": 14,
+   "label": "יד",
+   "hebreo_final": "אֱלֹהַי, שִׁיתֵֽמוֹ כַגַּלְגַּל, כְּקַשׁ לִפְנֵי רֽוּחַ.",
+   "hebreo_anterior": "אֱלֹהַי שִׁיתֵֽמוֹ כַגַּלְגַּל כְּקַשׁ לִפְנֵי רֽוּחַ.",
+   "fonetica_generada": "Elohái, shitemo jagalgal, kekash lifné rúaj.",
+   "fonetica_anterior": "Elohái shitemo jagalgal kekash lifné rúaj."
+  },
+  {
+   "verse": 15,
+   "label": "טו",
+   "hebreo_final": "כְּאֵשׁ תִּבְעַר יָֽעַר, וּכְלֶהָבָה תְּלַהֵט הָרִים.",
+   "hebreo_anterior": "כְּאֵשׁ תִּבְעַר יָעַר וּכְלֶהָבָה תְּלַהֵט הָרִים.",
+   "fonetica_generada": "Keesh tiv'ar yá'ar, ujlehavá telahet harim.",
+   "fonetica_anterior": "Keesh tiv'ar ya'ar ujlehavá telahet harim."
+  },
+  {
+   "verse": 16,
+   "label": "טז",
+   "hebreo_final": "כֵּן תִּרְדְּֿפֵם בְּסַעֲרֶֽךָ, וּבְסוּפָתְֿךָ תְבַהֲלֵם.",
+   "hebreo_anterior": "כֵּן תִּרְדְּפֵם בְּסַעֲרֶֽךָ וּבְסוּפָתְךָ תְבַהֲלֵם.",
+   "fonetica_generada": "Ken tirdefem besa'areja, uvsufatejá tevahalem.",
+   "fonetica_anterior": "Ken tirdefem beSa'areja uvSufateja tevahalem."
+  },
+  {
+   "verse": 17,
+   "label": "יז",
+   "hebreo_final": "מַלֵּא פְנֵיהֶם קָלוֹן, וִיבַקְשׁוּ שִׁמְךָ יְיָ.",
+   "hebreo_anterior": "מַלֵּא פְנֵיהֶם קָלוֹן וִיבַקְשׁוּ שִׁמְךָ יְהֹוָה.",
+   "fonetica_generada": "Malé fenehem kalón, vivakshú Shimjá Ad-nai.",
+   "fonetica_anterior": "Malé fenehem kalón vivakshú Shimjá Ad-nai."
+  },
+  {
+   "verse": 18,
+   "label": "יח",
+   "hebreo_final": "יֵבֹֽשׁוּ וְיִבָּהֲלוּ עֲדֵי עַד, וְיַחְפְּֿרוּ וְיֹאבֵֽדוּ.",
+   "hebreo_anterior": "יֵבֹֽשׁוּ וְיִבָּהֲלוּ עֲדֵי עַד וְיַחְפְּרוּ וְיֹאבֵֽדוּ.",
+   "fonetica_generada": "Yevoshu veyibahalú 'adé 'ad, veyajperú veyovedu.",
+   "fonetica_anterior": "Yevoshu veyibahalú 'adé 'ad veyajperú veyovedu."
+  },
+  {
+   "verse": 19,
+   "label": "יט",
+   "hebreo_final": "וְיֵדְֿעוּ כִּי אַתָּה שִׁמְךָ יְיָ לְבַדֶּֽךָ, עֶלְיוֹן עַל כׇּל הָאָֽרֶץ.",
+   "hebreo_anterior": "וְיֵדְעוּ כִּי אַתָּה שִׁמְךָ יְהֹוָה לְבַדֶּֽךָ עֶלְיוֹן עַל כׇּל הָאָֽרֶץ.",
+   "fonetica_generada": "Veyed'ú ki Atá Shimjá Ad-nai levadeja, 'elyón 'al kol haárets.",
+   "fonetica_anterior": "Veyed'ú ki Atá Shimjá Ad-nai levadeja 'elyón 'al kol haarets."
+  }
+ ],
+ "84": [
+  {
+   "verse": 1,
+   "label": "א",
+   "hebreo_final": "לַמְֿנַצֵּֽחַ עַל הַגִּתִּית, לִבְנֵי קֹֽרַח מִזְמוֹר.",
+   "hebreo_anterior": "לַמְנַצֵּחַ עַל הַגִּתִּית לִבְנֵי קֹרַח מִזְמוֹר.",
+   "fonetica_generada": "Lamenatséaj 'al haguitit, livné Kóraj mizmor.",
+   "fonetica_anterior": "Lamenatséaj 'al haguitit livné Kóraj mizmor."
+  },
+  {
+   "verse": 2,
+   "label": "ב",
+   "hebreo_final": "מַה יְּדִידוֹת מִשְׁכְּֿנוֹתֶֽיךָ, יְיָ צְבָאוֹת.",
+   "hebreo_anterior": "מַה יְּדִידוֹת מִשְׁכְּנוֹתֶיךָ יְהֹוָה צְבָאוֹת.",
+   "fonetica_generada": "Ma yedidot mishkenoteja, Ad-nai tsevaot.",
+   "fonetica_anterior": "Ma yedidot mishkenoteja Ad-nai tsevaot."
+  },
+  {
+   "verse": 3,
+   "label": "ג",
+   "hebreo_final": "נִכְסְֿפָה וְגַם כָּלְֿתָה נַפְשִׁי לְחַצְרוֹת יְיָ; לִבִּי וּבְשָׂרִי יְרַנְּֿנוּ אֶל אֵל חָי.",
+   "hebreo_anterior": "נִכְסְפָה וְגַם כָּלְתָה נַפְשִׁי לְחַצְרוֹת יְהֹוָה לִבִּי וּבְשָׂרִי יְרַנְּנוּ אֶל אֵל חָי.",
+   "fonetica_generada": "Nijsefá vegam kaleta nafshí lejatsrot Ad-nai; libí uvsarí yeranenu el El jay.",
+   "fonetica_anterior": "Nijsefá vegam kalta nafshí lejatsrot Ad-nai libí uvsarí yeranenu el El jai."
+  },
+  {
+   "verse": 4,
+   "label": "ד",
+   "hebreo_final": "גַּם צִפּוֹר מָֽצְֿאָה בַֽיִת, וּדְרוֹר קֵן לָהּ אֲשֶׁר שָֽׁתָה אֶפְרֹחֶֽיהָ; אֶת מִזְבְּֿחוֹתֶֽיךָ יְיָ צְבָאוֹת, מַלְכִּי וֵאלֹהָי.",
+   "hebreo_anterior": "גַּם צִפּוֹר מָצְאָה בַיִת וּדְרוֹר קֵן לָהּ אֲשֶׁר שָׁתָה אֶפְרֹחֶיהָ אֶת מִזְבְּחוֹתֶיךָ יְהֹוָה צְבָאוֹת מַלְכִּי וֵאלֹהָי.",
+   "fonetica_generada": "Gam tsipor mátsea váyit, udror ken lah asher shata efrojeha; et mizbejoteja Ad-nai tsevaot, malkí vElohái.",
+   "fonetica_anterior": "Gam tsipor matsá vayit udror ken lah asher shata efrojehá et mizbejoteja Ad-nai tsevaot malkí veLohái."
+  },
+  {
+   "verse": 5,
+   "label": "ה",
+   "hebreo_final": "אַשְׁרֵי יוֹשְֿׁבֵי בֵיתֶֽךָ, עוֹד יְהַלְֿלֽוּךָ סֶּֽלָה.",
+   "hebreo_anterior": "אַשְׁרֵי יוֹשְׁבֵי בֵיתֶךָ עוֹד יְהַלְלוּךָ סֶּלָה.",
+   "fonetica_generada": "Ashré yoshevé veteja, 'od yehaleluja sela.",
+   "fonetica_anterior": "Ashré yoshvé veteja 'od yehalluja sela."
+  },
+  {
+   "verse": 6,
+   "label": "ו",
+   "hebreo_final": "אַשְׁרֵי אָדָם עוֹז לוֹ בָךְ, מְסִלּוֹת בִּלְבָבָם.",
+   "hebreo_anterior": "אַשְׁרֵי אָדָם עוֹז לוֹ בָךְ מְסִלּוֹת בִּלְבָבָם.",
+   "fonetica_generada": "Ashré adam 'oz lo vaj, mesilot bilvavam.",
+   "fonetica_anterior": "Ashré adam 'oz lo vaj mesilot bilvavam."
+  },
+  {
+   "verse": 7,
+   "label": "ז",
+   "hebreo_final": "עֹבְֿרֵי בְּעֵמֶֽק הַבָּכָא מַעְיָן יְשִׁיתֽוּהוּ, גַּם בְּרָכוֹת יַעְטֶה מוֹרֶה.",
+   "hebreo_anterior": "עֹבְרֵי בְּעֵמֶק הַבָּכָא מַעְיָן יְשִׁיתוּהוּ גַּם בְּרָכוֹת יַעְטֶה מוֹרֶה.",
+   "fonetica_generada": "'Overé be'émek habajá ma'yán yeshituhu, gam berajot ya'té moré.",
+   "fonetica_anterior": "'Ovré be'émek habajá ma'yán yeshituhu gam berajot ya'té moré."
+  },
+  {
+   "verse": 8,
+   "label": "ח",
+   "hebreo_final": "יֵלְֿכוּ מֵחַֽיִל אֶל חָֽיִל, יֵרָאֶה אֶל אֱלֹהִים בְּצִיּוֹן.",
+   "hebreo_anterior": "יֵלְכוּ מֵחַיִל אֶל חָיִל יֵרָאֶה אֶל אֱלֹהִים בְּצִיּוֹן.",
+   "fonetica_generada": "Yelejú mejáyil el jáyil, yeraé el Elohim beTsiyón.",
+   "fonetica_anterior": "Yeljú mejayil el jáyil yerae el Elohim betsiyón."
+  },
+  {
+   "verse": 9,
+   "label": "ט",
+   "hebreo_final": "יְיָ אֱלֹהִים צְבָאוֹת שִׁמְעָה תְפִלָּתִי, הַאֲזִֽינָה אֱלֹהֵי יַעֲקֹב סֶֽלָה.",
+   "hebreo_anterior": "יְהֹוָה אֱלֹהִים צְבָאוֹת שִׁמְעָה תְפִלָּתִי הַאֲזִינָה אֱלֹהֵי יַעֲקֹב סֶלָה.",
+   "fonetica_generada": "Ad-nai Elohim tsevaot shim'á tefilatí, haazina Elohé Ya'akov sela.",
+   "fonetica_anterior": "Ad-nai Elohim tsevaot shim'á tefilatí haazina Elohé Ya'akov sela."
+  },
+  {
+   "verse": 10,
+   "label": "י",
+   "hebreo_final": "מָגִנֵּֽנוּ רְאֵה, אֱלֹהִים; וְהַבֵּט פְּנֵי מְשִׁיחֶֽךָ.",
+   "hebreo_anterior": "מָגִנֵּנוּ רְאֵה אֱלֹהִים וְהַבֵּט פְּנֵי מְשִׁיחֶךָ.",
+   "fonetica_generada": "Maguinenu reé, Elohim; vehabet pené meshijeja.",
+   "fonetica_anterior": "Maguinenu reé Elohim vehabet pené meshijeja."
+  },
+  {
+   "verse": 11,
+   "label": "יא",
+   "hebreo_final": "כִּי טוֹב יוֹם בַּחֲצֵרֶֽיךָ מֵאָֽלֶף; בָּחַֽרְתִּי הִסְתּוֹפֵף בְּבֵית אֱלֹהַי, מִדּוּר בְּאׇֽהֳלֵי רֶֽשַׁע.",
+   "hebreo_anterior": "כִּי טוֹב יוֹם בַּחֲצֵרֶיךָ מֵאָלֶף בָּחַרְתִּי הִסְתּוֹפֵף בְּבֵית אֱלֹהַי מִדּוּר בְּאׇהֳלֵי רֶשַׁע.",
+   "fonetica_generada": "Ki tov yom bajatsereja meálef; bajarti histofef bevet Elohái, midur beóhole resha'.",
+   "fonetica_anterior": "Ki tov yom bajatsereja meálef bajarti histofef bevet Elohái midur beoholé resha'."
+  },
+  {
+   "verse": 12,
+   "label": "יב",
+   "hebreo_final": "כִּי שֶׁמֶֽשׁ וּמָגֵן יְיָ אֱלֹהִים; חֵן וְכָבוֹד יִתֵּן יְיָ, לֹא יִמְנַע טוֹב לַהֹלְֿכִים בְּתָמִים.",
+   "hebreo_anterior": "כִּי שֶׁמֶשׁ וּמָגֵן יְהֹוָה אֱלֹהִים חֵן וְכָבוֹד יִתֵּן יְהֹוָה לֹא יִמְנַע טוֹב לַהֹלְכִים בְּתָמִים.",
+   "fonetica_generada": "Ki shémesh umaguén Ad-nai Elohim; jen vejavod yitén Ad-nai, lo yimná' tov laholejim betamim.",
+   "fonetica_anterior": "Ki shémesh umaguén Ad-nai Elohim jen vejavod yitén Ad-nai lo yimná' tov laholjim betamim."
+  },
+  {
+   "verse": 13,
+   "label": "יג",
+   "hebreo_final": "יְיָ צְבָאוֹת, אַשְׁרֵי אָדָם בֹּטֵֽחַ בָּךְ.",
+   "hebreo_anterior": "יְהֹוָה צְבָאוֹת אַשְׁרֵי אָדָם בֹּטֵחַ בָּךְ.",
+   "fonetica_generada": "Ad-nai tsevaot, ashré adam botéaj Baj.",
+   "fonetica_anterior": "Ad-nai tsevaot ashré adam botéaj baj."
+  }
+ ],
+ "130": [
+  {
+   "verse": 1,
+   "label": "א",
+   "hebreo_final": "שִׁיר הַמַּעֲלוֹת; מִמַּעֲמַקִּים קְרָאתִֽיךָ, יְיָ.",
+   "hebreo_anterior": "שִׁיר הַמַּעֲלוֹת מִמַּעֲמַקִּים קְרָאתִֽיךָ יְהֹוָה.",
+   "fonetica_generada": "Shir hama'alot; mima'amakim keratija, Ad-nai.",
+   "fonetica_anterior": "Shir hama'alot mima'amakim keratija Ad-nai."
+  },
+  {
+   "verse": 2,
+   "label": "ב",
+   "hebreo_final": "אֲדֹנָי, שִׁמְעָה בְקוֹלִי, תִּהְיֶֽינָה אׇזְנֶֽיךָ קַשֻּׁבוֹת לְקוֹל תַּחֲנוּנָי.",
+   "hebreo_anterior": "אֲדֹנָי שִׁמְעָה בְקוֹלִי תִּהְיֶֽינָה אׇזְנֶֽיךָ קַשֻּׁבוֹת לְקוֹל תַּחֲנוּנָי.",
+   "fonetica_generada": "Ad-nai, shim'á vekolí, tihyena Ozneja kashuvot lekol tajanunái.",
+   "fonetica_anterior": "Ad-nai shim'á vekolí tihyena Ozneja kashuvot lekol tajanunái."
+  },
+  {
+   "verse": 3,
+   "label": "ג",
+   "hebreo_final": "אִם עֲוֺנוֹת תִּשְׁמׇר, יָהּ; אֲדֹנָי, מִי יַעֲמֹד.",
+   "hebreo_anterior": "אִם עֲוֺנוֹת תִּשְׁמׇר יָהּ אֲדֹנָי מִי יַעֲמֹד.",
+   "fonetica_generada": "Im 'avonot tishmor, Yah; Ad-nai, mi ya'amod.",
+   "fonetica_anterior": "Im 'avonot tishmor Yah Ad-nai mi ya'amod."
+  },
+  {
+   "verse": 4,
+   "label": "ד",
+   "hebreo_final": "כִּי עִמְּֿךָ הַסְּֿלִיחָה, לְמַֽעַן תִּוָּרֵא.",
+   "hebreo_anterior": "כִּי עִמְּךָ הַסְּלִיחָה לְמַֽעַן תִּוָּרֵא.",
+   "fonetica_generada": "Ki 'Imejá haselija, lema'an tivaré.",
+   "fonetica_anterior": "Ki 'Imejá haselija lema'an tivaré."
+  },
+  {
+   "verse": 5,
+   "label": "ה",
+   "hebreo_final": "קִוִּֽיתִי יְיָ, קִוְּֿתָה נַפְשִׁי, וְלִדְבָרוֹ הוֹחָֽלְתִּי.",
+   "hebreo_anterior": "קִוִּֽיתִי יְהֹוָה קִוְּתָה נַפְשִׁי וְלִדְבָרוֹ הוֹחָֽלְתִּי.",
+   "fonetica_generada": "Kiviti Ad-nai, kivetá nafshí, velidvaró hojalti.",
+   "fonetica_anterior": "Kiviti Ad-nai kivetá nafshí veLidvaró hojalti."
+  },
+  {
+   "verse": 6,
+   "label": "ו",
+   "hebreo_final": "נַפְשִׁי לַאדֹנָי, מִשֹּׁמְֿרִים לַבֹּֽקֶר, שֹׁמְֿרִים לַבֹּֽקֶר.",
+   "hebreo_anterior": "נַפְשִׁי לַאדֹנָי מִשֹּׁמְרִים לַבֹּֽקֶר שֹׁמְרִים לַבֹּֽקֶר.",
+   "fonetica_generada": "Nafshí laAd-nai, mishomerim labóker, shomerim labóker.",
+   "fonetica_anterior": "Nafshí laAd-nai mishomerim labóker shomerim labóker."
+  },
+  {
+   "verse": 7,
+   "label": "ז",
+   "hebreo_final": "יַחֵל יִשְׂרָאֵל אֶל יְיָ; כִּי עִם יְיָ הַחֶֽסֶד, וְהַרְבֵּה עִמּוֹ פְדוּת.",
+   "hebreo_anterior": "יַחֵל יִשְׂרָאֵל אֶל יְהֹוָה כִּי עִם יְהֹוָה הַחֶֽסֶד וְהַרְבֵּה עִמּוֹ פְדוּת.",
+   "fonetica_generada": "Yajel Yisrael el Ad-nai; ki 'im Ad-nai hajésed, veharbé 'Imó fedut.",
+   "fonetica_anterior": "Yajel Yisrael el Ad-nai ki 'im Ad-nai hajésed veharbé 'Imó fedut."
+  },
+  {
+   "verse": 8,
+   "label": "ח",
+   "hebreo_final": "וְהוּא יִפְדֶּה אֶת יִשְׂרָאֵל, מִכֹּל עֲוֹנוֹתָיו.",
+   "hebreo_anterior": "וְהוּא יִפְדֶּה אֶת יִשְׂרָאֵל מִכֹּל עֲוֺנֹתָיו.",
+   "fonetica_generada": "Vehú yifdé et Yisrael, mikol 'avonotav.",
+   "fonetica_anterior": "VeHu yifdé et Yisrael mikol 'avonotav."
+  }
+ ]
+}
