@@ -11,7 +11,7 @@ const a=vm.runInNewContext(stub+extractEngine(fs.readFileSync(new URL('../index.
 const plain=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
 for(const [w,e] of [['אֲבָרְכָה','avareja'],['וַאֲבָרְכָה','vaavareja'],['יְבָרְכֵנוּ','yevarejenu'],
   ['יְחָרְפֵנִי','yejarefeni'],['מְשָׁרְתָיו','mesharetav'],['מְבָרְכִים','mevarejim'],
-  ['בְּחָכְמָה','bejojma'],['יְכָלְתִּיו','yejaltiv']]){
+  ['בְּחָכְמָה','bejojma'],['יְכָלְתִּיו','yejoltiv']]){
   assert.equal(plain(a.rawTranslit(w)),e,w);
 }
 console.log('PASS: qamats tras prefijo verbal = vocal larga, shevá na (אֲבָרְכָה)');
