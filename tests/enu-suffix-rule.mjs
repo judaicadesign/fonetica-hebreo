@@ -14,7 +14,7 @@ for(const r of retired){
  for(const w of [r.key,r.key.normalize('NFD')])assert.equal(a.rawTranslit(w),r.value,r.key);
 }
 // These were not used to infer the rule and are absent from all four tables.
-const heldout=[['סוּסֵנוּ','susenu'],['שִׁירֵנוּ','shirenu'],['בִּגְדֵנוּ','bigdenu'],['יִקְטְלֵנוּ','yiktelenu'],['שָׁמְרֵנוּ','shamrenu']];
+const heldout=[['סוּסֵנוּ','susenu'],['שִׁירֵנוּ','shirenu'],['בִּגְדֵנוּ','bigdenu'],['יִקְטְלֵנוּ','yiktelenu'],['שָׁמְרֵנוּ','shomrenu']];
 for(const [word,expected] of heldout){
  for(const t of [a.APPROVED,a.FINAL_FORMS,a.GOLDEN_EDITORIAL])assert.ok(!t.has(word.normalize('NFC')));
  assert.ok(!(word.normalize('NFC') in a.GOLD.sef.w));

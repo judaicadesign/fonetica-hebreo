@@ -2,7 +2,7 @@ import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:asser
 import {extractEngine} from '../scripts/extract-engine.mjs';
 const stub=`const document={getElementById(){return {value:'rabbinic',addEventListener(){},focus(){},select(){}}},createElement(){return {appendChild(){},addEventListener(){},replaceChildren(){}}}};const window={addEventListener(){}};const navigator={clipboard:{}};const requestAnimationFrame=f=>f();`;
 const a=vm.runInNewContext(stub+extractEngine(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8'))+';({phonetize,rawTranslit,wordOutput,phoneWord,APPROVED,GOLD});');
-const readings=[['בֵיתְךָ','betejá'],['נַעַר',"ná'ar"],['שֶׁהִנְחַלְתָּ','shehinjalta'],['הַלְלוּיָהּ','haleluYah'],['עַבְדָּךְ',"'avdaj"],['וּרְחָבָה','urjavá'],['וְרַחֵם','verajem'],['יוֹמָא','Yomá'],['טָבָא','Tavá']];
+const readings=[['בֵּיתְךָ','betejá'],['נַעַר',"ná'ar"],['שֶׁהִנְחַלְתָּ','shehinjalta'],['הַלְלוּיָהּ','haleluYah'],['עַבְדָּךְ',"'avdaj"],['וּרְחָבָה','urjavá'],['וְרַחֵם','verajem'],['יוֹמָא','Yomá'],['טָבָא','Tavá']];
 for(const [w,expected]of readings)for(const word of [w,w.normalize('NFD')]){
  assert.equal(a.wordOutput(word),expected,w+' fallback');
  assert.equal(a.phoneWord(word,'',false,''),expected,w+' active');

@@ -16,10 +16,10 @@ const cases=[
  ['כָּאָמוּר: פּוֹתֵחַ אֶת יָדֶךָ','Kaamur: potéaj et Yadeja'],
  ['פּוֹתֵֽחַ אֶת יָדֶֽךָ','Potéaj et Yadeja'],
  ['רָאִיתִי אֶת יָדֶךָ','Raíti et yadeja'],
- ['עַל עַמְּךָ יִשְׂרָאֵל לְהַשְׁכִּיחָם',"'Al 'Amejá Yisrael lehashkijam"],
- ['וּלְעַמְּךָ יִשְׂרָאֵל עָשִׂיתָ תְּשׁוּעָה',"ul'Amejá Yisrael 'asita teshu'á"],
- ['רַחֵם יְיָ אֱלֹהֵינוּ עַל יִשְׂרָאֵל עַמְּךָ',"Rajem Ad-nai Elohenu 'al Yisrael 'Amejá"],
- ['וְזִכְרוֹן כָּל עַמְּךָ בֵּית יִשְׂרָאֵל לְפָנֶיךָ',"Vezijrón kol 'Amejá bet Yisrael lefaneja"],
+ ['עַל עַמְּךָ יִשְׂרָאֵל לְהַשְׁכִּיחָם',"'Al 'amejá Yisrael lehashkijam"],
+ ['וּלְעַמְּךָ יִשְׂרָאֵל עָשִׂיתָ תְּשׁוּעָה',"Ul'amejá Yisrael 'asita teshu'á"],
+ ['רַחֵם יְיָ אֱלֹהֵינוּ עַל יִשְׂרָאֵל עַמְּךָ',"Rajem Ad-nai Elohenu 'al Yisrael 'amejá"],
+ ['וְזִכְרוֹן כָּל עַמְּךָ בֵּית יִשְׂרָאֵל לְפָנֶיךָ',"Vezijrón kol 'amejá bet Yisrael lefaneja"],
  ['רָאִיתִי אֶת עַמְּךָ',"Raíti et 'amejá"],
  ['רַחֲמִים','Rajamim'],['לְעוֹלָם',"Le'olam"],['רָאִיתִי','Raíti']
 ];

@@ -1,0 +1,51 @@
+יְהְגֶּה | hoy: Yehgué | regla: Yehegué | NO OK | existe esa palabra comenznado con dos sheva?? revisar esto La palabra יְהְגֶּה se leería exactamente como yih-gué (o yihgeh en transcripción fonética académica). Aquí te explico paso a paso cómo se aplica la Ley de los Shevaim que mencionamos antes y por qué cambia su pronunciación:  1. La regla en acción  Originalmente, esta forma verbal de la raíz ה-ג-ה (meditar/pronunciar) intentaría tener dos sheva seguidos al principio: un sheva bajo la Yod (י) y otro bajo la He (ה). Como dos sheva seguidos al principio no se pueden pronunciar: • El primer sheva (bajo la י) se transforma automáticamente en la vocal Hirik (ִ - sonido "i"). • El segundo sheva (bajo la ה) se convierte en un sheva naj (mudo). Esto significa que cierra la primera sílaba con el sonido de la consonante "H" aspirada (como en inglés o el alemán).  2. Desglose de las sílabas  • Primera sílaba (יִהְ): Se lee Yih. La Yod suena como "y", el Hirik suena como "i", y la He con sheva mudo hace un sonido de aspiración suave al final de la sílaba. • Segunda sílaba (גֶּה): Se lee gué. La Guímel tiene un punto en el centro (daguesh), lo que asegura su sonido fuerte ("g" de gato), seguido de un Segol (ֶ - sonido "e"). La He final es muda y solo sirve para marcar el final de la palabra.  Transcripción fonética en español:  Yih - gué (El acento tónico va en la última sílaba: "gué"). ¿Te gustaría ver otros ejemplos de este mismo cambio con verbos similares, o estás analizando un texto bíblico en particular (como el Salmo 1) donde aparece esta palabra?
+פַלְגֵי | hoy: Palgué | regla: Falgué | NO OK | a simple vista debería ser Falgué como la regla
+וָלָיְלָה | hoy: Valayla | regla: Valaylá | NO OK | hay  q entender y arreglar el motor que pone la tilde en la ultima a.
+בַּנֶּגֶב | hoy: BaNéguev | regla: Banéguev | OK | regla q ya dije: toda localidad o nombre va con Mayuscula como leDavid, Bavél, etc.
+וְהוּא | hoy: Vehu | regla: Vehú | NO OK | hay  q entender y arreglar el motor que pone la tilde en la u. x regla de español no hace falta
+בֵיתְךָ | hoy: Betejá | regla: Vetejá | NO OK | creo que lo correcto sería vetjá. xq el sistema te da "vetejá? xq tu sheva es na?
+לָיְלָה | hoy: Layla | regla: Laylá | NO OK | hay  q entender y arreglar el motor que pone la tilde en la ultima a.
+בְּחָכְמָה | hoy: Bejojmá | regla: Bejojmó | NO OK | acaso la ultima kamatz es katán que la lee como ó???
+אֵיתָן | hoy: Eitán | regla: Etán | NO OK | lo correcto sería Etán.
+אִלְעַי | hoy: Il'ay | regla: Il'ái | NO OK | Il'ái
+אִילְעַי | hoy: Il'ay | regla: Ile'ái | NO OK | por qué daría Ile'ái ? q hace que la ל sea sheva na?
+דָּנִיֵּאל | hoy: Daniel | regla: Daniyel | NO OK | Daniyel es mas fiel xq la י es consonante
+לַאֲדוֹן | hoy: LaAdón | regla: Laadón | NO OK | Adón es referencial a Hashem. pedí a gpt q lo establezca como regla, le chupó un huevo
+יְשׁוּעָתִי | hoy: Yeshua'tí | regla: Yeshu'atí | NO OK | dejo a tu criterio donde va la ' de la ע
+עָזִּי | hoy: 'Ozí | regla: 'Azí | NO OK | hay que arreglar las kamatz q son O
+וְזִמְרָת | hoy: Vezimrát | regla: Vezimrat | NO OK | vezimrát es aguda x lo tanto no requiere tilde. borrar regla
+וַיְהִי | hoy: Vayehí | regla: Vaihi | NO OK | vaihí
+תַּצְהִיר | hoy: Tats-hir | regla: Tatshir | NO OK | regla para la fonética: cuando me quede צה que en fonética ponemos ts y luego h, para evitar que la persona lea tat-shir ponmos el guión separando צ ts de ה h.
+יוֹחַאי | hoy: Yojái | regla: Yojay | NO OK | es aguda termin
+בְּזָכְרֵנוּ | hoy: Bezojrenu | regla: Bezajrenu | NO OK | hay q arreglar las kamatz katan para q sean o????
+יְרוּשָׁלִם | hoy: Yerushaláyim | regla: Yerushalim | NO OK | entiendo q es una excepción de q a veces se escribe distinto ירושלים  podemos chequearlo como regla asi no sea una excxepcion???
+לְמַלְכָּא | hoy: LeMalká | regla: Lemalká | NO OK | acá מַלְכָּא es referencial a hashem, x eso en maysuc
+וּבִרְשׁוּת | hoy: Ubirshut | regla: Uvirshut | NO OK | lo correcto es uvirshut
+מוֹרַי | hoy: Morai | regla: Morái | NO OK | Morái es correcto. para que suene "morái", la palabra Morái debe llevar tilde. Al poner la fuerza de voz en la última sílaba (mo-rái), estás creando una palabra aguda. Al igual que vimos antes con Yojái, se aplican las siguientes reglas si decides escribirla con I: 1. Sílaba tónica: El acento va en la última sílaba, por lo que es aguda. 2. Diptongo: Las letras A (vocal abierta) e I (vocal cerrada) forman un diptongo en la última sílaba (-rai). 3. Regla: Al ser una palabra aguda que termina en vocal, debe llevar tilde. Como es un diptongo, la tilde se coloca obligatoriamente sobre la vocal abierta, es decir, sobre la A (Morái). Si no le pones tilde (Morai), en español se leería de forma incorrecta como una palabra grave (mó-rai).
+הָאֵל | hoy: HaEl | regla: Hael | NO OK | acá אל es referencial a hashem, x eso en maysuc
+אוֹתָנוּ | hoy: Otanu | regla: Otanú | NO OK | xq la tilde en nú????? corrección de fonetica, al ser grave debería ser otánu. en artscrol tiene meteg en la ת
+לְכָל | hoy: Lejol | regla: Lekal | NO OK | כ sin daguesh es j. corregir regla de kamatz katan
+חָסַר | hoy: Jásar | regla: Jasar | NO OK | en artscroll ashkenaz figura meteg en ח. habria q consgeuir artscroll sefaradi
+לָנוּ | hoy: Lanu | regla: Lanú | NO OK | xq nú??? es grave
+וּמְפַרְנֵס | hoy: Umfarnés | regla: Umefarnés | NO OK | no hay nada q haga sheva na la sheva de la מ
+וּבְרוֹב | hoy: Uverov | regla: Uvrov | NO OK | entiendo q lo correcto es uvrov
+חַי | hoy: Jay | regla: Jai | NO OK | habria q definir cuando la י es y y cuando es i. como en laila??? layla queda raro para hispanoparlante
+לְךָ | hoy: Lejá | regla: Leja | NO OK | Las palabras agudas llevan el acento en la última sílaba
+שֶׁהוֹצֵאתָנוּ | hoy: Shehotsetanu | regla: Shehotsetanú | NO OK | xq nú??? es grave
+וּפְדִיתָנוּ | hoy: Ufditanu | regla: Ufditanú | NO OK | por qué la tilde en "nú"??? en el texto ashkenazi me figura meteg en la ת
+הַזֶּה | hoy: Hazé | regla: Haze | NO OK | es aguda. requiere tilde. chequear generador y reglas del español para q funcionen bien
+כֹּהֵן | hoy: Cohén | regla: Kohén | NO OK | usé C x la similitud de la כ con la C. quizas es una boludez y deberia definir criterio
+לָהֶם | hoy: Lahem | regla: Láhem | NO OK | en artscoll ashkenaz להם no tiene meteg x ende es aguda. xq generador pone tilde en á?
+וּרְשָׁעִים | hoy: Uresha'im | regla: Ursha'im | NO OK | en artscroll ashk lo leo ursha'im
+וּטְמֵאִים | hoy: Utmeim | regla: Utmeím | NO OK | entieendo q si termina en im no requeire tilde en la í.  otra vez, chequear qué sabe de reglas de español el generador
+בָּאוּ | hoy: Bau | regla: Baú | NO OK | en artscroll ashk tiene meteg en la ב báu
+וּפִנּוּ | hoy: Ufinú | regla: Ufinu | NO OK | es aguda, requiere tilde cuando termina en vocal
+וְהִדְלִיקוּ | hoy: Vehidliku | regla: Vehidlikú | NO OK | meteg en ל. vehidlíku (revisar si x regla gramatical requiere tilde)
+בְּשׁוּשַׁן | hoy: BeShushán | regla: Beshushán | NO OK | regla q ya dije: toda localidad o nombre va con Mayuscula como leDavid, Bavél, etc.
+הַבִּירָה | hoy: Habirá | regla: Habira | NO OK | es aguda, requeire tilde en la á
+אֶחָד | hoy: Ejad | regla: Éjad | NO OK | xq el generador mete la tilde en é??? revisar qué reglas del español conoce. en hebreo es aguda
+הָעֵץ | hoy: Ha'ets | regla: Ha'éts | NO OK | Si la fuerza de voz está en la última sílaba (ha-éts) y la transcribes exactamente como ha'ets, no lleva tilde. Esto se debe a una regla muy específica de la Real Academia Española (RAE): 1. Es una palabra aguda: Tiene el acento prosódico en la última sílaba. 2. Termina en grupo consonántico: Termina en dos consonantes juntas (t y s). 3. La regla: Las palabras agudas que terminan en más de una consonante (como -ts, -ps, -ct) nunca llevan tilde, aunque la última letra sea una S.
+עָוֹן | hoy: 'Avón | regla: 'Aón | NO OK | hay q entender y crear esta regla del hebreo. no la conozco
+זְכָרִים | hoy: Zejarím | regla: Zejarim | NO OK | Zejarim está ok. termina en m no necesita tilde
+יַעֲשֶׂה | hoy: Ya'asé | regla: Ya'ase | OK
+אֶלָּא | hoy: Ela | regla: Elá | NO OK | revisar artscroll si tiene meteg en א

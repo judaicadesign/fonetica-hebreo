@@ -1,0 +1,10 @@
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert';
+import {extractEngine} from '../scripts/extract-engine.mjs';
+const stub=`const document={getElementById(){return {value:'rabbinic',addEventListener(){},focus(){},select(){}}},createElement(){return {appendChild(){},addEventListener(){},replaceChildren(){}}}};const window={addEventListener(){}};const navigator={clipboard:{}};const requestAnimationFrame=f=>f();`;
+const api=vm.runInNewContext(stub+extractEngine(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8'))+';({phonetize});');
+const M='ֽ';
+assert.equal(api.phonetize('וּבְשָׁכְבְּךָ'),'Uvshajbejá');
+assert.equal(api.phonetize('וּ'+M+'בְשׇׁכְבְּךָ'),'Uveshojbejá');
+assert.equal(api.phonetize('וּבְשׇׁכְבְּךָ'),'Uvshojbejá');
+assert.equal(api.phonetize('וּבְקוּמֶךָ'),'Uvkumeja');
+console.log('PASS: meteg sobre וּ = shevá siguiente suena (Shemá), sin meteg muda');
