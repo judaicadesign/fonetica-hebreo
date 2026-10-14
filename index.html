@@ -433,6 +433,13 @@ function shevaVocalized(a,i){
     a[i-2].b==="מ"&&has(a[i-2],N.SHEVA)&&onlyLightPrefixesBefore(a,i-2)&&/(?:ים|ות)$/u.test(bareLetters(word))&&!isQamatzQatan(a,v,word);
   const hitpaelPlural=i>=3&&v===i-1&&has(before,N.QAMATS)&&has(before,N.DAGESH)&&c.b==="ר"&&
     a[i-2].b==="ת"&&has(a[i-2],N.SHEVA)&&has(a[i-3],N.HIRIQ)&&a.length===i+3&&isShuruk(a[i+2])&&!isQamatzQatan(a,v,word);
+  /* Regla 3 del Ga\u00F3n con qamats: tras prefijo verbal o de participio (\u05D0 \u05D9 \u05EA \u05E0 \u05DE con shev\u00E1 o jat\u00E1f),
+     la qamats del tema es larga (no katan) y la shev\u00E1 siguiente suena: \u05D0\u05B2\u05D1\u05B8\u05E8\u05B0\u05DB\u05B8\u05D4 (34:2, rafe ArtScroll), \u05D9\u05B0\u05D1\u05B8\u05E8\u05B0\u05DB\u05B5\u05E0\u05D5\u05BC. */
+  const prefixedQamats=i>=2&&v===i-1&&has(before,N.QAMATS)&&!has(before,N.QAMATS_QATAN)&&!isQamatzQatan(a,v,word)&&
+    "\u05D0\u05D9\u05EA\u05E0\u05DE".includes(a[i-2].b)&&(has(a[i-2],N.SHEVA)||has(a[i-2],N.HATAF_PATAH)||has(a[i-2],N.HATAF_SEGOL))&&
+    onlyLightPrefixesBefore(a,i-2)&&
+    /* Sufijo de perfecto (תּ con dagesh tras la shevá): no hay prefijo verbal, es raíz (יְכָלְתִּיו, qamats katan). */
+    !(a[i+1]?.b==="ת"&&has(a[i+1],N.DAGESH));
   const accents=before.sourceMarks?.filter(x=>/[\u0591-\u05AF]/u.test(x))||[];
   const laterAccent=a.slice(v+1).some(x=>x.sourceMarks?.some(m=>/[\u0591-\u05AF]/u.test(m)));
   // A primary accent closes the syllable; a first accent before a later accent does not.
@@ -440,7 +447,7 @@ function shevaVocalized(a,i){
   const ending=bareLetters(word).slice(i+1);
   const knownStressed=ending==="תי"||ending==="נו"||isLexicalMilel(word)||
     (before.sourceMarks?.includes("\u05BD")&&!accents.length&&!laterAccent);
-  return (long||qalPlural||pielParticiple||hitpaelPlural)&&!knownStressed;
+  return (long||qalPlural||pielParticiple||hitpaelPlural||prefixedQamats)&&!knownStressed;
 }
 
 /* Prefijos ligeros (ו ב כ ל מ ש ה con vocal breve o shevá): hasta dos antes del tema. */
