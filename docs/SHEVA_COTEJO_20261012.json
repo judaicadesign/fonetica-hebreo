@@ -242,10 +242,6 @@
     }
   ],
   "pendingRefs": [
-    "83:3",
-    "83:5",
-    "83:13",
-    "83:19",
     "121:3",
     "121:5",
     "142:7"
@@ -392,5 +388,6 @@
       "source": "ArtScroll - ashkenaz bircat hamazon Interlinear Benching(2).pdf"
     }
   ],
-  "scope": "Exact word-helper marks visually checked; no Hebrew, nikud, meteg, punctuation or global approval changes. Transliterated Linear PDF supplies stress/nikud but is not used as proof of missing sheva-na markers. Current source cases resolved; delivered jobs remain frozen."
+  "scope": "Exact word-helper marks visually checked; no Hebrew, nikud, meteg, punctuation or global approval changes. Transliterated Linear PDF supplies stress/nikud but is not used as proof of missing sheva-na markers. Current source cases resolved; delivered jobs remain frozen.",
+  "resolved20261014": "83:3, 83:5, 83:13, 83:19: ArtScroll imprime rafé (shevá na); se quitaron las shevá mudas guardadas."
 }

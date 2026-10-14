@@ -13,5 +13,5 @@ for(const row of report.decisions){
  for(const context of contexts)for(const change of Object.values(context.changes))assert.ok(!change.reviewRequired&&!change.heldSilentSheva,'Resolved context '+row.ref+' cannot retain a hold');
 }
 const pending=[...new Set(api.REVIEWED_ARTSCROLL_VERSES.filter(v=>Object.values(v.changes).some(c=>c.reviewRequired)).map(v=>v.ref))].sort();
-assert.deepEqual(pending,[...report.pendingRefs].sort());assert.equal(pending.length,7);
-console.log('PASS visual audit: 20 observed vocal helpers derived structurally, 1 redundant hold removed, 7 honestly pending contexts');
+assert.deepEqual(pending,[...report.pendingRefs].sort());assert.equal(pending.length,3);
+console.log('PASS visual audit: 20 observed vocal helpers derived structurally, 1 redundant hold removed, 3 honestly pending contexts (83 resuelto con rafé de ArtScroll, 14/10)');
