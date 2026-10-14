@@ -10,7 +10,8 @@ let pg=0,words=0,mOk=0,mBad=0,rOk=0,rBad=0,wOk=0;const bad=[];
 for(const ln of fs.readFileSync(process.argv[2],'utf8').split('\n')){const m=ln.match(/=== PDF pág\. (\d+)/);if(m){pg=+m[1];continue}if(ln.startsWith('#'))continue;
  for(const tok0 of ln.trim().split(/[\s־]+/)){ if(!/[א-ת]/.test(tok0))continue;
   const tok=tok0.normalize('NFD').replace(/[^֑-ׇא-ת]/g,'').normalize('NFC');
-  if(/אְֶ|ענטש/.test(tok)||tok.normalize('NFD').includes('ְֶ'))continue; // defectos del PDF / yidish
+  const bareTok=tok.normalize('NFD').replace(/[^א-ת]/g,'');
+  if(/אְֶ/.test(tok)||tok.normalize('NFD').includes('ְֶ')||/ענטש|וועלען/.test(bareTok))continue; // defectos del PDF / yidish (bentschen, veln)
   const act=marks(tok); let pred;
   try{pred=marks(process.argv.includes("--guarded")?api.applyVisualMarks(tok,{meteg:true,rafe:true}):api.addVisualMarks(tok,{meteg:true,rafe:true}))}catch(e){continue}
   words++;

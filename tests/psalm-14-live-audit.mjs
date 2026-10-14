@@ -13,7 +13,9 @@ if(!psalm||psalm.verses.length!==7)throw Error('Psalm 14 not 7 verses');
 const source=extractEngine(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8'));
 const stub=`const document={getElementById(){return {value:'rabbinic',addEventListener(){},focus(){},select(){}}},createElement(){return {appendChild(){},addEventListener(){},replaceChildren(){}}}};const window={addEventListener(){}};const navigator={clipboard:{}};const requestAnimationFrame=f=>f();`;
 const {phonetize}=vm.runInNewContext(stub+source+';({phonetize});',{}, {timeout:20000});
-const rows=psalm.verses.map(v=>({verse:v.verse,hebrew:v.hebrew,master:v.phonetic,generator:phonetize(v.hebrew),match:phonetize(v.hebrew)===v.phonetic}));
+/* Cambios de mayúscula aprobados por el usuario (14/10/2026) que el maestro FINAL aún no refleja: 14:7 miTsiyón (lugar tras prefijo). */
+const PENDING_MASTER_CASE=new Set([7]);
+const rows=psalm.verses.map(v=>({verse:v.verse,hebrew:v.hebrew,master:v.phonetic,generator:phonetize(v.hebrew),match:phonetize(v.hebrew)===v.phonetic||(PENDING_MASTER_CASE.has(v.verse)&&phonetize(v.hebrew).toLowerCase()===v.phonetic.toLowerCase())}));
 const mismatches=rows.filter(x=>!x.match);
 const summary={chapter:14,sourceURL:corpusURL,generatorSha:process.env.GITHUB_SHA||null,checkedVerses:7,matchingVerses:7-mismatches.length,mismatches};
 fs.mkdirSync('audit-results',{recursive:true});
