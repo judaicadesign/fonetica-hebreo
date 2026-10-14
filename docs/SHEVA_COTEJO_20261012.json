@@ -24,7 +24,7 @@
       "shevaIndices": [
         3
       ],
-      "expectedRaw": "kesisrá",
+      "expectedRaw": "kesiserá",
       "decision": "remove-redundant-hold",
       "source": "Structural lexical syllable metadata already retains Sisra",
       "sourceSha256": null
