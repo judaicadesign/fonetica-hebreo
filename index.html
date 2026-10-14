@@ -233,7 +233,7 @@ details.rules[open] summary::before{content:"–"}
       <li><b>Shevá bajo una letra igual a la siguiente</b> = na (<i>halelu</i>).</li>
       <li><b>Shevá tras vocal larga sin acento</b> = na (tsere, jolam, shuruk, kamats largo: <i>umvarejim, veharejavá</i>). Tras vocal breve o acentuada es naj (<i>bigvurá, lifgarim, kirtsonó</i>). El kamats es largo tras un prefijo verbal o de participio (א י ת נ מ): <i>avarejá</i> (אֲבָרְכָה, Tehilim 34:2), <i>yevarejenu, yejarefeni</i>; en inicio de tema puede ser katán (<i>jojmá</i>).</li>
       <li><b>Shevá tras meteg en vocal larga</b> = na (regla 6 del Gaón; ArtScroll imprime rafé): <i>ájelu, náfelu, yósheve, mátsea</i>. No en perfectos con -תִּי/-תָּ, donde el meteg marca la tónica (<i>hojálti</i>), ni en היה/חיה.</li>
-      <li><b>Yod con shevá tras kamats o pataj</b> = diptongo, no suena: <i>layla</i>. Tras artículo (הַיְ-) es muda: <i>hayshu'á, haysod, hayshar</i>.</li>
+      <li><b>Yod con shevá tras kamats o pataj</b> = diptongo, no suena aparte. <b>La י vocal (diptongo) se escribe i</b>: <i>laila, jai, Sinái, 'alái, hoi, Maimón, oiveja</i>. La י consonante (con vocal propia) se escribe y: <i>Jayim, Yisrael</i>. Excepciones: <i>goy</i> (como se usa en Argentina) y el artículo + יְ, que queda con y: <i>hayshu'á, haysod, hayshar, laysharim</i>.</li>
       <li><b>Shevá tras vav-shuruk</b> (וּ) = muda: <i>uvtuvó, ulrajamim, umvarejim, ulumim</i> (וּלְאֻמִּים). Sin la ו, la shevá inicial suena: <i>leumim</i>. Con meteg en la וּ (ga'ya) la shevá siguiente suena.</li>
       <li><b>Shevá final</b> de palabra = muda (<i>lej</i>, <i>melej</i>).</li>
     </ul>
@@ -1040,9 +1040,13 @@ function rawTranslit(word, confirmedStress, details=false, vocalSheva=[], heldSi
     /* final YOD after patah/qamats = -ai (diptongo: no es nucleo aparte) */
     if(c.b==="י" && c.m.length===0 && i===a.length-1 && i>0 &&
        (has(a[i-1],N.PATAH)||has(a[i-1],N.QAMATS))){
-      /* Monosílabo (חַי = jay, דַּי = day): la ortografía española escribe el diptongo final con y. */
-      const fullV=c2=>[N.HIRIQ,N.TSERE,N.SEGOL,N.PATAH,N.QAMATS,N.HOLAM,N.QUBUTS,N.HATAF_PATAH,N.HATAF_SEGOL,N.HATAF_QAMATS,N.QAMATS_QATAN].some(v=>has(c2,v))||isShuruk(c2)||isHolamMale(c2);
-      out+= (i-1===0 || (i-1<=2 && onlyLightPrefixesBefore(a,i-1) && !a.slice(0,i-1).some(fullV))) ? "y" : "i"; continue;
+      /* Diptongo: la י vocal se escribe i siempre, también en monosílabos (חַי = jai, דַּי = dai). Decisión 14/10. */
+      out+="i"; continue;
+    }
+    /* -וֹי / -וּי final (הוֹי = hoi, אוֹי = oi): la י cierra el diptongo, no es muda. */
+    if(c.b==="י" && c.m.length===0 && i===a.length-1 && i>0 &&
+       (isHolamMale(a[i-1])||isShuruk(a[i-1])||has(a[i-1],N.HOLAM)||has(a[i-1],N.QUBUTS))){
+      out+="i"; continue;
     }
     /* -ַאי con alef muda (יוֹחַאי, מַחֲנַאי): también diptongo final -ai. */
     if(c.b==="י" && c.m.length===0 && i===a.length-1 && i>1 &&
@@ -1105,8 +1109,11 @@ function rawTranslit(word, confirmedStress, details=false, vocalSheva=[], heldSi
   if(details)return {a,out,nuclei};
   const yahComponent=(a.length===2||(a.length===3&&"ובלכמשה".includes(a[0].b))||(a.length>=4&&a.at(-3).b==="ו"&&isShuruk(a.at(-3))))&&a.at(-2).b==="י"&&has(a.at(-2),N.QAMATS)&&a.at(-1).b==="ה"&&has(a.at(-1),N.DAGESH);
   const result=stressAccent(a, out, nuclei, word, yahComponent&&confirmedStress===undefined?a.length-2:confirmedStress);
+  /* גּוֹי se escribe «goy», como se usa en Argentina (única excepción al diptongo con i; decisión 14/10). */
+  const goy=/^[ולבמהשכ]*גוי$/u.test(bareLetters(word));
   return (yahComponent?result.replace(/yah$/u,"Yah"):result)
-    .replace(/g(?=[eéií])/gi,match=>match==="G"?"Gu":"gu");
+    .replace(/g(?=[eéií])/gi,match=>match==="G"?"Gu":"gu")
+    .replace(goy?/[oó]i$/u:/$^/u,"oy");
 }
 
 /* ============================================================
@@ -2202,6 +2209,15 @@ function phonetizeDetailed(text){
         out=out.replace(/(?:hallú|halelú|halelu)\s*$/iu,m=>/^[A-Z]/.test(m)?'Halelu':'halelu');
         piece='Yah';
         mergeYah=true;
+      }
+      /* Diptongo en medio de palabra (יְ muda tras a/o/u): i, no y — laila, Maimón, Ailón (decisión 14/10).
+         Va al final, cuando la tilde ya se decidió con los núcleos reales; la y ante vocal es consonante (Jayim). */
+      {
+        /* Excepción: artículo + יְ queda con y (hayshu'á, hayshar, haysod; también fusionado: laysharim, 112:4). */
+        const ca=clusters(m[1]);let art=-1;
+        for(let k=0;k<Math.min(3,ca.length-1);k++){ if("הלבכ".includes(ca[k].b)&&has(ca[k],N.PATAH)&&ca[k+1].b==="י"&&has(ca[k+1],N.SHEVA)&&!/^ליל/u.test(bareLetters(m[1]).slice(k))){art=k;break;} if(!"ובלכמש".includes(ca[k].b))break; }
+        let seen=0;
+        piece=piece.replace(/([aáoóuú])y(?=[bcdfghjklmnpqrstvwxzñ'])/gu,(all,v)=>(art>=0&&seen++===0&&/^[^aeiouáéíóú]*[aeiouáéíóú]*h?a$/iu.test(piece.slice(0,piece.indexOf(all)+1)))?all:v+"i");
       }
       const os0=out.length;
       out+=piece;

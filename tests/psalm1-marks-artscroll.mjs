@@ -25,5 +25,5 @@ assert.ok(same(m,expectedMeteg,'m'),'meteg distinto de ArtScroll: '+m.join(' '))
 assert.ok(same(r,expectedRafe,'r'),'rafe distinto de ArtScroll: '+r.join(' '));
 assert.equal(api.phonetize('רוּחַ'),'Rúaj'); assert.ok(!/ֽ/.test(api.applyVisualMarks('רוּחַ',{meteg:true})),'רוּחַ no lleva meteg');
 for(const w of ['יוֹדֵעַ','יַצְלִיחַ','פּוֹתֵחַ','וּמַשְׂבִּיעַ'])assert.ok(/ֽ/.test(api.applyVisualMarks(w,{meteg:true})),w+' sí lleva meteg');
-for(const [w,ph] of [['מָיִם','Máyim'],['מִצְרַיִם','Mitsráyim'],['וָלָיְלָה','Valayla']]){assert.equal(api.phonetize(w),ph);assert.ok(/ֽ/.test(api.applyVisualMarks(w,{meteg:true})),w+' lleva meteg');}
+for(const [w,ph] of [['מָיִם','Máyim'],['מִצְרַיִם','Mitsráyim'],['וָלָיְלָה','Valaila']]){assert.equal(api.phonetize(w),ph);assert.ok(/ֽ/.test(api.applyVisualMarks(w,{meteg:true})),w+' lleva meteg');}
 console.log('PASS: Salmo 1 con 12 de 12 marcas de ArtScroll (10 meteg + 2 rafe), רוּחַ sin meteg, מָֽיִם/מִצְרַֽיִם/וָלָֽיְלָה con meteg');
