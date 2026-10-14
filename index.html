@@ -366,7 +366,7 @@ function isConsonantalVavHolam(a,i){
          a[i-1].b==="צ" && has(a[i-1],N.SHEVA) ||
          /* ו con jolam tras consonante que ya tiene vocal plena (עָוֹן = 'avón): la vav es consonante. */
          (i>0 && a[i].b==="ו" && has(a[i],N.HOLAM) &&
-          [N.QAMATS,N.PATAH,N.SEGOL,N.TSERE,N.HIRIQ,N.QUBUTS,N.HOLAM,N.QAMATS_QATAN].some(v=>has(a[i-1],v)));
+          [N.QAMATS,N.PATAH,N.SEGOL,N.TSERE,N.HIRIQ,N.QUBUTS,N.HOLAM,N.QAMATS_QATAN,N.HATAF_PATAH,N.HATAF_SEGOL,N.HATAF_QAMATS].some(v=>has(a[i-1],v)));
 }
 
 /* Shevá:
