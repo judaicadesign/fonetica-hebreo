@@ -91,6 +91,23 @@ button:active{transform:translateY(0)}
 .nakdan-option{font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:16px;font-weight:500;padding:6px 10px;border-radius:999px;background:#fff}
 .nakdan-option.selected{border-color:var(--teal);background:rgba(15,91,93,.08)}
 .nakdan-tag{font-family:var(--sans);font-size:10px;color:var(--muted);margin-inline-start:5px}
+.nakdan-other{font-family:var(--sans);font-size:12px;font-weight:700;border-style:dashed}
+.nakdan-custom{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:9px}
+.nakdan-custom[hidden]{display:none}
+.nakdan-custom-input{flex:1 1 180px;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:22px;direction:rtl}
+.nakdan-custom-ok{background:var(--teal);border-color:var(--teal);color:#fff}
+.nakdan-custom-hint{flex-basis:100%;font-size:11px;color:var(--muted)}
+.nakdan-custom-hint.warn{color:#9A6A20}
+.nikud-kbd{margin-top:10px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:#fbfcfb}
+.nikud-kbd[hidden]{display:none}
+.nk-sec{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin:6px 0 6px}
+.nk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:7px}
+.nk{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px 8px;font-weight:400;background:#fff}
+.nk-g{font-family:"SBL Hebrew","Ezra SIL","Noto Serif Hebrew","Times New Roman",serif;font-size:42px;line-height:1.15;direction:rtl;color:var(--teal-dark)}
+.nk-n{font-size:12px;font-weight:700;color:var(--teal-dark)}
+.nk-s{font-size:11px;color:var(--muted);text-align:center;line-height:1.3}
+.nk-tools{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:10px}
+.nk-help{font-size:11px;color:var(--muted)}
 
 .ok{color:#3F746F}.warn{color:#9A6A20}.err{color:#A13A38}
 details.rules{margin-top:18px}
@@ -161,6 +178,8 @@ details.rules[open] summary::before{content:"–"}
     <div class="card-title">1. Hebreo</div>
     <textarea id="hebrew" spellcheck="false" placeholder="Pegá aquí el texto hebreo, con o sin niqqud…"></textarea>
     <div id="nakdanChoices" class="nakdan-choices" aria-live="polite"></div>
+    <div class="toolbar"><button id="nikudBtn" type="button" aria-expanded="false" aria-controls="nikudKbd">אָ Teclado de nikud</button></div>
+    <div id="nikudKbd" class="nikud-kbd" hidden></div>
     <div class="toolbar split">
       <button id="undoBtn" type="button" title="Deshacer (Ctrl+Z)">↶ Deshacer</button>
       <button id="redoBtn" type="button" title="Rehacer (Ctrl+Y)">↷ Rehacer</button>
@@ -278,6 +297,7 @@ details.rules[open] summary::before{content:"–"}
     <p>Debajo del aviso de Nakdan aparece la <b>lista de palabras que puso o revisó</b>; el niqqud automático es provisional, el tuyo y tus elecciones quedan fijos. Las palabras con otras lecturas posibles llevan borde dorado.</p>
 
     <h4>Uso de la página</h4>
+    <p><b>Teclado de nikud:</b> botones grandes con el nombre y el sonido de cada signo. Poné el cursor después de la letra y tocá el signo; «Borrar signo» quita el último. <b>Escribir otra…</b> (en las opciones de Nakdan) permite tipear la palabra con tu nikud cuando Nakdan no ofrece la correcta; queda fija.</p>
     <p><b>Clic o selección</b> en una palabra hebrea marca su fonética, y al revés. <b>Ctrl+Z / Ctrl+Y</b> (o los botones Deshacer / Rehacer) recuperan el texto, también después de «Limpiar».</p>
 
     <h4>Criterio de lectura</h4>
@@ -2403,29 +2423,132 @@ function renderNakdanChoice(choice,currentWord){
   const w=document.createElement("span");w.className="nakdan-choices-word";w.textContent=currentWord;
   head.appendChild(title);head.appendChild(w);box.appendChild(head);
   const opts=document.createElement("div");opts.className="nakdan-options";
+  /* Fija una lectura elegida (de Nakdan o escrita a mano): queda como "manual" y Nakdan no la vuelve a tocar. */
+  const applyChoice=(text,fromUser)=>{
+    const h=$("hebrew"),r=hebrewWordRanges(h.value)[choice.wordIndex];if(!r)return false;
+    let selected;
+    try{selected=fromUser?text.normalize("NFC"):preserveReadingMarks(r.text,text);}catch(error){$("nakdanStatus").textContent=error.message;$("nakdanStatus").className="status warn";return false;}
+    snapHebrew();
+    h.value=h.value.slice(0,r.start)+selected+h.value.slice(r.end);
+    choice.chosen=selected;
+    if(fromUser&&!choice.options.some(o=>norm(o.text)===norm(selected)))choice.options=[...choice.options,{text:selected,tag:"tuya"}];
+    if(lastWordState[choice.wordIndex]){
+      lastWordState[choice.wordIndex]={origin:"manual",sourceWord:selected,renderedWord:selected};
+    }
+    lastRenderedHebrew=h.value;
+    $("output").value=phonetize(h.value);
+    const pending=[...reviewedArtScrollTokens(h.value).values()].filter(x=>x.reviewRequired).length;
+    $("motorStatus").textContent=pending?"Hay "+pending+" lectura(s) guardada(s) pendientes de cotejo de shevá con ArtScroll.":(fromUser?"Fonética actualizada con tu nikud (queda fijo).":"Fonética actualizada con la opción elegida.");$("motorStatus").className="status "+(pending?"warn":"ok");
+    const u=hebrewWordRanges(h.value)[choice.wordIndex];if(u){h.focus();h.setSelectionRange(u.start,u.end);renderNakdanChoice(choice,selected);}
+    return true;
+  };
   for(const opt of choice.options){
     const b=document.createElement("button");b.type="button";b.className="nakdan-option"+(norm(opt.text)===norm(currentWord)?" selected":"");
     const t=document.createElement("span");t.textContent=opt.text;b.appendChild(t);
     if(opt.tag){const tag=document.createElement("span");tag.className="nakdan-tag";tag.textContent=opt.tag;b.appendChild(tag);}
-    b.addEventListener("click",()=>{
-      const h=$("hebrew"),r=hebrewWordRanges(h.value)[choice.wordIndex];if(!r)return;
-      let selected;
-      try{selected=preserveReadingMarks(r.text,opt.text);}catch(error){$("nakdanStatus").textContent=error.message;$("nakdanStatus").className="status warn";return;}
-      snapHebrew();
-      h.value=h.value.slice(0,r.start)+selected+h.value.slice(r.end);
-      choice.chosen=selected;
-      if(lastWordState[choice.wordIndex]){
-        lastWordState[choice.wordIndex]={origin:"manual",sourceWord:selected,renderedWord:selected};
-      }
-      lastRenderedHebrew=h.value;
-      $("output").value=phonetize(h.value);
-      const pending=[...reviewedArtScrollTokens(h.value).values()].filter(x=>x.reviewRequired).length;
-      $("motorStatus").textContent=pending?"Hay "+pending+" lectura(s) guardada(s) pendientes de cotejo de shevá con ArtScroll.":"Fonética actualizada con la opción elegida.";$("motorStatus").className="status "+(pending?"warn":"ok");
-      const u=hebrewWordRanges(h.value)[choice.wordIndex];if(u){h.focus();h.setSelectionRange(u.start,u.end);renderNakdanChoice(choice,selected);}
-    });
+    b.addEventListener("click",()=>applyChoice(opt.text,false));
     opts.appendChild(b);
   }
+  /* «Escribir otra…»: cuando Nakdan no ofrece la lectura correcta (p. ej. el arameo עוֹבַד de Yah Ribón). */
+  const other=document.createElement("button");other.type="button";other.className="nakdan-option nakdan-other";other.textContent="✎ Escribir otra…";
+  opts.appendChild(other);
   box.appendChild(opts);
+  const row=document.createElement("div");row.className="nakdan-custom";row.hidden=true;
+  const inp=document.createElement("input");inp.type="text";inp.className="nakdan-custom-input";inp.dir="rtl";inp.spellcheck=false;inp.value=currentWord;
+  inp.setAttribute("aria-label","Palabra con tu nikud");
+  const ok=document.createElement("button");ok.type="button";ok.textContent="Fijar";ok.className="nakdan-custom-ok";
+  const cancel=document.createElement("button");cancel.type="button";cancel.textContent="Cancelar";
+  const hint=document.createElement("div");hint.className="nakdan-custom-hint";
+  hint.textContent="Escribí la palabra con nikud (podés usar el teclado de nikud de abajo). Las letras tienen que ser las mismas.";
+  row.append(inp,ok,cancel,hint);box.appendChild(row);
+  const fix=()=>{
+    const want=inp.value.trim();
+    if(!want){inp.focus();return;}
+    if(bareLetters(want)!==bareLetters(currentWord)){
+      hint.textContent="Las letras no coinciden con «"+bareLetters(currentWord)+"». Solo se cambia el nikud.";hint.className="nakdan-custom-hint warn";inp.focus();return;
+    }
+    applyChoice(want,true);
+  };
+  other.addEventListener("click",()=>{row.hidden=false;inp.focus();inp.setSelectionRange(inp.value.length,inp.value.length);nikudTarget=inp;showNikudKeyboard(true);});
+  ok.addEventListener("click",fix);
+  inp.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();fix();}if(e.key==="Escape"){row.hidden=true;nikudTarget=$("hebrew");}});
+  inp.addEventListener("focus",()=>{nikudTarget=inp;});
+  cancel.addEventListener("click",()=>{row.hidden=true;nikudTarget=$("hebrew");});
+}
+
+/* ===== Teclado de nikud «para todos»: botones grandes con nombre y sonido (pronunciación sefaradí). =====
+   Se ubica el cursor después de la letra y se toca el signo. */
+const NIKUD_KEYS=[
+  {sec:"Vocales"},
+  {m:"ָ",demo:"א",n:"Kamats",s:"A"},
+  {m:"ַ",demo:"א",n:"Pataj",s:"A"},
+  {m:"ֲ",demo:"א",n:"Jataf pataj",s:"A breve"},
+  {m:"ֵ",demo:"א",n:"Tseré",s:"E"},
+  {m:"ֶ",demo:"א",n:"Segol",s:"E"},
+  {m:"ֱ",demo:"א",n:"Jataf segol",s:"E breve"},
+  {m:"ִ",demo:"א",n:"Jirik",s:"I"},
+  {m:"ֹ",demo:"א",n:"Jolam",s:"O"},
+  {m:"ׇ",demo:"א",n:"Kamats katán",s:"O"},
+  {m:"ֳ",demo:"א",n:"Jataf kamats",s:"O breve"},
+  {m:"ֻ",demo:"א",n:"Kubuts",s:"U"},
+  {m:"ְ",demo:"א",n:"Shevá",s:"E breve o muda"},
+  {sec:"Con vav (inserta la letra)"},
+  {ins:"וֹ",demo:"",n:"Jolam malé",s:"O"},
+  {ins:"וּ",demo:"",n:"Shuruk",s:"U"},
+  {sec:"Puntos y signos"},
+  {m:"ּ",demo:"ב",n:"Dagesh",s:"B, K, P duras · letra doble"},
+  {m:"ׁ",demo:"ש",n:"Punto de shin",s:"SH"},
+  {m:"ׂ",demo:"ש",n:"Punto de sin",s:"S"},
+  {m:"ֽ",demo:"אָ",n:"Meteg",s:"marca la sílaba tónica"},
+  {m:"ֿ",demo:"בְ",n:"Rafé",s:"la shevá suena"},
+  {ins:"־",demo:"",n:"Makaf",s:"une dos palabras"},
+  {ins:" ׀ ",demo:"",n:"Psik",s:"pausa breve"}
+];
+let nikudTarget=null;
+function insertIntoField(el,text){
+  if(!el||!el.isConnected)el=$("hebrew");
+  const a=el.selectionStart??el.value.length,b=el.selectionEnd??a;
+  if(el.id==="hebrew")snapHebrew();
+  el.value=el.value.slice(0,a)+text+el.value.slice(b);
+  const p=a+text.length;el.focus();el.setSelectionRange(p,p);
+  el.dispatchEvent(new Event("input",{bubbles:true}));
+}
+/* Borra el último signo (vocal o punto) antes del cursor, sin tocar la letra. */
+function deleteMarkBefore(el){
+  if(!el||!el.isConnected)el=$("hebrew");
+  const p=el.selectionStart??el.value.length;
+  if(p>0&&/[֑-ׇ]/u.test(el.value[p-1])){
+    if(el.id==="hebrew")snapHebrew();
+    el.value=el.value.slice(0,p-1)+el.value.slice(p);el.focus();el.setSelectionRange(p-1,p-1);
+    el.dispatchEvent(new Event("input",{bubbles:true}));
+  }else{el.focus();}
+}
+function buildNikudKeyboard(){
+  const box=$("nikudKbd");if(!box||box.dataset.built)return;box.dataset.built="1";
+  let grid=null;
+  for(const k of NIKUD_KEYS){
+    if(k.sec){const h=document.createElement("div");h.className="nk-sec";h.textContent=k.sec;box.appendChild(h);grid=document.createElement("div");grid.className="nk-grid";box.appendChild(grid);continue;}
+    const b=document.createElement("button");b.type="button";b.className="nk";
+    const g=document.createElement("span");g.className="nk-g";g.textContent=k.ins?k.ins.trim()||k.ins:(k.demo+k.m);
+    const n=document.createElement("span");n.className="nk-n";n.textContent=k.n;
+    const s=document.createElement("span");s.className="nk-s";s.textContent="Sonido: "+k.s;
+    b.append(g,n,s);b.title=k.n+" — "+k.s;
+    /* pointerdown + preventDefault: el foco y el cursor quedan en el texto. */
+    b.addEventListener("pointerdown",e=>e.preventDefault());
+    b.addEventListener("click",()=>insertIntoField(nikudTarget||$("hebrew"),k.ins||k.m));
+    grid.appendChild(b);
+  }
+  const tools=document.createElement("div");tools.className="nk-tools";
+  const del=document.createElement("button");del.type="button";del.textContent="⌫ Borrar signo";
+  del.addEventListener("pointerdown",e=>e.preventDefault());del.addEventListener("click",()=>deleteMarkBefore(nikudTarget||$("hebrew")));
+  const help=document.createElement("span");help.className="nk-help";help.textContent="Poné el cursor después de la letra y tocá el signo. Sonidos en pronunciación sefaradí.";
+  tools.append(del,help);box.appendChild(tools);
+}
+function showNikudKeyboard(force){
+  const box=$("nikudKbd"),btn=$("nikudBtn");if(!box)return;
+  buildNikudKeyboard();
+  const open=force===undefined?box.hidden:force;
+  box.hidden=!open;if(btn)btn.setAttribute("aria-expanded",open?"true":"false");
 }
 function showNakdanChoicesForCaret(){
   if(!lastNakdanChoices.length){hideNakdanChoices();return;}
@@ -2526,6 +2649,8 @@ async function run(){
   ms.textContent=warn?"Fonética parcial: hay palabras sin nikud; revisalas antes de copiar.":pending?"Se conservaron "+pending+" lectura(s) guardada(s) que requieren cotejo de shevá con ArtScroll.":"Fonética generada (Sefaradí).";
   ms.className="status "+((warn||pending)?"warn":"ok");
 }
+$("nikudBtn").addEventListener("click",()=>showNikudKeyboard());
+$("hebrew").addEventListener("focus",()=>{nikudTarget=$("hebrew");});
 $("hebrew").addEventListener("compositionstart",()=>{isComposingHebrew=true;invalidateRun();});
 $("hebrew").addEventListener("compositionend",()=>{
   isComposingHebrew=false;invalidateRun();
