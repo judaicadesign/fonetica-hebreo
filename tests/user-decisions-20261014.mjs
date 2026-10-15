@@ -27,7 +27,7 @@ const cases=[
  ['בֵּית הַמִּקְדָּשׁ','Bet haMikdash'],
  ['וְעַל הַכֹּל יְיָ אֱלֹהֵינוּ מוֹדִים לָךְ','Ve\'al hakol Ad-nai Elohenu modim Laj'],['יִתֶּן לְךָ כִלְבָבֶךָ','Yiten lejá jilvaveja'],['אֲשֶׁר לֹא הָלַךְ','Asher lo halaj'],['וּלְאֻמִּים','Ulumim'],['לְאֻמִּים','Leumim'],
  ['עַל הַבַּיִת הַגָּדוֹל וְהַקָּדוֹשׁ','\'Al haBáyit hagadol vehakadosh'],
- ['כִּי אַתָּה הוּא בַּעַל','Ki Atá Hu ba\'al'],
+ ['כִּי אַתָּה הוּא בַּעַל הַנֶּחָמוֹת','Ki Atá Hu ba\'al hanejamot'],
 ];
 for(const [h,e] of cases)for(const x of [h,h.normalize('NFD')])assert.equal(phonetize(x),e,h);
 console.log('PASS: '+cases.length+' decisiones del 14/10 (meteg de entrada, Bavél, "ah" opción C, jolam faltante, CaYiC)');
