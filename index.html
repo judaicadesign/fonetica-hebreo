@@ -2680,6 +2680,24 @@ function showNakdanChoicesForCaret(){
 }
 
 
+/* Sincronización de alturas: ambas cajas de texto mantienen la misma altura al arrastrar cualquiera
+   de sus tiradores. ResizeObserver solo observa dimensiones, nunca el contenido,
+   y evita actualizaciones recursivas si las alturas ya coinciden. */
+function syncTextareaHeights(a,b){
+  if(typeof ResizeObserver==="undefined")return;
+  const observer=new ResizeObserver(entries=>{
+    for(const entry of entries){
+      const from=entry.target, to=from===a?b:a;
+      const fromHeight=from.getBoundingClientRect().height;
+      const toHeight=to.getBoundingClientRect().height;
+      if(Math.abs(fromHeight-toHeight)>1){
+        to.style.height=fromHeight+"px";
+      }
+    }
+  });
+  observer.observe(a);
+  observer.observe(b);
+}
 /* Comparación hebreo ↔ fonética: scroll bidireccional sincronizado.
    Se sincroniza por posición relativa para conservar juntos los
    mismos pasajes aun cuando RTL/LTR envuelvan alguna línea distinto. */
@@ -2700,6 +2718,7 @@ function syncScrollPair(a,b){
 window.addEventListener("DOMContentLoaded",()=>{
   const h=$("hebrew"), o=$("output");
   if(h&&o) syncScrollPair(h,o);
+  if(h&&o) syncTextareaHeights(h,o);
   if(h){h.addEventListener("click",showNakdanChoicesForCaret);h.addEventListener("keyup",showNakdanChoicesForCaret);h.addEventListener("select",showNakdanChoicesForCaret);}
 });
 function invalidateRun(){
@@ -2784,7 +2803,23 @@ $("hebrew").addEventListener("input",()=>{
 });
 /* Kamats katán (U+05C7): la fonética lo lee como O, pero las fuentes de InDesign no tienen ese carácter (cuadradito).
    Solo en lo que se copia o exporta se escribe como kamats común (U+05B8); el texto del recuadro no cambia. */
-function hebrewForExport(s){ return String(s).replace(/ׇ/g,"ָ"); }
+function hebrewForExport(s){
+  return String(s)
+    // Kamatz katán: U+05C7 → U+05B8 (solo al copiar/exportar)
+    .replace(/\u05C7/g, "\u05B8")
+
+    // Vocal + daguesh + meteg → daguesh + vocal + meteg
+    .replace(
+      /([\u05B0-\u05BB])\u05BC\u05BD/gu,
+      "\u05BC$1\u05BD"
+    )
+
+    // Daguesh + meteg + vocal → daguesh + vocal + meteg
+    .replace(
+      /\u05BC\u05BD([\u05B0-\u05BB])/gu,
+      "\u05BC$1\u05BD"
+    );
+}
 async function copyText(value, fallbackEl){
   if(!value) return;
   try{ await navigator.clipboard.writeText(value);return true; }
@@ -2800,7 +2835,7 @@ for(const ev of ["copy","cut"]){
   $("hebrew").addEventListener(ev,e=>{
     const h=$("hebrew"),a=h.selectionStart,b=h.selectionEnd;
     if(a===b||!e.clipboardData)return;
-    const sel=h.value.slice(a,b);if(!/ׇ/.test(sel))return;
+    const sel=h.value.slice(a,b);if(hebrewForExport(sel)===sel)return;
     e.preventDefault();e.clipboardData.setData("text/plain",hebrewForExport(sel));
     if(ev==="cut"){snapHebrew();h.value=h.value.slice(0,a)+h.value.slice(b);h.setSelectionRange(a,a);h.dispatchEvent(new Event("input",{bubbles:true}));}
   });
@@ -2827,7 +2862,7 @@ $("pasteHebrew").addEventListener("click",async()=>{
     await run();
     $("hebrew").focus();
   }catch(e){
-    ns.textContent="El navegador no permitió leer el portapapeles. Pegá directamente dentro del recuadro.";
+    ns.textContent="Chrome no permitió leer el portapapeles. Si aparece una solicitud de permiso, elegí Permitir. Si no, hacé clic en Hebreo y presioná Ctrl+V.";
     ns.className="status warn";
     $("hebrew").focus();
   }
