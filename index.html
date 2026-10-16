@@ -628,6 +628,18 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
   const L=a.length;
 
   /*
+    Sufijo posesivo femenino de 3ª persona -ֶיהָ: el acento cae en la
+    penúltima sílaba (-ֶי-), no en la הָ final. Funciona también
+    con prefijos (בְּבָנֶיהָ, מִגְדָּלֶיהָ). Es una regla
+    morfológica, no una excepción léxica por palabra.
+  */
+  if(L>=3 && a[L-1].b==="ה" && has(a[L-1],N.QAMATS) &&
+     a[L-2].b==="י" && !vowel(a[L-2]) &&
+     has(a[L-3],N.SEGOL)){
+    target=Math.max(0,nuclei.length-2);
+  }
+
+  /*
     Formas verbales con -תִּי / -תי (1ª persona singular del perfecto):
     la terminación -ti no recibe el acento; éste queda en la vocal
     precedente del tema. La tilde española se decide después:
