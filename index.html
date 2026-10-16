@@ -26,6 +26,7 @@
   --white:#FFFFFF;
   --sans:"aktiv-grotesk",sans-serif;
   --sans-extended:"aktiv-grotesk-extended","aktiv-grotesk",sans-serif;
+  --sans-extended-hebr:"Aktiv Grotesk Ex Hebr","aktiv-grotesk-extended","aktiv-grotesk",sans-serif;
   font-family:var(--sans);
   color:var(--ink);
   background:var(--paper);
@@ -52,7 +53,7 @@ select{min-width:265px;padding:11px 38px 11px 13px;border:1px solid var(--line);
 select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,154,75,.14)}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 30px rgba(25,50,52,.045)}
-.card-title{font-family:var(--sans-extended);font-size:15px;font-weight:800;font-style:normal;letter-spacing:.07em;font-kerning:normal;font-feature-settings:"kern" 1;text-transform:uppercase;color:var(--teal-dark);display:flex;align-items:center;gap:10px;margin:0 0 11px}
+.card-title{font-family:var(--sans-extended-hebr);font-size:15px;font-weight:600;font-style:normal;letter-spacing:.07em;font-kerning:normal;font-feature-settings:"kern" 1;text-transform:uppercase;color:var(--teal-dark);display:flex;align-items:center;gap:10px;margin:0 0 11px}
 .card-title::after{content:"";height:2px;width:34px;background:var(--gold);display:inline-block;border-radius:2px}
 textarea{width:100%;min-height:clamp(240px,calc(100vh - 500px),430px);border:1px solid var(--line);border-radius:11px;padding:16px;resize:vertical;line-height:1.7;background:#fff;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
 textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,91,93,.09)}
@@ -111,13 +112,13 @@ button:active{transform:translateY(0)}
 
 .ok{color:#3F746F}.warn{color:#9A6A20}.err{color:#A13A38}
 details.rules{margin-top:18px}
-details.rules summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:14px;color:var(--teal-dark);letter-spacing:.02em}
+details.rules summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;font-family:var(--sans-extended-hebr);font-weight:600;font-size:14px;color:var(--teal-dark);letter-spacing:.02em}
 details.rules summary::-webkit-details-marker{display:none}
 details.rules summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid var(--line);border-radius:50%;color:var(--gold);font-size:16px;line-height:1}
 details.rules[open] summary::before{content:"–"}
 .rules-inner{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.7;columns:2;column-gap:46px}
-.rules-inner h3{font-family:"Instrument Serif",Georgia,serif;font-size:25px;font-weight:400;color:var(--teal-dark);margin:0 0 10px;column-span:all}
-.rules-inner h4{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin:18px 0 6px;break-after:avoid}
+.rules-inner h3{font-family:var(--sans-extended-hebr);font-size:25px;font-weight:600;color:var(--teal-dark);margin:0 0 10px;column-span:all}
+.rules-inner h4{font-family:var(--sans-extended-hebr);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin:18px 0 6px;break-after:avoid}
 .rules-inner p{margin:0 0 8px;break-inside:avoid}
 .rules-inner ul{margin:4px 0 10px;padding-left:18px;break-inside:avoid}
 .rules-inner li{margin:2px 0}
@@ -1733,7 +1734,7 @@ function runRegressionTests(){
 
 
 /* ===== v35: fuente interna de referencia + salida sefardí ===== */
-const GOLD={"sef":{"w":{"יְדַבֶּר":"yedaber","וָעֶד":"va'ed","חָסַר":"jásar","וּלְהַעֲבִירָם":"uleha'aviram","בָּאוּ":"bau","וּפִנּוּ":"ufinú","אֵלּוּ":"elu","וּבְהוֹדָאָה":"uvehodaá","עִמָּהֶם":"'imahem","הַבִּירָה":"habirá","שְׁנֵים":"sheném","לְיָדְךָ":"leYadjá","הַמְּלֵאָה":"hameleá","שֶׁלּא":"sheló","וּבְמִצְוַת":"uvemitsvat","חֻקּי":"juké","קוֹדֶשׁ":"kódesh","וּלְהוֹשִׁיעֵנוּ":"ulehoshi'enu","בִדְבַר":"bidvar","בּוֹרְאֵנוּ":"Borenu","בְבִזּוּי":"vevizui","בְּהֶתֵּר":"beheter","בְצָעַר":"vetsá'ar","יִפְרוֹשׂ":"yifros","הַבָּאִים":"habaim","לְבִלְתִּי":"leviltí","כְשֻׁלְחָנוֹ":"keshuljanó","וּלְעוֹלְמֵי":"ule'olmé","הַסְּעֻדָּה":"hase'udá","וּנְכָסֵינוּ":"unejasenu","זְכָרִים":"zejarím","וּלְבִנְיַן":"ulevinyán","וּלְחַיֵּי":"ulejayé","מְבַקֶּשׁ":"mevakesh","וַיּוֹתִירוּ":"vayotiru","אַתֶּם":"atem","אֶלָּא":"ela"},"c":{"עָשִׂיתָ|שֵׁם":"shem","קַדִּישִׁין|וּבִרְשׁוּת":"ubirshut","יִשְׁתֶּה|וְאַל|1":"veal","עָשָׂר|הוּא":"hu","וְקָדוֹשׁ|הוּא":"hu","הַזֹּאת|הוּא|1":"hu","קוֹדֶשׁ|הַזֶּה|1":"hazé","אַבְרָהָם|אָבִינוּ":"avinu","אֲבוֹתֵֽינוּ|זִכְרוֹן|1":"zijrón","אֶת|הַחֹדֶשׁ":"hajódesh","עוֹלָמִים|אָמֵן":"amén","הַבָּא|אָמֵן|1":"amén","מַגְדִּיל|יְשׁוּעוֹת|1":"yeshu'ot","כָּל|עַמּוֹ":"'amó"}}};
+const GOLD={"sef":{"w":{"יְדַבֶּר":"yedaber","וָעֶד":"va'ed","חָסַר":"jásar","בָּאוּ":"bau","וּפִנּוּ":"ufinú","אֵלּוּ":"elu","וּבְהוֹדָאָה":"uvehodaá","עִמָּהֶם":"'imahem","הַבִּירָה":"habirá","שְׁנֵים":"sheném","לְיָדְךָ":"leYadjá","הַמְּלֵאָה":"hameleá","שֶׁלּא":"sheló","וּבְמִצְוַת":"uvemitsvat","חֻקּי":"juké","קוֹדֶשׁ":"kódesh","בִדְבַר":"bidvar","בּוֹרְאֵנוּ":"Borenu","בְבִזּוּי":"vevizui","בְּהֶתֵּר":"beheter","בְצָעַר":"vetsá'ar","יִפְרוֹשׂ":"yifros","הַבָּאִים":"habaim","לְבִלְתִּי":"leviltí","כְשֻׁלְחָנוֹ":"keshuljanó","וּלְעוֹלְמֵי":"ule'olmé","הַסְּעֻדָּה":"hase'udá","וּנְכָסֵינוּ":"unejasenu","זְכָרִים":"zejarím","וּלְחַיֵּי":"ulejayé","מְבַקֶּשׁ":"mevakesh","וַיּוֹתִירוּ":"vayotiru","אַתֶּם":"atem","אֶלָּא":"ela"},"c":{"עָשִׂיתָ|שֵׁם":"shem","קַדִּישִׁין|וּבִרְשׁוּת":"ubirshut","יִשְׁתֶּה|וְאַל|1":"veal","עָשָׂר|הוּא":"hu","וְקָדוֹשׁ|הוּא":"hu","הַזֹּאת|הוּא|1":"hu","קוֹדֶשׁ|הַזֶּה|1":"hazé","אַבְרָהָם|אָבִינוּ":"avinu","אֲבוֹתֵֽינוּ|זִכְרוֹן|1":"zijrón","אֶת|הַחֹדֶשׁ":"hajódesh","עוֹלָמִים|אָמֵן":"amén","הַבָּא|אָמֵן|1":"amén","מַגְדִּיל|יְשׁוּעוֹת|1":"yeshu'ot","כָּל|עַמּוֹ":"'amó"}}};
 /* Indicaciones sin nikud (no se leen en voz alta): se traducen, no se transliteran. De la más larga a la más corta. */
 const LABELS=[
   ["אם שכח יעלה ויבא ביום טוב, ונזכר לפני שהתחיל ברכה רביעית","Si olvidó Yaalé veyavó en Yom Tov y lo recuerda antes de empezar la cuarta bendición"],
