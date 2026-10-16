@@ -141,7 +141,7 @@ details.rules[open] summary::before{content:"–"}
 </head>
 <body>
 <div class="wrap">
-<div role="status" style="background:#fff3df;border:1px solid #ce9b45;border-radius:10px;padding:12px 16px;margin-bottom:12px;color:#493512;font-size:13px"><strong>VERSIÓN BETA — copia FbFrankReal</strong> · Al copiar hebreo, ajusta solo los órdenes problemáticos de daguesh, vocal y meteg para InDesign. El texto interno, la fonética y el cálculo del meteg no cambian. <a href="./pruebas.html" style="color:#0f5b5d;text-decoration:underline;font-weight:700">Abrir pruebas de meteg para Numbers</a> · <a href="../" style="color:#0f5b5d;text-decoration:underline">Volver a la versión habitual</a>.</div>
+<div role="status" style="background:#fff3df;border:1px solid #ce9b45;border-radius:10px;padding:12px 16px;margin-bottom:12px;color:#493512;font-size:13px"><strong>VERSIÓN BETA — copia FbFrankReal y altura sincronizada</strong> · Al copiar hebreo, ajusta solo los órdenes problemáticos de daguesh, vocal y meteg para InDesign. El texto interno, la fonética y el cálculo del meteg no cambian. Al agrandar cualquiera de las cajas de texto, la otra crece igual. <a href="./pruebas.html" style="color:#0f5b5d;text-decoration:underline;font-weight:700">Abrir pruebas de meteg para Numbers</a> · <a href="../" style="color:#0f5b5d;text-decoration:underline">Volver a la versión habitual</a>.</div>
 
 <header class="header">
   <div class="brand-copy">
@@ -2685,6 +2685,24 @@ function showNakdanChoicesForCaret(){
 }
 
 
+/* Beta: ambas cajas de texto mantienen la misma altura al arrastrar cualquiera
+   de sus tiradores. ResizeObserver solo observa dimensiones, nunca el contenido,
+   y evita actualizaciones recursivas si las alturas ya coinciden. */
+function syncTextareaHeights(a,b){
+  if(typeof ResizeObserver==="undefined")return;
+  const observer=new ResizeObserver(entries=>{
+    for(const entry of entries){
+      const from=entry.target, to=from===a?b:a;
+      const fromHeight=from.getBoundingClientRect().height;
+      const toHeight=to.getBoundingClientRect().height;
+      if(Math.abs(fromHeight-toHeight)>1){
+        to.style.height=fromHeight+"px";
+      }
+    }
+  });
+  observer.observe(a);
+  observer.observe(b);
+}
 /* Comparación hebreo ↔ fonética: scroll bidireccional sincronizado.
    Se sincroniza por posición relativa para conservar juntos los
    mismos pasajes aun cuando RTL/LTR envuelvan alguna línea distinto. */
@@ -2705,6 +2723,7 @@ function syncScrollPair(a,b){
 window.addEventListener("DOMContentLoaded",()=>{
   const h=$("hebrew"), o=$("output");
   if(h&&o) syncScrollPair(h,o);
+  if(h&&o) syncTextareaHeights(h,o);
   if(h){h.addEventListener("click",showNakdanChoicesForCaret);h.addEventListener("keyup",showNakdanChoicesForCaret);h.addEventListener("select",showNakdanChoicesForCaret);}
 });
 function invalidateRun(){
