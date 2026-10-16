@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pruebas beta de Meteg – FbFrankReal / InDesign</title>
+<style>
+:root{font-family:system-ui,"Segoe UI",sans-serif;color:#193234;background:#faf9f6}
+body{margin:0 auto;max-width:940px;padding:26px 20px 60px}
+h1{font-size:27px;color:#0f5b5d;margin-bottom:6px}
+p{line-height:1.6}
+.bar{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+button{background:#0f5b5d;color:white;border:0;border-radius:8px;padding:11px 16px;cursor:pointer;font-weight:600}
+button:focus{outline:3px solid #c69a4b}
+a{color:#0f5b5d}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+section{background:white;border:1px solid #dae2e1;border-radius:12px;padding:14px}
+textarea{width:100%;box-sizing:border-box;min-height:390px;padding:12px;border-radius:8px;border:1px solid #ccd2d1;font-family:"Segoe UI",serif;font-size:25px;line-height:1.8;resize:vertical}
+summary{cursor:pointer}
+small{color:#5f7778}
+@media(max-width:640px){.cols{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<p><a href="./">← Volver al generador beta</a></p>
+<h1>Pruebas de meteg para FbFrankReal</h1>
+<p>Estas palabras permiten comparar la secuencia original y la salida de copia compatible con InDesign. <strong>No reemplazan la prueba visual en FbFrankReal.</strong></p>
+<p><strong>Instrucciones:</strong> copiá la columna «Original», pegala en una caja de texto de InDesign con FbFrankReal; hacé lo mismo con «Beta» en otra caja. Aplicá a ambas el mismo estilo de párrafo <strong>Numbers</strong>. Compará la posición del meteg y del daguesh, especialmente en <span dir="rtl">מְשַׂמֵּֽחַ</span> y <span dir="rtl">מֶּֽלֶךְ</span>.</p>
+<div class="cols">
+<section><h2>Original</h2><button type="button" id="copyOriginal">Copiar original</button><p><small>Sin cambios de orden Unicode.</small></p><textarea id="original" dir="rtl" lang="he" spellcheck="false"></textarea></section>
+<section><h2>Beta</h2><button type="button" id="copyBeta">Copiar versión corregida</button><p><small>Con transformación únicamente en la copia.</small></p><textarea id="beta" dir="rtl" lang="he" spellcheck="false"></textarea></section>
+</div>
+<p id="status" role="status"></p>
+<details><summary>Qué esperamos en las pruebas automáticas</summary>
+<p>Se modifican únicamente las secuencias vocal–daguesh–meteg o daguesh–meteg–vocal, y el kamatz katán. Las combinaciones previamente funcionales quedan intactas. En InDesign todavía hay que verificar visualmente segol, tzere, pataj, kamatz, jirik, kubutz y jolam.</p>
+</details>
+<script>
+"use strict";
+function hebrewForExport(s) {
+  return String(s)
+    .replace(/\u05C7/g, "\u05B8")
+    .replace(/([\u05B0-\u05BB])\u05BC\u05BD/gu, "\u05BC$1\u05BD")
+    .replace(/\u05BC\u05BD([\u05B0-\u05BB])/gu, "\u05BC$1\u05BD");
+}
+const cases=[
+  "מֶּֽלֶךְ",
+  "מֶּֽלֶךְ",
+  "מֶּֽלֶךְ",
+  "מְשַׂמֵּֽחַ",
+  "מְשַׂמֵּֽחַ",
+  "מֵּֽ",
+  "מִקֶּֽדֶם",
+  "קֶּֽ",
+  "קֶּֽ",
+  "בַּֽ",
+  "כָּֽ",
+  "תִּֽ",
+  "פֻּֽ",
+  "נֹּֽ",
+  "אֶֽ",
+  "כׇל",
+  "שֶּֽׁ",
+  "מֵּֽ"
+];
+document.getElementById("original").value=cases.join("\n");
+document.getElementById("beta").value=hebrewForExport(cases.join("\n"));
+async function copyFrom(id){
+  const el=document.getElementById(id),value=el.value;
+  try{await navigator.clipboard.writeText(value)}
+  catch{el.focus();el.select();if(!document.execCommand("copy"))throw Error("No fue posible copiar. Seleccioná el texto y usá Ctrl+C.");}
+  document.getElementById("status").textContent="Copiado: "+(id==="original"?"Original":"Beta")+". Pegá en InDesign.";
+}
+for(const id of ["Original","Beta"]){
+  document.getElementById("copy"+id).addEventListener("click",()=>copyFrom(id.toLowerCase()).catch(err=>document.getElementById("status").textContent=err.message));
+}
+</script>
+</body>
+</html>
