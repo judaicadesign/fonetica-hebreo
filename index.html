@@ -2123,30 +2123,44 @@ function addVisualMarks(word,{meteg=false,rafe=false}={}){
   return clustersNFD.map(c=>c.join("")).join("").normalize("NFC");
 }
 
+/* INVERSIÓN (hebreo decide): el acento se decide UNA vez y se escribe como meteg en el hebreo.
+   Si la palabra ya trae meteg (fuente/ArtScroll), manda el de la fuente. La fonética se lee siempre
+   del hebreo marcado, así que mostrar u ocultar meteg/rafé no puede cambiarla. */
+function inferMeteg(tok,next,bound){
+  if(!/[ְ-ׇֻ]/.test(tok)||tok.includes("ֽ"))return tok;
+  if(bound||constructSegolate(tok,next))return tok;
+  let k; try{ k=metegPosition(tok); }catch(e){ return tok; }
+  if(!(k>=0))return tok;
+  const cl=[]; for(const ch of tok.normalize("NFD")){ if(/[א-ת]/.test(ch))cl.push([ch]); else if(cl.length)cl.at(-1).push(ch); else cl.push([ch]); }
+  const letters=cl.filter(c=>/[א-ת]/.test(c[0]));
+  const c=letters[k]; if(!c)return tok;
+  const at=c.findIndex((x,i)=>i>0&&/[ְֱ-ֳ]/.test(x));
+  c.splice(at>=0?at+1:c.length,0,"ֽ");
+  return cl.map(x=>x.join("")).join("").normalize("NFC");
+}
 /* Aplica meteg/rafe a un texto completo sin tocar la fonética: una palabra solo cambia si
    phonetize() da exactamente lo mismo antes y después. Las marcas de la fuente que sí influyen en
    la lectura (p. ej. אָֽכְלוּ con meteg → shevá muda) se conservan. Palabras unidas por maqqef:
    la primera no recibe meteg. */
 const VISUAL_MARKS_CACHE=new Map();
 function applyVisualMarks(text,{meteg=false,rafe=false}={}){
-  return text.replace(/[\u05D0-\u05EA\u0591-\u05BD\u05BF-\u05C7]+/g,(tok,offset,all)=>{
-    if(!/[\u05B0-\u05BB\u05C7]/.test(tok))return tok; // sin niqqud: nada que decidir
-    /* Unida por maqqef, o segolado en constructo (\u05D1\u05B7\u05BC\u05E2\u05B7\u05DC \u05D4\u05B7\u05E0\u05B6\u05BC\u05D7\u05B8\u05DE\u05D5\u05B9\u05EA): sin acento propio, sin meteg. */
-    const nextTok=(all.slice(offset+tok.length).match(/[\u05D0-\u05EA\u0591-\u05C7]+/u)||[""])[0];
-    const bound=all[offset+tok.length]==="\u05BE"||constructSegolate(tok,nextTok);
-    const key=tok+"|"+(meteg&&!bound?1:0)+(rafe?1:0);
+  return text.replace(/[א-ת֑-ֽֿ-ׇ]+/g,(tok,offset,all)=>{
+    if(!/[ְ-ׇֻ]/.test(tok))return tok;
+    const nextTok=(all.slice(offset+tok.length).match(/[א-ת֑-ׇ]+/u)||[""])[0];
+    const bound=all[offset+tok.length]==="־";
+    const key=tok+"|"+nextTok+"|"+(bound?1:0)+(meteg?1:0)+(rafe?1:0);
     if(VISUAL_MARKS_CACHE.has(key))return VISUAL_MARKS_CACHE.get(key);
     let out=tok;
     try{
-      const cand=addVisualMarks(tok,{meteg:meteg&&!bound,rafe});
-      if(cand!==tok.normalize("NFC")&&phonetize(cand)===phonetize(tok))out=cand;
-      else if(cand!==tok.normalize("NFC")){
-        // intento parcial: solo rafe, o solo meteg, por si una de las dos marcas es la que molesta
-        for(const alt of [{meteg:false,rafe},{meteg:meteg&&!bound,rafe:false}]){
-          const c2=addVisualMarks(tok,alt);
-          if(c2!==tok.normalize("NFC")&&phonetize(c2)===phonetize(tok)){out=c2;break;}
-        }
+      /* La misma decisión que usa la fonética: el meteg inferido se escribe; el rafé se calcula sobre la palabra ya marcada. */
+      const decided=inferMeteg(tok,nextTok,bound);
+      let w=meteg?decided:tok;
+      if(rafe){
+        const cl=[]; for(const ch of w.normalize("NFD")){ if(/[א-ת]/.test(ch))cl.push([ch]); else if(cl.length)cl.at(-1).push(ch); }
+        for(const k of rafePositions(decided)){ const c=cl[k]; if(c&&!c.includes("ֿ")){ const at=c.findIndex((x,i)=>i>0&&/[ְֱ-ֳ]/.test(x)); c.splice(at>=0?at+1:c.length,0,"ֿ"); } }
+        w=cl.map(x=>x.join("")).join("").normalize("NFC");
       }
+      out=w;
     }catch(e){ out=tok; }
     VISUAL_MARKS_CACHE.set(key,out);
     return out;
@@ -2284,7 +2298,8 @@ function phonetizeDetailed(text){
     if(m[1]){
       const following=s.slice(m.index+m[0].length).match(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/u);
       const review=reviewed.get(m.index);
-      let piece=phoneWord(m[1],prev,stop,following?.[0],review);
+      const decidedTok=review?m[1]:inferMeteg(m[1],following?.[0],s[m.index+m[0].length]==="-");
+      let piece=phoneWord(decidedTok,prev,stop,following?.[0],review);
       /* Palabra sin ningún nikud que no sea un nombre divino ni una forma conocida: es una indicación (o falta el nikud).
          No se translitera a ciegas («Zymvn»): queda en hebreo y el aviso de «palabras sin nikud» la señala. */
       if(!review&&!/[ְ-ׇּׁׂ]/u.test(m[1].normalize("NFD"))&&m[1].length>1&&
