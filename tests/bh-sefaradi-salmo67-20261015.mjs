@@ -16,7 +16,7 @@ const out=a.applyVisualMarks(ps67,{meteg:true,rafe:true}).normalize('NFC');
 for(const w of ['לַמְֿנַצֵּֽחַ','נָתְֿנָה','וְיִירְֿאוּ','יְבָרְֿכֵֽנוּ','לָדַֽעַת','בָּאָֽרֶץ','יוֹדֽוּךָ'])assert.ok(out.includes(w.normalize('NFC')),'Salmo 67: falta '+w);
 /* Fonética del mismo acento (puntos 1–7 y 9). */
 for(const [h,e] of [['וְאָכַלְתָּ','Veajaltá'],['וּבֵרַכְתָּ','Uverajtá'],['הַנֶּפֶשׁ','Hanéfesh'],['לָדַעַת',"Ladá'at"],['נָתְנָה','Natená'],
-  ['לְשָׂבְעָה',"Lesov'á"],['וְרֵיוַח','Verévaj'],['סֻכַּת שְׁלוֹמוֹ','Sukat shelomó'],['יְחָנֵּנוּ','Yejanenu'],['יְרַנֵּנוּ','Yeranenú'],
+  ['לְשָׂבְעָה',"Lesov'á"],['וְרֵיוַח','Verévaj'],['סֻכַּת שְׁלוֹמוֹ','Sukat shelomó'],['יְחָנֵּנוּ','Yejonenu'],['יְרַנֵּנוּ','Yeranenú'],
   ['נַעַר הָיִיתִי',"Ná'ar hayiti"],['בַּעַל הַנֶּחָמוֹת',"Ba'al hanejamot"]])
   assert.equal(a.phonetize(h),e,h);
 assert.ok(!a.applyVisualMarks('לְשָׂבְעָה',{rafe:true}).includes('\u05BF'),"lesov'á: kamats katán, shevá muda, sin rafé");
