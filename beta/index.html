@@ -2732,6 +2732,21 @@ function invalidateRun(){
   lastNakdanChoices=[];hideNakdanChoices();
   $("output").value="";$("copy").disabled=true;
 }
+/* El Nombre abreviado יי escrito sin nikud recibe la vocalización editorial JD (יְיָ = Ad-nai),
+   también con prefijo: לַיְיָ, בַּיְיָ, כַּיְיָ, מֵיְיָ, וַיְיָ, וְלַיְיָ, וּבַיְיָ. Si ya tiene alguna marca, se respeta tal cual. */
+function pointDivineAbbrev(text){
+  const LAST={ו:"וַ",ל:"לַ",ב:"בַּ",כ:"כַּ",מ:"מֵ"},AFTER_VAV={ל:"לַ",ב:"בַ",כ:"כַ",מ:"מֵ"};
+  return text.replace(HRUN,w=>{
+    if(/[\u0591-\u05C7]/u.test(w))return w;
+    const m=w.match(/^(ו?)([ולבכמ]?)יי$/u);if(!m)return w;
+    const [,v,p]=m;
+    if(!v&&!p)return "יְיָ";
+    if(v&&!p)return "וַיְיָ";
+    if(!v)return LAST[p]+"יְיָ";
+    if(p==="ו")return w;
+    return ("במ".includes(p)?"וּ":"וְ")+AFTER_VAV[p]+"יְיָ";
+  });
+}
 function automaticNikudEnabled(){return $("autoNikud")?.checked!==false;}
 function hasUnpointedWords(text){
   const [probe]=stashLabels(text);
@@ -2739,7 +2754,8 @@ function hasUnpointedWords(text){
 }
 async function run(){
   invalidateRun();
-  const id=runId,h=$("hebrew"),input=h.value;
+  const id=runId,h=$("hebrew"),rawInput=h.value,input=pointDivineAbbrev(rawInput);
+  if(input!==rawInput){snapHebrew();h.value=input;}
   const ns=$("nakdanStatus"),ms=$("motorStatus");
   const skipNakdan=noNakdanOnce; noNakdanOnce=false;
   if(!input.trim()){
