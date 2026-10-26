@@ -33,7 +33,7 @@ const cases=[
  ['בְּסֻוכּוֹת: הָרַחֲמָן הוּא','Besuvkot: Harajamán Hu'],
  ['וְאַתָּה בְּרַחֲמֶֽיךָ הָרַבִּים','VeAtá berajameja harabim'],                  // Atá = Hashem por contexto
  ['בֵּית הַמִּקְדָּשׁ','Bet haMikdash'],
- ['וְעַל הַכֹּל יְיָ אֱלֹהֵינוּ מוֹדִים לָךְ','Ve\'al hakol Ad-nai Elohenu modim Laj'],['יִתֶּן לְךָ כִלְבָבֶךָ','Yiten lejá jilvaveja'],['אֲשֶׁר לֹא הָלַךְ','Asher lo halaj'],['וּלְאֻמִּים','Ulumim'],['לְאֻמִּים','Leumim'],
+ ['וְעַל הַכֹּל יְיָ אֱלֹהֵינוּ מוֹדִים לָךְ','Ve\'al hakol Ad-nai Elohenu modim Laj'],['יִתֶּן לְךָ כִלְבָבֶךָ','Yitén lejá jilvaveja'],['אֲשֶׁר לֹא הָלַךְ','Asher lo halaj'],['וּלְאֻמִּים','Ulumim'],['לְאֻמִּים','Leumim'],
  ['עַל הַבַּיִת הַגָּדוֹל וְהַקָּדוֹשׁ','\'Al haBáyit hagadol vehakadosh'],
  ['כִּי אַתָּה הוּא בַּעַל הַנֶּחָמוֹת','Ki Atá Hu ba\'al hanejamot'],
 ];

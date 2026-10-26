@@ -647,7 +647,9 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
   if(L>=2 && a[L-1].b==="י" && a[L-1].m.length===0 &&
      a[L-2].b==="ת" && has(a[L-2],N.HIRIQ)){
     const feminineNounPossessive =
-      L>=3 && has(a[L-3],N.QAMATS);
+      L>=3 && has(a[L-3],N.QAMATS) ||
+      /* Preposición את/אִתּ + sufijo (אוֹתִי, אֹתִי, אִתִּי) y sustantivo אִשָּׁה + sufijo (אִשְׁתִּי): el sufijo -i es tónico. */
+      /^[ושו]?(?:אות|את|אשת)י$/u.test(bareLetters(originalWord));
     if(!feminineNounPossessive){
       target = Math.max(0,nuclei.length-2);
     }
@@ -731,7 +733,9 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
   */
   if(L>=3 &&
      (a[L-1].b==="ך" || a[L-1].b==="כ") &&
-     has(a[L-1],N.QAMATS)){
+     has(a[L-1],N.QAMATS) &&
+     /* Preposición ל/ב + sufijo con vav (וּלְךָ = uljá, וּבְךָ = uvjá): tónico como lejá. */
+     !/^ו[לב]ך$/u.test(bareLetters(originalWord))){
     target = Math.max(0,nuclei.length-2);
   }
 
@@ -778,9 +782,12 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
       has(second,N.SHEVA)||has(second,N.HATAF_PATAH)||
       has(second,N.HATAF_SEGOL)||has(second,N.HATAF_QAMATS)
     );
+    /* El imperativo Hifil lleva jirik (con o sin yod) antes de la última radical: הַקְשִׁיבָה, הַבִּיטָה, הַאֲזִינָה.
+       Sin esa jirik es artículo + adjetivo/participio femenino (הַקְּדוֹשָׁה, הַפְּתוּחָה, הַשְּׁדוּדָה): milrá. */
+    const hifilStem = L>=4 && (has(a[L-3],N.HIRIQ) || (a[L-3].b==="י" && !vowel(a[L-3]) && has(a[L-4],N.HIRIQ)));
     const patahHifil =
       has(a[0],N.PATAH) && second && second.b!=="י" &&
-      (reducedSecond || has(second,N.HIRIQ));
+      (reducedSecond || has(second,N.HIRIQ)) && hifilStem;
     const holamHifil =
       L>=5 && isHolamMale(a[1]) && a[2] && has(a[2],N.HIRIQ);
     const alefHifil =
@@ -840,9 +847,9 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
     const hifilPerfect=s0.b==="ה" && has(s0,N.HIRIQ);
     const nifalPerfect=s0.b==="נ" && (has(s0,N.SEGOL)||has(s0,N.HIRIQ));
     const hifilImperfectT=a[0].b==="ת" && has(a[0],N.QAMATS);
-    const pielImperfectY=
-      a[0].b==="י" && has(a[0],N.SHEVA) &&
-      a.slice(1,L-1).some(c=>has(c,N.DAGESH)&&has(c,N.SHEVA));
+    /* Piel imperfecto 3mp con shevá (יְדַבְּרוּ, יְלַמְּדוּ) es la forma de contexto: milrá (yedaberú). Solo la pausal
+       con tseré (יְדַבֵּֽרוּ) es milel, y la marca el meteg. Regla anterior retirada el 26/10/2026. */
+    const pielImperfectY=false;
     if(hifilPerfect||nifalPerfect||hifilImperfectT||pielImperfectY){
       target=Math.max(0,nuclei.length-2);
     }
@@ -881,7 +888,9 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
     const notSegolate = (has(s2,N.QAMATS) && has(s1,N.SEGOL) && s1.b==="א") ||
       (s1.b==="ה" && has(s1,N.PATAH) && has(s2,N.DAGESH) && !has(a[L-4]||{m:[]},N.PATAH) && L===3) ||
       (has(s1,N.HATAF_PATAH)&&s1.b==="א"&&s2.b==="ש") ||
-      (L===3 && "לבכ".includes(s1.b) && has(s1,N.QAMATS) && !has(s1,N.DAGESH) && "הכ".includes(s2.b) && has(s2,N.SEGOL) && (s3.b==="ם"||s3.b==="ן"));
+      (L===3 && "לבכ".includes(s1.b) && has(s1,N.QAMATS) && !has(s1,N.DAGESH) && "הכ".includes(s2.b) && has(s2,N.SEGOL) && (s3.b==="ם"||s3.b==="ן")) ||
+      /* Dagesh en la 2ª radical tras vocal = dagesh fuerte: no es segolado sino Piel (יְשַׁלֶּם, וִיבַשֶּׂר, יְדַבֶּר): milrá. */
+      (has(s2,N.DAGESH) && vowel(s1) && !has(s1,N.SHEVA) && s3.b!=="ה");
     const silentFinalHe=s3.b==="ה" && !has(s3,N.DAGESH) && has(s2,N.SEGOL) && !has(s1,N.SEGOL) && !(s1.b==="א"&&has(s1,N.TSERE)&&s2.b==="ל"&&has(s2,N.DAGESH)); /* milra: Moshé, sadé, ya'alé; milel: hégue (segol+segol), Ele (אֵלֶּה) */ /* ya'alé, ejezé, teuné: milra; tajazirená-nna (segol en s1) sigue siendo milel */
     if(!vowel(s3) && !silentFinalHe && vowel(s1) && vowel(s2) &&
        !s1IsMaterVav && !s2IsMaterVav && !notSegolate &&
@@ -1049,6 +1058,9 @@ function isQamatzQatan(a,i,word){
   /* Raíces con qamats katan (CָCְC- cerrada y átona): חָכְמָה, קָדְשׁוֹ, עָנְיִי… con o sin prefijos. */
   /* Imperativo + sufijo "nos" (זָכְרֵנוּ, פָּקְדֵנוּ, גָּמְלֵנוּ): qamats katan. El plural verbal en וּ (זָכְרוּ) es qamats gadol + shevá na. */
   if(has(a[i+1]||{m:[]},N.SHEVA) && a[i+2] && has(a[i+2],N.TSERE) && a[i+3]&&a[i+3].b==="נ" && a[i+4]&&isShuruk(a[i+4]) && i+4===a.length-1 && onlyLightPrefixesBefore(a,i)) return true;
+  /* Geminado חנן + sufijo -ֵּנוּ / -ֵּנִי: la qamats queda en sílaba cerrada por la consonante doble y átona → katan
+     (חָנֵּנוּ = jonenu, חָנֵּנִי = joneni, יְחָנֵּנוּ = yejonenu). */
+  if(a[i+1]&&a[i+1].b==="נ"&&has(a[i+1],N.DAGESH)&&has(a[i+1],N.TSERE)&&a[i+2]?.b==="נ"&&i+3===a.length-1&&(isShuruk(a[i+3])||(a[i+3].b==="י"&&!vowel(a[i+3])))) return true;
   /* כָּל / כָל ("todo", con o sin prefijos): qamats katan, ָ = o (lejol, vejol, shebejol, mikol). */
   if(c.b==="כ" && i===a.length-2 && a[i+1].b==="ל" && !vowel(a[i+1]) && onlyLightPrefixesBefore(a,i)) return true;
   /* Perfecto estativo con sufijo, CְCָCְתּ־ (יְכָלְתִּיו, Tehilim 13:5): qamats katan = yejoltiv. El perfecto regular lleva pataj (שְׁמַרְתִּיו). */
@@ -1732,7 +1744,7 @@ function runRegressionTests(){
     ["יָשׁוּבוּ","yashuvu"],["יָחִילוּ","yajilu"],["לִשְׁאוֹלָה","lishola"],
     ["חֵלֵכָה","jeleja"],["זְרוֹעַ","zeroa'"],["וּדְגֵי","udgué"],
     ["נוּדִי","nudi"],["הִנֵּה","hiné"],["כּוֹנְנוּ","konenú"],["יִבְחֲנוּ","yivjanú"],
-    ["פָנֵימוֹ","fanemo"],["הוֹשִׁיעָה","hoshi'a"],["פַסּוּ","fasu"],["יְדַבְּרוּ","yedaberu"],
+    ["פָנֵימוֹ","fanemo"],["הוֹשִׁיעָה","hoshi'a"],["פַסּוּ","fasu"],["יְדַבְּרוּ","yedaberú"] /* Piel imperfecto 3mp con shevá (forma de contexto): milrá; la pausal con tseré es milel */,
     ["עַתָּה","'atá"],["וְעַתָּה","ve'atá"],["בְּיֵשַׁע","beyesha'"],
     ["הַבִּיטָה","habita"],["הָאִירָה","haíra"],["בְּחַסְדְּךָ","bejasdejá"],
     ["הִשְׁחִיתוּ","hishjitu"],["הִתְעִיבוּ","hit'ivu"],["נֶאֱלָחוּ","neelaju"],
@@ -1876,6 +1888,10 @@ function phoneWord(token,prev,stop,next,reviewed){
   return applyMetegStress(token,phoneWordCore(token,prev,stop,next,reviewed));
 }
 function phoneWordCore(token,prev,stop,next,reviewed){
+  /* Consonante sin ninguna vocal ante א quiescente + vav vocal (יְראוּ, Tehilim 34:10): la shevá previa se lee jirik y
+     la consonante cierra la sílaba: yir'u → «Yirú» (la א no se marca). */
+  {const d0=token.normalize("NFD"),d=d0.replace(/([\u05D0-\u05EA][\u05BC\u05C1\u05C2]*)\u05B0([\u05D0-\u05EA])(?=\u05D0\u05D5[\u05BC\u05B9])/u,"$1\u05B4$2\u05B0");
+   if(d!==d0)token=d.normalize("NFC");}
   const sourceToken=token;
   token=norm(token);
   if(token===norm("בְּאַנְחָתִי"))return stop?"Beanjatí":"beanjatí";
@@ -2164,9 +2180,14 @@ function sentenceAddressesHashem(s,idx,self){
   const seg=s.slice(a,b);
   const words=seg.match(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)||[];
   let suffixed=0;
+  /* «Tu D's» (אֱלֹהֶיךָ / אֱלֹהַיִךְ) en la oración: el «tú» es una persona, no Hashem (וּבֵרַכְתָּ אֶת יְיָ אֱלֹהֶיךָ… אֲשֶׁר נָתַן לָךְ = laj). */
+  if(self && words.some(w=>/^[ולבמהשכ]*אלהי(?:ך|יך)$/u.test(bareLetters(w))))return false;
   for(const w of words){
     const bw=bareLetters(w);
     if(/^[ולבמהשכ]*(?:יי|יהוה|אדני|אלהים|אלהינו|אלהי|אלהיך|אלהיכם)$/u.test(bw))return true;
+    /* אֵל (tseré) es nombre divino; אֶל (segol) es preposición. */
+    if(/^[ו]?אל$/u.test(bw) && /\u05D0\u05B5/u.test(w.normalize("NFD")) &&
+       !/^(?:זר|אחר|נכר)$/u.test(bareLetters(words[words.indexOf(w)+1]||"")))return true; /* «אֵל זָר» (81:10) es un dios ajeno */
     if(/\u05DA[\u05B0-\u05C7]*$/u.test(w) && w!==self)suffixed++;
   }
   /* Sin nombre divino: para Atá basta un sufijo -ךָ; para lejá/laj (self) solo cuenta el nombre divino (evita «yiten lejá» = el rey, «sheyeshalem laj» = Bavel). */
@@ -2301,8 +2322,8 @@ function phonetizeDetailed(text){
         piece=k>0 ? capitalizeAfterPrefix(piece,m[1],k) : capitalizeFirst(piece);
       }
       /* Lejá / laj / bejá / baj dirigidos a Hashem: mayúscula en la raíz (leJá, baJ) si la oración nombra a Hashem (Ad-nai, Elohenu…). */
-      if(!review && /^[וש]?[לב]ך$/u.test(bareLetters(m[1])) && /[\u05DA]/u.test(m[1]) && sentenceAddressesHashem(s,m.index,m[1])){
-        const k=[...bareLetters(m[1])].length-2;
+      if(!review && /^[וש]?(?:[לב]|אות|אלי)ך$/u.test(bareLetters(m[1])) && /[\u05DA]/u.test(m[1]) && sentenceAddressesHashem(s,m.index,m[1])){
+        const k=[...(bareLetters(m[1]).match(/^[וש]?/u)[0])].length;
         piece=k>0 ? capitalizeAfterPrefix(piece,m[1],k) : capitalizeFirst(piece);
       }
       /* Templo: Bet haMikdash, haBáyit hagadol (el Templo que anhelamos va con mayúscula). */
