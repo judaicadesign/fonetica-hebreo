@@ -18,7 +18,7 @@ const cases=[
  ['וּבָרוּךְ שֵׁם כְּבוֹדוֹ לְעוֹלָם','Uvaruj Shem kevodó le\'olam'],
  ['וְלֹא יִזָּכֵר שֵׁם יִשְׂרָאֵל עוֹד','Veló yizajer shem Yisrael \'od'],
  // Hu cópula
- ['לְחֹדֶשׁ שְׁנֵים עָשָׂר, הוּא חֹדֶשׁ אֲדָר','Lejódesh sheném \'asar, hu jódesh Adar'],
+ ['לְחֹדֶשׁ שְׁנֵים עָשָׂר, הוּא חֹדֶשׁ אֲדָר','Lejódesh shenem \'asar, hu jódesh Adar'], // 25/10: sin tilde (aguda en m),
  // Fiestas, Shabat, Mashíaj, nombres propios
  ['רֹאשׁ הַחֹדֶשׁ חַג הַמַּצּוֹת','Rosh Hajódesh Jag Hamatsot'],
  ['אִסְרוּ חַג בַּעֲבֹתִים','Isrú jag ba\'avotim'],

@@ -1395,7 +1395,9 @@ const PROPER_NOUNS_EXTRA = new Set([
   "עובדיה","זכריה","מלאכי","נחמיה","עזרא","מתתיהו","יוחנן","יונתן","יחזקאל",
   "יששכר","זבולון","שמעון","ראובן","נפתלי","לוי","מיכאל","מרים","אסתר",
   "חנה","דבורה","אביגיל","יעל","נעמי","חולדה","אבישג","בתיה","ציפורה",
-  "יוכבד","אחינעם","דויד"
+  "יוכבד","אחינעם","דויד",
+  /* Festividades (decisión 25/10): Januká y Purim con mayúscula también dentro del texto. */
+  "חנכה","חנוכה","פורים"
 ].map(bareLetters));
 
 /* Pueblos, lugares y personas de los Tehilim (solo mayúscula; la fonética sigue saliendo de las reglas).
@@ -1746,7 +1748,7 @@ function runRegressionTests(){
 
 
 /* ===== v35: fuente interna de referencia + salida sefardí ===== */
-const GOLD={"sef":{"w":{"יְדַבֶּר":"yedaber","וָעֶד":"va'ed","חָסַר":"jásar","בָּאוּ":"bau","וּפִנּוּ":"ufinú","אֵלּוּ":"elu","וּבְהוֹדָאָה":"uvehodaá","עִמָּהֶם":"'imahem","הַבִּירָה":"habirá","שְׁנֵים":"sheném","לְיָדְךָ":"leYadjá","הַמְּלֵאָה":"hameleá","שֶׁלּא":"sheló","וּבְמִצְוַת":"uvemitsvat","חֻקּי":"juké","קוֹדֶשׁ":"kódesh","בִדְבַר":"bidvar","בּוֹרְאֵנוּ":"Borenu","בְבִזּוּי":"vevizui","בְּהֶתֵּר":"beheter","בְצָעַר":"vetsá'ar","יִפְרוֹשׂ":"yifros","הַבָּאִים":"habaim","לְבִלְתִּי":"leviltí","כְשֻׁלְחָנוֹ":"keshuljanó","וּלְעוֹלְמֵי":"ule'olmé","הַסְּעֻדָּה":"hase'udá","וּנְכָסֵינוּ":"unejasenu","זְכָרִים":"zejarím","וּלְחַיֵּי":"ulejayé","מְבַקֶּשׁ":"mevakesh","וַיּוֹתִירוּ":"vayotiru","אַתֶּם":"atem","אֶלָּא":"ela"},"c":{"עָשִׂיתָ|שֵׁם":"shem","קַדִּישִׁין|וּבִרְשׁוּת":"ubirshut","יִשְׁתֶּה|וְאַל|1":"veal","עָשָׂר|הוּא":"hu","וְקָדוֹשׁ|הוּא":"hu","הַזֹּאת|הוּא|1":"hu","קוֹדֶשׁ|הַזֶּה|1":"hazé","אַבְרָהָם|אָבִינוּ":"avinu","אֲבוֹתֵֽינוּ|זִכְרוֹן|1":"zijrón","אֶת|הַחֹדֶשׁ":"hajódesh","עוֹלָמִים|אָמֵן":"amén","הַבָּא|אָמֵן|1":"amén","מַגְדִּיל|יְשׁוּעוֹת|1":"yeshu'ot","כָּל|עַמּוֹ":"'amó"}}};
+const GOLD={"sef":{"w":{"יְדַבֶּר":"yedaber","וָעֶד":"va'ed","חָסַר":"jásar","בָּאוּ":"bau","וּפִנּוּ":"ufinú","אֵלּוּ":"elu","וּבְהוֹדָאָה":"uvehodaá","עִמָּהֶם":"'imahem","הַבִּירָה":"habirá","לְיָדְךָ":"leYadjá","הַמְּלֵאָה":"hameleá","שֶׁלּא":"sheló","וּבְמִצְוַת":"uvemitsvat","חֻקּי":"juké","קוֹדֶשׁ":"kódesh","בִדְבַר":"bidvar","בּוֹרְאֵנוּ":"Borenu","בְבִזּוּי":"vevizui","בְּהֶתֵּר":"beheter","בְצָעַר":"vetsá'ar","יִפְרוֹשׂ":"yifros","הַבָּאִים":"habaim","לְבִלְתִּי":"leviltí","כְשֻׁלְחָנוֹ":"keshuljanó","וּלְעוֹלְמֵי":"ule'olmé","הַסְּעֻדָּה":"hase'udá","וּנְכָסֵינוּ":"unejasenu","וּלְחַיֵּי":"ulejayé","מְבַקֶּשׁ":"mevakesh","וַיּוֹתִירוּ":"vayotiru","אַתֶּם":"atem","אֶלָּא":"ela"},"c":{"עָשִׂיתָ|שֵׁם":"shem","יִשְׁתֶּה|וְאַל|1":"veal","עָשָׂר|הוּא":"hu","וְקָדוֹשׁ|הוּא":"hu","הַזֹּאת|הוּא|1":"hu","קוֹדֶשׁ|הַזֶּה|1":"hazé","אַבְרָהָם|אָבִינוּ":"avinu","אֲבוֹתֵֽינוּ|זִכְרוֹן|1":"zijrón","אֶת|הַחֹדֶשׁ":"hajódesh","עוֹלָמִים|אָמֵן":"amén","הַבָּא|אָמֵן|1":"amén","מַגְדִּיל|יְשׁוּעוֹת|1":"yeshu'ot","כָּל|עַמּוֹ":"'amó"}}};
 /* Indicaciones sin nikud (no se leen en voz alta): se traducen, no se transliteran. De la más larga a la más corta. */
 const LABELS=[
   ["אם שכח יעלה ויבא ביום טוב, ונזכר לפני שהתחיל ברכה רביעית","Si olvidó Yaalé veyavó en Yom Tov y lo recuerda antes de empezar la cuarta bendición"],
