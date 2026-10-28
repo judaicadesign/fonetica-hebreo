@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/ydp7axr.css">
-<link rel="stylesheet" href="editor.css?v=20261028-nikud-zoom">
+<link rel="stylesheet" href="editor.css?v=20261028-nikud-editor">
 <script src="jd-embed.js?v=20261007-tools" defer></script>
 </head>
 <body>
@@ -66,7 +66,8 @@
     <div id="hebrewCopyNotice" class="copy-notice" role="status" aria-live="polite" aria-atomic="true"></div>
     <aside id="nakdanZoom" class="nikud-zoom" data-context="choices" hidden aria-hidden="true">
       <span class="nikud-zoom-label">Palabra ampliada</span>
-      <b class="nikud-zoom-word" lang="he" dir="rtl"></b>
+      <b id="nakdanZoomWord" class="nikud-zoom-word" lang="he" dir="rtl"></b>
+      <input id="nakdanZoomEditor" class="nikud-zoom-editor" type="text" lang="he" dir="rtl" spellcheck="false" aria-label="Palabra con tu nikud" hidden>
       <span class="nikud-zoom-help">La lupa sigue las opciones de Nakdan.</span>
     </aside>
     <div id="nakdanChoices" class="nakdan-choices" aria-live="polite"></div>
@@ -86,13 +87,8 @@
   </section>
 </div>
 
-<section class="nikud-panel" aria-label="Teclado de nikud">
+<section id="nikudPanel" class="nikud-panel" aria-label="Teclado de nikud">
     <div class="toolbar"><button id="nikudBtn" type="button" aria-expanded="false" aria-controls="nikudKbd">אָ Teclado de nikud</button></div>
-    <aside id="keyboardZoom" class="nikud-zoom" data-context="keyboard" hidden aria-hidden="true">
-      <span class="nikud-zoom-label">Palabra ampliada</span>
-      <b class="nikud-zoom-word" lang="he" dir="rtl"></b>
-      <span class="nikud-zoom-help">La lupa sigue el cursor mientras agregás o borrás signos.</span>
-    </aside>
     <div id="nikudKbd" class="nikud-kbd" hidden></div>
 </section>
 
@@ -2505,15 +2501,12 @@ function wordAtCaret(field){
 function setNikudZoom(word,label="Palabra ampliada",remember=false){
   const value=(word||"").trim();
   if(remember){nikudZoomBaseWord=value;nikudZoomBaseLabel=label;}
-  const keyboard=$("nikudKbd"),choices=$("nakdanChoices");
-  const keyboardOpen=!!keyboard&&!keyboard.hidden,choicesOpen=!!choices?.classList?.contains?.("show");
-  const zooms=typeof document.querySelectorAll==="function"?document.querySelectorAll(".nikud-zoom"):[];
-  for(const zoom of zooms){
-    const active=zoom.dataset.context==="keyboard"?keyboardOpen:choicesOpen;
-    const text=zoom.querySelector(".nikud-zoom-word"),caption=zoom.querySelector(".nikud-zoom-label");
-    if(!value||!active){zoom.hidden=true;if(text)text.textContent="";continue;}
-    if(caption)caption.textContent=label;if(text)text.textContent=value;zoom.hidden=false;
-  }
+  const zoom=$("nakdanZoom"),choices=$("nakdanChoices");if(!zoom)return;
+  const active=!!choices?.classList?.contains?.("show"),text=$("nakdanZoomWord"),caption=zoom.querySelector?.(".nikud-zoom-label");
+  if(!value||!active){zoom.hidden=true;zoom.setAttribute?.("aria-hidden","true");if(text)text.textContent="";return;}
+  if(caption)caption.textContent=label;
+  if(text&&!zoom.classList?.contains?.("is-editing"))text.textContent=value;
+  zoom.hidden=false;zoom.setAttribute?.("aria-hidden","false");
 }
 function refreshNikudZoom(field=nikudTarget||$("hebrew"),label="Palabra ampliada"){
   setNikudZoom(wordAtCaret(field),label,true);
@@ -2521,7 +2514,7 @@ function refreshNikudZoom(field=nikudTarget||$("hebrew"),label="Palabra ampliada
 function restoreNikudZoom(){setNikudZoom(nikudZoomBaseWord,nikudZoomBaseLabel,false);}
 function hideNakdanChoices(){
   const b=$("nakdanChoices");if(!b)return;b.className="nakdan-choices";b.replaceChildren();
-  if($("nikudKbd")?.hidden)setNikudZoom("",nikudZoomBaseLabel,false);else refreshNikudZoom();
+  setNikudZoom("",nikudZoomBaseLabel,false);
 }
 function renderNakdanChoice(choice,currentWord){
   const box=$("nakdanChoices");if(!box||!choice){hideNakdanChoices();return;}
@@ -2566,28 +2559,41 @@ function renderNakdanChoice(choice,currentWord){
   opts.appendChild(other);
   box.appendChild(opts);
   const row=document.createElement("div");row.className="nakdan-custom";row.hidden=true;
-  const inp=document.createElement("input");inp.type="text";inp.className="nakdan-custom-input";inp.dir="rtl";inp.spellcheck=false;inp.value=currentWord;
-  inp.setAttribute("aria-label","Palabra con tu nikud");
+  const inp=$("nakdanZoomEditor");
   const ok=document.createElement("button");ok.type="button";ok.textContent="Fijar";ok.className="nakdan-custom-ok";
   const cancel=document.createElement("button");cancel.type="button";cancel.textContent="Cancelar";
   const hint=document.createElement("div");hint.className="nakdan-custom-hint";
-  hint.textContent="Escribí la palabra con nikud (podés usar el teclado de nikud de abajo). Las letras tienen que ser las mismas.";
-  row.append(inp,ok,cancel,hint);box.appendChild(row);
+  hint.textContent="Editá la palabra grande de arriba y agregá los signos con el teclado. Las letras tienen que ser las mismas.";
+  row.append(ok,cancel,hint);box.appendChild(row);
+  const setCustomMode=editing=>{
+    const zoom=$("nakdanZoom"),preview=$("nakdanZoomWord");
+    box.classList.toggle("is-editing",editing);zoom?.classList.toggle("is-editing",editing);
+    if(preview)preview.hidden=editing;
+    if(inp)inp.hidden=!editing;
+    if(editing){
+      const label=zoom?.querySelector(".nikud-zoom-label"),help=zoom?.querySelector(".nikud-zoom-help");
+      if(label)label.textContent="Editá tu palabra";
+      if(help)help.textContent="El cursor y el nikud se ven grandes mientras escribís.";
+    }
+  };
   const fix=()=>{
     const want=inp.value.trim();
     if(!want){inp.focus();return;}
     if(bareLetters(want)!==bareLetters(currentWord)){
       hint.textContent="Las letras no coinciden con «"+bareLetters(currentWord)+"». Solo se cambia el nikud.";hint.className="nakdan-custom-hint warn";inp.focus();return;
     }
-    applyChoice(want,true);
+    setCustomMode(false);nikudTarget=$("hebrew");showNikudKeyboard(false);applyChoice(want,true);
   };
-  other.addEventListener("click",()=>{row.hidden=false;inp.focus();inp.setSelectionRange(inp.value.length,inp.value.length);nikudTarget=inp;showNikudKeyboard(true);refreshNikudZoom(inp,"Tu palabra ampliada");});
+  other.addEventListener("click",()=>{
+    row.hidden=false;inp.value=currentWord;setCustomMode(true);nikudTarget=inp;showNikudKeyboard(true);
+    inp.focus();inp.setSelectionRange(inp.value.length,inp.value.length);
+    requestAnimationFrame(()=>$("nakdanZoom")?.scrollIntoView({block:"start",behavior:"smooth"}));
+  });
   ok.addEventListener("click",fix);
-  inp.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();fix();}if(e.key==="Escape"){row.hidden=true;nikudTarget=$("hebrew");}});
-  inp.addEventListener("focus",()=>{nikudTarget=inp;refreshNikudZoom(inp,"Tu palabra ampliada");});
-  inp.addEventListener("input",()=>refreshNikudZoom(inp,"Tu palabra ampliada"));
-  inp.addEventListener("click",()=>refreshNikudZoom(inp,"Tu palabra ampliada"));
-  cancel.addEventListener("click",()=>{row.hidden=true;nikudTarget=$("hebrew");setNikudZoom(currentWord,"Palabra actual",true);});
+  inp.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();fix();}if(e.key==="Escape")cancel.click();};
+  inp.onfocus=()=>{nikudTarget=inp;};
+  inp.oninput=()=>{nikudZoomBaseWord=inp.value;};
+  cancel.addEventListener("click",()=>{row.hidden=true;setCustomMode(false);nikudTarget=$("hebrew");showNikudKeyboard(false);setNikudZoom(currentWord,"Palabra actual",true);});
 }
 
 /* ===== Teclado de nikud «para todos»: botones grandes con nombre y sonido (pronunciación sefaradí). =====
@@ -2661,13 +2667,12 @@ function buildNikudKeyboard(){
   tools.append(del,help);box.appendChild(tools);
 }
 function showNikudKeyboard(force){
-  const box=$("nikudKbd"),btn=$("nikudBtn");if(!box)return;
+  const box=$("nikudKbd"),btn=$("nikudBtn"),panel=$("nikudPanel");if(!box)return;
   buildNikudKeyboard();
   const open=force===undefined?box.hidden:force;
   box.hidden=!open;if(btn)btn.setAttribute("aria-expanded",open?"true":"false");
-  if(open)refreshNikudZoom();
-  else if($("nakdanChoices")?.classList?.contains?.("show"))restoreNikudZoom();
-  else setNikudZoom("",nikudZoomBaseLabel,false);
+  panel?.classList.toggle("is-open",open);document.body.classList.toggle("nikud-keyboard-open",open);
+  if(btn)btn.textContent=open?"× Cerrar teclado de nikud":"אָ Teclado de nikud";
 }
 function showNakdanChoicesForCaret(){
   if(!lastNakdanChoices.length){hideNakdanChoices();return;}

@@ -26,13 +26,13 @@ for (const width of [320, 390, 768, 1366]) {
       }
     }
     await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
-    await expect(page.locator('#keyboardZoom')).toBeVisible();
-    expect(await page.locator('#keyboardZoom .nikud-zoom-word').evaluate(element => parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(44);
     const keyboard = await page.locator('#nikudKbd').boundingBox();
     const editors = await page.locator('.grid').boundingBox();
-    expect(Math.abs(keyboard.width - editors.width)).toBeLessThanOrEqual(1);
-    expect(keyboard.y).toBeGreaterThanOrEqual(editors.y + editors.height);
     if (width > 800) {
+      const panel = await page.locator('#nikudPanel').boundingBox();
+      expect(Math.abs(panel.width - editors.width)).toBeLessThanOrEqual(1);
+      expect(await page.locator('#nikudPanel').evaluate(element => getComputedStyle(element).position)).toBe('fixed');
+      expect(Math.abs(panel.y + panel.height - 900)).toBeLessThanOrEqual(1);
       const vavTitle = await page.locator('#nikudKbd > .nk-sec').nth(1).boundingBox();
       const signsTitle = await page.locator('#nikudKbd > .nk-sec').nth(2).boundingBox();
       const vavKeys = await page.locator('#nikudKbd > .nk-grid').nth(1).boundingBox();
@@ -40,6 +40,9 @@ for (const width of [320, 390, 768, 1366]) {
       expect(Math.abs(vavTitle.y - signsTitle.y)).toBeLessThanOrEqual(1);
       expect(Math.abs(vavKeys.y - signsKeys.y)).toBeLessThanOrEqual(1);
       expect(signsTitle.x).toBeGreaterThan(vavKeys.x + vavKeys.width);
+    } else {
+      expect(Math.abs(keyboard.width - editors.width)).toBeLessThanOrEqual(1);
+      expect(keyboard.y).toBeGreaterThanOrEqual(editors.y + editors.height);
     }
     const outside = await page.locator('button:visible,select:visible,textarea:visible').evaluateAll(elements =>
       elements.filter(element => {
@@ -77,9 +80,14 @@ test('Recovery retains manual reading, provisional origins and controls without 
   expect(await alternative.evaluate(element => parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(19);
   await page.locator('#nakdanChoices').getByRole('button', {name: /Escribir otra/}).click();
   const custom = page.getByRole('textbox', {name: 'Palabra con tu nikud'});
+  await expect(custom).toBeVisible();
+  expect(await custom.evaluate(element => parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(48);
   await custom.fill('שָׁלוֹם');
-  await expect(page.locator('#nakdanZoom .nikud-zoom-label')).toHaveText('Tu palabra ampliada');
-  await expect(page.locator('#nakdanZoom .nikud-zoom-word')).toHaveText('שָׁלוֹם');
+  await expect(page.locator('#nakdanZoom .nikud-zoom-label')).toHaveText('Editá tu palabra');
+  await expect(page.locator('#keyboardZoom')).toHaveCount(0);
+  const customBox = await custom.boundingBox();
+  const panelBox = await page.locator('#nikudPanel').boundingBox();
+  expect(customBox.y + customBox.height).toBeLessThan(panelBox.y);
   await page.getByRole('button', {name: 'Cancelar', exact: true}).click();
   await alternative.click();
   await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key))?.words[0].origin, KEY)).toBe('manual');
@@ -173,8 +181,7 @@ test('Shared keyboard inserts at the editor caret after moving outside the colum
   await page.locator('#hebrew').fill('אב');
   await page.locator('#hebrew').press('Control+End');
   await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
-  await expect(page.locator('#keyboardZoom .nikud-zoom-word')).toHaveText('אב');
+  await expect(page.locator('#nikudPanel')).toHaveCSS('position', 'fixed');
   await page.locator('#nikudKbd').getByRole('button', {name: 'אַ Pataj Sonido: A', exact: true}).click();
   await expect(page.locator('#hebrew')).toHaveValue('אבַ');
-  await expect(page.locator('#keyboardZoom .nikud-zoom-word')).toHaveText('אבַ');
 });
