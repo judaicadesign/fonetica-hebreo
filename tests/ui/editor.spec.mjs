@@ -13,6 +13,9 @@ for (const width of [320, 390, 768, 1366]) {
       const actions = await page.locator('#copyHebrew').boundingBox();
       const copy = await page.locator('#copy').boundingBox();
       expect(Math.abs(actions.y - copy.y)).toBeLessThanOrEqual(1);
+      const inputStatus = await page.locator('#nakdanStatus').boundingBox();
+      const outputStatus = await page.locator('#motorStatus').boundingBox();
+      expect(Math.abs(inputStatus.y - outputStatus.y)).toBeLessThanOrEqual(1);
     }
     await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
     const keyboard = await page.locator('#nikudKbd').boundingBox();
