@@ -2587,7 +2587,7 @@ function renderNakdanChoice(choice,currentWord){
   other.addEventListener("click",()=>{
     row.hidden=false;inp.value=currentWord;setCustomMode(true);nikudTarget=inp;showNikudKeyboard(true);
     inp.focus();inp.setSelectionRange(inp.value.length,inp.value.length);
-    requestAnimationFrame(()=>$("nakdanZoom")?.scrollIntoView({block:"start",behavior:"smooth"}));
+    requestAnimationFrame(()=>$("nakdanZoom")?.scrollIntoView({block:"start"}));
   });
   ok.addEventListener("click",fix);
   inp.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();fix();}if(e.key==="Escape")cancel.click();};
