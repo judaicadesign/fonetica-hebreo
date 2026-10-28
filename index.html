@@ -2514,10 +2514,14 @@ function refreshNikudZoom(field=nikudTarget||$("hebrew"),label="Palabra ampliada
 function restoreNikudZoom(){setNikudZoom(nikudZoomBaseWord,nikudZoomBaseLabel,false);}
 function hideNakdanChoices(){
   const b=$("nakdanChoices");if(!b)return;b.className="nakdan-choices";b.replaceChildren();
+  const zoom=$("nakdanZoom"),editor=$("nakdanZoomEditor"),preview=$("nakdanZoomWord");
+  zoom?.classList?.remove?.("is-editing");if(editor)editor.hidden=true;if(preview)preview.hidden=false;
+  if(nikudTarget===editor)nikudTarget=$("hebrew");
   setNikudZoom("",nikudZoomBaseLabel,false);
 }
 function renderNakdanChoice(choice,currentWord){
   const box=$("nakdanChoices");if(!box||!choice){hideNakdanChoices();return;}
+  $("nakdanZoom")?.classList.remove("is-editing");$("nakdanZoomEditor").hidden=true;$("nakdanZoomWord").hidden=false;
   box.replaceChildren();box.className="nakdan-choices show";
   setNikudZoom(currentWord,"Palabra actual",true);
   const head=document.createElement("div");head.className="nakdan-choices-head";
@@ -2573,7 +2577,9 @@ function renderNakdanChoice(choice,currentWord){
     if(editing){
       const label=zoom?.querySelector(".nikud-zoom-label"),help=zoom?.querySelector(".nikud-zoom-help");
       if(label)label.textContent="Editá tu palabra";
-      if(help)help.textContent="El cursor y el nikud se ven grandes mientras escribís.";
+      if(help)help.textContent="Poné el cursor después de la letra y elegí el signo.";
+    }else{
+      const help=zoom?.querySelector(".nikud-zoom-help");if(help)help.textContent="La lupa sigue las opciones de Nakdan.";
     }
   };
   const fix=()=>{
@@ -2593,6 +2599,7 @@ function renderNakdanChoice(choice,currentWord){
   inp.onkeydown=e=>{if(e.key==="Enter"){e.preventDefault();fix();}if(e.key==="Escape")cancel.click();};
   inp.onfocus=()=>{nikudTarget=inp;};
   inp.oninput=()=>{nikudZoomBaseWord=inp.value;};
+  inp.onblur=()=>{nikudZoomBaseWord=inp.value;};
   cancel.addEventListener("click",()=>{row.hidden=true;setCustomMode(false);nikudTarget=$("hebrew");showNikudKeyboard(false);setNikudZoom(currentWord,"Palabra actual",true);});
 }
 

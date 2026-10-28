@@ -181,6 +181,11 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-v
 
 button,select,textarea,.nakdan-custom-input{border-color:var(--control-line)}
 html{scrollbar-color:var(--teal) var(--paper)}
+input.nikud-zoom-editor{scroll-margin-block:16px}
+.nikud-zoom-label,.nk-sec{overflow-wrap:anywhere}
+@media(pointer:coarse){.nakdan-option{min-height:48px}.nk{min-height:64px}}
+@media(forced-colors:active){.nikud-zoom,.nikud-zoom-editor,.nikud-panel.is-open{border:1px solid CanvasText}.nikud-zoom-editor{color:CanvasText;caret-color:CanvasText}}
+@media(max-height:600px) and (min-width:801px){.nikud-panel.is-open{max-height:48dvh}.nikud-panel .nk-g{font-size:30px}.nikud-panel .nk-s{font-size:11px}}
 
 /* Shared keyboard below both editors; editing actions remain beside Copy phonetics. */
 .nikud-panel{margin-top:18px;min-width:0}
