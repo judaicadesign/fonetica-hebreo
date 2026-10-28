@@ -1,146 +1,20 @@
 <!doctype html>
 <html lang="es" data-jd-tool="phonetics">
 <head>
-<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="assets/favicon.png">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Fonética Hebrea — Judaica Design</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/ydp7axr.css">
-<style>
-
-:root{
-  --teal:#0F5B5D;
-  --teal-dark:#0A4446;
-  --teal-soft:#EAF4F3;
-  --gold:#C69A4B;
-  --gold-soft:#F8F0E1;
-  --ink:#193234;
-  --muted:#6C7B7D;
-  --line:#D9E2E1;
-  --paper:#FAF9F6;
-  --white:#FFFFFF;
-  --sans:"aktiv-grotesk-hebrew","aktiv-grotesk",sans-serif;
-  --sans-extended:"aktiv-grotesk-ex-hebrew","aktiv-grotesk-extended","aktiv-grotesk-hebrew",sans-serif;
-  --sans-extended-hebr:"aktiv-grotesk-ex-hebrew","aktiv-grotesk-extended","aktiv-grotesk-hebrew",sans-serif;
-  font-family:var(--sans);
-  color:var(--ink);
-  background:var(--paper);
-}
-*{box-sizing:border-box}
-html{background:var(--paper)}
-body{margin:0;background:var(--paper);min-height:100vh}
-button,select,textarea{font:inherit}
-button,select{-webkit-tap-highlight-color:transparent}
-.wrap{max-width:1180px;margin:0 auto;padding:20px 26px 58px}
-.header{display:flex;align-items:flex-start;justify-content:space-between;gap:36px;padding:4px 2px 20px;border-bottom:1px solid var(--line)}
-.brand-copy{min-width:0;padding-top:7px}
-.eyebrow{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
-h1{font-family:"Libre Caslon Condensed",Georgia,serif;font-weight:400;font-size:clamp(30px,3.5vw,44px);line-height:1.08;letter-spacing:normal;color:#0f5b5d;margin:0 0 12px}
-.sub{font-family:var(--sans);max-width:680px;margin:0;color:var(--muted);font-size:14px;line-height:1.65}
-.logo{width:130px;height:auto;display:block;flex:0 0 auto}
-.profile-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin:24px 0 18px}
-.nikud-toggle{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--teal-dark);cursor:pointer;white-space:nowrap}
-.nikud-toggle input{width:16px;height:16px;margin:0;accent-color:var(--teal)}
-button:disabled{opacity:.5;cursor:default;transform:none}
-.profile-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
-.profile-control{display:flex;align-items:center;gap:10px}
-select{min-width:265px;padding:11px 38px 11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);outline:none;appearance:auto}
-select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(198,154,75,.14)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 8px 30px rgba(25,50,52,.045)}
-.card-title{font-family:var(--sans-extended-hebr);font-size:15px;font-weight:600;font-style:normal;letter-spacing:.07em;font-kerning:normal;font-feature-settings:"kern" 1;text-transform:uppercase;color:var(--teal-dark);display:flex;align-items:center;gap:10px;margin:0 0 11px}
-.card-title::after{content:"";height:2px;width:34px;background:var(--gold);display:inline-block;border-radius:2px}
-textarea{width:100%;min-height:clamp(240px,calc(100vh - 500px),430px);border:1px solid var(--line);border-radius:11px;padding:16px;resize:vertical;line-height:1.7;background:#fff;color:var(--ink);outline:none;transition:border-color .15s,box-shadow .15s}
-textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(15,91,93,.09)}
-#hebrew{direction:rtl;text-align:right;font-size:20px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;line-height:1.85}
-#output{direction:ltr;text-align:left;font-size:20px;font-family:"Segoe UI",Arial,sans-serif;line-height:1.85}
-textarea::placeholder{color:#9AA7A8;opacity:1}
-/* Resaltado hebreo ↔ fonética y lista de palabras del Nakdan */
-.hl-wrap{position:relative;background:var(--white);border-radius:11px}
-.hl-wrap>textarea{position:relative;z-index:1;display:block;background:transparent}
-.hl-back{position:absolute;z-index:0;pointer-events:none;overflow:hidden;white-space:pre-wrap;overflow-wrap:break-word;word-break:normal;color:transparent;margin:0;border:0}
-.hl-back mark{background:rgba(198,154,75,.42);color:transparent;border-radius:4px;box-shadow:0 0 0 2px rgba(198,154,75,.42)}
-.nakdan-words{margin-top:10px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:var(--gold-soft)}
-.nakdan-words[hidden]{display:none}
-.nw-head{font-size:11px;color:var(--muted);margin-bottom:8px;line-height:1.45}
-.nw-list{display:flex;flex-wrap:wrap;gap:6px;max-height:170px;overflow:auto}
-.nw{display:inline-flex;flex-direction:column;align-items:center;gap:1px;padding:5px 9px;border:1px solid var(--line);border-radius:9px;background:var(--white);font-weight:400;transform:none}
-.nw:hover{border-color:var(--gold);transform:none}
-.nw.alt{border-color:var(--gold);box-shadow:0 0 0 2px rgba(198,154,75,.22)}
-.nw-he{font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:17px;direction:rtl;color:var(--teal-dark)}
-.nw-ph{font-family:"Segoe UI",Arial,sans-serif;font-size:12px;color:var(--muted)}
-
-.toolbar{display:flex;gap:9px;margin-top:13px;align-items:center}
-.toolbar.split{justify-content:space-between}
-.toolbar.right{justify-content:flex-end}
-button{padding:10px 14px;border:1px solid var(--line);border-radius:9px;background:var(--white);color:var(--teal-dark);cursor:pointer;font-weight:700;font-size:12px;letter-spacing:.01em;transition:all .15s ease}
-button:hover{border-color:var(--teal);transform:translateY(-1px)}
-button:active{transform:translateY(0)}
-#copyHebrew,#copy{background:var(--teal);border-color:var(--teal);color:#fff}
-#copyHebrew:hover,#copy:hover{background:var(--teal-dark);border-color:var(--teal-dark)}
-.status{font-size:12px;color:var(--muted);margin-top:9px;min-height:18px;line-height:1.45}
-.nakdan-choices{margin-top:10px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:#fbfcfb;display:none}
-.nakdan-choices.show{display:block}
-.nakdan-choices-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:11px;color:var(--muted)}
-.nakdan-choices-word{font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:17px;color:var(--teal-dark);direction:rtl}
-.nakdan-options{display:flex;flex-wrap:wrap;gap:7px;direction:rtl}
-.nakdan-option{font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:16px;font-weight:500;padding:6px 10px;border-radius:999px;background:#fff}
-.nakdan-option.selected{border-color:var(--teal);background:rgba(15,91,93,.08)}
-.nakdan-tag{font-family:var(--sans);font-size:10px;color:var(--muted);margin-inline-start:5px}
-.nakdan-other{font-family:var(--sans);font-size:12px;font-weight:700;border-style:dashed}
-.nakdan-custom{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:9px}
-.nakdan-custom[hidden]{display:none}
-.nakdan-custom-input{flex:1 1 180px;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:22px;direction:rtl}
-.nakdan-custom-ok{background:var(--teal);border-color:var(--teal);color:#fff}
-.nakdan-custom-hint{flex-basis:100%;font-size:11px;color:var(--muted)}
-.nakdan-custom-hint.warn{color:#9A6A20}
-.nikud-kbd{margin-top:10px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:#fbfcfb}
-.nikud-kbd[hidden]{display:none}
-.nk-sec{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin:6px 0 6px}
-.nk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:7px}
-.nk{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px 8px;font-weight:400;background:#fff}
-.nk-g{font-family:"SBL Hebrew","Ezra SIL","Noto Serif Hebrew","Times New Roman",serif;font-size:42px;line-height:1.15;direction:rtl;color:var(--teal-dark)}
-.nk-n{font-size:12px;font-weight:700;color:var(--teal-dark)}
-.nk-s{font-size:11px;color:var(--muted);text-align:center;line-height:1.3}
-.nk-tools{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:10px}
-.nk-help{font-size:11px;color:var(--muted)}
-
-.ok{color:#3F746F}.warn{color:#9A6A20}.err{color:#A13A38}
-details.rules{margin-top:18px}
-details.rules summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;font-family:var(--sans-extended-hebr);font-weight:600;font-size:14px;color:var(--teal-dark);letter-spacing:.02em}
-details.rules summary::-webkit-details-marker{display:none}
-details.rules summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid var(--line);border-radius:50%;color:var(--gold);font-size:16px;line-height:1}
-details.rules[open] summary::before{content:"–"}
-.rules-inner{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.7;columns:2;column-gap:46px}
-.rules-inner h3{font-family:"Libre Caslon Condensed",Georgia,serif;font-size:25px;font-weight:400;color:#0f5b5d;margin:0 0 10px;column-span:all}
-.rules-inner h4{font-family:var(--sans-extended-hebr);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin:18px 0 6px;break-after:avoid}
-.rules-inner p{margin:0 0 8px;break-inside:avoid}
-.rules-inner ul{margin:4px 0 10px;padding-left:18px;break-inside:avoid}
-.rules-inner li{margin:2px 0}
-.footer{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-top:20px;color:#879596;font-size:11px;letter-spacing:.03em}
-.footer .mark{color:var(--gold);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-@media(max-width:800px){
-  .wrap{padding:16px 15px 42px}
-  .header{padding-bottom:22px}
-  h1{font-size:42px}
-  .logo{width:100px}
-  .profile-row{align-items:flex-start;flex-direction:column;gap:10px}
-  .profile-control{width:100%;flex-wrap:wrap}
-  .nikud-toggle{width:100%}
-  select{width:100%}
-  .grid{grid-template-columns:1fr}
-  .rules-inner{columns:1}
-  textarea{min-height:340px}
-}
-</style>
+<link rel="stylesheet" href="editor.css?v=20261027">
 <script src="jd-embed.js?v=20261007-tools" defer></script>
 </head>
 <body>
+<a class="skip-link" href="#editor">Ir al editor</a>
 <div class="wrap">
 
 <header class="header">
@@ -149,7 +23,7 @@ details.rules[open] summary::before{content:"–"}
     <h1>Fonética Hebrea</h1>
     <p class="sub">Pegá hebreo con o sin niqqud. Si ya tiene niqqud, se conserva exactamente como está.<br>Si no lo tiene, se vocaliza automáticamente y se genera la fonética sefaradí.</p>
   </div>
-  <img class="logo" alt="Judaica Design" src="data:image/png;base64,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">
+  <img class="logo" alt="Judaica Design" src="assets/logo.png" width="575" height="433">
 </header>
 
 <div class="profile-row">
@@ -163,8 +37,8 @@ details.rules[open] summary::before{content:"–"}
 
   <div class="profile-control">
     <label class="nikud-toggle"><input id="autoNikud" type="checkbox" checked>Nikud automático</label>
-    <label class="nikud-toggle" title="Marca con meteg la sílaba tónica cuando no es la última"><input id="showMeteg" type="checkbox">Meteg</label>
-    <label class="nikud-toggle" title="Marca con rafe la shevá na"><input id="showRafe" type="checkbox">Rafe</label>
+    <label class="nikud-toggle" title="Marca con meteg la sílaba tónica cuando no es la última"><input id="showMeteg" type="checkbox" aria-describedby="marksHelp">Meteg</label>
+    <label class="nikud-toggle" title="Marca con rafe la shevá na"><input id="showRafe" type="checkbox" aria-describedby="marksHelp">Rafé</label>
     <span class="profile-label">Nakdan</span>
     <select id="nakdanGenre" aria-label="Tipo de texto para Nakdan">
       <option value="rabbinic" selected>Rabínico · sidur / textos tradicionales</option>
@@ -174,10 +48,13 @@ details.rules[open] summary::before{content:"–"}
   </div>
 </div>
 
+<p class="control-help" id="marksHelp">Meteg marca la sílaba tónica; Rafé marca la shevá na. Estas opciones agregan marcas al hebreo y conservan la misma fonética. El nikud automático usa Nakdan (Dicta).</p>
+<main id="editor" tabindex="-1">
 <div class="grid">
   <section class="card">
-    <div class="card-title">1. Hebreo</div>
-    <textarea id="hebrew" spellcheck="false" placeholder="Pegá aquí el texto hebreo, con o sin niqqud…"></textarea>
+    <h2 class="card-title"><label for="hebrew">1. Hebreo</label></h2>
+    <p class="field-help" id="hebrewHelp">Pegá el texto. Podés corregir el nikud con el teclado de abajo.</p>
+    <textarea lang="he" dir="rtl" aria-describedby="hebrewHelp nakdanStatus" id="hebrew" spellcheck="false" placeholder="Pegá aquí el texto hebreo, con o sin niqqud…"></textarea>
     <div id="nakdanChoices" class="nakdan-choices" aria-live="polite"></div>
     <div class="toolbar"><button id="nikudBtn" type="button" aria-expanded="false" aria-controls="nikudKbd">אָ Teclado de nikud</button></div>
     <div id="nikudKbd" class="nikud-kbd" hidden></div>
@@ -188,43 +65,50 @@ details.rules[open] summary::before{content:"–"}
       <button id="pasteHebrew" type="button">Pegar texto</button>
       <button id="copyHebrew" type="button">Copiar hebreo</button>
     </div>
-    <div id="nakdanStatus" class="status">Listo. Nakdan se activa automáticamente cuando hace falta.</div>
+    <div id="nakdanStatus" class="status" role="status" aria-live="polite" aria-atomic="true">Listo. Nakdan se activa automáticamente cuando hace falta.</div>
+    <div id="hebrewCopyNotice" class="copy-notice" role="status" aria-live="polite" aria-atomic="true"></div>
+    <div class="retry-row"><button id="retryNikud" type="button" hidden>Reintentar nikud automático</button></div>
     <div id="nakdanWords" class="nakdan-words" hidden></div>
   </section>
 
   <section class="card">
-    <div class="card-title">2. Fonética</div>
-    <textarea id="output" readonly spellcheck="false" placeholder="La fonética aparecerá automáticamente…"></textarea>
+    <h2 class="card-title"><label for="output">2. Fonética</label></h2>
+    <p class="field-help" id="outputHelp">Se actualiza al editar el hebreo. Revisá los avisos antes de copiar.</p>
+    <textarea aria-describedby="outputHelp motorStatus" id="output" readonly spellcheck="false" placeholder="La fonética aparecerá automáticamente…"></textarea>
     <div class="toolbar right">
       <button id="copy" type="button">Copiar fonética</button>
     </div>
-    <div id="motorStatus" class="status">Motor listo.</div>
+    <div id="phoneticCopyNotice" class="copy-notice" role="status" aria-live="polite" aria-atomic="true"></div>
+    <div id="motorStatus" class="status" role="status" aria-live="polite" aria-atomic="true">Motor listo.</div>
   </section>
 </div>
 
 
+<p id="draftStatus" class="draft-status" role="status" aria-live="polite" aria-atomic="true">El borrador se guarda en este navegador. Limpiar también lo descarta.</p>
+<button id="draftOverwrite" type="button" hidden>Guardar esta versión</button>
+</main>
 <details class="card rules">
   <summary>Reglas de transliteración</summary>
   <div class="rules-inner">
-    <h3>Fonética sefaradí</h3>
-    <h4>Criterio general</h4>
+    <h2>Fonética sefaradí</h2>
+    <h3>Criterio general</h3>
     <p>La salida corresponde siempre a una fonética sefaradí / israelí moderna, pensada para que un hispanohablante —especialmente un lector rioplatense— pueda leer el texto de manera natural y aproximarse a la pronunciación sefaradí.</p>
     <p>La transliteración debe ser uniforme. No se introducen convenciones ashkenazíes en esta versión. La versión ashkenazí, con sus diferencias específicas de pronunciación, se incorporará en una etapa posterior.</p>
     <p>La referencia editorial prioritaria es ArtScroll (PDF o fotos aportadas). El generador deriva todo por <b>reglas gramaticales</b>, no por una lista creciente de excepciones por palabra: si una regla reproduce una palabra, esa palabra no lleva excepción. No se inventan meteg, shevá na ni rafé que ArtScroll no tenga.</p>
 
-    <h4>Consonantes</h4>
+    <h3>Consonantes</h3>
     <p>ע = ' (apóstrofo) · א = no se representa con apóstrofo · צ / ץ = ts · בּ = b · ב = v · כּ = k · כ / ך = j · ח = j · שׁ = sh · שׂ = s · ק = k · תּ / ת = t.</p>
 
-    <h4>Vocales</h4>
+    <h3>Vocales</h3>
     <p>Pataj = a · Kamats gadol = a · Kamats katán = o · Segol = e · Tsere = e pura, sin diptongo · Jirik = i · Jolam = o · Kubuts / Shuruk = u.</p>
     <p>No se distingue gráficamente entre vocales largas y cortas.</p>
 
-    <h4>Tsere / sonido e</h4>
+    <h3>Tsere / sonido e</h3>
     <p>La fonética es sefaradí. Por lo tanto, el Tsere se representa como <b>e</b> pura y no como <b>ei</b>.</p>
     <p><b>בֵּין = ben · וּבֵין = uven · עָלֵינוּ = 'alenu</b></p>
     <p>No se incorporan las realizaciones ashkenazíes del Tsere, como <i>bein</i> / <i>aleinu</i>.</p>
 
-    <h4>Shevá: na y naj</h4>
+    <h3>Shevá: na y naj</h3>
     <p>La shevá no se transcribe siempre como e. Hay dos clases: la <b>shevá na</b> (vocal, «que suena») se lee e; la <b>shevá naj</b> (muda, «quieta») no se escribe. La decisión sale de la estructura de la palabra y se contrasta siempre con el rafé impreso de ArtScroll.</p>
     <p><b>Origen de las reglas.</b> La base es el <i>Dikduk Eliyahu</i> (דקדוק אליהו) del Gaón de Vilna, Rabí Eliyahu ben Shlomo Zalman (1720–1797), págs. כו–כז (HebrewBooks 20568). Los casos con prefijos y los patrones verbales que el libro no detalla se agregan solo cuando el rafé de ArtScroll los confirma.</p>
     <ul>
@@ -242,40 +126,40 @@ details.rules[open] summary::before{content:"–"}
     <p>Patrones con shevá na que ArtScroll marca con rafé: artículo o preposición con kamats ante ר/guturales (<i>veharejavá, velaresha'im</i>); 3ª plural CָCְCוּ (<i>vekave'ú, uvarejú</i>); participio Pi'el con artículo o preposición (<i>umvarejim</i> y <i>Lamenatséaj</i>, לַמְנַצֵּחַ, «al director»: la מ de ese participio suena, aunque otros libros escriban <i>Lamnatséaj</i>); 3ª plural Hitpa'el/Nitpa'el (<i>shenitbarejú</i>); y la 3ª femenina CָCְCָה (<i>keshe'amedá, shaferá, daveká, saneá</i>: ArtScroll 8 de 8 con rafé), salvo sustantivos con kamats katán (<i>jojmá</i>). Siguen la regla, sin excepción: <i>'imejá</i> (עִמְּךָ, 130:4) y <i>Siserá</i> (83:10).</p>
     <p>No se agregan reglas sin evidencia: toda regla nueva se prueba contra el rafé impreso de ArtScroll antes de entrar al motor.</p>
 
-    <h4>Rafé (ֿ) y meteg (ֽ)</h4>
+    <h3>Rafé (ֿ) y meteg (ֽ)</h3>
     <p><b>Rafé:</b> el rafé U+05BF marca visualmente la consonante con <b>shevá na</b> confirmada. No se aplica a la shevá naj. Criterio de ArtScroll: no lleva rafé la shevá inicial de palabra ni la inicial del tema tras un prefijo (salvo dagesh, letra repetida, shevá previa o los patrones de arriba); sí lleva toda shevá na del medio de la palabra. Tras artículo con pataj sobre מְ sin dagesh sí lleva rafé (<i>לַמְֿנַצֵּחַ</i>). Un rafé escrito en el texto fuerza shevá na (<i>מַתְּֿנוֹת = matenot</i>).</p>
     <p><b>Meteg:</b> un meteg en una sílaba que no es la última marca la <b>sílaba tónica</b> (convención de ArtScroll): <i>אָֽתָּה = Ata, שִֽׁירוּ = shiru, נָֽפְלוּ = náfelu</i>. Si la palabra trae más de un meteg no se usa (ambiguo). Sin meteg, אַתָּה es milrá (<i>Atá</i>) y la forma pausal אָתָּה con kamats es <i>Ata</i>.</p>
     <p><b>Meteg y acento salen de la misma regla</b> (Bircat Hamazón sefaradí, 15/10): vav conversiva del Shemá y Devarim 8:10 aguda y sin meteg (<i>veajaltá, vesava'tá, uverajtá, veahavtá</i>); prefijo שֶׁ/וְ/הַ ante monosílabo sin meteg (<i>sheló</i>); segolados con prefijo con acento y meteg en la primera vocal del tema (<i>hanéfesh, ladá'at, ná'ar</i>), pero en constructo ante artículo sin acento propio (<i>ba'al hanejamot</i>); -ֵנוּ átono tras נ (<i>zunenu, zijronenu, yejanenu</i>); perfecto de 2ª y 1ª con meteg en la tónica (<i>ravta, danta, hayiti</i>). El rafé solo aparece si la fonética lee shevá na (<i>lesov'á</i> sin rafé; <i>natená</i> con rafé).</p>
     <p>Las casillas <b>Meteg</b> y <b>Rafe</b> sólo cambian el hebreo que se muestra: la fonética es idéntica con o sin marcas (cada palabra se verifica antes de marcarla) y el cambio es reversible.</p>
 
-    <h4>Kamats katán</h4>
+    <h3>Kamats katán</h3>
     <p>Kamats gadol = a. Kamats katán = o. Cuando el texto utiliza explícitamente el carácter Unicode U+05C7, debe reconocerse como tal. Raíces con kamats katán sin marca se reconocen por estructura (<i>חָכְמָה = jojmá, קָדְשְׁךָ = kodshejá, אָזְנַיִם = oznáyim</i>), con o sin prefijos.</p>
 
-    <h4>Signos de puntuación y paseq</h4>
+    <h3>Signos de puntuación y paseq</h3>
     <p>Las comas, puntos, punto y coma y dos puntos del hebreo se copian tal cual a la fonética. El <b>paseq</b> (׀) es una rayita vertical entre dos palabras: marca una pausa muy breve, no agrega ningún sonido y por ahora no aparece en la fonética.</p>
 
-    <h4>Apóstrofos</h4>
+    <h3>Apóstrofos</h3>
     <p>El apóstrofo se reserva exclusivamente para ע. No se utiliza para א. Cuando י + ע genera un hiato, el apóstrofo corresponde únicamente a la ע.</p>
 
-    <h4>J</h4>
+    <h3>J</h3>
     <p>La letra j representa tanto ח como כ / ך sin dagesh, siguiendo una fonética pensada para hispanohablantes.</p>
 
-    <h4>Tav</h4>
+    <h3>Tav</h3>
     <p>ת se transcribe siempre como t. No se utiliza la pronunciación ashkenazí de ת como s. La distinción futura entre tav y sav corresponderá exclusivamente a la futura versión ashkenazí.</p>
 
-    <h4>Acentuación</h4>
+    <h3>Acentuación</h3>
     <p>Se utilizan las tildes del español únicamente cuando son necesarias para que un hispanohablante lea correctamente el acento hebreo.</p>
     <p><b>Regla práctica: si un argentino lo leería correctamente sin tilde, no se agrega tilde.</b> Llanas terminadas en vocal, n o s y agudas terminadas en otra consonante no llevan tilde; llanas terminadas en otra consonante sí (<i>léjem, Mélej</i>).</p>
     <p>Ejemplos: <i>bigvurá, kirtsonó, yadáyim, shamáyim, Mitsráyim, Yerushaláyim, hashevi'í, shiru / shirú</i>.</p>
     <p><b>Terminación -ah:</b> las palabras con ה final precedida de vocal llevan siempre tilde en la vocal tónica (<i>letojáh, minógah, kegováh, lishmáh</i>), para que no se lean como agudas. Excepción: <i>HaleluYah, BeYah</i>.</p>
     <p>Hiato y diptongos: <i>báyit, 'ayin, 'áyish</i>. Nombres con acento milrá fijo: <i>Bavél, beVavél</i>.</p>
 
-    <h4>Nombres propios, lugares y Templo</h4>
+    <h3>Nombres propios, lugares y Templo</h3>
     <p>Los nombres propios se escriben con mayúscula inicial: <b>Moshé, Aharón, Mijael, Rafael, Daniel, David, Etán, Efráyim, Zevulún.</b></p>
     <p>Lugares y pueblos también, y con un prefijo la mayúscula va en el nombre, no en el prefijo: <b>miTsiyón, beVavél, uveVavél, ve'Amón, ba'Amalek.</b></p>
     <p>El Templo, que tanto añoramos, va con mayúscula en el sustantivo: <b>Bet haMikdash, haBáyit hagadol vehakadosh.</b></p>
 
-    <h4>Referencias a Hashem</h4>
+    <h3>Referencias a Hashem</h3>
     <p>Llevan mayúscula los pronombres, títulos y atributos de Hashem (<b>Hu, Harajamán, HaEl, Mélej, Hakadosh Baruj Hu</b>), el nombre y el rostro (<b>Shemeja, Paneja, Shemó, Panav</b>), las partes del cuerpo cuando se dice de Él (<b>Yadeja, Yeminó</b>), sus lugares (<b>Kodshejá, Hejal, Kisó, Mikdasheja</b>), la <b>Torá</b>, y los sufijos de segunda persona que Le hablan (<b>Lejá, Laj, Bejá</b>).</p>
     <p>No llevan mayúscula las cosas externas a Hashem: <b>'amejá, oyveja, tsefuneja, jasdeja, shameja, darkó, 'amó</b> (su pueblo).</p>
     <p><b>Atá / VeAtá / sheAtá:</b> el motor no «sabe» de quién se habla; lo deduce por el contexto de la oración. Si la oración nombra a Hashem (Ad-nai, Elohim, Elohenu) o contiene un sufijo -ךָ dirigido a Él, <i>Atá</i> lleva mayúscula en la raíz (<i>VeAtá berajameja harabim</i>). Para <i>Lejá / Laj / Bejá</i> se exige el nombre divino en la oración. En los versículos ya revisados con ArtScroll manda la decisión tomada versículo por versículo. <i>Harajamán</i> (epíteto de Hashem en Birkat Hamazón) siempre va con mayúscula.</p>
@@ -290,20 +174,20 @@ details.rules[open] summary::before{content:"–"}
       <li><b>כּ = K</b> siempre: <i>Januká, Kohén, Sukot</i>.</li>
     </ul>
 
-    <h4>Mayúsculas</h4>
+    <h3>Mayúsculas</h3>
     <p>Inicio de oración = mayúscula. Nombre propio, lugar y Templo = mayúscula. Referencia reverencial a Hashem = mayúscula según lo anterior. No se capitalizan automáticamente palabras comunes por aparecer en una posición determinada.</p>
 
-    <h4>Niqqud y Nakdan</h4>
+    <h3>Niqqud y Nakdan</h3>
     <p>El niqqud existente se conserva exactamente como está y no se vuelve a vocalizar. Nakdan se consulta solamente para las palabras que no tienen niqqud, con el texto completo como contexto. Una vocal que falta en un nombre divino (<i>וֵאלהֵי</i> → <i>vElohé</i>) se restituye.</p>
     <p>Una misma secuencia consonántica puede corresponder a palabras diferentes según el niqqud y el contexto: <b>דָּבָר = davar</b> (palabra, cosa) / <b>דֹּבֵר = dover</b> (el que habla).</p>
     <p>Debajo del aviso de Nakdan aparece la <b>lista de palabras que puso o revisó</b>; el niqqud automático es provisional, el tuyo y tus elecciones quedan fijos. Las palabras con otras lecturas posibles llevan borde dorado.</p>
 
-    <h4>Uso de la página</h4>
+    <h3>Uso de la página</h3>
     <p><b>Teclado de nikud:</b> botones grandes con el nombre y el sonido de cada signo. Poné el cursor después de la letra y tocá el signo; «Borrar signo» quita el último. <b>Escribir otra…</b> (en las opciones de Nakdan) permite tipear la palabra con tu nikud cuando Nakdan no ofrece la correcta; queda fija.</p>
     <p><b>Kamats katán al copiar:</b> en el recuadro se conserva el signo propio (ׇ, U+05C7) para que la fonética lea O; al copiar (botón o Ctrl+C) se escribe como kamats común (ָ), porque las fuentes de InDesign no tienen el katán.</p>
     <p><b>Clic o selección</b> en una palabra hebrea marca su fonética, y al revés. <b>Ctrl+Z / Ctrl+Y</b> (o los botones Deshacer / Rehacer) recuperan el texto, también después de «Limpiar».</p>
 
-    <h4>Criterio de lectura</h4>
+    <h3>Criterio de lectura</h3>
     <p>La prueba final de la transliteración es la lectura: fidelidad al hebreo vocalizado, pronunciación sefaradí, lectura natural para un hispanohablante y uniformidad editorial en todo el texto.</p>
   </div>
 </details>
@@ -2605,7 +2489,7 @@ function renderNakdanChoice(choice,currentWord){
   box.replaceChildren();box.className="nakdan-choices show";
   const head=document.createElement("div");head.className="nakdan-choices-head";
   const title=document.createElement("span");title.textContent=choice.confident?"Alternativas de Nakdan":"Nakdan no está seguro · elegí la lectura correcta";
-  const w=document.createElement("span");w.className="nakdan-choices-word";w.textContent=currentWord;
+  const w=document.createElement("span");w.className="nakdan-choices-word";w.lang="he";w.textContent=currentWord;
   head.appendChild(title);head.appendChild(w);box.appendChild(head);
   const opts=document.createElement("div");opts.className="nakdan-options";
   /* Fija una lectura elegida (de Nakdan o escrita a mano): queda como "manual" y Nakdan no la vuelve a tocar. */
@@ -2628,8 +2512,8 @@ function renderNakdanChoice(choice,currentWord){
     return true;
   };
   for(const opt of choice.options){
-    const b=document.createElement("button");b.type="button";b.className="nakdan-option"+(norm(opt.text)===norm(currentWord)?" selected":"");
-    const t=document.createElement("span");t.textContent=opt.text;b.appendChild(t);
+    const b=document.createElement("button");b.type="button";b.ariaPressed=String(norm(opt.text)===norm(currentWord));b.className="nakdan-option"+(norm(opt.text)===norm(currentWord)?" selected":"");
+    const t=document.createElement("span");t.lang="he";t.textContent=opt.text;b.appendChild(t);
     if(opt.tag){const tag=document.createElement("span");tag.className="nakdan-tag";tag.textContent=opt.tag;b.appendChild(tag);}
     b.addEventListener("click",()=>applyChoice(opt.text,false));
     opts.appendChild(b);
@@ -2844,7 +2728,7 @@ async function run(){
     }catch(e){
       if(id!==runId) return;
       warn=true;lastWordState=currentState;lastRenderedHebrew=input;
-      ns.textContent="No se pudo agregar nikud ("+e.message+"). Revisá las palabras que quedaron sin vocales.";ns.className="status warn";
+      ns.textContent="No se pudo completar el nikud automático. Tu texto se conserva. Reintentá o agregá las vocales con el teclado de nikud.";ns.className="status warn";
     }
   }else{
     lastWordState=currentState;lastRenderedHebrew=input;lastNakdanChoices=[];hideNakdanChoices();
@@ -2923,8 +2807,9 @@ for(const ev of ["copy","cut"]){
 async function copyWithStatus(value,el,status){
   if(!value)return;
   const copied=await copyText(value,el);
+  status=$(el.id==="output"?"phoneticCopyNotice":"hebrewCopyNotice")||status;
   status.textContent=copied?"Texto copiado.":"No se pudo copiar automáticamente. Seleccioná el texto y usá Copiar.";
-  status.className="status "+(copied?"ok":"warn");
+  status.className="copy-notice "+(copied?"ok":"warn");
 }
 $("copyHebrew").addEventListener("click",()=>copyWithStatus(hebrewForExport($("hebrew").value),$("hebrew"),$("nakdanStatus")));
 $("copy").addEventListener("click",()=>copyWithStatus($("output").value,$("output"),$("motorStatus")));
@@ -2942,7 +2827,7 @@ $("pasteHebrew").addEventListener("click",async()=>{
     await run();
     $("hebrew").focus();
   }catch(e){
-    ns.textContent="Chrome no permitió leer el portapapeles. Si aparece una solicitud de permiso, elegí Permitir. Si no, hacé clic en Hebreo y presioná Ctrl+V.";
+    ns.textContent="No se pudo leer el portapapeles. Pegá el texto directamente en Hebreo con Ctrl+V o con la opción Pegar de tu dispositivo.";
     ns.className="status warn";
     $("hebrew").focus();
   }
@@ -3090,7 +2975,7 @@ function renderNakdanWords(){
   for(const {i} of ws){
     const r=ranges[i]; if(!r)continue;
     const b=document.createElement("button"); b.type="button"; b.className="nw"+(alts.has(i)?" alt":"");
-    const he=document.createElement("span"); he.className="nw-he"; he.textContent=r.text;
+    const he=document.createElement("span"); he.className="nw-he";he.lang="he"; he.textContent=r.text;
     const ph=document.createElement("span"); ph.className="nw-ph";
     const its=map?map.items.filter(x=>x.hs<r.end&&x.he>r.start):[];
     ph.textContent=its.length?out.slice(Math.min(...its.map(x=>x.os)),Math.max(...its.map(x=>x.oe))):"";
@@ -3139,6 +3024,7 @@ window.addEventListener("DOMContentLoaded",()=>{
   updateHistButtons();
 });
 </script>
+<script src="editor-state.js?v=20261027" defer></script>
 </body>
 </html>
 

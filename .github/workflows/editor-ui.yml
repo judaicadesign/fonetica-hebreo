@@ -1,0 +1,33 @@
+name: Editor UI
+on:
+  push:
+    paths: [index.html, editor.css, editor-state.js, jd-embed.js, assets/**, tests/ui/**, playwright.config.mjs, package.json, package-lock.json, .github/workflows/editor-ui.yml]
+  pull_request:
+    paths: [index.html, editor.css, editor-state.js, jd-embed.js, assets/**, tests/ui/**, playwright.config.mjs, package.json, package-lock.json, .github/workflows/editor-ui.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: editor-ui-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  editor-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:ui
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: editor-ui-review
+          path: |
+            test-results/
+            playwright-report/
+          retention-days: 14
