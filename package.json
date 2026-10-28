@@ -1,0 +1,13 @@
+{
+  "name": "fonetica-hebreo",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.64.1"
+  },
+  "private": true,
+  "scripts": {
+    "test": "node scripts/run-regressions.mjs",
+    "test:ui": "playwright test"
+  }
+}

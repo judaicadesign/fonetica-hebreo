@@ -1,1 +1,4 @@
 audit-results/
+node_modules/
+test-results/
+playwright-report/

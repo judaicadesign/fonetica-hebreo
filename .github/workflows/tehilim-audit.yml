@@ -7,9 +7,19 @@ on:
       - scripts/audit-tehilim.mjs
       - scripts/extract-engine.mjs
       - scripts/run-regressions.mjs
+      - editor-state.js
+      - editor.css
       - jd-embed.js
       - tests/**
       - .github/workflows/tehilim-audit.yml
+  pull_request:
+    paths:
+      - index.html
+      - editor.css
+      - editor-state.js
+      - scripts/**
+      - tests/**
+      - .github/workflows/**
   workflow_dispatch:
 
 concurrency:
