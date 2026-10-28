@@ -33,6 +33,11 @@ test('Recovery retains manual reading, provisional origins and controls without 
   await page.goto('/');
   await page.locator('#hebrew').fill('שלום');
   await expect(page.locator('#hebrew')).toHaveValue('שָׁלוֹם');
+  await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key))?.words[0].origin, KEY)).toBe('nakdan');
+  await page.reload();
+  await expect(page.locator('#draftStatus')).toContainText('recuperado');
+  expect(requests).toBe(1);
+  await expect(page.locator('#nakdanWords button')).toHaveCount(1);
   await page.locator('#nakdanWords button').first().click();
   await page.locator('#nakdanChoices').getByRole('button', {name: 'שְׁלוֹם', exact: true}).click();
   await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key))?.words[0].origin, KEY)).toBe('manual');
@@ -96,4 +101,25 @@ test('Keyboard skip link and expanded text layout', async ({page}) => {
   // Double the inherited interface text, preserving the Hebrew editor font size.
   await page.addStyleTag({content: 'body{font-size:200%}button,select,.sub,.nikud-toggle,.status,.field-help,.control-help,.draft-status{font-size:1em}'});
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+
+test('Recovery preserves visual-mark preferences and their generated text', async ({page}) => {
+  let requests = 0;
+  await page.route('**/nakdan-2-0.loadbalancer.dicta.org.il/api', route => { requests++; return route.abort(); });
+  await page.goto('/');
+  await page.locator('#hebrew').fill(pointed);
+  await expect(page.locator('#output')).not.toHaveValue('');
+  await page.getByRole('checkbox', {name: 'Meteg', exact: true}).check();
+  await page.getByRole('checkbox', {name: 'Rafé', exact: true}).check();
+  await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key))?.preferences.showRafe, KEY)).toBe(true);
+  const hebrew = await page.locator('#hebrew').inputValue();
+  const phonetic = await page.locator('#output').inputValue();
+  await page.reload();
+  await expect(page.locator('#draftStatus')).toContainText('recuperado');
+  await expect(page.getByRole('checkbox', {name: 'Meteg', exact: true})).toBeChecked();
+  await expect(page.getByRole('checkbox', {name: 'Rafé', exact: true})).toBeChecked();
+  await expect(page.locator('#hebrew')).toHaveValue(hebrew);
+  await expect(page.locator('#output')).toHaveValue(phonetic);
+  expect(requests).toBe(0);
 });
