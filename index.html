@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/ydp7axr.css">
-<link rel="stylesheet" href="editor.css?v=20261027-groups">
+<link rel="stylesheet" href="editor.css?v=20261028-nikud-zoom">
 <script src="jd-embed.js?v=20261007-tools" defer></script>
 </head>
 <body>
@@ -64,6 +64,11 @@
     </div>
     <div id="nakdanStatus" class="status" role="status" aria-live="polite" aria-atomic="true">Listo. Nakdan se activa automáticamente cuando hace falta.</div>
     <div id="hebrewCopyNotice" class="copy-notice" role="status" aria-live="polite" aria-atomic="true"></div>
+    <aside id="nakdanZoom" class="nikud-zoom" data-context="choices" hidden aria-hidden="true">
+      <span class="nikud-zoom-label">Palabra ampliada</span>
+      <b class="nikud-zoom-word" lang="he" dir="rtl"></b>
+      <span class="nikud-zoom-help">La lupa sigue las opciones de Nakdan.</span>
+    </aside>
     <div id="nakdanChoices" class="nakdan-choices" aria-live="polite"></div>
     <div class="retry-row"><button id="retryNikud" type="button" hidden>Reintentar nikud automático</button></div>
     <div id="nakdanWords" class="nakdan-words" hidden></div>
@@ -83,6 +88,11 @@
 
 <section class="nikud-panel" aria-label="Teclado de nikud">
     <div class="toolbar"><button id="nikudBtn" type="button" aria-expanded="false" aria-controls="nikudKbd">אָ Teclado de nikud</button></div>
+    <aside id="keyboardZoom" class="nikud-zoom" data-context="keyboard" hidden aria-hidden="true">
+      <span class="nikud-zoom-label">Palabra ampliada</span>
+      <b class="nikud-zoom-word" lang="he" dir="rtl"></b>
+      <span class="nikud-zoom-help">La lupa sigue el cursor mientras agregás o borrás signos.</span>
+    </aside>
     <div id="nikudKbd" class="nikud-kbd" hidden></div>
 </section>
 
@@ -2485,10 +2495,38 @@ function buildWordStateAfterRun(sourceText,resultText,priorState){
     return {origin:"nakdan",sourceWord,renderedWord};
   });
 }
-function hideNakdanChoices(){const b=$("nakdanChoices");if(!b)return;b.className="nakdan-choices";b.replaceChildren();}
+let nikudZoomBaseWord="",nikudZoomBaseLabel="Palabra ampliada";
+function wordAtCaret(field){
+  if(!field||typeof field.value!=="string")return "";
+  const value=field.value,p=field.selectionStart??value.length,ranges=hebrewWordRanges(value);
+  const range=ranges.find(x=>p>x.start&&p<=x.end)||ranges.find(x=>p===x.start)||ranges.find(x=>p===x.end);
+  return range?range.text:value.trim();
+}
+function setNikudZoom(word,label="Palabra ampliada",remember=false){
+  const value=(word||"").trim();
+  if(remember){nikudZoomBaseWord=value;nikudZoomBaseLabel=label;}
+  const keyboard=$("nikudKbd"),choices=$("nakdanChoices");
+  const keyboardOpen=!!keyboard&&!keyboard.hidden,choicesOpen=!!choices?.classList?.contains?.("show");
+  const zooms=typeof document.querySelectorAll==="function"?document.querySelectorAll(".nikud-zoom"):[];
+  for(const zoom of zooms){
+    const active=zoom.dataset.context==="keyboard"?keyboardOpen:choicesOpen;
+    const text=zoom.querySelector(".nikud-zoom-word"),caption=zoom.querySelector(".nikud-zoom-label");
+    if(!value||!active){zoom.hidden=true;if(text)text.textContent="";continue;}
+    if(caption)caption.textContent=label;if(text)text.textContent=value;zoom.hidden=false;
+  }
+}
+function refreshNikudZoom(field=nikudTarget||$("hebrew"),label="Palabra ampliada"){
+  setNikudZoom(wordAtCaret(field),label,true);
+}
+function restoreNikudZoom(){setNikudZoom(nikudZoomBaseWord,nikudZoomBaseLabel,false);}
+function hideNakdanChoices(){
+  const b=$("nakdanChoices");if(!b)return;b.className="nakdan-choices";b.replaceChildren();
+  if($("nikudKbd")?.hidden)setNikudZoom("",nikudZoomBaseLabel,false);else refreshNikudZoom();
+}
 function renderNakdanChoice(choice,currentWord){
   const box=$("nakdanChoices");if(!box||!choice){hideNakdanChoices();return;}
   box.replaceChildren();box.className="nakdan-choices show";
+  setNikudZoom(currentWord,"Palabra actual",true);
   const head=document.createElement("div");head.className="nakdan-choices-head";
   const title=document.createElement("span");title.textContent=choice.confident?"Alternativas de Nakdan":"Nakdan no está seguro · elegí la lectura correcta";
   const w=document.createElement("span");w.className="nakdan-choices-word";w.lang="he";w.textContent=currentWord;
@@ -2517,6 +2555,9 @@ function renderNakdanChoice(choice,currentWord){
     const b=document.createElement("button");b.type="button";b.ariaPressed=String(norm(opt.text)===norm(currentWord));b.className="nakdan-option"+(norm(opt.text)===norm(currentWord)?" selected":"");
     const t=document.createElement("span");t.lang="he";t.textContent=opt.text;b.appendChild(t);
     if(opt.tag){const tag=document.createElement("span");tag.className="nakdan-tag";tag.textContent=opt.tag;b.appendChild(tag);}
+    const preview=()=>setNikudZoom(opt.text,"Opción de Nakdan ampliada");
+    b.addEventListener("pointerenter",preview);b.addEventListener("focus",preview);b.addEventListener("pointerdown",preview);
+    b.addEventListener("pointerleave",restoreNikudZoom);b.addEventListener("blur",restoreNikudZoom);
     b.addEventListener("click",()=>applyChoice(opt.text,false));
     opts.appendChild(b);
   }
@@ -2540,11 +2581,13 @@ function renderNakdanChoice(choice,currentWord){
     }
     applyChoice(want,true);
   };
-  other.addEventListener("click",()=>{row.hidden=false;inp.focus();inp.setSelectionRange(inp.value.length,inp.value.length);nikudTarget=inp;showNikudKeyboard(true);});
+  other.addEventListener("click",()=>{row.hidden=false;inp.focus();inp.setSelectionRange(inp.value.length,inp.value.length);nikudTarget=inp;showNikudKeyboard(true);refreshNikudZoom(inp,"Tu palabra ampliada");});
   ok.addEventListener("click",fix);
   inp.addEventListener("keydown",e=>{if(e.key==="Enter"){e.preventDefault();fix();}if(e.key==="Escape"){row.hidden=true;nikudTarget=$("hebrew");}});
-  inp.addEventListener("focus",()=>{nikudTarget=inp;});
-  cancel.addEventListener("click",()=>{row.hidden=true;nikudTarget=$("hebrew");});
+  inp.addEventListener("focus",()=>{nikudTarget=inp;refreshNikudZoom(inp,"Tu palabra ampliada");});
+  inp.addEventListener("input",()=>refreshNikudZoom(inp,"Tu palabra ampliada"));
+  inp.addEventListener("click",()=>refreshNikudZoom(inp,"Tu palabra ampliada"));
+  cancel.addEventListener("click",()=>{row.hidden=true;nikudTarget=$("hebrew");setNikudZoom(currentWord,"Palabra actual",true);});
 }
 
 /* ===== Teclado de nikud «para todos»: botones grandes con nombre y sonido (pronunciación sefaradí). =====
@@ -2583,6 +2626,7 @@ function insertIntoField(el,text){
   el.value=el.value.slice(0,a)+text+el.value.slice(b);
   const p=a+text.length;el.focus();el.setSelectionRange(p,p);
   el.dispatchEvent(new Event("input",{bubbles:true}));
+  refreshNikudZoom(el,el.classList.contains("nakdan-custom-input")?"Tu palabra ampliada":"Palabra ampliada");
 }
 /* Borra el último signo (vocal o punto) antes del cursor, sin tocar la letra. */
 function deleteMarkBefore(el){
@@ -2592,7 +2636,8 @@ function deleteMarkBefore(el){
     if(el.id==="hebrew")snapHebrew();
     el.value=el.value.slice(0,p-1)+el.value.slice(p);el.focus();el.setSelectionRange(p-1,p-1);
     el.dispatchEvent(new Event("input",{bubbles:true}));
-  }else{el.focus();}
+    refreshNikudZoom(el,el.classList.contains("nakdan-custom-input")?"Tu palabra ampliada":"Palabra ampliada");
+  }else{el.focus();refreshNikudZoom(el);}
 }
 function buildNikudKeyboard(){
   const box=$("nikudKbd");if(!box||box.dataset.built)return;box.dataset.built="1";
@@ -2620,6 +2665,9 @@ function showNikudKeyboard(force){
   buildNikudKeyboard();
   const open=force===undefined?box.hidden:force;
   box.hidden=!open;if(btn)btn.setAttribute("aria-expanded",open?"true":"false");
+  if(open)refreshNikudZoom();
+  else if($("nakdanChoices")?.classList?.contains?.("show"))restoreNikudZoom();
+  else setNikudZoom("",nikudZoomBaseLabel,false);
 }
 function showNakdanChoicesForCaret(){
   if(!lastNakdanChoices.length){hideNakdanChoices();return;}
@@ -2999,11 +3047,11 @@ window.addEventListener("DOMContentLoaded",()=>{
     const a=document.activeElement;
     if(a!==h&&a!==o)return;
     cancelAnimationFrame(raf);
-    raf=requestAnimationFrame(()=>{ if(a===h)pairFromHebrew(false); else pairFromOutput(); });
+    raf=requestAnimationFrame(()=>{ if(a===h){pairFromHebrew(false);if(!$("nikudKbd").hidden)refreshNikudZoom(h);} else pairFromOutput(); });
   });
-  h.addEventListener("click",()=>pairFromHebrew(false));
+  h.addEventListener("click",()=>{pairFromHebrew(false);if(!$("nikudKbd").hidden)refreshNikudZoom(h);});
   o.addEventListener("click",()=>pairFromOutput());
-  h.addEventListener("input",()=>{hlClear();});
+  h.addEventListener("input",()=>{hlClear();if(!$("nikudKbd").hidden)refreshNikudZoom(h);});
   /* Historial */
   h.addEventListener("beforeinput",e=>{
     if(histRestoring)return;
