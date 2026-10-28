@@ -176,7 +176,6 @@ html{scrollbar-color:var(--teal) var(--paper)}
 .nikud-panel .nk-grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
 .nikud-panel .nk-sec:not(:first-child){margin-top:18px}
 .nikud-panel .nk{min-width:0}
-@media(min-width:801px){.grid>.card>.field-help{min-height:3.2em}}
 
 /* Reference layout: vowels above, vav and signs side by side below. */
 @media(min-width:801px){
@@ -189,3 +188,4 @@ html{scrollbar-color:var(--teal) var(--paper)}
   .nikud-panel .nikud-kbd>.nk-grid:nth-child(6){grid-column:4/-1;grid-row:4}
   .nikud-panel .nikud-kbd>.nk-tools{grid-column:1/-1;grid-row:5}
 }
+
