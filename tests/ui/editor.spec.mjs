@@ -9,7 +9,16 @@ for (const width of [320, 390, 768, 1366]) {
     await page.goto('/');
     await page.getByRole('textbox', {name: '1. Hebreo', exact: true}).fill(pointed);
     await expect(page.getByRole('textbox', {name: '2. Fonética', exact: true})).toHaveValue(/Halelú 'ezrejá/);
+    if (width > 800) {
+      const actions = await page.locator('#copyHebrew').boundingBox();
+      const copy = await page.locator('#copy').boundingBox();
+      expect(Math.abs(actions.y - copy.y)).toBeLessThanOrEqual(1);
+    }
     await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
+    const keyboard = await page.locator('#nikudKbd').boundingBox();
+    const editors = await page.locator('.grid').boundingBox();
+    expect(Math.abs(keyboard.width - editors.width)).toBeLessThanOrEqual(1);
+    expect(keyboard.y).toBeGreaterThanOrEqual(editors.y + editors.height);
     const outside = await page.locator('button:visible,select:visible,textarea:visible').evaluateAll(elements =>
       elements.filter(element => {
         const r = element.getBoundingClientRect();
@@ -19,7 +28,6 @@ for (const width of [320, 390, 768, 1366]) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     const results = await new AxeBuilder({page}).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();
     expect(results.violations).toEqual([]);
-    await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
     await page.screenshot({path: testInfo.outputPath(`editor-${width}.png`), fullPage: true});
   });
 }
@@ -122,4 +130,15 @@ test('Recovery preserves visual-mark preferences and their generated text', asyn
   await expect(page.locator('#hebrew')).toHaveValue(hebrew);
   await expect(page.locator('#output')).toHaveValue(phonetic);
   expect(requests).toBe(0);
+});
+
+
+test('Shared keyboard inserts at the editor caret after moving outside the column', async ({page}) => {
+  await page.goto('/');
+  await page.getByRole('checkbox', {name: 'Nikud automático', exact: true}).uncheck();
+  await page.locator('#hebrew').fill('אב');
+  await page.locator('#hebrew').press('Control+End');
+  await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
+  await page.locator('#nikudKbd').getByRole('button', {name: 'אַ Pataj Sonido: A', exact: true}).click();
+  await expect(page.locator('#hebrew')).toHaveValue('אבַ');
 });

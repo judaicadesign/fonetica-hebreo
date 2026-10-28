@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/ydp7axr.css">
-<link rel="stylesheet" href="editor.css?v=20261027">
+<link rel="stylesheet" href="editor.css?v=20261027-keyboard">
 <script src="jd-embed.js?v=20261007-tools" defer></script>
 </head>
 <body>
@@ -55,9 +55,6 @@
     <h2 class="card-title"><label for="hebrew">1. Hebreo</label></h2>
     <p class="field-help" id="hebrewHelp">Pegá el texto. Podés corregir el nikud con el teclado de abajo.</p>
     <textarea lang="he" dir="rtl" aria-describedby="hebrewHelp nakdanStatus" id="hebrew" spellcheck="false" placeholder="Pegá aquí el texto hebreo, con o sin niqqud…"></textarea>
-    <div id="nakdanChoices" class="nakdan-choices" aria-live="polite"></div>
-    <div class="toolbar"><button id="nikudBtn" type="button" aria-expanded="false" aria-controls="nikudKbd">אָ Teclado de nikud</button></div>
-    <div id="nikudKbd" class="nikud-kbd" hidden></div>
     <div class="toolbar split">
       <button id="undoBtn" type="button" title="Deshacer (Ctrl+Z)">↶ Deshacer</button>
       <button id="redoBtn" type="button" title="Rehacer (Ctrl+Y)">↷ Rehacer</button>
@@ -65,6 +62,7 @@
       <button id="pasteHebrew" type="button">Pegar texto</button>
       <button id="copyHebrew" type="button">Copiar hebreo</button>
     </div>
+    <div id="nakdanChoices" class="nakdan-choices" aria-live="polite"></div>
     <div id="nakdanStatus" class="status" role="status" aria-live="polite" aria-atomic="true">Listo. Nakdan se activa automáticamente cuando hace falta.</div>
     <div id="hebrewCopyNotice" class="copy-notice" role="status" aria-live="polite" aria-atomic="true"></div>
     <div class="retry-row"><button id="retryNikud" type="button" hidden>Reintentar nikud automático</button></div>
@@ -83,6 +81,10 @@
   </section>
 </div>
 
+<section class="nikud-panel" aria-label="Teclado de nikud">
+    <div class="toolbar"><button id="nikudBtn" type="button" aria-expanded="false" aria-controls="nikudKbd">אָ Teclado de nikud</button></div>
+    <div id="nikudKbd" class="nikud-kbd" hidden></div>
+</section>
 
 <p id="draftStatus" class="draft-status" role="status" aria-live="polite" aria-atomic="true">El borrador se guarda en este navegador. Limpiar también lo descarta.</p>
 <button id="draftOverwrite" type="button" hidden>Guardar esta versión</button>
