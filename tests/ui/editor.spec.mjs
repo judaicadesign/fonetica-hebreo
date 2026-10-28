@@ -19,6 +19,15 @@ for (const width of [320, 390, 768, 1366]) {
     const editors = await page.locator('.grid').boundingBox();
     expect(Math.abs(keyboard.width - editors.width)).toBeLessThanOrEqual(1);
     expect(keyboard.y).toBeGreaterThanOrEqual(editors.y + editors.height);
+    if (width > 800) {
+      const vavTitle = await page.locator('#nikudKbd > .nk-sec').nth(1).boundingBox();
+      const signsTitle = await page.locator('#nikudKbd > .nk-sec').nth(2).boundingBox();
+      const vavKeys = await page.locator('#nikudKbd > .nk-grid').nth(1).boundingBox();
+      const signsKeys = await page.locator('#nikudKbd > .nk-grid').nth(2).boundingBox();
+      expect(Math.abs(vavTitle.y - signsTitle.y)).toBeLessThanOrEqual(1);
+      expect(Math.abs(vavKeys.y - signsKeys.y)).toBeLessThanOrEqual(1);
+      expect(signsTitle.x).toBeGreaterThan(vavKeys.x + vavKeys.width);
+    }
     const outside = await page.locator('button:visible,select:visible,textarea:visible').evaluateAll(elements =>
       elements.filter(element => {
         const r = element.getBoundingClientRect();
