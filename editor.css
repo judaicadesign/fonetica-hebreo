@@ -99,11 +99,11 @@ button:active{transform:translateY(0)}
 .nk-tools{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:10px}
 .nk-help{font-size:12px;color:var(--muted)}
 
-/* Visual aid for combining marks: follows the word at the caret and Nakdan options. */
-.nikud-zoom{position:fixed;z-index:30;right:max(20px,env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));width:min(360px,calc(100vw - 30px));padding:12px 16px 14px;border:3px solid var(--teal);border-radius:16px;background:var(--white);pointer-events:none}
-.nikud-zoom-label{display:block;margin-bottom:2px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.nikud-zoom-word{display:flex;align-items:center;justify-content:center;min-height:78px;overflow-wrap:anywhere;font-family:"SBL Hebrew","Ezra SIL","Noto Serif Hebrew","Times New Roman",serif;font-size:clamp(48px,5vw,68px);font-weight:400;line-height:1.35;color:var(--teal-dark);direction:rtl}
-.nikud-zoom-help{display:block;font-size:12px;line-height:1.4;color:var(--muted)}
+/* Visual aid for combining marks: one preview beside Nakdan and one above the shared keyboard. */
+.nikud-zoom{display:grid;grid-template-columns:minmax(120px,.45fr) minmax(0,1fr);grid-template-areas:"label word" "help word";align-items:center;gap:2px 18px;margin-top:10px;padding:10px 14px;border:2px solid var(--teal);border-radius:12px;background:var(--white);pointer-events:none}
+.nikud-zoom-label{grid-area:label;align-self:end;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.nikud-zoom-word{grid-area:word;display:flex;align-items:center;justify-content:center;min-height:76px;overflow-wrap:anywhere;font-family:"SBL Hebrew","Ezra SIL","Noto Serif Hebrew","Times New Roman",serif;font-size:clamp(48px,5vw,68px);font-weight:400;line-height:1.35;color:var(--teal-dark);direction:rtl}
+.nikud-zoom-help{grid-area:help;align-self:start;font-size:12px;line-height:1.4;color:var(--muted)}
 
 .ok{color:#3F746F}.warn{color:#9A6A20}.err{color:#A13A38}
 details.rules{margin-top:18px}
@@ -170,9 +170,9 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-v
   .control-help{margin-top:0}
   .nakdan-option{min-height:52px;padding:8px 13px;font-size:21px}
   .nakdan-custom-input{min-height:66px;font-size:38px}
-  .nikud-zoom{top:max(8px,env(safe-area-inset-top));right:10px;bottom:auto;left:10px;width:auto;padding:8px 13px 10px;border-width:2px;border-radius:12px}
-  .nikud-zoom-label{margin:0;font-size:10px}
-  .nikud-zoom-word{min-height:58px;font-size:clamp(44px,13vw,60px)}
+  .nikud-zoom{grid-template-columns:1fr;grid-template-areas:"label" "word";gap:0;padding:8px 12px 9px}
+  .nikud-zoom-label{align-self:auto;font-size:10px}
+  .nikud-zoom-word{min-height:62px;font-size:clamp(44px,13vw,60px)}
   .nikud-zoom-help{display:none}
 }
 @media(max-width:380px){.header{flex-direction:column-reverse;gap:12px}.logo{width:72px}.wrap{padding-inline:12px}}

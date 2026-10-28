@@ -64,6 +64,11 @@
     </div>
     <div id="nakdanStatus" class="status" role="status" aria-live="polite" aria-atomic="true">Listo. Nakdan se activa automáticamente cuando hace falta.</div>
     <div id="hebrewCopyNotice" class="copy-notice" role="status" aria-live="polite" aria-atomic="true"></div>
+    <aside id="nakdanZoom" class="nikud-zoom" data-context="choices" hidden aria-hidden="true">
+      <span class="nikud-zoom-label">Palabra ampliada</span>
+      <b class="nikud-zoom-word" lang="he" dir="rtl"></b>
+      <span class="nikud-zoom-help">La lupa sigue las opciones de Nakdan.</span>
+    </aside>
     <div id="nakdanChoices" class="nakdan-choices" aria-live="polite"></div>
     <div class="retry-row"><button id="retryNikud" type="button" hidden>Reintentar nikud automático</button></div>
     <div id="nakdanWords" class="nakdan-words" hidden></div>
@@ -83,16 +88,16 @@
 
 <section class="nikud-panel" aria-label="Teclado de nikud">
     <div class="toolbar"><button id="nikudBtn" type="button" aria-expanded="false" aria-controls="nikudKbd">אָ Teclado de nikud</button></div>
+    <aside id="keyboardZoom" class="nikud-zoom" data-context="keyboard" hidden aria-hidden="true">
+      <span class="nikud-zoom-label">Palabra ampliada</span>
+      <b class="nikud-zoom-word" lang="he" dir="rtl"></b>
+      <span class="nikud-zoom-help">La lupa sigue el cursor mientras agregás o borrás signos.</span>
+    </aside>
     <div id="nikudKbd" class="nikud-kbd" hidden></div>
 </section>
 
 <p id="draftStatus" class="draft-status" role="status" aria-live="polite" aria-atomic="true">El borrador se guarda en este navegador. Limpiar también lo descarta.</p>
 <button id="draftOverwrite" type="button" hidden>Guardar esta versión</button>
-<aside id="nikudZoom" class="nikud-zoom" hidden aria-hidden="true">
-  <span id="nikudZoomLabel" class="nikud-zoom-label">Palabra ampliada</span>
-  <b id="nikudZoomWord" class="nikud-zoom-word" lang="he" dir="rtl"></b>
-  <span class="nikud-zoom-help">La lupa sigue el cursor y las opciones de Nakdan.</span>
-</aside>
 </main>
 <details class="card rules">
   <summary>Reglas de transliteración</summary>
@@ -2497,16 +2502,18 @@ function wordAtCaret(field){
   const range=ranges.find(x=>p>x.start&&p<=x.end)||ranges.find(x=>p===x.start)||ranges.find(x=>p===x.end);
   return range?range.text:value.trim();
 }
-function nikudZoomIsNeeded(){
-  const keyboard=$("nikudKbd"),choices=$("nakdanChoices");
-  return !!(keyboard&&!keyboard.hidden)||!!(choices&&choices.classList.contains("show"));
-}
 function setNikudZoom(word,label="Palabra ampliada",remember=false){
-  const zoom=$("nikudZoom"),text=$("nikudZoomWord"),caption=$("nikudZoomLabel");if(!zoom||!text||!caption)return;
   const value=(word||"").trim();
   if(remember){nikudZoomBaseWord=value;nikudZoomBaseLabel=label;}
-  if(!value||!nikudZoomIsNeeded()){zoom.hidden=true;text.textContent="";return;}
-  caption.textContent=label;text.textContent=value;zoom.hidden=false;
+  const keyboard=$("nikudKbd"),choices=$("nakdanChoices");
+  const keyboardOpen=!!keyboard&&!keyboard.hidden,choicesOpen=!!choices?.classList?.contains?.("show");
+  const zooms=typeof document.querySelectorAll==="function"?document.querySelectorAll(".nikud-zoom"):[];
+  for(const zoom of zooms){
+    const active=zoom.dataset.context==="keyboard"?keyboardOpen:choicesOpen;
+    const text=zoom.querySelector(".nikud-zoom-word"),caption=zoom.querySelector(".nikud-zoom-label");
+    if(!value||!active){zoom.hidden=true;if(text)text.textContent="";continue;}
+    if(caption)caption.textContent=label;if(text)text.textContent=value;zoom.hidden=false;
+  }
 }
 function refreshNikudZoom(field=nikudTarget||$("hebrew"),label="Palabra ampliada"){
   setNikudZoom(wordAtCaret(field),label,true);
@@ -2514,7 +2521,7 @@ function refreshNikudZoom(field=nikudTarget||$("hebrew"),label="Palabra ampliada
 function restoreNikudZoom(){setNikudZoom(nikudZoomBaseWord,nikudZoomBaseLabel,false);}
 function hideNakdanChoices(){
   const b=$("nakdanChoices");if(!b)return;b.className="nakdan-choices";b.replaceChildren();
-  if($("nikudKbd")?.hidden){const zoom=$("nikudZoom");if(zoom)zoom.hidden=true;}else refreshNikudZoom();
+  if($("nikudKbd")?.hidden)setNikudZoom("",nikudZoomBaseLabel,false);else refreshNikudZoom();
 }
 function renderNakdanChoice(choice,currentWord){
   const box=$("nakdanChoices");if(!box||!choice){hideNakdanChoices();return;}
@@ -2659,8 +2666,8 @@ function showNikudKeyboard(force){
   const open=force===undefined?box.hidden:force;
   box.hidden=!open;if(btn)btn.setAttribute("aria-expanded",open?"true":"false");
   if(open)refreshNikudZoom();
-  else if($("nakdanChoices")?.classList.contains("show"))restoreNikudZoom();
-  else{const zoom=$("nikudZoom");if(zoom)zoom.hidden=true;}
+  else if($("nakdanChoices")?.classList?.contains?.("show"))restoreNikudZoom();
+  else setNikudZoom("",nikudZoomBaseLabel,false);
 }
 function showNakdanChoicesForCaret(){
   if(!lastNakdanChoices.length){hideNakdanChoices();return;}
