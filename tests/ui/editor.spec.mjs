@@ -26,6 +26,8 @@ for (const width of [320, 390, 768, 1366]) {
       }
     }
     await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
+    await expect(page.locator('#nikudZoom')).toBeVisible();
+    expect(await page.locator('#nikudZoomWord').evaluate(element => parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(44);
     const keyboard = await page.locator('#nikudKbd').boundingBox();
     const editors = await page.locator('.grid').boundingBox();
     expect(Math.abs(keyboard.width - editors.width)).toBeLessThanOrEqual(1);
@@ -67,7 +69,19 @@ test('Recovery retains manual reading, provisional origins and controls without 
   expect(requests).toBe(1);
   await expect(page.locator('#nakdanWords button')).toHaveCount(1);
   await page.locator('#nakdanWords button').first().click();
-  await page.locator('#nakdanChoices').getByRole('button', {name: 'שְׁלוֹם', exact: true}).click();
+  await expect(page.locator('#nikudZoomWord')).toHaveText('שָׁלוֹם');
+  const alternative = page.locator('#nakdanChoices').getByRole('button', {name: 'שְׁלוֹם', exact: true});
+  await alternative.hover();
+  await expect(page.locator('#nikudZoomLabel')).toHaveText('Opción de Nakdan ampliada');
+  await expect(page.locator('#nikudZoomWord')).toHaveText('שְׁלוֹם');
+  expect(await alternative.evaluate(element => parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(19);
+  await page.locator('#nakdanChoices').getByRole('button', {name: /Escribir otra/}).click();
+  const custom = page.getByRole('textbox', {name: 'Palabra con tu nikud'});
+  await custom.fill('שָׁלוֹם');
+  await expect(page.locator('#nikudZoomLabel')).toHaveText('Tu palabra ampliada');
+  await expect(page.locator('#nikudZoomWord')).toHaveText('שָׁלוֹם');
+  await page.getByRole('button', {name: 'Cancelar', exact: true}).click();
+  await alternative.click();
   await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key))?.words[0].origin, KEY)).toBe('manual');
   const expected = await page.locator('#output').inputValue();
   await page.reload();
@@ -159,6 +173,8 @@ test('Shared keyboard inserts at the editor caret after moving outside the colum
   await page.locator('#hebrew').fill('אב');
   await page.locator('#hebrew').press('Control+End');
   await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
+  await expect(page.locator('#nikudZoomWord')).toHaveText('אב');
   await page.locator('#nikudKbd').getByRole('button', {name: 'אַ Pataj Sonido: A', exact: true}).click();
   await expect(page.locator('#hebrew')).toHaveValue('אבַ');
+  await expect(page.locator('#nikudZoomWord')).toHaveText('אבַ');
 });
