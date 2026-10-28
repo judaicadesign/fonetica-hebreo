@@ -140,6 +140,7 @@ button:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-v
 .control-help{margin:-4px 0 20px;max-width:75ch}
 .draft-status{margin:12px 0 0;min-height:24px}
 .copy-notice{min-height:20px;margin-top:6px;font-size:13px;color:var(--muted)}
+.copy-notice:empty{display:none}
 .status{font-size:14px}
 .ok{color:var(--notice-ok)}.warn{color:var(--notice-warn)}.err{color:var(--notice-error)}
 .toolbar.split{justify-content:flex-start}
@@ -188,4 +189,3 @@ html{scrollbar-color:var(--teal) var(--paper)}
   .nikud-panel .nikud-kbd>.nk-grid:nth-child(6){grid-column:4/-1;grid-row:4}
   .nikud-panel .nikud-kbd>.nk-tools{grid-column:1/-1;grid-row:5}
 }
-

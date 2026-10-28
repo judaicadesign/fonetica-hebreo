@@ -16,6 +16,14 @@ for (const width of [320, 390, 768, 1366]) {
       const inputStatus = await page.locator('#nakdanStatus').boundingBox();
       const outputStatus = await page.locator('#motorStatus').boundingBox();
       expect(Math.abs(inputStatus.y - outputStatus.y)).toBeLessThanOrEqual(1);
+      await expect(page.locator('#hebrewCopyNotice')).toBeHidden();
+      await expect(page.locator('#phoneticCopyNotice')).toBeHidden();
+      const cards = await page.locator('.grid > .card').all();
+      for (const [index, card] of cards.entries()) {
+        const cardBox = await card.boundingBox();
+        const statusBox = await page.locator(index ? '#motorStatus' : '#nakdanStatus').boundingBox();
+        expect(cardBox.y + cardBox.height - (statusBox.y + statusBox.height)).toBeLessThanOrEqual(20);
+      }
     }
     await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
     const keyboard = await page.locator('#nikudKbd').boundingBox();
