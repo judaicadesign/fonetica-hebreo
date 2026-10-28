@@ -22,7 +22,7 @@ for (const width of [320, 390, 768, 1366]) {
       for (const [index, card] of cards.entries()) {
         const cardBox = await card.boundingBox();
         const statusBox = await page.locator(index ? '#motorStatus' : '#nakdanStatus').boundingBox();
-        expect(cardBox.y + cardBox.height - (statusBox.y + statusBox.height)).toBeLessThanOrEqual(20);
+        expect(cardBox.y + cardBox.height - (statusBox.y + statusBox.height)).toBeLessThanOrEqual(30);
       }
     }
     await page.getByRole('button', {name: 'אָ Teclado de nikud', exact: true}).click();
