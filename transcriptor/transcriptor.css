@@ -1,13 +1,5 @@
 /* Transcriptor JD · colores institucionales (CMYK → sRGB, FOGRA39) sobre la base del generador */
-:root{
-  --teal:#26696E;
-  --teal-dark:#1C5155;
-  --teal-soft:#EAF2F2;
-  --gold:#B69B76;
-  --gold-text:#6F5A39;
-  --gold-soft:#F6F0E6;
-  --focus:#26696E;
-}
+/* Colores institucionales: vienen de ../editor.css (Turquesa petróleo #26696E, Old gold #B69B76). */
 .opt{font-size:10px;letter-spacing:.12em;color:var(--muted);font-weight:600}
 .field-help{font-size:13px;color:var(--muted);line-height:1.55;margin:0 0 10px}
 .drop{display:flex;align-items:center;justify-content:center;min-height:120px;border:1.5px dashed var(--control-line);border-radius:12px;background:var(--paper);color:var(--teal-dark);font-size:14px;cursor:pointer;text-align:center;padding:16px}
