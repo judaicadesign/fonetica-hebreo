@@ -18,9 +18,10 @@
   --teal-dark:#1c5155;
   --teal-soft:#EAF4F3;
   --gold:#b69b76;
+  --gold-text:#7a6440;
   --gold-soft:#F8F0E1;
   --ink:#193234;
-  --muted:#6C7B7D;
+  --muted:#526668;
   --line:#D9E2E1;
   --paper:#FAF9F6;
   --white:#FFFFFF;
@@ -38,7 +39,7 @@ button,select{-webkit-tap-highlight-color:transparent}
 .wrap{max-width:1180px;margin:0 auto;padding:20px 26px 58px}
 .header{display:flex;align-items:flex-start;justify-content:space-between;gap:36px;padding:4px 2px 20px;border-bottom:1px solid var(--line)}
 .brand-copy{min-width:0;padding-top:7px}
-.eyebrow{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);margin-bottom:10px}
 h1{font-family:"Libre Caslon Condensed",Georgia,serif;font-weight:400;font-size:clamp(30px,3.5vw,44px);line-height:1.08;letter-spacing:normal;color:#26696e;margin:0 0 12px}
 .sub{font-family:var(--sans);max-width:680px;margin:0;color:var(--muted);font-size:14px;line-height:1.65}
 .logo{width:130px;height:auto;display:block;flex:0 0 auto}
@@ -46,7 +47,7 @@ h1{font-family:"Libre Caslon Condensed",Georgia,serif;font-weight:400;font-size:
 .nikud-toggle{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--teal-dark);cursor:pointer;white-space:nowrap}
 .nikud-toggle input{width:16px;height:16px;margin:0;accent-color:var(--teal)}
 button:disabled{opacity:.5;cursor:default;transform:none}
-.profile-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.profile-label{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
 .profile-control{display:flex;align-items:center;gap:10px}
 select{min-width:265px;padding:11px 38px 11px 13px;border:1px solid var(--line);border-radius:10px;background:var(--white);color:var(--ink);outline:none;appearance:auto}
 select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(182,155,118,.14)}
@@ -58,7 +59,7 @@ textarea{width:100%;min-height:clamp(240px,calc(100vh - 500px),430px);border:1px
 textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(38,105,110,.09)}
 #hebrew{direction:rtl;text-align:right;font-size:20px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;line-height:1.85}
 #output{direction:ltr;text-align:left;font-size:20px;font-family:"Segoe UI",Arial,sans-serif;line-height:1.85}
-textarea::placeholder{color:#9AA7A8;opacity:1}
+textarea::placeholder{color:#5E7072;opacity:1}
 /* Resaltado hebreo ↔ fonética y lista de palabras del Nakdan */
 .hl-wrap{position:relative;background:var(--white);border-radius:11px}
 .hl-wrap>textarea{position:relative;z-index:1;display:block;background:transparent}
@@ -66,7 +67,7 @@ textarea::placeholder{color:#9AA7A8;opacity:1}
 .hl-back mark{background:rgba(182,155,118,.42);color:transparent;border-radius:4px;box-shadow:0 0 0 2px rgba(182,155,118,.42)}
 .nakdan-words{margin-top:10px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:var(--gold-soft)}
 .nakdan-words[hidden]{display:none}
-.nw-head{font-size:11px;color:var(--muted);margin-bottom:8px;line-height:1.45}
+.nw-head{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.45}
 .nw-list{display:flex;flex-wrap:wrap;gap:6px;max-height:170px;overflow:auto}
 .nw{display:inline-flex;flex-direction:column;align-items:center;gap:1px;padding:5px 9px;border:1px solid var(--line);border-radius:9px;background:var(--white);font-weight:400;transform:none}
 .nw:hover{border-color:var(--gold);transform:none}
@@ -85,44 +86,44 @@ button:active{transform:translateY(0)}
 .status{font-size:12px;color:var(--muted);margin-top:9px;min-height:18px;line-height:1.45}
 .nakdan-choices{margin-top:10px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:#fbfcfb;display:none}
 .nakdan-choices.show{display:block}
-.nakdan-choices-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:11px;color:var(--muted)}
+.nakdan-choices-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px;font-size:12px;color:var(--muted)}
 .nakdan-choices-word{font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:17px;color:var(--teal-dark);direction:rtl}
 .nakdan-options{display:flex;flex-wrap:wrap;gap:7px;direction:rtl}
 .nakdan-option{font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:16px;font-weight:500;padding:6px 10px;border-radius:999px;background:#fff}
 .nakdan-option.selected{border-color:var(--teal);background:rgba(38,105,110,.08)}
-.nakdan-tag{font-family:var(--sans);font-size:10px;color:var(--muted);margin-inline-start:5px}
+.nakdan-tag{font-family:var(--sans);font-size:12px;color:var(--muted);margin-inline-start:5px}
 .nakdan-other{font-family:var(--sans);font-size:12px;font-weight:700;border-style:dashed}
 .nakdan-custom{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-top:9px}
 .nakdan-custom[hidden]{display:none}
 .nakdan-custom-input{flex:1 1 180px;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:9px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif;font-size:22px;direction:rtl}
 .nakdan-custom-ok{background:var(--teal);border-color:var(--teal);color:#fff}
-.nakdan-custom-hint{flex-basis:100%;font-size:11px;color:var(--muted)}
+.nakdan-custom-hint{flex-basis:100%;font-size:12px;color:var(--muted)}
 .nakdan-custom-hint.warn{color:#9A6A20}
 .nikud-kbd{margin-top:10px;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:#fbfcfb}
 .nikud-kbd[hidden]{display:none}
-.nk-sec{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin:6px 0 6px}
+.nk-sec{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin:6px 0 6px}
 .nk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:7px}
 .nk{display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px 8px;font-weight:400;background:#fff}
 .nk-g{font-family:"SBL Hebrew","Ezra SIL","Noto Serif Hebrew","Times New Roman",serif;font-size:42px;line-height:1.15;direction:rtl;color:var(--teal-dark)}
 .nk-n{font-size:12px;font-weight:700;color:var(--teal-dark)}
-.nk-s{font-size:11px;color:var(--muted);text-align:center;line-height:1.3}
+.nk-s{font-size:12px;color:var(--muted);text-align:center;line-height:1.3}
 .nk-tools{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-top:10px}
-.nk-help{font-size:11px;color:var(--muted)}
+.nk-help{font-size:12px;color:var(--muted)}
 
 .ok{color:#3F746F}.warn{color:#9A6A20}.err{color:#A13A38}
 details.rules{margin-top:18px}
 details.rules summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:14px;color:var(--teal-dark);letter-spacing:.02em}
 details.rules summary::-webkit-details-marker{display:none}
-details.rules summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid var(--line);border-radius:50%;color:var(--gold);font-size:16px;line-height:1}
+details.rules summary::before{content:"+";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border:1px solid var(--line);border-radius:50%;color:var(--gold-text);font-size:16px;line-height:1}
 details.rules[open] summary::before{content:"–"}
 .rules-inner{margin-top:18px;padding-top:18px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);line-height:1.7;columns:2;column-gap:46px}
-.rules-inner h3{font-family:"Instrument Serif",Georgia,serif;font-size:25px;font-weight:400;color:var(--teal-dark);margin:0 0 10px;column-span:all}
-.rules-inner h4{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin:18px 0 6px;break-after:avoid}
+.rules-inner h2{font-family:"Instrument Serif",Georgia,serif;font-size:25px;font-weight:400;color:var(--teal-dark);margin:0 0 10px;column-span:all}
+.rules-inner h3{font-family:var(--sans);font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);margin:18px 0 6px;break-after:avoid}
 .rules-inner p{margin:0 0 8px;break-inside:avoid}
 .rules-inner ul{margin:4px 0 10px;padding-left:18px;break-inside:avoid}
 .rules-inner li{margin:2px 0}
-.footer{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-top:20px;color:#879596;font-size:11px;letter-spacing:.03em}
-.footer .mark{color:var(--gold);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.footer{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-top:20px;color:var(--muted);font-size:12px;letter-spacing:.03em}
+.footer .mark{color:var(--gold-text);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
 @media(max-width:800px){
   .wrap{padding:16px 15px 42px}
   .header{padding-bottom:22px}
@@ -206,25 +207,25 @@ details.rules[open] summary::before{content:"–"}
 <details class="card rules">
   <summary>Reglas de transliteración</summary>
   <div class="rules-inner">
-    <h3>Fonética sefardí</h3>
-    <h4>Criterio general</h4>
+    <h2>Fonética sefardí</h2>
+    <h3>Criterio general</h3>
     <p>La salida corresponde siempre a una fonética sefaradí / israelí moderna, pensada para que un hispanohablante —especialmente un lector rioplatense— pueda leer el texto de manera natural y aproximarse a la pronunciación sefaradí.</p>
     <p>La transliteración debe ser uniforme. No se introducen convenciones ashkenazíes en esta versión. La versión ashkenazí, con sus diferencias específicas de pronunciación, se incorporará en una etapa posterior.</p>
     <p>La referencia editorial prioritaria es ArtScroll (PDF o fotos aportadas). El generador deriva todo por <b>reglas gramaticales</b>, no por una lista creciente de excepciones por palabra: si una regla reproduce una palabra, esa palabra no lleva excepción. No se inventan meteg, shevá na ni rafé que ArtScroll no tenga.</p>
 
-    <h4>Consonantes</h4>
+    <h3>Consonantes</h3>
     <p>ע = ' (apóstrofo) · א = no se representa con apóstrofo · צ / ץ = ts · בּ = b · ב = v · כּ = k · כ / ך = j · ח = j · שׁ = sh · שׂ = s · ק = k · תּ / ת = t.</p>
 
-    <h4>Vocales</h4>
+    <h3>Vocales</h3>
     <p>Pataj = a · Kamats gadol = a · Kamats katán = o · Segol = e · Tsere = e pura, sin diptongo · Jirik = i · Jolam = o · Kubuts / Shuruk = u.</p>
     <p>No se distingue gráficamente entre vocales largas y cortas.</p>
 
-    <h4>Tsere / sonido e</h4>
+    <h3>Tsere / sonido e</h3>
     <p>La fonética es sefaradí. Por lo tanto, el Tsere se representa como <b>e</b> pura y no como <b>ei</b>.</p>
     <p><b>בֵּין = ben · וּבֵין = uven · עָלֵינוּ = 'alenu</b></p>
     <p>No se incorporan las realizaciones ashkenazíes del Tsere, como <i>bein</i> / <i>aleinu</i>.</p>
 
-    <h4>Shevá: na y naj</h4>
+    <h3>Shevá: na y naj</h3>
     <p>La shevá no se transcribe siempre como e. Hay dos clases: la <b>shevá na</b> (vocal, «que suena») se lee e; la <b>shevá naj</b> (muda, «quieta») no se escribe. La decisión sale de la estructura de la palabra y se contrasta siempre con el rafé impreso de ArtScroll.</p>
     <p><b>Origen de las reglas.</b> La base es el <i>Dikduk Eliyahu</i> (דקדוק אליהו) del Gaón de Vilna, Rabí Eliyahu ben Shlomo Zalman (1720–1797), págs. כו–כז (HebrewBooks 20568). Los casos con prefijos y los patrones verbales que el libro no detalla se agregan solo cuando el rafé de ArtScroll los confirma.</p>
     <ul>
@@ -242,40 +243,40 @@ details.rules[open] summary::before{content:"–"}
     <p>Patrones con shevá na que ArtScroll marca con rafé: artículo o preposición con kamats ante ר/guturales (<i>veharejavá, velaresha'im</i>); 3ª plural CָCְCוּ (<i>vekave'ú, uvarejú</i>); participio Pi'el con artículo o preposición (<i>umvarejim</i> y <i>Lamenatséaj</i>, לַמְנַצֵּחַ, «al director»: la מ de ese participio suena, aunque otros libros escriban <i>Lamnatséaj</i>); 3ª plural Hitpa'el/Nitpa'el (<i>shenitbarejú</i>); y la 3ª femenina CָCְCָה (<i>keshe'amedá, shaferá, daveká, saneá</i>: ArtScroll 8 de 8 con rafé), salvo sustantivos con kamats katán (<i>jojmá</i>). Siguen la regla, sin excepción: <i>'imejá</i> (עִמְּךָ, 130:4) y <i>Siserá</i> (83:10).</p>
     <p>No se agregan reglas sin evidencia: toda regla nueva se prueba contra el rafé impreso de ArtScroll antes de entrar al motor.</p>
 
-    <h4>Rafé (ֿ) y meteg (ֽ)</h4>
+    <h3>Rafé (ֿ) y meteg (ֽ)</h3>
     <p><b>Rafé:</b> el rafé U+05BF marca visualmente la consonante con <b>shevá na</b> confirmada. No se aplica a la shevá naj. Criterio de ArtScroll: no lleva rafé la shevá inicial de palabra ni la inicial del tema tras un prefijo (salvo dagesh, letra repetida, shevá previa o los patrones de arriba); sí lleva toda shevá na del medio de la palabra. Tras artículo con pataj sobre מְ sin dagesh sí lleva rafé (<i>לַמְֿנַצֵּחַ</i>). Un rafé escrito en el texto fuerza shevá na (<i>מַתְּֿנוֹת = matenot</i>).</p>
     <p><b>Meteg:</b> un meteg en una sílaba que no es la última marca la <b>sílaba tónica</b> (convención de ArtScroll): <i>אָֽתָּה = Ata, שִֽׁירוּ = shiru, נָֽפְלוּ = náfelu</i>. Si la palabra trae más de un meteg no se usa (ambiguo). Sin meteg, אַתָּה es milrá (<i>Atá</i>) y la forma pausal אָתָּה con kamats es <i>Ata</i>.</p>
     <p><b>Meteg y acento salen de la misma regla</b> (Bircat Hamazón sefaradí, 15/10): vav conversiva del Shemá y Devarim 8:10 aguda y sin meteg (<i>veajaltá, vesava'tá, uverajtá, veahavtá</i>); prefijo שֶׁ/וְ/הַ ante monosílabo sin meteg (<i>sheló</i>); segolados con prefijo con acento y meteg en la primera vocal del tema (<i>hanéfesh, ladá'at, ná'ar</i>), pero en constructo ante artículo sin acento propio (<i>ba'al hanejamot</i>); -ֵנוּ átono tras נ (<i>zunenu, zijronenu, yejanenu</i>); perfecto de 2ª y 1ª con meteg en la tónica (<i>ravta, danta, hayiti</i>). El rafé solo aparece si la fonética lee shevá na (<i>lesov'á</i> sin rafé; <i>natená</i> con rafé).</p>
     <p>Las casillas <b>Meteg</b> y <b>Rafe</b> sólo cambian el hebreo que se muestra: la fonética es idéntica con o sin marcas (cada palabra se verifica antes de marcarla) y el cambio es reversible.</p>
 
-    <h4>Kamats katán</h4>
+    <h3>Kamats katán</h3>
     <p>Kamats gadol = a. Kamats katán = o. Cuando el texto utiliza explícitamente el carácter Unicode U+05C7, debe reconocerse como tal. Raíces con kamats katán sin marca se reconocen por estructura (<i>חָכְמָה = jojmá, קָדְשְׁךָ = kodshejá, אָזְנַיִם = oznáyim</i>), con o sin prefijos.</p>
 
-    <h4>Signos de puntuación y paseq</h4>
+    <h3>Signos de puntuación y paseq</h3>
     <p>Las comas, puntos, punto y coma y dos puntos del hebreo se copian tal cual a la fonética. El <b>paseq</b> (׀) es una rayita vertical entre dos palabras: marca una pausa muy breve, no agrega ningún sonido y por ahora no aparece en la fonética.</p>
 
-    <h4>Apóstrofos</h4>
+    <h3>Apóstrofos</h3>
     <p>El apóstrofo se reserva exclusivamente para ע. No se utiliza para א. Cuando י + ע genera un hiato, el apóstrofo corresponde únicamente a la ע.</p>
 
-    <h4>J</h4>
+    <h3>J</h3>
     <p>La letra j representa tanto ח como כ / ך sin dagesh, siguiendo una fonética pensada para hispanohablantes.</p>
 
-    <h4>Tav</h4>
+    <h3>Tav</h3>
     <p>ת se transcribe siempre como t. No se utiliza la pronunciación ashkenazí de ת como s. La distinción futura entre tav y sav corresponderá exclusivamente a la futura versión ashkenazí.</p>
 
-    <h4>Acentuación</h4>
+    <h3>Acentuación</h3>
     <p>Se utilizan las tildes del español únicamente cuando son necesarias para que un hispanohablante lea correctamente el acento hebreo.</p>
     <p><b>Regla práctica: si un argentino lo leería correctamente sin tilde, no se agrega tilde.</b> Llanas terminadas en vocal, n o s y agudas terminadas en otra consonante no llevan tilde; llanas terminadas en otra consonante sí (<i>léjem, Mélej</i>).</p>
     <p>Ejemplos: <i>bigvurá, kirtsonó, yadáyim, shamáyim, Mitsráyim, Yerushaláyim, hashevi'í, shiru / shirú</i>.</p>
     <p><b>Terminación -ah:</b> las palabras con ה final precedida de vocal llevan siempre tilde en la vocal tónica (<i>letojáh, minógah, kegováh, lishmáh</i>), para que no se lean como agudas. Excepción: <i>HaleluYah, BeYah</i>.</p>
     <p>Hiato y diptongos: <i>báyit, 'ayin, 'áyish</i>. Nombres con acento milrá fijo: <i>Bavél, beVavél</i>.</p>
 
-    <h4>Nombres propios, lugares y Templo</h4>
+    <h3>Nombres propios, lugares y Templo</h3>
     <p>Los nombres propios se escriben con mayúscula inicial: <b>Moshé, Aharón, Mijael, Rafael, Daniel, David, Etán, Efráyim, Zevulún.</b></p>
     <p>Lugares y pueblos también, y con un prefijo la mayúscula va en el nombre, no en el prefijo: <b>miTsiyón, beVavél, uveVavél, ve'Amón, ba'Amalek.</b></p>
     <p>El Templo, que tanto añoramos, va con mayúscula en el sustantivo: <b>Bet haMikdash, haBáyit hagadol vehakadosh.</b></p>
 
-    <h4>Referencias a Hashem</h4>
+    <h3>Referencias a Hashem</h3>
     <p>Llevan mayúscula los pronombres, títulos y atributos de Hashem (<b>Hu, Harajamán, HaEl, Mélej, Hakadosh Baruj Hu</b>), el nombre y el rostro (<b>Shemeja, Paneja, Shemó, Panav</b>), las partes del cuerpo cuando se dice de Él (<b>Yadeja, Yeminó</b>), sus lugares (<b>Kodshejá, Hejal, Kisó, Mikdasheja</b>), la <b>Torá</b>, y los sufijos de segunda persona que Le hablan (<b>Lejá, Laj, Bejá</b>).</p>
     <p>No llevan mayúscula las cosas externas a Hashem: <b>'amejá, oyveja, tsefuneja, jasdeja, shameja, darkó, 'amó</b> (su pueblo).</p>
     <p><b>Atá / VeAtá / sheAtá:</b> el motor no «sabe» de quién se habla; lo deduce por el contexto de la oración. Si la oración nombra a Hashem (Ad-nai, Elohim, Elohenu) o contiene un sufijo -ךָ dirigido a Él, <i>Atá</i> lleva mayúscula en la raíz (<i>VeAtá berajameja harabim</i>). Para <i>Lejá / Laj / Bejá</i> se exige el nombre divino en la oración. En los versículos ya revisados con ArtScroll manda la decisión tomada versículo por versículo. <i>Harajamán</i> (epíteto de Hashem en Birkat Hamazón) siempre va con mayúscula.</p>
@@ -290,20 +291,20 @@ details.rules[open] summary::before{content:"–"}
       <li><b>כּ = K</b> siempre: <i>Januká, Kohén, Sukot</i>.</li>
     </ul>
 
-    <h4>Mayúsculas</h4>
+    <h3>Mayúsculas</h3>
     <p>Inicio de oración = mayúscula. Nombre propio, lugar y Templo = mayúscula. Referencia reverencial a Hashem = mayúscula según lo anterior. No se capitalizan automáticamente palabras comunes por aparecer en una posición determinada.</p>
 
-    <h4>Niqqud y Nakdan</h4>
+    <h3>Niqqud y Nakdan</h3>
     <p>El niqqud existente se conserva exactamente como está y no se vuelve a vocalizar. Nakdan se consulta solamente para las palabras que no tienen niqqud, con el texto completo como contexto. Una vocal que falta en un nombre divino (<i>וֵאלהֵי</i> → <i>vElohé</i>) se restituye.</p>
     <p>Una misma secuencia consonántica puede corresponder a palabras diferentes según el niqqud y el contexto: <b>דָּבָר = davar</b> (palabra, cosa) / <b>דֹּבֵר = dover</b> (el que habla).</p>
     <p>Debajo del aviso de Nakdan aparece la <b>lista de palabras que puso o revisó</b>; el niqqud automático es provisional, el tuyo y tus elecciones quedan fijos. Las palabras con otras lecturas posibles llevan borde dorado.</p>
 
-    <h4>Uso de la página</h4>
+    <h3>Uso de la página</h3>
     <p><b>Teclado de nikud:</b> botones grandes con el nombre y el sonido de cada signo. Poné el cursor después de la letra y tocá el signo; «Borrar signo» quita el último. <b>Escribir otra…</b> (en las opciones de Nakdan) permite tipear la palabra con tu nikud cuando Nakdan no ofrece la correcta; queda fija.</p>
     <p><b>Kamats katán al copiar:</b> en el recuadro se conserva el signo propio (ׇ, U+05C7) para que la fonética lea O; al copiar (botón o Ctrl+C) se escribe como kamats común (ָ), porque las fuentes de InDesign no tienen el katán.</p>
     <p><b>Clic o selección</b> en una palabra hebrea marca su fonética, y al revés. <b>Ctrl+Z / Ctrl+Y</b> (o los botones Deshacer / Rehacer) recuperan el texto, también después de «Limpiar».</p>
 
-    <h4>Criterio de lectura</h4>
+    <h3>Criterio de lectura</h3>
     <p>La prueba final de la transliteración es la lectura: fidelidad al hebreo vocalizado, pronunciación sefaradí, lectura natural para un hispanohablante y uniformidad editorial en todo el texto.</p>
   </div>
 </details>

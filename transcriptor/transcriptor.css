@@ -1,6 +1,6 @@
 /* Transcriptor JD · colores institucionales (CMYK → sRGB, FOGRA39) sobre la base del generador */
 /* Colores institucionales: vienen de ../editor.css (Turquesa petróleo #26696E, Old gold #B69B76). */
-.opt{font-size:10px;letter-spacing:.12em;color:var(--muted);font-weight:600}
+.opt{font-size:11px;letter-spacing:.12em;color:var(--muted);font-weight:600}
 .field-help{font-size:13px;color:var(--muted);line-height:1.55;margin:0 0 10px}
 .drop{display:flex;align-items:center;justify-content:center;min-height:120px;border:1.5px dashed var(--control-line);border-radius:12px;background:var(--paper);color:var(--teal-dark);font-size:14px;cursor:pointer;text-align:center;padding:16px}
 .drop.over{border-color:var(--gold);background:var(--gold-soft)}
@@ -14,7 +14,7 @@ button.primary:hover{background:var(--teal-dark)}
 #ref{min-height:180px;direction:rtl;text-align:right;font-size:18px;font-family:"Segoe UI",Arial,"Noto Sans Hebrew",sans-serif}
 .hits{display:grid;gap:8px;margin-top:10px}
 .hits button{text-align:right;direction:rtl;font-weight:400;font-size:14px;color:var(--ink);line-height:1.5}
-.hits button small{display:block;direction:ltr;text-align:left;color:var(--muted);font-size:11px}
+.hits button small{display:block;direction:ltr;text-align:left;color:var(--muted);font-size:12px}
 .result-card{margin-top:18px}
 .legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:12px;color:var(--muted);margin-bottom:10px}
 .sw{display:inline-block;width:14px;height:14px;border-radius:4px;margin-inline-end:-8px;vertical-align:-2px;border:1px solid var(--line)}
