@@ -7,7 +7,7 @@ const cases=JSON.parse(fs.readFileSync(new URL('./fixtures/artscroll-app-17-20.j
 for(const c of cases){assert.equal(api.phonetize(c.hebrew),c.phonetic,c.ref);assert.equal(api.phonetize(c.hebrew.normalize('NFD')),c.phonetic,c.ref+' NFD');}
 const get=ref=>cases.find(c=>c.ref===ref);
 // Independent word expectations, not merely regenerated whole-verse snapshots.
-assert.match(get('17:14').phonetic,/Mimetim Yadejá.*mimetim.*vetsefuneja/);
+assert.match(get('17:14').phonetic,/Mimetim Yadejá.*mimetim.*vetsefunejá/);
 assert.doesNotMatch(get('17:14').hebrew,/וצפינך/,'Do not phoneticize the unpointed ketiv as another word');
 assert.match(get('18:6').phonetic,/kidemuni mokeshé/);
 assert.match(get('18:33').phonetic,/hameazereni jáyil/);

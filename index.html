@@ -337,6 +337,8 @@ function shevaVocalized(a,i){
   // Preserve it, but do not infer vocal sheva without a verified interpretation.
   if(i===a.length-2&&/[ךכ]/.test(a.at(-1).b)&&has(a.at(-1),N.QAMATS)){
     if(has(prev,N.HIRIQ)||has(prev,N.PATAH)||has(prev,N.HATAF_PATAH)||has(prev,N.HATAF_SEGOL)||has(prev,N.HATAF_QAMATS))return false;
+    /* Kamats katán = sílaba cerrada: la shevá que lo sigue es muda (יִשְׁמׇרְךָ = yishmorjá; ArtScroll 121:7). Decisión del titular 04/11/2026. */
+    if(has(prev,N.QAMATS_QATAN)||(has(prev,N.QAMATS)&&isQamatzQatan(a,i-1,clustersText(a))))return false;
     return true;
   }
   let v=i-1;
@@ -617,10 +619,10 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
   }
 
   /*
-    Sufijo pronominal masculino singular -ךָ:
-    el sufijo es átono en las formas nominales que estamos
-    transliterando (beteja, darkeja, mitsvoteja, retsoneja,
-    mejavereja). Por eso el objetivo pasa a la sílaba anterior.
+    Sufijo pronominal masculino singular -ךָ con vocal (segol): -ֶךָ / -ֶיךָ
+    es átono (darkeja, mitsvoteja, mejavereja, veyishmereja): el objetivo pasa
+    a la sílaba anterior. El sufijo con shevá -ְךָ es tónico y lo decide la regla
+    de más abajo (Toratejá, Retsonejá, Yevarejejá; decisión del titular 04/11/2026).
     Esta es una regla morfológica, no una lista de palabras.
   */
   if(L>=3 &&
@@ -866,15 +868,13 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
      Es el caso inverso de -ֶךָ (segol): תּוֹרָתֶךָ → Toratéja (milel; ArtScroll pone meteg
      en la sílaba del segol). Evidencia: ArtScroll, Bircat Hamazón págs. 8 y 9 del libro;
      ArtScroll Tehilim (tsidkatejá, betsidkatejá). Antes la regla solo cubría jirik/patáj/jatef. */
+  let kafSuffixStress=false;
   if(L>=3 && (a[L-1].b==='ך'||a[L-1].b==='כ') && has(a[L-1],N.QAMATS) && has(a[L-2],N.SHEVA)){
-    const before=a[L-3];
-    const closedShortStem=has(before,N.HIRIQ)||has(before,N.PATAH)||has(before,N.HATAF_PATAH)||has(before,N.HATAF_SEGOL)||has(before,N.HATAF_QAMATS);
-    // Sustantivo femenino en -תְךָ (Torá, tsidká, brit, tsetejá). Los verbos con sufijo objeto
-    // (יְשַׂגֶּבְךָ, רְצוֹנְךָ...) NO entran: en ellos ArtScroll marca el acento penúltimo con meteg.
-    const feminineTav=a[L-2].b==='ת';
-    /* Kamats + shevá na + ךָ: acento en el sufijo. לְיָדְֿךָ → leYadejá, לְבָבְֿךָ → levavejá (decisión 26/10). */
-    const qamatsVocal=has(before,N.QAMATS)&&nuclei.some(n=>n.clusterIndex===L-2);
-    if(closedShortStem||feminineTav||qamatsVocal)target=nuclei.length-1;
+    /* Decisión del titular 04/11/2026 (nivel 3: teamim de יְבָרֶכְךָ֥ Bamidbar 6:24 y יְשִֽׂמְךָ֣ Bereshit 48:20):
+       el sufijo -ְךָ es SIEMPRE tónico, en verbos y sustantivos, con shevá na o naj antes:
+       Yevarejejá, Yesimejá, yishmorjá, Toratejá, 'ezrejá, Retsonejá. La forma con segol -ֶךָ sigue milel
+       (veyishmereja, sin tilde). Antes los verbos quedaban fuera por un supuesto meteg que los másters no tienen. */
+    target=nuclei.length-1;kafSuffixStress=true;
   }
   // A verified occurrence can override morphology; never infer source from U+05BD.
   if(confirmedStress==='final'){
@@ -885,7 +885,7 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
   if(Number.isInteger(confirmedStress)){
     const marked=nuclei.findIndex(n=>n.clusterIndex===confirmedStress);
     if(marked!==-1)target=marked;
-  }else{
+  }else if(!kafSuffixStress){
     /* Convención ArtScroll: un meteg en una sílaba que no es la última marca la sílaba tónica
        (נָֽפְלוּ → náflu, אָֽכְלוּ → ájlu). Si hay más de un meteg en la palabra, es ambiguo y no se usa. */
     const mk=[];a.forEach((c,i)=>{if(c.sourceMarks?.includes("\u05BD"))mk.push(i);});
@@ -1582,7 +1582,7 @@ function runRegressionTests(){
     ["פְּאֵרֶךָ","peereja"],["אֶרֶץ","érets"],["הָאָרֶץ","haárets"],["בָּאָרֶץ","baárets"],
   ["מִצְרַיִם","Mitsráyim"],["חַיִּים","jayim"],
   ["יוֹחַאי","Yojái"],["חָכְמָה","jojmá"],["קְדוּמָה","kedumá"],
-    ["בֵּיתְךָ","betejá"],["דַּרְכֶּךָ","darkeja"],["רְצוֹנְךָ","retsoneja"],["אִתָּנוּ","itanu"],["מִצְוֹתֶיךָ","mitsvoteja"],["מֵחֲבֵרֶיךָ","mejavereja"],
+    ["בֵּיתְךָ","betejá"],["דַּרְכֶּךָ","darkeja"],["רְצוֹנְךָ","retsonejá"],["אִתָּנוּ","itanu"],["מִצְוֹתֶיךָ","mitsvoteja"],["מֵחֲבֵרֶיךָ","mejavereja"],
     ["יְיָ","Ad-nai"],["יהוה","Ad-nai"],["יְהוָה","Ad-nai"],["אֱלֹהַי","Elohái"],["הַמֶּלֶךְ","haMélej"],
     ["הַיְשׁוּעָה","hayshu'á"],
     ["שָׁכַבְתִּי","shajavti"],["הֱקִיצוֹתִי","hekitsoti"],["יִסְמְכֵנִי","yismejeni"],["הוֹשִׁיעֵנִי","hoshi'eni"],

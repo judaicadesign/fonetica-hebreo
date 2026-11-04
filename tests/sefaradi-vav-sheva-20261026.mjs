@@ -12,7 +12,7 @@ console.log('sefaradi-vav-sheva-20261026 OK');
 // 26/10 (titular): -ךָ tras kamats con shevá na lleva el acento en el sufijo; «Atá» por párrafo (opción A).
 {
   const {phonetize}=vm.runInNewContext(stub+extractEngine(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8'))+';({phonetize});');
-  for(const [h,f] of [['אֶלָּא לְיָדְֿךָ הַמְּֿלֵאָה','Ela leyadejá hameleá'],['לְבָבְֿךָ','Levavejá'],['רְצוֹנְךָ','Retsoneja'],['תּוֹרָתֶֽךָ','Torateja'],
+  for(const [h,f] of [['אֶלָּא לְיָדְֿךָ הַמְּֿלֵאָה','Ela leyadejá hameleá'],['לְבָבְֿךָ','Levavejá'],['רְצוֹנְךָ','Retsonejá'],['תּוֹרָתֶֽךָ','Torateja'],
      ['נוֹדֶה לְּךָ יְיָ אֱלֹהֵינוּ עַל שֶׁהִנְחַלְתָּ. וְעַל חַיִּים וּמָזוֹן שֶׁאַתָּה זָן וּמְפַרְנֵס אוֹתָנוּ.','Nodé Lejá Ad-nai Elohenu \'al shehinjalta. Ve\'al jayim umazón sheAtá zan umfarnés otanu.']])
     assert.equal(phonetize(h),f,h);
   // Contraejemplos: el «tú» es una persona.
