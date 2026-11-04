@@ -2081,6 +2081,14 @@ function sentenceAddressesHashem(s,idx,self){
   let suffixed=0;
   /* «Tu D's» (אֱלֹהֶיךָ / אֱלֹהַיִךְ) en la oración: el «tú» es una persona, no Hashem (וּבֵרַכְתָּ אֶת יְיָ אֱלֹהֶיךָ… אֲשֶׁר נָתַן לָךְ = laj). */
   if(self && words.some(w=>/^[ולבמהשכ]*אלהי(?:ך|יך)$/u.test(bareLetters(w))))return false;
+  /* Hashem en 3.ª persona junto a Su nombre (יְיָ פָּנָיו «Su rostro», שְׁמוֹ, יָדוֹ…): el «tú» es la persona bendecida,
+     no Hashem (Birkat Kohanim: «yaer Ad-nai Panav eleja… veyasem lejá shalom»; decisión del titular 04/11/2026). */
+  if(self){
+    const DIV=/^[ולבמהשכ]*(?:יי|יהוה|אדני|אלהים|אלהינו)$/u, THIRD=/^[ולבמהשכ]*(?:פניו|שמו|ידו|ימינו|היכלו|כסאו|קדשו)$/u;
+    for(let i=0;i<words.length;i++){
+      if(THIRD.test(bareLetters(words[i]))&&(DIV.test(bareLetters(words[i-1]||""))||DIV.test(bareLetters(words[i+1]||""))))return false;
+    }
+  }
   for(const w of words){
     const bw=bareLetters(w);
     if(/^[ולבמהשכ]*(?:יי|יהוה|אדני|אלהים|אלהינו|אלהי|אלהיך|אלהיכם)$/u.test(bw))return true;
