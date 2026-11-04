@@ -2258,6 +2258,20 @@ function phonetizeDetailed(text){
         const bb=bareLetters(m[1]), nb=following?bareLetters(following[0]):"";
         if(/^[ולבמהשכ]*המקדש$/u.test(bb)){ const k=[...bb].length-4; piece=capitalizeAfterPrefix(piece,m[1],k); }
         else if(/^[ולבמהשכ]*הבית$/u.test(bb) && /^(?:הגדול|והגדול)$/u.test(nb)){ const k=[...bb].length-3; piece=capitalizeAfterPrefix(piece,m[1],k); }
+        /* Nombre que también es palabra común, con prefijo (כְּשָׂרָה ≠ כְּשֵׁרָה, וְלֵאָה): es nombre propio si va junto a
+           otro nombre propio (lista de las Imahot: «keSará Rivká Rajel veLeá»). Decisión del titular 04/11/2026. */
+        else{
+          const isName=w=>!!w&&properNounPrefixLength(bareLetters(w),w)>=0;
+          for(let k=1;k<=2;k++){
+            const mm=bb.match(new RegExp("^([ולבמהשכ]{"+k+"})(.+)$","u"));
+            const cl=clusters(m[1]);
+            /* Prefijo real: con vocal de preposición/conjunción (no la מָ de מָלְאָה «llena»). */
+            const realPrefix=mm&&cl.slice(0,k).every(c=>c&&!has(c,N.QAMATS)&&(c.b!=="מ"||has(c,N.HIRIQ)||has(c,N.TSERE)||has(c,N.SHEVA)));
+            if(realPrefix&&PROPER_PREFIX_BLOCK.has(mm[2])&&PROPER_NOUNS.has(mm[2])&&(isName(prev)||isName(following?.[0]))){
+              piece=capitalizeAfterPrefix(piece,m[1],k);break;
+            }
+          }
+        }
       }
       /* Mayúscula reverencial y fiestas por regla (no por tabla de palabras). */
       if(!review?.spelling&&!review?.capital&&!review?.lower&&!/[A-ZÁÉÍÓÚ]/u.test(piece.slice(1))){
