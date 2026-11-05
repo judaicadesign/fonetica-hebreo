@@ -780,6 +780,13 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
       /* Dagesh en la 2ª radical tras vocal = dagesh fuerte: no es segolado sino Piel (יְשַׁלֶּם, וִיבַשֶּׂר, יְדַבֶּר): milrá. */
       (has(s2,N.DAGESH) && vowel(s1) && !has(s1,N.SHEVA) && s3.b!=="ה");
     const silentFinalHe=s3.b==="ה" && !has(s3,N.DAGESH) && has(s2,N.SEGOL) && !has(s1,N.SEGOL) && !(s1.b==="א"&&has(s1,N.TSERE)&&s2.b==="ל"&&has(s2,N.DAGESH)); /* milra: Moshé, sadé, ya'alé; milel: hégue (segol+segol), Ele (אֵלֶּה) */ /* ya'alé, ejezé, teuné: milra; tajazirená-nna (segol en s1) sigue siendo milel */
+    /* Álef quiescente tras jolam (וַיֹּאמֶר, וַתֹּאמֶר, אֹמֶר): la sílaba es la del jolam; segolado milel →
+       Vayómer. Teamim: וַיֹּ֣אמֶר (Bereshit 1:3), אֹ֑מֶר (Tehilim 19:3). Con pataj (תֹּאמַר, יֹאמַר) no aplica. */
+    const quiescentAlef=s1.b==="א" && !vowel(s1) && L>=4 && has(a[L-4],N.HOLAM) && has(s2,N.SEGOL) && !has(s2,N.DAGESH);
+    if(quiescentAlef && !vowel(s3) && s3.b!=="ה"){
+      const idx=nuclei.findIndex(nu=>nu.clusterIndex===L-4);
+      if(idx>-1) target=idx;
+    }
     if(!vowel(s3) && !silentFinalHe && vowel(s1) && vowel(s2) &&
        !s1IsMaterVav && !s2IsMaterVav && !notSegolate &&
        (has(s1,N.SEGOL)||has(s2,N.SEGOL))){
