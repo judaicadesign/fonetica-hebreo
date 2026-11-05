@@ -965,6 +965,12 @@ function isQamatzQatan(a,i,word){
   /* Preposición ל/ב/כ/מ + CָCְCָה = sustantivo, no perfecto 3ª f.: qamats katan (לְשָׂבְעָה = lesov'á). */
   if(i>=1&&"לבכמ".includes(a[i-1].b)&&(has(a[i-1],N.SHEVA)||has(a[i-1],N.HIRIQ))&&onlyLightPrefixesBefore(a,i)&&
      has(a[i+1]||{m:[]},N.SHEVA)&&a[i+2]&&has(a[i+2],N.QAMATS)&&a[i+3]?.b==="ה"&&i+3===a.length-1)return true;
+  /* Infinitivo constructo qal con ל, לִCְCָC final (jolam abreviado): katán. לִשְׁבׇּת = lishbot, לִשְׁאׇל. Tehilim 1–150: 1 de 1, sin falsos. Decisión del titular 05/11/2026. */
+  if(i>=2&&i===a.length-2&&a[i-2].b==="ל"&&has(a[i-2],N.HIRIQ)&&has(a[i-1],N.SHEVA)&&!vowel(a[i+1])&&!isShuruk(a[i+1])&&!"האעח".includes(a[i+1].b)&&a.slice(0,i-2).every(x=>"וה".includes(x.b)))return true;
+  /* Vav conversiva de verbo hueco, וַיָּקׇם / וַתָּקׇם / וַיָּשׇׁב: acento retraído, katán. Tehilim 1–150: 1 de 1, sin falsos. */
+  if(i>=2&&i===a.length-2&&a[i-2].b==="ו"&&has(a[i-2],N.PATAH)&&"יתאנ".includes(a[i-1].b)&&has(a[i-1],N.DAGESH)&&has(a[i-1],N.QAMATS)&&!vowel(a[i+1])&&!isShuruk(a[i+1])&&!"הא".includes(a[i+1].b))return true;
+  /* Sustantivo qotl en plural con sufijo, CָCְCֵי־ / CָCְCֶי־: katán (חׇדְשֵׁיכֶם, מׇתְנֶיהָ, אׇזְנֵינוּ). Tehilim 1–150: 4 de 4, sin falsos. */
+  if(has(a[i+1]||{m:[]},N.SHEVA)&&a[i+2]&&(has(a[i+2],N.TSERE)||has(a[i+2],N.SEGOL))&&a[i+3]?.b==="י"&&!vowel(a[i+3])&&!isShuruk(a[i+3]))return true;
   const stem=a.slice(i,i+3).map(x=>x.b).join("");
   return QAMATZ_QATAN_ROOTS.has(stem)&&has(a[i+1],N.SHEVA)&&onlyLightPrefixesBefore(a,i);
 }
@@ -1830,7 +1836,8 @@ function phoneWordCore(token,prev,stop,next,reviewed){
   if(/^ו\u05B0$/.test(token)) return stop?"Ve":"ve";
   const checkedTehilim=verifiedTehilimOctober7(token,prev,next);
   if(checkedTehilim!==null) return stop?capitalizeFirst(checkedTehilim):checkedTehilim;
-  const alt=token.replace(/^כָ(?=ל(?![\u05B0-\u05C7]))/,"כָּ"); /* solo כ inicial de palabra: con prefijo (לְכָל, וְכָל) la כ es espirante j */
+  /* Se respeta el dagesh del texto: כָל sin dagesh (tras palabra terminada en vocal) es jol, כָּל es kol. Decisión del titular 05/11/2026. */
+  const alt=token;
   const k=token, ck=(prev?norm(prev):"")+"|"+k+(stop?"|1":"");
 
   if(bareLetters(token)==="בינה" && prev &&
@@ -1841,6 +1848,9 @@ function phoneWordCore(token,prev,stop,next,reviewed){
 
   /* Las reglas gramaticales/contextuales preceden al corpus legacy. */
   if(bareLetters(token)==="השם") return "Hashem";
+  /* Qeré perpetuo de la Torá: הִוא (ketiv הוא, puntuado con jirik) se lee hi. Decisión del titular 05/11/2026. */
+  {const hm=token.normalize("NFD").replace(/[\u0591-\u05AF\u05BD\u05BF]/gu,"").match(/^(ו\u05B0|ו\u05BC|ש\u05B6\u05C1|ש\u05C1\u05B6)?ה\u05B4וא$/u);
+   if(hm){const p=!hm[1]?"":hm[1][1]==="\u05B0"?"ve":hm[1][0]==="ו"?"u":"she";const f=p+"hi";return stop?capitalizeFirst(f):f;}}
   const pronoun=grammaticalPronoun(token);
   if(pronoun!==null) return stop?capitalizeFirst(pronoun):pronoun;
   const d=divine(token);
@@ -2161,6 +2171,8 @@ function revStemNiqqud(stem,a,k){
 function reverentialCapital(token,prev,next,s,idx){
   if(!/[ְ-ּ]/u.test(token.normalize("NFD")))return null; /* con niqqud (incluye shuruk וּ) */
   const b=bareLetters(token), pb=bareLetters(prev||""), nb=bareLetters(next||""), a=clusters(token);
+  /* הִוא (qeré hi) es femenino: nunca mayúscula reverencial. */
+  if(/הוא$/u.test(b)&&a.length>=3&&has(a[a.length-3],N.HIRIQ))return null;
   if(REV_WHOLE.has(b)){
     /* Hu sin prefijo: en Tehilim y liturgia es casi siempre Hashem (91:3 «Ki Hu yatsileja»): mayúscula, como hasta ahora.
        Con prefijo (veHu) se decide por contexto en el bucle de abajo. */
