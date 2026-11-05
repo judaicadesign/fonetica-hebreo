@@ -185,3 +185,26 @@ test('Shared keyboard inserts at the editor caret after moving outside the colum
   await page.locator('#nikudKbd').getByRole('button', {name: 'אַ Pataj Sonido: A', exact: true}).click();
   await expect(page.locator('#hebrew')).toHaveValue('אבַ');
 });
+
+test('An explicit Nakdan option replaces the prior meteg exactly', async ({page}) => {
+  await page.goto('/');
+  await page.locator('#autoNikud').uncheck();
+  await page.locator('#showMeteg').uncheck();
+  await page.locator('#showRafe').uncheck();
+  const marked='וְשַֽׁבְתִּי', plain='וְשַׁבְתִּי';
+  await page.locator('#hebrew').fill(marked);
+  await expect(page.locator('#output')).not.toHaveValue('');
+  await page.evaluate(({marked,plain})=>{
+    renderNakdanChoice({wordIndex:0,confident:true,options:[{text:plain},{text:marked}]},marked);
+  },{marked,plain});
+  await page.locator('.nakdan-option').first().click();
+  await expect(page.locator('#hebrew')).toHaveValue(plain.normalize('NFC'));
+  await page.evaluate(()=>run());
+  await expect(page.locator('#hebrew')).toHaveValue(plain.normalize('NFC'));
+  expect(await page.evaluate(()=>hebrewForExport(document.getElementById('hebrew').value))).not.toContain('\u05BD');
+  await page.evaluate(({marked,plain})=>{
+    renderNakdanChoice({wordIndex:0,confident:true,options:[{text:plain},{text:marked}]},plain);
+  },{marked,plain});
+  await page.locator('.nakdan-option').nth(1).click();
+  await expect(page.locator('#hebrew')).toHaveValue(marked.normalize('NFC'));
+});
