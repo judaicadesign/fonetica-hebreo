@@ -2561,6 +2561,8 @@ function renderNakdanChoice(choice,currentWord){
       if(bareLetters(r.text)!==bareLetters(text))throw new Error("Las letras no coinciden. Solo se cambia el nikud.");
       selected=text.normalize("NFC");
     }catch(error){$("nakdanStatus").textContent=error.message;$("nakdanStatus").className="status warn";return false;}
+    // La elección manual invalida respuestas y actualizaciones automáticas pendientes.
+    runId++;clearTimeout(debounceTimer);activeNakdanController?.abort();
     snapHebrew();
     h.value=h.value.slice(0,r.start)+selected+h.value.slice(r.end);
     choice.chosen=selected;
@@ -2569,7 +2571,7 @@ function renderNakdanChoice(choice,currentWord){
       lastWordState[choice.wordIndex]={origin:"manual",sourceWord:selected,renderedWord:selected};
     }
     lastRenderedHebrew=h.value;
-    $("output").value=phonetize(h.value);
+    $("output").value=phonetize(h.value);$("copy").disabled=!$("output").value;
     const pending=[...reviewedArtScrollTokens(h.value).values()].filter(x=>x.reviewRequired).length;
     $("motorStatus").textContent=pending?"Hay "+pending+" lectura(s) guardada(s) pendientes de cotejo de shevá con ArtScroll.":(fromUser?"Fonética actualizada con tu nikud (queda fijo).":"Fonética actualizada con la opción elegida.");$("motorStatus").className="status "+(pending?"warn":"ok");
     const u=hebrewWordRanges(h.value)[choice.wordIndex];if(u){h.focus();h.setSelectionRange(u.start,u.end);renderNakdanChoice(choice,selected);}
