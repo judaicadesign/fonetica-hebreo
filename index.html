@@ -1206,13 +1206,14 @@ function isLexicalMilel(word){
 // Initial bet dagesh affects b/v, not the position of that stress.
 const LEXICAL_MILRA=new Set(["עַתָּה","בֵּיתְךָ","בָּבֶל","בָבֶל"].map(stressKey));
 /* Vav conversiva (perfecto con valor de futuro): el acento pasa a la última sílaba y no lleva meteg.
-   Solo formas litúrgicas verificadas (Devarim 8:10 y el Shemá); וְ + perfecto con valor de pasado
+   Solo formas litúrgicas verificadas (Devarim 8:10, el Shemá y Tehilim 23:6); וְ + perfecto con valor de pasado
    (וְקִלְקַֽלְתָּ, Al Hanisim) conserva su acento, por eso no es una regla general. */
 const VAV_CONVERSIVE=new Set([
   "וְאָכַלְתָּ","וְשָׂבָעְתָּ","וּבֵרַכְתָּ",                       /* Devarim 8:10 */
   "וְאָהַבְתָּ","וְדִבַּרְתָּ","וְשִׁנַּנְתָּם","וּקְשַׁרְתָּם","וּכְתַבְתָּם", /* Shemá */
   "וְנָתַתִּי","וְאָסַפְתָּ","וְשַׂמְתֶּם","וּקְשַׁרְתֶּם","וְלִמַּדְתֶּם", /* Vehayá im shamoa */
-  "וּרְאִיתֶם","וּזְכַרְתֶּם","וַעֲשִׂיתֶם"                          /* Vayómer */
+  "וּרְאִיתֶם","וּזְכַרְתֶּם","וַעֲשִׂיתֶם",                          /* Vayómer */
+  "וְשַׁבְתִּי"                                                     /* Tehilim 23:6; confirmado por el titular 05/11/2026 */
 ].map(stressKey));
 /* Prefijo שֶׁ / וְ / הַ ante un tema de una sola sílaba: el acento va en el tema (sheló, veló, hazé), sin meteg. */
 function prefixMonosyllable(word){
@@ -1585,6 +1586,7 @@ function runRegressionTests(){
     ["בֵּיתְךָ","betejá"],["דַּרְכֶּךָ","darkeja"],["רְצוֹנְךָ","retsonejá"],["אִתָּנוּ","itanu"],["מִצְוֹתֶיךָ","mitsvoteja"],["מֵחֲבֵרֶיךָ","mejavereja"],
     ["יְיָ","Ad-nai"],["יהוה","Ad-nai"],["יְהוָה","Ad-nai"],["אֱלֹהַי","Elohái"],["הַמֶּלֶךְ","haMélej"],
     ["הַיְשׁוּעָה","hayshu'á"],
+    ["וְשַׁבְתִּי","veshavtí"],["וְשַֽׁבְתִּי","veshavti"],
     ["שָׁכַבְתִּי","shajavti"],["הֱקִיצוֹתִי","hekitsoti"],["יִסְמְכֵנִי","yismejeni"],["הוֹשִׁיעֵנִי","hoshi'eni"],
     ["יו״ד","Yud"],["ל״ב","Lev"],["וַיְכַל","vaijal"],["וַיְכֻלּוּ","vaijulú"],
     ["וַיְבָרֶךְ","vaivaréj"],["וַיְקַדֵּשׁ","vaikadésh"],["וַיִּשְׁבֹּת","vaishbót"],
