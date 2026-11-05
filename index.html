@@ -2555,7 +2555,10 @@ function renderNakdanChoice(choice,currentWord){
   const applyChoice=(text,fromUser)=>{
     const h=$("hebrew"),r=hebrewWordRanges(h.value)[choice.wordIndex];if(!r)return false;
     let selected;
-    try{selected=fromUser?text.normalize("NFC"):preserveReadingMarks(r.text,text);}catch(error){$("nakdanStatus").textContent=error.message;$("nakdanStatus").className="status warn";return false;}
+    try{
+      if(bareLetters(r.text)!==bareLetters(text))throw new Error("Las letras no coinciden. Solo se cambia el nikud.");
+      selected=text.normalize("NFC");
+    }catch(error){$("nakdanStatus").textContent=error.message;$("nakdanStatus").className="status warn";return false;}
     snapHebrew();
     h.value=h.value.slice(0,r.start)+selected+h.value.slice(r.end);
     choice.chosen=selected;
