@@ -433,13 +433,7 @@ function isVayi(a){
     a[1].b==="י" && has(a[1],N.HIRIQ);
 }
 
-const VAY_FORMS = new Map([
-  ["וַיְכַל","vaijal"],
-  ["וַיְכֻלּוּ","vaijulú"],
-  ["וַיְבָרֶךְ","vaivaréj"],
-  ["וַיְקַדֵּשׁ","vaikadésh"],
-  ["וַיִּשְׁבֹּת","vaishbót"]
-].map(([k,v])=>[norm(k),v]));
+
 
 function consonant(c,i,a){
   const d=has(c,N.DAGESH);
@@ -971,7 +965,6 @@ const QAMATZ_QATAN_ROOTS = new Set(["חכמ","קדש","עני","שרש","חפש"
 
 function rawTranslit(word, confirmedStress, details=false, vocalSheva=[], heldSilentSheva=[]){
   const n=norm(word);
-  if(VAY_FORMS.has(n)) return VAY_FORMS.get(n);
   const a=clusters(word);
   let out="", start=0;
   const nuclei=[]; // {clusterIndex,pos}: solo núcleos silábicos reales
@@ -1589,7 +1582,7 @@ function runRegressionTests(){
     ["וְשַׁבְתִּי","veshavtí"],["וְשַֽׁבְתִּי","veshavti"],
     ["שָׁכַבְתִּי","shajavti"],["הֱקִיצוֹתִי","hekitsoti"],["יִסְמְכֵנִי","yismejeni"],["הוֹשִׁיעֵנִי","hoshi'eni"],
     ["יו״ד","Yud"],["ל״ב","Lev"],["וַיְכַל","vaijal"],["וַיְכֻלּוּ","vaijulú"],
-    ["וַיְבָרֶךְ","vaivaréj"],["וַיְקַדֵּשׁ","vaikadésh"],["וַיִּשְׁבֹּת","vaishbót"],
+    ["וַיְבָרֶךְ","vaivárej"],["וַיְקַדֵּשׁ","vaikadesh"],["וַיִּשְׁבֹּת","vayishbot"],
     ["לַאֲדוֹן","laAdón"],
     ["גְּדוֹלָה","guedolá"],["גְּדוֹלִים","guedolim"],["גֵּר","guer"],
     ["נָשׁוּבָה","nashuva"],["וְנָשׁוּבָה","venashuva"],["חַדֵּשׁ","jadesh"],["חָדָשׁ","jadash"],
@@ -1603,7 +1596,7 @@ function runRegressionTests(){
     ["בִּמְעוֹנוֹ","bim'onó"],
     ["שֵׁם יְיָ","Shem Ad-nai"],
     ["בָּרוּךְ שְׁמוֹ","Baruj Shemó"],
-    ["רוּחַ","rúaj"],["נֹחַ","nóaj"],["וַיְבָרֶךְ","vaivaréj"],["לַמְּנַצֵּחַ","lamenatséaj"],
+    ["רוּחַ","rúaj"],["נֹחַ","nóaj"],["וַיְבָרֶךְ","vaivárej"],["לַמְּנַצֵּחַ","lamenatséaj"],
     ["הַמּוֹרֶה","hamoré"],["כֹּהֵן","kohén"],
     ["פַּעֲמַיִם","pa'amáyim"],["אָזְנַיִם","oznáyim"],["יָדַיִם","yadáyim"],
     ["תּוֹרָתְךָ","Toratejá"],["בֵיתְךָ","vetejá"],
