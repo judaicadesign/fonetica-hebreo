@@ -208,3 +208,25 @@ test('An explicit Nakdan option replaces the prior meteg exactly', async ({page}
   await page.locator('.nakdan-option').nth(1).click();
   await expect(page.locator('#hebrew')).toHaveValue(marked.normalize('NFC'));
 });
+
+test('Manual no-meteg choice survives a late automatic response', async ({page}) => {
+  await page.goto('/');
+  await page.locator('#showMeteg').uncheck();
+  await page.locator('#showRafe').uncheck();
+  await page.evaluate(()=>{
+    const marked='וְשַֽׁבְתִּי',plain='וְשַׁבְתִּי';
+    vocalizeUnpointed=()=>new Promise(resolve=>{window.finishOldNikud=resolve;});
+    document.getElementById('hebrew').value='ושבתי';
+    window.oldNikudRun=run();
+    document.getElementById('hebrew').value=marked;
+    renderNakdanChoice({wordIndex:0,confident:true,options:[{text:plain},{text:marked}]},marked);
+  });
+  await page.locator('.nakdan-option').first().click();
+  await page.evaluate(async()=>{
+    window.finishOldNikud({text:'וְשַֽׁבְתִּי',count:1,choices:[]});
+    await window.oldNikudRun;
+  });
+  await expect(page.locator('#hebrew')).toHaveValue('וְשַׁבְתִּי'.normalize('NFC'));
+  await expect(page.locator('#output')).toHaveValue('Veshavtí');
+  await expect(page.locator('#copy')).toBeEnabled();
+});
