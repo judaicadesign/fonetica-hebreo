@@ -1357,7 +1357,8 @@ function properNounPrefixLength(bare,token){
   let m=null;
   for(let n=1;n<=3&&!m;n++){
     const mm=bare.match(new RegExp("^([ולבמהשכ]{"+n+"})(.+)$","u"));
-    if(mm && !PROPER_PREFIX_BLOCK.has(mm[2]) && known(mm[2]))m=mm;
+    /* El artículo ה solo puede ir al final de un prefijo compuesto (לַ, וְהַ, מֵהַ): הַכִּפּוּרִים no es ה+כ+פּוּרִים. */
+    if(mm && !/ה./u.test(mm[1]) && !PROPER_PREFIX_BLOCK.has(mm[2]) && known(mm[2]))m=mm;
   }
   if(m){
     const k=[...m[1]].length;
@@ -1788,6 +1789,11 @@ function constructSegolate(token,next){
   return !vowel(s3)&&has(s1,N.PATAH)&&has(s2,N.PATAH)&&"אהחע".includes(s2.b);
 }
 function phoneWord(token,prev,stop,next,reviewed,adjNext){
+  /* Ketiv sin yod de -áyim (יְרוּשָׁלִַם, יְרוּשָׁלִָם, יְרוּשָׁלַ‍ִם): dos vocales (kamats/pataj + jirik) en la consonante
+     antes de ם final = la yod que no se escribe. Se lee como la forma plena (יְרוּשָׁלַיִם / pausal יְרוּשָׁלָיִם). Regla, no lista. */
+  { const d=token.normalize("NFD").replace(/([\u05D0-\u05EA][\u05B0-\u05C7]*?)(?:([\u05B7\u05B8])\u200D?\u05B4|\u05B4\u200D?([\u05B7\u05B8]))([\u0591-\u05AF\u05BD]*)\u05DD$/u,
+      (m,c,v1,v2,acc)=>c+(v1||v2)+acc+"\u05D9\u05B4\u05DD");
+    if(d!==token.normalize("NFD"))token=d.normalize("NFC"); }
   /* El constructo se une a la palabra siguiente solo si no hay puntuación en el medio («veló vetsá'ar. Harajamán»). */
   if(!reviewed&&constructSegolate(token,adjNext===undefined?next:adjNext)){const r=rawTranslit(token,"final");return stop?capitalizeFirst(r):r;}
   return applyMetegStress(token,phoneWordCore(token,prev,stop,next,reviewed));
