@@ -1,6 +1,7 @@
 # Judaica Design® — Contexto para Claude
 
 Para continuar el proyecto Tehilim / ArtScroll / fonética **leé primero**:
+- [Registro de arreglos de fonética, 06/11/2026: alcance, excepciones y pruebas](docs/REGISTRO_ARREGLOS_FONETICA_2026-11-06.md)
 - [Transferencia ArtScroll y rafé, 13/10/2026](docs/JD_ARTSCROLL_HANDOFF_FOR_CLAUDE_20261013.md)
 - [Consultas de lectura Supabase](docs/JD_ARTSCROLL_READ_ONLY_QUERIES_20261013.sql)
 - [Cotejo de shevá, 12/10/2026](docs/SHEVA_COTEJO_20261012.json)
@@ -18,3 +19,7 @@ Principios imprescindibles:
 9. Último lote (14/10/2026): `docs/tehilim-artscroll-20261014/` (salmos 11, 14, 16, 63, 76, 83, 84, 130).
 
 Este archivo es una referencia de continuidad, no un cambio al generador ni una autorización para publicar materiales protegidos.
+
+## Traspaso actualizado — 06/11/2026
+
+El registro enlazado distingue la corrección contextual específica de `כי בנו בחרת`, la concordancia léxica de kamats katán derivada del corpus y las correcciones generales del editor. No confundir esos mecanismos con reglas gramaticales universales ni ampliar excepciones sin revisar la regla y sus contraejemplos. Incluye funciones, commits, pruebas y límites; no modifica ni aprueba másters FINAL.
