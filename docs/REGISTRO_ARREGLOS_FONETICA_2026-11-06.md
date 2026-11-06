@@ -109,6 +109,25 @@ Pruebas ejecutadas el 06/11/2026:
 
 Publicación: **nada publicado**. Los cambios quedan en la rama; GitHub Pages sigue sirviendo `main`. Para publicar: aprobar las decisiones de A.7, fusionar la rama y verificar la página publicada.
 
+
+## A.10 Segunda tanda (06/11/2026, tarde): evidencia ArtScroll y corrección de másters autorizada
+
+**Evidencia del titular (nivel 1, ArtScroll Ashkenaz y Sefaradí):** וְשָׂבָֽעְתָּ lleva meteg en la ב; «כִּי בָֽנוּ בָחַֽרְתָּ» lleva meteg en la ב de בנו y en la ח de בחרת.
+- Generador: nueva regla de forma pausal escrita (Gesenius §29k + §49m): perfecto consecutivo con la vocal temática alargada a kamats (שָׂבַעְתָּ → שָׂבָעְתָּ) no desplaza el acento, con o sin puntuación → **vesava'ta** y meteg en la ב. El meteg que genera para «כִּי בָֽנוּ בָחַֽרְתָּ» coincide con ArtScroll (prueba agregada).
+- Nuevas reglas de kamats katán: infinitivo constructo con preposición + sufijo (לְעׇבְדוֹ, בְּבׇרְחוֹ, בְּקׇרְאִי, בְשׇׁפְטֶךָ, בְּדׇבְרֶךָ; Gesenius §61) e imperfecto + -ְךָ (יִשְׁמׇרְךָ). Contraejemplos: בְּיָדְךָ (dos radicales), לִדְבָרְךָ (sustantivo con לִ: por eso לִשְׁמׇרְךָ no se infiere y se corrigió en el máster a mano).
+- Shevá tras kamats katán = muda siempre (sílaba cerrada): «bevorjó», no «bevorejó». La regla del artículo הָ/בָּ ante ר/gutural ya no se aplica si el kamats es katán.
+- «Preposición + CָCְCָה» ya no se aplica con gutural muda en 2.ª posición (לְמָעְלָה, Tehilim 74:5, es gadol).
+
+**Másters corregidos (Supabase `jd_master_cells`, autorización del titular 06/11/2026).** Respaldo previo: `app_state.jd_backup_20261106c_jd_master_cells_pre_katan_meteg` (md5 fc749857dd414426060361fec3175775).
+1. וְשָׂבָעְתָּ → וְשָׂבָֽעְתָּ en Birkat Hamazón Sefaradí, Sefaradí - Artscroll, Sefaradí - Combinado y Sefaradí - Bircat Shelomo (Hebreo); «vesava'tá» → «vesava'ta» en las tres fonéticas que lo tenían (nivel 1).
+2. U+05B8 → U+05C7 en **321 kamats katán** de 19 celdas de Hebreo (18 textos litúrgicos + Tehilim 23:6 כׇּל). Solo cambió ese carácter: se verificó que, igualando U+05C7 = U+05B8 y quitando el meteg nuevo, cada celda es idéntica al respaldo, y que el largo solo varía por los 4 metegs. Clases: כׇּל con prefijos (incluido con makaf); ante jataf kamats (צׇהֳרָיִם, בְּאׇהֳלֶךָ); shevá + daguesh kal (חׇרְבַּן, מׇרְדְּכַי); daguesh fuerte (חׇנֵּנִי, יְחׇנֵּנוּ, וְחׇנֵּנוּ); imperativo/infinitivo + -ֵנוּ (זׇכְרֵנוּ, וּפׇקְדֵנוּ, בְּזׇכְרֵנוּ, בְּשׇׁכְבֵנוּ); qotl (חׇכְמָה, קׇדְשׁוֹ, קׇדְשִׁי, קׇדְשְׁךָ, קׇדְשֶׁךָ, אׇזְנֶךָ); infinitivo/imperfecto + sufijo (לְעׇבְדוֹ, וּלְעׇבְדוֹ, בְּבׇרְחוֹ, בְּקׇרְאִי, בְשׇׁפְטֶךָ, בְּדׇבְרֶךָ, יִשְׁמׇרְךָ, לִשְׁמׇרְךָ). Nivel 3.
+3. Fonéticas con «a» donde el katán es «o»: KS al Hamitá Ashkenazí (bekorí ×2, bevorjó, lishmorjá, ul'ovdó), KS Jabad (bedovreja, veshofteja, yishmorjá), KS Sefaradí (le'ovdó), Birkat Hamazón Sefaradí (vejonenu). Las demás fonéticas ya decían «o».
+4. Los estados (Aprobado/Final/Revisión fina) no se cambiaron.
+
+**No se convirtieron (quedan para decisión):** וְטָהֳרָה / וּבְטָהֳרָה (aprobado «tahorá»; la regla da «tohorá»); חָנְנֵֽנִי (Tehilim 9:14, Gesenius lo lee katán, sin cotejo); לְמָעְלָה (gadol). La lishbot del ejemplo ya estaba como לִשְׁבׇּת en los másters.
+
+**Fuente:** el titular confirma que el glifo de kamats está asignado al código U+05C7 en la fuente actualizada; no hace falta verificarla. **Herramienta de preimprenta:** `jd_revisar_texto.py` ya no está en el repositorio público; si sigue avisando U+05C7 como «E-16», ese aviso debe quitarse donde esté el script.
+
 # Parte B — Historial: arreglo de Codex (06/11/2026, reemplazado en lo lingüístico)
 
 ## 1. Respuesta directa: ¿regla o excepción?

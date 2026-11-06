@@ -33,6 +33,10 @@ both('וְהִנִּיחוּ יִתְרָם לְעוֹלְלֵיהֶם','Vehinij
 both('לֵב נִשְׁבָּר וְנִדְכֶּה','Lev nishbar venidké');
 both('יִשְׁאָל דָּבָר','Yishal davar');
 assert.deepEqual(kinds('אִם יִזְכָּר אֱלֹהִים'),[]);
+/* Infinitivo + sufijo e imperfecto + -ְךָ (sílaba cerrada, shevá muda tras katán). Contraejemplos: dos radicales, sustantivo con לִ. */
+both('לְעָבְדוֹ',"Le'ovdó");both('בְּבָרְחוֹ','Bevorjó');both('בְּקָרְאִי','Bekorí');both('בְּדָבְרֶךָ','Bedovreja');both('יִשְׁמָרְךָ','Yishmorjá');
+both('בְּיָדְךָ','Beyadejá');both('לִדְבָרְךָ','Lidvarejá');both('לְמָעְלָה',"Lema'elá");
+both('לִשְׁמׇרְךָ','Lishmorjá');both('וְחׇנֵּנוּ','Vejonenu');
 /* Sustantivos qotl siguen por la raíz léxica pendiente (documentado), no por un mapa del corpus. */
 both('חָכְמָה','Jojmá');both('אָזְנְךָ','Oznejá');
 
@@ -59,6 +63,11 @@ both('זָכַרְתָּ אֶת הַבְּרִית וְשָׁמַרְתָּ או
 both('שָׁמַרְתָּ: וְזָכַרְתָּ','Shamarta: vezajartá'); // la cita abre otro dominio
 assert.deepEqual(kinds('וְזָכַרְתָּ'),['acento']);
 assert.deepEqual(kinds('זָכַרְתָּ אֶת הַבְּרִית וְשָׁמַרְתָּ אוֹתָהּ'),['acento-pasado']);
+/* Forma pausal escrita (kamats temático, §29k): sin desplazamiento. ArtScroll: וְשָׂבָֽעְתָּ (nivel 1). */
+both('וְאָכַלְתָּ וְשָׂבָעְתָּ וּבֵרַכְתָּ',"Veajaltá vesava'ta uverajtá");
+assert.ok(a.applyVisualMarks('וְאָכַלְתָּ וְשָׂבָעְתָּ וּבֵרַכְתָּ',{meteg:true}).includes('וְשָׂבָֽעְתָּ'.normalize('NFC')));
+/* Meteg de ArtScroll en «כִּי בָֽנוּ בָחַֽרְתָּ» (nivel 1): mismo lugar que el acento del motor. */
+assert.equal(a.applyVisualMarks('כִּי בָנוּ בָחַרְתָּ',{meteg:true}),'כִּי בָֽנוּ בָחַֽרְתָּ'.normalize('NFC'));
 /* El meteg visual sale del mismo contexto que la fonética. */
 assert.ok(a.applyVisualMarks('זָכַרְתָּ אֶת הַבְּרִית וְשָׁמַרְתָּ אוֹתָהּ',{meteg:true}).includes('וְשָׁמַֽרְתָּ'.normalize('NFC')));
 assert.ok(!a.applyVisualMarks('וְזָכַרְתָּ',{meteg:true}).includes('\u05BD'));

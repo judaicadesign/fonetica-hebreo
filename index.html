@@ -324,6 +324,8 @@ function shevaVocalized(a,i){
   if(c.sourceMarks?.includes("\u05BF"))return true;
   if(has(c,N.DAGESH))return true;
   if(a[i+1]?.b===c.b)return true;
+  /* Tras kamats katán la sílaba está cerrada por definición: la shevá es muda (בְּבׇרְחוֹ = bevorjó, לְעׇבְדוֹ = le'ovdó). */
+  if(has(a[i-1],N.QAMATS_QATAN)||(has(a[i-1],N.QAMATS)&&isQamatzQatan(a,i-1,clustersText(a))))return false;
   // Definite active Pi'el participle: article/preposition + mem + patah + doubled radical.
   if(i===1&&c.b==="מ"&&"הבכל".includes(a[0].b)&&has(a[0],N.PATAH)&&
      has(a[i+1],N.PATAH)&&has(a[i+2],N.DAGESH)&&
@@ -413,7 +415,7 @@ function prefixBoundarySheva(a,i){
   /* Artículo (o preposición fusionada) con qamats delante de ר/guturales, también tras prefijos:
      וְהָרְחָבָה, וְלָרְשָׁעִים. ArtScroll marca rafe. */
   if(i>=2 && "הבכל".includes(prev.b) && has(prev,N.QAMATS) && !has(prev,N.DAGESH) &&
-     "רעחאה".includes(a[i].b) && onlyLightPrefixesBefore(a,i-1)) return true;
+     "רעחאה".includes(a[i].b) && onlyLightPrefixesBefore(a,i-1) && !isQamatzQatan(a,i-1,clustersText(a))) return true;
   /* Artículo הָ + shevá; y הַ + יְ- como הַיְשׁוּעָה. */
   if(i===1 && prev.b==="ה" && has(prev,N.QAMATS)) return true;
   /* הַ + יְ (הַיְשׁוּעָה): shevá muda, hayshu'á (decisión 14/10; ArtScroll no imprime rafé). */
@@ -1039,8 +1041,24 @@ function qamatsQatanReason(a,i,word){
   /* Perfecto estativo con sufijo, CְCָCְתּ־ (יְכָלְתִּיו, Tehilim 13:5; Gesenius §49i): qamats katan = yejoltiv. */
   if(i>0&&has(a[i-1],N.SHEVA)&&has(a[i+1]||{m:[]},N.SHEVA)&&a[i+2]?.b==="ת"&&has(a[i+2],N.DAGESH))return "estativo + sufijo";
   /* Preposición ל/ב/כ/מ + CָCְCָה = sustantivo, no perfecto 3ª f.: qamats katan (לְשָׂבְעָה = lesov'á). */
+  /* Con gutural muda en 2.ª posición no aplica: לְמָעְלָה (Tehilim 74:5, atnaj) es gadol. */
   if(i>=1&&"לבכמ".includes(a[i-1].b)&&(has(a[i-1],N.SHEVA)||has(a[i-1],N.HIRIQ))&&onlyLightPrefixesBefore(a,i)&&
-     has(a[i+1]||{m:[]},N.SHEVA)&&a[i+2]&&has(a[i+2],N.QAMATS)&&a[i+3]?.b==="ה"&&i+3===a.length-1)return "preposición + sustantivo CָCְCָה";
+     has(a[i+1]||{m:[]},N.SHEVA)&&!"אהחע".includes(a[i+1].b)&&a[i+2]&&has(a[i+2],N.QAMATS)&&a[i+3]?.b==="ה"&&i+3===a.length-1)return "preposición + sustantivo CָCְCָה";
+  /* Infinitivo constructo qal (qotl) con preposición y sufijo pronominal: בְּ/לְ/כְּ + CָCְC + וֹ / ִי / ְךָ / ֶךָ / ָם / ָהּ
+     (לְעׇבְדוֹ, בְּבׇרְחוֹ, בְּקׇרְאִי, בְשׇׁפְטֶךָ, בְּדׇבְרֶךָ). La o del tema queda en sílaba cerrada átona (Gesenius §61b; §9u).
+     Con dos radicales (בְּיָדְךָ «en tu mano») no aplica. */
+  if(i>=1&&"לבכ".includes(a[i-1].b)&&has(a[i-1],N.SHEVA)&&onlyLightPrefixesBefore(a,i)&&has(a[i+1]||{m:[]},N.SHEVA)&&a[i+2]&&!sourceHas(a[i+1],/\u05BF/u)){
+    const c3=a[i+2], rest=a.slice(i+3);
+    const suffix=(rest.length===1&&isHolamMale(rest[0]))||
+      (rest.length===1&&has(c3,N.HIRIQ)&&rest[0].b==="י"&&!vowel(rest[0]))||
+      (rest.length===1&&(has(c3,N.SHEVA)||has(c3,N.SEGOL))&&/[ךכ]/u.test(rest[0].b)&&has(rest[0],N.QAMATS))||
+      (rest.length===1&&has(c3,N.QAMATS)&&(/[םן]/u.test(rest[0].b)||(rest[0].b==="ה"&&has(rest[0],N.DAGESH))));
+    if(suffix)return "infinitivo + sufijo";
+  }
+  /* Imperfecto + sufijo de 2.ª persona, CְCָCְךָ (יִשְׁמׇרְךָ, Tehilim 121:7): la o temática queda en sílaba cerrada átona.
+     Con לִ no se aplica: לִשְׁמׇרְךָ (infinitivo) y לִדְבָרְךָ (sustantivo) se escriben igual. */
+  if(i>=2&&"יתנ".includes(a[i-2].b)&&has(a[i-2],N.HIRIQ)&&has(a[i-1],N.SHEVA)&&has(a[i+1]||{m:[]},N.SHEVA)&&
+     a[i+2]&&/[ךכ]/u.test(a[i+2].b)&&has(a[i+2],N.QAMATS)&&i+3===a.length&&onlyLightPrefixesBefore(a,i-2))return "tema qotl + sufijo -ְךָ";
   /* Infinitivo constructo qal con ל, לִCְCָC final (jolam abreviado): katán. לִשְׁבׇּת = lishbot. Decisión del titular 05/11/2026. */
   if(i>=2&&i===a.length-2&&a[i-2].b==="ל"&&has(a[i-2],N.HIRIQ)&&has(a[i-1],N.SHEVA)&&!vowel(a[i+1])&&!isShuruk(a[i+1])&&!"האעח".includes(a[i+1].b)&&a.slice(0,i-2).every(x=>"וה".includes(x.b)))return "infinitivo constructo";
   /* Vav conversiva de verbo hueco, וַיָּקׇם / וַתָּקׇם / וַיָּשׇׁב: acento retraído, final cerrada átona (Gesenius §9u; §27o). */
@@ -1328,6 +1346,9 @@ function perfectConsecutiveMilra(word){
   const lamedAlef=p.b==="א"&&!vowel(p);                                      // בָּאתָ, קָרָאתִי
   const lamedHe=p.b==="י"&&!vowel(p)&&(has(q,N.HIRIQ)||has(q,N.TSERE));       // עָשִׂיתָ, רָאִיתָ, הִכִּיתִי
   if(!(strong||geminate||lamedAlef||lamedHe))return false;
+  /* Forma pausal escrita: la vocal temática alargada a kamats (שָׂבַעְתָּ → וְשָׂבָֽעְתָּ, Gesenius §29k) prueba la pausa,
+     y en pausa el acento no se desplaza (§49m). ArtScroll Ashkenaz y Sefaradí: וְשָׂבָֽעְתָּ con meteg (titular, 06/11/2026). */
+  if(strong&&has(q,N.QAMATS)&&t>=3&&(has(a[t-3],N.QAMATS)||has(a[t-3],N.HATAF_PATAH)))return false;
   /* El tema no empieza con מ (participio/sustantivo) ni con ת (imperfecto). */
   if(a[1].b==="מ"&&!has(a[2],N.DAGESH)||a[1].b==="ת"&&!has(a[1],N.QAMATS)&&!has(a[1],N.PATAH))return false;
   const firstPerson=a[t+1]?.b==="י";
@@ -2433,7 +2454,7 @@ function phonetizeDetailedCore(text){
           const hint=!ambiguous||reason?null:
             (tail.length===2&&isShuruk(tail[1])&&!vowel(tail[0]))||(tail.length===2&&has(tail[0],N.QAMATS)&&tail[1].b==="ה"&&!vowel(tail[1]))?"probable gadol: perfecto CָCְCוּ / CָCְCָה (shevá na)":
             (cl[ci+1]?.b==="ת"&&/[ךכ]/u.test(cl[L-1].b))||(cl[ci+1]?.b==="ת"&&cl[ci+2]?.b==="נ")?"probable gadol: -ָתְ + sufijo":
-            ci>0&&has(cl[ci-1],N.DAGESH)&&"יתנא".includes(cl[ci-2]?.b||"")?"probable gadol: nifal / pretónica":null;
+            ci>1&&has(cl[ci-1],N.DAGESH)&&"יתנא".includes(cl[ci-2].b)?"probable gadol: nifal / pretónica":null;
           QAMATS_DIAGNOSIS.push({word:m[1],index:wi,occurrence,offset:hFrag[wi]?.index??-1,cluster:ci,reason,hint,
             category:reason?(QQ_SAFE_REASONS.has(reason)?"seguro":"revisar"):(ambiguous?"ambiguo":"gadol")});
         }});
