@@ -210,3 +210,12 @@ input.nikud-zoom-editor{scroll-margin-block:16px}
   .nikud-panel .nikud-kbd>.nk-grid:nth-child(6){grid-column:4/-1;grid-row:4}
   .nikud-panel .nikud-kbd>.nk-tools{grid-column:1/-1;grid-row:5}
 }
+
+/* Avisos de lectura ambigua (kamats katán, acento de וְ + perfecto) con resolución por marca explícita. */
+.reading-notices{margin-top:10px;padding:10px 12px;border:1px solid #B69B76;border-radius:10px;background:#fbf6ee;font-size:14px;line-height:1.5}
+.reading-notices[hidden]{display:none}
+.reading-notices-head{margin:0 0 6px;font-weight:600;color:#3d3326}
+.reading-notice{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:6px 0;border-top:1px solid #eadfcd}
+.reading-notice b[lang="he"]{font-size:20px;font-weight:500}
+.reading-notice span{flex:1 1 260px;color:#3d3326}
+.reading-notice button{font-size:13px;padding:5px 9px}

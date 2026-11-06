@@ -5,10 +5,11 @@ import {extractEngine} from '../scripts/extract-engine.mjs';
 import {evaluate} from '../tools/bh_marks_eval.mjs';
 const r=evaluate(fs.readFileSync(new URL('./fixtures/bh-sefaradi-bircat-shelomo-20261014.txt',import.meta.url),'utf8'));
 /* Única diferencia aceptada, a confirmar en el libro: «יָקִים לָנוּ» (Sucot) sin meteg en el máster; en el resto, לָֽנוּ. */
+/* 06/11/2026: וְשָׂבָֽעְתָּ con meteg en la ב (ArtScroll Ashkenaz y Sefaradí, titular): forma pausal, acento penúltimo. */
 const known=new Set(['meteg לָנוּ']);
 const unexpected=r.errors.filter(e=>!known.has(e.mark+' '+e.word));
 assert.deepEqual(unexpected,[],'BH sefaradí: marcas distintas del máster');
-assert.equal(r.meteg.expected,258);assert.equal(r.rafe.expected,53);assert.equal(r.rafe.missing+r.rafe.extra,0);
+assert.equal(r.meteg.expected,259);assert.equal(r.rafe.expected,53);assert.equal(r.rafe.missing+r.rafe.extra,0);
 const stub=`const document={getElementById(){return {value:'rabbinic',addEventListener(){},focus(){},select(){}}},createElement(){return {appendChild(){},addEventListener(){},replaceChildren(){}}}};const window={addEventListener(){}};const navigator={clipboard:{}};const requestAnimationFrame=f=>f();`;
 const a=vm.runInNewContext(stub+extractEngine(fs.readFileSync(new URL('../index.html',import.meta.url),'utf8'))+';({applyVisualMarks,phonetize});');
 const ps67='לַמְנַצֵּחַ בִּנְגִינֹת מִזְמוֹר שִׁיר. אֱלֹהִים יְחׇנֵּנוּ וִיבָרְכֵנוּ יָאֵר פָּנָיו אִתָּנוּ סֶלָה. לָדַעַת בָּאָרֶץ דַּרְכֶּךָ בְּכׇל גּוֹיִם יְשׁוּעָתֶךָ. יוֹדוּךָ עַמִּים אֱלֹהִים יוֹדוּךָ עַמִּים כֻּלָּם. אֶרֶץ נָתְנָה יְבוּלָהּ יְבָרְכֵנוּ אֱלֹהִים אֱלֹהֵינוּ. יְבָרְכֵנוּ אֱלֹהִים וְיִירְאוּ אוֹתוֹ כׇּל אַפְסֵי אָרֶץ.';

@@ -231,20 +231,80 @@ test('Manual no-meteg choice survives a late automatic response', async ({page})
   await expect(page.locator('#copy')).toBeEnabled();
 });
 
-test('Isolated yishmor and automatic ki vanu preserve the requested reading', async ({page}) => {
+test('Begadkefat after a vowel is offered by rule and the manual choice is kept', async ({page}) => {
   await page.route('**/nakdan-2-0.loadbalancer.dicta.org.il/api', route => route.fulfill({json:[
     {word:'כי',options:[['כִּי']]},{word:' ',sep:true},
-    {word:'בנו',options:[['בָּנוּ'],['בָנוּ']],fconfident:false},{word:' ',sep:true},
-    {word:'בחרת',options:[['בָּחַרְתָּ']]}
+    {word:'בנו',options:[['בָּנוּ']],fconfident:true},{word:' ',sep:true},
+    {word:'בחרת',options:[['בָּחַרְתָּ']],fconfident:true}
   ]}));
   await page.goto('/');
   await page.locator('#showMeteg').uncheck();
   await page.locator('#hebrew').fill('כי בנו בחרת');
-  await expect(page.locator('#hebrew')).toHaveValue(/^כִּי בָנוּ /u);
-  await expect(page.locator('#output')).toHaveValue(/ vanu /u);
+  // Nakdan's proposal is kept as provisional; no phrase-specific rewrite.
+  await expect(page.locator('#hebrew')).toHaveValue('כִּי בָּנוּ בָּחַרְתָּ'.normalize('NFC'));
+  await expect(page.locator('#output')).toHaveValue('Ki banu bajarta');
+  // The rule (Gesenius §21) offers the spirantized reading for both words after a vowel-final word.
+  const choices = await page.evaluate(()=>lastNakdanChoices.map(c=>({i:c.wordIndex,rule:c.rule,opts:c.options.map(o=>o.text)})));
+  expect(choices).toEqual([
+    {i:1,rule:'begadkefat',opts:['בָּנוּ','בָנוּ'].map(x=>x.normalize('NFC'))},
+    {i:2,rule:'begadkefat',opts:['בָּחַרְתָּ','בָחַרְתָּ'].map(x=>x.normalize('NFC'))}
+  ]);
+  await page.evaluate(()=>renderNakdanChoice(lastNakdanChoices[0],'בָּנוּ'.normalize('NFC')));
+  await expect(page.locator('.nakdan-choices-head')).toContainText('Gesenius §21');
+  await page.locator('.nakdan-option').nth(1).click();
+  await expect(page.locator('#hebrew')).toHaveValue('כִּי בָנוּ בָּחַרְתָּ'.normalize('NFC'));
+  await expect(page.locator('#output')).toHaveValue('Ki vanu bajarta');
+  // A later automatic run must not put the removed dagesh back.
   await page.evaluate(()=>run());
-  await expect(page.locator('#hebrew')).toHaveValue(/^כִּי בָנוּ /u);
+  await expect(page.locator('#hebrew')).toHaveValue('כִּי בָנוּ בָּחַרְתָּ'.normalize('NFC'));
+  await expect(page.locator('#output')).toHaveValue('Ki vanu bajarta');
+});
+
+test('Isolated imperfect qamats is flagged, resolved with U+05C7 and kept through copy and re-import', async ({page}) => {
+  await page.goto('/');
+  await page.locator('#showMeteg').uncheck();
+  await page.locator('#showRafe').uncheck();
   await page.locator('#hebrew').fill('יִשְׁמָר');
+  await expect(page.locator('#output')).toHaveValue('Yishmar');
+  await expect(page.locator('#readingNotices')).toBeVisible();
+  await expect(page.locator('#readingNotices')).toContainText('Kamats final de imperfecto');
+  await page.getByRole('button',{name:'Leer «o» (poner ׇ)'}).click();
+  await expect(page.locator('#hebrew')).toHaveValue('יִשְׁמׇר'.normalize('NFC'));
   await expect(page.locator('#output')).toHaveValue('Yishmor');
-  await expect(page.locator('#hebrew')).toHaveValue('יִשְׁמָר'.normalize('NFC'));
+  await expect(page.locator('#readingNotices')).toBeHidden();
+  await page.evaluate(()=>run());
+  await expect(page.locator('#hebrew')).toHaveValue('יִשְׁמׇר'.normalize('NFC'));
+  // Copy/export keeps U+05C7 (the updated font supports it); pasting it back still reads O.
+  const exported = await page.evaluate(()=>hebrewForExport(document.getElementById('hebrew').value));
+  expect(exported).toContain('ׇ');
+  expect(exported).not.toContain('ָ');
+  const copied = await page.evaluate(()=>{
+    const h=document.getElementById('hebrew');h.focus();h.setSelectionRange(0,h.value.length);
+    const dt=new DataTransfer();const ev=new ClipboardEvent('copy',{clipboardData:dt,bubbles:true,cancelable:true});
+    h.dispatchEvent(ev);return dt.getData('text/plain')||h.value.slice(h.selectionStart,h.selectionEnd);
+  });
+  expect(copied).toContain('ׇ');
+  await page.locator('#clear').click();
+  await page.locator('#hebrew').fill(copied);
+  await expect(page.locator('#output')).toHaveValue('Yishmor');
+  // In running text the same U+05B8 form is decided by context: joined → o, explicit pause → a.
+  await page.locator('#hebrew').fill('יְהֹוָה יִשְׁמָר צֵאתְךָ');
+  await expect(page.locator('#output')).toHaveValue(/yishmor/u);
+  await expect(page.locator('#readingNotices')).toBeHidden();
+  await page.locator('#hebrew').fill('וְלֹא יִשְׁכָּב.');
+  await expect(page.locator('#output')).toHaveValue('Veló yishkav.');
+});
+
+test('Vav + perfect default stress is flagged and the past reading is fixed with an explicit meteg', async ({page}) => {
+  await page.goto('/');
+  await page.locator('#showMeteg').uncheck();
+  await page.locator('#showRafe').uncheck();
+  await page.locator('#hebrew').fill('וְשַׁבְתִּי');
+  await expect(page.locator('#output')).toHaveValue('Veshavtí');
+  await expect(page.locator('#readingNotices')).toContainText('וְ + perfecto');
+  await page.getByRole('button',{name:'Acento penúltimo (poner meteg)'}).click();
+  await expect(page.locator('#hebrew')).toHaveValue('וְשַֽׁבְתִּי'.normalize('NFC'));
+  await expect(page.locator('#output')).toHaveValue('Veshavti');
+  await page.evaluate(()=>run());
+  await expect(page.locator('#hebrew')).toHaveValue('וְשַֽׁבְתִּי'.normalize('NFC'));
 });

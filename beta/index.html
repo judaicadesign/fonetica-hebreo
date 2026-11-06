@@ -301,7 +301,7 @@ details.rules[open] summary::before{content:"–"}
 
     <h3>Uso de la página</h3>
     <p><b>Teclado de nikud:</b> botones grandes con el nombre y el sonido de cada signo. Poné el cursor después de la letra y tocá el signo; «Borrar signo» quita el último. <b>Escribir otra…</b> (en las opciones de Nakdan) permite tipear la palabra con tu nikud cuando Nakdan no ofrece la correcta; queda fija.</p>
-    <p><b>Kamats katán al copiar:</b> en el recuadro se conserva el signo propio (ׇ, U+05C7) para que la fonética lea O; al copiar (botón o Ctrl+C) se escribe como kamats común (ָ), porque las fuentes de InDesign no tienen el katán.</p>
+    <p><b>Kamats katán al copiar:</b> se conserva el signo propio (ׇ, U+05C7) al copiar, pegar, guardar y exportar: la fuente FbFrankReal actualizada lo admite (06/11/2026), aunque se vea igual que el kamats común. Los textos antiguos con kamats común (ָ, U+05B8) se leen por reglas: sílaba cerrada y átona = «o»; cuando el texto no alcanza para decidir, aparece un aviso para marcarlo.</p>
     <p><b>Clic o selección</b> en una palabra hebrea marca su fonética, y al revés. <b>Ctrl+Z / Ctrl+Y</b> (o los botones Deshacer / Rehacer) recuperan el texto, también después de «Limpiar».</p>
 
     <h3>Criterio de lectura</h3>
@@ -2831,12 +2831,10 @@ $("hebrew").addEventListener("input",()=>{
   $("motorStatus").textContent="Actualizando…";$("motorStatus").className="status";
   if(!isComposingHebrew) debounceTimer=setTimeout(run,NAKDAN_DEBOUNCE_MS);
 });
-/* Kamats katán (U+05C7): la fonética lo lee como O, pero las fuentes de InDesign no tienen ese carácter (cuadradito).
-   Solo en lo que se copia o exporta se escribe como kamats común (U+05B8); el texto del recuadro no cambia. */
+/* Kamats katán (U+05C7): desde el 06/11/2026 la fuente FbFrankReal actualizada lo admite, así que se conserva tal cual al copiar,
+   pegar, guardar y exportar. Esta función solo reordena daguesh/meteg para InDesign. */
 function hebrewForExport(s){
   return String(s)
-    // Kamatz katán: U+05C7 → U+05B8 (solo al copiar/exportar)
-    .replace(/\u05C7/g, "\u05B8")
 
     // Vocal + daguesh + meteg → daguesh + vocal + meteg
     .replace(
