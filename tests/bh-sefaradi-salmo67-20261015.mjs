@@ -5,7 +5,9 @@ import {extractEngine} from '../scripts/extract-engine.mjs';
 import {evaluate} from '../tools/bh_marks_eval.mjs';
 const r=evaluate(fs.readFileSync(new URL('./fixtures/bh-sefaradi-bircat-shelomo-20261014.txt',import.meta.url),'utf8'));
 /* Única diferencia aceptada, a confirmar en el libro: «יָקִים לָנוּ» (Sucot) sin meteg en el máster; en el resto, לָֽנוּ. */
-const known=new Set(['meteg לָנוּ']);
+/* 06/11/2026: «כָּאָמוּר וְאָכַלְתָּ וְשָׂבָעְתָּ.» lleva punto (pausa explícita = atnaj de Devarim 8:10): el perfecto consecutivo
+   conserva el acento penúltimo en pausa (Gesenius §49m cita esta misma forma). El máster no tiene meteg: decisión del titular pendiente. */
+const known=new Set(['meteg לָנוּ','meteg וְשָׂבָעְתָּ']);
 const unexpected=r.errors.filter(e=>!known.has(e.mark+' '+e.word));
 assert.deepEqual(unexpected,[],'BH sefaradí: marcas distintas del máster');
 assert.equal(r.meteg.expected,258);assert.equal(r.rafe.expected,53);assert.equal(r.rafe.missing+r.rafe.extra,0);

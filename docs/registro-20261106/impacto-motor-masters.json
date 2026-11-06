@@ -1,0 +1,107 @@
+{
+  "generado": "2026-11-06T13:13:35.095Z",
+  "motores": {
+    "antes": "main 2a897d5 (index.html)",
+    "despues": "esta rama (index.html)"
+  },
+  "textos": [
+    "judaica-design-system/masters/bircat-hamazon/ASHKENAZ_HEBREO_METEG_EN_REVISION.txt",
+    "judaica-design-system/masters/tehilim/TEHILIM_001-150_HEBREO_numbered.txt",
+    "tests/fixtures/bh-sefaradi-bircat-shelomo-20261014.txt",
+    "docs/registro-20261106/muestras-contexto-masters-supabase.txt"
+  ],
+  "total": 13,
+  "cambios": [
+    {
+      "file": "judaica-design-system/masters/tehilim/TEHILIM_001-150_HEBREO_numbered.txt",
+      "ref": "77",
+      "hebrew": "וְסָלַחְתָּ",
+      "antes": "vesalajta",
+      "despues": "vesalajtá"
+    },
+    {
+      "file": "judaica-design-system/masters/tehilim/TEHILIM_001-150_HEBREO_numbered.txt",
+      "ref": "359",
+      "hebrew": "הִתְמַהְמָֽהְתִּי",
+      "antes": "hitmahmohti",
+      "despues": "hitmahmahti"
+    },
+    {
+      "file": "tests/fixtures/bh-sefaradi-bircat-shelomo-20261014.txt",
+      "ref": "34",
+      "hebrew": "וְשָׂבָעְתָּ",
+      "antes": "vesava'tá",
+      "despues": "vesava'ta"
+    },
+    {
+      "file": "tests/fixtures/bh-sefaradi-bircat-shelomo-20261014.txt",
+      "ref": "69",
+      "hebrew": "וְטָהֳרָה",
+      "antes": "vetahorá",
+      "despues": "vetohorá"
+    },
+    {
+      "file": "docs/registro-20261106/muestras-contexto-masters-supabase.txt",
+      "ref": "3",
+      "hebrew": "וְשָׂבָעְתָּ",
+      "antes": "vesava'tá",
+      "despues": "vesava'ta"
+    },
+    {
+      "file": "docs/registro-20261106/muestras-contexto-masters-supabase.txt",
+      "ref": "4",
+      "hebrew": "וְשָׂבָעְתָּ",
+      "antes": "vesava'tá",
+      "despues": "vesava'ta"
+    },
+    {
+      "file": "docs/registro-20261106/muestras-contexto-masters-supabase.txt",
+      "ref": "10",
+      "hebrew": "וְאָמַרְתָּ",
+      "antes": "Veamarta",
+      "despues": "Veamartá"
+    },
+    {
+      "file": "docs/registro-20261106/muestras-contexto-masters-supabase.txt",
+      "ref": "10",
+      "hebrew": "וְשָׁמַרְתָּ",
+      "antes": "veshamarta",
+      "despues": "veshamartá"
+    },
+    {
+      "file": "docs/registro-20261106/muestras-contexto-masters-supabase.txt",
+      "ref": "11",
+      "hebrew": "וְהַאֲזַנְתָּ",
+      "antes": "Vehaazanta",
+      "despues": "Vehaazantá"
+    },
+    {
+      "file": "docs/registro-20261106/muestras-contexto-masters-supabase.txt",
+      "ref": "11",
+      "hebrew": "וְשָׁמַרְתָּ",
+      "antes": "veshamarta",
+      "despues": "veshamartá"
+    },
+    {
+      "file": "docs/registro-20261106/muestras-contexto-masters-supabase.txt",
+      "ref": "12",
+      "hebrew": "וְשָׁכַבְתָּ",
+      "antes": "veshajavta",
+      "despues": "veshajavtá"
+    },
+    {
+      "file": "docs/registro-20261106/muestras-contexto-masters-supabase.txt",
+      "ref": "16",
+      "hebrew": "וּבְטָהֳרָה",
+      "antes": "uvtahorá",
+      "despues": "uvtohorá"
+    },
+    {
+      "file": "docs/registro-20261106/muestras-contexto-masters-supabase.txt",
+      "ref": "16",
+      "hebrew": "וְטָהֳרָה",
+      "antes": "vetahorá",
+      "despues": "vetohorá"
+    }
+  ]
+}

@@ -31,13 +31,12 @@ small{color:#5f7778}
 </div>
 <p id="status" role="status"></p>
 <details><summary>Qué esperamos en las pruebas automáticas</summary>
-<p>Se modifican únicamente las secuencias vocal–daguesh–meteg o daguesh–meteg–vocal, y el kamatz katán. Las combinaciones previamente funcionales quedan intactas. En InDesign todavía hay que verificar visualmente segol, tzere, pataj, kamatz, jirik, kubutz y jolam.</p>
+<p>Se modifican únicamente las secuencias vocal–daguesh–meteg o daguesh–meteg–vocal. El kamatz katán (U+05C7) se conserva: la fuente actualizada lo admite (06/11/2026). Las combinaciones previamente funcionales quedan intactas. En InDesign todavía hay que verificar visualmente segol, tzere, pataj, kamatz, jirik, kubutz y jolam.</p>
 </details>
 <script>
 "use strict";
 function hebrewForExport(s) {
   return String(s)
-    .replace(/\u05C7/g, "\u05B8")
     .replace(/([\u05B0-\u05BB])\u05BC\u05BD/gu, "\u05BC$1\u05BD")
     .replace(/\u05BC\u05BD([\u05B0-\u05BB])/gu, "\u05BC$1\u05BD");
 }
