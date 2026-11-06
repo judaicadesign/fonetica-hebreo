@@ -230,3 +230,21 @@ test('Manual no-meteg choice survives a late automatic response', async ({page})
   await expect(page.locator('#output')).toHaveValue('Veshavtí');
   await expect(page.locator('#copy')).toBeEnabled();
 });
+
+test('Isolated yishmor and automatic ki vanu preserve the requested reading', async ({page}) => {
+  await page.route('**/nakdan-2-0.loadbalancer.dicta.org.il/api', route => route.fulfill({json:[
+    {word:'כי',options:[['כִּי']]},{word:' ',sep:true},
+    {word:'בנו',options:[['בָּנוּ'],['בָנוּ']],fconfident:false},{word:' ',sep:true},
+    {word:'בחרת',options:[['בָּחַרְתָּ']]}
+  ]}));
+  await page.goto('/');
+  await page.locator('#showMeteg').uncheck();
+  await page.locator('#hebrew').fill('כי בנו בחרת');
+  await expect(page.locator('#hebrew')).toHaveValue(/^כִּי בָנוּ /u);
+  await expect(page.locator('#output')).toHaveValue(/ vanu /u);
+  await page.evaluate(()=>run());
+  await expect(page.locator('#hebrew')).toHaveValue(/^כִּי בָנוּ /u);
+  await page.locator('#hebrew').fill('יִשְׁמָר');
+  await expect(page.locator('#output')).toHaveValue('Yishmor');
+  await expect(page.locator('#hebrew')).toHaveValue('יִשְׁמָר'.normalize('NFC'));
+});
