@@ -210,3 +210,8 @@ input.nikud-zoom-editor{scroll-margin-block:16px}
   .nikud-panel .nikud-kbd>.nk-grid:nth-child(6){grid-column:4/-1;grid-row:4}
   .nikud-panel .nikud-kbd>.nk-tools{grid-column:1/-1;grid-row:5}
 }
+
+/* Keep the editor controls inside the viewport as text scales. */
+.profile-control{min-width:0}
+.profile-control select{max-width:100%}
+@media(max-width:600px){.profile-control select,.nikud-zoom-editor{font-size:16px}}

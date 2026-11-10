@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Condensed&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.typekit.net/ydp7axr.css">
-<link rel="stylesheet" href="editor.css?v=20261028-nikud-editor">
+<link rel="stylesheet" href="editor.css?v=20261109-editor">
 <script src="jd-embed.js?v=20261007-tools" defer></script>
 </head>
 <body>
@@ -80,7 +80,7 @@
     <p class="field-help" id="outputHelp">Se actualiza al editar el hebreo. Revisá los avisos antes de copiar.</p>
     <textarea aria-describedby="outputHelp motorStatus" id="output" readonly spellcheck="false" placeholder="La fonética aparecerá automáticamente…"></textarea>
     <div class="toolbar right">
-      <button id="copy" type="button">Copiar fonética</button>
+      <button id="copy" type="button" disabled>Copiar fonética</button>
     </div>
     <div id="motorStatus" class="status" role="status" aria-live="polite" aria-atomic="true">Motor listo.</div>
     <div id="phoneticCopyNotice" class="copy-notice" role="status" aria-live="polite" aria-atomic="true"></div>
@@ -1924,12 +1924,17 @@ function reviewedWordKey(token){
  const name=bare.match(/^([ולבמהשכ]*)(יי|יהוה|אדני)$/);
  return name ? name[1]+'JD_DIVINE_NAME' : norm(token);
 }
+let reviewedVerseKeys;
 function reviewedArtScrollTokens(text){
  const tokens=[...text.matchAll(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)], result=new Map();
- for(const verse of REVIEWED_ARTSCROLL_VERSES){
-  const expected=[...verse.hebrew.matchAll(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)].map(m=>reviewedWordKey(m[0]));
+ const keys=tokens.map(token=>reviewedWordKey(token[0]));
+ reviewedVerseKeys??=REVIEWED_ARTSCROLL_VERSES.map(verse=>({
+  verse,expected:[...verse.hebrew.matchAll(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)].map(m=>reviewedWordKey(m[0]))
+ }));
+ for(const {verse,expected} of reviewedVerseKeys){
+  if(!Object.keys(verse.changes).length)continue;
   for(let i=0;i<=tokens.length-expected.length;i++){
-   if(!expected.every((word,j)=>word===reviewedWordKey(tokens[i+j][0])))continue;
+   if(!expected.every((word,j)=>word===keys[i+j]))continue;
    expected.forEach((word,j)=>{const change=verse.changes[word]??verse.changes[bareLetters(word)];if(change)result.set(tokens[i+j].index,{...(result.get(tokens[i+j].index)||{}),...change})});
   }
  }
@@ -2926,7 +2931,9 @@ async function copyText(value, fallbackEl){
     if(fallbackEl.value===value){fallbackEl.select();return document.execCommand("copy");}
     /* El valor a copiar difiere del recuadro (p. ej. kamats katán convertido): se copia desde un campo temporal. */
     const t=document.createElement("textarea");t.value=value;t.setAttribute("readonly","");t.style.position="fixed";t.style.opacity="0";
-    document.body.appendChild(t);t.select();const ok=document.execCommand("copy");t.remove();return ok;
+    document.body.appendChild(t);
+    try{t.select();return document.execCommand("copy");}
+    finally{t.remove();}
   }
 }
 /* Ctrl+C / Cortar desde el recuadro hebreo: misma conversión. */
@@ -2941,7 +2948,7 @@ for(const ev of ["copy","cut"]){
 }
 async function copyWithStatus(value,el,status){
   if(!value)return;
-  const copied=await copyText(value,el);
+  const copied=await copyText(value,el).catch(()=>false);
   status=$(el.id==="output"?"phoneticCopyNotice":"hebrewCopyNotice")||status;
   status.textContent=copied?"Texto copiado.":"No se pudo copiar automáticamente. Seleccioná el texto y usá Copiar.";
   status.className="copy-notice "+(copied?"ok":"warn");
