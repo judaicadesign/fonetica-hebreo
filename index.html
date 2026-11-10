@@ -1332,7 +1332,7 @@ const PROPER_NOUNS_VOCALIZED = new Set(["חָם","צוֹר","צֹר","חֹרֵב
   /* Clase A: Janucá y Purim (יָוָן ≠ יָוֵן «lodo»; הָמָן ≠ הַמָּן «el maná»; אֲדָר ≠ אֶדֶר). */
   "יָוָן","הָמָן","אֲדָר","מַתִּתְיָה","מַתִּתְיָהוּ","שׁוּשַׁן"].map(w=>norm(w)));
 /* Con prefijo y vocalización exacta: כְּיָבִין (Yavín, rey de Jatsor; יָבִין suelto es el verbo "entiende"). */
-const PROPER_PREFIXED_VOCALIZED = new Map([["וְאֶסְתֵּר",1],["בְּשׁוּשַׁן",1],["לִשְׁלֹמֹה",1],["כִּשְׁלֹמֹה",1],["כְּיָבִין",1],["וּלְעוֹג",2],["לְעוֹג",1],["וְהַגְרִים",1]].map(([w,k])=>[w.normalize("NFC"),k]));
+const PROPER_PREFIXED_VOCALIZED = new Map([["וְאֶסְתֵּר",1],["בְּשׁוּשַׁן",1],["לִשְׁלֹמֹה",1],["כִּשְׁלֹמֹה",1],["כְּיָבִין",1],["וּלְעוֹג",2],["לְעוֹג",1],["וְהַגְרִים",1],["דְמֵאִיר",1] /* Arameo דְ־ + nombre propio מֵאִיר: deMeír. */].map(([w,k])=>[w.normalize("NFC"),k]));
 /* Nombres que son además palabras comunes: se reconocen solo sin prefijo. */
 const PROPER_PREFIX_BLOCK = new Set(["נתן","יונה","כלב","יעל","מלאכי","דבורה","תרצה","חנה","רות","שרה","לאה","לוי","מרים","עמוס","חגי","משך","מסה","קדר","צען","סבא","שעיר","אסף","איתן","עוג","יהושע","בנימין","שמואל","אסתר","יחזקאל"].map(bareLetters));
 /* Mayúscula en la raíz, después de k letras de prefijo: meHejaló, beOholeja, ve'Amón. */
