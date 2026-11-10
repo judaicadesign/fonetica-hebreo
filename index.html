@@ -553,7 +553,10 @@ function stressAccent(a, out, nuclei, originalWord, confirmedStress){
     const nominalPossessiveNi =
       has(a[L-2],N.DAGESH) ||
       (L>=4 && a[L-3].b==="י" && a[L-3].m.length===0 &&
-       has(a[L-4],N.HIRIQ));
+       has(a[L-4],N.HIRIQ)) ||
+      /* נ radical tras jolam male + posesivo -י (לָשׁוֹן → לְשׁוֹנִי, אָדוֹן → אֲדוֹנִי, עָוֹן → עֲוֹנִי):
+         sustantivo, no sufijo objeto; la -í es tónica (leshoní). Decisión del titular 10/11/2026. */
+      isHolamMale(a[L-3]);
     if(!nominalPossessiveNi){
       target = Math.max(0,nuclei.length-2);
     }
@@ -1217,7 +1220,8 @@ const LEXICAL_MILRA=new Set(["עַתָּה","בֵּיתְךָ","בָּבֶל","�
    Solo formas litúrgicas verificadas (Devarim 8:10, el Shemá y Tehilim 23:6); וְ + perfecto con valor de pasado
    (וְקִלְקַֽלְתָּ, Al Hanisim) conserva su acento, por eso no es una regla general. */
 const VAV_CONVERSIVE=new Set([
-  "וְאָכַלְתָּ","וְשָׂבָעְתָּ","וּבֵרַכְתָּ",                       /* Devarim 8:10 */
+  "וְאָכַלְתָּ","וּבֵרַכְתָּ",                       /* Devarim 8:10. וְשָׂבָ֑עְתָּ NO: lleva atnaj en la ב (forma pausal),
+                                                   el acento queda en «va» y lleva méteg: vesava'ta. Decisión del titular 10/11/2026. */
   "וְאָהַבְתָּ","וְדִבַּרְתָּ","וְשִׁנַּנְתָּם","וּקְשַׁרְתָּם","וּכְתַבְתָּם", /* Shemá */
   "וְנָתַתִּי","וְאָסַפְתָּ","וְשַׂמְתֶּם","וּקְשַׁרְתֶּם","וְלִמַּדְתֶּם", /* Vehayá im shamoa */
   "וּרְאִיתֶם","וּזְכַרְתֶּם","וַעֲשִׂיתֶם",                          /* Vayómer */
@@ -2265,6 +2269,9 @@ function phonetize(text){ return phonetizeDetailed(text).out; }
 function phonetizeDetailed(text){
   /* Sof pasuq (׃) = punto; paseq (׀) = pausa sin sonido: no aparece en la fonética (decisión 26/10). Mismo largo: las posiciones no cambian. */
   let s=text.replace(/\u05BE/g,"-").replace(/\u05C3/g,".").replace(/\u05C0/g," ");
+  /* Guersh\u00E1yim dentro de una palabra CON nikud (nombre de letra: \u05E9\u05B4\u05C1\u05D9\u05F4\u05DF): no se pronuncia y no corta la palabra.
+     Se cambia por ZWJ (mismo largo: las posiciones no cambian). Las abreviaturas sin nikud (\u05D7\u05D1\u05F4\u05D3, \u05D9\u05D5\u05F4\u05D3) no se tocan. */
+  s=s.replace(/(?<=[\u05B0-\u05BB\u05C7][\u05D0-\u05EA\u0591-\u05C7]*)\u05F4(?=[\u05D0-\u05EA])/gu,"\u200D");
   let st,ms; [s,st,ms]=stashLabelsMasked(s);
   const hFrag=[...ms.matchAll(/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu)];
   const items=[], labelSpans=new Map(); let wi=0;

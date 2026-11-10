@@ -5,7 +5,9 @@ import {extractEngine} from '../scripts/extract-engine.mjs';
 import {evaluate} from '../tools/bh_marks_eval.mjs';
 const r=evaluate(fs.readFileSync(new URL('./fixtures/bh-sefaradi-bircat-shelomo-20261014.txt',import.meta.url),'utf8'));
 /* Única diferencia aceptada, a confirmar en el libro: «יָקִים לָנוּ» (Sucot) sin meteg en el máster; en el resto, לָֽנוּ. */
-const known=new Set(['meteg לָנוּ']);
+/* 10/11/2026: וְשָׂבָ֑עְתָּ (Devarim 8:10, atnaj) lleva méteg en la ב por decisión del titular; la copia del máster del 14/10
+   no lo tiene. Diferencia esperada hasta que se apruebe el cambio en el máster. */
+const known=new Set(['meteg לָנוּ','meteg וְשָׂבָעְתָּ']);
 const unexpected=r.errors.filter(e=>!known.has(e.mark+' '+e.word));
 assert.deepEqual(unexpected,[],'BH sefaradí: marcas distintas del máster');
 assert.equal(r.meteg.expected,258);assert.equal(r.rafe.expected,53);assert.equal(r.rafe.missing+r.rafe.extra,0);
