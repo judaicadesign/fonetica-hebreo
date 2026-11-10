@@ -1,0 +1,30 @@
+// Puente de correspondencia (10/11/2026): responde solo a orígenes JD, devuelve la misma
+// correspondencia que el resaltado del editor y no toca el editor, el borrador ni las reglas.
+import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
+import {extractEngine} from '../scripts/extract-engine.mjs';
+const html=fs.readFileSync(new URL('../index.html',import.meta.url),'utf8');
+const bridge=fs.readFileSync(new URL('../jd-bridge.js',import.meta.url),'utf8');
+assert.ok(html.includes('<script src="jd-bridge.js'),'la página carga el puente');
+for(const forbidden of ['localStorage','getElementById','.value=','setItem','fetch('])assert.ok(!bridge.includes(forbidden),'el puente no debe usar '+forbidden);
+const stub=`const document={getElementById(){return {value:'rabbinic',addEventListener(){},focus(){},select(){}}},createElement(){return {appendChild(){},addEventListener(){},replaceChildren(){}}}};const navigator={clipboard:{}};const requestAnimationFrame=f=>f();`;
+const listeners=[],sentToParent=[];
+const window={addEventListener(type,fn){if(type==='message')listeners.push(fn);}};
+window.parent={postMessage(msg,origin){sentToParent.push([msg,origin]);}};
+const ctx=vm.createContext({window,location:{origin:'https://judaicadesign.github.io'}});
+vm.runInContext(stub+extractEngine(html)+';globalThis.phonetizeDetailed=phonetizeDetailed;',ctx);
+vm.runInContext(bridge,ctx);
+assert.equal(listeners.length,1);
+assert.deepEqual(sentToParent.map(x=>x[0].type),['jd-correspondence-ready'],'avisa que está listo, sin datos');
+const text='וְאָכַלְתָּ וְשָׂבָֽעְתָּ וּבֵרַכְתָּ אֶת־יְיָ';
+const ask=(origin)=>{const replies=[];listeners[0]({origin,data:{type:'jd-correspondence-request',id:7,texts:[text,42]},source:{postMessage:(m,o)=>replies.push([m,o])}});return replies;};
+assert.equal(ask('https://evil.example').length,0,'otro origen: sin respuesta');
+const [[reply,target]]=ask('https://judaicadesign.github.io');
+assert.equal(target,'https://judaicadesign.github.io','responde solo al origen que preguntó');
+assert.equal(reply.type,'jd-correspondence-result');assert.equal(reply.id,7);
+const expected=ctx.phonetizeDetailed(text);
+assert.equal(reply.results[0].out,expected.out,'misma salida que el editor');
+assert.deepEqual(reply.results[0].items.map(x=>[x.hs,x.he,x.os,x.oe]),expected.items.map(x=>[x.hs,x.he,x.os,x.oe]),'mismo mapa palabra por palabra');
+const word=reply.results[0].items.find(x=>text.slice(x.hs,x.he)==='וְשָׂבָֽעְתָּ');
+assert.equal(reply.results[0].out.slice(word.os,word.oe),"vesava'ta");
+assert.equal(reply.results[1].error,'Texto inválido');
+console.log('PASS: puente de correspondencia (origen, mapa idéntico al editor, sin escrituras)');
