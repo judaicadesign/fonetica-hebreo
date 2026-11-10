@@ -2193,6 +2193,10 @@ function revStemNiqqud(stem,a,k){
   if(stem==="קדוש")return k===0&&has(c,N.SHEVA);
   /* יְמִינוֹ «Su diestra» ≠ יָמֵינוּ «nuestros días». */
   if(stem==="ימינו")return has(c,N.SHEVA)&&has(a[k+1],N.HIRIQ);
+  /* קׇדְשׁוֹ («Su santuario») puede llevar mayúscula reverencial.
+     לְקַדְּשׁוֹ («para santificarlo») es un infinitivo verbal: el sufijo
+     refiere aquí al Shabat, no a Hashem. La vocalización distingue ambas formas. */
+  if(stem==="קדשו")return isQamatzQatan(a,k,clustersText(a));
   return true;
 }
 function reverentialCapital(token,prev,next,s,idx){
