@@ -192,13 +192,20 @@ input.nikud-zoom-editor{scroll-margin-block:16px}
 .nikud-panel>.toolbar{margin-top:0}
 .nikud-panel .nikud-kbd{padding:16px;background:var(--white)}
 .nikud-panel .nk-grid{grid-template-columns:repeat(auto-fill,minmax(82px,1fr))}
-.nikud-panel .nk-sec:not(:first-child){margin-top:18px}
+.nikud-panel .nk-sec:not(:first-child){margin-top:8px}
+/* Teclado compacto (12/11/2026): entra completo sin barra de desplazamiento en pantallas de 720 px o más. */
+.nikud-panel.is-open>.toolbar{padding-top:4px;padding-bottom:4px}
+.nikud-panel.is-open .nikud-kbd{padding:8px 16px 10px}
+.nikud-panel.is-open .nk{padding:3px 4px 5px;gap:1px}
+.nikud-panel.is-open .nk-g{font-size:34px;line-height:1.05}
+.nikud-panel.is-open .nk-sec{margin:4px 0}
+.nikud-panel.is-open .nk-tools{margin-top:6px}
 .nikud-panel .nk{min-width:0}
 
 /* Reference layout: vowels above, vav and signs side by side below. */
 @media(min-width:801px){
-  body.nikud-keyboard-open .wrap{padding-bottom:min(58vh,650px)}
-  .nikud-panel.is-open{position:fixed;z-index:30;left:50%;bottom:0;transform:translateX(-50%);width:min(calc(100vw - 52px),1128px);max-height:min(54dvh,590px);margin:0;overflow:auto;border:1px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0;background:var(--white);box-shadow:0 -14px 34px rgba(10,68,70,.16)}
+  body.nikud-keyboard-open .wrap{padding-bottom:min(70vh,560px)}
+  .nikud-panel.is-open{position:fixed;z-index:30;left:50%;bottom:0;transform:translateX(-50%);width:min(calc(100vw - 52px),1128px);max-height:min(70dvh,560px);margin:0;overflow:auto;border:1px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0;background:var(--white);box-shadow:0 -14px 34px rgba(10,68,70,.16)}
   .nikud-panel.is-open>.toolbar{position:sticky;z-index:2;top:0;justify-content:flex-end;padding:8px 10px;border-bottom:1px solid var(--line);background:var(--white)}
   .nikud-panel.is-open .nikud-kbd{margin-top:0;border:0;border-radius:0}
   .nikud-panel .nikud-kbd{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:7px;row-gap:7px;align-items:start}

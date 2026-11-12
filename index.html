@@ -1276,7 +1276,7 @@ const PROPER_NOUNS = new Set([
   "משה","אהרן","מרים","יהושע","כלב","שמואל","שאול","דוד",
   "אליהו","אלישע","ישעיהו","ירמיהו","יחזקאל","דניאל","עזרא","נחמיה",
   "אסתר","מרדכי","רות","שמשון","יונה","יואל","עמוס","עובדיה","מיכה","נחום",
-  "חבקוק","צפניה","חגי","זכריה","מלאכי","יונתן","מתתיהו","יוחנן",
+  "חבקוק","צפניה","חגי","זכריה","יונתן","מתתיהו","יוחנן",
   "אלחנן","חזקיהו","נתניהו","ירמיה","ישראל","ציון","בבל","ירושלים","מצרים",
   "סיני","כנען","אבשלום"
 ,"אדום"].map(bareLetters));
@@ -1313,7 +1313,7 @@ const FINAL_FORMS = new Map([
 const PROPER_NOUNS_EXTRA = new Set([
   "אריאל","אילעי","יוחאי","אילעאי","אלעאי","גבריאל","מיכאל","רפאל","דניאל","אלעזר","אליקים","אלקנה",
   "אפרים","מנשה","בועז","נחשון","פנחס","איתמר","איתן","עוזיאל","אוריאל",
-  "עובדיה","זכריה","מלאכי","נחמיה","עזרא","מתתיהו","יוחנן","יונתן","יחזקאל",
+  "עובדיה","זכריה","נחמיה","עזרא","מתתיהו","יוחנן","יונתן","יחזקאל",
   "יששכר","זבולון","שמעון","ראובן","נפתלי","לוי","מיכאל","מרים","אסתר",
   "חנה","דבורה","אביגיל","יעל","נעמי","חולדה","אבישג","בתיה","ציפורה",
   "יוכבד","אחינעם","דויד",
@@ -1333,12 +1333,14 @@ const PROPER_NOUNS_TEHILIM = new Set([
 const PROPER_NOUNS_VOCALIZED = new Set(["חָם","צוֹר","צֹר","חֹרֵב","הַגְרִים","שְׁכֶם","קֵדָר",
   /* Clase D: homógrafos de nombres, solo con su niqqud (נָתַן verbo ≠ נָתָן; שְׁלֵמָה ≠ שְׁלֹמֹה; תִּרְצֶה ≠ תִּרְצָה). */
   "נָתָן","שְׁלֹמֹה","שְׁלֹמוֹה","תִּרְצָה",
+  /* מַלְאָכִי (el profeta Malají) ≠ מַלְאֲכֵי «ángeles de» / מַלְאָכַי «mis ángeles» (12/11/2026). */
+  "מַלְאָכִי",
   /* Clase A: Janucá y Purim (יָוָן ≠ יָוֵן «lodo»; הָמָן ≠ הַמָּן «el maná»; אֲדָר ≠ אֶדֶר). */
   "יָוָן","הָמָן","אֲדָר","מַתִּתְיָה","מַתִּתְיָהוּ","שׁוּשַׁן"].map(w=>norm(w)));
 /* Con prefijo y vocalización exacta: כְּיָבִין (Yavín, rey de Jatsor; יָבִין suelto es el verbo "entiende"). */
 const PROPER_PREFIXED_VOCALIZED = new Map([["וְאֶסְתֵּר",1],["בְּשׁוּשַׁן",1],["לִשְׁלֹמֹה",1],["כִּשְׁלֹמֹה",1],["כְּיָבִין",1],["וּלְעוֹג",2],["לְעוֹג",1],["וְהַגְרִים",1],["דְמֵאִיר",1] /* Arameo דְ־ + nombre propio מֵאִיר: deMeír. */].map(([w,k])=>[w.normalize("NFC"),k]));
 /* Nombres que son además palabras comunes: se reconocen solo sin prefijo. */
-const PROPER_PREFIX_BLOCK = new Set(["נתן","יונה","כלב","יעל","מלאכי","דבורה","תרצה","חנה","רות","שרה","לאה","לוי","מרים","עמוס","חגי","משך","מסה","קדר","צען","סבא","שעיר","אסף","איתן","עוג","יהושע","בנימין","שמואל","אסתר","יחזקאל"].map(bareLetters));
+const PROPER_PREFIX_BLOCK = new Set(["נתן","יונה","כלב","יעל","דבורה","תרצה","חנה","רות","שרה","לאה","לוי","מרים","עמוס","חגי","משך","מסה","קדר","צען","סבא","שעיר","אסף","איתן","עוג","יהושע","בנימין","שמואל","אסתר","יחזקאל"].map(bareLetters));
 /* Mayúscula en la raíz, después de k letras de prefijo: meHejaló, beOholeja, ve'Amón. */
 function capitalizeAfterPrefix(out,token,k){
   const a=clusters(token);
@@ -1687,7 +1689,7 @@ const LABELS=[
   ["בסעודת חתן","En la comida de bodas"],["בשמיני עצרת","En Sheminí Atséret"],["בראש השנה","En Rosh Hashaná"],
   ["בראש חודש","En Rosh Jódesh"],["בחול המועד","En Jol Hamoed"],["ביום טוב","En Yom Tov"],["אורח אומר","El invitado dice"],
   ["המזמן","El que dirige"],["המסובים","Los comensales"],["בחנוכה","En Januká"],["בפורים","En Purim"],["בשבועות","En Shavuot"],
-  ["בסוכות","En Sukot"],["בפסח","En Pésaj"],["בשבת","En Shabat"],["בעשרה","Con diez"],["בלחש","En voz baja"],["עונים","Se responde"],["זימון","Zimún"]
+  ["בסוכות","En Sukot"],["בפסח","En Pésaj"],["בשבת","En Shabat"],["בעשרה","Con diez"],["בלחש","En voz baja"],["ג״פ","(x3)"],["ג\"פ","(x3)"],["ג׳׳פ","(x3)"],["עונים","Se responde"],["זימון","Zimún"]
 ];
 const HRUN=/[\u05D0-\u05EA\u0591-\u05C7\u200d]+/gu;
 function grammaticalPronoun(token){
@@ -2215,10 +2217,21 @@ function reverentialCapital(token,prev,next,s,idx){
     if(b==="הקדוש"&&nb!=="ברוך"&&!reverentialSentence(s,idx))return null;
     return 0;
   }
+  /* «Hakadosh Baruj Hu»: fórmula fija, Baruj con mayúscula (12/11/2026). */
+  if(b==="ברוך"&&pb==="הקדוש"&&nb==="הוא")return 0;
   for(let k=0;k<=3&&k<b.length-1;k++){
     if(k>0&&(!/^[ולבמהשכ]+$/u.test(b.slice(0,k))||!revPrefixOk(a,k)))break;
     const stem=b.slice(k);
     if(stem==="אבינו"&&/^(?:אברהם|יצחק|יעקב)$/u.test(pb))return null;
+    /* עֶלְיוֹן «el Altísimo»: título de Hashem, con mayúscula ('Elyón, ve'Elyón, le'Elyón).
+       Minúscula con artículo (הָעֶלְיוֹן), en femenino/plural (otra raíz escrita) y como predicado
+       «superior a» seguido de ל no divina (89:28 «'elyón lemaljé árets», dicho de David). */
+    if(stem==="עליון"){
+      if(b.slice(0,k).includes("ה")||!has(a[k],N.SEGOL))return null;
+      if(/^ל/u.test(nb)&&!/^ל(?:אל|יי|יהוה|אדני|אלהים)$/u.test(nb))return null;
+      return k;
+    }
+
     /* «beshimjá» (63:5, FINAL): con ב («en Tu nombre») minúscula, igual que beshem / uvshem. */
     if(REV_ALWAYS.has(stem))return (/^ש[םמ]/u.test(stem)&&(!revStemNiqqud(stem,a,k)||b.slice(0,k).includes("ב")))?null:k;
     /* אֵל (tsere) es nombre divino por sí mismo (kevod El, ki lo El jafets), salvo «el zar / el nejar / el ajer». */
@@ -2499,12 +2512,28 @@ function restoreNakdanLabels(text,stash){
 
 function buildNakdanChoices(original,detail){
   const src=original.match(HRUN)||[];
-  const dst=detail.tokens.filter(t=>!t.isSeparator&&/[\u05D0-\u05EA]/u.test(t.word));
-  if(src.length!==dst.length) return [];
+  const dst=detail.tokens.filter(t=>!t.isSeparator&&/[א-ת]/u.test(t.word));
+  /* Alineación por letras, no por cantidad de palabras: Nakdan puede unir en un token lo que el editor
+     separa (ג״פ, הקב״ה, ז״ל) o al revés. Antes, una sola diferencia anulaba TODAS las alternativas
+     del texto (regresión detectada el 12/11/2026). Ahora solo se omite el grupo que no coincide. */
+  const letters=w=>bareLetters(w||"").replace(/[^א-ת]/gu,"");
+  const pairs=[];
+  let i=0,t=0;
+  while(i<src.length&&t<dst.length){
+    const a=letters(src[i]),b=letters(dst[t].word);
+    if(a===b){pairs.push([i,t]);i++;t++;continue;}
+    let sa=a,sb=b,i2=i,t2=t;
+    while(sa!==sb){
+      if(sa.length<=sb.length){if(++i2>=src.length)break;sa+=letters(src[i2]);}
+      else{if(++t2>=dst.length)break;sb+=letters(dst[t2].word);}
+    }
+    if(sa!==sb)break; /* no se puede realinear: quedan las alternativas ya alineadas */
+    i=i2+1;t=t2+1;    /* grupo unido o dividido: ese grupo va sin alternativas */
+  }
   const out=[];
-  for(let i=0;i<src.length;i++){
-    if(VOWEL_NIKUD_RE.test(src[i])||/^(יי|יהוה|אדני)$/.test(bareLetters(src[i]))) continue;
-    if(dst[i]?.options?.length>1) out.push({wordIndex:i,chosen:dst[i].vocalized,options:dst[i].options,confident:dst[i].confident});
+  for(const [si,ti] of pairs){
+    if(VOWEL_NIKUD_RE.test(src[si])||/^(יי|יהוה|אדני)$/.test(bareLetters(src[si]))) continue;
+    if(dst[ti]?.options?.length>1) out.push({wordIndex:si,chosen:dst[ti].vocalized,options:dst[ti].options,confident:dst[ti].confident});
   }
   return out;
 }
