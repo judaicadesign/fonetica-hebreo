@@ -248,3 +248,12 @@ test('Isolated yishmor and automatic ki vanu preserve the requested reading', as
   await expect(page.locator('#output')).toHaveValue('Yishmor');
   await expect(page.locator('#hebrew')).toHaveValue('יִשְׁמָר'.normalize('NFC'));
 });
+
+
+test('Brand color hierarchy and neutral gray editor scrollbars', async ({page}) => {
+  await page.goto('/');
+  await expect(page.locator('.header .brand-copy .eyebrow')).toHaveCSS('color', 'rgb(154, 127, 97)');
+  await expect(page.locator('.header h1')).toHaveCSS('color', 'rgb(24, 102, 107)');
+  const scrollbar = await page.locator('#hebrew').evaluate(element => getComputedStyle(element).scrollbarColor);
+  expect(scrollbar).toBe('rgb(156, 163, 175) rgb(231, 232, 228)');
+});
