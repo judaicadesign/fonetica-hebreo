@@ -222,3 +222,9 @@ input.nikud-zoom-editor{scroll-margin-block:16px}
 .profile-control{min-width:0}
 .profile-control select{max-width:100%}
 @media(max-width:600px){.profile-control select,.nikud-zoom-editor{font-size:16px}}
+
+
+/* Brand details and controls: exact requested hierarchy, neutral scrollbar. */
+.header .brand-copy .eyebrow{color:#9A7F61}
+.header h1{color:#18666B}
+html,textarea{scrollbar-color:#9CA3AF #E7E8E4}
